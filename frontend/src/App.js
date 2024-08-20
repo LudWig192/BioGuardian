@@ -9,12 +9,16 @@ import Rotas from "./Routes";
 //Importar componentes aqui
 import Navegacao from "./Components/Navegacao";
 
+//RODAPE
+import Footer from "../src/Components/Footer";
+
 const App = () => {
   return (
     <>
       <Router>
         <Navegacao />
         <Rotas />
+        <Footer />
       </Router>
     </>
   );

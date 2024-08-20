@@ -1,0 +1,24 @@
+/* navbar */
+.Navbar1 {
+    background-color: rgb(238, 238, 238);
+  }
+  
+  .color1 {
+    color: #5472f0;
+    padding-left: 20px;
+  }
+  
+  .botao-pesquisar {
+    background-color: #5472f0;
+    border: none;
+    color: white;
+    cursor: pointer; /* Adiciona um cursor de mão para indicar que é clicável */
+    padding: 10px 20px; /* Adiciona algum padding para melhor aparência */
+    border-radius: 5px; /* Opcional: arredonda os cantos do botão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor */
+  }
+  
+  .botao-pesquisar:hover {
+    background-color: #54D4f0; /* Cor que o botão terá quando o mouse estiver sobre ele */
+  }
+  /* navbar */

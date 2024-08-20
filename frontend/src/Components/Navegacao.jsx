@@ -1,27 +1,41 @@
-import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import "../Style/Navbar.css";
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const Header = () => {
-  return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/contato">Contato</Link>
-          </li>
-          <li>
-            <Link to="/cadastro">Cadastro</Link>
-          </li>
-          <li>
-            <Link to="/listaUsuarios">Lista de Usuários</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
+function Nav1() {
+    return (
+        <Navbar expand="lg" className="Navbar1">
+            <Container fluid className=''>
+                <b><Navbar.Brand className='color1' href="#">Navbar </Navbar.Brand></b>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                        <b><Link className='color1' to="/"> INICIO</Link></b>
+                        <b><Link className='color1' to="/Beneficius">  BENEFICIUS</Link></b>
+                        <b><Link className='color1' to="/Login e Cadastro"> LOGIN</Link></b>
+                    </Nav>
+                    <Form className="d-flex">
+                        <Form.Control
+                            type="search"
+                            placeholder="Pesquisar"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <Button className='botao-pesquisar' variant="outline-success">Buscar</Button>
+                    </Form>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
+}
 
-export default Header;
+export default Nav1;
