@@ -1,11 +1,12 @@
-/* Rodape */
+/* RODAPE */
+
 .footer {
     background-color: #282c34;
     color: white;
     padding: 50px 20px;
     /* Ajuste o padding para centralizar melhor as colunas */
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
     margin-top: auto;

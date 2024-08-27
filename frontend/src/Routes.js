@@ -1,18 +1,26 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
-import Home from "./Pages/Home";
-import Contato from "./Pages/Contato";
-import Cadastro from "./Pages/Cadastro";
-import TabelaUsuarios from "./Pages/ListaUsuarios";
+
+// PAGES
+import Home from "./Pages/Unidades.js";
+import Contato from "./Pages/Contato.js";
+import Cadastro from "./Pages/Cadastro.js";
+import LoginForm from "./Pages/Login.js";
+import TabelaUsuarios from "./Pages/ListaUsuarios.js";
+import Unidades from "./Pages/Unidades.js";
+import Beneficio from "./Pages/Beneficio.js";
 
 const Rotas = () => {
   return (
     <>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/contato" element={<Contato />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/listaUsuarios" element={<TabelaUsuarios />} />
+        <Route path="/Contato" element={<Contato />} />
+        <Route path="/Cadastro" element={<Cadastro />} />
+        <Route path="/Login" element={<LoginForm />} />
+        <Route path="/ListaUsuarios" element={<TabelaUsuarios />} />
+        <Route path="/Beneficio" element={<Beneficio />} />
+        <Route path="/Unidades" element={<Unidades />} />
       </Routes>
     </>
   );

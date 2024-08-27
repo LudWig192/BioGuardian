@@ -1,0 +1,110 @@
+.table-container {
+    overflow-x: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.add-button {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #54a3f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #81b9f0;
+}
+
+.add-button .icon {
+    margin-right: 8px;
+}
+
+/* Estilo básico para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Estilo para as ações, como ícones */
+.actions {
+    text-align: center;
+}
+
+.icon {
+    cursor: pointer;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.edit-icon {
+    color: #4caf50 !important;
+}
+
+.delete-icon {
+    color: #f44336 !important;
+}
+
+/* Estilos específicos para telas menores */
+@media (max-width: 600px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        border: 1px solid #ddd;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        padding: 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ddd;
+        white-space: nowrap;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+        background: #f4f4f4;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .actions {
+        text-align: right;
+    }
+}

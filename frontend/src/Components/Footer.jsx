@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import "../Style/Footer.css";
+
 const Footer1 = () => {
-        const [email, setEmail] = useState("")
-        const [message, setMessage] = useState("");
+    const [email, setEmail] = useState("")
+    const [message, setMessage] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,10 +27,10 @@ const Footer1 = () => {
                 <div className="footer-column">
                     <h3>Links Úteis</h3>
                     <ul className="footer-links">
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <Link to="/">Início</Link>
+                        <Link to="/">Sobre</Link>
+                        <Link to="/">Contato</Link>
+                        <Link to="/">FAQ </Link>
                     </ul>
                 </div>
                 <div className="footer-column email1">
