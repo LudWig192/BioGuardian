@@ -91,7 +91,7 @@ const ButtonGroup = ({ onDateRangeChange, onStatusFilterChange, onPlanFilterChan
                 </button>
             </div>
             <div className="right-buttons">
-                <button className="icon-button"><BsFillHouseHeartFill /> Controle de salas</button>
+                
                 <button className="icon-button" onClick={handleExportToExcel}><GrDocumentExcel /></button>
                 <button className="icon-button" onClick={handlePrint}><AiFillPrinter /></button>
             </div>
