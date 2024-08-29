@@ -12,20 +12,20 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
 
   const handleInputChange = (e) => {
     if (onChange) {
-      onChange(e);
+      onChange(e); // Certifica-se de que onChange está definido
     }
   };
 
   const handleFormSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Evita o comportamento padrão de submissão
     if (onSubmit) {
-      onSubmit(e); 
+      onSubmit(e); // Passa o evento para onSubmit, se necessário
     }
   };
 
   const handleDelete = () => {
     if (onSubmit) {
-      onSubmit(); 
+      onSubmit(); // Apenas chama onSubmit, sem passar o evento
     }
   };
 

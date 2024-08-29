@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
-import Modal from '../Components/Modal_Exames.jsx';
+import Modal from '../Components/Modal_Exames';
 import '../Style/Agenda.css';
 
 const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
@@ -31,7 +31,8 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
+
         try {
             if (modalType === 'add') {
                 await onAdd(formData);
@@ -39,7 +40,12 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 await onEdit(formData);
             } else if (modalType === 'delete' && modalData) {
                 if (window.confirm('Tem certeza de que deseja excluir este item?')) {
-                    await onDelete(modalData.id);
+                    if (modalData.id) {
+                        await onDelete(modalData.id);
+                    } else {
+                        console.error('ID do item não encontrado.');
+                        alert('ID do item não encontrado.');
+                    }
                 }
             }
         } catch (error) {
@@ -82,12 +88,11 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                                 <FaEdit
                                     className="icon edit-icon"
                                     onClick={() => handleOpenModal('edit', item)}
-                                    aria-label={`Editar ${item.paciente}`}
-                                />
+                                    aria-label='{Editar ${item.paciente}}'/>
                                 <FaTrash
                                     className="icon delete-icon"
                                     onClick={() => handleOpenModal('delete', item)}
-                                    aria-label={`Excluir ${item.paciente}`}
+                                    aria-label='{Excluir ${item.paciente}}'
                                 />
                             </td>
                         </tr>

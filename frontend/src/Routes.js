@@ -11,12 +11,13 @@ import Unidades from "./Pages/Unidades.js";
 import Beneficio from "./Pages/Beneficio.js";
 import Exames from "./Pages/Exames.js"
 import Agenda from "./Pages/Agenda.js";
+import Funcionarios from "./Pages/Funcionarios.js";
 
 const Rotas = () => {
   return (
     <>
       <Routes>
-        <Route path="/" exact element={<Agenda />} />
+        <Route path="/" exact element={<Home />} />
         <Route path="/Contato" element={<Contato />} />
         <Route path="/Cadastro" element={<Cadastro />} />
         <Route path="/Login" element={<LoginForm />} />
