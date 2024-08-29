@@ -1,0 +1,40 @@
+
+.button-container {
+    display: flex;
+    justify-content: center;
+  
+    gap: 100px;
+    padding: 20px;
+  }
+  
+  /* Style the buttons */
+  .botao1 {
+  
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+    transition: all 500ms;
+    font-size: 10px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #5472f0;
+    background-color: #5472f0;
+  
+  }
+  
+  .botao1:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+    outline: 2px solid #54d4f0;
+    box-shadow: 2px 3px 10px -2px #5472f0;
+    background-color: #54d4f0;
+  }
+  
+  /* botao  */

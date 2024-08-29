@@ -1,0 +1,60 @@
+
+/* botoes  */
+
+/* Buttons.css */
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  /* Alinha as linhas verticalmente */
+  align-items: center;
+  /* Centraliza os botões horizontalmente */
+  gap: 40px;
+  /* Espaçamento entre as linhas de botões */
+  padding: 20px;
+  /* Espaçamento ao redor do container */
+}
+
+.button-row {
+  display: flex;
+  gap: 20px;
+  /* Espaçamento entre os botões na mesma linha */
+}
+
+.animated-button {
+  width: 120px;
+  /* Largura do botão */
+  height: 40px;
+  /* Altura do botão */
+  border-radius: 5px;
+  /* Arredondamento das bordas do botão */
+  border: none;
+  /* Remove a borda padrão do botão */
+  background-color: #007bff;
+  /* Cor de fundo do botão */
+  color: #ffffff;
+  /* Cor do texto */
+  font-weight: bold;
+  /* Negrito para o texto */
+  text-transform: uppercase;
+  /* Transforma o texto em maiúsculas */
+  cursor: pointer;
+  /* Cursor em forma de mão ao passar sobre o botão */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  /* Transições suaves */
+}
+
+.animated-button:hover {
+  background-color: #0056b3;
+  /* Cor de fundo ao passar o mouse */
+  transform: scale(1.02);
+  /* Leve aumento do tamanho ao passar o mouse */
+}
+
+.animated-button:focus {
+  outline: none;
+  /* Remove a borda de foco padrão */
+}
+
+
+/* botoes  */

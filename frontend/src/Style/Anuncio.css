@@ -1,0 +1,52 @@
+
+/* Anuncio.css */
+.anuncio-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    background-color: transparent;
+    gap: 20px;
+  }
+  
+  .anuncio-texto {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .anuncio-texto h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .anuncio-texto p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .anuncio-foto {
+    flex: 1;
+    /* A imagem ocupa o espaço restante */
+    display: flex;
+    align-items: center;
+    /* Alinha a imagem verticalmente ao centro */
+    justify-content: center;
+    /* Centraliza a imagem horizontalmente */
+  }
+  
+  .anuncio-foto img {
+    max-width: 100%;
+    /* Ajusta a largura da imagem */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 8px;
+    /* Arredondamento das bordas da imagem */
+  }
+  
+  /* Ajuste a largura da imagem conforme necessário */
+  .foto1 {
+    width: 500px;
+    /* Ajuste o tamanho conforme necessário */
+  }
+  

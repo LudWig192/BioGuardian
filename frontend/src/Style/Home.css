@@ -1,0 +1,58 @@
+.spaced-element {
+    margin-bottom: 20px;
+}
+
+
+
+
+/* pulseira  */
+
+
+.layout-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    height: 70vh;
+    box-sizing: border-box;
+    background-color: #54a3f0;
+}
+
+
+.text-section {
+    flex: 1;
+    padding-right: 10px;
+    color: white;
+}
+
+
+.model-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.model-section iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+
+/* pulseira  */
+
+
+/* slider  */
+
+.carousel-container {
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* slider  */

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
-import Modal from '../Componentes/Modal';
-import '../Css/Agenda.css';
+import Modal from '../Components/Modal_Exames.jsx';
+import '../Style/Agenda.css';
 
 const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     const [modalData, setModalData] = useState(null);
@@ -15,25 +15,12 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     });
 
     const handleOpenModal = (type, item = {}) => {
-        console.log('Abrindo modal com tipo:', type);
-        console.log('Item:', item);
         setModalType(type);
         setModalData(item);
-        if (type === 'edit' && item) {
-            setFormData(item);
-        } else if (type === 'add') {
-            setFormData({
-                agendamento: '',
-                paciente: '',
-                status: '',
-                procedimentos: '',
-                tipoPlano: ''
-            });
-        }
+        setFormData(item);
     };
 
     const handleCloseModal = () => {
-        console.log('Fechando modal');
         setModalData(null);
         setModalType('');
     };
@@ -44,10 +31,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     };
 
     const handleSubmit = async (e) => {
-        // Verifica se e é um evento de formulário antes de chamar preventDefault
-        if (e && e.preventDefault) {
-            e.preventDefault();
-        }
+        e.preventDefault();
         try {
             if (modalType === 'add') {
                 await onAdd(formData);
