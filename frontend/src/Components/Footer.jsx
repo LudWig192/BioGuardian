@@ -26,7 +26,7 @@ const Footer1 = () => {
                 </div>
                 <div className="footer-column">
                     <h3>Links Úteis</h3>
-                    <ul className="footer-links">
+                    <ul className="footer-links">°
                         <Link to="/">Início</Link>
                         <Link to="/">Sobre</Link>
                         <Link to="/">Contato</Link>

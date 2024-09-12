@@ -1,24 +1,28 @@
-/* navbar */
-.Navbar1 {
-    background-color: rgb(238, 238, 238);
-  }
-  
-  .color1 {
-    color: #5472f0;
-    padding-left: 20px;
-  }
-  
-  .botao-pesquisar {
-    background-color: #5472f0;
-    border: none;
-    color: white;
-    cursor: pointer; /* Adiciona um cursor de mão para indicar que é clicável */
-    padding: 10px 20px; /* Adiciona algum padding para melhor aparência */
-    border-radius: 5px; /* Opcional: arredonda os cantos do botão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave na mudança de cor */
-  }
-  
-  .botao-pesquisar:hover {
-    background-color: #54D4f0; /* Cor que o botão terá quando o mouse estiver sobre ele */
-  }
-  /* navbar */
+/* Navbar.css */
+.navbar {
+  background-color: #333; /* Cor de fundo da Navbar */
+}
+
+.MuiTooltip-tooltip {
+  font-size: 0.875rem; /* Tamanho da fonte do Tooltip */
+}
+
+.MuiTooltip-tooltipPlacementBottom {
+  margin-top: 8px; /* Margem do Tooltip quando está embaixo do ícone */
+}
+
+.MuiIconButton-root {
+  transition: transform 0.3s ease; /* Efeito suave de transformação */
+}
+
+.MuiIconButton-root:hover {
+  transform: scale(1.1); /* Aumenta o ícone ao passar o cursor */
+}
+
+.MuiIconButton-root {
+  color: white; /* Cor dos ícones */
+}
+
+.MuiIconButton-root:hover {
+  color: #a0a0a0; /* Cor dos ícones ao passar o cursor */
+}

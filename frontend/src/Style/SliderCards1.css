@@ -1,0 +1,193 @@
+/* Contêiner do slider invisível */
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    background-color: #ffffff; /* Fundo do contêiner branco */
+    border-radius: 12px; /* Bordas arredondadas no contêiner */
+    border: none; /* Sem borda */
+    box-shadow: none; /* Sem sombra */
+}
+
+/* Slider com perspectiva 3D */
+.slider {
+    perspective: 2000px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Carrossel com efeito de rotação */
+.carousel {
+    position: relative;
+    width: 250px;
+    height: 260px; /* Altura aumentada para dar mais espaço */
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out; /* Tempo de animação ajustado para 0.5s */
+    transform: rotateY(0deg);
+}
+
+/* Cards dentro do carrossel */
+.card {
+    position: absolute;
+    width: 180px;
+    height: 260px; /* Altura aumentada do card */
+    border: 1px solid #5472f0; /* Borda azul */
+    border-radius: 8px; /* Bordas arredondadas */
+    background: #e6f0ff; /* Atualiza a cor de fundo para #e6f0ff */
+    text-align: center;
+    padding: 20px; /* Ajuste o padding se necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Tempo de animação ajustado para 0.5s */
+    overflow: hidden; /* Esconde partes dos pseudo-elementos que saem do card */
+    box-sizing: border-box; /* Garante que padding e bordas não alterem o tamanho do card */
+}
+
+/* Card ativo com borda e sombra destacadas */
+.card.active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+/* Imagem de perfil */
+.profile-pic {
+    width: 50px; /* Tamanho ajustado */
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #5472f0; /* Borda azul */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+/* Conteúdo dos cards */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+/* Título dentro do card */
+.content h2 {
+    font-size: 1em; /* Ajustado para melhor ajuste */
+    margin: 10px 0;
+    color: #5472f0; /* Azul */
+    font-weight: bold;
+}
+
+/* Estilização dos tópicos */
+.content ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+    width: 100%;
+}
+
+/* Estiliza os itens da lista */
+.content li {
+    font-size: 0.9em; /* Ajustado para melhor ajuste */
+    margin: 4px 0;
+    color: #333; /* Cor padrão do texto */
+}
+
+/* Botões dos cards com estilo minimalista */
+.card-button {
+    margin-top: 20px; /* Ajustado para subir o botão mais próximo do conteúdo */
+    padding: 6px 12px; /* Tamanho do botão */
+    border: 1px solid #0056b3; /* Atualiza a cor da borda para #0056b3 */
+    border-radius: 4px; /* Bordas arredondadas mais sutis */
+    background-color: #0056b3; /* Atualiza a cor de fundo para #0056b3 */
+    color: #ffffff; /* Cor do texto branca */
+    font-size: 0.8em; /* Tamanho da fonte ajustado */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; /* Adiciona transição suave para o efeito de transformação */
+}
+
+/* Estilo do botão ao passar o mouse */
+.card-button:hover {
+    background-color: #003d80; /* Cor de fundo mais escura ao passar o mouse */
+    color: #ffffff; /* Cor do texto branca ao passar o mouse */
+    border-color: #003d80; /* Cor da borda mais escura ao passar o mouse */
+    transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+}
+
+/* Estilo do botão ao clicar */
+.card-button:active {
+    transform: translateY(1px); /* Leve depressão ao clicar */
+}
+
+/* Botões de navegação minimalistas */
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: #5472f0; /* Azul */
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 50%;
+    font-size: 1.5em; /* Tamanho ajustado para melhor visibilidade */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Linhas no topo e na parte inferior do card */
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #5472f0; /* Cor da linha */
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.card::before {
+    top: 0;
+    transform: scaleX(0); /* Inicia com a linha invisível */
+    /* Adicione border-radius para alinhar com a borda arredondada */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card::after {
+    bottom: 0;
+    transform: scaleX(0); /* Inicia com a linha invisível */
+    /* Adicione border-radius para alinhar com a borda arredondada */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.card:hover::before,
+.card:hover::after {
+    transform: scaleX(1); /* Expande a linha para preencher a largura */
+}

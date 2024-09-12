@@ -1,11 +1,12 @@
 //Contato
 import React from "react";
+import ContatoForm from '../Components/ContatoForm';
 
 const Contato = () => {
   return (
     <>
       <div>
-        <h2>Página Contato</h2>
+        <ContatoForm />
         {/* Conteúdo da página Contato */}
       </div>
     </>

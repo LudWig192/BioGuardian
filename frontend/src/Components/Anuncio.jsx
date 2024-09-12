@@ -6,7 +6,7 @@ const Anuncio = () => {
   return (
     <div className="anuncio-container">
       <div className="anuncio-texto">
-        <h1>Bem-vindo ao Hospital   Exemplo</h1>
+        <h1>Bem-vindo ao Hospital</h1>
         <p>
           No Hospital Exemplo, nossa missão é oferecer cuidados de saúde excepcionais e
           atendimento personalizado. Com uma equipe de profissionais altamente qualificados e

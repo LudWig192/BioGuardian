@@ -1,26 +1,27 @@
 import React from 'react';
 import "../Style/Pulseira.css";
 
-
 function Pulseira1() {
   return (
     <div className="layout-container">
       <div className="text-section">
-      
-        <h1>Lorem Ipsum </h1>
+        <h1>Pulseira de Monitoramento de Saúde</h1>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique, nulla eget aliquam viverra, ante justo maximus dui, nec vehicula risus dui nec ex. Phasellus ac ante et ante scelerisque vestibulum. Maecenas lacinia eu ipsum et scelerisque. 
+          Ao assinar qualquer plano, você receberá uma pulseira de monitoramento de saúde como um bônus exclusivo. Este dispositivo avançado auxilia no acompanhamento contínuo do bem-estar do paciente, fornecendo dados precisos e em tempo real sobre:
         </p>
+        <ul>
+          <li><strong>Frequência Cardíaca:</strong> Monitoramento contínuo da frequência cardíaca.</li>
+          <li><strong>Níveis de Atividade Física:</strong> Avaliação das atividades físicas realizadas.</li>
+          <li><strong>Qualidade do Sono:</strong> Análise detalhada do padrão de sono.</li>
+        </ul>
       </div>
       <div className="model-section">
         <iframe
-          title="Clock fitness bracelet"
+          title="Modelo de Pulseira de Monitoramento de Saúde"
           frameBorder="0"
           allowFullScreen
-          mozallowfullscreen="true"
-          webkitallowfullscreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
           src="https://sketchfab.com/models/36cf952b806b47099ab53b0d53844f17/embed?ui_theme=dark"
+          aria-label="Modelo de pulseira de monitoramento de saúde"
         ></iframe>
       </div>
     </div>

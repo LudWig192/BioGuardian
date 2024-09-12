@@ -16,18 +16,18 @@ const Navbar = () => {
                         <HomeIcon />
                     </IconButton>
                 </Tooltip>
-                <Tooltip title="Beneficio" arrow>
-                    <IconButton color="inherit" component={Link} to="/Beneficio">
+                <Tooltip title="Sobre" arrow>
+                    <IconButton color="inherit" component={Link} to="/about">
                         <InfoIcon />
                     </IconButton>
                 </Tooltip>
                 <Tooltip title="Contato" arrow>
-                    <IconButton color="inherit" component={Link} to="/Contato">
+                    <IconButton color="inherit" component={Link} to="/contact">
                         <ContactMailIcon />
                     </IconButton>
                 </Tooltip>
                 <Tooltip title="Planos" arrow>
-                    <IconButton color="inherit" component={Link} to="/Exames">
+                    <IconButton color="inherit" component={Link} to="/plans">
                         <LocalMallIcon />
                     </IconButton>
                 </Tooltip>

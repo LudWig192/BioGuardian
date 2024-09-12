@@ -20,8 +20,7 @@ const Switch = () => {
             <input
                 type="checkbox"
                 checked={isChecked}
-                onChange={handleChange}
-            />
+                onChange={handleChange}/>
             <span className="slider"></span>
         </label>
     );
@@ -48,7 +47,7 @@ const SwitchWithIconsAndAvatar = ({ notificationCount, latestPatient }) => {
             <Switch />
             <div className="right-items">
                 <div className="icons">
-                    <TfiAgenda className="icon" />
+                   
                     <TbMessageCircleFilled className="icon" onClick={toggleQRCode} />
                     <div className="notification-icon" onClick={toggleDropdown}>
                         <FaBell className="icon" />

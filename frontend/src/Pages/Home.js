@@ -10,11 +10,10 @@ function Home() {
   return (
     <>
       <h1> </h1>
-
       <Anuncio />
       <h1> </h1>
-      <Buttons />
-      <h1> </h1>
+      {/* <Buttons />
+      <h1> </h1> */}
       <Pulseira1 />
       <h1> </h1>
       <Incricao />

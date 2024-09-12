@@ -1,0 +1,19 @@
+/* SideBar.css */
+.toggle-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    border-radius: 50%;
+    padding: 10px;
+    transition: left 0.3s ease;
+  }
+  
+  .toggle-button.collapsed {
+    left: 80px;
+  }
+  
+  .toggle-button:not(.collapsed) {
+    left: 260px;
+  }
+  
