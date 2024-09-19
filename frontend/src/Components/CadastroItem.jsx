@@ -6,9 +6,6 @@ const CadastroItem = ({ cadastro, onDelete }) => {
       <td>{cadastro.id}</td>
       <td>{cadastro.nome}</td>
       <td>{cadastro.email}</td>
-      <td>{cadastro.cpf}</td>
-      <td>{cadastro.endereco}</td>
-      <td>{cadastro.telefone}</td>
       <td>
         <button onClick={() => onDelete(cadastro.id)}>Excluir</button>
       </td>
@@ -17,3 +14,4 @@ const CadastroItem = ({ cadastro, onDelete }) => {
 };
 
 export default CadastroItem;
+

@@ -66,8 +66,11 @@ p {
     align-items: center;
 }
 
-.Link a{
-    margin-left: 3px;
+.link-text {
+    margin-left: 4px;
+}
+
+.link-text a {
     color: black;
     text-decoration: underline #54a3f0;
 }

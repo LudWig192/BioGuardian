@@ -31,6 +31,16 @@ const Navbar = () => {
                         <LocalMallIcon />
                     </IconButton>
                 </Tooltip>
+                <Tooltip title="Cadastro" arrow>
+                    <IconButton color="inherit" component={Link} to="/Cadastro">
+                        <LocalMallIcon />
+                    </IconButton>
+                </Tooltip>
+                 <Tooltip title="ListaUsuarios" arrow>
+                    <IconButton color="inherit" component={Link} to="/TabelaUsuarios">
+                        <LocalMallIcon />
+                    </IconButton>
+                </Tooltip>
             </Toolbar>
         </AppBar>
     );

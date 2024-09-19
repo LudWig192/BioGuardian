@@ -1,5 +1,5 @@
 import React from "react";
-import {Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // PAGES
 import Home from "./Pages/Home.js";
@@ -18,13 +18,28 @@ const Rotas = () => {
   return (
     <>
       <Routes>
+        {/* Cliente sem cadastro */}
         <Route path="/" exact element={<Home />} />
-        <Route path="/Contato" element={<Contato />} />
-        <Route path="/Exames" element={<Exames />} />
         <Route path="/Login" element={<LoginForm />} />
-        <Route path="/Agenda" element={<Agenda />} />
+        <Route path="/Cadastro" element={<Cadastro />} />
         <Route path="/Beneficio" element={<Beneficio />} />
-        <Route path="/Unidades" element={<Funcionarios />} />
+        
+        {/* Cliente com cadastro */}
+        <Route path="/HomeCliente" element={<HomeCliente />} />
+        <Route path="/Exames" element={<Exames />} />
+        <Route path="/Contato" element={<Contato />} />
+        <Route path="/Unidades" element={<Unidades />} />
+      
+        
+        {/* Rotas do medico */}
+        <Route path="/HomeMedico" element={<HomeMedico />} />
+        <Route path="/Agenda" element={<Agenda />} />
+
+        
+        {/* Rotas do Adm*/}
+        <Route path="/Funcionarios" element={<Funcionarios />} />
+        <Route path="/TabelaUsuarios" element={<TabelaUsuarios />} />
+
       </Routes>
     </>
   );

@@ -1,11 +1,12 @@
 import React from "react";
-import CadastroForm from "../Components/Cadastro";
+import CadastroForm from "../Components/CadastroForm";
 
 const Cadastro = () => {
   return (
     <>
       <div>
         <CadastroForm />
+
       </div>
     </>
   );
