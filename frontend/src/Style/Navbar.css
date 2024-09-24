@@ -1,28 +1,159 @@
-/* Navbar.css */
+/* Estilos principais da navbar */
 .navbar {
-  background-color: #333; /* Cor de fundo da Navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1e3a5f;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
-.MuiTooltip-tooltip {
-  font-size: 0.875rem; /* Tamanho da fonte do Tooltip */
+.nav-content {
+  display: flex;
+  align-items: center;
 }
 
-.MuiTooltip-tooltipPlacementBottom {
-  margin-top: 8px; /* Margem do Tooltip quando está embaixo do ícone */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  transition: transform 0.3s ease;
 }
 
-.MuiIconButton-root {
-  transition: transform 0.3s ease; /* Efeito suave de transformação */
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.MuiIconButton-root:hover {
-  transform: scale(1.1); /* Aumenta o ícone ao passar o cursor */
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
 }
 
-.MuiIconButton-root {
-  color: white; /* Cor dos ícones */
+.icon {
+  margin-right: 8px;
 }
 
-.MuiIconButton-root:hover {
-  color: #a0a0a0; /* Cor dos ícones ao passar o cursor */
+/* Menu de usuário */
+.user-section {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.user-image:hover {
+  transform: scale(1.1);
+}
+
+.user-menu {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  background-color: #fff;
+  color: #1e3a5f;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #1e3a5f;
+  display: flex;
+  align-items: center;
+}
+
+.menu-button:hover {
+  color: #0f67f7;
+  transform: scale(1.05);
+}
+
+/* Botão de menu de hambúrguer */
+.hamburger-menu {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-menu:focus {
+  outline: none;
+}
+
+/* Estilos para menu mobile */
+.nav-links.open {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #1e3a5f;
+  flex-direction: column;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+}
+
+.nav-links.open .nav-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Efeitos de animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .user-menu {
+    top: 50px;
+  }
+
+  .user-image {
+    width: 40px;
+    height: 40px;
+  }
+}
+.imagem{
+  height: 80px;
 }

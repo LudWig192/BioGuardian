@@ -1,0 +1,73 @@
+/* AlertCorpo.css */
+
+/* Estilo básico para o popup do alerta */
+.swal2-popup {
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* Reduz o tamanho da fonte para deixar o popup menor */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Ajusta a sombra */
+    padding: 15px; /* Reduz o padding */
+    width: 80vw; /* Ajusta a largura do popup para 80% da viewport */
+    max-width: 500px; /* Define um tamanho máximo menor para o popup */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+    background-color: #fff; /* Define o fundo do popup como branco */
+    border: 1px solid #dcdcdc; /* Adiciona uma borda leve */
+    z-index: 9999; /* Garante que o SweetAlert2 fique no topo */
+  }
+  
+  /* Estilo para o título do alerta */
+  .swal2-title {
+    color: #d65563; /* Cor personalizada para o título */
+    font-size: 1.2em; /* Ajusta o tamanho da fonte */
+    font-weight: bold;
+  }
+  
+  /* Estilo para o texto HTML do alerta */
+  .swal2-html-container {
+    color: #666;
+    font-size: 1em; /* Ajusta o tamanho da fonte */
+  }
+  
+  /* Estilo para a barra de progresso do timer */
+  .swal2-timer-progress-bar {
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 5px;
+  }
+  
+  /* Estilo para o botão de confirmação */
+  .swal2-confirm {
+    background-color: #d65563; /* Cor personalizada para o botão */
+    border-color: #d65563;
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 16px; /* Ajusta o padding do botão */
+    font-size: 13px; /* Ajusta o tamanho da fonte do botão */
+  }
+  
+  .swal2-confirm:hover {
+    background-color: #b9464f;
+    border-color: #b9464f;
+  }
+  
+  /* Estilo específico para o container do SweetAlert2 */
+  .swal2-container {
+    z-index: 9999; /* Garante que o SweetAlert2 fique no topo */
+    position: fixed; /* Garante que o alerta fique fixo na tela */
+    top: 60%; /* Move o alerta mais para baixo */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o posicionamento */
+  }
+  
+  /* Remove a cor do fundo cinza do backdrop */
+  .swal2-backdrop {
+    background: transparent; /* Torna o fundo do backdrop transparente */
+  }
+  
+  /* Remove a cor e a animação do backdrop, se necessário */
+  .swal2-backdrop-show,
+  .swal2-noanimation {
+    background: transparent !important; /* Torna o fundo transparente */
+    animation: none; /* Remove qualquer animação */
+  }
+  

@@ -19,9 +19,9 @@ const App = () => {
     <>
       <Router>
         <Navegacao />
-          <Rotas />
-          <Footer />
-        </Router>
+        <Rotas />
+        <Footer />  
+      </Router>
     </>
   );
 };

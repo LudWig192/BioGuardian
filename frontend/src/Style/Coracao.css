@@ -1,0 +1,171 @@
+/* Layout do contêiner do coração e dos batimentos */
+.heartbeat-container {
+    display: flex;
+    align-items: center; /* Alinha o coração e o contador ao centro */
+    gap: 10px; /* Espaçamento entre o coração e o contador de batimentos */
+    margin-top: 20px; /* Ajusta a posição do coração para baixo */
+    flex-wrap: wrap; /* Permite que o conteúdo se ajuste em telas menores */
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    padding-left: 20px; /* Adiciona espaçamento à esquerda */
+  }
+  
+  /* Ajuste para o tamanho do coração */
+  .heartbeatloader {
+    position: relative;
+    width: 10vmin;
+    height: 10vmin;
+    margin-right: 20px; /* Espaçamento entre o coração e o contador de batimentos */
+  }
+  
+  /* Ajustes para o desenho do coração */
+  .svgdraw {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transform: scale(1.4);
+    z-index: 3;
+  }
+  
+  /* Estilo das linhas dentro do coração */
+  .path {
+    stroke: rgba(255, 255, 255, 0.95);
+    stroke-width: 4;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
+    animation: draw 1.5s infinite forwards normal linear;
+    animation-delay: 0.1s;
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Ajustes para os círculos internos e externos */
+  .innercircle {
+    position: absolute;
+    top: 17%;
+    left: 100.5%;
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 160%;
+    height: auto;
+    z-index: 1;
+    opacity: 0.97;
+    animation: innerbeat 1.5s infinite linear forwards;
+  }
+  
+  .innercircle:before,
+  .innercircle:after {
+    position: absolute;
+    content: "";
+    left: 25%;
+    top: 0;
+    width: 25%;
+    height: auto;
+    padding-bottom: 40%;
+    background: rgb(225, 95, 95);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  .innercircle:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  
+  @keyframes innerbeat {
+    0% {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  
+    10% {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  
+    50% {
+      transform: translate(-50%, -50%) scale(1.3);
+    }
+  
+    60% {
+      transform: translate(-50%, -50%) scale(1.25);
+    }
+  
+    75% {
+      transform: translate(-50%, -50%) scale(1.3);
+    }
+  }
+  
+  .outercircle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(238, 92, 92, 0.9);
+    box-shadow: 0 0 30px 0px #fff;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    transform: scale(1.2);
+    animation: outerbeat 1.5s infinite linear forwards;
+  }
+  
+  @keyframes outerbeat {
+    0% {
+      transform: scale(1.2);
+    }
+  
+    10% {
+      transform: scale(1.2);
+    }
+  
+    50% {
+      transform: scale(1.3);
+    }
+  
+    60% {
+      transform: scale(1.25);
+    }
+  
+    75% {
+      transform: scale(1.3);
+    }
+  }
+  
+  /* Estilo para o contador de batimentos */
+  .beat-count {
+    font-size: 2rem; /* Tamanho da fonte do contador */
+    font-weight: bold;
+    color: #ff4081; /* Cor do texto */
+    display: flex;
+    align-items: center;
+    margin-top: 2vmin; /* Espaço acima do contador de batimentos, ajuste conforme necessário */
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .heartbeatloader {
+      width: 15vmin;
+      height: 15vmin;
+    }
+  
+    .beat-count {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heartbeatloader {
+      width: 20vmin;
+      height: 20vmin;
+    }
+  
+    .beat-count {
+      font-size: 1rem;
+    }
+  }
+  
