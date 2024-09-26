@@ -43,48 +43,35 @@ const LoginForm = () => {
             setError('Erro ao conectar com o servidor.');
         }
     };
-
-
-
     return (
         <div className="Background-2">
             <div className="container">
                 <div className="form-container">
-                    {isLoggedIn ? (
-                        <div>
-                            <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-                        </div>
-                    ) : (
-                        <>
-                            {error && <p style={{ color: 'red' }}>{error}</p>}
-                            <h2>Login</h2>
-                            <form onSubmit={handleLogin} className="custom-form">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="form-control"
-                                    required
-                                />
-                                <input
-                                    type="password"
-                                    name="senha"
-                                    placeholder="Senha"
-                                    value={senha}
-                                    onChange={(e) => setSenha(e.target.value)}
-                                    className="form-control"
-                                    required
-                                />
-                                <button type="submit" className="btn-primary">Salvar</button>
-                            </form>
-                            <div className="red-cdsto">
-                                <p>Não tem <span className="link-text"><Link to="/Cadastro">Cadastro?</Link></span></p>
-                            </div>
-
-                        </>
-                    )}
+                    <h2>Login</h2>
+                    <form onSubmit={handleLogin} className="custom-form">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="form-control"
+                            required
+                        />
+                        <input
+                            type="password"
+                            name="senha"
+                            placeholder="Senha"
+                            value={senha}
+                            onChange={(e) => setSenha(e.target.value)}
+                            className="form-control"
+                            required
+                        />
+                        <button type="submit" className="btn-primary">Salvar</button>
+                    </form>
+                    <div className="red-cdsto">
+                        <p>Não tem <span className="link-text"><Link to="/Cadastro">Cadastro?</Link></span></p>
+                    </div>
                 </div>
             </div>
         </div>
