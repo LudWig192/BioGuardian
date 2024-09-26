@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import 'sweetalert2/dist/sweetalert2.min.css';
 // import { BodyComponent } from 'reactjs-human-body';
-import TabelaProblemas from '../Components/TabelaCorpo.jsx';
-import showAlertWithCountdown from '../Components/Alert.jsx';
+import TabelaProblemas from '../Components/TabelaCorpo';
+import showAlertWithCountdown from '../Components/Alert';
 import '../Style/Anatomia.css';
 
 const problemasPorParte = {

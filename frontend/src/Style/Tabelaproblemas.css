@@ -1,92 +1,127 @@
-/* Layout principal da aplicação */
-.app-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+/* HistoricoMedico.css */
+
+.historico-medico {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
+}
+
+.historico-medico h2 {
+  text-align: center;
+  color: #1a3c6c;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.historico-medico h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #ff6363;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.historico-medico label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2a5076;
+  font-size: 18px;
+}
+
+.historico-medico select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #c4d3e9;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.historico-medico select:focus {
+  border-color: #ff6363;
+  box-shadow: 0 0 10px rgba(255, 99, 99, 0.4);
+  outline: none;
+}
+
+.medical-records {
+  margin-top: 40px;
+}
+
+.record-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f4f8 100%);
+  border: 1px solid #d4d4d4;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.record-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.record-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background-color: #ff6363;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.record-card p {
+  margin: 12px 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.record-card p strong {
+  color: #1a3c6c;
+  font-weight: 700;
+}
+
+.historico-medico p.no-records {
+  color: #ff5a5f;
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.historico-medico p.no-records:before {
+  content: '⚠️ ';
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .historico-medico {
     padding: 20px;
-    min-height: 40vh;
   }
-  
-  /* Contêineres para corpo e tabela */
-  .corpo-container, .tabela-container {
-    flex: 1;
+
+  .record-card {
+    padding: 20px;
   }
-  
-  /* Estilo para o contêiner da tabela */
-  .tabela-container {
-    padding: 0;
-    width: 50%;
-    max-width: 100%;
-    /* margin-top: -270px; */
-    margin-left: 20px; /* Adiciona margem à esquerda para mover a tabela para a direita */
+
+  .historico-medico h2 {
+    font-size: 28px;
   }
-  
-  /* Título da tabela */
-  .tabela-container h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  /* Estilo da tabela */
-  .tabela-problemas {
-    width: 80%; /* Ajusta a largura da tabela para 80% do contêiner */
-    border-collapse: collapse;
-    table-layout: auto; /* Ajusta a largura das colunas conforme o conteúdo */
-    margin: 0 auto; /* Centraliza a tabela horizontalmente */
-  }
-  
-  /* Estilo das células da tabela */
-  .tabela-problemas th, .tabela-problemas td {
-    border: 1px solid #000000;
-    padding: 8px;
-    text-align: left;
-    font-size: 14px;
-  }
-  
-  /* Estilo do cabeçalho da tabela */
-  .tabela-problemas th {
-    background-color: #f8f9fa;
-  }
-  
-  /* Estilo das linhas alternadas da tabela */
-  .tabela-problemas tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Estilo para o hover das linhas da tabela */
-  .tabela-problemas tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
-    .app-container {
-      flex-direction: column;
-    }
-  
-    .tabela-container {
-      width: 100%;
-      margin-top: 20px;
-      margin-left: 0; /* Remove a margem à esquerda em telas menores */
-    }
-  
-    .tabela-problemas {
-      width: 100%; /* Ajusta a tabela para usar a largura total disponível em telas menores */
-      font-size: 12px; /* Reduz o tamanho da fonte para dispositivos menores */
-    }
-  
-    .tabela-problemas th, .tabela-problemas td {
-      padding: 6px; /* Ajusta o padding para dispositivos menores */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .tabela-problemas {
-      font-size: 10px; /* Reduz ainda mais o tamanho da fonte para dispositivos muito pequenos */
-    }
-  
-    .tabela-problemas th, .tabela-problemas td {
-      padding: 4px; /* Ajusta o padding para dispositivos muito pequenos */
-    }
-  }
+}
