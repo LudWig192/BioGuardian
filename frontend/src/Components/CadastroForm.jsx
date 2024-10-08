@@ -1,14 +1,11 @@
-// CadastroForm.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import '../Style/Cadastro.css';
+import { Link } from 'react-router-dom';
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
-    cpf: '',
-    endereco: '',
-    telefone: '',
     senha: ''
   });
 
@@ -23,15 +20,12 @@ const CadastroForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3001/cadastros', formData);
-      alert('Cadastro criado com sucesso!');
+      const response = await axios.post('http://localhost:3001/cadastros', formData);
+      alert(response.data.message);
       // Limpar o formulário após o envio bem-sucedido
       setFormData({
         nome: '',
         email: '',
-        cpf: '',
-        endereco: '',
-        telefone: '',
         senha: ''
       });
     } catch (error) {
@@ -41,15 +35,50 @@ const CadastroForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
-      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-      <input type="text" name="cpf" placeholder="CPF" value={formData.cpf} onChange={handleChange} />
-      <input type="text" name="endereco" placeholder="Endereço" value={formData.endereco} onChange={handleChange} />
-      <input type="number" name="telefone" placeholder="Telefone" value={formData.telefone} onChange={handleChange} />
-      <input type="password" name="senha" placeholder="Senha" value={formData.senha} onChange={handleChange} />
-      <button type="submit">Salvar</button>
-    </form>
+    <div className="Background">
+      <div className="container">
+        <div className="form-container">
+          <h2>Cadastro</h2>
+          <form onSubmit={handleSubmit} className="custom-form">
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome"
+              value={formData.nome}
+              onChange={handleChange}
+              className="form-control"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              className="form-control"
+              required
+            />
+            <input
+              type="password"
+              name="senha"
+              placeholder="Senha"
+              value={formData.senha}
+              onChange={handleChange}
+              className="form-control"
+              required
+            />
+            <label className="form-check-label">
+              <input type="checkbox" required/>
+              Concordo com os termos de uso
+            </label>
+            <button type="submit" className="btn-primary">Salvar</button>
+          </form>
+          <div className="red-lgn">
+          <p>Não tem <span className="link-text"><Link to="/Login">Login?</Link></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

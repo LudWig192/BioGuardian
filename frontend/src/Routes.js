@@ -20,24 +20,42 @@ import Funcionarios from "./Pages/Funcionarios.js";
 
 
 const Rotas = () => {
-  return (
-    <>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/Cadastro" exact element={<Cadastro />} />
-        <Route path="/HomeCliente" exact element={<HomeCliente />} />
-        <Route path="/TabelaUsuarios" exact element={<TabelaUsuarios />} />
-        <Route path="/Contato" element={<Contato />} />
-        <Route path="/HomeMedico" element={<HomeMedico />} />
-        <Route path="/Exames" element={<Exames />} />
-        <Route path="/Login" element={<LoginForm />} />
-        <Route path="/Agenda" element={<Agenda />} />
-        <Route path="/Beneficio" element={<Beneficio />} />
-        <Route path="/Unidades" element={<Funcionarios />} />
-        <Route path="Unidades" exact element={<Unidades />} />
-      </Routes>
-    </>
-  );
+        return (
+                <>
+                        <Routes>
+                                {/* Cliente sem cadastro */}
+                                <Route path="/" exact element={<HomeMedico />} />
+                                <Route path="/Cadastro" exact element={<Cadastro />} />
+                                <Route path="/HomeCliente" exact element={<HomeCliente />} />
+                                <Route path="/TabelaUsuarios" exact element={<TabelaUsuarios />} />
+                                <Route path="/Contato" element={<Contato />} />
+                                <Route path="/HomeMedico" element={<HomeMedico />} />
+                                <Route path="/Exames" element={<Exames />} />
+
+                                <Route path="/Login" element={<LoginForm />} />
+                                <Route path="/Cadastro" element={<Cadastro />} />
+                                <Route path="/Beneficio" element={<Beneficio />} />
+                                <Route path="/Unidades" element={<Funcionarios />} />
+                                <Route path="Unidades" exact element={<Unidades />} />
+
+                                {/* Cliente com cadastro */}
+                                <Route path="/HomeCliente" element={<HomeCliente />} />
+                                <Route path="/Exames" element={<Exames />} />
+                                <Route path="/Contato" element={<Contato />} />
+                                <Route path="/Unidades" element={<Unidades />} />
+
+
+                                {/* Rotas do medico */}
+                                <Route path="/HomeMedico" element={<HomeMedico />} />
+                                <Route path="/Agenda" element={<Agenda />} />
+
+
+                                {/* Rotas do Adm*/}
+                                <Route path="/Funcionarios" element={<Funcionarios />} />
+                                <Route path="/TabelaUsuarios" element={<TabelaUsuarios />} />
+                        </Routes>
+                </>
+        );
 };
 
 export default Rotas;

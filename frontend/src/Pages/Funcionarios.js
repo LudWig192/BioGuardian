@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -8,12 +8,6 @@ import '../Style/Funcionario.css';
 
 const TabelaFuncionarios = () => {
     const [medicos, setMedicos] = useState([]);
-    const [plantaoMedicos, setPlantaoMedicos] = useState([
-        { nome: 'Dr. João Silva', especialidade: 'Cardiologia', numeroRegistro: '12345', horarioTrabalho: '08:00 - 14:00', status: 'Ativo', plantao: 'Sim' },
-        { nome: 'Dra. Maria Oliveira', especialidade: 'Neurologia', numeroRegistro: '23456', horarioTrabalho: '14:00 - 20:00', status: 'Ativo', plantao: 'Sim' },
-        { nome: 'Dr. Pedro Santos', especialidade: 'Pediatria', numeroRegistro: '34567', horarioTrabalho: '20:00 - 02:00', status: 'Ativo', plantao: 'Sim' },
-        { nome: 'Dra. Ana Costa', especialidade: 'Ortopedia', numeroRegistro: '45678', horarioTrabalho: '02:00 - 08:00', status: 'Ativo', plantao: 'Sim' }
-    ]);
     const [showModal, setShowModal] = useState(false);
     const [showPlantao, setShowPlantao] = useState(false);
     const [modalType, setModalType] = useState('');
@@ -27,6 +21,25 @@ const TabelaFuncionarios = () => {
         status: '',
         plantao: ''
     });
+
+    const plantaoMedicos = [
+        { nome: 'Dr. João Silva', especialidade: 'Cardiologia', numeroRegistro: '12345', horarioTrabalho: '08:00 - 14:00', status: 'Ativo', plantao: 'Sim' },
+        { nome: 'Dra. Maria Oliveira', especialidade: 'Neurologia', numeroRegistro: '23456', horarioTrabalho: '14:00 - 20:00', status: 'Ativo', plantao: 'Sim' },
+        { nome: 'Dr. Pedro Santos', especialidade: 'Pediatria', numeroRegistro: '34567', horarioTrabalho: '20:00 - 02:00', status: 'Ativo', plantao: 'Sim' },
+        { nome: 'Dra. Ana Costa', especialidade: 'Ortopedia', numeroRegistro: '45678', horarioTrabalho: '02:00 - 08:00', status: 'Ativo', plantao: 'Sim' }
+    ];
+
+    useEffect(() => {
+        fetchMedicos();
+        const intervalId = setInterval(fetchMedicos, 1000);
+        return () => clearInterval(intervalId); 
+    }, []);
+
+    const fetchMedicos = async () => {
+        const response = await fetch('http://localhost:3001/medicos');
+        const data = await response.json();
+        setMedicos(data);
+    };
 
     const handleClose = () => setShowModal(false);
     const handleShow = (type, index = null) => {
@@ -58,36 +71,49 @@ const TabelaFuncionarios = () => {
         return timeRegex.test(startTime) && timeRegex.test(endTime);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        const horarioTrabalho = `${formValues.horarioTrabalhoInicio} - ${formValues.horarioTrabalhoFim}`;
+
         if (!validateTimeFormat(formValues.horarioTrabalhoInicio, formValues.horarioTrabalhoFim)) {
             alert('Formato de horário inválido. Use HH:MM');
             return;
         }
-        const horarioTrabalho = `${formValues.horarioTrabalhoInicio} - ${formValues.horarioTrabalhoFim}`;
+
         if (modalType === 'add') {
-            setMedicos([...medicos, { ...formValues, horarioTrabalho }]);
+            await fetch('http://localhost:3001/medicos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ ...formValues, horarioTrabalho }),
+            });
         } else if (modalType === 'edit') {
-            const updatedMedicos = medicos.map((medico, index) =>
-                index === currentIndex ? { ...formValues, horarioTrabalho } : medico
-            );
-            setMedicos(updatedMedicos);
+            await fetch(`http://localhost:3001/medicos/${medicos[currentIndex].id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ ...formValues, horarioTrabalho }),
+            });
         } else if (modalType === 'delete' && currentIndex !== null) {
-            if (window.confirm('Tem certeza de que deseja excluir este médico?')) {
-                setMedicos(medicos.filter((_, i) => i !== currentIndex));
-            }
+            await fetch(`http://localhost:3001/medicos/${medicos[currentIndex].id}`, {
+                method: 'DELETE',
+            });
         }
+
+        fetchMedicos(); // Atualiza a lista após operação
         handleClose();
     };
 
     return (
         <div className="table-container">
             <div className="button-container">
-                <Button className="btn-add" onClick={() => { setShowPlantao(false); handleShow('add'); }}>
+                <Button className="btn-add" onClick={() => handleShow('add')}>
                     Adicionar Médico
                 </Button>
-                <Button className="btn-plantao" onClick={() => setShowPlantao(true)}>
-                    Médicos em plantão
+                <Button className="btn-plantao" onClick={() => setShowPlantao(!showPlantao)}>
+                    {showPlantao ? 'Ver Todos os Médicos' : 'Médicos em Plantão'}
                 </Button>
             </div>
 
@@ -105,7 +131,7 @@ const TabelaFuncionarios = () => {
                     </thead>
                     <tbody>
                         {medicos.map((medico, index) => (
-                            <tr key={index}>
+                            <tr key={medico.id}>
                                 <td>{medico.nome}</td>
                                 <td>{medico.especialidade}</td>
                                 <td>{medico.numeroRegistro}</td>

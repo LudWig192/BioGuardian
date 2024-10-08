@@ -1,0 +1,71 @@
+
+.task-item {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* O componente ocupa o espaço disponível */
+}
+
+.task-item-image {
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #4caf50;
+    /* Borda verde na imagem */
+    width: 50px;
+    /* Largura fixa */
+    height: 50px;
+    /* Altura fixa */
+}
+
+.task-item-content {
+    flex-grow: 1;
+}
+
+.task-item-title {
+    margin: 0;
+    font-size: 1.4em;
+    /* Tamanho maior para o título */
+    color: #333;
+    /* Cor do título */
+}
+
+.task-item-date {
+    margin: 5px 0;
+    font-size: 1em;
+    /* Tamanho de fonte padrão */
+    color: #666;
+    /* Cor mais clara para a data */
+}
+
+.task-item-doctor {
+    margin: 5px 0;
+    font-size: 0.95em;
+    /* Tamanho de fonte levemente menor */
+    color: #4caf50;
+    /* Cor verde para o nome do médico */
+}
+
+.task-item-status {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #d32f2f;
+    /* Cor vermelha para o status */
+}
+
+/* Estilos para espaços em branco */
+.empty-slot {
+    height: 50px;
+    /* Ajuste a altura conforme necessário */
+    margin: 10px 0;
+    /* Espaço entre slots */
+}
+
+/* Estilo do ícone de relógio */
+.task-item-icon {
+    color: #4caf50;
+    /* Cor do ícone de relógio */
+    font-size: 1.5em;
+    /* Tamanho do ícone */
+    margin-right: 15px;
+    /* Espaço entre ícone e o registro */
+}
