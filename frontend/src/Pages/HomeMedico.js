@@ -7,9 +7,8 @@ import '../Style/HomeMedico.css';
 
 // IMPORTE OS COMPONENTES
 import Cabecalho from '../Components/Cabecalho';
-import ItemTarefa from '../Components/ItemTarefa';
+import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
-import DayDetails from '../Components/Detalhes'; // Importando o DayDetails
 
 // IMPORTE IMAGENS
 import Anatomia from "../Imagens/Anatomia.jpg"
@@ -24,13 +23,12 @@ const HomeMedico = () => {
   return (
     <Container fluid>
       <Row className='Status'>
-        <img src={Anatomia} className='corpoExemplo' alt="Anatomia Exemplo" />
+       <Anatomy />
       </Row>
 
       <Row className='Consultas'>
-        <Col>
+        <Col md={8}>
           <Cabecalho onSelectDay={handleSelectDay} /> {/* Passa a função de seleção para o DateHeader */}
-          <DayDetails selectedDay={selectedDay} /> {/* Exibe os detalhes do dia selecionado */}
           <Anotações />
         </Col>
       </Row>
