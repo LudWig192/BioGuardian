@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ResponsiveTable from '../Components/Agenda.jsx';
 import ButtonGroup from '../Components/Botoes.jsx';
 import SwitchWithIconsAndAvatar from '../Components/Avatar.jsx';
-import Slider from '../Components/Slider_Card.jsx';
 const Agenda = () => {
     const [data, setData] = useState([
         { id: 1, agendamento: '2024-08-15', paciente: 'João Silva', status: 'Confirmado', procedimentos: 'Exame de sangue', tipoPlano: 'Padrão' },
@@ -85,7 +84,6 @@ const Agenda = () => {
                 onAdd={handleAdd}
             />
 
-            <Slider />
         </div>
     );
 };

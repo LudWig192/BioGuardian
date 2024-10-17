@@ -2,8 +2,9 @@ const express = require('express');
 const connection = require('./db');
 const router = express.Router();
 
+
 // Rota para listar todos os registros
-router.get('/cadastros', (req, res) => {
+router.get('/cadastro', (req, res) => {
   connection.query('SELECT * FROM cadastro', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
@@ -15,9 +16,9 @@ router.get('/cadastros', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('/cadastros/:id', (req, res) => {
-  const { id } = req.params;
-  connection.query('SELECT * FROM cadastro WHERE id = ?', [id], (err, results) => {
+router.get('/cadastro/:idCadastro', (req, res) => {
+  const { idCadastro } = req.params;
+  connection.query('SELECT * FROM cadastro WHERE idCadastro = ?', [idCadastro], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -32,7 +33,7 @@ router.get('/cadastros/:id', (req, res) => {
 });
 
 // Rota para criar um novo registro
-router.post('/cadastros', (req, res) => {
+router.post('/cadastro', (req, res) => {
   const { nome, email, senha } = req.body;
   connection.query('INSERT INTO cadastro (nome, email, senha) VALUES (?, ?, ?)',
     [nome, email, senha], (err, result) => {
@@ -41,16 +42,16 @@ router.post('/cadastros', (req, res) => {
         res.status(500).json({ error: 'Erro ao criar o registro' });
         return;
       }
-      res.status(201).json({ message: 'Registro criado com sucesso', id: result.insertId });
+      res.status(201).json({ message: 'Registro criado com sucesso', idCadastro: result.insertId });
     });
 });
 
 // Rota para atualizar um registro existente pelo ID
-router.put('/cadastros/:id', (req, res) => {
-  const { id } = req.params;
+router.put('/cadastro/:idCadastro', (req, res) => {
+  const { idCadastro } = req.params;
   const { nome, email, senha } = req.body;
-  connection.query('UPDATE cadastro SET nome = ?, email = ?, senha = ? WHERE id = ?',
-    [nome, email, senha, id], (err, result) => {
+  connection.query('UPDATE cadastro SET nome = ?, email = ?, senha = ? WHERE idCadastro = ?',
+    [nome, email, senha, idCadastro], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -61,9 +62,9 @@ router.put('/cadastros/:id', (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('/cadastros/:id', (req, res) => {
-  const { id } = req.params;
-  connection.query('DELETE FROM cadastro WHERE idCadastro = ?', [id], (err, result) => {
+router.delete('/cadastro/:idCadastro', (req, res) => {
+  const { idCadastro } = req.params;
+  connection.query('DELETE FROM cadastro WHERE idCadastro = ?', [idCadastro], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });
@@ -73,10 +74,8 @@ router.delete('/cadastros/:id', (req, res) => {
   });
 });
 
-module.exports = router;
-
-
 ////////////////////////////////////////Login/////////////////////////////////////////////////
+
 // Rota para listar todos os registros
 router.get('/Login', (req, res) => {
   connection.query('SELECT * FROM Login', (err, results) => {
@@ -90,9 +89,9 @@ router.get('/Login', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('/Login/:idLogin', (req, res) => {
+router.get('/login/:idLogin', (req, res) => {
   const { idLogin } = req.params;
-  connection.query('SELECT * FROM Login WHERE idLogin = ?', [idLogin], (err, results) => {
+  connection.query('SELECT * FROM cadastro WHERE idLogin = ?', [idLogin], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -106,25 +105,40 @@ router.get('/Login/:idLogin', (req, res) => {
   });
 });
 
-// Rota para criar um novo registro
-router.post('/Login', (req, res) => {
+// Rota para logar no sistema
+router.post('/login', (req, res) => {
   const { email, senha } = req.body;
-  connection.query('INSERT INTO Login ( email, senha) VALUES (?, ?)',
+  connection.query('select * from cadastro where email = ? and senha = ?',
     [email, senha], (err, result) => {
       if (err) {
         console.error('Erro ao criar o registro:', err);
         res.status(500).json({ error: 'Erro ao criar o registro' });
         return;
       }
-      res.status(201).json({ message: 'Registro criado com sucesso', idLogin: result.insertId });
+      res.json(result);
+      // res.status(201).json({ message: 'Registro criado com sucesso', idLogin: result.insertId });
     });
 });
 
+// Rota para criar um novo registro
+// router.post('/Login', (req, res) => {
+//   const { email, senha } = req.body;
+//   connection.query('INSERT INTO Login ( email, senha) VALUES (?, ?)',
+//     [email, senha], (err, result) => {
+//       if (err) {
+//         console.error('Erro ao criar o registro:', err);
+//         res.status(500).json({ error: 'Erro ao criar o registro' });
+//         return;
+//       }
+//       res.status(201).json({ message: 'Registro criado com sucesso', idLogin: result.insertId });
+//     });
+// });
+
 // Rota para atualizar um registro existente pelo ID
-router.put('/Login/:idLogin', (req, res) => {
+router.put('/login/:idLogin', (req, res) => {
   const { idLogin } = req.params;
   const { email, senha } = req.body;
-  connection.query('UPDATE Login SET email = ?, senha = ? WHERE idLogin = ?',
+  connection.query('UPDATE cadastro SET email = ?, senha = ? WHERE idLogin = ?',
     [email, senha, idLogin], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
@@ -136,9 +150,9 @@ router.put('/Login/:idLogin', (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('/Login/:idLogin', (req, res) => {
+router.delete('/login/:idLogin', (req, res) => {
   const { idLogin } = req.params;
-  connection.query('DELETE FROM Login WHERE idLogin = ?', [idLogin], (err, result) => {
+  connection.query('DELETE FROM cadastro WHERE idLogin = ?', [idLogin], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });
@@ -147,6 +161,8 @@ router.delete('/Login/:idLogin', (req, res) => {
     res.json({ message: 'Registro excluído com sucesso' });
   });
 });
+
+
 
 ////////////////////////////////////////Contato//////////////////////////////////////////////////////
 
@@ -221,8 +237,10 @@ router.delete('/Contato/:idContato', (req, res) => {
   });
 });
 
-module.exports = router;
-///////////////////////////////////////////Medico///////////////////////////////
+
+//////////////////////////////////////Medico///////////////////////////////
+
+// Rota para listar todos os médicos
 router.get('/medicos', (req, res) => {
   const query = 'SELECT * FROM medicos';
   connection.query(query, (err, results) => {
@@ -239,7 +257,7 @@ router.get('/medicos', (req, res) => {
 router.post('/medicos', (req, res) => {
   const { nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao } = req.body;
   const query = 'INSERT INTO medicos (nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao) VALUES (?, ?, ?, ?, ?, ?)';
-  
+
   connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao], (err) => {
     if (err) {
       console.error('Erro ao adicionar médico:', err);
@@ -251,12 +269,12 @@ router.post('/medicos', (req, res) => {
 });
 
 // Rota para editar um médico
-router.put('/medicos/:id', (req, res) => {
-  const { id } = req.params;
+router.put('/medicos/:idMedico', (req, res) => {
+  const { idMedico } = req.params;
   const { nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao } = req.body;
-  const query = 'UPDATE medicos SET nome = ?, especialidade = ?, numeroRegistro = ?, horarioTrabalho = ?, status = ?, plantao = ? WHERE id = ?';
-  
-  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao, id], (err) => {
+  const query = 'UPDATE medicos SET nome = ?, especialidade = ?, numeroRegistro = ?, horarioTrabalho = ?, status = ?, plantao = ? WHERE idMedico = ?'; // Alterado para idMedico
+
+  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao, idMedico], (err) => {
     if (err) {
       console.error('Erro ao editar médico:', err);
       res.status(500).send('Erro no servidor');
@@ -267,11 +285,11 @@ router.put('/medicos/:id', (req, res) => {
 });
 
 // Rota para excluir um médico
-router.delete('/medicos/:id', (req, res) => {
-  const { id } = req.params;
-  const query = 'DELETE FROM medicos WHERE id = ?';
-  
-  connection.query(query, [id], (err) => {
+router.delete('/medicos/:idMedico', (req, res) => {
+  const { idMedico } = req.params;
+  const query = 'DELETE FROM medicos WHERE idMedico = ?';
+
+  connection.query(query, [idMedico], (err) => {
     if (err) {
       console.error('Erro ao excluir médico:', err);
       res.status(500).send('Erro no servidor');
@@ -281,3 +299,4 @@ router.delete('/medicos/:id', (req, res) => {
   });
 });
 
+module.exports = router;

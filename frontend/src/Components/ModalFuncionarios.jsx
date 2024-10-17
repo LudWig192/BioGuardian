@@ -46,8 +46,8 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
   ];
 
   return (
-    <div className="funcionarioModal-overlay" onClick={onClose}>
-      <div className="funcionarioModal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="funcionario-Modal-overlay" onClick={onClose}>
+      <div className="funcionario-Modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="funcionarioModal-title">Adicionar Novo Médico</div>
         <form onSubmit={handleFormSubmit} className="funcionarioModal-form">
           <label className="funcionarioModal-label">

@@ -4,9 +4,9 @@
     display: flex;
     justify-content: space-between;
     padding: 50px;
-    background-image: url('../Imagens/Fundo.png'); /* Caminho da imagem de fundo */
-    background-size: cover; /* Cobrir todo o contêiner */
-    background-position: center; /* Centralizar a imagem */
+   /*  background-image: url('../Imagens/Fundo.png'); */
+    background-size: cover; 
+    background-position: center;
     align-items: center;
     gap: 30px;
 }
@@ -81,7 +81,7 @@ input[type="email"],
 input[type="tel"] {
     width: 100%;
     padding: 15px;
-    border: 1px solid #ff2a00;
+    border: 1px solid;
     border-radius: 4px;
     font-size: 14px;
 }

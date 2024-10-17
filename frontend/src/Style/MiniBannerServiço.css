@@ -5,11 +5,11 @@
     justify-content: space-between;
     padding: 100px;
     background-color: #f0f8ff; 
-    background-image: url('../Imagens/Fundo.png'); 
+    /*background-image: url('../Imagens/Fundo.png');*/
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    margin-top: 250px; /* Ajuste o valor conforme necessário para mover o componente para baixo */
+    margin-top: 250px; 
 }
 
 .overlay {

@@ -1,11 +1,11 @@
 .care-delivery-container {
-    background-image: url('../Imagens/Fundo.png'); /* Substitua pelo caminho da sua imagem */
-    background-size: cover; /* Faz a imagem cobrir todo o container */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    /*  background-image: url('../Imagens/Fundo.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 50px 0;
     text-align: center;
-    position: relative; /* Necessário para o overlay funcionar */
+    position: relative;
 }
 
 .care-delivery-container::before {
@@ -15,13 +15,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(84, 114, 240, 0.7); /* Novo tom de overlay */
-    z-index: 1; /* Overlay sobre a imagem */
+    background-color: rgba(84, 114, 240, 0.7);
+    z-index: 1;
 }
 
 .care-delivery-container * {
     position: relative;
-    z-index: 2; /* Faz o conteúdo ficar acima do overlay */
+    z-index: 2;
 }
 
 .banner-exame-home {
@@ -44,17 +44,23 @@
 
 .cards-container-ExameHome {
     display: flex;
-    justify-content: center; /* Centraliza os cards horizontalmente */
-    gap: 30px; /* Espaçamento entre os cards */
+    justify-content: center;
+    /* Centraliza os cards horizontalmente */
+    gap: 30px;
+    /* Espaçamento entre os cards */
     padding: 20px;
-    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se necessário */
-    margin: 0 auto; /* Remove margem esquerda e direita, centralizando o contêiner */
-    max-width: 1200px; /* Limita a largura máxima para que os cards não fiquem muito esticados */
+    flex-wrap: wrap;
+    /* Permite que os cards quebrem para a próxima linha se necessário */
+    margin: 0 auto;
+    /* Remove margem esquerda e direita, centralizando o contêiner */
+    max-width: 1200px;
+    /* Limita a largura máxima para que os cards não fiquem muito esticados */
 }
 
 .card-exame-home {
     background-color: #ffffff;
-    width: 340px; /* Largura do card */
+    width: 340px;
+    /* Largura do card */
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -64,19 +70,23 @@
 }
 
 .card-exame-home:hover {
-    transform: scale(1.05); /* Efeito hover */
+    transform: scale(1.05);
+    /* Efeito hover */
 }
 
 .card-img-exame {
     width: 100%;
-    height: 220px; /* Altura da imagem do card */
-    object-fit: cover; /* Ajusta a imagem corretamente no card */
+    height: 220px;
+    /* Altura da imagem do card */
+    object-fit: cover;
+    /* Ajusta a imagem corretamente no card */
 }
 
 .card-text-overlay-exame {
     position: relative;
     background-color: #ffffff;
-    padding: 20px; /* Espaçamento */
+    padding: 20px;
+    /* Espaçamento */
     text-align: center;
     margin-top: -10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -90,7 +100,10 @@
 }
 
 .card-description-exame {
-    font-size: 14px; /* Tamanho do texto de descrição dos exames */
-    color: #333; /* Cor do texto */
-    margin-top: 10px; /* Margem acima da descrição */
+    font-size: 14px;
+    /* Tamanho do texto de descrição dos exames */
+    color: #333;
+    /* Cor do texto */
+    margin-top: 10px;
+    /* Margem acima da descrição */
 }

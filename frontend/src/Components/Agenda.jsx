@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 import Modal from '../Components/Modal_Exames';
@@ -51,7 +50,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     };
 
     return (
-        <div className="table-container">
+        <div className="table-Agenda">
             <button
                 className="add-button"
                 onClick={() => handleOpenModal('add')}
