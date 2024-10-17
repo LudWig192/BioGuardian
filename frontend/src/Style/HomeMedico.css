@@ -17,7 +17,7 @@
   display: flex; /* Usa flexbox para organizar os componentes */
   flex-direction: column; /* Alinha os itens verticalmente */
   margin-left: 530px;
-  margin-top: -225px; /* Ajuste conforme a necessidade */
+  margin-top: -270px; /* Ajuste conforme a necessidade */
   width: 100%; /* Para ocupar toda a largura disponível */
 }
 

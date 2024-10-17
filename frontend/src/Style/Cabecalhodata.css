@@ -9,7 +9,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     /* Aumentei a largura máxima do calendário */
     transition: box-shadow 0.3s ease;
     /* Transição suave para o efeito de sombra */
@@ -51,9 +51,9 @@
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 10px;
-    width: 60px;
-    height: 50px;
+    font-size: 14px;
+    width: 70px;
+    height: 60px;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     color: #000;
     font-weight: bold;
@@ -107,134 +107,307 @@
     }
 }
 
-/* Estilo para o Modal */
-.custom-modal {
+/* Container do Appointment */
+.appointment-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.appointment-container:hover {
+    transform: scale(1.02);
+    /* Suave aumento ao passar o mouse */
+    background-color: #f9f9f9;
+}
+
+/* Estilo da Hora (à esquerda do card) */
+.appointment-datetime {
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-right: 20px;
+    min-width: 70px;
+    text-align: left;
+    color: #007bff;
+    position: relative;
+}
+
+/* Linha decorativa para a hora */
+.appointment-datetime::after {
+    content: "";
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    /* Largura do modal */
-    padding: 20px;
-    /* Espaçamento interno */
-    border-radius: 10px;
-    /* Bordas arredondadas */
-    background: #ffffff;
-    /* Cor de fundo do modal */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra */
-    display: flex;
-    /* Flexbox para alinhamento */
-    flex-direction: column;
-    /* Direção da coluna */
-}
-
-.custom-modal h2 {
-    margin-bottom: 20px;
-    /* Espaçamento inferior */
-    font-size: 24px;
-    /* Tamanho da fonte */
-    color: #333;
-    /* Cor do texto */
-}
-
-.custom-modal label {
-    margin-bottom: 10px;
-    /* Espaçamento inferior */
-    font-size: 16px;
-    /* Tamanho da fonte */
-}
-
-.custom-modal input,
-.custom-modal textarea,
-.custom-modal select {
-    width: 100%;
-    /* Largura total */
-    padding: 10px;
-    /* Preenchimento interno */
-    margin-bottom: 15px;
-    /* Espaçamento inferior */
-    border: 1px solid #ccc;
-    /* Borda */
-    border-radius: 5px;
-    /* Bordas arredondadas */
-    font-size: 16px;
-    /* Tamanho da fonte */
-}
-
-.custom-modal button {
-    padding: 10px;
-    /* Preenchimento interno */
-    border: none;
-    /* Sem borda */
-    border-radius: 5px;
-    /* Bordas arredondadas */
+    left: 100%;
+    width:  10px;
+    height: 50%;
     background-color: #007bff;
-    /* Cor de fundo */
-    color: white;
-    /* Cor do texto */
-    font-size: 16px;
-    /* Tamanho da fonte */
-    cursor: pointer;
-    /* Cursor de ponteiro */
-    transition: background-color 0.3s;
-    /* Transição suave */
+    transform: translateY(-50%);
+    margin-left: 5px;
 }
 
-.custom-modal button:hover {
-    background-color: #0056b3;
-    /* Cor ao passar o mouse */
-}
-
-.custom-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    /* Cor de fundo do overlay */
-}
-/* Estilo para os cartões de consulta */
+/* Estilo do Card de Exame */
 .appointment-card {
-    margin-left: 100px;
-    background-color: #f9f9f9; /* Cor de fundo do cartão */
-    border: 1px solid #e0e0e0; /* Borda do cartão */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px; /* Preenchimento interno reduzido */
-    margin-bottom: 10px; /* Espaçamento inferior entre os cartões */
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.2s; /* Transição suave ao passar o mouse */
-    max-width: 500px; /* Largura máxima do cartão */
-    font-size: 18px; /* Tamanho da fonte reduzido */
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
 }
 
-/* Estilo para o título do cartão */
+.appointment-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Título do Exame em letras maiúsculas */
 .appointment-card h4 {
-    margin-left: 100px;
-    margin: 0 0 5px; /* Margens do título ajustadas */
-    font-size: 16px; /* Tamanho da fonte do título reduzido */
-    color: #333; /* Cor do texto */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    color: #333;
 }
 
-/* Estilo para os textos do cartão */
+/* Nome do Médico */
 .appointment-card p {
-    margin: 3px 0; /* Margens para os parágrafos ajustadas */
-    font-size: 12px; /* Tamanho da fonte dos parágrafos reduzido */
-    color: #666; /* Cor do texto */
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
 }
 
-/* Estilo para o texto pequeno */
-.appointment-card small {
-    display: block; /* Bloco para ocupar toda a largura */
-    margin-top: 5px; /* Margem superior reduzida */
-    font-size: 10px; /* Tamanho da fonte do texto pequeno reduzido */
-    color: #999; /* Cor do texto pequeno */
+/* Área dos ícones de edição e exclusão */
+.appointment-options {
+    display: flex;
+    justify-content: flex-end;
 }
+
+/* Estilo dos ícones de edição e exclusão */
+.edit-symbol,
+.delete-symbol {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #007bff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-symbol:hover,
+.delete-symbol:hover {
+    color: #0056b3;
+    transform: scale(1.2);
+    /* Aumenta levemente os ícones ao passar o mouse */
+}
+
+/* Container do Appointment */
+.appointment-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+}
+
+.appointment-container:hover {
+    transform: scale(1.02);
+    /* Suave aumento ao passar o mouse */
+    background-color: #f9f9f9;
+}
+
+/* Estilo da Hora (à esquerda do card) */
+.appointment-datetime {
+    font-size: 16px;
+    color: #007bff;
+    font-weight: 700;
+    margin-right: 20px;
+    min-width: 80px;
+    /* Ajuste para a largura da hora */
+    text-align: left;
+    position: relative;
+}
+
+/* Linha decorativa para a hora */
+.appointment-datetime::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 2px;
+    height: 50%;
+    background-color: #007bff;
+    transform: translateY(-50%);
+}
+
+/* Estilo do Card de Exame */
+.appointment-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 500px;
+    /* Card mais largo */
+    height: 100px;
+    /* Card mais baixo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+}
+
+.appointment-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Título do Exame em letras maiúsculas */
+.appointment-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    color: #333;
+    flex-grow: 1;
+}
+
+/* Nome do Médico */
+.appointment-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Área dos ícones de edição e exclusão */
+.appointment-options {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -12px;
+}
+
+/* Estilo dos ícones de edição e exclusão */
+.edit-symbol,
+.delete-symbol {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #007bff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-symbol:hover,
+.delete-symbol:hover {
+    color: #0056b3;
+    transform: scale(1.2);
+    /* Aumenta levemente os ícones ao passar o mouse */
+}
+
+/* Layout Geral */
+.appointments {
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 20px;
+}
+
+/* Título da Seção */
+.appointments h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Estilo para o título sem consultas */
+.appointments p {
+    font-size: 16px;
+    color: #666;
+}
+/* Estilo do símbolo de edição e exclusão */
+
+.edit-symbol,
+.delete-symbol {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 5px 10px; /* Adiciona preenchimento para torná-los parecidos com botões */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: #fff; /* Cor do texto em branco */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+    margin-top: -10px;
+}
+
+/* Estilo para o botão de edição */
+.edit-symbol {
+    background-color: #28a745; /* Verde para o botão de editar */
+}
+
+.edit-symbol:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Eleva levemente o botão ao passar o mouse */
+}
+
+/* Estilo para o botão de exclusão */
+.delete-symbol {
+    background-color: #dc3545; /* Vermelho para o botão de excluir */
+}
+
+.delete-symbol:hover {
+    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Eleva levemente o botão ao passar o mouse */
+}
+
 
 /* Estilo para o grupo de botões */
 .button-group {
-    display: flex; /* Flexbox para os botões */
-    justify-content: space-between; /* Espaçamento entre os botões */
-    margin-top: 10px; /* Margem superior para o grupo de botões */
+    display: flex;
+    /* Flexbox para os botões */
+    justify-content: space-between;
+    /* Espaçamento entre os botões */
+    margin-top: 10px;
+    /* Margem superior para o grupo de botões */
 }
 
 .button-group button {
-    font-size: 12px; /* Tamanho da fonte dos botões reduzido */
-    padding: 5px 8px; /* Preenchimento interno reduzido para os botões */
+    font-size: 12px;
+    /* Tamanho da fonte dos botões reduzido */
+    padding: 5px 8px;
+    /* Preenchimento interno reduzido para os botões */
+}
+
+.custom-modal {
+    position: absolute;
+    top: 45%;
+    /* Desce o modal 40% da altura da tela */
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -40%);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    /* ou ajuste conforme necessário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Fundo escurecido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

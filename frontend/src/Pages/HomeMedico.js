@@ -6,12 +6,12 @@ import React, { useState } from 'react'; // Importar useState para gerenciar o e
 import '../Style/HomeMedico.css';
 
 // IMPORTE OS COMPONENTES
-import Cabecalho from '../Components/Cabecalho';
+import Cabecalho from '../Components/Calendario';
 import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
 
 // IMPORTE IMAGENS
-import Anatomia from "../Imagens/Anatomia.jpg"
+
 
 const HomeMedico = () => {
   const [selectedDay, setSelectedDay] = useState("10"); // Estado para o dia selecionado

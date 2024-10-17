@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home.js";
 import Contato from "./Pages/Contato.js";
 import Cadastro from "./Pages/Cadastro.js";
+
 import LoginForm from "./Pages/Login.js";
 import Beneficio from "./Pages/Beneficio.js";
 
@@ -24,7 +25,7 @@ const Rotas = () => {
                 <>
                         <Routes>
                                 {/* Cliente sem cadastro */}
-                                <Route path="/" exact element={<HomeMedico />} />
+                                <Route path="/" exact element={<HomeMedico/>} />
                                 <Route path="/Cadastro" exact element={<Cadastro />} />
                                 <Route path="/HomeCliente" exact element={<HomeCliente />} />
                                 <Route path="/TabelaUsuarios" exact element={<TabelaUsuarios />} />
