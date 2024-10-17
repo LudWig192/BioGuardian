@@ -1,0 +1,162 @@
+/* ExameInformações.css */
+
+.exame-informacoes-container {
+    font-family: Arial, sans-serif;
+    background-color: #e6eef8;
+    padding: 30px;
+    text-align: center;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.image-section-examesIn {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.image-container-examesIn {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 450px; /* Altura da imagem */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.healthcare-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(230, 238, 248, 0.8), rgba(255, 255, 255, 0));
+    z-index: 1;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+/* Centralizando o header sobre a imagem com um ajuste para baixo */
+.header {
+    position: absolute;
+    top: 55%; /* Ajuste da posição vertical */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #54d4f0;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+}
+
+.header-title {
+    font-size: 3em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-subtitle {
+    font-size: 1.5em;
+    margin: 5px 0 15px;
+    font-weight: 300;
+}
+
+.modal-button-examesIn {
+    padding: 12px 25px; /* Aumenta o tamanho do botão */
+    background-color: #5472f0; /* Cor do botão */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.modal-button-examesIn:hover {
+    background-color: #4061c5; /* Cor do botão quando em hover */
+}
+
+.menu-grid-examesIn {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsividade */
+    gap: 15px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.menu-item-examesIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 80px; /* Ajuste a altura dos cards */
+}
+
+.menu-item-examesIn:hover,
+.menu-item-examesIn.active {
+    background-color: #5472f0; /* Cor quando em hover ou ativo */
+    color: white; /* Cor do texto em hover ou ativo */
+}
+
+/* Estilo para os ícones no menu */
+.menu-icon-examesIn {
+    margin-right: 8px;
+    font-size: 1.2em;
+    color: #54a3f0; /* Cor dos ícones */
+}
+
+/* Sobrescrevendo a cor do ícone para o item ativo */
+.menu-item-examesIn.active .menu-icon-examesIn {
+    color: white;
+}
+
+/* Estilo do Modal */
+.modal-icon-examesIn {
+    margin-right: 10px; /* Espaço entre o ícone e o título */
+}
+
+.modal-body-examesIn {
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.modal-body-examesIn h4 {
+    margin-bottom: 15px; /* Espaço abaixo do título */
+}
+
+.modal-body-examesIn p {
+    margin: 10px 0; /* Espaço entre os parágrafos */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5em; /* Reduz o tamanho em telas menores */
+    }
+
+    .header-subtitle {
+        font-size: 1.2em; /* Reduz o tamanho em telas menores */
+    }
+
+    .modal-button-examesIn {
+        font-size: 0.9em; /* Ajusta o tamanho do botão */
+    }
+
+    .menu-item-examesIn {
+        height: 60px; /* Ajusta a altura dos cards */
+    }
+}

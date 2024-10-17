@@ -1,0 +1,80 @@
+.cardsExameCliente-container {
+    max-width: 1200px; /* Largura máxima do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.cardsExameCliente-header {
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+}
+
+.cardsExameCliente {
+    display: flex; /* Utiliza flexbox para o layout */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.cardsExameCliente-card {
+    background-color: #fff; /* Cor de fundo dos cards */
+    border: 1px solid #ddd; /* Borda dos cards */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    width: calc(33.333% - 20px); /* Três cards por linha, considerando o espaço */
+    transition: transform 0.3s; /* Transição suave para transformação */
+}
+
+.cardsExameCliente-card:hover {
+    transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+}
+
+.cardsExameCliente-image {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+.cardsExameCliente-content {
+    padding: 15px; /* Espaçamento interno do conteúdo do card */
+}
+
+.cardsExameCliente-date {
+    font-size: 14px; /* Tamanho da fonte da data */
+    color: #888; /* Cor da fonte */
+    margin-bottom: 10px; /* Espaçamento abaixo da data */
+}
+
+.cardsExameCliente-title {
+    font-size: 18px; /* Tamanho da fonte do título */
+    font-weight: bold; /* Negrito */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.cardsExameCliente-text {
+    font-size: 14px; /* Tamanho da fonte do texto */
+    margin-bottom: 15px; /* Espaçamento abaixo do texto */
+}
+
+.cardsExameCliente-button-container {
+    text-align: center; /* Centraliza o botão */
+    margin-top: 10px; /* Espaçamento acima do botão */
+}
+
+.cardsExameCliente-link {
+    text-decoration: none; /* Remove o sublinhado */
+    color: #007bff; /* Cor do link */
+    font-weight: bold; /* Negrito */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    border: 1px solid #007bff; /* Borda do botão */
+    border-radius: 4px; /* Bordas arredondadas do botão */
+    display: inline-block; /* Para o botão ser um bloco */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.cardsExameCliente-link:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+    background-color: #007bff; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}

@@ -1,0 +1,59 @@
+.online-learning-section {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 250px; /* Diminui o padding */
+}
+
+.online-learning-people-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mantém apenas uma coluna */
+  gap: 15px;
+  width: 400px; /* Ajusta a largura para 400px */
+  height: 400px; /* Ajusta a altura para 400px */
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.online-learning-person {
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Mantém a imagem coberta */
+  background-position: center;
+  background-image: url('../Imagens/BeneficioHome.png'); /* Certifique-se de que o caminho está correto */
+}
+
+.online-learning-info-list {
+  width: 50%;
+  margin-left: 50px; /* Diminui a margem esquerda */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.online-learning-info-title {
+  font-size: 24px; /* Diminui o tamanho do título */
+  font-weight: bold;
+  color: #54d4f0;
+  margin-bottom: 15px; /* Diminui o espaçamento abaixo do título */
+}
+
+.online-learning-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Diminui o espaçamento entre os itens */
+}
+
+.online-learning-info-text {
+  font-size: 16px; /* Diminui o tamanho do texto */
+  color: #333;
+  margin-left: 15px; /* Diminui a margem esquerda */
+}
+
+.online-learning-icon {
+  font-size: 50px; /* Ajusta o tamanho do ícone */
+  color: #54a3f0;
+  padding: 10px; /* Ajusta o espaçamento interno */
+}

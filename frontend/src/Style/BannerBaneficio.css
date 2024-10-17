@@ -1,0 +1,123 @@
+/* BannerBeneficio.css */
+
+.BannerBeneficio-appointment-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-image: url('../Imagens/Fundo.png'); /* Caminho da imagem de fundo */
+    background-size: cover; /* Cobrir todo o contêiner */
+    background-position: center; /* Centralizar a imagem */
+    align-items: center;
+    gap: 30px;
+}
+
+.BannerBeneficio-left-section {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.BannerBeneficio-text-overlay {
+    margin-bottom: 20px; /* Espaçamento entre o texto e a imagem */
+}
+
+.BannerBeneficio-family-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.BannerBeneficio-video-button {
+    margin-top: 10px; /* Espaço entre o texto e o botão */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente para o botão */
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    color: #3c3b6e; /* Cor do texto do botão */
+    font-size: 14px;
+}
+
+.BannerBeneficio-right-section {
+    flex: 1;
+    max-width: 50%;
+    padding: 30px;
+    background-color: #54a3f0; /* Cor de fundo da seção direita */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.BannerBeneficio-main-title {
+    font-size: 36px;
+    color: white; /* Cor do título */
+    margin-bottom: 5px; /* Espaçamento inferior */
+}
+
+.BannerBeneficio-subtitle {
+    font-size: 18px;
+    color: white; /* Cor do subtítulo */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+.BannerBeneficio-appointment-header {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.BannerBeneficio-appointment-description {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.BannerBeneficio-form-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ff2a00;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:required:focus {
+    outline: none;
+    border-color: #ff2a00;
+}
+
+.BannerBeneficio-error-message {
+    display: none;
+    font-size: 12px;
+    color: #ff2a00;
+}
+
+input:invalid + .BannerBeneficio-error-message {
+    display: block;
+}
+
+.BannerBeneficio-submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #5472f0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.BannerBeneficio-submit-button:hover {
+    background-color: #5472f0;
+}
+
+.BannerBeneficio-availability-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #d9d9e9;
+}

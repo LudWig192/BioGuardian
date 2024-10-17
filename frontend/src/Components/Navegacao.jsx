@@ -35,7 +35,25 @@ const Navbar = () => {
                     </li>
                     <li>
                         <Link to="/Exames" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Exames</span>
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/Login" className="nav-link">
                             <LocalMallIcon className="icon" /> <span>Planos</span>
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/HomeCliente" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>HomeCliente</span>
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/Serviço" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Serviço</span>
                         </Link>
                     </li>
                 </ul>

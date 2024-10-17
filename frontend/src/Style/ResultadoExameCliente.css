@@ -1,0 +1,148 @@
+/* Estilização da seção geral */
+.resultadoexame-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1200px; /* Largura máxima do componente */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilização da navegação */
+.resultadoexame-nav {
+    margin-bottom: 30px;
+}
+
+/* Estilização do título */
+.resultadoexame-title-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilização da descrição */
+.resultadoexame-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Estilização das categorias */
+.resultadoexame-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+/* Estilização de cada item da categoria */
+.resultadoexame-category-item {
+    background-color: #e0e0e0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resultadoexame-category-item:hover {
+    background-color: #d0d0d0; /* Efeito hover */
+}
+
+/* Estilização da lista de resultados de exames */
+.resultadoexame-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    gap: 20px; /* Espaçamento entre os cartões */
+}
+
+/* Estilização do cartão de resultados de exame */
+.resultadoexame-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização da imagem do cartão */
+.resultadoexame-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilização do conteúdo do cartão */
+.resultadoexame-content {
+    padding: 15px;
+}
+
+/* Estilização da categoria */
+.resultadoexame-category {
+    font-size: 14px;
+    color: #007bff; /* Cor da categoria */
+}
+
+/* Estilização das informações do cartão */
+.resultadoexame-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+/* Estilização do título do cartão */
+.resultadoexame-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Estilização do autor */
+.resultadoexame-author {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Estilização do preço */
+.resultadoexame-pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Estilização do preço atual */
+.resultadoexame-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilização do preço antigo */
+.resultadoexame-old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Estilização do botão de detalhes */
+.resultadoexame-details-button {
+    background-color: #007bff; /* Cor do botão */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resultadoexame-details-button:hover {
+    background-color: #0056b3; /* Efeito hover */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .resultadoexame-list {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .resultadoexame-list {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+}

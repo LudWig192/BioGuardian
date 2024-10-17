@@ -1,0 +1,195 @@
+.my-app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f8ff; /* Fundo da imagem */
+    padding: 50px;
+    min-height: 100vh;
+}
+
+.mainAppContainer {
+    display: flex;
+    align-items: flex-start; /* Alinha os componentes na parte superior */
+    gap: 40px; /* Espaço entre os componentes */
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.mockupContainer {
+    position: relative;
+    margin-top: 0; /* Ajuste a margem superior para alinhar corretamente */
+}
+
+.phoneDisplay {
+    width: 350px; /* Largura do celular */
+    height: 700px; /* Altura do celular */
+    background-color: #54a3f0 ;
+    border-radius: 40px;
+    position: relative;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que os elementos não saiam da borda */
+}
+
+.screenArea {
+    background-color: #512da8;
+    height: 90%; /* Mantém a altura proporcional ao celular */
+    width: 90%; /* Mantém a largura proporcional ao celular */
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Garante que a imagem não saia da borda */
+}
+
+.phone-image {
+    width: 100%; /* A imagem agora ocupa toda a largura */
+    height: 100%; /* A imagem agora ocupa toda a altura */
+    object-fit: cover; /* A imagem preenche todo o espaço sem distorcer */
+    border-radius: 20px; /* Arredondamento das bordas da imagem */
+}
+
+.overlayContainer {
+    position: absolute;
+    top: 40%; /* Move o overlay para baixo um pouco, ajustando para 40% */
+    left: 100%; /* Posiciona ao lado do telefone */
+    width: 200px; /* Largura fixa para o overlay */
+    height: 50%; /* Altura para ocupar metade do celular */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    border-radius: 20px; /* Mantém o arredondamento das bordas */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: flex-start; /* Alinha os itens no início da coluna */
+    padding: 20px;
+    font-size: 1em;
+    z-index: 1; /* Certifica que o overlay fique acima do conteúdo */
+}
+
+.overlayContainer .infoCard {
+    text-align: center;
+    margin-top: auto; /* Faz a carta ir para a parte inferior do overlay */
+}
+
+.overlayContainer button {
+    margin-top: 10px;
+    background-color: #512da8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.appDescription {
+    max-width: 500px;
+    margin-top: 80px;
+}
+
+.app-title {
+    color: #54d4f0;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.appDescription .app-description-text {
+    color: #7c7c7c;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-size: 1.5em;
+}
+
+/* Separa ícones e textos nos mini cards */
+.statisticsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.statisticItem {
+    display: flex;
+    flex-direction: column; /* Muda o layout para coluna */
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.stat-icon {
+    color: #54a3f0;
+    font-size: 9px; /* Tamanho dos ícones */
+    margin-bottom: 15px; /* Espaço entre o ícone e o texto */
+}
+
+.stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-text .stat-value {
+    color: #54a3f0;
+    font-size: 1.1em;
+    margin-bottom: 10px; /* Espaço entre o título e a descrição */
+    font-weight: bold; /* Título em negrito */
+    text-align: center;
+}
+
+.stat-text .stat-description {
+    color: #7c7c7c;
+    font-size: 1em;
+    text-align: center;
+}
+
+.trialButton {
+    background-color: #5472f0;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.2em;
+}
+
+.trialButton:hover {
+    background-color: #5472f0;
+}
+
+.noCardInfo {
+    color: #7c7c7c;
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .mainAppContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .phoneDisplay {
+        width: 90%;
+        height: auto;
+    }
+
+    .overlayContainer {
+        width: 100%;
+        height: auto;
+        top: 50%;
+    }
+
+    .appDescription {
+        margin-top: 40px;
+        max-width: 90%;
+    }
+}

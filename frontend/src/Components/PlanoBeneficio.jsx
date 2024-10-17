@@ -1,32 +1,59 @@
-import React from 'react';
+import React from "react";
 import "../Style/PlanoBeneficio.css";
 
-const Planos = () => {
+const PricingOptions = () => {
   return (
-    <b><div className="pricing-plans">
-      <div className="plan">
-        <h2 className='textocor'>Plano Sozinho</h2>
-        <p>quantidade de pessoas no plano 1 ou 2</p>
-        <ul>
-          <li>Acesso a MadIA</li>
-          <li>Pulseira e o Guardião</li>
+    <div className="planoBeneficio-pricing-container">
+      <div className="planoBeneficio-pricing-title">PRICING</div>
+      <div className="planoBeneficio-pricing-options">
+        {/* Available Options */}
+        <div className="planoBeneficio-available-options">
+          <div>AVAILABLE OPTIONS</div>
+          <div className="planoBeneficio">
+            <div>Diagnostic Services</div>
+            <div>Number of Patients</div>
+            <div>Dental Services</div>
+            <div>Additional Services</div>
+          </div>
+        </div>
 
-          <li>Suporte básico</li>
-        </ul>
-        <button>Assinar Agora</button>
+        {/* Pricing Cards */}
+        <div className="planoBeneficio-pricing-card planoBeneficio-most-popular">
+          <div className="planoBeneficio-badge">MOST POPULAR</div>
+          <div className="planoBeneficio">BASIC</div>
+          <div className="planoBeneficio-price">$32.89<span>/monthly</span></div>
+          <div className="planoBeneficio">
+            <div>Laboratory Analysis</div>
+            <div>2 Patients</div>
+            <div className="planoBeneficio-not-included">Ophthalmology</div>
+          </div>
+          <button className="planoBeneficio-button">BUY NOW!</button>
+        </div>
+
+        <div className="planoBeneficio-pricing-card">
+          <div className="planoBeneficio">STANDARD</div>
+          <div className="planoBeneficio-price">$76.89<span>/monthly</span></div>
+          <div className="planoBeneficio">
+            <div>Ultrasound</div>
+            <div>5 Patients</div>
+            <div>Surgery</div>
+          </div>
+          <button className="planoBeneficio-button">BUY NOW!</button>
+        </div>
+
+        <div className="planoBeneficio-pricing-card">
+          <div className="planoBeneficio">PREMIUM</div>
+          <div className="planoBeneficio-price">$89.89<span>/monthly</span></div>
+          <div className="planoBeneficio">
+            <div>X-ray</div>
+            <div>10 Patients</div>
+            <div>Manual Therapy</div>
+          </div>
+          <button className="planoBeneficio-button">BUY NOW!</button>
+        </div>
       </div>
-      <div className="plan">
-        <h2>Plano Familiar</h2>
-        <p>Para empresas que precisam de mais recursos e suporte.</p>
-        <ul>
-          <li>3-6 pessoas</li>
-          <li>Prioridade ao atendimento</li>
-          <li>Suporte prioritário</li>
-        </ul>
-        <button>Assinar Agora</button>
-      </div>
-    </div></b>
+    </div>
   );
 };
 
-export default Planos;
+export default PricingOptions;

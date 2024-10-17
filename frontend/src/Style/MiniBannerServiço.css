@@ -1,0 +1,93 @@
+.achievements-container {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px;
+    background-color: #f0f8ff; 
+    background-image: url('../Imagens/Fundo.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin-top: 250px; /* Ajuste o valor conforme necessário para mover o componente para baixo */
+}
+
+.overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(84, 114, 240, 0.7); 
+    z-index: 1; 
+}
+
+.image-achievements {
+    position: relative; 
+    z-index: 2; 
+}
+
+.image-achievements img {
+    max-width: 450px; 
+    height: auto;
+    border-radius: 8px;
+}
+
+.achievements-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2; 
+}
+
+.achievements-title {
+    font-size: 24px; 
+    color: #ffffff; 
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.achievement-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    transition: background-color 0.3s ease; 
+}
+
+.achievement-item:hover {
+    background-color: #5472f0; /* Cor de destaque alterada para #5472f0 */
+    border-radius: 5px; 
+}
+
+.achievement-icon {
+    color: #54a3f0; /* Cor dos ícones */
+    font-size: 40px;
+}
+
+.achievement-description {
+    margin: 0;
+    color: #ffffff; 
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .achievements-container {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .achievement-list {
+        grid-template-columns: 1fr; 
+    }
+
+    .image-achievements {
+        margin-bottom: 20px; 
+    }
+}

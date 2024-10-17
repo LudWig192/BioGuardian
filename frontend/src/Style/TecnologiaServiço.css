@@ -1,0 +1,70 @@
+.tecnologia {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 150px; /* Espaçamento adicionado na parte superior */
+}
+
+.left-tecnologia {
+  width: 33%;
+}
+
+.left-tecnologia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-tecnologia {
+  width: 67%;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo quase branco, semitransparente */
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  grid-template-rows: repeat(2, 1fr); /* Duas linhas para quatro cards */
+  gap: 40px; /* Aumenta o espaço entre os cartões */
+  align-items: center;
+}
+
+.service-card-tecnologia {
+  display: flex;
+  flex-direction: column; /* Coloca os ícones e títulos acima do texto */
+  align-items: center; /* Centraliza os itens dentro do cartão */
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo quase branco, semitransparente */
+  padding: 15px; /* Reduz o padding */
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Borda transparente */
+  color: black; /* Texto em preto para melhor contraste */
+  overflow: hidden; /* Para garantir que o fundo não vaze para fora do cartão */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+  width: 90%; /* Largura reduzida */
+  height: 200px; /* Altura ajustada para cards menores */
+  margin: 0 auto; /* Centraliza os cartões */
+}
+
+.service-card-tecnologia:hover {
+  transform: translateY(-5px); /* Elevação no hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra no hover */
+}
+
+.service-icon-tecnologia {
+  font-size: 50px; /* Tamanho do ícone ajustado */
+  margin-bottom: 10px; /* Espaçamento entre o ícone e o título */
+  color: #54a3f0; /* Cor do ícone */
+}
+
+.tecnologia-title {
+  font-size: 1.2rem;
+  margin: 0 0 5px 0; /* Removendo margens desnecessárias */
+  text-align: center; /* Centraliza o título */
+  color: #54a3f0; /* Cor do ícone */
+}
+
+.tecnologia-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8); /* Texto em preto com leve transparência */
+  text-align: center; /* Centraliza o texto secundário */
+}

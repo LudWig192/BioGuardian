@@ -1,0 +1,73 @@
+.expertise-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px; /* Espaço entre o conteúdo e a imagem */
+  padding: 220px; /* Padding do container */
+}
+
+.expertise-content {
+  max-width: 400px; /* Largura máxima para o conteúdo */
+}
+
+.expertise-title {
+  font-size: 24px; /* Tamanho do título */
+  font-weight: 600; /* Peso da fonte */
+  color: #54d4f0; /* Cor do texto */
+  margin-bottom: 20px; /* Espaço abaixo do título */
+  border-bottom: 2px solid #54d4f0; /* Borda inferior */
+  display: inline-block; /* Para borda funcionar corretamente */
+  padding-bottom: 5px; /* Espaçamento abaixo da borda */
+}
+
+.expertise-items {
+  display: grid; /* Usando grid para organizar os itens */
+  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  gap: 15px; /* Espaçamento entre os itens */
+}
+
+.expertise-item {
+  background-color: #ffffff; /* Cor de fundo dos itens alterada para branco */
+  color: #333; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Padding interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra dos itens */
+}
+
+.expertise-icon {
+  font-size: 40px; /* Tamanho dos ícones */
+  margin-bottom: 10px; /* Espaço abaixo do ícone */
+  padding: 15px; /* Espaçamento interno para ícone */
+  background-color: #ffffff; /* Cor de fundo dos ícones alterada para branco */
+  display: inline-flex; /* Flexbox para centralizar o ícone */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  color: #54a3f0; /* Cor dos ícones alterada para #54a3f0 */
+}
+
+.expertise-service-title {
+  font-size: 18px; /* Tamanho do título do serviço */
+  font-weight: 600; /* Peso da fonte */
+  margin-bottom: 8px; /* Espaço abaixo do título do serviço */
+  color: #54a3f0; /* Cor do título alterada para #54a3f0 */
+}
+
+.expertise-service-description {
+  font-size: 14px; /* Tamanho do texto de descrição */
+  color: #333; /* Cor do texto de descrição alterada para uma cor escura */
+}
+
+.expertise-image {
+  position: relative; /* Necessário para o posicionamento do border */
+  border: 6px solid #54d4f0; /* Borda da imagem */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 5px; /* Padding interno da imagem */
+  max-width: 480px; /* Largura máxima da imagem ajustada para maior */
+}
+
+.expertise-image img {
+  border-radius: 10px; /* Bordas arredondadas para a imagem */
+  width: 100%; /* Mantém a imagem responsiva */
+  height: auto; /* Mantém a proporção da imagem */
+}

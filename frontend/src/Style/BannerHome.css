@@ -1,0 +1,123 @@
+/* Estilos do Banner */
+.banner-container-specific {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #0066ff;
+    background-image: url('../Imagens/BannerHome.png'); /* Ajuste o caminho da imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    height: 708px;
+    color: #fff;
+    position: relative;
+}
+
+.banner-content-specific {
+    text-align: left;
+    max-width: 700px;
+    margin-left: 50px;
+    z-index: 2;
+    margin-top: 160px;
+}
+
+.banner-title-large {
+    font-size: 33px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.banner-description-custom {
+    font-size: 23px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.banner-buttons-specific {
+    display: flex;
+    gap: 20px;
+}
+
+.appointment-btn-specific, .learn-more-btn-specific {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.appointment-btn-specific {
+    background-color: #5472f0;
+}
+
+.learn-more-btn-specific {
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #54d4f0;
+}
+
+.banner-image-specific {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    height: 100%;
+}
+
+.banner-image-specific img {
+    height: 80%;
+    object-fit: cover;
+}
+
+/* Seção de estatísticas */
+.stats-section-specific {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+    background-color: #fff;
+    color: #000;
+    margin-top: 140px;
+    margin-left: 380px;
+}
+
+/* Cada caixa de estatística */
+.stat-box-specific {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    margin: 0 15px;
+}
+
+/* Contêiner do ícone */
+.stat-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo dos ícones */
+.stat-icon-specific {
+    font-size: 36px; /* Aumentado para 36px */
+    color: #54a3f0;
+    margin-bottom: 8px; /* Espaçamento abaixo do ícone */
+}
+
+/* Número das estatísticas */
+.stat-number-custom {
+    font-size: 21px; /* Tamanho do título dos ícones */
+    font-weight: bold;
+    color: #54a3f0;
+    margin-bottom: 3px; /* Reduz o espaçamento entre o número e a descrição */
+}
+
+/* Descrição das estatísticas */
+.stat-description-specific {
+    font-size: 16px; /* Tamanho da fonte da descrição */
+    margin-top: 0; /* Remove a margem superior */
+    text-align: center; /* Garante que o texto fique centralizado */
+}

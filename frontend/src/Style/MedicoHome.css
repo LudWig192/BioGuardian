@@ -1,0 +1,52 @@
+.medicoHome-team-section {
+  text-align: center;
+  padding: 150px;
+}
+
+.medicoHome-team-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #54d4f0;
+}
+
+.medicoHome-consultants-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.medicoHome-consultant-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.medicoHome-consultant-card:hover {
+  transform: scale(1.05);
+}
+
+.medicoHome-consultant-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.medicoHome-consultant-info {
+  text-align: center;
+}
+
+.medicoHome-consultant-name {
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+  color: #333;
+}
+
+.medicoHome-consultant-specialty {
+  color: #5da4e8;
+  font-size: 16px;
+}

@@ -1,25 +1,26 @@
-// Home.js
-import React from "react";
-import Pulseira1 from "../Components/Pulseira";
-import Anuncio from "../Components/Anuncio";
-import Buttons from "../Components/Botoes_Home";
-import Incricao from "../Components/Assinaturas";
-import "../Style/Home.css"
+import React from 'react';
+import Banner from "../Components/BannerHome";
+import Diagnostico from "../Components/DiagnosticoHome";
+import Servicos from "../Components/ServiçoHome";
+import Exame from "../Components/ExameHome";
+import Unidade from "../Components/UnidadeHome"
+import Pulseira from "../Components/PulseiraHome";
+import Modelo from "../Components/Modelo3DHome"
+import Medico from "../Components/MedicoHome";
 
-function Home() {
+function HomeCliente() {
   return (
-    <>
-      <h1> </h1>
-      <Anuncio />
-      <h1> </h1>
-      {/* <Buttons />
-      <h1> </h1> */}
-      <Pulseira1 />
-      <h1> </h1>
-      <Incricao />
-      <h1> </h1>
-    </>
+    <div className="HomeSemCliente">
+     <Banner />
+     <Diagnostico />
+     <Exame /> 
+     <Servicos />
+     <Pulseira />
+     <Modelo />
+     <Unidade />
+     <Medico />
+    </div>
   );
 }
 
-export default Home;
+export default HomeCliente;

@@ -1,44 +1,56 @@
-import React from 'react';
-import Accordion from 'react-bootstrap/Accordion';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importando o CSS do Bootstrap
-import '../Style/DuvidaBene.css'; // Certifique-se de que o caminho está correto
+import React, { useState } from 'react';
+import '../Style/DuvidaBeneficio.css';
 
-const AccordionComponent = () => {
+const FAQ = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const faqData = [
+    { question: 'What services can I request?', id: 'QUESTION ONE' },
+    { question: 'Do I need a contract?', id: 'QUESTION TWO' },
+    { question: 'How quickly will the doctor respond?', id: 'QUESTION THREE' },
+    { question: 'How much does it cost to sign a contract?', id: 'QUESTION FOUR' },
+    { question: 'Can I choose a doctor myself?', id: 'QUESTION FIVE' },
+  ];
+
   return (
-    <div className="page-background">
-      <div className="layout-container">
-        <div className="phrase-container">
-          <h2>Ficou com alguma dúvida?</h2>
-          <h6>Confira as perguntas mais frequentes</h6>
+    <div className="DuvidaBeneficio faq-container-perguntas">
+      <div className="DuvidaBeneficio faq-left perguntas">
+        {/* Elemento <p> removido */}
+        <div className="DuvidaBeneficio">
+          We give you peace of mind and ease of use - we make your life easier and safer.
         </div>
-        <div className="accordion-background">
-          <Accordion defaultActiveKey="0" flush>
-            <Accordion.Item eventKey="0" className="accordion-item">
-              <Accordion.Header>Como faço para solicitar meu prontuário médico?
-              </Accordion.Header>
-              <Accordion.Body>
-              Uma dúvida frequente é sobre o processo de encaminhamento para especialistas dentro das unidades médicas. Pacientes muitas vezes se perguntam como funciona o processo de encaminhamento, quais são os critérios para obter uma consulta com um especialista e se é necessário um encaminhamento específico do médico de família. Compreender esses procedimentos pode ajudar a garantir que o paciente receba o atendimento adequado de forma eficiente e sem atrasos.
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1" className="accordion-item">
-              <Accordion.Header>Sobre o processo de encaminhamento para especialistas:
-              </Accordion.Header>
-              <Accordion.Body>
-              Outro ponto de dúvida comum é o que está coberto pelo plano de saúde em relação aos serviços oferecidos pelas unidades médicas. Pacientes frequentemente questionam se exames, consultas ou procedimentos específicos estão incluídos em seu plano e quais são as condições para a cobertura. É essencial revisar o contrato do plano e entrar em contato com o atendimento ao cliente da operadora para esclarecer essas questões.
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2" className="accordion-item">
-              <Accordion.Header>Sobre o acesso aos registros médicos:
-              </Accordion.Header>
-              <Accordion.Body>
-              Muitas pessoas têm dúvidas sobre como acessar seus registros médicos em unidades de saúde. É importante saber quais documentos são necessários para solicitar uma cópia dos registros e como garantir que a informação esteja correta e atualizada. A maioria das unidades médicas permite que pacientes solicitem registros através de um portal online, por e-mail ou pessoalmente, mas pode haver variações dependendo do local.
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-        </div>
+        <button className="DuvidaBeneficio faq-button">Get App</button>
+      </div>
+      <div className="DuvidaBeneficio faq-right perguntas">
+        {faqData.map((item, index) => (
+          <div
+            key={index}
+            className={`DuvidaBeneficio faq-item perguntas ${activeIndex === index ? 'active' : ''}`}
+          >
+            <div
+              className="DuvidaBeneficio faq-question perguntas"
+              onClick={() => handleToggle(index)}
+            >
+              <span className="DuvidaBeneficio">{item.id} - Perguntas</span>
+              <span className="DuvidaBeneficio">{item.question}</span>
+              <span className="DuvidaBeneficio faq-icon">
+                {activeIndex === index ? '▲' : '▼'}
+              </span>
+            </div>
+            {activeIndex === index && (
+              <div className="DuvidaBeneficio faq-answer perguntas">
+                <div className="DuvidaBeneficio">This is where the answer to the question will go.</div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default AccordionComponent;
+export default FAQ;

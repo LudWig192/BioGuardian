@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "mysql": "^2.18.1"
+    "bootstrap": "^5.3.3",
+    "mysql": "^2.18.1",
+    "react-bootstrap": "^2.10.5",
+    "swiper": "^11.1.14"
   }
 }

@@ -1,0 +1,76 @@
+/* IconsBeneficio.css */
+
+.BeneficioIcons-container {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.BeneficioIcons-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.BeneficioIcons-description {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6em;
+}
+
+.BeneficioIcons-services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.BeneficioIcons-serviceItem {
+    display: flex; /* Habilita flexbox para o item de serviço */
+    flex-direction: column; /* Coloca ícone, título e descrição em coluna */
+    align-items: center; /* Centraliza os itens dentro do item de serviço */
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 280px;
+    transition: transform 0.3s; /* Suaviza a transição de elevação */
+}
+
+.BeneficioIcons-serviceItem:hover {
+    transform: translateY(-10px);
+}
+
+.BeneficioIcon {
+    font-size: 3em;
+    color: #00bcd4;
+    display: flex; /* Para centralizar o ícone dentro da bola */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    width: 100px; /* Define largura fixa para a bola */
+    height: 100px; /* Define altura fixa para a bola */
+    border-radius: 50%; /* Faz com que o ícone fique dentro de uma bola */
+    background-color: #e0f7fa; /* Cor de fundo da bola */
+    border: 2px solid #00bcd4; /* Adiciona uma borda ao redor da bola */
+    margin-bottom: 15px; /* Espaço abaixo da bola para o título */
+}
+
+.BeneficioIcons-serviceTitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px; /* Margem abaixo do título */
+    text-transform: uppercase;
+    color: #333;
+}
+
+.BeneficioIcons-serviceDescription {
+    font-size: 0.9em;
+    color: #777;
+    line-height: 1.4em;
+}

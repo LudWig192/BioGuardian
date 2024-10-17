@@ -1,0 +1,77 @@
+.language-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinhamento ajustado para melhorar a disposição */
+  background-color: #f7f9fc; /* Cor de fundo */
+  padding: 60px; /* Ajuste o padding para evitar espaço excessivo */
+  border: 2px solid #54a3f0 ; /* Borda sólida com cor azul */
+  border-radius: 20px; /* Bordas arredondadas */
+  position: relative;
+  width: 100%;
+  max-width: 863px; /* Diminuído o max-width para 900px */
+  margin: 150px auto; /* Diminuído a margem superior para 150px */
+  gap: 20px; /* Mantém o espaço entre a seção de texto e a imagem */
+  box-sizing: border-box; /* Inclui a borda no cálculo da largura total */
+}
+
+.text-section-alexia {
+  max-width: 45%; /* Mantém a largura da seção de texto em 45% */
+}
+
+.language-title-alexia {
+  font-size: 2.2rem; /* Tamanho da fonte ajustado */
+  color: #54d4f0;
+  margin-bottom: 10px; /* Margem inferior ajustada */
+}
+
+.highlight-text-alexia {
+  font-size: 1.1rem; /* Tamanho da fonte ajustado */
+  margin-bottom: 10px; /* Margem inferior ajustada */
+  font-weight: 500;
+}
+
+.description-3D {
+  font-size: 1rem; /* Tamanho da fonte ajustado */
+  color: #333;
+  line-height: 1.5; /* Line-height ajustado para melhor legibilidade */
+  margin-bottom: 20px; /* Adiciona espaçamento inferior para melhor separação */
+}
+
+.buttons-alexia {
+  margin-top: 20px; /* Margem superior ajustada */
+}
+
+.get-started-btn {
+  background-color: #5472f0;
+  color: white;
+  padding: 10px 25px; /* Padding ajustado */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Tamanho da fonte ajustado */
+  margin-right: 10px; /* Margem direita ajustada */
+  transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+.get-started-btn:hover {
+  background-color: #5472f0; /* Cor mais clara ao passar o mouse */
+}
+
+.image-section-alexia {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40%; /* Mantém a largura da seção de imagem em 40% */
+}
+
+.sketchfab-embed-wrapper {
+  width: 120%; /* Aumentado para 120% para a seção da imagem 3D */
+  height: auto;
+}
+
+.sketchfab-embed-wrapper iframe {
+  width: 100%; /* Mantém 100% para ocupar toda a largura do wrapper */
+  height: 500px; /* Altura do iframe ajustada */
+  border-radius: 20px; /* Bordas arredondadas para o iframe */
+}

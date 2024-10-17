@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .featured-services-container.info-coracao {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .title.info-coracao {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .subtitle.info-coracao {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+  }
+  
+  .main-content.info-coracao {
+    display: flex;
+    justify-content: center; /* Centraliza os cards */
+    flex-wrap: wrap; /* Permite que os cards se ajustem em múltiplas linhas */
+  }
+  
+  .services-cards.info-coracao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card.info-coracao {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px; /* Largura fixa para os cards */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Transição suave para o efeito hover */
+  }
+  
+  .card.info-coracao:hover {
+    transform: scale(1.05); /* Aumenta o card ao passar o mouse */
+  }
+  
+  .service-icon.info-coracao {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .info-section.info-coracao {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha ao topo */
+    text-align: left;
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Limite de largura para melhor legibilidade */
+    margin: 20px auto; /* Centraliza a seção */
+  }
+  
+  .working-hours.info-coracao,
+  .fees-insurance.info-coracao {
+    margin-bottom: 20px;
+  }
+  
+  .section-title.info-coracao {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .hours.info-coracao {
+    color: #7f8c8d;
+    margin-bottom: 5px;
+  }
+  
+  .description-HomeSem.info-coracao {
+    color: #34495e;
+  }
+  
+  .checkout-button.info-coracao {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Espaço acima do botão */
+  }
+  
+  .checkout-button.info-coracao:hover {
+    background-color: #3498db; /* Cor do botão ao passar o mouse */
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .main-content.info-coracao {
+      flex-direction: column; /* Alinha tudo verticalmente em telas pequenas */
+    }
+  
+    .info-section.info-coracao {
+      width: 90%; /* Maior largura em telas pequenas */
+    }
+  }
+  

@@ -1,18 +1,28 @@
 import React from 'react';
-import TabelaBeneficio from "../Components/TabelaBeneficio.jsx";
-import PlanoBeneficio from "../Components/PlanoBeneficio.jsx";
-import UnidadeBeneficio from "../Components/UnidadeBeneficio.jsx";
-import DuvidaBeneficio from "../Components/DuvidaBeneficio.jsx";
+import Banner from "../Components/BannerBaneficio"
+import CardTabela from "../Components/CardTabelaBeneficio";
+import Comentario from "../Components/ComentarioBeneficio"
+import Exame from "../Components/ExameBeneficio"
+import Icons from "../Components/IconsBeneficio"
+import Plano from "../Components/PlanoBeneficio";
+import Unidade from "../Components/UnidadeBeneficio"
+import Duvida from "../Components/DuvidaBeneficio"
+import Maps from "../Components/MapsBeneficio";
 
 
 const Beneficio  = () => {
   return (
     <>
-    <TabelaBeneficio />
-    <PlanoBeneficio />
-    <h2 className='Uni'>Um pouco das nossas unidades <span>Hospitares</span></h2>
-    <UnidadeBeneficio />
-    <DuvidaBeneficio />
+  <Banner />
+    <CardTabela />
+    <Exame />
+    <Icons />
+    <Plano />
+  <Unidade />
+  <Comentario />
+  <Duvida />
+  <Maps />
+
     </>
   );
 }

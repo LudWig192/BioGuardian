@@ -1,0 +1,195 @@
+.app {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.app-header {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 86%;
+}
+
+.search-bar-container {
+    flex: 1;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os ícones */
+}
+
+.large-icon {
+    font-size: 2rem;
+    color: #555;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre o avatar e as informações do usuário */
+}
+
+.avatar-funcionario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-email {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button-group-funcionario {
+    display: flex;
+    gap: 10px;
+}
+
+.button-custom {
+    padding: 6px 12px; /* Diminuído o tamanho do botão */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    font-size: 0.8rem; /* Diminuído o tamanho da fonte */
+    transition: background-color 0.3s, color 0.3s; /* Transição adicionada */
+}
+
+.button-group-funcionario .button-custom:hover {
+    background-color: #5472f0; /* Cor do botão no hover */
+    color: white; /* Cor do texto no hover */
+}
+
+.button-custom:focus {
+    outline: none;
+    box-shadow: 0 0 5px #5472f0;
+}
+
+.button-custom.primary {
+    background-color: #5472f0;
+    color: white;
+}
+
+.filter-btn {
+    padding: 10px 15px; /* Diminuído o tamanho do botão */
+    font-size: 0.8rem; /* Diminuído o tamanho da fonte */
+}
+
+.add-doctor-btn {
+    padding: 16px 22px; /* Diminuído o tamanho do botão */
+    font-size: 0.8rem; /* Diminuído o tamanho da fonte */
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: #5472f0;
+    font-weight: bold;
+    color: white; /* Cor do texto para os cabeçalhos da tabela */
+}
+
+.product-table tr:hover {
+    background-color: #f9f9f9; /* Destaque ao passar o mouse sobre a linha */
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+}
+
+.active {
+    background-color: green;
+}
+
+.inactive {
+    background-color: red;
+}
+
+.product-table td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.button-custom:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        margin-bottom: 10px; /* Espaço abaixo da barra de busca */
+    }
+
+    .icon-container {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .product-table {
+        font-size: 0.9rem; /* Tamanho da fonte ajustado para telas menores */
+    }
+}

@@ -1,0 +1,80 @@
+.section-serviço {
+    padding: 3rem 0; /* padding superior e inferior */
+    margin-top: 300px; /* ajuste a margem superior conforme necessário */
+}
+
+/* Estilo do container */
+.container-serviço {
+    max-width: 1200px; /* largura máxima do container */
+    margin: 0 auto; /* centraliza o container */
+    padding: 0 1rem; /* padding lateral */
+}
+
+/* Estilo do título */
+h3 {
+    font-size: 2.5rem; /* tamanho da fonte do título */
+    margin-bottom: 2rem; /* espaçamento inferior */
+    color: #54d4f0;
+}
+
+/* Estilo da linha (row-serviço) */
+.row-serviço {
+    display: flex; /* usa flexbox para layout */
+    flex-wrap: wrap; /* permite quebra de linha */
+    justify-content: space-between; /* espaçamento entre os itens */
+}
+
+/* Estilo das colunas */
+.col-md-4 {
+    flex: 0 0 30%; /* cada coluna ocupa 30% do espaço */
+    max-width: 30%; /* largura máxima */
+    padding: 1rem; /* padding interno */
+    box-sizing: border-box; /* inclui padding na largura total */
+    display: flex; /* Usando flexbox para alinhar os itens verticalmente */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os itens */
+}
+
+/* Estilo dos ícones */
+.icon-serviço {
+    margin-bottom: 1rem; /* espaçamento inferior */
+    display: flex; /* usa flexbox para centralizar */
+    justify-content: center; /* centraliza o ícone */
+    align-items: center; /* alinha verticalmente */
+    width: 80px; /* largura do contêiner do ícone */
+    height: 80px; /* altura do contêiner do ícone */
+    border: 2px solid #54a3f0; /* borda em torno do ícone */
+    border-radius: 50%; /* bordas arredondadas */
+    margin: 0 auto; /* centraliza horizontalmente */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* animação de transição */
+}
+
+.icon-serviço:hover {
+    background-color: #5472f0; /* nova cor de fundo ao passar o mouse */
+    border-color: #54a3f0; /* muda a cor da borda ao passar o mouse */
+}
+
+.icon-xlg-serviço {
+    font-size: 2rem; /* tamanho do ícone */
+    color: #54a3f0; /* cor do ícone */
+    transition: color 0.3s ease; /* animação de transição para a cor do ícone */
+}
+
+.icon-serviço:hover .icon-xlg-serviço {
+    color: #ffffff; /* muda a cor do ícone ao passar o mouse */
+}
+
+/* Estilo do texto */
+.font-serviço {
+    font-weight: bold; /* texto em negrito */
+    text-align: center; /* centraliza o texto */
+    margin-top: 1rem; /* espaço superior para separar do ícone */
+    color: #54a3f0;
+}
+
+.descricao-serviço {
+    margin-top: 0.5rem; /* margem superior para descrição */
+    color: #6c757d; /* cor do texto da descrição */
+    font-size: 1rem; /* tamanho da fonte da descrição */
+    text-align: center; /* centraliza o texto da descrição */
+}

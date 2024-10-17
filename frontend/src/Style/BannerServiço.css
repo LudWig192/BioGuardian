@@ -1,0 +1,116 @@
+.BannerServiço {
+    position: relative;
+  }
+  
+  .BannerServiço__imagem {
+    display: flex;
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    align-items: center;
+    background-image: url('../Imagens/BannerServiço.png');
+    background-size: cover; /* Mantém a imagem cobrindo todo o espaço */
+    background-position: center;
+    height: 100vh; /* Ajusta para ocupar toda a altura da viewport */
+    color: white;
+    padding: 50px;
+  }
+  
+  .BannerServiço__imagem-content {
+    max-width: 50%; /* Mantém o conteúdo a 50% da largura */
+    text-align: left; /* Garante que o texto esteja alinhado à esquerda */
+    z-index: 1;
+  }
+  
+  .BannerServiço__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .BannerServiço__description {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  
+  .BannerServiço__appointment-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .BannerServiço__info-section {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 704px; /* Ajuste a distância dos cards do topo do banner */
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 80%;
+  }
+  
+  .BannerServiço__info-card {
+    flex: 1 1 20%;
+    margin: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Mantém o texto alinhado à esquerda */
+    display: flex;
+    flex-direction: column; /* Mantém a direção em coluna */
+    align-items: center; /* Centraliza os ícones */
+  }
+  
+  .BannerServiço__card-icon {
+    font-size: 2.5rem; /* Tamanho do ícone */
+    margin-bottom: 10px; /* Espaço abaixo do ícone */
+    color: #54a3f0; /* Cor do ícone */
+  }
+  
+  .BannerServiço__card-title {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    margin-bottom: 10px;
+    color: #54a3f0;
+  }
+  
+  .BannerServiço__hours {
+    font-size: 0.9rem; /* Tamanho da fonte do texto */
+    margin: 0; /* Remove margens padrão */
+  }
+  
+  .BannerServiço__emergency-contact {
+    font-size: 0.9rem; /* Tamanho da fonte do texto */
+    margin: 0; /* Remove margens padrão */
+  }
+  
+  /* Media Queries para responsividade */
+  @media (max-width: 768px) {
+    .BannerServiço__imagem {
+      flex-direction: column; /* Muda para coluna em telas menores */
+      height: auto; /* Ajusta a altura do banner */
+      padding: 20px; /* Diminui o padding */
+      justify-content: center; /* Centraliza o conteúdo verticalmente */
+    }
+  
+    .BannerServiço__imagem-content {
+      max-width: 100%; /* Permite que o conteúdo use toda a largura */
+    }
+  
+    .BannerServiço__info-section {
+      flex-direction: column; /* Muda para coluna em telas menores */
+      align-items: center; /* Centraliza os cards */
+      top: 60%; /* Ajusta a posição vertical dos cards */
+      left: 0; /* Ajusta a posição à esquerda */
+      width: 100%; /* Largura total em telas pequenas */
+    }
+  
+    .BannerServiço__info-card {
+      width: 90%; /* Ajusta a largura dos cards em telas pequenas */
+    }
+  }
+  

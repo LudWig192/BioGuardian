@@ -1,0 +1,65 @@
+.doctor-serviços-container {
+    padding: 200px;
+    margin-top: 50px; /* Adiciona um espaço acima do componente */
+}
+
+/* Estilos para o título */
+.doctor-serviços-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #54d4f0;
+}
+
+/* Estilos para a descrição */
+.doctor-serviços-description {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #54d4f0;
+
+}
+
+/* Estilos para a grid de médicos */
+.doctor-serviços-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsivo */
+    gap: 20px; /* Espaço entre os cards */
+    justify-content: center; /* Centraliza os cards */
+    max-width: 800px; /* Largura máxima da grid */
+    margin: 0 auto; /* Centraliza a grid na página */
+}
+
+/* Estilos para cada card do médico */
+.doctor-serviços-card {
+    background-color: white; /* Fundo branco */
+    border: 1px solid #ddd; /* Borda leve */
+    overflow: hidden; /* Para evitar overflow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.doctor-serviços-card:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o card */
+}
+
+/* Estilos para a imagem do médico */
+.doctor-serviços-image {
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+}
+
+/* Estilos para as informações do médico */
+.doctor-serviços-info {
+    padding: 15px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    background-color: #5472f0; /* Cor de fundo azul */
+    color: white; /* Cor do texto */
+}
+
+/* Estilos para o nome e título do médico */
+.doctor-serviços-name {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    margin: 10px 0; /* Margens acima e abaixo */
+}

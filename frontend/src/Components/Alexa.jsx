@@ -1,5 +1,5 @@
 // import React from 'react';
-// import "../Style/Alexa.css";
+// import "../Style/AlexaHome.css";
 
 // function Alexa() {
 //     return (
@@ -22,12 +22,46 @@
 //                 </ul>
 //             </div>
 //             <div className="pulseira-model-section">
-
-//                 <div class="sketchfab-embed-wrapper"> <iframe title="Echo Dot_ Alexa!" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/8c51d37795264cc99961417a56b3c1c0/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/echo-dot--alexa-8c51d37795264cc99961417a56b3c1c0?utm_medium=embed&utm_campaign=share-popup&utm_content=8c51d37795264cc99961417a56b3c1c0" target="blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Echo Dot Alexa! </a> by <a href="https://sketchfab.com/francesca.cepparulo?utm_medium=embed&utm_campaign=share-popup&utm_content=8c51d37795264cc99961417a56b3c1c0" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Francesca Cepparulo_3D </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8c51d37795264cc99961417a56b3c1c0" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>xr
+//                 <div className="sketchfab-embed-wrapper">
+//                     <iframe
+//                         title="Echo Dot_ Alexa!"
+//                         frameBorder="0"
+//                         allowFullScreen
+//                         mozallowfullscreen="true"
+//                         webkitallowfullscreen="true"
+//                         allow="autoplay; fullscreen; xr-spatial-tracking"
+//                         src="https://sketchfab.com/models/8c51d37795264cc99961417a56b3c1c0/embed"
+//                     ></iframe>
+//                     <p style={{ fontSize: '13px', fontWeight: 'normal', margin: '5px', color: '#4A4A4A' }}>
+//                         <a
+//                             href="https://sketchfab.com/3d-models/echo-dot--alexa-8c51d37795264cc99961417a56b3c1c0?utm_medium=embed&utm_campaign=share-popup&utm_content=8c51d37795264cc99961417a56b3c1c0"
+//                             target="_blank"
+//                             rel="nofollow"
+//                             style={{ fontWeight: 'bold', color: '#1CAAD9' }}
+//                         >
+//                             Echo Dot Alexa!
+//                         </a> by 
+//                         <a
+//                             href="https://sketchfab.com/francesca.cepparulo?utm_medium=embed&utm_campaign=share-popup&utm_content=8c51d37795264cc99961417a56b3c1c0"
+//                             target="_blank"
+//                             rel="nofollow"
+//                             style={{ fontWeight: 'bold', color: '#1CAAD9' }}
+//                         >
+//                             Francesca Cepparulo_3D
+//                         </a> on 
+//                         <a
+//                             href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8c51d37795264cc99961417a56b3c1c0"
+//                             target="_blank"
+//                             rel="nofollow"
+//                             style={{ fontWeight: 'bold', color: '#1CAAD9' }}
+//                         >
+//                             Sketchfab
+//                         </a>
+//                     </p>
+//                 </div>
 //             </div>
 //         </div>
 //     );
 // }
 
 // export default Alexa;
-

@@ -1,0 +1,74 @@
+/* ComponenteBeneficio.css */
+
+.DuvidaBeneficio.faq-container-perguntas {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.DuvidaBeneficio.faq-left {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.DuvidaBeneficio {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.DuvidaBeneficio.faq-left div {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.DuvidaBeneficio.faq-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.DuvidaBeneficio.faq-button:hover {
+  background-color: #0056b3;
+}
+
+.DuvidaBeneficio.faq-right {
+  flex: 2;
+}
+
+.DuvidaBeneficio.faq-item {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.DuvidaBeneficio.faq-item.active {
+  background-color: #e9f5ff;
+  border-color: #007bff;
+}
+
+.DuvidaBeneficio.faq-question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.DuvidaBeneficio.faq-answer {
+  padding: 10px;
+  background-color: #f1f9ff;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.DuvidaBeneficio.faq-icon {
+  font-size: 18px;
+  margin-left: 10px;
+  color: #007bff;
+}
