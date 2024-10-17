@@ -1,189 +1,77 @@
-/* Cabeçalho da Data */
+/* Estilo geral do cabeçalho */
 .date-header {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Alterado para coluna */
     align-items: center;
-    /* Centraliza os elementos */
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 700px;
-    /* Aumentei a largura máxima do calendário */
-    transition: box-shadow 0.3s ease;
-    /* Transição suave para o efeito de sombra */
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 600px;
 }
 
-.date-header:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* Sombra mais intensa ao passar o mouse */
-}
-
+/* Título do Mês */
 .date-header h3 {
-    margin-bottom: 15px;
-    /* Distância entre o título e os botões */
-    color: #333;
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    /* Centraliza o texto */
+    margin-bottom: 10px; /* Espaçamento abaixo do título do mês */
 }
 
-/* Botões dos dias */
+/* Navegação da semana */
+.week-navigation {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo dos botões de navegação (setas) */
+.week-navigation button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px; /* Diminuído o padding */
+    font-size: 16px;   /* Fonte menor */
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;   /* Margem reduzida */
+    transition: background-color 0.3s ease;
+}
+
+.week-navigation button:hover {
+    background-color: #45a049;
+}
+
+.week-navigation button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 128, 0, 0.5); /* Reduzi o box-shadow */
+}
+
+/* Estilo dos botões dos dias */
 .day-buttons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
+    gap: 5px; /* Espaço reduzido entre os botões */
 }
 
-/* Estilo padrão para os dias */
-.day,
-.selected-day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
+.day-buttons button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd; /* Borda mais fina */
+    padding: 5px; /* Diminuído o padding */
+    border-radius: 5px; /* Bordas levemente arredondadas */
     cursor: pointer;
-    font-size: 14px;
-    width: 70px;
-    height: 60px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    color: #000;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #6bd2ff, #52b4e2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    font-size: 14px;  /* Fonte menor */
+    min-width: 50px;  /* Largura mínima menor */
 }
 
-/* Efeito ao passar o mouse sobre os dias */
-.day:hover {
-    background: linear-gradient(135deg, #52b4e2, #3a94c7);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.day-buttons button:hover {
+    background-color: #ddd;
 }
 
-/* Estilo do dia selecionado */
-.selected-day {
-    background: linear-gradient(135deg, #4caf50, #43a047);
+.day-buttons button.selected-day {
+    background-color: #4CAF50;
     color: white;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(-5px) scale(1.05);
-    border: 2px solid #388e3c;
-    /* Borda para destacar o dia selecionado */
-}
-
-/* Efeito ao passar o mouse sobre o dia selecionado */
-.selected-day:hover {
-    background: linear-gradient(135deg, #388e3c, #2e7d32);
-    transform: translateY(-5px) scale(1.1);
-}
-
-/* Animações de clique */
-.day:active,
-.selected-day:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Melhorias responsivas */
-@media (max-width: 600px) {
-    .date-header h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-        /* Ajustado para melhor espaçamento */
-    }
-
-    .day,
-    .selected-day {
-        width: 30px;
-        height: 30px;
-        font-size: 20px;
-    }
-}
-
-/* Container do Appointment */
-.appointment-container {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.appointment-container:hover {
-    transform: scale(1.02);
-    /* Suave aumento ao passar o mouse */
-    background-color: #f9f9f9;
-}
-
-/* Estilo da Hora (à esquerda do card) */
-.appointment-datetime {
-    font-size: 16px;
-    color: #333;
-    font-weight: 700;
-    margin-right: 20px;
-    min-width: 70px;
-    text-align: left;
-    color: #007bff;
-    position: relative;
-}
-
-/* Linha decorativa para a hora */
-.appointment-datetime::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width:  10px;
-    height: 50%;
-    background-color: #007bff;
-    transform: translateY(-50%);
-    margin-left: 5px;
-}
-
-/* Estilo do Card de Exame */
-.appointment-card {
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    position: relative;
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: box-shadow 0.3s ease;
-}
-
-.appointment-card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-}
-
-/* Título do Exame em letras maiúsculas */
-.appointment-card h4 {
-    font-size: 18px;
+    border-color: #4CAF50;
     font-weight: bold;
-    text-transform: uppercase;
-    margin: 0 0 8px 0;
-    color: #333;
 }
 
-/* Nome do Médico */
-.appointment-card p {
-    font-size: 14px;
-    color: #555;
-    margin: 5px 0;
-}
-
-/* Área dos ícones de edição e exclusão */
+/* Estilo para os ícones de edição e exclusão */
 .appointment-options {
     display: flex;
     justify-content: flex-end;
@@ -192,18 +80,23 @@
 /* Estilo dos ícones de edição e exclusão */
 .edit-symbol,
 .delete-symbol {
-    font-size: 18px;
+    font-size: 14px; /* Ajustar o tamanho da fonte */
     cursor: pointer;
     margin-left: 10px;
     color: #007bff;
     transition: color 0.3s ease, transform 0.3s ease;
+    padding: 3px 6px; /* Adiciona um pouco de preenchimento */
+    border-radius: 5px; /* Borda arredondada para os ícones */
 }
 
-.edit-symbol:hover,
+.edit-symbol:hover {
+    background-color: #28a745; /* Verde para o botão de editar */
+    color: white; /* Cor do texto em branco */
+}
+
 .delete-symbol:hover {
-    color: #0056b3;
-    transform: scale(1.2);
-    /* Aumenta levemente os ícones ao passar o mouse */
+    background-color: #dc3545; /* Vermelho para o botão de excluir */
+    color: white; /* Cor do texto em branco */
 }
 
 /* Container do Appointment */

@@ -9,6 +9,7 @@ import '../Style/HomeMedico.css';
 import Cabecalho from '../Components/Calendario';
 import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
+// import Grafico from "../Components/"
 
 // IMPORTE IMAGENS
 

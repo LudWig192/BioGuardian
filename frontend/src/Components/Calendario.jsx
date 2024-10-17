@@ -2,19 +2,20 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "../Style/Cabecalhodata.css";
 
-// OS DIAS
-const days = [
-    { day: "6", label: "Domingo" },
-    { day: "7", label: "Segunda" },
-    { day: "8", label: "Terça" },
-    { day: "9", label: "Quarta" },
-    { day: "10", label: "Quinta" },
-    { day: "11", label: "Sexta" },
-    { day: "12", label: "Sábado" },
-];
+// Função para gerar os dias da semana
+const generateDaysOfWeek = (startDay) => {
+    const daysInWeek = 7;
+    const days = [];
 
-// Exames por dia (exemplo)
-const examsByDay = {};
+    for (let i = 0; i < daysInWeek; i++) {
+        const day = startDay + i;
+        days.push({
+            day: day > 31 ? day - 31 : day, // Se o número do dia ultrapassar 31, volta para 1
+            label: ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"][i],
+        });
+    }
+    return days;
+};
 
 const Cabecalho = () => {
     const [selectedDay, setSelectedDay] = useState("");
@@ -23,18 +24,13 @@ const Cabecalho = () => {
     const [formDetails, setFormDetails] = useState({ title: "", description: "", time: "", doctor: "" });
     const [isEditing, setIsEditing] = useState(false);
     const [editIndex, setEditIndex] = useState(null);
-
-    // Lista de horários
-    const availableTimes = [
-        "08:00", "09:00", "10:00", "11:00", "12:00",
-        "13:00", "14:00", "15:00", "16:00", "17:00"
-    ];
+    const [weekOffset, setWeekOffset] = useState(0); // Controle de qual semana estamos exibindo
 
     useEffect(() => {
-        const today = new Date().getDate().toString();
-        setSelectedDay(today);
+        const today = new Date().getDate();
+        setSelectedDay(today.toString());
         const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
-        setAppointments(storedAppointments); // Carrega os appointments do localStorage
+        setAppointments(storedAppointments);
     }, []);
 
     const handleDayClick = (day) => {
@@ -52,18 +48,16 @@ const Cabecalho = () => {
 
         let updatedAppointments;
         if (isEditing) {
-            // Atualiza a consulta existente
             updatedAppointments = appointments.map((appointment, index) =>
                 index === editIndex ? newAppointment : appointment
             );
         } else {
-            // Adiciona nova consulta
             updatedAppointments = [...appointments, newAppointment];
         }
 
         setAppointments(updatedAppointments);
-        localStorage.setItem("appointments", JSON.stringify(updatedAppointments)); // Salva no localStorage
-        resetForm(); // Limpa o formulário e fecha o modal
+        localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+        resetForm();
     };
 
     const handleChange = (e) => {
@@ -82,7 +76,7 @@ const Cabecalho = () => {
     const handleDelete = (index) => {
         const updatedAppointments = appointments.filter((_, i) => i !== index);
         setAppointments(updatedAppointments);
-        localStorage.setItem("appointments", JSON.stringify(updatedAppointments)); // Atualiza o localStorage
+        localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
     };
 
     const resetForm = () => {
@@ -92,45 +86,55 @@ const Cabecalho = () => {
         setEditIndex(null);
     };
 
-    // Filtra os appointments para o dia selecionado
-    const filteredAppointments = appointments.filter(appointment => appointment.day === selectedDay);
+    // Navegar entre semanas
+    const nextWeek = () => {
+        setWeekOffset(weekOffset + 7); // Avança 7 dias
+    };
+
+    const prevWeek = () => {
+        setWeekOffset(weekOffset - 7); // Retrocede 7 dias
+    };
+
+    // Dias calculados com base na semana
+    const days = generateDaysOfWeek(new Date().getDate() + weekOffset);
+
+    // Filtrar os appointments para o dia selecionado
+    const filteredAppointments = appointments.filter((appointment) => appointment.day === selectedDay);
 
     return (
         <>
             <div className="date-header">
-                <h3>Outubro 2024</h3>
-                <div className="day-buttons">
-                    {days.map(({ day, label }) => (
-                        <button
-                            key={day}
-                            className={day === selectedDay ? "selected-day" : "day"}
-                            onClick={() => handleDayClick(day)}
-                        >
-                            <div>{day}</div>
-                            <div>{label}</div>
-                        </button>
-                    ))}
+                <h3 className="Mes">Outubro 2024</h3>
+                <div className="week-navigation">
+                    <button onClick={prevWeek}>⬅</button>
+                    <div className="day-buttons">
+                        {days.map(({ day, label }) => (
+                            <button
+                                key={day}
+                                className={day === selectedDay ? "selected-day" : "day"}
+                                onClick={() => handleDayClick(day.toString())}
+                            >
+                                <div>{day}</div>
+                                <div>{label}</div>
+                            </button>
+                        ))}
+                    </div>
+                    <button onClick={nextWeek}>➡</button>
                 </div>
             </div>
 
-            {/* Cards das Consultas */}
             <div className="appointments">
                 <h2>Exames para o dia {selectedDay}:</h2>
                 {filteredAppointments.length > 0 ? (
                     filteredAppointments.map((appointment, index) => (
                         <div key={index} className="appointment-container">
-                            {/* Data e Hora fora do card */}
                             <div className="appointment-datetime">
                                 <p>Data: {appointment.day}</p>
                                 <p>Hora: {appointment.time}</p>
                             </div>
-                            
-                            {/* Exame e Nome do Médico dentro do card */}
                             <div className="appointment-card">
                                 <h4>{appointment.title.toUpperCase()}</h4>
                                 <p>{appointment.doctor}</p>
-
-                                {/* Símbolo para editar ou cancelar */}
                                 <div className="appointment-options">
                                     <span className="edit-symbol" onClick={() => handleEdit(index)}>...</span>
                                     <span className="delete-symbol" onClick={() => handleDelete(index)}>Excluir</span>
@@ -142,8 +146,7 @@ const Cabecalho = () => {
                     <p>Não há consultas agendadas para este dia.</p>
                 )}
             </div>
-            
-            {/* Modal para criar ou editar uma consulta */}
+
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={resetForm}
@@ -192,15 +195,19 @@ const Cabecalho = () => {
                             required
                         >
                             <option value="">Selecione um horário</option>
-                            {availableTimes.map((time) => (
-                                <option key={time} value={time}>
-                                    {time}
-                                </option>
-                            ))}
+                            {["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"].map(
+                                (time) => (
+                                    <option key={time} value={time}>
+                                        {time}
+                                    </option>
+                                )
+                            )}
                         </select>
                     </label>
                     <button type="submit">{isEditing ? "Atualizar" : "Agendar"}</button>
-                    <button type="button" onClick={resetForm}>Cancelar</button>
+                    <button type="button" onClick={resetForm}>
+                        Cancelar
+                    </button>
                 </form>
             </Modal>
         </>
