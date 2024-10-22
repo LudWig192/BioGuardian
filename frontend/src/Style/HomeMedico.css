@@ -2,9 +2,12 @@
   max-height: 400px;
   max-width: 400px;
   margin-right: 100px;
-  display: flex; /* Adiciona flexbox para alinhar os itens dentro da Status */
-  justify-content: center; /* Centraliza o conteúdo */
-  align-items: center; /* Alinha verticalmente */
+  display: flex;
+  /* Adiciona flexbox para alinhar os itens dentro da Status */
+  justify-content: center;
+  /* Centraliza o conteúdo */
+  align-items: center;
+  /* Alinha verticalmente */
 }
 
 .corpoExemplo {
@@ -14,16 +17,29 @@
 
 .Consultas {
 
-  display: flex; /* Usa flexbox para organizar os componentes */
-  flex-direction: column; /* Alinha os itens verticalmente */
+  display: flex;
+  /* Usa flexbox para organizar os componentes */
+  flex-direction: column;
+  /* Alinha os itens verticalmente */
   margin-left: 530px;
-  margin-top: -270px; /* Ajuste conforme a necessidade */
-  width: 100%; /* Para ocupar toda a largura disponível */
+  margin-top: -270px;
+  /* Ajuste conforme a necessidade */
+  width: 100%;
+  /* Para ocupar toda a largura disponível */
 }
-
 
 /* Estilização para o cabeçalho do calendário */
 .date-header {
   /* ... Seu estilo existente ... */
-  width: 100%; /* Para que o cabeçalho ocupe toda a largura do pai */
+  width: 100%;
+  /* Para que o cabeçalho ocupe toda a largura do pai */
+}
+
+.Linha {
+  padding-top: 200px;
+}
+
+.Cliente {
+  margin-top: 200px;
+  margin-right: 500px;
 }

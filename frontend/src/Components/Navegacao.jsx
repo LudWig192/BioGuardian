@@ -46,7 +46,8 @@ const Navbar = () => {
                         src={require("../Imagens/Calvo-removebg-preview.png")} // Insira a imagem do usuário aqui
                         alt="User Avatar"
                         className="avatar"
-                    />
+                    ></img>
+                
                 </div>
             </div>
         </nav>

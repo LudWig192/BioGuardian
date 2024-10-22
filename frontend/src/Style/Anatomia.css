@@ -6,7 +6,7 @@
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  padding-top: 350px;
+  padding-top: 100px;
   padding-left: 200px;
   /* Aumenta ainda mais o espaçamento superior */
 }

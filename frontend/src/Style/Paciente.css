@@ -1,0 +1,55 @@
+.user-profile-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Ajusta a largura máxima para se assemelhar ao layout fornecido */
+    margin: auto; /* Centraliza o componente na tela */
+  }
+  
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-photo {
+    width: 100px; /* Ajuste de tamanho para se assemelhar ao layout fornecido */
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-name {
+    margin-bottom: 10px;
+  }
+  
+  .update-button {
+    background: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .info-section {
+    width: 100%; /* Garante que a seção de informações ocupe a largura total do contêiner */
+    background-color: #f7f9fc;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .info-details {
+    text-align: left; /* Mantém o alinhamento à esquerda */
+  }
+  

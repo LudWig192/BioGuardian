@@ -14,11 +14,11 @@ import HomeCliente from "./Pages/HomeCliente.js";
 import Exames from "./Pages/Exames.js"
 import Agenda from "./Pages/Agenda.js";
 
+//PAGES DO MEDICO
 import HomeMedico from '../src/Pages/HomeMedico.js';
 import TabelaUsuarios from "./Pages/ListaUsuarios.js";
 import Unidades from "./Pages/Unidades.js";
 import Funcionarios from "./Pages/Funcionarios.js";
-
 
 const Rotas = () => {
         return (
