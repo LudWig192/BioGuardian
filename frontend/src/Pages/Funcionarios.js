@@ -1,12 +1,13 @@
 import React from "react";
 import Funcionario from "../Components/Funcionarios";
 
-const Login = () => {
+const Funcionarios = () => {
     return (
         <>
+            
             <Funcionario />
         </>
     );
 };
 
-export default Login;
+export default Funcionarios;
