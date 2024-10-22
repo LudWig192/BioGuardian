@@ -20,14 +20,6 @@ function NoteApp() {
   });
   const [isEditing, setIsEditing] = useState(false);
   const [currentNoteIndex, setCurrentNoteIndex] = useState(null);
-  const handleAddNote = () => {
-    const trimmedNote = note.trim();
-    if (trimmedNote) {
-      // Restante do código...
-      setNote(trimmedNote);
-    }
-  }
-  };
 
   useEffect(() => {
     if (Array.isArray(notes)) {

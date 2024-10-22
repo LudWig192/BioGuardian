@@ -1,6 +1,7 @@
 /* Estilo principal do app */
 .note-app {
-    width: 350px;
+    width: 100%;
+    max-width: 400px; /* Permite que o bloco tenha um tamanho máximo */
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -9,6 +10,7 @@
     font-family: 'Roboto', sans-serif;
     color: #333;
     margin-top: 200px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Título do bloco de notas */
@@ -115,4 +117,16 @@
 .delete-button:hover {
     background-color: #ffebee;
     transform: scale(1.1);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 500px) {
+    .note-app {
+        width: 90%; /* Ocupa quase toda a largura da tela no celular */
+        margin-top: 100px; /* Reduz a margem superior */
+    }
+
+    .note-textarea {
+        height: 100px; /* Ajusta a altura do campo de texto */
+    }
 }
