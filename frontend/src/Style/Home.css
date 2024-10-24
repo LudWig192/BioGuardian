@@ -1,58 +1,44 @@
-.spaced-element {
-    margin-bottom: 20px;
-}
+/* responsive.css */
 
-
-
-
-/* pulseira  */
-
-
-.layout-container {
+/* Estilos gerais */
+.container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    height: 70vh;
-    box-sizing: border-box;
-    background-color: #54a3f0;
 }
 
-
-.text-section {
-    flex: 1;
-    padding-right: 10px;
-    color: white;
+/* Ajustes para telas menores */
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
-
-.model-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .header, .footer {
+        text-align: center;
+    }
+    .banner {
+        font-size: 1.5em; /* Ajuste o tamanho da fonte */
+    }
+    .card {
+        padding: 10px; /* Ajuste o padding */
+        font-size: 0.9em; /* Ajuste o tamanho da fonte nos cards */
+    }
 }
 
-
-.model-section iframe {
-    width: 100%;
-    height: 350px;
-    border: none;
+/* Estilos para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .banner {
+        font-size: 1.2em; /* Fontes menores em telas pequenas */
+    }
+    .card {
+        padding: 5px;
+    }
 }
-
-/* pulseira  */
-
-
-/* slider  */
-
-.carousel-container {
-    height: 500px;
-    overflow: hidden;
-}
-
-.carousel-item img {
-    height: 100%;
-    object-fit: cover;
-}
-
-
-/* slider  */

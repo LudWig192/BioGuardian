@@ -1,148 +1,133 @@
-/* Estilização da seção geral */
-.resultadoexame-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    max-width: 1200px; /* Largura máxima do componente */
-    margin: 0 auto; /* Centraliza horizontalmente */
+.cardsResultadoCliente-container {
+    max-width: 1200px; /* Largura máxima do contêiner */
+    margin: 260px auto 0; /* Centraliza o contêiner e adiciona margem superior */
+    padding: 20px; /* Espaçamento interno */
+    display: flex; /* Adicionado para centralizar conteúdo */
+    flex-direction: column; /* Empilha elementos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
-/* Estilização da navegação */
-.resultadoexame-nav {
-    margin-bottom: 30px;
+.cardsResultadoCliente-header {
+    font-size: 32px; /* Tamanho da fonte do cabeçalho */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+    color: #6854f0;
 }
 
-/* Estilização do título */
-.resultadoexame-title-heading {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.cardsResultadoCliente {
+    display: flex; /* Utiliza flexbox para o layout */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte */
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
 }
 
-/* Estilização da descrição */
-.resultadoexame-description {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #666;
+.cardsResultadoCliente-card {
+    background-color: #fff; /* Cor de fundo dos cards */
+    border: 1px solid #ddd; /* Borda dos cards */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    width: calc(33.333% - 20px); /* Três cards por linha, considerando o espaço */
+    display: flex; /* Utiliza flexbox para permitir o alinhamento */
+    flex-direction: column; /* Faz os filhos serem empilhados verticalmente */
+    transition: transform 0.3s; /* Transição suave para transformação */
 }
 
-/* Estilização das categorias */
-.resultadoexame-categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Espaçamento entre os itens */
+.cardsResultadoCliente-card:hover {
+    transform: translateY(-5px); /* Eleva o card ao passar o mouse */
 }
 
-/* Estilização de cada item da categoria */
-.resultadoexame-category-item {
-    background-color: #e0e0e0;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.cardsResultadoCliente-image {
+    width: 100%; /* Imagem ocupa toda a largura do card */
+    height: auto; /* Altura automática para manter a proporção */
 }
 
-.resultadoexame-category-item:hover {
-    background-color: #d0d0d0; /* Efeito hover */
+.cardsResultadoCliente-content {
+    flex: 1; /* Faz com que o conteúdo ocupe o espaço disponível */
+    padding: 15px; /* Espaçamento interno do conteúdo do card */
+    text-align: left; /* Alinha o texto à esquerda */
+    display: flex; /* Permite o uso de flexbox */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    justify-content: space-between; /* Garante que o espaço entre os elementos seja distribuído */
 }
 
-/* Estilização da lista de resultados de exames */
-.resultadoexame-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Três colunas */
-    gap: 20px; /* Espaçamento entre os cartões */
+.cardsResultadoCliente-date {
+    font-size: 14px; /* Tamanho da fonte da data */
+    margin-bottom: 5px; /* Espaçamento abaixo da data */
 }
 
-/* Estilização do cartão de resultados de exame */
-.resultadoexame-card {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.cardsResultadoCliente-title {
+    font-weight: bold; /* Negrito para o título */
+    font-size: 18px; /* Aumentando o tamanho da fonte do título */
+    margin: 5px 0 10px; /* Espaçamento acima e abaixo do título */
 }
 
-/* Estilização da imagem do cartão */
-.resultadoexame-image {
-    width: 100%;
-    height: auto;
+.cardsResultadoCliente-text {
+    font-size: 14px; /* Tamanho da fonte da descrição */
+    margin-bottom: 15px; /* Espaço abaixo da descrição */
 }
 
-/* Estilização do conteúdo do cartão */
-.resultadoexame-content {
-    padding: 15px;
+.cardsResultadoCliente-button-container {
+    display: flex; /* Usar flexbox para centralizar o botão */
+    justify-content: center; /* Centraliza o botão */
+    margin-top: auto; /* Move o botão para o fundo do card */
+    padding-bottom: 15px; /* Adiciona espaçamento abaixo do botão */
 }
 
-/* Estilização da categoria */
-.resultadoexame-category {
-    font-size: 14px;
-    color: #007bff; /* Cor da categoria */
+.cardsResultadoCliente-link {
+    width: 100%; /* Faz o botão ocupar toda a largura do contêiner */
+    text-align: center; /* Centraliza o texto no botão */
+    text-decoration: none; /* Remove o sublinhado */
+    background-color: #54a3f0; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    font-weight: bold; /* Negrito */
+    padding: 10px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 4px; /* Bordas arredondadas do botão */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
 }
 
-/* Estilização das informações do cartão */
-.resultadoexame-info {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
+.cardsResultadoCliente-link:hover {
+    background-color: #007bbf; /* Cor de fundo ao passar o mouse */
 }
 
-/* Estilização do título do cartão */
-.resultadoexame-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
+/* Estilos para as informações da pessoa */
+.person-resultadoCliente-info {
+    display: flex; /* Usar flexbox para alinhar a imagem e o nome */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 10px; /* Espaço abaixo do perfil */
 }
 
-/* Estilização do autor */
-.resultadoexame-author {
-    font-size: 14px;
-    color: #999;
+.person-resultadoCliente-ball {
+    width: 30px; /* Largura da bola */
+    height: 30px; /* Altura da bola */
+    border-radius: 50%; /* Arredonda a bola */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    margin-right: 10px; /* Espaço entre a bola e o nome */
+    border: 2px solid #ddd; /* Borda da bola, opcional */
 }
 
-/* Estilização do preço */
-.resultadoexame-pricing {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
+.person-photo {
+    width: 100%; /* Imagem ocupa toda a largura da bola */
+    height: 100%; /* Imagem ocupa toda a altura da bola */
+    object-fit: cover; /* Mantém a proporção da imagem */
 }
 
-/* Estilização do preço atual */
-.resultadoexame-price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+.person-resultadoCliente-name {
+    font-size: 14px; /* Tamanho da fonte do nome */
+    color: #333; /* Cor do texto do nome */
 }
 
-/* Estilização do preço antigo */
-.resultadoexame-old-price {
-    text-decoration: line-through;
-    color: #999;
-}
-
-/* Estilização do botão de detalhes */
-.resultadoexame-details-button {
-    background-color: #007bff; /* Cor do botão */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.resultadoexame-details-button:hover {
-    background-color: #0056b3; /* Efeito hover */
-}
-
-/* Media Queries para Responsividade */
+/* Media Queries para responsividade */
 @media (max-width: 768px) {
-    .resultadoexame-list {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas menores */
+    .cardsResultadoCliente-card {
+        width: calc(50% - 20px); /* Dois cards por linha em telas menores */
     }
 }
 
 @media (max-width: 480px) {
-    .resultadoexame-list {
-        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    .cardsResultadoCliente-card {
+        width: 100%; /* Um card por linha em telas muito pequenas */
     }
 }

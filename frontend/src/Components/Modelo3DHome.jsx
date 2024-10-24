@@ -17,9 +17,6 @@ const LanguageCard = () => {
           com seu médico. Sinta-se seguro com um acompanhamento contínuo e intervenções rápidas.
           Não perca a oportunidade de melhorar sua saúde com nosso dispositivo avançado!
         </div>
-        <div className="buttons-alexia">
-          <button className="get-started-btn">Comece Agora</button>
-        </div>
       </div>
       <div className="image-section-alexia">
         {/* Embedding the Sketchfab iframe */}

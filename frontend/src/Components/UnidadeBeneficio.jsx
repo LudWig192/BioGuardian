@@ -1,64 +1,45 @@
-import React from "react";
-import Imagem1 from "../Imagens/Bom.png"; // Substitua pelo caminho real da imagem
-import "../Style/UnidadeBeneficio.css"; // Caminho do CSS
+import React from 'react';
+import '../Style/UnidadeBeneficio.css';
+import Central from "../Imagens/Hospital_Instituto_central.jpeg";
+import Israelita from "../Imagens/Hospital_Israelita.png";
+import Libano from "../Imagens/Hospital_Libano.jpg";
 
-const insuranceData = [
-  {
-    title: "Vehicle Insurance",
-    description: "Covers cars, motorcycles, and other vehicles.",
-    imgSrc: Imagem1,
-  },
-  {
-    title: "Life Insurance",
-    description: "Provides security for your family.",
-    imgSrc: Imagem1,
-  },
-  {
-    title: "Home Insurance",
-    description: "Protects your house from damages.",
-    imgSrc: Imagem1,
-  },
-  {
-    title: "Health Insurance",
-    description: "Ensures access to quality healthcare.",
-    imgSrc: Imagem1,
-  },
-];
-
-const InsuranceCard = ({ title, description, imgSrc }) => {
-  return (
-    <div className="UnidadesBeneficio-card">
-      <img src={imgSrc} alt={title} className="UnidadesBeneficio-cardImage" />
-      <div className="UnidadesBeneficio-cardContent">
-        <div className="UnidadesBeneficio-cardTitle">{title}</div> {/* Título dentro do cartão */}
-        <div className="UnidadesBeneficio-cardDescription">{description}</div> {/* Descrição dentro do cartão */}
-      </div>
-    </div>
-  );
+const ProjectsComponent = () => {
+    return (
+        <div className="unidadebeneficio-container">
+            <div className="unidadebeneficio-header">
+                <div className="unidadebeneficio-title">
+                    Conheça nossas unidades médicas
+                </div>
+                <div className="unidadebeneficio-description">
+                    Nossos médicos 24h indicam exames e cirurgias nessas unidades. O serviço BioGuardian monitora a saúde da sua família com inteligência artificial. Também oferecemos atendimento médico em casa para emergências.
+                </div>
+            </div>
+            <div className="unidadebeneficio-cards">
+                <div className="unidadebeneficio-card">
+                    <img src={Central} alt="Hospital Central" className="unidadebeneficio-image" />
+                    <div className="unidadebeneficio-info">
+                        <div className="unidadebeneficio-name">Hospital Central</div>
+                        <button className="unidadebeneficio-more">Ver mais</button>
+                    </div>
+                </div>
+                <div className="unidadebeneficio-card">
+                    <img src={Israelita} alt="Hospital Israelita" className="unidadebeneficio-image" />
+                    <div className="unidadebeneficio-info">
+                        <div className="unidadebeneficio-name">Hospital Israelita</div>
+                        <button className="unidadebeneficio-more">Ver mais</button>
+                    </div>
+                </div>
+                <div className="unidadebeneficio-card">
+                    <img src={Libano} alt="Hospital Libano" className="unidadebeneficio-image" />
+                    <div className="unidadebeneficio-info">
+                        <div className="unidadebeneficio-name">Hospital Libano</div>
+                        <button className="unidadebeneficio-more">Ver mais</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
-const InsuranceGrid = () => {
-  return (
-    <div className="UnidadesBeneficio-gridSection">
-      <div className="UnidadesBeneficio-gridHeading">
-        Estamos cobrindo todas as áreas de seguros
-      </div>
-      <div className="UnidadesBeneficio-gridSubtitle">
-        Explore uma ampla gama de serviços de seguro para garantir seu futuro e
-        seus ativos.
-      </div>
-      <div className="UnidadesBeneficio-gridContainer">
-        {insuranceData.map((item, index) => (
-          <InsuranceCard
-            key={index}
-            title={item.title}
-            description={item.description}
-            imgSrc={item.imgSrc}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default InsuranceGrid;
+export default ProjectsComponent;

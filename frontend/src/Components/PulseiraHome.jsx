@@ -12,7 +12,6 @@ const AppComponent = () => {
                         <div className="screenArea">
                             <img src={Pulseira} alt="App preview" className="phone-image" />
                         </div>
-                        
                     </div>
                 </div>
                 <div className="appDescription">
@@ -22,35 +21,34 @@ const AppComponent = () => {
                     </div>
                     <div className="statisticsContainer">
                         <div className="statisticItem">
-                            <FaHeartbeat size={50} className="stat-icon" /> {/* Ícone de 50px */}
+                            <FaHeartbeat size={50} className="stat-icon" />
                             <div className="stat-text">
                                 <span className="stat-value">Monitoramento Contínuo</span>
                                 <span className="stat-description">Acompanhe sua frequência cardíaca em tempo real</span>
                             </div>
                         </div>
                         <div className="statisticItem">
-                            <FaShieldAlt size={50} className="stat-icon" /> {/* Ícone de 50px */}
+                            <FaShieldAlt size={50} className="stat-icon" />
                             <div className="stat-text">
                                 <span className="stat-value">Segurança Avançada</span>
                                 <span className="stat-description">Proteção dos seus dados de saúde</span>
                             </div>
                         </div>
                         <div className="statisticItem">
-                            <FaSync size={50} className="stat-icon" /> {/* Ícone de 50px */}
+                            <FaSync size={50} className="stat-icon" />
                             <div className="stat-text">
                                 <span className="stat-value">Sincronização Rápida</span>
                                 <span className="stat-description">Conecte-se facilmente ao seu smartphone</span>
                             </div>
                         </div>
                         <div className="statisticItem">
-                            <FaUserCheck size={50} className="stat-icon" /> {/* Ícone de 50px */}
+                            <FaUserCheck size={50} className="stat-icon" />
                             <div className="stat-text">
                                 <span className="stat-value">Acompanhamento Personalizado</span>
                                 <span className="stat-description">Relatórios adaptados às suas necessidades de saúde</span>
                             </div>
                         </div>
                     </div>
-                    <button className="trialButton">Comece seu Teste Gratuito</button>
                 </div>
             </div>
         </div>

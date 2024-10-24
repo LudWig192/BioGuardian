@@ -1,0 +1,98 @@
+.cirurgiabeneficio-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #002f6c;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 260px;
+}
+
+.cirurgiabeneficio-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.cirurgiabeneficio-main-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.cirurgiabeneficio-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cirurgiabeneficio-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.cirurgiabeneficio-feature {
+  display: flex;
+  align-items: center;
+  background-color: #004080;
+  padding: 10px;
+  border-radius: 5px;
+  flex-basis: 45%;
+}
+
+.cirurgiabeneficio-feature-icon {
+  font-size: 36px;
+  margin-right: 10px;
+  color: white;
+}
+
+.cirurgiabeneficio-card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cirurgiabeneficio-description-text {
+  font-size: 14px;
+}
+
+.cirurgiabeneficio-eye-care-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cirurgiabeneficio-eye-care-image img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .cirurgiabeneficio-container {
+    flex-direction: column; /* Muda a direção para coluna em telas menores */
+    padding: 20px; /* Reduz o padding */
+    margin-top: 100px; /* Ajusta a margem superior */
+  }
+
+  .cirurgiabeneficio-features {
+    flex-direction: column; /* Muda a direção para coluna para os recursos */
+    gap: 10px; /* Reduz o espaço entre os itens */
+  }
+
+  .cirurgiabeneficio-feature {
+    flex-basis: 100%; /* Faz os recursos ocuparem toda a largura */
+  }
+
+  .cirurgiabeneficio-eye-care-image img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura */
+  }
+
+  .cirurgiabeneficio-main-title {
+    font-size: 28px; /* Reduz o tamanho do título principal */
+  }
+
+  .cirurgiabeneficio-description {
+    font-size: 14px; /* Reduz o tamanho da descrição */
+  }
+}

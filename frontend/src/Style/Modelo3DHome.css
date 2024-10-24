@@ -1,60 +1,66 @@
 .language-card-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Alinhamento ajustado para melhorar a disposição */
-  background-color: #f7f9fc; /* Cor de fundo */
-  padding: 60px; /* Ajuste o padding para evitar espaço excessivo */
-  border: 2px solid #54a3f0 ; /* Borda sólida com cor azul */
-  border-radius: 20px; /* Bordas arredondadas */
+  align-items: flex-start;
+  padding: 60px;
+  border: 2px solid #54a3f0;
+  border-radius: 20px;
   position: relative;
   width: 100%;
-  max-width: 863px; /* Diminuído o max-width para 900px */
-  margin: 150px auto; /* Diminuído a margem superior para 150px */
-  gap: 20px; /* Mantém o espaço entre a seção de texto e a imagem */
-  box-sizing: border-box; /* Inclui a borda no cálculo da largura total */
+  max-width: 863px;
+  margin: 150px auto;
+  gap: 20px;
+  box-sizing: border-box;
 }
 
 .text-section-alexia {
-  max-width: 45%; /* Mantém a largura da seção de texto em 45% */
+  max-width: 45%;
+  text-align: justify; /* Alinhamento justificado para melhorar a distribuição */
 }
 
 .language-title-alexia {
-  font-size: 2.2rem; /* Tamanho da fonte ajustado */
-  color: #54d4f0;
-  margin-bottom: 10px; /* Margem inferior ajustada */
+  font-size: 2rem;
+  color: #6854f0;
+  margin-bottom: 10px;
+  text-align: left; /* Alinhamento à esquerda */
+  font-weight: bold;
 }
 
 .highlight-text-alexia {
-  font-size: 1.1rem; /* Tamanho da fonte ajustado */
-  margin-bottom: 10px; /* Margem inferior ajustada */
+  font-size: 1.1rem;
+  margin-bottom: 10px;
   font-weight: 500;
+  text-align: left; /* Alinhamento à esquerda */
 }
 
 .description-3D {
-  font-size: 1rem; /* Tamanho da fonte ajustado */
-  color: #333;
-  line-height: 1.5; /* Line-height ajustado para melhor legibilidade */
-  margin-bottom: 20px; /* Adiciona espaçamento inferior para melhor separação */
+  font-size: 1.1rem;
+  color: black;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: justify; /* Justifica o texto */
 }
 
 .buttons-alexia {
-  margin-top: 20px; /* Margem superior ajustada */
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start; /* Alinhamento dos botões à esquerda */
 }
 
 .get-started-btn {
   background-color: #5472f0;
   color: white;
-  padding: 10px 25px; /* Padding ajustado */
+  padding: 10px 25px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem; /* Tamanho da fonte ajustado */
-  margin-right: 10px; /* Margem direita ajustada */
-  transition: background-color 0.3s ease; /* Efeito de transição */
+  font-size: 1rem;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .get-started-btn:hover {
-  background-color: #5472f0; /* Cor mais clara ao passar o mouse */
+  background-color: #5472f0;
 }
 
 .image-section-alexia {
@@ -62,16 +68,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 40%; /* Mantém a largura da seção de imagem em 40% */
+  max-width: 40%;
 }
 
 .sketchfab-embed-wrapper {
-  width: 120%; /* Aumentado para 120% para a seção da imagem 3D */
+  width: 120%;
   height: auto;
 }
 
 .sketchfab-embed-wrapper iframe {
-  width: 100%; /* Mantém 100% para ocupar toda a largura do wrapper */
-  height: 500px; /* Altura do iframe ajustada */
-  border-radius: 20px; /* Bordas arredondadas para o iframe */
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .language-card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin: 50px auto;
+  }
+
+  .text-section-alexia {
+    max-width: 100%;
+    text-align: center; /* Texto centralizado em telas menores */
+    margin-bottom: 20px;
+  }
+
+  .image-section-alexia {
+    max-width: 100%;
+  }
+
+  .sketchfab-embed-wrapper {
+    width: 100%;
+  }
+
+  .sketchfab-embed-wrapper iframe {
+    height: 300px;
+  }
 }

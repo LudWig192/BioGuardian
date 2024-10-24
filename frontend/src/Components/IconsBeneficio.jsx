@@ -1,53 +1,53 @@
 import React from 'react';
 import '../Style/IconsBeneficio.css';
-import { FaStethoscope, FaEye, FaClinicMedical, FaXRay, FaShieldAlt, FaVial } from 'react-icons/fa'; // Importação dos ícones
+import { FaStethoscope, FaEye, FaClinicMedical, FaXRay, FaShieldAlt, FaVial } from 'react-icons/fa';
 
 const Services = () => {
     const services = [
         {
             icon: <FaStethoscope />,
-            title: 'GENERAL SURGERY',
-            description: 'Our general surgeons focus on a variety of problems that can be treated with surgery.',
-        },
-        {
-            icon: <FaEye />,
-            title: 'OPHTHALMOLOGY PROCEDURES',
-            description: 'MedClinic’s ophthalmologists provide high-quality eye health procedures to our patients.',
-        },
-        {
-            icon: <FaClinicMedical />,
-            title: 'OUTPATIENT SERVICES',
-            description: 'Our outpatient services cover the needs of patients who require follow-up care & check-ups.',
-        },
-        {
-            icon: <FaXRay />,
-            title: 'RADIOLOGY AND MAMMOGRAMS',
-            description: 'We provide a wide variety of radiology services including X-ray and mammography.',
+            title: 'MONITORAMENTO DE SAÚDE',
+            description: 'Uma assinatura que utiliza inteligência artificial para monitorar a saúde de indivíduos e famílias, analisando históricos médicos e sintomas relevantes.',
         },
         {
             icon: <FaShieldAlt />,
-            title: 'RESPIRATORY THERAPY',
-            description: 'Our respiratory therapy services help patients breathe easy whether they\'re babies or adults.',
+            title: 'AUXÍLIO MÉDICO EM EMERGÊNCIAS',
+            description: 'Atendimentos médicos em casa, realizados por profissionais capacitados em casos de emergência, garantindo cuidados imediatos.',
+        },
+        {
+            icon: <FaClinicMedical />,
+            title: 'SERVIÇOS AMBULATORIAIS',
+            description: 'Oferecemos acompanhamento e cuidados para pacientes que necessitam de check-ups regulares, promovendo a prevenção de doenças.',
+        },
+        {
+            icon: <FaEye />,
+            title: 'PROCEDIMENTOS OPHTALMOLOGIA',
+            description: 'Realizamos diversos procedimentos oculares com oftalmologistas qualificados, visando a saúde e bem-estar dos seus olhos.',
+        },
+        {
+            icon: <FaXRay />,
+            title: 'RADIOLOGIA E MAMOGRAFIA',
+            description: 'Serviços de radiologia, incluindo raios-X e mamografias, com tecnologia de ponta para diagnósticos precisos.',
         },
         {
             icon: <FaVial />,
-            title: 'LABORATORY SERVICES',
-            description: 'We take great pride in providing the highest quality of laboratory services to our patients.',
+            title: 'SERVIÇOS DE LABORATÓRIO',
+            description: 'Nossos serviços laboratoriais oferecem resultados rápidos e confiáveis, auxiliando no diagnóstico e tratamento.',
         },
     ];
 
     return (
         <div className="BeneficioIcons-container"> 
-            <div className="BeneficioIcons-title">OUR SERVICES</div> 
+            <div className="BeneficioIcons-title">NOSSOS SERVIÇOS</div> 
             <div className="BeneficioIcons-description"> 
-                Our patients have access to a wide range of services right here on-site, as well as off-site through partnerships the Clinic has established. Besides offering great health care, our staff also provides high-quality diagnostics using cutting-edge medical equipment. Feel free to learn more about our services below.
+                Nossos pacientes têm acesso a uma ampla gama de serviços, tanto no local quanto através de parcerias. Oferecemos cuidados de saúde excepcionais e diagnósticos de alta qualidade com equipamentos de ponta. Conheça mais sobre nossos serviços abaixo.
             </div>
             <div className="BeneficioIcons-services"> 
-                {services.map((service, index) => (
+                {services.map((beneficio, index) => (
                     <div key={index} className="BeneficioIcons-serviceItem"> 
-                        <div className="BeneficioIcon">{service.icon}</div>
-                        <div className="BeneficioIcons-serviceTitle">{service.title}</div> 
-                        <div className="BeneficioIcons-serviceDescription">{service.description}</div> 
+                        <div className="BeneficioIcon">{beneficio.icon}</div>
+                        <div className="BeneficioIcons-serviceTitle">{beneficio.title}</div> 
+                        <div className="BeneficioIcons-serviceDescription">{beneficio.description}</div> 
                     </div>
                 ))}
             </div>

@@ -1,79 +1,63 @@
 import React from 'react';
-import '../Style/ResultadoExameCliente.css';
+import '../Style/ResultadoExameCliente.css'; // Verifique se o caminho está correto
+import Hemograma from "../Imagens/Hemograma.png";
+import Glicemia from "../Imagens/GLICOSE.png";
+import Colesterol from "../Imagens/Colesterol.jpeg";
+import pessoa1 from "../Imagens/Bom.png";
+import pessoa2 from "../Imagens/Bom.png";
+import pessoa3 from "../Imagens/Bom.png";
 
-const ResultadoExameCard = ({ image, category, lessons, rating, title, author, price, oldPrice }) => {
+const NewsCards = () => {
+    const articles = [
+        {
+            date: "19 Julho, 2020",
+            title: "Resultados de Hemograma",
+            description: "O hemograma é um resultado essencial que fornece informações sobre a sua saúde geral.",
+            image: Hemograma,
+            person: { name: "João Silva", photo: pessoa1 },
+        },
+        {
+            date: "20 Julho, 2020",
+            title: "Resultado de Glicemia",
+            description: "O resultado de glicemia é fundamental para monitorar os níveis de açúcar no sangue.",
+            image: Glicemia,
+            person: { name: "Maria Oliveira", photo: pessoa2 },
+        },
+        {
+            date: "21 Julho, 2020",
+            title: "Colesterol",
+            description: "Os resultados do exame de colesterol ajudam a avaliar o risco de doenças cardíacas.",
+            image: Colesterol,
+            person: { name: "Carlos Santos", photo: pessoa3 },
+        }
+    ];
+
     return (
-        <div className="resultadoexame-card">
-            <img src={image} alt={title} className="resultadoexame-image" />
-            <div className="resultadoexame-content">
-                <span className={`resultadoexame-category ${category.toLowerCase().replace(" & ", "-").replace(" ", "-")}`}>
-                    {category}
-                </span>
-                <div className="resultadoexame-info">
-                    <span className="lessons">{lessons} Lesson</span>
-                    <span className="rating">⭐ {rating}</span>
-                </div>
-                <div className="resultadoexame-title">{title}</div>
-                <div className="resultadoexame-author">{author}</div>
-                <div className="resultadoexame-pricing">
-                    <span className="resultadoexame-price">${price}</span>
-                    {oldPrice && <span className="resultadoexame-old-price">${oldPrice}</span>}
-                </div>
-                <button className="resultadoexame-details-button">Know Details ➔</button>
+        <div className="cardsResultadoCliente-container">
+            <div className="cardsResultadoCliente-header">Acompanhe os resultados de exames</div>
+            <div className="cardsResultadoCliente">
+                {articles.map((article, index) => (
+                    <div key={index} className="cardsResultadoCliente-card">
+                        <img src={article.image} alt="Article" className="cardsResultadoCliente-image" />
+                        <div className="cardsResultadoCliente-content">
+                            <div className="person-resultadoCliente-info">
+                                <div className="person-resultadoCliente-ball">
+                                    <img src={article.person.photo} alt={article.person.name} className="person-photo" />
+                                </div>
+                                <span className="person-resultadoCliente-name">{article.person.name}</span>
+                            </div>
+                            <span className="cardsResultadoCliente-date">{article.date}</span>
+                            <div className="cardsResultadoCliente-title">{article.title}</div>
+                            <span className="cardsResultadoCliente-text">{article.description}</span>
+                            <div className="cardsResultadoCliente-button-container">
+                                <a href="#" className="cardsResultadoCliente-link">LEIA MAIS</a>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );
 };
 
-const ResultadoExameSection = () => {
-    return (
-        <div className="resultadoexame-section">
-            <div className="resultadoexame-nav">
-                <div className="resultadoexame-title-heading">Choose The Right Online Resultado Exame For You</div>
-                <div className="resultadoexame-description">You don't have to struggle alone, you've got our assistance and help.</div>
-                <div className="resultadoexame-categories">
-                    <div className="resultadoexame-category-item">See All</div>
-                    <div className="resultadoexame-category-item">Art & Design</div>
-                    <div className="resultadoexame-category-item">Development</div>
-                    <div className="resultadoexame-category-item">Business</div>
-                    <div className="resultadoexame-category-item">Marketing</div>
-                    <div className="resultadoexame-category-item">UX Design</div>
-                </div>
-            </div>
-            <div className="resultadoexame-list">
-                <ResultadoExameCard
-                    image="https://via.placeholder.com/300x150"
-                    category="Art & Design"
-                    lessons="43"
-                    rating="4.5"
-                    title="Become a product Manager learn the skills & job."
-                    author="Jim Séchan"
-                    price="32.00"
-                    oldPrice="60.00"
-                />
-                <ResultadoExameCard
-                    image="https://via.placeholder.com/300x150"
-                    category="Art & Design"
-                    lessons="72"
-                    rating="4.6"
-                    title="Fundamentals of music theory Learn new"
-                    author="Barry Tone"
-                    price="32.00"
-                    oldPrice="68.00"
-                />
-                <ResultadoExameCard
-                    image="https://via.placeholder.com/300x150"
-                    category="Development"
-                    lessons="14"
-                    rating="4.3"
-                    title="Strategy law and organization Foundation"
-                    author="Elon Gated"
-                    price="36.00"
-                    oldPrice="55.00"
-                />
-            </div>
-        </div>
-    );
-};
-
-export default ResultadoExameSection;
+export default NewsCards;

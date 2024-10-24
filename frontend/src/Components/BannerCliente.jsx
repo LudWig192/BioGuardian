@@ -8,6 +8,11 @@ const InfoSection = () => {
     <div className="bannercliente-container"> 
       {/* Banner Section */}
       <div className="banner-cliente-section">
+        <img 
+          src={require('../Imagens/BannerCliente.png')} 
+          alt="Banner Cliente" 
+          className="banner-cliente-img"
+        />
         <div className="banner-cliente-content-container">
           <div className="banner-cliente-content">
             <div className="titulo-BannerCliente">Tratamento Ortopédico para Dor Aguda</div>

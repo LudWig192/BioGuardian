@@ -1,65 +1,76 @@
-.popular-courses {
-  max-width: 1200px;
+.popular-iconcliente {
+  max-width: 800px; /* Largura máxima */
   margin: 0 auto;
   padding: 20px;
   text-align: center;
 }
 
-.popular-courses .iconcliente { /* Alterado para corresponder à nova estrutura */
-  font-size: 32px;
-  color: #2c3e50;
+.iconcliente {
+  font-size: 32px; /* Tamanho do título geral */
+  color: #6854f0;
+  margin-bottom: 15px; /* Ajusta o espaçamento */
+  font-weight: bold;
 }
 
-.courses-grid {
+.services-iconcliente {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 15px; /* Ajusta o espaçamento entre os cards */
 }
 
-.course-card {
+/* Adicionando responsividade */
+@media (max-width: 900px) {
+  .services-iconcliente {
+    grid-template-columns: repeat(2, 1fr); /* Muda para 2 colunas em telas menores */
+  }
+}
+
+@media (max-width: 600px) {
+  .services-iconcliente {
+    grid-template-columns: 1fr; /* Muda para 1 coluna em telas pequenas */
+  }
+}
+
+.iconcliente-card {
   display: flex;
-  align-items: center;
-  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha todos os itens à esquerda */
+  justify-content: space-between; /* Garante que o conteúdo ocupe todo o espaço vertical */
+  padding: 15px; /* Aumenta o padding interno para melhor espaçamento */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 180px; /* Altura fixa para todos os cards */
+  text-align: left; /* Alinhamento à esquerda para todo o texto */
 }
 
-.course-card:hover {
+.iconcliente-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.course-card.highlighted {
-  background-color: #f0f4ff;
+.clienteicon-info-iconcliente {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Garante que o conteúdo ocupe toda a largura */
 }
 
-.course-icon {
-  font-size: 32px;
+.clienteicon-iconcliente {
+  font-size: 28px; /* Tamanho do ícone ajustado */
   color: #4A90E2;
-  margin-right: 20px;
+  margin-right: 8px; /* Menor espaço entre ícone e texto */
 }
 
-.course-info .course-title { /* Alterado para corresponder ao novo título */
-  font-size: 20px;
-  color: #2c3e50;
-  margin-bottom: 5px;
+.clienteicon-title-iconcliente {
+  font-size: 20px; /* Tamanho do título aumentado */
+  color: #54a3f0;
+  margin: 5px 0; /* Ajuste de margens */
+  font-weight: bold;
 }
 
-.course-info .course-subtitle { /* Alterado para corresponder ao novo subtítulo */
-  font-size: 14px;
+.clienteicon-subtitle-iconcliente {
+  font-size: 16px; /* Tamanho do subtítulo reduzido */
   color: #7f8c8d;
-}
-
-.view-category {
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 16px;
-  color: #4A90E2;
-  text-decoration: none;
-}
-
-.view-category:hover {
-  text-decoration: underline;
+  margin: 0; /* Remove margens para alinhamento */
 }

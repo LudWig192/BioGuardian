@@ -1,0 +1,131 @@
+.diagnose-container-cirugia-cliente {
+    display: flex; /* Alinhamento flex */
+    flex-direction: row; /* Mantém os elementos lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-color: #1f3c47; /* Cor de fundo escura */
+    background-image: url('../Imagens/Fundo.png'); /* Substitua pelo link da sua imagem */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem de fundo */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 0; /* Remove o arredondamento para ocupar a largura total */
+    width: 100%; /* O componente ocupa 100% da largura da tela */
+    height: 400px; /* Aumente a altura desejada aqui */
+    position: relative; /* Para manter o layout flexível */
+    margin: 0; /* Remove margens externas */
+}
+
+.overlay-cirurgia-cliente {
+    position: absolute; /* Para posicionar a camada de sobreposição */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    bottom: 0; /* Alinha à base */
+    background-color: rgba(84, 114, 240, 0.7); /* Cor de sobreposição */
+    z-index: 1; /* Garante que a sobreposição esteja acima da imagem de fundo */
+    border-radius: 0; /* Remove borda arredondada para cobrir completamente */
+}
+
+.image-cirugia-cliente {
+    position: relative; /* Para permitir a sobreposição */
+    width: 450px; /* Aumente a largura da imagem se necessário */
+    height: auto; /* A altura será ajustada automaticamente para manter a proporção */
+    margin-right: 40px; /* Aumente a margem direita da imagem */
+    z-index: 2; /* Garante que a imagem fique acima da sobreposição */
+}
+
+.diagnose-image-cirugia-cliente {
+    width: 100%; /* A imagem ocupará 100% da largura do contêiner da imagem */
+    height: 100%; /* A altura será ajustada para preencher o contêiner */
+    border-radius: 10px; /* Borda arredondada da imagem */
+    object-fit: cover; /* Para manter a proporção */
+}
+
+.text-cirugia-cliente {
+    text-align: left; /* Mantém o texto alinhado à esquerda */
+    color: #ffffff; /* Cor do texto */
+    max-width: 60%; /* Aumente a largura máxima do texto para caber ao lado da imagem */
+    z-index: 2; /* Garante que o texto esteja acima da sobreposição */
+    position: relative; /* Para posicionamento adequado do texto */
+    margin-left: 40px; /* Aumente a margem à esquerda do texto se necessário */
+}
+
+.title-cirurgia-cliente {
+    font-size: 32px; /* Tamanho do título */
+    font-weight: bold; /* Peso da fonte */
+}
+
+.subtitle-cirurgia-cliente {
+    font-size: 20px; /* Tamanho do subtítulo */
+    font-weight: normal; /* Peso da fonte */
+    margin-top: 5px; /* Margem acima do subtítulo */
+    margin-bottom: 15px; /* Margem abaixo do subtítulo */
+}
+
+.description-cirurgia-cliente {
+    font-size: 16px; /* Aumentado para um tamanho maior */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    margin-top: 10px; /* Margem acima da descrição para separá-la do subtítulo */
+    margin-bottom: 15px; /* Margem abaixo da descrição */
+    text-align: left; /* Alinha a descrição à esquerda */
+}
+
+.read-more-btn-cirugia-cliente {
+    background-color: #ffffff; /* Cor do botão */
+    color: #1f3c47; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Borda arredondada do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.read-more-btn-cirugia-cliente:hover {
+    background-color: #0d292e; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .diagnose-container-cirugia-cliente {
+        flex-direction: column; /* Altera para coluna em telas menores */
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        padding: 20px; /* Reduz o espaçamento em telas menores */
+    }
+
+    .image-cirugia-cliente {
+        margin-right: 0; /* Remove a margem direita */
+        margin-bottom: 20px; /* Adiciona margem abaixo da imagem */
+        width: 100%; /* A imagem ocupará 100% da largura do contêiner */
+    }
+
+    .text-cirugia-cliente {
+        max-width: 100%; /* Permite que o texto ocupe toda a largura */
+        margin-left: 0; /* Remove a margem à esquerda */
+    }
+    
+    .title-cirurgia-cliente {
+        font-size: 28px; /* Reduz o tamanho do título */
+    }
+
+    .subtitle-cirurgia-cliente {
+        font-size: 18px; /* Reduz o tamanho do subtítulo */
+    }
+
+    .description-cirurgia-cliente {
+        font-size: 14px; /* Reduz o tamanho da descrição */
+    }
+}
+
+@media (max-width: 480px) {
+    .title-cirurgia-cliente {
+        font-size: 24px; /* Tamanho menor do título em telas muito pequenas */
+    }
+
+    .subtitle-cirurgia-cliente {
+        font-size: 16px; /* Tamanho menor do subtítulo */
+    }
+
+    .description-cirurgia-cliente {
+        font-size: 12px; /* Tamanho menor da descrição */
+    }
+}

@@ -1,9 +1,6 @@
-/* IconsBeneficio.css */
-
 .BeneficioIcons-container {
     text-align: center;
     padding: 60px 20px;
-    background-color: #f9f9f9;
 }
 
 .BeneficioIcons-title {
@@ -25,22 +22,21 @@
 }
 
 .BeneficioIcons-services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
+    display: grid; /* Usando grid para layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas por padrão */
+    gap: 30px; /* Espaçamento entre os cards */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .BeneficioIcons-serviceItem {
-    display: flex; /* Habilita flexbox para o item de serviço */
-    flex-direction: column; /* Coloca ícone, título e descrição em coluna */
-    align-items: center; /* Centraliza os itens dentro do item de serviço */
-    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Espaçamento uniforme entre os itens */
+    padding: 20px 15px;
     border-radius: 10px;
-    width: 280px;
-    transition: transform 0.3s; /* Suaviza a transição de elevação */
+    transition: transform 0.3s;
 }
 
 .BeneficioIcons-serviceItem:hover {
@@ -48,29 +44,63 @@
 }
 
 .BeneficioIcon {
-    font-size: 3em;
-    color: #00bcd4;
-    display: flex; /* Para centralizar o ícone dentro da bola */
-    align-items: center; /* Alinha verticalmente ao centro */
-    justify-content: center; /* Alinha horizontalmente ao centro */
-    width: 100px; /* Define largura fixa para a bola */
-    height: 100px; /* Define altura fixa para a bola */
-    border-radius: 50%; /* Faz com que o ícone fique dentro de uma bola */
-    background-color: #e0f7fa; /* Cor de fundo da bola */
-    border: 2px solid #00bcd4; /* Adiciona uma borda ao redor da bola */
-    margin-bottom: 15px; /* Espaço abaixo da bola para o título */
+    font-size: 2.5em;
+    color: #54a3f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #54a3f0;
+    margin-bottom: 10px;
+    transition: color 0.3s, background-color 0.3s; /* Suaviza a transição de cor */
+}
+
+.BeneficioIcons-serviceItem:hover .BeneficioIcon {
+    color: #54a3f0; /* Cor do ícone ao passar o mouse */
+    background-color: #5472f0; /* Cor de fundo do ícone ao passar o mouse */
 }
 
 .BeneficioIcons-serviceTitle {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
-    margin-bottom: 10px; /* Margem abaixo do título */
+    margin-bottom: 10px;
     text-transform: uppercase;
-    color: #333;
+    color: #54a3f0;
 }
 
 .BeneficioIcons-serviceDescription {
-    font-size: 0.9em;
+    font-size: 0.8em;
     color: #777;
     line-height: 1.4em;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1024px) {
+    .BeneficioIcons-services {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    .BeneficioIcons-services {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
+
+    .BeneficioIcons-title {
+        font-size: 2em; /* Reduzir o tamanho da fonte */
+    }
+
+    .BeneficioIcons-description {
+        font-size: 0.9em; /* Reduzir o tamanho da fonte */
+    }
+
+    .BeneficioIcons-serviceTitle {
+        font-size: 0.9em; /* Ajustar título */
+    }
+
+    .BeneficioIcons-serviceDescription {
+        font-size: 0.7em; /* Ajustar descrição */
+    }
 }

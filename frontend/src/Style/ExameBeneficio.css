@@ -1,77 +1,93 @@
-.examebeneficio-services-section-container {
-    text-align: center;
-    padding: 60px;
-    font-family: Arial, sans-serif;
-    margin-top: 260px; /* Adicionado para empurrar o componente para baixo */
+.servicos-container-examebeneficio {
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
 }
 
-.examebeneficio-services-section-title {
-    font-size: 2.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #54d4f0 ;
+.titulo-examebeneficio {
+  font-size: 32px; /* Tamanho do título */
+  font-weight: bold;
+  margin-bottom: 20px; /* Espaço abaixo do título */
+  color: #6854f0;
 }
 
-.examebeneficio-services-section-subtitle {
-    font-size: 1rem;
-    color: #888;
-    margin-bottom: 50px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.descricao-servicos-examebeneficio {
+  font-size: 16px; /* Tamanho do texto */
+  color: #666; /* Cor do texto */
+  margin-bottom: 30px; /* Espaço abaixo da descrição */
+  max-width: 600px; /* Limitar a largura do texto */
+  margin-left: auto; /* Centralizar horizontalmente */
+  margin-right: auto; /* Centralizar horizontalmente */
 }
 
-.examebeneficio-services-section-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+.cards-container-examebeneficio {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+  justify-content: center; /* Centralizar os cards na linha */
+  gap: 20px; /* Espaçamento entre os cards */
+  margin-bottom: 20px; /* Espaço entre as fileiras de cards */
 }
 
-.examebeneficio-services-section-card {
-    position: relative;
-    background-color: #007bff;
-    color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+.card-examebeneficio {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%; /* Ajustar a largura para 100% */
+  max-width: 500px; /* Largura máxima dos cards */
+  height: auto; /* Altura automática */
+  display: flex; /* Flex para alinhar a imagem e o texto lado a lado */
+  flex-direction: row; /* Manter alinhamento horizontal */
 }
 
-.examebeneficio-services-section-card img {
-    width: 100%;
-    height: auto; /* Alterado para auto para manter a proporção */
-    max-height: 200px; /* Define uma altura máxima */
-    object-fit: cover; /* Mantém a imagem coberta sem distorção */
-    opacity: 0.7;
+.imagem-examebeneficio {
+  width: 50%; /* Largura da imagem */
+  height: auto; /* Manter a proporção da imagem */
+  object-fit: cover; /* Ajustar a imagem */
 }
 
-.examebeneficio-services-section-card-title {
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.texto-examebeneficio {
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* Alinhar título e descrição verticalmente */
+  justify-content: center; /* Centralizar o texto verticalmente */
+  align-items: center; /* Centralizar o texto horizontalmente */
+  text-align: center; /* Centralizar o texto */
+  flex-grow: 1; /* Permitir que o texto ocupe o espaço disponível */
 }
 
-.examebeneficio-services-section-card:hover {
-    transform: scale(1.05);
+.titulo-card-examebeneficio {
+  font-size: 24px; /* Aumentar o tamanho do título dentro do card */
+  font-weight: bold;
+  margin: 0 0 5px; /* Ajustar a margem do título */
+  color: #6854f0; /* Cor do título */
 }
 
-.examebeneficio-services-section-button {
-    margin-top: 40px;
-    padding: 12px 25px;
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.descricao-examebeneficio {
+  font-size: 14px; /* Aumentar o tamanho da descrição */
+  color: #666; /* Cor da descrição */
+  line-height: 1.4; /* Altura da linha para melhor legibilidade */
 }
 
-.examebeneficio-services-section-button:hover {
-    background-color: #007bff;
-    color: white;
+/* Consultas de mídia para responsividade */
+@media (max-width: 768px) {
+  .cards-container-examebeneficio {
+    justify-content: space-between; /* Espaçamento adequado entre os cards em telas médias */
+  }
+  
+  .card-examebeneficio {
+    width: 45%; /* Os cards ocuparão 45% da largura em telas médias */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-examebeneficio {
+      width: 100%; /* Os cards ocuparão 100% da largura em telas pequenas */
+      flex-direction: column; /* Alterar para coluna em telas pequenas */
+  }
+  
+  .imagem-examebeneficio {
+      width: 100%; /* A imagem ocupará 100% da largura do card */
+  }
 }

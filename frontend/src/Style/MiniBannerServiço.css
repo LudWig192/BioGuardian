@@ -1,4 +1,4 @@
-.achievements-container {
+.miniBanner-achievements-container {
     position: relative; 
     display: flex;
     align-items: center;
@@ -9,10 +9,10 @@
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    margin-top: 250px; /* Ajuste o valor conforme necessário para mover o componente para baixo */
+    margin-top: 250px; 
 }
 
-.overlay {
+.miniBanner-overlay {
     position: absolute; 
     top: 0;
     left: 0;
@@ -22,38 +22,38 @@
     z-index: 1; 
 }
 
-.image-achievements {
+.miniBanner-image-achievements {
     position: relative; 
     z-index: 2; 
 }
 
-.image-achievements img {
-    max-width: 450px; 
-    height: auto;
+.miniBanner-image-achievements img {
+    max-width: 450px; /* Mantém o tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
     border-radius: 8px;
 }
 
-.achievements-section {
+.miniBanner-achievements-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 2; 
 }
 
-.achievements-title {
+.miniBanner-achievements-title {
     font-size: 24px; 
     color: #ffffff; 
     margin-bottom: 20px;
     text-align: center; 
 }
 
-.achievement-list {
+.miniBanner-achievement-list {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 10px;
 }
 
-.achievement-item {
+.miniBanner-achievement-item {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -61,33 +61,77 @@
     transition: background-color 0.3s ease; 
 }
 
-.achievement-item:hover {
+.miniBanner-achievement-item:hover {
     background-color: #5472f0; /* Cor de destaque alterada para #5472f0 */
     border-radius: 5px; 
 }
 
-.achievement-icon {
+.miniBanner-achievement-icon {
     color: #54a3f0; /* Cor dos ícones */
     font-size: 40px;
 }
 
-.achievement-description {
+.miniBanner-achievement-description {
     margin: 0;
     color: #ffffff; 
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+    .miniBanner-achievements-container {
+        padding: 60px; /* Menos padding para telas menores */
+        margin-top: 150px; /* Ajuste para telas intermediárias */
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .miniBanner-achievements-title {
+        font-size: 22px; /* Reduz o tamanho do título */
+    }
+
+    .miniBanner-image-achievements img {
+        max-width: 80%; /* Ajusta a imagem para 80% do container */
+    }
+}
+
 @media (max-width: 768px) {
-    .achievements-container {
-        flex-direction: column; 
-        align-items: flex-start; 
+    .miniBanner-achievements-container {
+        padding: 40px; /* Menos padding para telas menores */
+        margin-top: 100px; /* Ajuste para telas pequenas */
     }
 
-    .achievement-list {
-        grid-template-columns: 1fr; 
+    .miniBanner-achievement-list {
+        grid-template-columns: 1fr; /* Itens em uma única coluna */
     }
 
-    .image-achievements {
+    .miniBanner-image-achievements {
         margin-bottom: 20px; 
+    }
+
+    .miniBanner-achievements-title {
+        font-size: 20px; /* Reduz o tamanho do título */
+    }
+
+    .miniBanner-achievement-icon {
+        font-size: 35px; /* Reduz o tamanho dos ícones */
+    }
+}
+
+@media (max-width: 480px) {
+    .miniBanner-achievements-container {
+        padding: 20px; /* Menos padding para telas muito pequenas */
+        margin-top: 50px; /* Ajuste para telas muito pequenas */
+    }
+
+    .miniBanner-achievements-title {
+        font-size: 18px; /* Reduz o tamanho do título */
+    }
+
+    .miniBanner-achievement-description {
+        text-align: center; 
+    }
+
+    .miniBanner-achievement-icon {
+        font-size: 30px; /* Reduz o tamanho dos ícones */
     }
 }
