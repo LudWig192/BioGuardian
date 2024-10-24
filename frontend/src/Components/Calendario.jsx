@@ -2,18 +2,24 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "../Style/Cabecalhodata.css";
 
-// Função para gerar os dias da semana
-const generateDaysOfWeek = (startDay) => {
+// Função para gerar os dias da semana considerando a data e o mês correto
+const generateDaysOfWeek = (startDate) => {
     const daysInWeek = 7;
     const days = [];
 
     for (let i = 0; i < daysInWeek; i++) {
-        const day = startDay + i;
+        const currentDate = new Date(startDate);
+        currentDate.setDate(currentDate.getDate() + i); // Adiciona dias à data inicial
+
+        const day = currentDate.getDate();
+        const label = currentDate.toLocaleDateString('pt-BR', { weekday: 'long' }); // Retorna o nome do dia da semana em português
+
         days.push({
-            day: day > 31 ? day - 31 : day, // Se o número do dia ultrapassar 31, volta para 1
-            label: ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"][i],
+            day,
+            label,
         });
     }
+
     return days;
 };
 
@@ -96,7 +102,7 @@ const Cabecalho = () => {
     };
 
     // Dias calculados com base na semana
-    const days = generateDaysOfWeek(new Date().getDate() + weekOffset);
+    const days = generateDaysOfWeek(new Date(new Date().setDate(new Date().getDate() + weekOffset)));
 
     // Filtrar os appointments para o dia selecionado
     const filteredAppointments = appointments.filter((appointment) => appointment.day === selectedDay);
@@ -104,7 +110,7 @@ const Cabecalho = () => {
     return (
         <>
             <div className="date-header">
-                <h3 className="Mes">Outubro 2024</h3>
+                <h3 className="Mes">Novembro 2024</h3>
                 <div className="week-navigation">
                     <button onClick={prevWeek}>⬅</button>
                     <div className="day-buttons">

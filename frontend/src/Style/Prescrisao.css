@@ -1,0 +1,140 @@
+.prescriptions {
+  background-color: #f9fbfd;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+h4 {
+  color: #007bff;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+.add-prescription {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f3f6;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.add-prescription input[type="file"] {
+  display: none; /* Esconde o input */
+}
+
+.custom-file-upload {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+  padding: auto 10px;
+}
+
+.add-prescription button {
+  background-color: #28a745;
+  color: #fff;
+  /* padding: 10px 20px; */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-prescription button:hover {
+  background-color: #218838;
+}
+
+.prescription-list {
+  margin-top: 20px;
+}
+
+.prescription-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prescription-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prescription-icon {
+  font-size: 2em;
+  color: #007bff;
+  margin-right: 20px;
+}
+
+.prescription-info {
+  flex-grow: 1;
+}
+
+.prescription-info p {
+  margin: 6px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.prescription-info p:first-child {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.file-link {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.file-link:hover {
+  color: #0056b3;
+}
+
+/* Layout responsivo para dispositivos móveis */
+@media (max-width: 600px) {
+  .prescriptions {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .add-prescription {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-prescription button,
+  .custom-file-upload {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .prescription-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .prescription-icon {
+    margin-bottom: 10px;
+  }
+}

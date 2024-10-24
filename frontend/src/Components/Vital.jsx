@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaHeartbeat, FaThermometerHalf, FaTint } from 'react-icons/fa';
-import '../Pages/css/Vitals.css';
+import '../Style/Vitals.css';
 
 function Vitals() {
   return (

@@ -3,11 +3,8 @@
   max-width: 400px;
   margin-right: 100px;
   display: flex;
-  /* Adiciona flexbox para alinhar os itens dentro da Status */
   justify-content: center;
-  /* Centraliza o conteúdo */
   align-items: center;
-  /* Alinha verticalmente */
 }
 
 .corpoExemplo {
@@ -16,7 +13,6 @@
 }
 
 .Consultas {
-
   display: flex;
   /* Usa flexbox para organizar os componentes */
   flex-direction: column;
@@ -28,18 +24,24 @@
   /* Para ocupar toda a largura disponível */
 }
 
-/* Estilização para o cabeçalho do calendário */
-.date-header {
-  /* ... Seu estilo existente ... */
-  width: 100%;
-  /* Para que o cabeçalho ocupe toda a largura do pai */
-}
-
-.Linha {
-  padding-top: 200px;
-}
-
 .Cliente {
-  margin-top: 200px;
-  margin-right: 500px;
+  margin-top: -100px;
+
+}
+
+.Perfil {
+  flex: 1;
+}
+
+.Elementos-perfil {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Relatorio{
+  padding-top: 300px;
+  display: flex;
+  
 }

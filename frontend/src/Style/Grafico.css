@@ -1,8 +1,9 @@
 .chart-container {
     width: 500px;    /* Largura do gráfico */
-    height: 325px;   /* Altura do gráfico */
+    height: 375px;   /* Altura do gráfico */
     margin: 40px auto;  /* Centraliza o gráfico horizontalmente */
-    background-color: #f0f4f8; /* Cor de fundo suave com um tom azulado claro */
+    margin-top: 250px;
+    background-color: #b4d7fa; /* Cor de fundo suave com um tom azulado claro */
     border: 2px solid #ccc; /* Borda leve e neutra */
     border-radius: 20px; /* Bordas mais arredondadas para um visual moderno */
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais intensa para maior destaque */

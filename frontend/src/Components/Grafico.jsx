@@ -10,7 +10,7 @@ const data = {
   datasets: [
     {
       label: 'Anomalia',
-      data: [5, 15, 10, 10, 3], // Primeiro conjunto de dados
+      data: [2, 1, 3, 2, 4], // Primeiro conjunto de dados
       fill: false,
       backgroundColor: 'rgba(0, 0, 0, 0.1)', // Cor de fundo da linha ajustada
       borderColor: 'rgba(0, 0, 0, 1)',
@@ -20,7 +20,7 @@ const data = {
     },
     {
       label: 'Esperado', // Nome do segundo conjunto de dados
-      data: [10, 5, 15, 10, 10], // Segundo conjunto de dados
+      data: [7, 5, 10, 6, 4], // Segundo conjunto de dados
       fill: false,
       backgroundColor: 'rgba(153, 102, 255, 0.5)', // Cor de fundo da linha
       borderColor: 'rgba(153, 102, 255, 1)', // Cor da borda da linha

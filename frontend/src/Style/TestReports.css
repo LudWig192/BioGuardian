@@ -1,0 +1,30 @@
+.test-reports {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .report-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .report-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f7f9fc;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .report-icon {
+    font-size: 1.5em;
+    color: #5a9ee1;
+  }
+  
+  .report-info p {
+    margin: 0;
+  }

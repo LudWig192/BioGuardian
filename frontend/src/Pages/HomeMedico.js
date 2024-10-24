@@ -11,9 +11,13 @@ import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
 import Grafico from "../Components/Grafico";
 import Paciente from "../Components/Paciente"
+import Vitals from '../Components/Vital';
+import TestReports from '../Components/TestReports';
+import Prescriptions from '../Components/Prescrisao';
 
 // IMPORTE IMAGENS
 
+// ----------------------------------------------------- 
 
 const HomeMedico = () => {
   const [selectedDay, setSelectedDay] = useState("10"); // Estado para o dia selecionado
@@ -23,29 +27,36 @@ const HomeMedico = () => {
   };
 
   return (
-    <Container fluid> {/* Container da pagina*/}
-      <Row className='Status'> {/*Divisao do Corpo */}
+    <Container fluid>
+      <Row className='Status'>
         <Col md={8} >
           <Anatomy />
         </Col>
-        <Col md={8} className='Linha'>
-          <Grafico />
+      </Row>
+      <Row className='Consultas'>
+        <Col md={8}>
+          <Cabecalho onSelectDay={handleSelectDay} />
         </Col>
       </Row>
-
-      <Row className='Consultas'> {/* Divisao do Calendario*/}
-        <Col md={8}>
-          <Cabecalho onSelectDay={handleSelectDay} /> {/* Passa a função de seleção para o DateHeader */}
+      {/*Grafico e Bloco de notas */}
+      <Row className='Relatorio'>
+        <Col >
+          <Grafico />
+        </Col>
+        <Col>
           <Anotações />
         </Col>
       </Row>
       <Row className='Cliente'>
-        <Col = {md01} className=''></Col>
-        <Paciente />
+        <Col className='Perfil'>
+          <Paciente />
+        </Col>
+        <Col className="Elementos-perfil">
+          <TestReports />
+          <Prescriptions />
+        </Col>
       </Row>
     </Container>
-
-
   );
 };
 

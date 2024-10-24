@@ -1,0 +1,28 @@
+.vitals {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .vital-item {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vital-icon {
+    font-size: 2em;
+    color: #ff6f61;
+  }
+  
+  .vital-info h4 {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+  
+  .vital-info p {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
