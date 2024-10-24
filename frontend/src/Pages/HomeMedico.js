@@ -1,19 +1,16 @@
-// IMPORTS DAS BIBLIOTECAS
 import { Container, Row, Col } from 'react-bootstrap';
-import React, { useState } from 'react'; // Importar useState para gerenciar o estado
-
-// IMPORT ESTILIZAÇÃO AQUI
-import '../Style/HomeMedico.css';
-
-// IMPORTE OS COMPONENTES
+import React, { useState } from 'react';
 import Cabecalho from '../Components/Cabecalho';
 import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
-
-// IMPORTE IMAGENS
+import '../Style/HomeMedico.css';
 import Anatomia from "../Imagens/Anatomia.jpg"
+import NavbarMedico from '../Components/Navegacao-medico'
 
 const HomeMedico = () => {
+
+
+
   const [selectedDay, setSelectedDay] = useState("10"); // Estado para o dia selecionado
 
   const handleSelectDay = (day) => {
@@ -21,18 +18,21 @@ const HomeMedico = () => {
   };
 
   return (
-    <Container fluid>
-      <Row className='Status'>
-       <Anatomy />
-      </Row>
+    <>
+      <NavbarMedico />
+      <Container fluid>
+        <Row className='Status'>
+          <Anatomy />
+        </Row>
 
-      <Row className='Consultas'>
-        <Col md={8}>
-          <Cabecalho onSelectDay={handleSelectDay} /> {/* Passa a função de seleção para o DateHeader */}
-          <Anotações />
-        </Col>
-      </Row>
-    </Container>
+        <Row className='Consultas'>
+          <Col md={8}>
+            <Cabecalho onSelectDay={handleSelectDay} /> {/* Passa a função de seleção para o DateHeader */}
+            <Anotações />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 

@@ -4,11 +4,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-
-// Estilização CSS
 import "../Style/Navbar.css";
 
-const Navbar = () => {
+const Navbaradm = () => {
     return (
         <nav className="navbar">
             <div className="navbar-left">
@@ -18,36 +16,43 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <ul className="navbar-links">
+
+
                     <li>
-                        <Link to="/" className="nav-link">
+                        <Link to="/HomeMedico" className="nav-link">
                             <HomeIcon className="icon" /> <span>Home</span>
                         </Link>
                     </li>
+                    
+                    {/* Pagina Faltando*/}
                     <li>
-                        <Link to="/Beneficio" className="nav-link">
-                            <InfoIcon className="icon" /> <span>Benefício</span>
+                        <Link to="/" className="nav-link">
+                            <InfoIcon className="icon" /> <span>Resultado de Exames</span>
                         </Link>
                     </li>
 
+
                     <li>
-                        <Link to="/Cadastro" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Cadastro</span>
+                        <Link to="/Agenda" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Agendamento</span>
                         </Link>
                     </li>
 
                 </ul>
             </div>
+
             <div className="navbar-right">
                 <div className="user-avatar">
                     <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")} // Insira a imagem do usuário aqui
+                        src={require("../Imagens/Calvo-removebg-preview.png")}
                         alt="User Avatar"
                         className="avatar"
                     />
                 </div>
             </div>
+
         </nav>
     );
 };
 
-export default Navbar;
+export default Navbaradm;

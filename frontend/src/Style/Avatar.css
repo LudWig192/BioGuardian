@@ -6,10 +6,13 @@
     justify-content: flex-end;
     padding: 10px;
     position: relative;
+    justify-content: center;
+    text-align: center;
 }
 
 .switch {
     margin-left: 20px;
+    
 }
 
 .switch input {

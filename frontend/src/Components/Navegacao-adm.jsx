@@ -4,11 +4,9 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-
-// Estilização CSS
 import "../Style/Navbar.css";
 
-const Navbar = () => {
+const Navbaradm = () => {
     return (
         <nav className="navbar">
             <div className="navbar-left">
@@ -18,36 +16,56 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <ul className="navbar-links">
+                    
+                    {/* Pagina Faltando*/}
                     <li>
                         <Link to="/" className="nav-link">
                             <HomeIcon className="icon" /> <span>Home</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to="/Beneficio" className="nav-link">
-                            <InfoIcon className="icon" /> <span>Benefício</span>
-                        </Link>
-                    </li>
+                    
 
                     <li>
-                        <Link to="/Cadastro" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Cadastro</span>
+                        <Link to="/Funcionarios" className="nav-link">
+                            <InfoIcon className="icon" /> <span>Funcionarios</span>
                         </Link>
                     </li>
-
+                    
+                     {/* Pagina Faltando*/}
+                    <li>
+                        <Link to="/" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Clientes</span>
+                        </Link>
+                    </li>
+                    
+                    {/* Pagina Faltando*/}
+                    <li>
+                        <Link to="/" className="nav-link">
+                            <ContactMailIcon className="icon" /> <span>Salario do medico</span>
+                        </Link>
+                    </li>
+                    
+                    <li>
+                        <Link to="/TabelaUsuarios" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Registros</span>
+                        </Link>
+                    </li>
+                      
                 </ul>
             </div>
+        
             <div className="navbar-right">
                 <div className="user-avatar">
                     <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")} // Insira a imagem do usuário aqui
+                        src={require("../Imagens/Calvo-removebg-preview.png")} 
                         alt="User Avatar"
                         className="avatar"
                     />
                 </div>
             </div>
+    
         </nav>
     );
 };
 
-export default Navbar;
+export default Navbaradm;

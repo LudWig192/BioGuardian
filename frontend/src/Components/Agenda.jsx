@@ -17,7 +17,13 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     const handleOpenModal = (type, item = {}) => {
         setModalType(type);
         setModalData(item);
-        setFormData(item);
+        setFormData({
+            agendamento: item.agendamento || '',
+            paciente: item.paciente || '',
+            status: item.status || '',
+            procedimentos: item.procedimentos || '',
+            tipoPlano: item.tipoPlano || ''
+        });
     };
 
     const handleCloseModal = () => {
@@ -28,25 +34,6 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevData => ({ ...prevData, [name]: value }));
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            if (modalType === 'add') {
-                await onAdd(formData);
-            } else if (modalType === 'edit') {
-                await onEdit(formData);
-            } else if (modalType === 'delete' && modalData) {
-                if (window.confirm('Tem certeza de que deseja excluir este item?')) {
-                    await onDelete(modalData.id);
-                }
-            }
-        } catch (error) {
-            console.error('Erro ao realizar a operação:', error);
-            alert('Houve um problema ao realizar a operação. Por favor, tente novamente.');
-        }
-        handleCloseModal();
     };
 
     return (
@@ -72,7 +59,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 </thead>
                 <tbody>
                     {data.map((item) => (
-                        <tr key={item.id}>
+                        <tr key={item.idAgenda}>
                             <td>{item.agendamento}</td>
                             <td>{item.paciente}</td>
                             <td>{item.status}</td>
@@ -101,11 +88,20 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                     data={formData}
                     onClose={handleCloseModal}
                     onChange={handleChange}
-                    onSubmit={handleSubmit}
+                    onSubmit={async () => {
+                        if (modalType === 'add') {
+                            await onAdd(formData);
+                        } else if (modalType === 'edit') {
+                            await onEdit({ ...modalData, ...formData });
+                        } else if (modalType === 'delete') {
+                            await onDelete(modalData.idAgenda);
+                        }
+                        handleCloseModal();
+                    }}
                 />
             )}
         </div>
     );
 };
 
-export default ResponsiveTable; 
+export default ResponsiveTable;

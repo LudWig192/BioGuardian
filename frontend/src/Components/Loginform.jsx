@@ -33,7 +33,7 @@ const LoginForm = () => {
                 } else if (email === 'Medico@medley.com' && senha === 'medico123') {
                     navigate('/Agenda'); // Rota específica para médico
                 } else {
-                    navigate('/Unidades'); // Rota padrão para outros logins
+                    navigate('/HomeCliente'); // Rota padrão para outros logins
                 }
                 // Se o login falhar
                 setError('Email ou senha incorretos!');

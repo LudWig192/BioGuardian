@@ -7,10 +7,12 @@ import Icons from "../Components/IconsCliente";
 import Exame from "../Components/ExameCliente"
 import ExameResultado from "../Components/ResultadoExameCliente"
 import Tabela from "../Components/TabelaCliente"
+import NavbarCCC from '../Components/Navegacao-CCC'
 
 const HomeCliente = () => {
   return (
     <>
+      <NavbarCCC />
       <Banner />
       <Dicas />
       <Ideia />

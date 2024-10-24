@@ -40,7 +40,7 @@
 .icon-container {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaçamento entre os ícones */
+    gap: 15px;
 }
 
 .large-icon {
@@ -51,7 +51,7 @@
 .user-profile {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaçamento entre o avatar e as informações do usuário */
+    gap: 15px;
 }
 
 .avatar-funcionario {
@@ -92,38 +92,37 @@ main {
 }
 
 .button-custom {
-    padding: 6px 12px; /* Diminuído o tamanho do botão */
+    padding: 8px 16px;
     border-radius: 8px;
     border: 1px solid #ddd;
-    background-color: white;
     cursor: pointer;
-    font-size: 0.8rem; /* Diminuído o tamanho da fonte */
-    transition: background-color 0.3s, color 0.3s; /* Transição adicionada */
+    font-size: 0.9rem;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.button-group-funcionario .button-custom:hover {
-    background-color: #5472f0; /* Cor do botão no hover */
-    color: white; /* Cor do texto no hover */
+.filter-btn {
+    background-color: white;
+    color: #5472f0;
 }
 
-.button-custom:focus {
-    outline: none;
-    box-shadow: 0 0 5px #5472f0;
-}
-
-.button-custom.primary {
+.filter-btn:hover {
     background-color: #5472f0;
     color: white;
 }
 
-.filter-btn {
-    padding: 10px 15px; /* Diminuído o tamanho do botão */
-    font-size: 0.8rem; /* Diminuído o tamanho da fonte */
+.button-custom.red {
+    background-color: red;
+    color: white;
 }
 
-.add-doctor-btn {
-    padding: 16px 22px; /* Diminuído o tamanho do botão */
-    font-size: 0.8rem; /* Diminuído o tamanho da fonte */
+.button-custom.red:hover {
+    background-color: darkred;
+}
+
+.add-doctor-btn,
+.filter-btn {
+    padding: 12px 18px;
+    font-size: 1rem;
 }
 
 .product-table {
@@ -143,11 +142,11 @@ main {
 .product-table th {
     background-color: #5472f0;
     font-weight: bold;
-    color: white; /* Cor do texto para os cabeçalhos da tabela */
+    color: white;
 }
 
 .product-table tr:hover {
-    background-color: #f9f9f9; /* Destaque ao passar o mouse sobre a linha */
+    background-color: #f9f9f9;
 }
 
 .status-badge {
@@ -174,6 +173,8 @@ main {
     transform: scale(0.98);
 }
 
+
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -181,7 +182,7 @@ main {
     }
 
     .search-bar {
-        margin-bottom: 10px; /* Espaço abaixo da barra de busca */
+        margin-bottom: 10px;
     }
 
     .icon-container {
@@ -190,6 +191,6 @@ main {
     }
 
     .product-table {
-        font-size: 0.9rem; /* Tamanho da fonte ajustado para telas menores */
+        font-size: 0.9rem;
     }
 }

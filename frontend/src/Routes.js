@@ -1,48 +1,68 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-// PAGES
+// Paginas do Cliente sem cadastro
 import Home from "./Pages/Home";
-import Contato from "./Pages/Contato";
+import Serviço from "./Pages/Serviço"
+import Beneficio from "./Pages/Beneficio";
 import Cadastro from "./Pages/Cadastro";
 import LoginForm from "./Pages/Login";
-import Beneficio from "./Pages/Beneficio";
-import Serviço from "./Pages/Serviço"
 
-// PAGES DO CLIENTE
+// Paginas do cliente com cadastro
 import HomeCliente from "./Pages/HomeCliente";
 import Exames from "./Pages/Exames";
+import Contato from "./Pages/Contato";
+import Unidades from "./Pages/Unidades";
+
+//paginas do medico
+import HomeMedico from "./Pages/HomeMedico";
 import Agenda from "./Pages/Agenda";
 
-// PAGES DO MEDICO
-import HomeMedico from "./Pages/HomeMedico";
-import TabelaUsuarios from "./Pages/ListaUsuarios";
-import Unidades from "./Pages/Unidades";
+//paginas do adm
 import Funcionarios from "./Pages/Funcionarios";
+import TabelaUsuarios from "./Pages/ListaUsuarios";
+
+//Navegaçôes
+import NavegacaoCSC from './Components/Navegacao'
+import NavegacaoCCC from './Components/Navegacao-CCC'
+import NavegacaoAdm from './Components/Navegacao-adm'
+import NavegacaoMedico from './Components/Navegacao-medico'
 
 const Rotas = () => {
     return (
         <Routes>
+            
             {/* Cliente sem cadastro */}
             <Route path="/" element={<Home />} />
-            <Route path="/Cadastro" element={<Cadastro />} />
-            <Route path="/Login" element={<LoginForm />} />
-            <Route path="/Beneficio" element={<Beneficio />} />
-            <Route path="/Contato" element={<Contato />} />
-            <Route path="/Exames" element={<Exames />} />
             <Route path="/Serviço" element={<Serviço />} />
+            <Route path="/Beneficio" element={<Beneficio />} />
+            <Route path="/Login" element={<LoginForm />} />
+            <Route path="/Cadastro" element={<Cadastro />} />
+            
 
             {/* Cliente com cadastro */}
             <Route path="/HomeCliente" element={<HomeCliente />} />
-
+            <Route path="/Exames" element={<Exames />} />
+            <Route path="/Contato" element={<Contato />} />
+            <Route path="/Unidades" element={<Unidades />} />
+            
+            
             {/* Rotas do Medico */}
             <Route path="/HomeMedico" element={<HomeMedico />} />
             <Route path="/Agenda" element={<Agenda />} />
 
+
             {/* Rotas do Admin */}
             <Route path="/Funcionarios" element={<Funcionarios />} />
             <Route path="/TabelaUsuarios" element={<TabelaUsuarios />} />
-            <Route path="/Unidades" element={<Unidades />} />
+
+
+            {/* Navegaçôes */}
+            <Route path="/CSC" element={<NavegacaoCSC />} />
+            <Route path="/CCC" element={<NavegacaoCCC/>} />
+            <Route path="/NavAdm" element={<NavegacaoAdm />} />
+            <Route path="/NavMedico" element={<NavegacaoMedico />} />
+            
         </Routes>
     );
 };

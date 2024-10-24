@@ -1,13 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ResponsiveTable from '../Components/Agenda.jsx';
 import ButtonGroup from '../Components/Botoes.jsx';
 import SwitchWithIconsAndAvatar from '../Components/Avatar.jsx';
+import NavbarMedico from '../Components/Navegacao-medico';
 
 const Agenda = () => {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
     const [notificationCount, setNotificationCount] = useState(0);
     const [latestPatient, setLatestPatient] = useState(null);
+
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch('http://localhost:3001/agendamentos');
+            if (!response.ok) throw new Error('Erro ao buscar dados');
+            const data = await response.json();
+
+            const formattedData = data.map(item => ({
+                ...item,
+                agendamento: new Date(item.agendamento).toLocaleDateString('pt-BR'),
+            }));
+
+            setData(formattedData);
+            setFilteredData(formattedData);
+        } catch (error) {
+            console.error('Erro ao buscar dados:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+        const intervalId = setInterval(fetchData, 1000);
+        return () => clearInterval(intervalId);
+    }, []);
 
     const handleEdit = async (editedItem) => {
         try {
@@ -27,15 +53,15 @@ const Agenda = () => {
         }
     };
 
-    const handleDelete = async (IdAgenda) => {
+    const handleDelete = async (idAgenda) => {
         try {
-            const response = await fetch(`http://localhost:3001/agendamentos/${IdAgenda}`, {
+            const response = await fetch(`http://localhost:3001/agendamentos/${idAgenda}`, {
                 method: 'DELETE',
             });
 
             if (!response.ok) throw new Error('Erro ao deletar');
 
-            const updatedData = data.filter(item => item.idAgenda !== IdAgenda);
+            const updatedData = data.filter(item => item.idAgenda !== idAgenda);
             setData(updatedData);
             setFilteredData(updatedData);
         } catch (error) {
@@ -50,6 +76,9 @@ const Agenda = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newItem),
             });
+
+            if (!response.ok) throw new Error('Erro ao adicionar agendamento');
+
             const createdItem = await response.json();
             const newData = [...data, createdItem];
             setData(newData);
@@ -63,7 +92,7 @@ const Agenda = () => {
 
     const handleDateRangeChange = (newRange) => {
         const filtered = data.filter(item => {
-            return new Date(item.date) >= new Date(newRange.start) && new Date(item.date) <= new Date(newRange.end);
+            return new Date(item.agendamento) >= new Date(newRange.start) && new Date(item.agendamento) <= new Date(newRange.end);
         });
         setFilteredData(filtered);
     };
@@ -74,29 +103,33 @@ const Agenda = () => {
     };
 
     const handlePlanFilterChange = (newPlan) => {
-        const filtered = data.filter(item => item.plan === newPlan);
+        const filtered = data.filter(item => item.tipoPlano === newPlan);
         setFilteredData(filtered);
     };
 
+
     return (
         <div className="App">
-            <SwitchWithIconsAndAvatar
-                notificationCount={notificationCount}
-                latestPatient={latestPatient}
-            />
-            <h1 className='animated-heading'>Agenda Médica</h1>
-            <ButtonGroup
-                onDateRangeChange={handleDateRangeChange}
-                onStatusFilterChange={handleStatusFilterChange}
-                onPlanFilterChange={handlePlanFilterChange}
-                data={data}
-            />
-            <ResponsiveTable
-                data={filteredData}
-                onEdit={handleEdit}
-                onDelete={handleDelete}
-                onAdd={handleAdd}
-            />
+            <>
+                <NavbarMedico />
+                <SwitchWithIconsAndAvatar
+                    notificationCount={notificationCount}
+                    latestPatient={latestPatient}
+                />
+                <h1 className='animated-heading'>Agenda Médica</h1>
+                <ButtonGroup
+                    onDateRangeChange={handleDateRangeChange}
+                    onStatusFilterChange={handleStatusFilterChange}
+                    onPlanFilterChange={handlePlanFilterChange}
+                    data={data}
+                />
+                <ResponsiveTable
+                    data={filteredData}
+                    onEdit={handleEdit}
+                    onDelete={handleDelete}
+                    onAdd={handleAdd}
+                />
+            </>
         </div>
     );
 };

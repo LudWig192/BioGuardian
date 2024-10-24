@@ -238,7 +238,7 @@ router.delete('/Contato/:idContato', (req, res) => {
 });
 
 
-//////////////////////////////////////Medico///////////////////////////////
+//////////////////////////////////////Funcionarios///////////////////////////////
 
 // Rota para listar todos os médicos
 router.get('/medicos', (req, res) => {
@@ -298,5 +298,67 @@ router.delete('/medicos/:idMedico', (req, res) => {
     res.send('Médico excluído com sucesso');
   });
 });
+
+/////////////////////////////////////Agendamentos//////////////////////////////
+
+// Rota para listar todos os agendamentos
+router.get('/agendamentos', (req, res) => {
+  const query = 'SELECT * FROM agendamentos';
+  connection.query(query, (err, results) => {
+    if (err) {
+      console.error('Erro ao consultar os agendamentos:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.json(results);
+  });
+});
+
+// Rota para adicionar um agendamento
+router.post('/agendamentos', (req, res) => {
+  const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
+  const query = 'INSERT INTO agendamentos (agendamento, paciente, status, procedimentos, tipoPlano) VALUES (?, ?, ?, ?, ?)';
+
+  connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano], (err) => {
+    if (err) {
+      console.error('Erro ao adicionar um agendamento:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.status(201).send('Agendamento adicionado com sucesso');
+  });
+});
+
+// Rota para editar um agendamento
+router.put('/agendamentos/:idAgenda', (req, res) => {
+  const { idAgenda } = req.params;
+  const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
+  const query = 'UPDATE agendamentos SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
+
+  connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano, idAgenda], (err) => {
+    if (err) {
+      console.error('Erro ao editar esse agendamento:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.send(' Agendamento editado com sucesso');
+  });
+});
+
+// Rota para excluir um agendamento
+router.delete('/Agendamentos/:idAgenda', (req, res) => {
+  const { idAgenda } = req.params;
+  const query = 'DELETE FROM agendamentos WHERE idAgenda = ?';
+
+  connection.query(query, [idAgenda], (err) => {
+    if (err) {
+      console.error('Erro ao excluir agendamento:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.send('Agendamento excluído com sucesso');
+  });
+});
+
 
 module.exports = router;

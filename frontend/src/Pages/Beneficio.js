@@ -8,20 +8,21 @@ import Plano from "../Components/PlanoBeneficio";
 import Unidade from "../Components/UnidadeBeneficio"
 import Duvida from "../Components/DuvidaBeneficio"
 import Maps from "../Components/MapsBeneficio";
+import NavbarCSC from '../Components/Navegacao'
 
-
-const Beneficio  = () => {
+const Beneficio = () => {
   return (
     <>
-  <Banner />
-    <CardTabela />
-    <Exame />
-    <Icons />
-    <Plano />
-  <Unidade />
-  <Comentario />
-  <Duvida />
-  <Maps />
+      <NavbarCSC />
+      <Banner />
+      <CardTabela />
+      <Exame />
+      <Icons />
+      <Plano />
+      <Unidade />
+      <Comentario />
+      <Duvida />
+      <Maps />
 
     </>
   );

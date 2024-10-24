@@ -5,7 +5,7 @@ import Medico from '../Imagens/Calvo-removebg-preview.png';
 import { FaBell } from "react-icons/fa";
 import { TbMessageCircleFilled } from "react-icons/tb";
 import { TfiAgenda } from "react-icons/tfi";
-import { QRCodeSVG } from 'qrcode.react'; // Importa o QRCodeSVG
+import { QRCodeSVG } from 'qrcode.react';
 
 // Componente Switch
 const Switch = () => {
@@ -21,7 +21,6 @@ const Switch = () => {
                 type="checkbox"
                 checked={isChecked}
                 onChange={handleChange}/>
-            <span className="slider"></span>
         </label>
     );
 };
@@ -40,7 +39,7 @@ const SwitchWithIconsAndAvatar = ({ notificationCount, latestPatient }) => {
     };
 
     // Dados para o QR Code
-    const qrData = "https://example.com"; // Modifique conforme necessário
+    const qrData = "https://youtu.be/LVMHYzVS9Y4?si=PrgPJHOBqDDJ_hnn";
 
     return (
         <div className="container">

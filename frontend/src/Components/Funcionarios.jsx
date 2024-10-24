@@ -99,15 +99,14 @@ const FuncionariosPage = () => {
   };
 
   return (
-    <div className="app funcionario">
-      <div className="app-header funcionario">
-        <div className="header-container funcionario">
-          <div className="search-bar-container funcionario">
-            <input type="text" className="search-bar funcionario" placeholder="Buscar médicos..." />
-          </div>
-          <div className="icon-container funcionario">
-            <FaBell className="large-icon funcionario" />
-          </div>
+    <div className="app-header funcionario">
+      <div className="header-container funcionario">
+        <div className="search-bar-container funcionario">
+          <input type="text" className="search-bar funcionario" placeholder="Buscar médicos..." />
+        </div>
+        <div className="user-info funcionario">
+          <span className="user-name funcionario">Admin</span>
+          <span className="user-email funcionario">admin@example.com</span>
         </div>
       </div>
       <main className="funcionario">
@@ -150,7 +149,7 @@ const FuncionariosPage = () => {
                   <button className="button-custom" onClick={() => handleModalShow('editar', index)}>
                     Editar
                   </button>
-                  <button className="button-custom" onClick={() => handleExcluirMedico(index)}>
+                  <button className="button-custom red" onClick={() => handleExcluirMedico(index)}>
                     Excluir
                   </button>
                 </td>
@@ -159,17 +158,19 @@ const FuncionariosPage = () => {
           </tbody>
         </table>
       </main>
-      {isModalOpen && (
-        <ModalFuncionarios
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          onAddDoctor={modalType === 'adicionar' ? handleAdicionarMedico : handleEditarMedico}
-          dadosMedico={dadosMedico}
-          setDadosMedico={setDadosMedico}
-          onExcluir={() => handleExcluirMedico(currentIndex)}
-        />
-      )}
-    </div>
+      {
+        isModalOpen && (
+          <ModalFuncionarios
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            onAddDoctor={modalType === 'adicionar' ? handleAdicionarMedico : handleEditarMedico}
+            dadosMedico={dadosMedico}
+            setDadosMedico={setDadosMedico}
+            onExcluir={() => handleExcluirMedico(currentIndex)}
+          />
+        )
+      }
+    </div >
   );
 };
 
