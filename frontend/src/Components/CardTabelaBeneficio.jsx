@@ -1,78 +1,52 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import '../Style/CardTabelaBeneficio.css';
-import Familia from "../Imagens/FamiliaCardBeneficio.png";
-import Tecnologia from "../Imagens/TecnologiaBeneficio.png";
 
-const CardTabelaBeneficioDentista = () => {
+const OptometristComponent = () => {
   return (
-    <div className="CardTabelaBeneficio-container">
-      <div className="CardTabelaBeneficio-content">
-        <div className="CardTabelaBeneficio-cards">
-          <div className="CardTabelaBeneficio-card">
-            <img src={Familia} alt="Saúde da Família" className="CardTabelaBeneficio-image" />
-            <div className="CardTabelaBeneficio-card-content">
-              <div className="tituloTabelaBeneficio">Monitore a saúde da sua família com BioGuardian</div>
-              <div className="textoTabelaBeneficio"> 
-                O BioGuardian utiliza inteligência artificial para monitorar a saúde da sua família, analisando o histórico médico e identificando anomalias. Tenha a tranquilidade de saber que sua saúde está em boas mãos.
-              </div>
-              <button className="buttonTabelaBeneficio">Saiba Mais</button>
-            </div>
-          </div>
-          <div className="CardTabelaBeneficio-card">
-            <img src={Tecnologia} alt="Tecnologia" className="CardTabelaBeneficio-image" />
-            <div className="CardTabelaBeneficio-card-content">
-              <div className="tituloTabelaBeneficio">Benefícios do BioGuardian</div>
-              <div className="textoTabelaBeneficio"> 
-                Aqui estão alguns dos principais benefícios do BioGuardian:
-              </div>
-              <div className="listaTabelaBeneficios"> 
-                <div className="itemTabelaBeneficio">Monitoramento de saúde 24/7</div>
-                <div className="itemTabelaBeneficio">Assistência médica em emergências</div>
-                <div className="itemTabelaBeneficio">Análise de sintomas </div>
-              
-               
-              </div>
-              <button className="buttonTabelaBeneficio">Saiba Mais</button>
-            </div>
-          </div>
+    <div className="optometrist-container">
+      <div className="image-section">
+        <div className="experience-badge">
+          <span>20+</span>
+          <p>Anos de Experiência</p>
         </div>
-        <div className="CardTabelaBeneficio-working-hours">
-          <div className="tituloHorasTabelaBeneficio">Horários de Exames</div> 
-          <div className="tabelaHorasTabelaBeneficio"> 
-            <div className="linhaHorasTabelaBeneficio"> 
-              <div>Segunda</div>
-              <div>8AM - 5PM</div>
-            </div>
-            <div className="linhaHorasTabelaBeneficio"> 
-              <div>Terça</div>
-              <div>8AM - 5PM</div>
-            </div>
-            <div className="linhaHorasTabelaBeneficio">
-              <div>Quarta</div>
-              <div>8AM - 7PM</div>
-            </div>
-            <div className="linhaHorasTabelaBeneficio">
-              <div>Quinta</div>
-              <div>8AM - 5PM</div>
-            </div>
-            <div className="linhaHorasTabelaBeneficio">
-              <div>Sexta</div>
-              <div>8AM - 5PM</div>
-            </div>
-            <div className="linhaHorasTabelaBeneficio">
-              <div>Sábado</div>
-              <div>8AM - 3PM</div>
-            </div>
-            <div className="linhaHorasTabelaBeneficio">
-              <div>Domingo</div>
-              <div>FECHADO</div>
-            </div>
-          </div>
-          <button className="buttonTabelaBeneficio">Ligue para Nós: 999-7777-1212</button>
+        <img
+          src="path/to/your/image.jpg"
+          alt="Optometrist conducting an eye exam"
+          className="exam-image"
+        />
+      </div>
+      <div className="content-section">
+        <div className="about">
+          <h2 className="cardsExameCliente">Sobre Nós</h2>
+          <h1 className="cardsExameCliente">Melhor Optometrista & Cuidado Ocular em Quem Você Pode Confiar</h1>
+          <p className="cardsExameCliente">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
         </div>
+        <ul className="services-list">
+          <li className="cardsExameCliente">
+            <FontAwesomeIcon icon={faCheckCircle} className="icon" />
+            Exames de Saúde Ocular
+          </li>
+          <li className="cardsExameCliente">
+            <FontAwesomeIcon icon={faCheckCircle} className="icon" />
+            Serviços de Lentes de Contato
+          </li>
+          <li className="cardsExameCliente">
+            <FontAwesomeIcon icon={faCheckCircle} className="icon" />
+            Correção a Laser para Olhos
+          </li>
+          <li className="cardsExameCliente">
+            <FontAwesomeIcon icon={faCheckCircle} className="icon" />
+            Exames Oculares
+          </li>
+        </ul>
+        <button className="more-info-button">Saiba Mais</button>
       </div>
     </div>
   );
 };
 
-export default CardTabelaBeneficioDentista;
+export default OptometristComponent;

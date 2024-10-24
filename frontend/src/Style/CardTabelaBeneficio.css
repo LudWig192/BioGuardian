@@ -1,117 +1,96 @@
-/* Estilo para o container principal */
-.CardTabelaBeneficio-container {
+.optometrist-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f9f9f9; /* Cor de fundo do container */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    margin-top: 290px; /* Adiciona margem superior para afastar o componente */
-}
-
-/* Estilo para o conteúdo principal */
-.CardTabelaBeneficio-content {
-    display: flex; /* Flexbox para organizar cartões e horários */
-    justify-content: space-between; /* Espaçamento entre os itens */
-    width: 100%; /* Largura total */
-}
-
-/* Estilo para os cartões */
-.CardTabelaBeneficio-cards {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Ajuste a largura máxima conforme necessário */
+    margin: 0 auto;   /* Centraliza o componente na página */
+  }
+  
+  .image-section {
+    position: relative;
+    width: 40%;
+    padding-right: 20px;
+  }
+  
+  .experience-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #2aa198;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .experience-badge span {
+    font-size: 24px;
+    display: block;
+  }
+  
+  .exam-image {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .content-section {
+    width: 60%;
+    padding-left: 20px;
+  }
+  
+  .cardsExameCliente {
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .cardsExameCliente h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .cardsExameCliente h2 {
+    font-size: 18px;
+    color: #2aa198;
+    margin-bottom: 5px;
+  }
+  
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .services-list li {
     display: flex;
-    flex-wrap: wrap; /* Permitir que os cartões se movam para a linha seguinte */
-    justify-content: space-around; /* Espaçamento entre os cartões */
-    width: 70%; /* Largura dos cartões, ajustável conforme necessário */
-}
-
-/* Estilo para os cartões individuais */
-.CardTabelaBeneficio-card {
-    background-color: white; /* Cor de fundo do cartão */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para os cartões */
-    margin: 10px; /* Margem entre os cartões */
-    width: 300px; /* Largura fixa para os cartões */
-    overflow: hidden; /* Ocultar conteúdo que ultrapassar as bordas */
-    display: flex;
-    flex-direction: column; /* Alinha a imagem e conteúdo verticalmente */
-}
-
-/* Estilo para a imagem do dentista */
-.CardTabelaBeneficio-image {
-    max-width: 100%;
-    border-radius: 8px; /* Bordas arredondadas para a imagem */
-    margin-bottom: 20px; /* Margem inferior */
-}
-
-/* Estilo para o conteúdo do cartão */
-.CardTabelaBeneficio-card-content {
-    padding: 15px; /* Espaçamento interno */
-    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante do cartão */
-}
-
-/* Estilo para os títulos dos cartões */
-.tituloTabelaBeneficio {
-    font-size: 1.5em; /* Tamanho da fonte */
-    margin-bottom: 10px; /* Margem inferior */
-    color: black; /* Cor do texto */
-}
-
-/* Estilo para o texto dos cartões */
-.textoTabelaBeneficio {
-    margin-bottom: 15px; /* Margem inferior */
-    color: #666; /* Cor do texto */
-}
-
-/* Estilo para a lista de benefícios */
-.listaBeneficiosTabela {
-    margin-top: 10px; /* Margem superior */
-}
-
-/* Estilo para os itens da lista de benefícios */
-.itemTabelaBeneficio {
-    margin-bottom: 8px; /* Margem inferior */
-    color: #666; /* Cor do texto */
-}
-
-/* Estilo para a seção de horários de funcionamento */
-.CardTabelaBeneficio-working-hours {
-    width: 30%; /* Largura da seção de horários */
-    margin-left: 20px; /* Margem à esquerda para espaçamento */
-    margin-top: 25px;
-}
-
-/* Estilo para o título da seção de horários */
-.tituloHorasTabelaBeneficio {
-    font-size: 1.5em; /* Tamanho da fonte */
-    margin-bottom: 10px; /* Margem inferior */
-    color: #333; /* Cor do texto */
-}
-
-/* Estilo para a tabela de horários */
-.tabelaHorasTabelaBeneficio {
-    border-collapse: collapse; /* Para evitar espaçamento entre as células */
-}
-
-/* Estilo para cada linha da tabela de horários */
-.linhaHorasTabelaBeneficio {
-    display: flex; /* Flexbox para alinhar as colunas */
-    justify-content: space-between; /* Espaçamento entre os itens */
-    padding: 8px 0; /* Padding vertical */
-}
-
-/* Estilo para o botão */
-.buttonTabelaBeneficio {
-    background-color: #5472f0; /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
-    border: none; /* Sem borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px 15px; /* Padding interno */
-    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    transition: background-color 0.3s; /* Transição suave para mudança de cor */
-}
-
-/* Estilo para o botão ao passar o mouse */
-.buttonTabelaBeneficio:hover {
-    background-color: #5472f0; /* Cor ao passar o mouse */
-}
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+  }
+  
+  .services-list .icon {
+    color: #2aa198;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .more-info-button {
+    background-color: #2aa198;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .more-info-button:hover {
+    background-color: #218c74;
+  }
+  

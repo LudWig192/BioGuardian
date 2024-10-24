@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaUserMd, FaProcedures, FaLaptopMedical, FaAmbulance } from 'react-icons/fa';
 import '../Style/ServiçoHome.css';
-import Serviço from '../Imagens/ServiçoHome.png'
+import Serviço from '../Imagens/ServiçoHome.png';
 
 const Expertise = () => {
   return (

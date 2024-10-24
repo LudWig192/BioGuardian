@@ -1,0 +1,55 @@
+/* homecliente.css */
+
+/* Estilos gerais */
+.homecliente-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Responsividade para dispositivos menores que 1024px */
+  @media (max-width: 1024px) {
+    .homecliente-container {
+      padding: 15px;
+    }
+    
+    .homecliente-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Responsividade para dispositivos menores que 768px */
+  @media (max-width: 768px) {
+    .homecliente-container {
+      padding: 10px;
+    }
+    
+    .homecliente-item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .homecliente-text {
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+  
+  /* Responsividade para dispositivos menores que 480px */
+  @media (max-width: 480px) {
+    .homecliente-container {
+      padding: 5px;
+    }
+    
+    .homecliente-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .homecliente-button {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+  

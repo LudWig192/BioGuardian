@@ -1,20 +1,26 @@
 .cardsExameCliente-container {
     max-width: 1200px; /* Largura máxima do contêiner */
-    margin: 0 auto; /* Centraliza o contêiner */
+    margin: 260px auto 0; /* Centraliza o contêiner e adiciona margem superior */
     padding: 20px; /* Espaçamento interno */
+    display: flex; /* Adicionado para centralizar conteúdo */
+    flex-direction: column; /* Empilha elementos verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
+
 .cardsExameCliente-header {
-    font-size: 24px; /* Tamanho da fonte */
+    font-size: 32px; /* Tamanho da fonte do cabeçalho */
     font-weight: bold; /* Negrito */
     text-align: center; /* Centraliza o texto */
     margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+    color: #6854f0;
 }
 
 .cardsExameCliente {
     display: flex; /* Utiliza flexbox para o layout */
     flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte */
     gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
 }
 
 .cardsExameCliente-card {
@@ -24,6 +30,8 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
     overflow: hidden; /* Esconde o excesso de conteúdo */
     width: calc(33.333% - 20px); /* Três cards por linha, considerando o espaço */
+    display: flex; /* Utiliza flexbox para permitir o alinhamento */
+    flex-direction: column; /* Faz os filhos serem empilhados verticalmente */
     transition: transform 0.3s; /* Transição suave para transformação */
 }
 
@@ -37,44 +45,90 @@
 }
 
 .cardsExameCliente-content {
+    flex: 1; /* Faz com que o conteúdo ocupe o espaço disponível */
     padding: 15px; /* Espaçamento interno do conteúdo do card */
+    text-align: left; /* Alinha o texto à esquerda */
+    display: flex; /* Permite o uso de flexbox */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    justify-content: space-between; /* Garante que o espaço entre os elementos seja distribuído */
 }
 
 .cardsExameCliente-date {
     font-size: 14px; /* Tamanho da fonte da data */
-    color: #888; /* Cor da fonte */
-    margin-bottom: 10px; /* Espaçamento abaixo da data */
+    margin-bottom: 5px; /* Espaçamento abaixo da data */
 }
 
 .cardsExameCliente-title {
-    font-size: 18px; /* Tamanho da fonte do título */
-    font-weight: bold; /* Negrito */
-    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    font-weight: bold; /* Negrito para o título */
+    font-size: 18px; /* Aumentando o tamanho da fonte do título */
+    margin: 5px 0 10px; /* Espaçamento acima e abaixo do título */
 }
 
 .cardsExameCliente-text {
-    font-size: 14px; /* Tamanho da fonte do texto */
-    margin-bottom: 15px; /* Espaçamento abaixo do texto */
+    font-size: 14px; /* Tamanho da fonte da descrição */
+    margin-bottom: 15px; /* Espaço abaixo da descrição */
 }
 
 .cardsExameCliente-button-container {
-    text-align: center; /* Centraliza o botão */
-    margin-top: 10px; /* Espaçamento acima do botão */
+    display: flex; /* Usar flexbox para centralizar o botão */
+    justify-content: center; /* Centraliza o botão */
+    margin-top: auto; /* Move o botão para o fundo do card */
+    padding-bottom: 15px; /* Adiciona espaçamento abaixo do botão */
 }
 
 .cardsExameCliente-link {
+    width: 100%; /* Faz o botão ocupar toda a largura do contêiner */
+    text-align: center; /* Centraliza o texto no botão */
     text-decoration: none; /* Remove o sublinhado */
-    color: #007bff; /* Cor do link */
+    background-color: #54a3f0; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
     font-weight: bold; /* Negrito */
-    padding: 10px 15px; /* Espaçamento interno do botão */
-    border: 1px solid #007bff; /* Borda do botão */
+    padding: 10px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda do botão */
     border-radius: 4px; /* Bordas arredondadas do botão */
-    display: inline-block; /* Para o botão ser um bloco */
     transition: background-color 0.3s; /* Transição suave para a cor de fundo */
 }
 
 .cardsExameCliente-link:hover {
-    text-decoration: underline; /* Sublinha ao passar o mouse */
-    background-color: #007bff; /* Cor de fundo ao passar o mouse */
-    color: white; /* Cor do texto ao passar o mouse */
+    background-color: #007bbf; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilos para as informações da pessoa */
+.person-examecliente-info {
+    display: flex; /* Usar flexbox para alinhar a imagem e o nome */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 10px; /* Espaço abaixo do perfil */
+}
+
+.person-examecliente-ball {
+    width: 30px; /* Largura da bola */
+    height: 30px; /* Altura da bola */
+    border-radius: 50%; /* Arredonda a bola */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    margin-right: 10px; /* Espaço entre a bola e o nome */
+    border: 2px solid #ddd; /* Borda da bola, opcional */
+}
+
+.person-photo {
+    width: 100%; /* Imagem ocupa toda a largura da bola */
+    height: 100%; /* Imagem ocupa toda a altura da bola */
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+.person-examecliente-name {
+    font-size: 14px; /* Tamanho da fonte do nome */
+    color: #333; /* Cor do texto do nome */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .cardsExameCliente-card {
+        width: calc(50% - 20px); /* Dois cards por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .cardsExameCliente-card {
+        width: 100%; /* Um card por linha em telas muito pequenas */
+    }
 }

@@ -1,35 +1,39 @@
 /* Contêiner principal */
 .UnidadeHome-featured-properties-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centraliza o conteúdo */
   padding: 40px;
   background-color: #fff;
 }
 
-/* Seção de conteúdo à esquerda */
+/* Seção de conteúdo */
 .UnidadeHome-featured-properties {
   display: flex;
+  flex-direction: row; /* Posição padrão em linha */
   width: 100%;
+  flex-wrap: wrap; /* Permite que os elementos se reorganizem em telas menores */
 }
 
-/* Seção de conteúdo */
+/* Seção de conteúdo principal */
 .UnidadeHome-content {
-  flex: 3;
+  flex: 3; /* Flex-grow para permitir que essa seção ocupe mais espaço */
 }
 
 /* Título das Propriedades Destacadas */
 .UnidadeHome-featured-title {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
-  color: #54d4f0; /* Cor do título */
+  color: #6854f0; /* Cor do título */
 }
 
 /* Lista de propriedades */
 .UnidadeHome-properties-list {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* Permite que os cards se ajustem em telas menores */
+  justify-content: center; /* Centraliza os cards */
 }
 
 /* Cada card de propriedade */
@@ -40,6 +44,7 @@
   width: 300px; /* Largura do card */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  margin-bottom: 20px; /* Espaçamento inferior para melhor visualização */
 }
 
 .UnidadeHome-property-card:hover {
@@ -64,27 +69,18 @@
   font-size: 18px;
   margin-bottom: 5px;
   font-weight: bold; /* Negrito para destaque */
-  color: #000; /* Cor do texto */
+  color: #54a3f0; /* Cor do texto */
 }
 
 /* Localização da propriedade */
 .UnidadeHome-property-info .UnidadeHome-property-location {
   font-size: 14px;
-  color: #888;
-}
-
-/* Preço da propriedade */
-.UnidadeHome-property-info .UnidadeHome-property-price {
-  display: block;
-  font-weight: bold;
-  color: #000;
-  margin-top: 10px;
-  font-size: 16px;
+  color: black;
 }
 
 /* Seção lateral à direita */
 .UnidadeHome-sidebar-Home {
-  flex: 0 0 350px; /* Largura ajustada */
+  flex: 0 0 350px; /* Largura ajustada para a sidebar */
   background-color: #f9f9f9;
   padding: 30px;
   border-radius: 20px;
@@ -92,7 +88,7 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 20px; /* Espaçamento entre sidebar e cards */
+  margin-left: 20px; /* Mantém o espaçamento entre sidebar e cards */
 }
 
 /* Título da barra lateral */
@@ -130,5 +126,35 @@
 }
 
 .UnidadeHome-explore-btn:hover {
-  background-color: #5472f0; /* Manter a mesma cor no hover */
+  background-color: #4f62e2; /* Um tom levemente mais escuro no hover */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .UnidadeHome-featured-properties {
+    flex-direction: column; /* Coloca a sidebar abaixo do conteúdo principal */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .UnidadeHome-sidebar-Home {
+    flex: 0 0 100%; /* Sidebar ocupa toda a largura em telas menores */
+    margin-left: 0; /* Remove a margem à esquerda */
+    margin-top: 20px; /* Adiciona margem superior para espaçamento */
+  }
+}
+
+@media (max-width: 768px) {
+  .UnidadeHome-properties-list {
+    flex-direction: column; /* Muda os cards para coluna */
+    align-items: center; /* Centraliza os cards */
+  }
+
+  .UnidadeHome-property-card {
+    width: 90%; /* Largura ajustada dos cards */
+    margin-bottom: 15px; /* Reduz o espaçamento inferior */
+  }
+
+  .UnidadeHome-sidebar-Home {
+    margin-left: 0; /* Remove margem esquerda na sidebar */
+  }
 }

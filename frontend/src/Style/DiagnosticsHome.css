@@ -1,16 +1,23 @@
 .online-learning-section {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  padding: 250px; /* Diminui o padding */
+  justify-content: center;
+  padding: 250px;
+  /* Padding padrão */
+  flex-direction: row;
+  /* Mantém a disposição em linha em telas maiores */
 }
 
+/* Seção da imagem da pessoa */
 .online-learning-people-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mantém apenas uma coluna */
+  grid-template-columns: 1fr;
+  /* Mantém apenas uma coluna */
   gap: 15px;
-  width: 400px; /* Ajusta a largura para 400px */
-  height: 400px; /* Ajusta a altura para 400px */
+  width: 400px;
+  /* Largura padrão */
+  height: auto;
+  /* Altura automática */
   border-radius: 25px;
   overflow: hidden;
   background-color: #fff;
@@ -18,15 +25,18 @@
 
 .online-learning-person {
   width: 100%;
-  height: 100%;
-  background-size: cover; /* Mantém a imagem coberta */
-  background-position: center;
-  background-image: url('../Imagens/BeneficioHome.png'); /* Certifique-se de que o caminho está correto */
+  height: auto;
+  /* Mantém a altura proporcional */
+  border-radius: 25px;
+  /* Para arredondar os cantos da imagem */
 }
 
+/* Lista de informações */
 .online-learning-info-list {
   width: 50%;
-  margin-left: 50px; /* Diminui a margem esquerda */
+  /* Largura padrão */
+  margin-left: 50px;
+  /* Margem à esquerda padrão */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,26 +44,121 @@
 }
 
 .online-learning-info-title {
-  font-size: 24px; /* Diminui o tamanho do título */
+  font-size: 24px;
+  /* Tamanho do título */
   font-weight: bold;
-  color: #54d4f0;
-  margin-bottom: 15px; /* Diminui o espaçamento abaixo do título */
+  color: #6854f0;
+  margin-bottom: 15px;
+  /* Espaçamento abaixo do título */
 }
 
 .online-learning-info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Diminui o espaçamento entre os itens */
+  margin-bottom: 20px;
+  /* Espaçamento entre os itens */
 }
 
 .online-learning-info-text {
-  font-size: 16px; /* Diminui o tamanho do texto */
+  font-size: 16px;
+  /* Tamanho do texto */
   color: #333;
-  margin-left: 15px; /* Diminui a margem esquerda */
+  margin-left: 15px;
+  /* Margem à esquerda */
 }
 
 .online-learning-icon {
-  font-size: 50px; /* Ajusta o tamanho do ícone */
+  font-size: 50px;
+  /* Tamanho do ícone */
   color: #54a3f0;
-  padding: 10px; /* Ajusta o espaçamento interno */
+  padding: 10px;
+  /* Espaçamento interno */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+  .online-learning-section {
+    padding: 150px 20px;
+    /* Reduzir padding em telas médias */
+    flex-direction: column;
+    /* Muda para coluna em telas menores */
+  }
+
+  .online-learning-info-list {
+    width: 60%;
+    /* Aumenta a largura da lista de informações */
+    margin-left: 0;
+    /* Remove a margem esquerda */
+    margin-top: 20px;
+    /* Adiciona margem superior */
+  }
+
+  .online-learning-people-grid {
+    width: 80%;
+    /* Aumenta a largura em telas médias */
+    height: auto;
+    /* Altura automática */
+  }
+}
+
+@media (max-width: 768px) {
+  .online-learning-section {
+    padding: 100px 15px;
+    /* Reduzir padding em dispositivos móveis */
+    flex-direction: column;
+    /* Muda para coluna em telas menores */
+  }
+
+  .online-learning-people-grid {
+    width: 90%;
+    /* Largura maior em telas menores */
+    height: auto;
+    /* Altura automática */
+  }
+
+  .online-learning-info-list {
+    width: 100%;
+    /* Largura total em dispositivos móveis */
+    margin-left: 0;
+    /* Remove a margem esquerda */
+    margin-top: 20px;
+    /* Adiciona margem superior */
+  }
+
+  .online-learning-info-title {
+    font-size: 20px;
+    /* Tamanho do título reduzido */
+  }
+
+  .online-learning-info-text {
+    font-size: 14px;
+    /* Tamanho do texto reduzido */
+  }
+
+  .online-learning-icon {
+    font-size: 40px;
+    /* Tamanho do ícone reduzido */
+  }
+}
+
+@media (max-width: 480px) {
+  .online-learning-section {
+    padding: 50px 10px;
+    /* Reduzir padding em dispositivos muito pequenos */
+  }
+
+  .online-learning-info-title {
+    font-size: 18px;
+    /* Tamanho do título menor */
+  }
+
+  .online-learning-info-text {
+    font-size: 12px;
+    /* Tamanho do texto menor */
+  }
+
+  .online-learning-icon {
+    font-size: 30px;
+    /* Tamanho do ícone ainda menor */
+  }
 }

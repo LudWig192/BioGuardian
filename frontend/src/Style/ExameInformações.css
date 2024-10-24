@@ -159,4 +159,30 @@
     .menu-item-examesIn {
         height: 60px; /* Ajusta a altura dos cards */
     }
+
+    .menu-grid-examesIn {
+        padding: 0 10px; /* Diminui o padding em telas menores */
+    }
+
+    .image-container-examesIn {
+        height: 300px; /* Ajusta a altura da imagem em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 2em; /* Reduz ainda mais o tamanho em telas pequenas */
+    }
+
+    .header-subtitle {
+        font-size: 1em; /* Reduz ainda mais o tamanho em telas pequenas */
+    }
+
+    .modal-button-examesIn {
+        padding: 10px 20px; /* Diminui o tamanho do botão */
+    }
+
+    .menu-item-examesIn {
+        height: 50px; /* Ajusta a altura dos cards em telas pequenas */
+    }
 }

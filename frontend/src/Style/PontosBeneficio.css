@@ -1,150 +1,114 @@
-/* PontosBeneficio.css */
+.pontosbene-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 90px;
+  background-color: #f5f8fd;
+}
 
-/* Container principal do cartão de saúde */
-.PontosBeneficio-healthcare-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.image-pontosbene {
+  flex: 1;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.pontosbene-image {
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+.content-pontosbene {
+  flex: 1.5;
+  max-width: 600px;
+  padding-left: 10px;
+}
+
+.content-pontosbene > .pontosbene {
+  font-size: 32px;
+  color: #6854f0;
+  font-weight: bold;
+}
+
+.content-pontosbene > .pontosbene + .pontosbene {
+  font-size: 16px;
+  color: black;
+  margin: 15px 0;
+  font-weight: normal;
+  text-align: center; /* Centraliza a descrição */
+}
+
+.pontosbene > .pontosbene {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pontosbene > .pontosbene > .pontosbene {
+  font-size: 16px;
+  color: #5a5a5a;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.icon-pontosbene {
+  color: #54a3f0;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.pontosbene-btn {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.pontosbene-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .pontosbene-container {
+    flex-direction: column; /* Altera a direção do flex para coluna */
+    padding: 30px; /* Reduz o padding para telas menores */
   }
-  
-  /* Estilo do cartão */
-  .PontosBeneficio-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px; /* Largura máxima do cartão */
-    overflow: hidden;
+
+  .image-pontosbene {
+    margin-right: 0; /* Remove a margem à direita na coluna */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
   }
-  
-  /* Conteúdo do cartão */
-  .PontosBeneficio-content {
-    display: flex; /* Alinha o texto e a imagem lado a lado */
-    padding: 20px;
+
+  .pontosbene-image {
+    width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
+    max-width: 400px; /* Define um tamanho máximo para a imagem */
   }
-  
-  /* Estilo do contêiner de texto */
-  .PontosBeneficio-text {
-    flex: 1; /* Permite que o texto ocupe o espaço restante */
-    margin-right: 20px; /* Aumenta o espaçamento entre o texto e a imagem */
+
+  .content-pontosbene {
+    padding-left: 0; /* Remove o padding esquerdo */
+    max-width: 100%; /* Faz o conteúdo ocupar toda a largura disponível */
   }
-  
-  /* Estilo da imagem do cartão */
-  .PontosBeneficio-image {
-    flex: 0 0 400px; /* Diminui a largura fixa da imagem para 400px */
+
+  .content-pontosbene > .pontosbene {
+    font-size: 24px; /* Reduz o tamanho do texto do título */
   }
-  
-  /* Ajustando a imagem para ocupar todo o espaço disponível */
-  .PontosBeneficio-image img {
-    width: 100%; /* Ajusta a imagem para ocupar todo o espaço disponível */
-    border-radius: 8px; /* Arredonda os cantos da imagem */
+
+  .content-pontosbene > .pontosbene + .pontosbene {
+    font-size: 14px; /* Reduz o tamanho do texto do parágrafo */
   }
-  
-  /* Estilo do cabeçalho */
-  .PontosBeneficio-header {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+
+  .icon-pontosbene {
+    font-size: 18px; /* Reduz o tamanho do ícone */
   }
-  
-  /* Estilo do título */
-  .PontosBeneficio-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 10px;
+
+  .pontosbene-btn {
+    font-size: 14px; /* Reduz o tamanho do texto do botão */
+    padding: 10px 20px; /* Ajusta o padding do botão */
   }
-  
-  /* Estilo da descrição */
-  .PontosBeneficio-description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo da lista */
-  .PontosBeneficio-list {
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo dos itens da lista */
-  .PontosBeneficio-list-item {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: #333;
-    margin: 5px 0;
-  }
-  
-  /* Estilo do ícone */
-  .PontosBeneficio-icon {
-    margin-right: 10px;
-    color: #28a745; /* Cor verde para o ícone */
-  }
-  
-  /* Estilo do botão "Learn More" */
-  .PontosBeneficio-learn-more-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Efeito ao passar o mouse sobre o botão */
-  .PontosBeneficio-learn-more-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Estilo do cartão de médicos */
-  .PontosBeneficio-doctor-card {
-    margin-top: 20px;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-  }
-  
-  /* Estilo do cabeçalho dos médicos */
-  .PontosBeneficio-doctor-header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  /* Estilo das informações dos médicos */
-  .PontosBeneficio-doctor-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  /* Estilo do nome do médico */
-  .PontosBeneficio-doctor-name {
-    font-size: 1.125rem;
-    font-weight: bold;
-    color: #333;
-    margin-left: 10px;
-  }
-  
-  /* Estilo do botão "Answer the question" */
-  .PontosBeneficio-question-button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Efeito ao passar o mouse sobre o botão de pergunta */
-  .PontosBeneficio-question-button:hover {
-    background-color: #218838;
-  }
-  
+}

@@ -34,7 +34,7 @@ const Navbaradm = () => {
 
                     <li>
                         <Link to="/Agenda" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Agendamento</span>
+                            <LocalMallIcon className="icon" /> <span>Agenda</span>
                         </Link>
                     </li>
 

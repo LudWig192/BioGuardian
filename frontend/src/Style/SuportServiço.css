@@ -1,6 +1,5 @@
 /* Estilos gerais da seção */
 .services-section-suport {
-
   color: black;
   padding: 50px 0;
   text-align: center;
@@ -71,4 +70,33 @@
 
 .service-title:hover {
   background-color: #5472f0; /* Cor mais escura no hover */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1024px) {
+  .services-grid-suport {
+    grid-template-columns: repeat(2, 1fr); /* Define 2 colunas em telas menores */
+  }
+
+  .services-title-suport {
+    font-size: 2.5rem; /* Reduz o tamanho da fonte do título */
+  }
+
+  .services-description-support {
+    font-size: 1rem; /* Reduz o tamanho da fonte da descrição */
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid-suport {
+    grid-template-columns: 1fr; /* Define 1 coluna em telas ainda menores */
+  }
+
+  .services-title-suport {
+    font-size: 2rem; /* Ajusta o tamanho da fonte do título */
+  }
+
+  .services-description-support {
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte da descrição */
+  }
 }

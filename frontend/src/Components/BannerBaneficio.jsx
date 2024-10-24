@@ -1,57 +1,30 @@
 import React from 'react';
-import '../Style/BannerBaneficio.css';
-import familyImage from '../Imagens/Familia.png'; // Substitua pelo caminho da sua imagem
+import '../Style/BannerBaneficio.css';  // arquivo de estilo
+import Familia from "../Imagens/Familia.png";
 
-const AppointmentForm = () => {
+const HealthCareBanner = () => {
   return (
-    <div className="BannerBeneficio-appointment-container">
-      <div className="BannerBeneficio-left-section">
-        <div className="BannerBeneficio-text-overlay">
-          <div className="BannerBeneficio-title-container">
-            <span className="BannerBeneficio-main-title">Tratamento Médico de Qualidade</span>
+    <div className="bannerbeneficio-container"> {/* Classe do container principal */} 
+      <div className="bannerbeneficio-content"> {/* Classe do conteúdo principal */} 
+        <div className="text-bannerbeneficio"> {/* Classe da seção de texto */} 
+          <div className="bannerbeneficio-heading"> {/* Classe do cabeçalho do banner */} 
+            BioGuardian: <span className="bannerbeneficio-text">Proteção para Sua Saúde</span> {/* Classe para destacar o texto */} 
           </div>
-          <div className="BannerBeneficio-subtitle-container">
-            <span className="BannerBeneficio-subtitle">Para Você e Sua Família</span>
+          <div className="bannerbeneficio-description"> {/* Classe da descrição do banner */} 
+            Com o BioGuardian, monitoramos sua saúde e de sua família com IA, identificando anomalias e oferecendo suporte médico em emergências. Tecnologia avançada para seu cuidado e bem-estar.
           </div>
         </div>
-        <div className="BannerBeneficio-image-container">
+        
+        <div className="image-bannerbeneficio"> {/* Classe da seção da imagem */} 
           <img 
-            src={familyImage} 
-            alt="Família" 
-            className="BannerBeneficio-family-image" 
+            src={Familia}
+            alt="Família sendo monitorada" 
+            className="bannerbeneficio-image" 
           />
         </div>
-      </div>
-      <div className="BannerBeneficio-right-section">
-        <div className="BannerBeneficio-appointment-header-container">
-          <span className="BannerBeneficio-appointment-header">Recomendamos o plano para você</span>
-        </div>
-        {/* Texto semelhante adicionado abaixo */}
-        <span className="BannerBeneficio-appointment-description">
-          Descubra os benefícios que preparamos para você.
-        </span>
-        <span className="BannerBeneficio-appointment-description">
-          Insira seus contatos abaixo para agendar uma consulta ou discutir os detalhes conosco.
-        </span>
-        <form>
-          <div className="BannerBeneficio-form-group">
-            <input type="text" placeholder="Seu nome *" required />
-            <span className="BannerBeneficio-error-message">O campo de texto é obrigatório.</span>
-          </div>
-          <div className="BannerBeneficio-form-group">
-            <input type="email" placeholder="Seu endereço de email *" required />
-            <span className="BannerBeneficio-error-message">O campo de texto é obrigatório.</span>
-          </div>
-          <div className="BannerBeneficio-form-group">
-            <input type="tel" placeholder="Número de telefone *" required />
-            <span className="BannerBeneficio-error-message">O campo de texto é obrigatório.</span>
-          </div>
-          <button type="submit" className="BannerBeneficio-submit-button">Agendar agora</button>
-        </form>
-        <span className="BannerBeneficio-availability-message">Aproveite, temos um número limitado de vagas este mês.</span>
       </div>
     </div>
   );
 };
 
-export default AppointmentForm;
+export default HealthCareBanner;

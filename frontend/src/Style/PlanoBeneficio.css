@@ -1,121 +1,119 @@
-/* Container Principal */
-.planoBeneficio-pricing-container {
-  text-align: center;
-  padding: 40px;
-  font-family: 'Arial', sans-serif;
-}
-
-.planoBeneficio-pricing-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-}
-
-/* Flex para organizar as opções e os cards */
-.planoBeneficio-pricing-options {
+.PlanoCliente-PricingPlans {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  margin-top: 260px;
 }
 
-/* Opções disponíveis */
-.planoBeneficio-available-options {
-  text-align: left;
-  max-width: 200px;
-}
-
-.planoBeneficio-available-options div {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.planoBeneficio-available-options div:last-child {
-  color: #666;
-  font-size: 16px;
-}
-
-/* Estilos dos cards de preços */
-.planoBeneficio-pricing-card {
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  padding: 20px;
-  width: 250px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  position: relative;
-}
-
-.planoBeneficio-most-popular {
-  border: 2px solid #29c0d0;
-}
-
-.planoBeneficio-badge {
-  background-color: #29c0d0;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 50%;
-  font-size: 12px;
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.planoBeneficio-pricing-card h3 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
-  text-transform: uppercase;
-}
-
-.planoBeneficio-price {
+.PlanoBeneficio-title {
+  color: #6854f0;
   font-size: 32px;
   font-weight: bold;
-  color: #29c0d0;
-  margin-bottom: 15px;
-}
-
-.planoBeneficio-price span {
-  font-size: 14px;
-  color: #888;
-}
-
-.planoBeneficio-pricing-card ul {
-  list-style: none;
-  padding: 0;
   margin-bottom: 20px;
 }
 
-.planoBeneficio-pricing-card li {
-  font-size: 16px;
+.PlanoBeneficio-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha em telas menores */
+}
+
+.PricingCard-PlanoBeneficio {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  transition: transform 0.3s; /* Transição suave para o hover */
+}
+
+.Card-header-PlanoBeneficio {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.Card-icon-PlanoBeneficio {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #54a3f0;
+}
+
+.Card-title-PlanoBeneficio {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #54a3f0;
+}
+
+.Card-subscription-PlanoBeneficio {
+  font-size: 14px;
   color: #666;
   margin-bottom: 10px;
 }
 
-.planoBeneficio-pricing-card .planoBeneficio-not-included {
-  text-decoration: line-through;
-  color: #ccc;
+.Card-price-PlanoBeneficio {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.planoBeneficio-button {
-  background-color: #29c0d0;
+.Card-value-description-PlanoBeneficio {
+  text-align: center;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.Card-features-PlanoBeneficio {
+  text-align: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.feature-icon-PlanoBeneficio {
+  margin-right: 5px;
+  color: #54a3f0;
+}
+
+.Card-button-PlanoBeneficio {
+  background-color: #5472f0;
   color: white;
   border: none;
+  border-radius: 5px;
   padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 16px;
   cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
 }
 
-.planoBeneficio-button:hover {
-  background-color: #1ea6b7;
+.Card-button-PlanoBeneficio:hover {
+  background-color: #4058c5; /* Cor ao passar o mouse */
+}
+
+/* Destaque para o plano familiar */
+.PricingCard-PlanoBeneficio:nth-child(2) {
+  border: 3px solid #54a3f0;
+  box-shadow: 0 4px 12px #54a3f0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .PlanoBeneficio-title {
+    font-size: 28px; /* Tamanho da fonte menor para telas menores */
+  }
+
+  .PlanoBeneficio-cards {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    align-items: center; /* Centraliza os cards */
+  }
+
+  .PricingCard-PlanoBeneficio {
+    width: 100%; /* Largura total em telas menores */
+    max-width: 300px; /* Limite máximo da largura */
+  }
 }

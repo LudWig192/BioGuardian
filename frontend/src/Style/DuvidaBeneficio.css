@@ -1,7 +1,6 @@
-/* ComponenteBeneficio.css */
-
 .DuvidaBeneficio.faq-container-perguntas {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
   background-color: #f9f9f9;
@@ -11,6 +10,10 @@
 .DuvidaBeneficio.faq-left {
   flex: 1;
   margin-right: 20px;
+}
+
+.DuvidaBeneficio.faq-right {
+  flex: 2;
 }
 
 .DuvidaBeneficio {
@@ -34,10 +37,6 @@
 
 .DuvidaBeneficio.faq-button:hover {
   background-color: #0056b3;
-}
-
-.DuvidaBeneficio.faq-right {
-  flex: 2;
 }
 
 .DuvidaBeneficio.faq-item {
@@ -71,4 +70,49 @@
   font-size: 18px;
   margin-left: 10px;
   color: #007bff;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .DuvidaBeneficio.faq-container-perguntas {
+    flex-direction: column;
+  }
+
+  .DuvidaBeneficio.faq-left {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .DuvidaBeneficio.faq-right {
+    flex: none;
+  }
+
+  .DuvidaBeneficio.faq-question {
+    font-size: 16px;
+  }
+
+  .DuvidaBeneficio.faq-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .DuvidaBeneficio.faq-left div {
+    font-size: 16px;
+  }
+
+  .DuvidaBeneficio.faq-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .DuvidaBeneficio.faq-item {
+    padding: 10px;
+  }
+
+  .DuvidaBeneficio.faq-icon {
+    font-size: 16px;
+  }
 }

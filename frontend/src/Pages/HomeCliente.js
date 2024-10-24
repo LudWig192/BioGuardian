@@ -2,11 +2,13 @@
 import React from "react";
 import Banner from "../Components/BannerCliente";
 import Dicas from "../Components/DicasCliente"
-import Ideia from "../Components/IdeiasCliente"
 import Icons from "../Components/IconsCliente";
 import Exame from "../Components/ExameCliente"
-import ExameResultado from "../Components/ResultadoExameCliente"
-import Tabela from "../Components/TabelaCliente"
+import ExameResultado from "../Components/ResultadoExameCliente";
+import Marcar from "../Components/MarcarConsultaCliente"
+import Cirugia from "../Components/CirugiaCliente"
+import Tabela from "../Components/TabelaCliente";
+import "../Style/HomeClientePage.css";
 import NavbarCCC from '../Components/Navegacao-CCC'
 
 const HomeCliente = () => {
@@ -14,11 +16,12 @@ const HomeCliente = () => {
     <>
       <NavbarCCC />
       <Banner />
-      <Dicas />
-      <Ideia />
-      <Icons />
-      <Exame />
-     <ExameResultado />
+      <Dicas />     
+       <Cirugia />
+       <Exame />
+       <ExameResultado />
+      <Marcar /> 
+     <Icons />
      <Tabela />
     </>
   );

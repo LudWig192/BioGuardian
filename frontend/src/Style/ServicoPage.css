@@ -1,0 +1,49 @@
+/* Estilos específicos para a página de serviços */
+.servico-page {
+    background-color: #f9f9f9; /* Cor de fundo leve */
+}
+
+.servico-page .container {
+    max-width: 1000px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 10px; /* Ajuste do padding */
+}
+
+/* Estilos dos cards */
+.servico-page .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* Efeito de transição ao passar o mouse */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .servico-page .card {
+        flex: 1 1 100%; /* Cards ocupam toda a largura */
+    }
+}
+
+/* Responsividade para telas médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .servico-page .card {
+        flex: 1 1 45%; /* Dois cards por linha */
+    }
+}
+
+/* Responsividade para telas grandes */
+@media (min-width: 1025px) {
+    .servico-page .card {
+        flex: 1 1 30%; /* Três cards por linha */
+    }
+}
+
+/* Flexbox para cards */
+.servico-page .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

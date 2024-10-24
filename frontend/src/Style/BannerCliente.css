@@ -1,14 +1,23 @@
 /* Banner Section */
 .banner-cliente-section {
-    background-image: url('../Imagens/BannerCliente.png'); /* Certifique-se de que o caminho da imagem está correto */
-    background-size: cover;
-    background-position: center;
-    height: 600px; /* Altura do banner ajustável */
     position: relative;
+    height: 600px; /* Altura do banner ajustável */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do contêiner */
+}
+
+/* Estilo para a imagem do banner */
+.banner-cliente-img {
+    width: 100%; /* Faz a imagem ocupar toda a largura */
+    height: 100%; /* Faz a imagem ocupar toda a altura */
+    object-fit: cover; /* Cobre toda a área mantendo a proporção */
+    position: absolute; /* Posiciona a imagem para ficar atrás do conteúdo */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Mantém a imagem atrás do conteúdo */
 }
 
 /* Contêiner para o conteúdo do banner */
@@ -45,11 +54,8 @@
 
 /* Cards Section Positioned Below the Banner */
 .cards-bannercliente-container {
-    position: absolute; /* Posiciona os cards sobre o banner */
-    top: 90%; /* Ajusta a distância dos cards em relação ao topo do banner */
-    left: 50%;
-    transform: translateX(-50%);
     width: 90%;
+    margin: 20px auto; /* Centraliza os cards e adiciona margem acima e abaixo */
     z-index: 2; /* Garante que os cards fiquem sobre o banner */
     display: flex;
     justify-content: space-between; /* Espaçamento igual entre os cards */
@@ -94,12 +100,26 @@
     color: #0d6efd; /* Azul do Bootstrap */
 }
 
+/* Descrição do card */
+.descricao-card-BannerCliente {
+    font-size: 1rem;
+    color: #6c757d; /* Cor do texto para descrição */
+    margin-top: 0.5rem;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
+    .banner-cliente-section {
+        height: auto; /* Ajusta a altura do banner para auto em telas menores */
+    }
+
+    .banner-cliente-content-container {
+        padding: 0 2vw; /* Reduz o padding para telas menores */
+    }
+
     .cards-bannercliente-container {
-        top: 60%; /* Ajusta a posição dos cards em telas menores */
-        width: 100%;
-        padding: 1rem;
+        width: 95%; /* Aumenta a largura dos cards em telas menores */
+        padding: 1rem; /* Adiciona padding para os cards */
     }
 
     .row-bannercliente {
@@ -108,7 +128,7 @@
     }
 
     .col-md-3-bannercliente {
-        max-width: 100%; /* Cada card ocupa 100% da largura em telas menores */
+        max-width: 90%; /* Cada card ocupa 90% da largura em telas menores */
         min-width: auto; /* Remove a largura mínima em telas menores */
     }
 
@@ -120,5 +140,9 @@
         font-size: 4vw; /* Ajusta o tamanho do subtítulo em dispositivos móveis */
         max-width: 100%; /* Ocupa toda a largura disponível em telas menores */
         margin-top: 0.5rem; /* Ajuste menor para telas menores */
+    }
+
+    .info-icon {
+        font-size: 3.5rem; /* Aumenta o tamanho dos ícones em dispositivos móveis */
     }
 }

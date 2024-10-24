@@ -17,7 +17,6 @@
     text-align: center;
     margin-bottom: 30px;
     color: #54d4f0;
-
 }
 
 /* Estilos para a grid de médicos */
@@ -62,4 +61,23 @@
 .doctor-serviços-name {
     font-size: 1.5rem; /* Tamanho da fonte */
     margin: 10px 0; /* Margens acima e abaixo */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .doctor-serviços-container {
+        padding: 100px; /* Reduz o padding em telas menores */
+    }
+
+    .doctor-serviços-title {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .doctor-serviços-description {
+        font-size: 1rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .doctor-serviços-name {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte do nome do médico */
+    }
 }

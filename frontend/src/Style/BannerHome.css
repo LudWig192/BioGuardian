@@ -1,123 +1,88 @@
-/* Estilos do Banner */
-.banner-container-specific {
+
+.BannerHome-section {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: #0066ff;
-    background-image: url('../Imagens/BannerHome.png'); /* Ajuste o caminho da imagem de fundo */
-    background-size: cover;
-    background-position: center;
-    height: 708px;
-    color: #fff;
-    position: relative;
+    flex-direction: row; /* Itens lado a lado em telas maiores */
+    justify-content: space-between;
+    align-items: center; /* Alinhamento central */
+    position: relative; /* Para posicionar a imagem de fundo corretamente */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    color: #fff; /* Cor do texto */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    overflow: hidden; /* Evita que elementos sejam cortados */
 }
 
-.banner-content-specific {
-    text-align: left;
-    max-width: 700px;
-    margin-left: 50px;
-    z-index: 2;
-    margin-top: 160px;
-}
-
-.banner-title-large {
-    font-size: 33px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-.banner-description-custom {
-    font-size: 23px;
-    max-width: 600px;
-    margin-bottom: 30px;
-}
-
-.banner-buttons-specific {
-    display: flex;
-    gap: 20px;
-}
-
-.appointment-btn-specific, .learn-more-btn-specific {
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-}
-
-.appointment-btn-specific {
-    background-color: #5472f0;
-}
-
-.learn-more-btn-specific {
-    background-color: transparent;
-    color: #000000;
-    border: 2px solid #54d4f0;
-}
-
-.banner-image-specific {
-    position: absolute;
-    right: 10px;
-    bottom: 0;
-    height: 100%;
-}
-
-.banner-image-specific img {
-    height: 80%;
-    object-fit: cover;
-}
-
-/* Seção de estatísticas */
-.stats-section-specific {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 0;
-    background-color: #fff;
-    color: #000;
-    margin-top: 140px;
-    margin-left: 380px;
-}
-
-/* Cada caixa de estatística */
-.stat-box-specific {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 150px;
-    margin: 0 15px;
-}
-
-/* Contêiner do ícone */
-.stat-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.BannerHome-background {
+    position: absolute; /* Permite que a imagem fique como fundo */
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção da imagem */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
 }
 
-/* Estilo dos ícones */
-.stat-icon-specific {
-    font-size: 36px; /* Aumentado para 36px */
-    color: #54a3f0;
-    margin-bottom: 8px; /* Espaçamento abaixo do ícone */
+.BannerHome-content {
+    max-width: 45%; /* Largura máxima do conteúdo */
+    flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem */
 }
 
-/* Número das estatísticas */
-.stat-number-custom {
-    font-size: 21px; /* Tamanho do título dos ícones */
-    font-weight: bold;
-    color: #54a3f0;
-    margin-bottom: 3px; /* Reduz o espaçamento entre o número e a descrição */
+.BannerHome-title {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
 }
 
-/* Descrição das estatísticas */
-.stat-description-specific {
-    font-size: 16px; /* Tamanho da fonte da descrição */
-    margin-top: 0; /* Remove a margem superior */
-    text-align: center; /* Garante que o texto fique centralizado */
+.BannerHome-description {
+    font-size: 20px;
+    margin-bottom: 30px; /* Espaçamento abaixo da descrição */
+    text-align: justify; /* Alinhamento justificado */
+}
+
+.BannerHome-button {
+    background-color: #54a3f0; /* Cor azul para o botão */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) { /* Para tablets e telas menores */
+    .BannerHome-section {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        padding: 20px; /* Reduz o espaçamento interno */
+        height: auto; /* Ajusta a altura para auto */
+    }
+
+    .BannerHome-content {
+        max-width: 100%; /* Altera a largura máxima */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .BannerHome-title {
+        font-size: 36px; /* Reduz o tamanho da fonte */
+    }
+
+    .BannerHome-description {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .BannerHome-button {
+        padding: 10px 20px; /* Ajusta o padding do botão */
+        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+    }
+}
+
+@media (max-width: 480px) { /* Para smartphones */
+    .BannerHome-title {
+        font-size: 28px; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    .BannerHome-description {
+        font-size: 12px; /* Reduz o tamanho da fonte */
+    }
 }

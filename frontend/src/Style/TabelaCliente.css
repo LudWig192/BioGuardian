@@ -1,112 +1,103 @@
-.tabelacliente {
+/* Container principal */
+.EspecialidadesCliente-directory {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: 'Helvetica', sans-serif;
+  color: #333;
+}
+
+.EspecialidadesCliente-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1c1c1c;
+}
+
+/* Lista de funcionários com espaçamento entre os cards */
+.EspecialidadesCliente-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px; /* Adiciona espaçamento entre os cards */
+}
+
+/* Cartão de funcionário */
+.EspecialidadesCliente-professional {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
   padding: 20px;
-  background-color: #f9f9f9; /* Cor de fundo */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  max-width: 800px; /* Largura máxima */
-  margin: 0 auto; /* Centraliza horizontalmente */
+  width: calc(25% - 20px); /* Ajuste a largura para 25% menos o espaçamento */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
-.insurance-form-tabelacliente {
-  flex: 1;
-  margin-right: 20px; /* Espaçamento entre os componentes */
+.EspecialidadesCliente-professional:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.title-tabelacliente {
-  font-size: 24px; /* Tamanho da fonte para o título */
-  font-weight: bold; /* Negrito */
-  margin-bottom: 10px; /* Espaçamento abaixo do título */
-}
-
-.description-tabelacliente {
-  font-size: 16px; /* Tamanho da fonte para a descrição */
-  margin-bottom: 20px; /* Espaçamento abaixo da descrição */
-}
-
-.form-tabelacliente {
+/* Header do cartão */
+.EspecialidadesCliente-header {
   display: flex;
-  flex-direction: column; /* Para empilhar os campos */
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.input-tabelacliente,
-.select-tabelacliente,
-.button-tabelacliente {
-  margin-bottom: 10px; /* Espaçamento entre os campos */
-  padding: 10px; /* Espaçamento interno */
-  border: 1px solid #ccc; /* Borda */
-  border-radius: 4px; /* Bordas arredondadas */
+.EspecialidadesCliente-avatar {
+  background-color: #0056b3;
+  color: #fff;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 15px;
 }
 
-.button-tabelacliente {
-  background-color: #28a745; /* Cor de fundo do botão */
-  color: white; /* Cor do texto do botão */
-  cursor: pointer; /* Mudar o cursor ao passar o mouse */
+.EspecialidadesCliente-info .EspecialidadesCliente-name {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
 }
 
-.button-tabelacliente:hover {
-  background-color: #218838; /* Cor de fundo do botão ao passar o mouse */
+.EspecialidadesCliente-info .EspecialidadesCliente-role {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
 }
 
-.review-tabelacliente {
-  margin-top: 15px; /* Espaçamento acima da seção de revisão */
+/* Detalhes do funcionário */
+.EspecialidadesCliente-details div {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #555;
 }
 
-.stars-tabelacliente {
-  font-size: 20px; /* Tamanho das estrelas */
+.EspecialidadesCliente-details svg {
+  margin-right: 8px;
+  color: #0056b3;
+  font-size: 14px;
 }
 
-.reviews-tabelacliente {
-  font-size: 14px; /* Tamanho da fonte para avaliações */
-  color: #777; /* Cor do texto para avaliações */
+/* Ajuste de responsividade */
+@media (max-width: 1200px) {
+  .EspecialidadesCliente-professional {
+    width: calc(33.33% - 20px); /* 3 colunas em telas médias */
+  }
 }
 
-.testimonial-tabelacliente {
-  flex: 1;
-  background-color: #fff; /* Cor de fundo do testemunho */
-  padding: 15px; /* Espaçamento interno */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+@media (max-width: 768px) {
+  .EspecialidadesCliente-professional {
+    width: calc(50% - 20px); /* 2 colunas em telas menores */
+  }
 }
 
-.user-image-tabelacliente {
-  width: 50px; /* Largura da imagem do usuário */
-  height: 50px; /* Altura da imagem do usuário */
-  border-radius: 50%; /* Imagem redonda */
-  margin-bottom: 10px; /* Espaçamento abaixo da imagem */
-}
-
-.name-tabelacliente {
-  font-size: 18px; /* Tamanho da fonte para o nome */
-  font-weight: bold; /* Negrito */
-}
-
-.role-tabelacliente {
-  font-size: 14px; /* Tamanho da fonte para o cargo */
-  color: #555; /* Cor do texto para cargo */
-  margin-bottom: 10px; /* Espaçamento abaixo do cargo */
-}
-
-.comment-tabelacliente {
-  font-size: 16px; /* Tamanho da fonte para o comentário */
-  margin-top: 10px; /* Espaçamento acima do comentário */
-}
-
-.navigation-tabelacliente {
-  margin-top: 15px; /* Espaçamento acima da navegação */
-}
-
-.active-tabelacliente,
-.dot-tabelacliente {
-  display: inline-block; /* Para que as bolinhas fiquem lado a lado */
-  width: 10px; /* Largura das bolinhas */
-  height: 10px; /* Altura das bolinhas */
-  border-radius: 50%; /* Bolinhas redondas */
-  background-color: #ccc; /* Cor padrão */
-  margin-right: 5px; /* Espaçamento entre as bolinhas */
-}
-
-.active-tabelacliente {
-  background-color: #28a745; /* Cor da bolinha ativa */
+@media (max-width: 480px) {
+  .EspecialidadesCliente-professional {
+    width: 100%; /* 1 coluna em telas muito pequenas */
+  }
 }

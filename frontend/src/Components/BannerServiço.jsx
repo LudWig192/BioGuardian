@@ -1,17 +1,22 @@
 import React from "react";
 import { FaClock, FaUserMd, FaPhoneAlt, FaClipboard } from 'react-icons/fa';
 import '../Style/BannerServiço.css';
+import bannerImage from '../Imagens/BannerServiço.png';
 
 const HealthSection = () => {
   return (
     <section className="BannerServiço">
       <div className="BannerServiço__imagem">
+        <img 
+          src={bannerImage} 
+          alt="Cuidado Integral com Sua Saúde" 
+          className="BannerServiço__imagem-background"
+        />
         <div className="BannerServiço__imagem-content">
           <div className="BannerServiço__title">Cuidado Integral com Sua Saúde</div>
           <span className="BannerServiço__description">
-            Na nossa unidade, disponibilizamos tecnologias avançadas de monitoramento da saúde. 
-            Nossos dispositivos, como a pulseira inteligente, detectam anomalias em seu estado físico, enquanto nossos aparelhos especializados identificam a origem do problema.
-            Contamos com médicos qualificados disponíveis 24 horas para atender suas necessidades de saúde.
+            Oferecemos tecnologias avançadas para monitorar sua saúde. 
+            Dispositivos como pulseiras inteligentes detectam anomalias, e nossos médicos qualificados estão disponíveis 24 horas para suas necessidades.
           </span>
         </div>
       </div>
@@ -29,7 +34,7 @@ const HealthSection = () => {
           <FaClipboard className="BannerServiço__card-icon" />
           <div className="BannerServiço__card-title">Orientações para Consultas</div>
           <span className="BannerServiço__hours">
-            Oferecemos recomendações personalizadas para exames e consultas necessárias, disponíveis em hospitais parceiros.
+            Oferecemos recomendações para exames e consultas em hospitais parceiros.
           </span>
         </div>
 
@@ -37,7 +42,7 @@ const HealthSection = () => {
           <FaUserMd className="BannerServiço__card-icon" />
           <div className="BannerServiço__card-title">Atendimento Médico 24 Horas</div>
           <span className="BannerServiço__hours">
-            Nossa equipe médica está disponível 24 horas por dia para atender a qualquer emergência ou necessidade de saúde.
+            Estamos disponíveis 24 horas para atender emergências.
           </span>
         </div>
 
@@ -45,7 +50,7 @@ const HealthSection = () => {
           <FaPhoneAlt className="BannerServiço__card-icon" />
           <div className="BannerServiço__card-title">Casos de Emergência</div>
           <span className="BannerServiço__emergency-contact">1-800-1234-567</span>
-          <span className="BannerServiço__hours">Entre em contato conosco imediatamente em situações críticas.</span>
+          <span className="BannerServiço__hours">Contate-nos imediatamente em situações críticas.</span>
         </div>
       </div>
     </section>

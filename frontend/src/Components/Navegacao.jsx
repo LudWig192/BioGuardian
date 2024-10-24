@@ -29,6 +29,13 @@ const Navbar = () => {
                         </Link>
                     </li>
 
+                    {/* Pagina Faltando*/}
+                    <li>
+                        <Link to="/" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Serviços</span>
+                        </Link>
+                    </li>
+
                     <li>
                         <Link to="/Cadastro" className="nav-link">
                             <LocalMallIcon className="icon" /> <span>Cadastro</span>

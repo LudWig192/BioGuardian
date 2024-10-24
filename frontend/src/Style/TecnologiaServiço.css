@@ -1,3 +1,5 @@
+/* CSS existente */
+
 .tecnologia {
   display: flex;
   height: 100vh;
@@ -67,4 +69,42 @@
   margin: 0;
   color: rgba(0, 0, 0, 0.8); /* Texto em preto com leve transparência */
   text-align: center; /* Centraliza o texto secundário */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .tecnologia {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    height: auto; /* Ajusta a altura */
+  }
+
+  .left-tecnologia {
+    width: 100%; /* Largura total para a imagem */
+  }
+
+  .right-tecnologia {
+    width: 100%; /* Largura total para a seção de serviços */
+    padding: 30px; /* Reduz o padding em telas menores */
+    display: grid; 
+    grid-template-columns: 1fr; /* Uma coluna para cards em telas menores */
+    gap: 20px; /* Reduz o espaço entre os cartões */
+  }
+
+  .service-card-tecnologia {
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-icon-tecnologia {
+    font-size: 40px; /* Ajusta o tamanho do ícone */
+  }
+
+  .tecnologia-title {
+    font-size: 1rem; /* Ajusta o tamanho do título */
+  }
+
+  .tecnologia-description {
+    font-size: 0.8rem; /* Ajusta o tamanho da descrição */
+  }
 }

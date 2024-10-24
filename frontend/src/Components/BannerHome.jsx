@@ -1,52 +1,19 @@
 import React from 'react';
-import { FaHospital, FaUserMd, FaUsers, FaCalendarAlt, FaHeartbeat, FaAmbulance } from 'react-icons/fa';
-import '../Style/BannerHome.css'; // Ajuste o nome do arquivo conforme necessário
+import '../Style/BannerHome.css';
+import BannerImage from '../Imagens/BannerHome.png'; // Importando a imagem
 
-const YourComponentSpecific = () => {
+const HeroSection = () => {
   return (
-    <div className="banner-container-specific">
-      <div className="banner-content-specific">
-        <div className="banner-title-large">Cuidado de Saúde Completo e Inovador</div> 
-        <div className="banner-description-custom">
-          Nosso plano de saúde oferece mais do que o essencial. Com um dispositivo avançado que monitora continuamente o corpo, você recebe alertas imediatos sobre anomalias, garantindo um atendimento rápido e eficiente. Além disso, nossos médicos estão disponíveis 24 horas para orientá-lo nos casos de emergência, como desmaios ou outros problemas graves.
-        </div>
-        <div className="banner-buttons-specific">
-          <button className="appointment-btn-specific">Saiba Mais</button>
-        </div>
-      </div>
-
-      <div className="stats-section-specific">
-        <div className="stat-box-specific">
-          <div className="stat-icon-container">
-            <FaHeartbeat className="stat-icon-specific" />
-          </div>
-          <div className="stat-number-custom">Monitoramento Contínuo</div> 
-          <div className="stat-description-specific">Seu bem-estar, 24h por dia</div>
-        </div>
-        <div className="stat-box-specific">
-          <div className="stat-icon-container">
-            <FaAmbulance className="stat-icon-specific" />
-          </div>
-          <div className="stat-number-custom">Emergência Imediata</div> 
-          <div className="stat-description-specific">Alerta de desmaios e socorro imediato</div>
-        </div>
-        <div className="stat-box-specific">
-          <div className="stat-icon-container">
-            <FaUserMd className="stat-icon-specific" />
-          </div>
-          <div className="stat-number-custom">Médicos 24h</div> 
-          <div className="stat-description-specific">Apoio médico a qualquer hora</div>
-        </div>
-        <div className="stat-box-specific">
-          <div className="stat-icon-container">
-            <FaHospital className="stat-icon-specific" />
-          </div>
-          <div className="stat-number-custom">Indicação Hospitalar</div> 
-          <div className="stat-description-specific">Os melhores hospitais e profissionais</div>
+    <div className="BannerHome-section">
+      <img src={BannerImage} alt="Banner de Saúde" className="BannerHome-background" /> {/* Imagem de fundo */}
+      <div className="BannerHome-content">
+        <div className="BannerHome-title">BioGuardian: Monitoramento de Saúde</div>
+        <div className="BannerHome-description">
+          O BioGuardian é um serviço de assinatura que monitora a saúde de famílias ou indivíduos, usando inteligência artificial para comparar o histórico médico com sintomas de doenças e identificar anomalias. Oferecemos auxílio médico com profissionais de saúde e atendimento de emergência em casa.
         </div>
       </div>
     </div>
   );
 };
 
-export default YourComponentSpecific;
+export default HeroSection;

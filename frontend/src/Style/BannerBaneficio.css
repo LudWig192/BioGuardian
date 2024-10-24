@@ -1,123 +1,183 @@
-/* BannerBeneficio.css */
+/* Estrutura do container principal com imagem de fundo */
+.bannerbeneficio-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Layout em coluna para manter o formulário embaixo */
+    align-items: center;
+    background-image: url('../Imagens/fundo.png'); /* Adicione a URL da imagem aqui */
+    background-size: cover; /* A imagem cobre toda a área */
+    background-position: center; /* A imagem está centralizada */
+    background-repeat: no-repeat; /* A imagem não se repete */
+    padding: 40px;
+    position: relative;
+}
 
-.BannerBeneficio-appointment-container {
+/* Seção de conteúdo principal (texto e imagem lado a lado) */
+.bannerbeneficio-content {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
-   /*  background-image: url('../Imagens/Fundo.png'); */
-    background-size: cover; 
-    background-position: center;
     align-items: center;
-    gap: 30px;
-}
-
-.BannerBeneficio-left-section {
-    flex: 1;
-    max-width: 50%;
-    text-align: center;
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-}
-
-.BannerBeneficio-text-overlay {
-    margin-bottom: 20px; /* Espaçamento entre o texto e a imagem */
-}
-
-.BannerBeneficio-family-image {
     width: 100%;
-    border-radius: 8px;
+    max-width: 1200px; /* Limita a largura máxima da seção */
+    margin-bottom: 30px;
 }
 
-.BannerBeneficio-video-button {
-    margin-top: 10px; /* Espaço entre o texto e o botão */
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente para o botão */
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    cursor: pointer;
-    color: #3c3b6e; /* Cor do texto do botão */
-    font-size: 14px;
-}
-
-.BannerBeneficio-right-section {
+/* Seção de texto */
+.text-bannerbeneficio {
     flex: 1;
-    max-width: 50%;
-    padding: 30px;
-    background-color: #54a3f0; /* Cor de fundo da seção direita */
-    color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    margin-right: 20px; /* Espaço entre o texto e a imagem */
 }
 
-.BannerBeneficio-main-title {
-    font-size: 36px;
-    color: white; /* Cor do título */
-    margin-bottom: 5px; /* Espaçamento inferior */
-}
-
-.BannerBeneficio-subtitle {
-    font-size: 18px;
-    color: white; /* Cor do subtítulo */
-    margin-bottom: 10px; /* Espaçamento inferior */
-}
-
-.BannerBeneficio-appointment-header {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.BannerBeneficio-appointment-description {
-    font-size: 14px;
+.bannerbeneficio-heading {
+    font-size: 2.5rem;
     color: white;
-    margin-bottom: 20px;
 }
 
-.BannerBeneficio-form-group {
-    margin-bottom: 15px;
+
+
+.bannerbeneficio-description {
+    font-size: 20px;
+    color: white;
+    margin: 20px 0;
+    max-width: 600px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-input:required:focus {
-    outline: none;
-    border-color: #ff2a00;
-}
-
-.BannerBeneficio-error-message {
-    display: none;
-    font-size: 12px;
-    color: #ff2a00;
-}
-
-input:invalid + .BannerBeneficio-error-message {
-    display: block;
-}
-
-.BannerBeneficio-submit-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #5472f0;
+/* Botão "Learn More" */
+.bannerbeneficio-button {
+    padding: 12px 25px;
+    background-color: #0066ff;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.BannerBeneficio-submit-button:hover {
-    background-color: #5472f0;
+.bannerbeneficio-button:hover {
+    background-color: #004ecc;
 }
 
-.BannerBeneficio-availability-message {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #d9d9e9;
+/* Seção de imagem */
+.image-bannerbeneficio {
+    flex: 1;
+    text-align: center; /* Centraliza a imagem */
+}
+
+.bannerbeneficio-image {
+    width: 100%;
+    max-width: 600px; /* Aumente o tamanho máximo da imagem para 600px */
+    height: auto;
+    border-radius: 15px; /* Bordas arredondadas para a imagem */
+    border: 10px solid #e0f0ff; /* Borda ao redor da imagem */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Adiciona uma margem superior para dar espaço */
+}
+
+/* Seção do formulário com borda */
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px; /* Alinha a largura do formulário ao conteúdo */
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #d9e8f6;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os campos de entrada */
+.input-field {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Estilos para o botão de envio */
+.submit-button {
+    padding: 12px 30px;
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.submit-button:hover {
+    background-color: #004ecc;
+}
+
+/* Estilizando elementos visuais no plano de fundo */
+.bannerbeneficio-container::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(123, 47, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.bannerbeneficio-container::after {
+    content: '';
+    position: absolute;
+    top: 120px;
+    right: 100px;
+    width: 180px;
+    height: 180px;
+    background-color: rgba(0, 102, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Estilos adicionais para responsividade */
+@media (max-width: 768px) {
+    .bannerbeneficio-content {
+        flex-direction: column; /* Muda para layout em coluna em telas pequenas */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+
+    .text-bannerbeneficio {
+        margin-right: 0; /* Remove a margem direita */
+        margin-bottom: 20px; /* Adiciona espaço entre texto e imagem */
+        width: 90%; /* Limita a largura da seção de texto */
+    }
+
+    .bannerbeneficio-image {
+        max-width: 100%; /* Garante que a imagem não exceda a largura do container */
+    }
+}
+
+@media (max-width: 480px) {
+    .bannerbeneficio-heading {
+        font-size: 2rem; /* Reduz o tamanho da fonte do cabeçalho */
+    }
+
+    .bannerbeneficio-description {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte da descrição */
+    }
+
+    .bannerbeneficio-button {
+        padding: 10px 20px; /* Ajusta o padding do botão */
+    }
+
+    .input-field {
+        width: 100%; /* Torna os campos de entrada responsivos */
+    }
+
+    .submit-button {
+        width: 100%; /* Torna o botão de envio responsivo */
+    }
 }

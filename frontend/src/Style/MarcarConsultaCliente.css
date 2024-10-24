@@ -1,0 +1,123 @@
+.MarcarConsulta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    max-width: 1262px;
+    margin: 190px auto; /* Adiciona margem superior para empurrar o componente para baixo */
+    position: relative; /* Necessário para o pseudo-elemento */
+    overflow: hidden; /* Garante que o pseudo-elemento não saia do container */
+    background-image: url('../Imagens/fundo.png'); /* Adicione sua imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o container */
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+
+.MarcarConsulta-container::before {
+    content: '';
+    position: absolute; /* Posição absoluta para cobrir a imagem de fundo */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(84, 114, 240, 0.7); /* Cor apenas na imagem de fundo */
+    z-index: 1; /* Coloca a cor acima da imagem */
+}
+
+.content-MarcarConsulta {
+    max-width: 50%;
+    z-index: 2; /* Coloca o conteúdo acima do pseudo-elemento */
+    position: relative; /* Necessário para o z-index funcionar */
+}
+
+.main-MarcarConsulta {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.description-MarcarConsulta {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.specialists-text {
+    font-size: 1rem;
+    margin-bottom: 20px; /* ajuste conforme necessário */
+    line-height: 1.5; /* ajuste conforme necessário */
+}
+
+.buttons-MarcarConsulta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 20px; /* Aumenta a distância acima dos botões */
+}
+
+.MarcarConsulta-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.MarcarConsulta-btn:hover {
+    background-color: white;
+    color: #2d3282;
+}
+
+.icon-section-MarcarConsulta {
+    margin-top: 30px;
+}
+
+.icon-item-MarcarConsulta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icon-item-MarcarConsulta span {
+    font-size: 1rem;
+}
+
+.MarcarConsulta-icon {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}
+
+.image-container-MarcarConsulta {
+    max-width: 50%;
+}
+
+.image-container-MarcarConsulta img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Mídia query para responsividade */
+@media (max-width: 768px) {
+    .MarcarConsulta-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px; /* Reduz o padding em telas menores */
+        margin: 20px auto; /* Ajusta a margem em telas menores */
+    }
+    .content-MarcarConsulta, .image-container-MarcarConsulta {
+        max-width: 100%;
+    }
+    .main-MarcarConsulta {
+        font-size: 2rem; /* Reduz o tamanho da fonte */
+    }
+    .description-MarcarConsulta,
+    .specialists-text,
+    .icon-item-MarcarConsulta span {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+    }
+}

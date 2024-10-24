@@ -1,40 +1,48 @@
 import React from 'react';
 import '../Style/ExameBeneficio.css';
-import REABILITAÇÃO from "../Imagens/Teste (2).png";
-import SANGUE from "../Imagens/ExameSangue.png";
-import COLESTEROL from "../Imagens/COLESTEROL.png";
-import GLICOSE from "../Imagens/GLICOSE.png";
+import Image from "../Imagens/Diagnostico.jpg";
 
-const ServicesSection = () => {
+const Servicos = () => {
   return (
-    <div className="examebeneficio-services-section-container">
-      <div className="examebeneficio-services-section-title">Exames e Avaliações de Saúde</div>
-      <div className="examebeneficio-services-section-subtitle">
-        O BioGuardian monitora a saúde de famílias e indivíduos usando inteligência artificial para detectar anomalias. 
-        Nosso médico 24 horas propõe exames para os pacientes e oferece assistência médica em emergências com profissionais 
-        disponíveis para atendimento domiciliar.
+    <div className="servicos-container-examebeneficio"> 
+      <div className="titulo-examebeneficio">Atendimentos de Saúde</div> {/* Alterado aqui */}
+      <div className="descricao-servicos-examebeneficio">
+        Monitoramento contínuo da saúde da sua família com suporte médico disponível. 
       </div>
-
-      <div className="examebeneficio-services-section-grid">
-        <div className="examebeneficio-services-section-card">
-          <img src={REABILITAÇÃO} alt="Centro de Reabilitação" />
-          <div className="examebeneficio-services-section-card-title">CENTRO DE REABILITAÇÃO</div>
+      <div className="cards-container-examebeneficio"> 
+        <div className="card-examebeneficio">
+          <img src={Image} alt="Neurologia" className="imagem-examebeneficio" /> 
+          <div className="texto-examebeneficio"> 
+            <div className="titulo-card-examebeneficio">Neurologia</div> 
+            <div className="descricao-examebeneficio">Exames para diagnóstico e acompanhamento neurológico.</div> 
+          </div>
         </div>
-        <div className="examebeneficio-services-section-card">
-          <img src={SANGUE} alt="Exame de Sangue" />
-          <div className="examebeneficio-services-section-card-title">EXAME DE SANGUE</div>
+        <div className="card-examebeneficio"> 
+          <img src={Image} alt="Acidente e emergência" className="imagem-examebeneficio" /> 
+          <div className="texto-examebeneficio"> 
+            <div className="titulo-card-examebeneficio">Acidente e emergência</div> 
+            <div className="descricao-examebeneficio">Atendimento imediato para situações de emergência.</div> 
+          </div>
         </div>
-        <div className="examebeneficio-services-section-card">
-          <img src={COLESTEROL} alt="Exame de Colesterol" />
-          <div className="examebeneficio-services-section-card-title">EXAME DE COLESTEROL</div>
+      </div>
+      <div className="cards-container-examebeneficio"> 
+        <div className="card-examebeneficio"> 
+          <img src={Image} alt="Imagens Diagnósticas" className="imagem-examebeneficio" /> 
+          <div className="texto-examebeneficio"> 
+            <div className="titulo-card-examebeneficio">Imagens Diagnósticas</div> 
+            <div className="descricao-examebeneficio">Exames de imagem para diagnósticos precisos.</div> 
+          </div>
         </div>
-        <div className="examebeneficio-services-section-card">
-          <img src={GLICOSE} alt="Exame de Glicose" />
-          <div className="examebeneficio-services-section-card-title">EXAME DE GLICOSE</div>
+        <div className="card-examebeneficio"> 
+          <img src={Image} alt="Anestesia" className="imagem-examebeneficio" /> 
+          <div className="texto-examebeneficio"> 
+            <div className="titulo-card-examebeneficio">Anestesia</div> 
+            <div className="descricao-examebeneficio">Apoio anestésico durante procedimentos médicos.</div> 
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default ServicesSection;
+export default Servicos;

@@ -1,0 +1,82 @@
+/* HomeResponsive.css */
+
+/* Estilos gerais */
+.HomeSemCliente {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: auto;
+}
+
+/* Componentes */
+.Diagnostico,
+.Exame,
+.Servicos,
+.Pulseira,
+.Modelo,
+.Unidade,
+.Medico {
+    width: 80%;
+    /* Largura padrão */
+    margin: 20px 0;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 1200px) {
+
+    .Diagnostico,
+    .Exame,
+    .Servicos,
+    .Pulseira,
+    .Modelo,
+    .Unidade,
+    .Medico {
+        width: 90%;
+        /* Aumenta a largura em telas menores */
+    }
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+
+    .Diagnostico,
+    .Exame,
+    .Servicos,
+    .Pulseira,
+    .Modelo,
+    .Unidade,
+    .Medico {
+        width: 100%;
+        /* Largura total para telas pequenas */
+        margin: 10px 0;
+        /* Menos margem em dispositivos móveis */
+    }
+
+    .banner {
+        font-size: 1.5em;
+        /* Ajusta o tamanho da fonte do banner */
+    }
+}
+
+/* Estilos para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .banner {
+        font-size: 1.2em;
+        /* Fontes menores em telas pequenas */
+    }
+
+    .Diagnostico,
+    .Exame,
+    .Servicos,
+    .Pulseira,
+    .Modelo,
+    .Unidade,
+    .Medico {
+        padding: 5px;
+        /* Ajusta o padding dos componentes */
+    }
+}

@@ -1,0 +1,55 @@
+/* Beneficio.css */
+
+.beneficio-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se ajustem em várias linhas */
+    justify-content: center; /* Centraliza os itens */
+    padding: 20px;
+}
+
+.beneficio-card {
+    background-color: #f9f9f9; /* Cor de fundo do card */
+    border: 1px solid #ddd; /* Borda do card */
+    border-radius: 8px; /* Bordas arredondadas */
+    width: 300px; /* Largura padrão do card */
+    margin: 10px; /* Espaçamento entre os cards */
+    padding: 15px; /* Preenchimento interno do card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    transition: transform 0.3s; /* Transição suave para o efeito hover */
+}
+
+.beneficio-card:hover {
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+.beneficio-title {
+    font-size: 1.5em; /* Tamanho da fonte do título */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    color: #333; /* Cor do texto do título */
+}
+
+.beneficio-description {
+    font-size: 1em; /* Tamanho da fonte da descrição */
+    color: #666; /* Cor do texto da descrição */
+}
+
+/* Estilização para dispositivos menores */
+@media (max-width: 768px) {
+    .beneficio-card {
+        width: 90%; /* Aumenta a largura do card para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .beneficio-card {
+        width: 100%; /* O card ocupa toda a largura da tela em dispositivos muito pequenos */
+    }
+
+    .beneficio-title {
+        font-size: 1.3em; /* Tamanho da fonte do título reduzido */
+    }
+
+    .beneficio-description {
+        font-size: 0.9em; /* Tamanho da fonte da descrição reduzido */
+    }
+}
