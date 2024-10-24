@@ -1,0 +1,81 @@
+/* src/Style/Painel.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Fundo neutro suave */
+}
+
+.painel-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #ffffff; /* Fundo branco para o painel */
+    /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); */
+}
+
+.painel-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #2c3e50; /* Azul escuro */
+    text-align: center;
+}
+
+.painel-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha em telas menores */
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+.card {
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px); /* Largura padrão dos cards */
+    text-align: center;
+    background-color: #eafaf1; /* Verde claro */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    margin-bottom: 15px;
+    color: #54a3f0; /* Cor do ícone */
+}
+
+.card-content h2 {
+    font-size: 22px; /* Tamanho maior para os números */
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2c3e50; /* Azul escuro */
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #555; /* Cor mais suave para o texto */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 900px) {
+    .card {
+        width: calc(50% - 20px); /* Duas colunas em telas médias */
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: calc(100% - 20px); /* Uma coluna em telas pequenas */
+    }
+}

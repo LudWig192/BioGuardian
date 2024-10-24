@@ -22,7 +22,7 @@ const Cabecalho = ({ onSelectDay }) => {
 
     return (
         <div className="date-header">
-            <h3>Outubro 2024</h3>
+            <h3>Novembro 2024</h3>
             <div className="day-buttons">
                 {days.map(({ day, label }) => (
                     <button

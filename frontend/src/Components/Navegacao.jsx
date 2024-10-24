@@ -4,6 +4,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
+import AccessibilityIcon from '@mui/icons-material/Accessibility';
 
 // Estilização CSS
 import "../Style/Navbar.css";
@@ -24,26 +25,34 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/Beneficio" className="nav-link">
-                            <InfoIcon className="icon" /> <span>Benefício</span>
+                        <Link to="/Administrador" className="nav-link">
+                            <InfoIcon className="icon" /> <span>Sobre</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/Contato" className="nav-link">
+                        <Link to="/Agenda" className="nav-link">
+                            <AccessibilityIcon className="icon" /> <span>Serviços</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/Registros" className="nav-link">
                             <ContactMailIcon className="icon" /> <span>Contato</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/Exames" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Planos</span>
+                        <Link to="/PerfilAdm" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Agendamento</span>
                         </Link>
                     </li>
                 </ul>
             </div>
             <div className="navbar-right">
+                <div className="user-info">
+                    <span className="user-name">Usuário</span>
+                </div>
                 <div className="user-avatar">
                     <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")} // Insira a imagem do usuário aqui
+                        src={require("../Imagens/Calvo-removebg-preview.png")}
                         alt="User Avatar"
                         className="avatar"
                     />

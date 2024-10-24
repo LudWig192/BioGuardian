@@ -280,5 +280,4 @@ router.delete('/medicos/:id', (req, res) => {
     res.send('Médico excluído com sucesso');
   });
 });
-///////////////////////////atualização-medico////////////////////////////////
 

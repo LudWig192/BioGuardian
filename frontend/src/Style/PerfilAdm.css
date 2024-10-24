@@ -1,0 +1,119 @@
+.user-profile {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin: 30px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.profile-pic {
+    width: 130px;
+    /* Largura da imagem */
+    height: 130px;
+    /* Altura da imagem */
+    border-radius: 50%;
+    /* Bordas arredondadas */
+    object-fit: cover;
+    /* Ajustar imagem */
+    border: 2px solid #007BFF;
+    /* Borda azul */
+    margin-bottom: 15px;
+    /* Espaçamento inferior */
+}
+
+.profile-name {
+    font-size: 1.75em;
+    /* Tamanho da fonte */
+    color: #2c3e50;
+    /* Cor escura */
+    margin: 10px 0;
+    /* Margens superior e inferior */
+    font-weight: bold;
+    /* Negrito para destaque */
+}
+
+.username {
+    color: #6854f0;
+    /* Azul para o nome de usuário */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    margin-top: 5px;
+    /* Margem superior */
+}
+
+.position {
+    font-weight: bold;
+    /* Negrito para o cargo */
+    color: #555;
+    /* Cor mais suave */
+    margin: 5px 0;
+    /* Margens superior e inferior */
+    font-size: 16px;
+    /* Tamanho da fonte */
+}
+
+.bio {
+    margin: 15px 0;
+    /* Espaço superior e inferior */
+    color: #333;
+    /* Cor do texto */
+    line-height: 1.6;
+    /* Espaçamento entre linhas */
+    font-size: 15px;
+    /* Tamanho da fonte */
+}
+
+.tags,
+.location {
+    margin-top: 20px;
+    /* Margem superior */
+    text-align: left;
+    /* Alinhamento à esquerda */
+}
+
+h4 {
+    font-weight: bold;
+    /* Negrito para os títulos */
+    margin-bottom: 8px;
+    /* Margem inferior */
+    color: #6854f0;
+    /* Azul para os títulos */
+    font-size: 16px;
+    /* Tamanho da fonte */
+}
+
+ul {
+    list-style-type: disc;
+    /* Estilo de lista */
+    padding-left: 20px;
+    /* Espaçamento à esquerda */
+}
+
+li {
+    color: #333;
+    /* Cor dos itens da lista */
+    margin-bottom: 8px;
+    /* Margem inferior */
+    font-size: 14px;
+    /* Tamanho da fonte */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .user-profile {
+        padding: 20px;
+        /* Padding ajustado para telas menores */
+    }
+
+    .profile-pic {
+        width: 100px;
+        /* Diminuir a largura da imagem */
+        height: 100px;
+        /* Diminuir a altura da imagem */
+    }
+}

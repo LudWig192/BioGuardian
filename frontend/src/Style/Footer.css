@@ -1,125 +1,125 @@
-/* Estilos globais para garantir que o layout ocupe a altura completa da janela */
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-#root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ocupa a altura total da janela */
-}
-
-/* Estilos para o conteúdo principal */
-.main-content {
-    flex: 1; /* Faz o conteúdo principal crescer para ocupar o espaço restante */
-}
-
-/* Estilo do rodapé */
 .footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradiente de fundo */
-    color: #ecf0f1; /* Cor do texto clara */
-    padding: 40px 20px; /* Espaçamento interno maior */
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    margin-top: 100px; /* Espaço acima do rodapé */
-    position: relative;
-    border-top: 5px solid #3498db; /* Linha superior para destacar o rodapé */
+    background-color: #f0f4f8; /* Azul claro para um toque hospitalar */
+    color: #333; /* Texto escuro para bom contraste */
+    padding: 40px 20px; /* Espaçamento interno generoso */
+    font-family: 'Arial', sans-serif; /* Fonte profissional */
+    text-align: left; /* Alinhamento à esquerda para melhor leitura */
+    /* border-top: 4px solid #007bff; Linha superior azul para destaque */
 }
 
 .footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
-    gap: 20px; /* Espaçamento entre as colunas */
+    max-width: 1200px; /* Limite de largura para centralizar */
+    margin: auto; /* Centraliza o conteúdo */
 }
 
-/* Coluna do rodapé sem fundo */
+/* Estilo das colunas do rodapé */
 .footer-column {
     flex: 1;
-    min-width: 220px;
-    padding: 20px;
-    border-radius: 10px; /* Bordas arredondadas nas colunas */
-    background: none; /* Remove o fundo semitransparente */
-}
-
-/* Coluna de contato com fundo */
-.footer-column.email1 {
-    background: rgba(255, 255, 255, 0.1); /* Fundo branco semitransparente */
-    padding: 20px;
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve para destacar a seção */
+    min-width: 220px; /* Largura mínima das colunas */
+    padding: 20px; /* Espaçamento interno nas colunas */
 }
 
 .footer-column h3 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #ecf0f1;
+    margin-bottom: 15px; /* Espaçamento inferior */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito para títulos */
+    color: #007bff; /* Cor dos títulos */
 }
 
 .footer-column p {
-    margin: 0;
+    margin-bottom: 10px; /* Espaçamento entre parágrafos */
 }
 
 .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Remove o estilo de lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
 }
 
 .footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espaçamento entre os links */
 }
 
 .footer-links a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s, text-decoration 0.3s;
+    color: #000000; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: color 0.3s; /* Transição suave para cor */
 }
 
 .footer-links a:hover {
-    color: #3498db; /* Cor dos links ao passar o mouse */
-    text-decoration: underline;
+    color: #0056b3; /* Cor ao passar o mouse */
 }
 
 .footer-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Alinha campos verticalmente */
 }
 
-.footer-form input,
-.footer-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna para os campos */
-}
-
-.footer-form textarea {
-    height: 120px;
-    resize: vertical;
+.footer-form input {
+    width: 100%; /* Largura total dos campos */
+    padding: 12px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Espaçamento entre os campos */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
 }
 
 .footer-form button {
-    background-color: #3498db; /* Cor de fundo dos botões */
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    padding: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    background-color: #007bff; /* Cor de fundo dos botões */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: #fff; /* Cor do texto */
+    padding: 12px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor em forma de mão ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para cor de fundo */
 }
 
 .footer-form button:hover {
-    background-color: #2980b9; /* Cor do botão ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento no tamanho ao passar o mouse */
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    margin-top: 20px; /* Espaço entre o formulário e os ícones */
+}
+
+.footer-icons a {
+    margin: 0 15px; /* Espaçamento horizontal entre os ícones */
+    font-size: 36px; /* Tamanho maior dos ícones */
+    color: inherit; /* Herda a cor do texto para links */
+    transition: transform 0.3s; /* Transição suave para o efeito de hover */
+}
+
+.footer-icons a:hover {
+    transform: scale(1.1); /* Leve aumento no tamanho ao passar o mouse */
+}
+
+/* Cores específicas para cada ícone */
+.footer-icons .facebook {
+    color: #3b5998; /* Azul do Facebook */
+}
+
+.footer-icons .twitter {
+    color: #1DA1F2; /* Azul do Twitter */
+}
+
+.footer-icons .instagram {
+    color: #C13584; /* Roxo do Instagram */
+}
+
+.footer-icons .linkedin {
+    color: #0077b5; /* Azul do LinkedIn */
+}
+
+.footer-bottom {
+    text-align: center; /* Alinhamento central para o rodapé */
+    padding: 20px 0; /* Espaçamento superior e inferior */
+    font-size: 14px; /* Tamanho da fonte reduzido */
+    color: #777; /* Cor do texto mais suave */
 }

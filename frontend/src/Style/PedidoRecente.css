@@ -1,0 +1,102 @@
+/* .solicitacoes-exames-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.solicitacoes-exames-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.solicitacoes-exames-search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.solicitacoes-exames-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.solicitacoes-exames-table th,
+.solicitacoes-exames-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.solicitacoes-exames-table th {
+    background-color: #e7e9eb;
+    color: #2c3e50;
+}
+
+.solicitacoes-exames-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.pendente {
+    color: #f39c12;
+}
+
+.status.aprovado {
+    color: #27ae60;
+}
+
+.status.rejeitado {
+    color: #c0392b;
+}
+
+.solicitacoes-exames-btn-approve,
+.solicitacoes-exames-btn-reject {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.solicitacoes-exames-btn-approve {
+    background-color: #27ae60;
+    color: white;
+}
+
+.solicitacoes-exames-btn-reject {
+    background-color: #c0392b;
+    color: white;
+}
+
+.solicitacoes-exames-btn-approve:hover,
+.solicitacoes-exames-btn-reject:hover {
+    opacity: 0.85;
+}
+
+.status-indicator {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.status-indicator.aprovado {
+    background-color: #d5f5e3;
+}
+
+.status-indicator.rejeitado {
+    background-color: #f9d6d5;
+} */

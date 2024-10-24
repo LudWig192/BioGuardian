@@ -1,6 +1,4 @@
-/* src/Css/Avatar.css */
-
-.container {
+.avatar-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -8,17 +6,17 @@
     position: relative;
 }
 
-.switch {
+.avatar-switch {
     margin-left: 20px;
 }
 
-.switch input {
+.avatar-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.slider {
+.avatar-slider {
     position: relative;
     cursor: pointer;
     width: 34px;
@@ -29,7 +27,7 @@
     display: inline-block;
 }
 
-.slider:before {
+.avatar-slider:before {
     position: absolute;
     content: "";
     height: 16px;
@@ -41,38 +39,38 @@
     transition: .4s;
 }
 
-input:checked+.slider {
+.avatar-switch input:checked + .avatar-slider {
     background-color: #2196F3;
 }
 
-input:checked+.slider:before {
+.avatar-switch input:checked + .avatar-slider:before {
     transform: translateX(14px);
 }
 
-.right-items {
+.avatar-right-items {
     display: flex;
     align-items: center;
 }
 
-.icons {
+.avatar-icons {
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
 
-.icon {
+.avatar-icon {
     font-size: 24px;
     margin: 0 10px;
     cursor: pointer;
-    color: #32657f;
+    color: #54a3f0;
 }
 
-.avatar {
+.avatar-avatar {
     display: flex;
     align-items: center;
 }
 
-.avatar img {
+.avatar-avatar img {
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -80,12 +78,12 @@ input:checked+.slider:before {
     border: 1px solid #333 !important;
 }
 
-.notification-icon {
+.avatar-notification-icon {
     position: relative;
     display: inline-block;
 }
 
-.notification-count {
+.avatar-notification-count {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -97,7 +95,7 @@ input:checked+.slider:before {
     font-weight: bold;
 }
 
-.dropdown {
+.avatar-dropdown {
     position: absolute;
     top: 40px;
     right: 0;
@@ -109,18 +107,33 @@ input:checked+.slider:before {
     z-index: 1000;
 }
 
-.dropdown p {
+.avatar-dropdown p {
     margin: 5px 0;
 }
 
-.qr-code {
+.avatar-qr-code {
     position: absolute;
-    top: 50px;
-    /* Ajuste a posição conforme necessário */
-    right: 50px;
-    /* Ajuste a posição conforme necessário */
+    top: 50px; /* Ajuste a posição conforme necessário */
+    right: 0; /* Ajuste a posição conforme necessário */
     background: #fff;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .avatar-container {
+        flex-direction: column; /* Altera a direção para coluna em telas menores */
+        align-items: flex-end;
+    }
+
+    .avatar-icons {
+        margin-bottom: 10px; /* Espaço entre os ícones e o avatar */
+    }
+
+    .avatar-avatar img {
+        width: 40px; /* Ajusta o tamanho da imagem do avatar */
+        height: 40px;
+    }
 }

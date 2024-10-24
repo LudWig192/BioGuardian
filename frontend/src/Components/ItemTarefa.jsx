@@ -1,7 +1,8 @@
+// src/Components/ItemTarefa.js
 import React from "react";
 import "../Style/ItemdeTarefa.css"; // CSS para o item de tarefa
 
-const TaskItem = ({ title, date, time, doctor, status, img }) => {
+const ItemTarefa = ({ title, date, time, doctor, status, img }) => {
     return (
         <div className="task-item">
             <img src={img} alt="Paciente" className="task-item-image" />
@@ -15,4 +16,4 @@ const TaskItem = ({ title, date, time, doctor, status, img }) => {
     );
 };
 
-export default TaskItem;
+export default ItemTarefa;

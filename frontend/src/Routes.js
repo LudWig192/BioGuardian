@@ -12,11 +12,17 @@ import Beneficio from "./Pages/Beneficio.js";
 import HomeCliente from "./Pages/HomeCliente.js";
 import Exames from "./Pages/Exames.js"
 import Agenda from "./Pages/Agenda.js";
+import Agendamento from './Pages/Agendamento.js';
+import Resultados from './Pages/Resultados.js'
 
 import HomeMedico from '../src/Pages/HomeMedico.js';
 import TabelaUsuarios from "./Pages/ListaUsuarios.js";
-import Unidades from "./Pages/Unidades.js";
+import Unidades from './Pages/Unidades.js'
 import Funcionarios from "./Pages/Funcionarios.js";
+import PerfilAdm from './Pages/PerfilAdm.js';
+import Registros from './Pages/RegistroExames.js';
+import Salario from './Pages/Salario.js';
+import Administrador from './Pages/Administrador.js';
 
 
 const Rotas = () => {
@@ -35,24 +41,29 @@ const Rotas = () => {
                                 <Route path="/Login" element={<LoginForm />} />
                                 <Route path="/Cadastro" element={<Cadastro />} />
                                 <Route path="/Beneficio" element={<Beneficio />} />
-                                <Route path="/Unidades" element={<Funcionarios />} />
-                                <Route path="Unidades" exact element={<Unidades />} />
+                                {/* <Route path="/Unidades" element={<Funcionarios />} /> */}
 
                                 {/* Cliente com cadastro */}
                                 <Route path="/HomeCliente" element={<HomeCliente />} />
                                 <Route path="/Exames" element={<Exames />} />
                                 <Route path="/Contato" element={<Contato />} />
                                 <Route path="/Unidades" element={<Unidades />} />
+                                <Route path="/Agendamento" element={<Agendamento />} />
+                                <Route path="/Resultados" element={<Resultados />} />
 
 
                                 {/* Rotas do medico */}
                                 <Route path="/HomeMedico" element={<HomeMedico />} />
                                 <Route path="/Agenda" element={<Agenda />} />
+                                <Route path="/Registros" element={<Registros />} />
+                                <Route path="/Salario" element={<Salario />} />
 
 
                                 {/* Rotas do Adm*/}
                                 <Route path="/Funcionarios" element={<Funcionarios />} />
                                 <Route path="/TabelaUsuarios" element={<TabelaUsuarios />} />
+                                <Route path="/PerfilAdm" element={<PerfilAdm />} />
+                                <Route path="/Administrador" element={<Administrador />} />
                         </Routes>
                 </>
         );

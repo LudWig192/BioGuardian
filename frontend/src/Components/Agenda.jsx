@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 import Modal from '../Components/Modal_Exames';
@@ -24,6 +23,13 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     const handleCloseModal = () => {
         setModalData(null);
         setModalType('');
+        setFormData({
+            agendamento: '',
+            paciente: '',
+            status: '',
+            procedimentos: '',
+            tipoPlano: ''
+        });
     };
 
     const handleChange = (e) => {
@@ -32,7 +38,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault(); // Verifica se e não é indefinido
         try {
             if (modalType === 'add') {
                 await onAdd(formData);
@@ -60,7 +66,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 <FaPlus /> Novo agendamento
             </button>
 
-            <table>
+            <table className="custom-table">
                 <thead>
                     <tr>
                         <th>Agendamento</th>
@@ -74,11 +80,11 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 <tbody>
                     {data.map((item) => (
                         <tr key={item.id}>
-                            <td>{item.agendamento}</td>
-                            <td>{item.paciente}</td>
-                            <td>{item.status}</td>
-                            <td>{item.procedimentos}</td>
-                            <td>{item.tipoPlano}</td>
+                            <td data-label="Agendamento"><span>{item.agendamento}</span></td>
+                            <td data-label="Paciente"><span>{item.paciente}</span></td>
+                            <td data-label="Status"><span>{item.status}</span></td>
+                            <td data-label="Procedimentos"><span>{item.procedimentos}</span></td>
+                            <td data-label="Tipo de Plano"><span>{item.tipoPlano}</span></td>
                             <td className="actions">
                                 <FaEdit
                                     className="icon edit-icon"
@@ -109,4 +115,4 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     );
 };
 
-export default ResponsiveTable; 
+export default ResponsiveTable;
