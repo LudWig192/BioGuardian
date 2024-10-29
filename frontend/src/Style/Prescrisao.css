@@ -1,16 +1,18 @@
 .prescriptions {
-  background-color: #f9fbfd;
+  background-color: #e7e7f8;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   font-family: 'Poppins', sans-serif;
+  width: 600px;
 }
 
 h4 {
   color: #007bff;
   font-size: 1.6em;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .add-prescription {
@@ -20,36 +22,41 @@ h4 {
   background-color: #f1f3f6;
   padding: 15px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
 }
 
 .add-prescription input[type="file"] {
-  display: none; /* Esconde o input */
+  display: none;
+  /* Esconde o input */
 }
 
 .custom-file-upload {
   background-color: #007bff;
   color: #fff;
   padding: 10px 25px;
-  border-radius: 30px;
+  border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  gap: 10px;
 }
 
 .custom-file-upload:hover {
   background-color: #0056b3;
   padding: auto 10px;
+
 }
 
 .add-prescription button {
   background-color: #28a745;
   color: #fff;
-  /* padding: 10px 20px; */
+  padding: 10px 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
 }
 
 .add-prescription button:hover {

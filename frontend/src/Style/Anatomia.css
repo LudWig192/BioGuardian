@@ -53,6 +53,17 @@
   .table-container {
     margin-top: 0;
   }
+
+  .app-container {
+    padding-left: 0;
+    /* Aumenta ainda mais o espaçamento superior */
+  }
+  .Consultas {
+    padding-left: 0;
+    padding-left: 515px;
+    margin-top: -370px;
+    width: 100%;
+}
 }
 
 .swal2-container {

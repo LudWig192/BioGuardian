@@ -107,17 +107,21 @@ const Cabecalho = () => {
     // Filtrar os appointments para o dia selecionado
     const filteredAppointments = appointments.filter((appointment) => appointment.day === selectedDay);
 
+    // Mês atual
+    const currentMonth = new Date().toLocaleString('pt-BR', { month: 'long', year: 'numeric' });
+
     return (
         <>
             <div className="date-header">
-                <h3 className="Mes">Novembro 2024</h3>
+                <h3 className="Mes">{currentMonth.toUpperCase()}</h3>
                 <div className="week-navigation">
-                    <button onClick={prevWeek}>⬅</button>
+                    <button className="btnAnterior desk" onClick={prevWeek} aria-label="Semana anterior">⬅</button>
+                    <button className="btnAnterior mobile" onClick={prevWeek} aria-label="Semana anterior">Anterior</button>
                     <div className="day-buttons">
                         {days.map(({ day, label }) => (
                             <button
                                 key={day}
-                                className={day === selectedDay ? "selected-day" : "day"}
+                                className={day.toString() === selectedDay ? "selected-day" : "day"}
                                 onClick={() => handleDayClick(day.toString())}
                             >
                                 <div>{day}</div>
@@ -125,7 +129,8 @@ const Cabecalho = () => {
                             </button>
                         ))}
                     </div>
-                    <button onClick={nextWeek}>➡</button>
+                    <button className="btnProximo desk" onClick={nextWeek} aria-label="Próxima semana">➡</button>
+                    <button className="btnProximo mobile" onClick={nextWeek} aria-label="Próxima semana">Próximo</button>
                 </div>
             </div>
 
@@ -152,7 +157,6 @@ const Cabecalho = () => {
                     <p>Não há consultas agendadas para este dia.</p>
                 )}
             </div>
-
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={resetForm}

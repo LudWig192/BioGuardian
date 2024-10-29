@@ -31,9 +31,10 @@
 /* Responsividade */
 @media (max-width: 768px) {
     .chart-container {
+        margin-top:330px;
         width: 100%;    /* Ajusta para ocupar a largura inteira da tela menor */
         height: auto;   /* Altura automática para se ajustar */
-        margin: 20px auto;  /* Margem reduzida para telas pequenas */
+        /* margin: 20px auto;   */
         transform: translateY(-100px); /* Reduz o deslocamento vertical em telas menores */
     }
 }

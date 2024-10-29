@@ -6,23 +6,32 @@
     margin-bottom: 20px;
     position: relative;
     max-width: 725px;
+    width: 100%;
+    margin: 110px 0 0 -20px;
+    /* Permitir que o cabeçalho se ajuste à largura */
 }
 
 /* Título do Mês */
 .date-header h3 {
     margin-bottom: 10px;
-    color: #6a82fb; /* Roxo azulado */
+    color: #6a82fb;
+    /* Roxo azulado */
 }
 
 /* Navegação da semana */
 .week-navigation {
     display: flex;
     align-items: center;
+    justify-content: center;
+    /* Centralizar conteúdo */
+    flex-wrap: nowrap;
+    /* Não permitir quebra de linha */
 }
 
 /* Estilo dos botões de navegação (setas) */
 .week-navigation button {
-    background-color: #6a82fb; /* Roxo azulado */
+    background-color: #6a82fb;
+    /* Roxo azulado */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -34,7 +43,8 @@
 }
 
 .week-navigation button:hover {
-    background-color: #5145cd; /* Roxo mais escuro */
+    background-color: #5145cd;
+    /* Roxo mais escuro */
 }
 
 .week-navigation button:focus {
@@ -46,27 +56,38 @@
 .day-buttons {
     display: flex;
     gap: 5px;
+    flex-wrap: nowrap;
+    /* Não permitir quebra de linha */
+    justify-content: center;
+    /* Centralizar os botões */
 }
 
 .day-buttons button {
-    background-color: #e9eff7; /* Azul claro */
+    background-color: #e9eff7;
+    /* Azul claro */
     color: #333;
     border: 1px solid #ddd;
-    padding: 5px;
+    padding: 10px 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
     font-size: 14px;
-    min-width: 50px;
+    min-width: 40px;
+    max-width: 60px;
+    /* Definindo uma largura máxima para manter o formato */
+    flex: 1;
+    /* Permitir que os botões se ajustem */
 }
 
 .day-buttons button:hover {
-    background-color: #dce4f7; /* Azul um pouco mais escuro */
+    background-color: #dce4f7;
+    /* Azul um pouco mais escuro */
 }
 
 .day-buttons button.selected-day {
-    background-color: #6a82fb; /* Roxo azulado */
+    background-color: #6a82fb;
+    /* Roxo azulado */
     color: white;
     border-color: #6a82fb;
     font-weight: bold;
@@ -83,7 +104,8 @@
     font-size: 14px;
     cursor: pointer;
     margin-left: 10px;
-    color: #9b59b6; /* Roxo suave */
+    color: #9b59b6;
+    /* Roxo suave */
     transition: color 0.3s ease, transform 0.3s ease;
     padding: 3px 6px;
     border-radius: 5px;
@@ -106,13 +128,7 @@
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
     width: 100%;
-}
-
-.appointment-container:hover {
-    transform: scale(1.02);
-    background-color: #f9f9f9;
 }
 
 /* Estilo da Hora */
@@ -123,18 +139,6 @@
     margin-right: 20px;
     min-width: 80px;
     text-align: left;
-    position: relative;
-}
-
-.appointment-datetime::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 2px;
-    height: 50%;
-    background-color: #6a82fb;
-    transform: translateY(-50%);
 }
 
 /* Estilo do Card de Exame */
@@ -149,11 +153,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: box-shadow 0.3s ease;
-}
-
-.appointment-card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
 .appointment-card h4 {
@@ -173,8 +172,11 @@
 /* Layout Geral */
 .appointments {
     padding: 20px;
-    background-color: #f0f4f8; /* Fundo azul claro */
+    background-color: #f0f4f8;
+    /* Fundo azul claro */
     border-radius: 20px;
+    margin-top: 30px;
+    margin-right: 40px;
 }
 
 .appointments h2 {
@@ -184,85 +186,26 @@
     font-weight: bold;
 }
 
-
 /* Estilo para o título sem consultas */
 .appointments p {
     font-size: 16px;
     color: #666;
 }
-/* Estilo do símbolo de edição e exclusão */
-
-.edit-symbol,
-.delete-symbol {
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 15px;
-    padding: 5px 10px; /* Adiciona preenchimento para torná-los parecidos com botões */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: #fff; /* Cor do texto em branco */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
-    margin-top: -10px;
-}
-
-/* Estilo para o botão de edição */
-.edit-symbol {
-    background-color: #28a745; /* Verde para o botão de editar */
-}
-
-.edit-symbol:hover {
-    background-color: #218838; /* Verde mais escuro ao passar o mouse */
-    transform: translateY(-2px); /* Eleva levemente o botão ao passar o mouse */
-}
-
-/* Estilo para o botão de exclusão */
-.delete-symbol {
-    background-color: #dc3545; /* Vermelho para o botão de excluir */
-}
-
-.delete-symbol:hover {
-    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
-    transform: translateY(-2px); /* Eleva levemente o botão ao passar o mouse */
-}
-
-
-/* Estilo para o grupo de botões */
-.button-group {
-    display: flex;
-    /* Flexbox para os botões */
-    justify-content: space-between;
-    /* Espaçamento entre os botões */
-    margin-top: 10px;
-    /* Margem superior para o grupo de botões */
-}
-
-.button-group button {
-    font-size: 12px;
-    /* Tamanho da fonte dos botões reduzido */
-    padding: 5px 8px;
-    /* Preenchimento interno reduzido para os botões */
-}
 
 .custom-modal {
     position: absolute;
     top: 45%;
-    /* Desce o modal 40% da altura da tela */
     left: 50%;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
     transform: translate(-50%, -40%);
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     width: 400px;
-    /* ou ajuste conforme necessário */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .custom-overlay {
     background-color: rgba(0, 0, 0, 0.75);
-    /* Fundo escurecido */
     position: fixed;
     top: 0;
     left: 0;
@@ -271,4 +214,74 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.mobile{
+    display:none;
+}
+/* Estilo Responsivo */
+@media (max-width: 768px) {
+    .desk{
+        display: none;
+    }
+    .mobile{
+        display:block;
+    }
+    .date-header {
+        display: unset;
+        /* flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+        max-width: 725px;
+        width: 100%;
+        margin: 110px 0 0 -20px; */
+    }
+
+    .day-buttons button {
+        /* flex: 1 0 20%; */
+        /* Ajusta o tamanho dos botões em telas menores */
+        min-width: 40px;
+        /* Tamanho mínimo do botão */
+        max-width: none;
+        /* Remove a largura máxima para flexibilidade */
+    }
+    .day-buttons {
+        gap: 0px;
+        margin: 5px 0;
+    }
+
+    .day-buttons button {
+        padding: 0;
+        margin: 0 0px;
+        font-size: 12px;
+    }
+
+    .appointments {
+        padding: 15px;
+    }
+
+    .appointment-card {
+        width: 100%;
+        /* Largura total em telas pequenas */
+    }
+
+    .week-navigation {
+        display: unset;
+        position: relative;
+        width: 390px;
+        overflow-y: auto;
+        max-width: 390px;
+        z-index: 9999;
+    }
+
+    .btnProximo {
+        margin-left: 16px;
+        margin-top: 110px;
+    }
+
+    .btnAnterior {
+        z-index: 9999;
+        margin-top: 110px;
+        margin-left: 590px;
+    }
 }
