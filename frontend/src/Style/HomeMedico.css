@@ -1,29 +1,97 @@
+/* Estilos gerais para o status */
 .Status {
   max-height: 400px;
   max-width: 400px;
   margin-right: 100px;
-  display: flex; /* Adiciona flexbox para alinhar os itens dentro da Status */
-  justify-content: center; /* Centraliza o conteúdo */
-  align-items: center; /* Alinha verticalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Estilos para o corpo do exemplo */
 .corpoExemplo {
   height: 300px;
   width: 300px;
 }
 
+/* Estilos para a seção de consultas */
 .Consultas {
-
-  display: flex; /* Usa flexbox para organizar os componentes */
-  flex-direction: column; /* Alinha os itens verticalmente */
-  margin-left: 530px;
-  margin-top: -225px; /* Ajuste conforme a necessidade */
-  width: 100%; /* Para ocupar toda a largura disponível */
+  display: flex;
+  flex-direction: column;
+  padding-left: 675px;
+  margin-top: -270px;
+  width: 100%;
 }
 
+/* Estilos para o cliente */
+.Cliente {
+  margin-left: 70px;
+}
 
-/* Estilização para o cabeçalho do calendário */
-.date-header {
-  /* ... Seu estilo existente ... */
-  width: 100%; /* Para que o cabeçalho ocupe toda a largura do pai */
+/* Estilos para o perfil */
+.Perfil {
+  flex: 1;
+}
+
+/* Estilos para os elementos do perfil */
+.Elementos-perfil {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilos para o relatório */
+.Relatorio {
+  display: flex;
+}
+
+/* Estilos para as informações */
+.Informacoes {
+  background-color: #e0e6f8;
+  color: #333;
+  font-weight: bold;
+  font-size: 24px;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 15px 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transform: translateY(-100px);
+}
+
+/* Efeito de linha decorativa abaixo do título */
+.Informacoes::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #6a82fb;
+  margin: 8px auto 0;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .Consultas {
+    padding-left: 0;
+    /* padding-left: 515px; */
+    margin-top: -395px;
+    width: 100%;
+  }
+
+  .Status {
+    max-height: 390px;
+    max-width: 390px;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chart-container {
+    margin-top: 330px;
+  }
 }

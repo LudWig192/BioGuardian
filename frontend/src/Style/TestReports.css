@@ -1,0 +1,66 @@
+/* Estilo principal para a aba de resultados de exames */
+.test-reports {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.test-reports h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b5f9e; /* Azul escuro */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Lista de relatórios */
+.report-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Cada item de relatório */
+.report-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7f9fc; /* Azul claro */
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #c3d4e8;
+  transition: box-shadow 0.3s ease;
+  width: calc(50% - 10px); /* Para dividir em duas colunas */
+}
+
+.report-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícone de exame */
+.report-icon {
+  font-size: 1.5em;
+  color: #5a9ee1; /* Azul claro */
+}
+
+/* Informações do exame */
+.report-info p {
+  margin: 0;
+  color: #333;
+}
+
+.report-info p:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b5f9e; /* Azul escuro */
+}
+
+.report-info p:last-child {
+  font-size: 14px;
+  color: #6c8fbf; /* Azul suave */
+}

@@ -1,21 +1,23 @@
 /* Estilo principal do app */
 .note-app {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f5f7fa; /* Fundo suave em cinza claro */
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     font-family: 'Roboto', sans-serif;
-    color: #333;
-    margin-top: 200px;
+    color: #2c3e50; /* Texto em azul escuro */
+    transition: all 0.3s ease-in-out;
+    border: solid 5px #6a82fb; /* Borda em tom de roxo azulado */
 }
 
 .note-title {
     font-size: 26px;
     text-align: center;
     margin-bottom: 20px;
-    color: #00796b;
+    color: #6a82fb; /* Tom roxo azulado */
     font-weight: 500;
 }
 
@@ -23,25 +25,25 @@
     width: 100%;
     height: 120px;
     padding: 12px;
-    border: 2px solid #b0bec5;
+    border: 2px solid #d3dce6; /* Borda em cinza claro */
     border-radius: 8px;
     font-size: 16px;
-    background-color: #fafafa;
+    background-color: #e9eff7; /* Fundo azul clarinho */
     transition: border-color 0.3s, box-shadow 0.3s;
     resize: none;
     margin-bottom: 15px;
 }
 
 .note-textarea:focus {
-    border-color: #00796b;
-    box-shadow: 0 0 8px rgba(0, 121, 107, 0.3);
+    border-color: #6a82fb; /* Foco roxo azulado */
+    box-shadow: 0 0 8px rgba(106, 130, 251, 0.3); /* Sombra roxa */
     outline: none;
 }
 
 .note-button {
     width: 100%;
     padding: 12px;
-    background-color: #00796b;
+    background-color: #6a82fb; /* Fundo roxo azulado */
     border: none;
     border-radius: 8px;
     color: white;
@@ -51,7 +53,7 @@
 }
 
 .note-button:hover {
-    background-color: #004d40;
+    background-color: #5145cd; /* Tom roxo mais escuro no hover */
     transform: translateY(-2px);
 }
 
@@ -62,8 +64,8 @@
 }
 
 .note-item {
-    background-color: #e0f2f1;
-    border: 1px solid #00796b;
+    background-color: #dce4f7; /* Fundo azul claro */
+    border: 1px solid #6a82fb;
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -74,7 +76,7 @@
 }
 
 .note-item:hover {
-    background-color: #b2dfdb;
+    background-color: #c4d1f0; /* Azul claro mais escuro no hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -94,19 +96,31 @@
 }
 
 .edit-button {
-    color: #ffab40;
+    color: #9b59b6; /* Roxo suave */
 }
 
 .edit-button:hover {
-    background-color: #fff3e0;
+    background-color: #f3e5f5; /* Fundo roxo clarinho no hover */
     transform: scale(1.1);
 }
 
 .delete-button {
-    color: #e53935;
+    color: #e74c3c; /* Vermelho claro */
 }
 
 .delete-button:hover {
-    background-color: #ffebee;
+    background-color: #ffebee; /* Fundo vermelho clarinho no hover */
     transform: scale(1.1);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 500px) {
+    .note-app {
+        width: 90%;
+        margin-top: 100px;
+    }
+
+    .note-textarea {
+        height: 100px;
+    }
 }

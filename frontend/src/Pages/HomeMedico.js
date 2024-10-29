@@ -1,11 +1,20 @@
+// IMPORTS DAS BIBLIOTECAS
+import React, { useState } from 'react'; 
 import { Container, Row, Col } from 'react-bootstrap';
-import React, { useState } from 'react';
-import Cabecalho from '../Components/Cabecalho';
+
+// IMPORT ESTILIZAÇÃO
+import '../Style/HomeMedico.css';
+
+// IMPORTE OS COMPONENTES
+import Cabecalho from '../Components/Calendario';
 import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
-import '../Style/HomeMedico.css';
-import Anatomia from "../Imagens/Anatomia.jpg"
-import NavbarMedico from '../Components/Navegacao-medico'
+import Grafico from "../Components/Grafico";
+import Paciente from "../Components/Paciente";
+import TestReports from '../Components/TestReports';
+import Prescriptions from '../Components/Prescrisao';
+
+// ----------------------------------------------------- 
 
 const HomeMedico = () => {
 
@@ -18,21 +27,49 @@ const HomeMedico = () => {
   };
 
   return (
-    <>
-      <NavbarMedico />
-      <Container fluid>
-        <Row className='Status'>
+    <Container fluid>
+      {/* <Row className='Status'> */}
+      <Row className=''>
+        <Col md={6}>
           <Anatomy />
-        </Row>
+        </Col>
+        <Col md={6}>
+          <Cabecalho className="cabecalhoBody" onSelectDay={handleSelectDay} />
+        </Col>
+      </Row>
 
-        <Row className='Consultas'>
-          <Col md={8}>
-            <Cabecalho onSelectDay={handleSelectDay} /> {/* Passa a função de seleção para o DateHeader */}
-            <Anotações />
-          </Col>
-        </Row>
-      </Container>
-    </>
+      {/* <Row className='Consultas'>
+        <Col md={12}>
+          <Cabecalho onSelectDay={handleSelectDay} />
+        </Col>
+      </Row> */}
+
+      {/* Gráfico e Bloco de notas */}
+      <Row className='Relatorio'>
+        <Col md={6} sm={12}>
+          <Grafico />
+        </Col>
+        <Col md={6} sm={12}>
+          <Anotações />
+        </Col>
+      </Row>
+
+      <Row className='Informacoes'>
+        <Col>
+          <h2>Informações</h2>
+        </Col>
+      </Row>
+
+      <Row className='Cliente'>
+        <Col className='Perfil'>
+          <Paciente />
+        </Col>
+        <Col className="Elementos-perfil">
+          <TestReports />
+          <Prescriptions />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 //Pagina de Cliente sem cadastro
 import Home from "./Pages/Home.js";
 import Cadastro from "./Pages/Cadastro.js";
+
 import LoginForm from "./Pages/Login.js";
 import Beneficio from "./Pages/Beneficio.js";
 
