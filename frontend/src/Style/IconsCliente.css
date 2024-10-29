@@ -1,48 +1,51 @@
 .popular-iconcliente {
-  max-width: 800px; /* Largura máxima */
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
 }
 
 .iconcliente {
-  font-size: 32px; /* Tamanho do título geral */
+  font-size: 32px;
   color: #6854f0;
-  margin-bottom: 15px; /* Ajusta o espaçamento */
+  margin-bottom: 15px;
   font-weight: bold;
 }
 
 .services-iconcliente {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px; /* Ajusta o espaçamento entre os cards */
+  gap: 15px;
 }
 
-/* Adicionando responsividade */
 @media (max-width: 900px) {
   .services-iconcliente {
-    grid-template-columns: repeat(2, 1fr); /* Muda para 2 colunas em telas menores */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .services-iconcliente {
-    grid-template-columns: 1fr; /* Muda para 1 coluna em telas pequenas */
+    grid-template-columns: 1fr;
   }
 }
 
 .iconcliente-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha todos os itens à esquerda */
-  justify-content: space-between; /* Garante que o conteúdo ocupe todo o espaço vertical */
-  padding: 15px; /* Aumenta o padding interno para melhor espaçamento */
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 180px; /* Altura fixa para todos os cards */
-  text-align: left; /* Alinhamento à esquerda para todo o texto */
+  height: 180px;
+  text-align: center;
+}
+
+.iconcliente-card.highlighted {
+  box-shadow: 0 4px 10px rgba(104, 84, 240, 0.2);
 }
 
 .iconcliente-card:hover {
@@ -50,27 +53,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.clienteicon-info-iconcliente {
-  display: flex;
-  align-items: center;
-  width: 100%; /* Garante que o conteúdo ocupe toda a largura */
-}
-
 .clienteicon-iconcliente {
-  font-size: 28px; /* Tamanho do ícone ajustado */
+  font-size: 28px;
   color: #4A90E2;
-  margin-right: 8px; /* Menor espaço entre ícone e texto */
+  margin-bottom: 10px;
 }
 
 .clienteicon-title-iconcliente {
-  font-size: 20px; /* Tamanho do título aumentado */
+  font-size: 20px;
   color: #54a3f0;
-  margin: 5px 0; /* Ajuste de margens */
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .clienteicon-subtitle-iconcliente {
-  font-size: 16px; /* Tamanho do subtítulo reduzido */
-  color: #7f8c8d;
-  margin: 0; /* Remove margens para alinhamento */
+  font-size: 16px;
+  color: black;
+  margin: 0;
 }

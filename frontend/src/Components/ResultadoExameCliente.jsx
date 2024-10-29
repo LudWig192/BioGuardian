@@ -1,8 +1,8 @@
 import React from 'react';
 import '../Style/ResultadoExameCliente.css'; // Verifique se o caminho está correto
-import Hemograma from "../Imagens/Hemograma.png";
-import Glicemia from "../Imagens/GLICOSE.png";
-import Colesterol from "../Imagens/Colesterol.jpeg";
+import Hemograma from "../Imagens/Hemograma_Completo.webp";
+import ExameUrina from "../Imagens/Exame_Urina2.jpg"; // Imagem do exame de urina
+import ExamePediatrico from "../Imagens/Exame_Pediatrico2.jpeg"; // Imagem do exame pediátrico
 import pessoa1 from "../Imagens/Bom.png";
 import pessoa2 from "../Imagens/Bom.png";
 import pessoa3 from "../Imagens/Bom.png";
@@ -10,39 +10,39 @@ import pessoa3 from "../Imagens/Bom.png";
 const NewsCards = () => {
     const articles = [
         {
-            date: "19 Julho, 2020",
-            title: "Resultados de Hemograma",
-            description: "O hemograma é um resultado essencial que fornece informações sobre a sua saúde geral.",
+            date: "24 Novembro 2024",
+            title: "Hemograma Completo",
+            description: "O hemograma completo avalia componentes do sangue, como glóbulos vermelhos e brancos. É essencial para detectar anemia, infecções e problemas de coagulação, sendo recomendado periodicamente para a saúde geral.",
             image: Hemograma,
             person: { name: "João Silva", photo: pessoa1 },
         },
         {
-            date: "20 Julho, 2020",
-            title: "Resultado de Glicemia",
-            description: "O resultado de glicemia é fundamental para monitorar os níveis de açúcar no sangue.",
-            image: Glicemia,
+            date: "2 Novembro 2024",
+            title: "Exame de Urina",
+            description: "O exame de urina é um teste que identifica infecções urinárias e problemas renais. Ele revela substâncias anormais que podem indicar condições subjacentes, sendo comum em check-ups de saúde.",
+            image: ExameUrina,
             person: { name: "Maria Oliveira", photo: pessoa2 },
         },
         {
-            date: "21 Julho, 2020",
-            title: "Colesterol",
-            description: "Os resultados do exame de colesterol ajudam a avaliar o risco de doenças cardíacas.",
-            image: Colesterol,
+            date: "10 Dezembro 2024",
+            title: "Exame Pediátrico",
+            description: "Os exames pediátricos monitoram o desenvolvimento e a saúde das crianças, avaliando crescimento e função imunológica. Exames regulares ajudam a detectar doenças precocemente e garantir a saúde infantil.",
+            image: ExamePediatrico, // Imagem do exame pediátrico
             person: { name: "Carlos Santos", photo: pessoa3 },
-        }
+        },
     ];
 
     return (
         <div className="cardsResultadoCliente-container">
-            <div className="cardsResultadoCliente-header">Acompanhe os resultados de exames</div>
+            <div className="cardsResultadoCliente-header">Exames Marcados pelo Medico</div>
             <div className="cardsResultadoCliente">
                 {articles.map((article, index) => (
                     <div key={index} className="cardsResultadoCliente-card">
                         <img src={article.image} alt="Article" className="cardsResultadoCliente-image" />
                         <div className="cardsResultadoCliente-content">
                             <div className="person-resultadoCliente-info">
-                                <div className="person-resultadoCliente-ball">
-                                    <img src={article.person.photo} alt={article.person.name} className="person-photo" />
+                                <div className="avatarResultadoCliente">
+                                    {article.person.name.charAt(0)}{article.person.name.charAt(article.person.name.indexOf(' ') + 1)} {/* Exibe as iniciais do nome */}
                                 </div>
                                 <span className="person-resultadoCliente-name">{article.person.name}</span>
                             </div>
@@ -50,7 +50,7 @@ const NewsCards = () => {
                             <div className="cardsResultadoCliente-title">{article.title}</div>
                             <span className="cardsResultadoCliente-text">{article.description}</span>
                             <div className="cardsResultadoCliente-button-container">
-                                <a href="#" className="cardsResultadoCliente-link">LEIA MAIS</a>
+                                <a href="#" className="cardsResultadoCliente-link">Acessar</a>
                             </div>
                         </div>
                     </div>

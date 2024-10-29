@@ -1,3 +1,5 @@
+/* ResultadoExameCliente.css */
+
 .cardsResultadoCliente-container {
     max-width: 1200px; /* Largura máxima do contêiner */
     margin: 260px auto 0; /* Centraliza o contêiner e adiciona margem superior */
@@ -66,6 +68,8 @@
 .cardsResultadoCliente-text {
     font-size: 14px; /* Tamanho da fonte da descrição */
     margin-bottom: 15px; /* Espaço abaixo da descrição */
+    text-align: justify;
+    color: black;
 }
 
 .cardsResultadoCliente-button-container {
@@ -99,24 +103,22 @@
     margin-bottom: 10px; /* Espaço abaixo do perfil */
 }
 
-.person-resultadoCliente-ball {
-    width: 30px; /* Largura da bola */
-    height: 30px; /* Altura da bola */
-    border-radius: 50%; /* Arredonda a bola */
-    overflow: hidden; /* Esconde o excesso de conteúdo */
-    margin-right: 10px; /* Espaço entre a bola e o nome */
-    border: 2px solid #ddd; /* Borda da bola, opcional */
-}
-
-.person-photo {
-    width: 100%; /* Imagem ocupa toda a largura da bola */
-    height: 100%; /* Imagem ocupa toda a altura da bola */
-    object-fit: cover; /* Mantém a proporção da imagem */
+.avatarResultadoCliente {
+    width: 30px; /* Largura do avatar */
+    height: 30px; /* Altura do avatar */
+    border-radius: 50%; /* Torna o avatar redondo */
+    background-color: #007bff; /* Cor de fundo do avatar */
+    color: white; /* Cor do texto do avatar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold; /* Estilo do texto */
+    margin-right: 10px; /* Espaço entre o avatar e o nome */
 }
 
 .person-resultadoCliente-name {
-    font-size: 14px; /* Tamanho da fonte do nome */
-    color: #333; /* Cor do texto do nome */
+    font-size: 15px; /* Tamanho da fonte do nome */
+    color: black; /* Cor do texto do nome */
 }
 
 /* Media Queries para responsividade */

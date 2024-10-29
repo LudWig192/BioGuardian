@@ -19,7 +19,6 @@ const DiagnoseTreat = () => {
         <div className="description-cirurgia-cliente"> 
           No BioGuardian, oferecemos serviços cirúrgicos realizados por profissionais qualificados. Desde cirurgias eletivas até emergenciais, garantimos segurança e conforto com técnicas modernas e acompanhamento personalizado para uma recuperação eficaz.
         </div>
-        <button className="read-more-btn-cirugia-cliente">Saiba Mais</button> 
       </div>
     </div>
   );

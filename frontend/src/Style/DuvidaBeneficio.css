@@ -10,6 +10,9 @@
 .DuvidaBeneficio.faq-left {
   flex: 1;
   margin-right: 20px;
+  display: flex;
+  flex-direction: column; /* Para alinhar o conteúdo verticalmente */
+  align-items: flex-start; /* Alinhamento dos itens à esquerda */
 }
 
 .DuvidaBeneficio.faq-right {
@@ -24,6 +27,21 @@
 .DuvidaBeneficio.faq-left div {
   font-size: 18px;
   margin-bottom: 20px;
+  line-height: 1.5; /* Aumentado o espaçamento entre linhas para melhor legibilidade */
+}
+
+.DuvidaBeneficio.faq-title {
+  font-size: 24px; /* Aumenta o tamanho do título */
+  font-weight: bold; /* Torna o título em negrito */
+  margin-bottom: 20px; /* Espaço abaixo do título */
+  color: #6854f0;
+}
+
+.DuvidaBeneficio.faq-image {
+  width: 94%; /* Ajuste o tamanho da imagem conforme necessário */
+  max-width: 388px; /* Limita a largura máxima da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-bottom: 21px; /* Espaço abaixo da imagem */
 }
 
 .DuvidaBeneficio.faq-button {
@@ -33,6 +51,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  align-self: flex-start; /* Alinhamento do botão à esquerda */
 }
 
 .DuvidaBeneficio.faq-button:hover {
@@ -49,13 +68,14 @@
 }
 
 .DuvidaBeneficio.faq-item.active {
-  background-color: #e9f5ff;
-  border-color: #007bff;
+  background-color: white;
+  border-color: #54a3f0;
 }
 
 .DuvidaBeneficio.faq-question {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Alinhamento horizontal */
+  align-items: center; /* Alinhamento vertical */
   cursor: pointer;
 }
 
@@ -69,7 +89,7 @@
 .DuvidaBeneficio.faq-icon {
   font-size: 18px;
   margin-left: 10px;
-  color: #007bff;
+  color: #54a3f0;
 }
 
 /* Responsividade */

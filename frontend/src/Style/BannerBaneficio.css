@@ -4,10 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../Imagens/fundo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('../Imagens/fundo.png'); /* Adicione a URL da imagem aqui */
+    background-size: cover; /* A imagem cobre toda a área */
+    background-position: center; /* A imagem está centralizada */
+    background-repeat: no-repeat; /* A imagem não se repete */
     padding: 40px;
     position: relative;
 }
@@ -30,7 +30,7 @@
 }
 
 .bannerbeneficio-heading {
-    font-size: 2.5rem;
+    font-size: 48px;
     color: white;
 }
 

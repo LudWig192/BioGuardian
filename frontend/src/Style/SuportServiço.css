@@ -7,15 +7,16 @@
 }
 
 .services-title-suport {
-  font-size: 3rem;
+  font-size: 32px;
   margin-bottom: 10px;
-  color: #54d4f0;
+  color: #6854f0;
+  font-weight: bold;
 }
 
 .services-description-support {
   font-size: 1.2rem;
   margin-bottom: 40px;
-  color: #54d4f0;
+  color: black;
 }
 
 /* Estilo da grade de serviços */
@@ -62,7 +63,7 @@
 .service-title {
   margin: 0;
   font-size: 1.2rem;
-  background-color: #5472f0; /* Azul do botão */
+  background-color: #54a3f0; /* Azul do botão */
   padding: 10px 0;
   border-radius: 5px;
   transition: background-color 0.3s;

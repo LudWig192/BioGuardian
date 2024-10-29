@@ -1,7 +1,6 @@
 .servicos-container-examebeneficio {
   padding: 20px;
   text-align: center;
-  background-color: #f9f9f9;
 }
 
 .titulo-examebeneficio {
@@ -12,12 +11,12 @@
 }
 
 .descricao-servicos-examebeneficio {
-  font-size: 16px; 
-  color: #666; 
-  margin-bottom: 30px; 
-  max-width: 600px; 
-  margin-left: auto;
-  margin-right: auto; 
+  font-size: 16px; /* Tamanho do texto */
+  color: black; /* Cor do texto */
+  margin-bottom: 30px; /* Espaço abaixo da descrição */
+  max-width: 600px; /* Limitar a largura do texto */
+  margin-left: auto; /* Centralizar horizontalmente */
+  margin-right: auto; /* Centralizar horizontalmente */
 }
 
 .cards-container-examebeneficio {
@@ -65,9 +64,9 @@
 }
 
 .descricao-examebeneficio {
-  font-size: 14px;
-  color: #666; 
-  line-height: 1.4; 
+  font-size: 14px; /* Aumentar o tamanho da descrição */
+  color: black; /* Cor da descrição */
+  line-height: 1.4; /* Altura da linha para melhor legibilidade */
 }
 
 /* Responsividade */

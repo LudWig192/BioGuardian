@@ -10,7 +10,7 @@ import Equipamentos from "../Imagens/Equipamentos.png"
 const Services = () => {
   const servicesData = [
     { title: 'Pediatria', image: Pediatria },
-    { title: 'Ressonância Magnética do Cérebro', image: ExameImagem },
+    { title: 'Ressonância Magnética', image: ExameImagem },
     { title: 'Diagnóstico por Raios-X', image:  Raio },
     { title: 'Serviços de Laboratório', image: Laboratório },
     { title: 'Saúde da Mulher', image: Mulher },

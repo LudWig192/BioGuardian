@@ -81,7 +81,7 @@
 }
 
 .Card-button-PlanoBeneficio {
-  background-color: #5472f0;
+  background-color: #54a3f0;
   color: white;
   border: none;
   border-radius: 5px;
@@ -92,7 +92,7 @@
 }
 
 .Card-button-PlanoBeneficio:hover {
-  background-color: #4058c5; /* Cor ao passar o mouse */
+  background-color: #54a3f0; /* Cor ao passar o mouse */
 }
 
 /* Destaque para o plano familiar */

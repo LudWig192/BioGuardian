@@ -1,39 +1,73 @@
 import React from 'react';
-import '../Style/MedicoServiço.css'; // Arquivo de estilos
-import Riley from "../Imagens/Medico24h1 (1).png";
-import Jane from  "../Imagens/Medico24h1 (2).png";
-import Eric from "../Imagens/Medico24h1 (3).png"
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import '../Style/MedicoServiço.css'; // Importando CSS externo
+import Medica from "../Imagens/Medico24h1 (1).png";
+import Medico from "../Imagens/Medico24h1 (3).png";
+import SegundaMedica from "../Imagens/Medico24h1 (2).png";
 
-const doctors = [
-  {
-    nameAndTitle: "Dr. Scott Riley",
-    image: Riley,
-  },
-  {
-    nameAndTitle: "Dra. Jane Fowler",
-    image: Jane,
-  },
-  {
-    nameAndTitle: "Dr. Eric Snyder",
-    image: Eric,
-  },
-  
-];
+const SpecialistCard = () => {
+  const specialists = [
+    {
+      image: Medica,
+      name: 'Dra. Ana Souza',
+      title: 'Fisioterapeuta 24h',
+      description: 'Experiente em fornecer serviços de terapia física e reabilitação, disponível 24 horas.',
+      socialMedia: [
+        { icon: <FaFacebookF />, link: 'https://facebook.com' },
+        { icon: <FaTwitter />, link: 'https://twitter.com' },
+        { icon: <FaInstagram />, link: 'https://instagram.com' },
+      ],
+    },
+    {
+      image: Medico,
+      name: 'Dr. Carlos Almeida',
+      title: 'Médico Central 24h',
+      description: 'Especialista em saúde geral, disponível 24 horas para emergências.',
+      socialMedia: [
+        { icon: <FaFacebookF />, link: 'https://facebook.com' },
+        { icon: <FaTwitter />, link: 'https://twitter.com' },
+        { icon: <FaInstagram />, link: 'https://instagram.com' },
+      ],
+    },
+    {
+      image: SegundaMedica,
+      name: 'Dr. Maria Mendes',
+      title: 'Cardiologista 24h',
+      description: 'Especialista em saúde do coração e tratamentos cardiovasculares, disponível 24 horas.',
+      socialMedia: [
+        { icon: <FaFacebookF />, link: 'https://facebook.com' },
+        { icon: <FaTwitter />, link: 'https://twitter.com' },
+        { icon: <FaInstagram />, link: 'https://instagram.com' },
+      ],
+    },
+  ];
 
-const DoctorsGrid = () => {
   return (
-    <div className="doctor-serviços-container">
-      <div className="doctor-serviços-title">Conheça Nossa Equipe Médica</div>
-      <div className="doctor-serviços-description">
-        Conheça alguns dos nossos médicos disponíveis 24 horas por dia, comprometidos em oferecer atendimento médico de alta qualidade e cuidados personalizados para suas necessidades de saúde.
-      </div>
-      
-      <div className="doctor-serviços-grid">
-        {doctors.slice(0, 3).map((doctor, index) => (
-          <div key={index} className="doctor-serviços-card">
-            <img src={doctor.image} alt={doctor.nameAndTitle} className="doctor-serviços-image" />
-            <div className="doctor-serviços-info">
-              <div className="doctor-serviços-name">{doctor.nameAndTitle}</div>
+    <div className="medicoServiço-container">
+      <div className="medicoServiço-header">Conheça Nossos Profissionais 24h</div>
+      <div className="medicoServiço-cards-container">
+        {specialists.map((specialist, index) => (
+          <div key={index} className={`profissional-card medicoServiço ${specialist.title.includes('Central') ? 'medico-central' : ''}`}>
+            <div className="avatar-container-medicoServiço">
+              <img src={specialist.image} alt={specialist.name} className="avatar medicoServiço" />
+            </div>
+            <div className="info-medicoServiço">
+              <div className="medicoServiço-name">{specialist.name}</div>
+              <div className="medicoServiço-title">{specialist.title}</div>
+              <div className="medicoServiço-description">{specialist.description}</div>
+            </div>
+            <div className="medicoServiço-media">
+              {specialist.socialMedia.map((icon, i) => (
+                <a
+                  key={i}
+                  href={icon.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="medicoServiço-icon"
+                >
+                  {icon.icon}
+                </a>
+              ))}
             </div>
           </div>
         ))}
@@ -42,4 +76,4 @@ const DoctorsGrid = () => {
   );
 };
 
-export default DoctorsGrid;
+export default SpecialistCard;

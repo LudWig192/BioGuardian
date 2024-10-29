@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarCSC from '../Components/Navegacao';
 import Banner from "../Components/BannerBaneficio";
 import Pontos from "../Components/PontosBeneficio"
 import Exame from "../Components/ExameBeneficio";
@@ -7,12 +8,13 @@ import Plano from "../Components/PlanoBeneficio";
 import Unidade from "../Components/UnidadeBeneficio";
 import Cirugia from "../Components/CirugiaBeneficio";
 import Duvida from "../Components/DuvidaBeneficio";
-import "../Style/BeneficioPage.css"
-import NavbarCSC from '../Components/Navegacao'
+import "../Style/BeneficioPage.css";
+
+
 const Beneficio = () => {
   return (
     <>
-      <NavbarCSC  />
+      <NavbarCSC />
       <Banner />
       <Pontos />
       <Exame />

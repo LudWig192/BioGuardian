@@ -1,6 +1,6 @@
 .unidadebeneficio-container {
   color: #6854f0;
-  padding: 50px;
+  padding: 0 20px; /* Padding para afastar os cards das laterais */
   text-align: center;
   margin: 0 auto;
   border-radius: 8px;
@@ -15,7 +15,6 @@
 .unidadebeneficio-title {
   font-size: 32px;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .unidadebeneficio-description {
@@ -24,30 +23,41 @@
   margin-top: 15px;
   max-width: 800px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 .unidadebeneficio-cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centraliza os cartões */
   align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap; /* Permite que os cartões se movam para a linha seguinte se não houver espaço */
+  gap: 40px; /* Pequeno espaçamento entre os cartões */
+  flex-wrap: wrap;
 }
 
 .unidadebeneficio-card {
-  background-color: #1c1c1c;
+  background-color: white;
   border-radius: 15px;
   overflow: hidden;
-  width: 30%; /* Mantém a largura original */
+  width: 23%; /* Largura dos cartões em telas grandes */
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
+  margin: 0; /* Remove margem adicional */
 }
 
 .unidadebeneficio-info {
-  padding: 20px;
+  padding: 10px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.unidadebeneficio-name {
+  font-size: 1.5em;
+  color: #6854f0;
+  font-weight: bold;
 }
 
 .unidadebeneficio-more {
@@ -56,27 +66,62 @@
 
 .unidadebeneficio-image {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-bottom: 3px solid #6854f0;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
+.unidadebeneficio-button {
+  background-color: #6854f0;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.unidadebeneficio-button:hover {
+  background-color: #5140c0;
+  transform: scale(1.05);
+}
+
+.unidadebeneficio-button:active {
+  background-color: #3e3090;
+  transform: scale(0.95);
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 1024px) {
   .unidadebeneficio-card {
-      width: 45%; /* Ajusta a largura para caber duas colunas em telas menores */
+    width: 48%; /* Duas colunas em telas médias */
   }
 }
 
+/* Responsividade para tablets e telas menores */
+@media (max-width: 768px) {
+  .unidadebeneficio-card {
+    width: 48%; /* Duas colunas em tablets */
+  }
+  .unidadebeneficio-title {
+    font-size: 28px;
+  }
+}
+
+/* Responsividade para telas muito pequenas */
 @media (max-width: 480px) {
   .unidadebeneficio-card {
-      width: 100%; /* Os cartões ocupam toda a largura em telas muito pequenas */
+    width: 100%; /* Cartões ocupam toda a largura em telas muito pequenas */
   }
-
   .unidadebeneficio-title {
-      font-size: 24px; /* Tamanho da fonte reduzido */
+    font-size: 24px;
   }
-
   .unidadebeneficio-description {
-      font-size: 1em; /* Tamanho da fonte reduzido */
+    font-size: 1em;
   }
 }

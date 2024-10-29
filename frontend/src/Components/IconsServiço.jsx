@@ -6,7 +6,7 @@ const WhatMakesUsDifferent = () => {
   return (
     <section className="section-servicoicons"> 
       <div className="container-servicoicons"> 
-        <div className="titulo-servicoicons">O que nos torna diferentes</div> 
+        <div className="titulo-servicoicons">O que nos torna diferentes:</div> 
         <div className="row-servicoicons justify-content-center"> {/* Usando a classe row-serviço */} 
           {/* Especialistas Qualificados */}
           <div className="col-md-4-servicoicons"> 

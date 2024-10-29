@@ -1,103 +1,121 @@
-/* Container principal */
-.EspecialidadesCliente-directory {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px;
-  font-family: 'Helvetica', sans-serif;
-  color: #333;
+.Medico24cliente-container {
+  margin-top: 5vh; /* Adiciona margem superior proporcional à altura da tela */
+  padding: 0 2rem; /* Padding lateral para evitar que o conteúdo encoste nas bordas */
 }
 
-.EspecialidadesCliente-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #1c1c1c;
-}
-
-/* Lista de funcionários com espaçamento entre os cards */
-.EspecialidadesCliente-list {
+.Medico24cliente-customer {
   display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte se não houver espaço */
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px; /* Adiciona espaçamento entre os cards */
-}
-
-/* Cartão de funcionário */
-.EspecialidadesCliente-professional {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  width: calc(25% - 20px); /* Ajuste a largura para 25% menos o espaçamento */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
-.EspecialidadesCliente-professional:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Header do cartão */
-.EspecialidadesCliente-header {
-  display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto; /* Centraliza horizontalmente */
 }
 
-.EspecialidadesCliente-avatar {
-  background-color: #0056b3;
-  color: #fff;
-  font-size: 18px;
-  width: 50px;
-  height: 50px;
+.Medico24cliente-text {
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, e base de largura mínima */
+  padding-right: 2rem;
+}
+
+.Medico24cliente-title {
+  font-size: 2rem; /* Tamanho da fonte do título */
+  font-weight: bold; /* Negrito para destaque */
+  margin-bottom: 1rem; /* Espaçamento abaixo do título */
+  color: #6854f0;
+}
+
+.Medico24cliente-description {
+  font-size: 1rem; /* Tamanho da fonte da descrição */
+  color: black; /* Cor do texto da descrição */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  text-align: justify;
+}
+
+.Medico24cliente-graphic {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-right: 15px;
+  align-items: center; /* Centraliza verticalmente os itens */
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, e base de largura mínima */
 }
 
-.EspecialidadesCliente-info .EspecialidadesCliente-name {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
+.Medico24cliente-progress-circles {
+  display: flex;
+  gap: 2rem; /* Espaçamento entre os círculos de progresso */
+  margin-right: 2rem; /* Espaçamento à direita dos círculos */
 }
 
-.EspecialidadesCliente-info .EspecialidadesCliente-role {
-  font-size: 14px;
-  color: #666;
-  margin-top: 5px;
+.Medico24cliente-circle {
+  width: 100px; /* Largura do círculo */
+  height: 100px; /* Altura do círculo */
+  border-radius: 50%; /* Forma circular */
+  background: conic-gradient(
+    #54a3f0 var(--progress), /* Cor do progresso */
+    #e0e0e0 0 /* Cor do fundo */
+  );
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  flex-direction: column; /* Coloca a porcentagem e o rótulo um em cima do outro */
 }
 
-/* Detalhes do funcionário */
-.EspecialidadesCliente-details div {
-  margin: 10px 0;
-  font-size: 14px;
-  color: #555;
+.Medico24cliente-percentage {
+  font-size: 1.5rem; /* Tamanho da fonte da porcentagem */
+  font-weight: bold; /* Negrito para destaque */
+  color: black; /* Cor do texto da porcentagem */
 }
 
-.EspecialidadesCliente-details svg {
-  margin-right: 8px;
-  color: #0056b3;
-  font-size: 14px;
+.Medico24cliente-label {
+  font-size: 0.9rem; /* Tamanho da fonte do rótulo */
+  color: black; /* Cor do texto do rótulo */
 }
 
-/* Ajuste de responsividade */
-@media (max-width: 1200px) {
-  .EspecialidadesCliente-professional {
-    width: calc(33.33% - 20px); /* 3 colunas em telas médias */
-  }
+.Medico24cliente-illustration {
+  width: 100%; /* Faz a ilustração ocupar toda a largura disponível */
+  height: auto; /* Mantém a proporção da altura */
+  max-height: 400px; /* Limita a altura máxima */
+  object-fit: contain; /* Mantém a proporção da imagem sem cortar */
 }
 
+/* Media Queries para responsividade */
 @media (max-width: 768px) {
-  .EspecialidadesCliente-professional {
-    width: calc(50% - 20px); /* 2 colunas em telas menores */
+  .Medico24cliente-customer {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    align-items: flex-start; /* Alinha itens à esquerda */
+  }
+
+  .Medico24cliente-text {
+    padding-right: 0; /* Remove o padding direito */
+    max-width: 100%; /* Permite que o texto ocupe toda a largura */
+  }
+
+  .Medico24cliente-title {
+    font-size: 1.8rem; /* Reduz o tamanho do título */
+  }
+
+  .Medico24cliente-description {
+    font-size: 0.9rem; /* Reduz o tamanho da descrição */
+  }
+
+  .Medico24cliente-illustration {
+    max-height: 300px; /* Limita a altura máxima em telas menores */
+  }
+
+  .Medico24cliente-progress-circles {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    gap: 1rem; /* Reduz o espaço entre os círculos */
   }
 }
 
 @media (max-width: 480px) {
-  .EspecialidadesCliente-professional {
-    width: 100%; /* 1 coluna em telas muito pequenas */
+  .Medico24cliente-title {
+    font-size: 1.6rem; /* Tamanho do título menor em telas muito pequenas */
+  }
+
+  .Medico24cliente-percentage {
+    font-size: 1.2rem; /* Tamanho da porcentagem menor */
+  }
+
+  .Medico24cliente-label {
+    font-size: 0.8rem; /* Tamanho do rótulo menor */
   }
 }

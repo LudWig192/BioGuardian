@@ -1,24 +1,26 @@
 .BeneficioIcons-container {
     text-align: center;
-    padding: 60px 20px;
+    padding: 260px 20px;
 }
 
 .BeneficioIcons-title {
-    font-size: 2.5em;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: #6854f0 ;
 }
 
 .BeneficioIcons-description {
     font-size: 1em;
-    color: #666;
+    color: black;
     margin-bottom: 50px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6em;
+    text-align: justify;
 }
 
 .BeneficioIcons-services {
@@ -33,7 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Espaçamento uniforme entre os itens */
+    justify-content: flex-start; /* Alinha os itens ao topo */
     padding: 20px 15px;
     border-radius: 10px;
     transition: transform 0.3s;
@@ -65,15 +67,16 @@
 .BeneficioIcons-serviceTitle {
     font-size: 1em;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 10px 0; /* Margem ajustada */
     text-transform: uppercase;
     color: #54a3f0;
 }
 
 .BeneficioIcons-serviceDescription {
-    font-size: 0.8em;
-    color: #777;
+    font-size: 1em;
+    color: black;
     line-height: 1.4em;
+    text-align: justify;
 }
 
 /* Media Queries para responsividade */

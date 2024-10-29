@@ -7,6 +7,7 @@ import Cadastro from "./Pages/Cadastro.js";
 
 import LoginForm from "./Pages/Login.js";
 import Beneficio from "./Pages/Beneficio.js";
+import Servicos from './Pages/Serviço.js'
 
 //Paginas de Cliente com cadastro
 import HomeCliente from "./Pages/HomeCliente.js";
@@ -41,6 +42,7 @@ const Rotas = () => {
                                 {/* Cliente sem cadastro */}
                                 <Route path="/" exact element={<Home />} />
                                 <Route path="/Beneficio" element={<Beneficio />} />
+                                <Route path="/Servico" element={<Servicos />} />
                                 <Route path="/Login" element={<LoginForm />} />
                                 <Route path="/Cadastro" exact element={<Cadastro />} />
                                 <Route path="/Exames" element={<Exames />} />

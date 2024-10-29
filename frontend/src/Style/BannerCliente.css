@@ -9,10 +9,10 @@
 }
 
 .banner-cliente-img {
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
@@ -20,33 +20,33 @@
 
 .banner-cliente-content-container {
     display: flex;
-    align-items: center; 
-    justify-content: flex-start; 
-    width: 100%; 
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
     position: relative;
-    padding: 0 5vw; 
+    padding: 0 5vw;
     z-index: 2;
 }
 
 .banner-cliente-content {
     color: white;
-    text-align: left; 
-    max-width: 50%;
+        max-width: 50%;
 }
 
 .titulo-BannerCliente {
-    font-size: 3.5vw;
+    font-size: 48px;
     margin-bottom: 1rem;
 }
 
 .subtitulo-BannerCliente {
-    font-size: 2vw;
-    color: #f8f9fa; 
-    margin-top: 1rem; 
-    line-height: 1.4; 
-    text-align: left;
+    font-size: 20px;
+    color: #f8f9fa;
+    margin-top: 1rem;
+    line-height: 1.4;
+    text-align: justify;
 }
 
+/* Cards Section */
 .cards-bannercliente-container {
     width: 90%;
     margin: 20px auto;
@@ -57,9 +57,9 @@
 }
 
 .row-bannercliente {
-    display: flex; 
+    display: flex;
     justify-content: center;
-    gap: 1rem; 
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -74,32 +74,46 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease; 
+    text-align: justify;
+    transition: transform 0.3s ease;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .info-icon {
     font-size: 2.5rem;
-    color: #1cc7d0;
+    color: #54a3f0;
+    margin-bottom: 10px;
 }
 
+/* Tamanho fixo para o título e descrição dos cards */
 .titulo-card-BannerCliente {
     margin-top: 10px;
     font-weight: 600;
-    color: #0d6efd;
+    color: #54a3f0;
+    font-size: 1.25rem; /* Define um tamanho fixo */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: flex; /* Flex para centralizar verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
 }
 
 .descricao-card-BannerCliente {
-    font-size: 1rem;
-    color: #6c757d;
+    font-size: 1rem; /* Define um tamanho fixo */
+    color: black;
     margin-top: 0.5rem;
+    line-height: 1.4;
+    text-align: justify;
+    width: 100%;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .banner-cliente-section {
-        height: auto; 
+        height: auto;
     }
 
     .banner-cliente-content-container {

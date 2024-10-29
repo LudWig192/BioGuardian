@@ -61,17 +61,19 @@
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: #6854f0;
 }
 
 .header-subtitle {
     font-size: 1.5em;
     margin: 5px 0 15px;
     font-weight: 300;
+    color: #6854f0;
 }
 
 .modal-button-examesIn {
     padding: 12px 25px; /* Aumenta o tamanho do botão */
-    background-color: #5472f0; /* Cor do botão */
+    background-color: #54a3f0; /* Cor do botão */
     color: white;
     border: none;
     cursor: pointer;
@@ -128,6 +130,7 @@
 /* Estilo do Modal */
 .modal-icon-examesIn {
     margin-right: 10px; /* Espaço entre o ícone e o título */
+    color: #54a3f0;
 }
 
 .modal-body-examesIn {
@@ -185,4 +188,11 @@
     .menu-item-examesIn {
         height: 50px; /* Ajusta a altura dos cards em telas pequenas */
     }
+}
+.btn-primary {
+    color: white;
+    background-color: #54a3f0 ;
+}
+.modal-title{
+    color: #6854f0;
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import '../Style/BannerHome.css';
-import BannerImage from '../Imagens/BannerHome.png'; // Importando a imagem
+import BannerImage from '../Imagens/BannerHome.png'; 
 
 const HeroSection = () => {
   return (
     <div className="BannerHome-section">
-      <img src={BannerImage} alt="Banner de Saúde" className="BannerHome-background" /> {/* Imagem de fundo */}
+      <img src={BannerImage} alt="Banner de Saúde" className="BannerHome-background" /> 
       <div className="BannerHome-content">
         <div className="BannerHome-title">BioGuardian: Monitoramento de Saúde</div>
         <div className="BannerHome-description">

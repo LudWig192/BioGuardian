@@ -3,7 +3,6 @@
   justify-content: flex-start;
   align-items: center;
   padding: 90px;
-  background-color: #f5f8fd;
 }
 
 .image-pontosbene {
@@ -35,7 +34,7 @@
   color: black;
   margin: 15px 0;
   font-weight: normal;
-  text-align: center; /* Centraliza a descrição */
+  text-align: justify;
 }
 
 .pontosbene > .pontosbene {

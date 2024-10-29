@@ -1,6 +1,6 @@
 /* Estilo para a seção principal */
 .section-servicoicons {
-    padding: 40px 0;
+    padding: 300px 0;
     background-color: #f9f9f9;
     text-align: center;
   }
@@ -13,9 +13,10 @@
   
   /* Título */
   .titulo-servicoicons {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 30px;
+    color: #6854f0;
   }
   
   /* Estilos para as colunas */
@@ -43,12 +44,14 @@
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #54a3f0;
   }
   
   /* Descrição abaixo dos títulos */
   .descricao-servicoicons {
     font-size: 16px;
-    color: #666;
+    color: black;
+    text-align: justify;
   }
   
   /* Estilo para a linha de serviço */

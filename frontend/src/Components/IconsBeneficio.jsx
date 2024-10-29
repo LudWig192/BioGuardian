@@ -7,22 +7,22 @@ const Services = () => {
         {
             icon: <FaStethoscope />,
             title: 'MONITORAMENTO DE SAÚDE',
-            description: 'Uma assinatura que utiliza inteligência artificial para monitorar a saúde de indivíduos e famílias, analisando históricos médicos e sintomas relevantes.',
+            description: 'Assinatura que utiliza inteligência artificial para monitorar a saúde de indivíduos e famílias, analisando históricos médicos e sintomas.',
         },
         {
             icon: <FaShieldAlt />,
             title: 'AUXÍLIO MÉDICO EM EMERGÊNCIAS',
-            description: 'Atendimentos médicos em casa, realizados por profissionais capacitados em casos de emergência, garantindo cuidados imediatos.',
+            description: 'Atendimentos médicos em casa, realizados por profissionais capacitados, garantindo cuidados imediatos.',
         },
         {
             icon: <FaClinicMedical />,
             title: 'SERVIÇOS AMBULATORIAIS',
-            description: 'Oferecemos acompanhamento e cuidados para pacientes que necessitam de check-ups regulares, promovendo a prevenção de doenças.',
+            description: 'Acompanhamento e cuidados para pacientes que necessitam de check-ups regulares, promovendo a prevenção de doenças.',
         },
         {
             icon: <FaEye />,
-            title: 'PROCEDIMENTOS OPHTALMOLOGIA',
-            description: 'Realizamos diversos procedimentos oculares com oftalmologistas qualificados, visando a saúde e bem-estar dos seus olhos.',
+            title: 'PROCEDIMENTOS OFTALMOLOGIA',
+            description: 'Procedimentos oculares realizados por oftalmologistas qualificados, visando a saúde dos seus olhos.',
         },
         {
             icon: <FaXRay />,
@@ -32,15 +32,15 @@ const Services = () => {
         {
             icon: <FaVial />,
             title: 'SERVIÇOS DE LABORATÓRIO',
-            description: 'Nossos serviços laboratoriais oferecem resultados rápidos e confiáveis, auxiliando no diagnóstico e tratamento.',
+            description: 'Serviços laboratoriais que oferecem resultados rápidos e confiáveis para auxiliar no diagnóstico e tratamento.',
         },
     ];
 
     return (
         <div className="BeneficioIcons-container"> 
-            <div className="BeneficioIcons-title">NOSSOS SERVIÇOS</div> 
+            <div className="BeneficioIcons-title">SERVIÇOS</div> 
             <div className="BeneficioIcons-description"> 
-                Nossos pacientes têm acesso a uma ampla gama de serviços, tanto no local quanto através de parcerias. Oferecemos cuidados de saúde excepcionais e diagnósticos de alta qualidade com equipamentos de ponta. Conheça mais sobre nossos serviços abaixo.
+                Oferecemos uma variedade de serviços com cuidados excepcionais e diagnósticos de alta qualidade. Conheça mais sobre nossos serviços abaixo.
             </div>
             <div className="BeneficioIcons-services"> 
                 {services.map((beneficio, index) => (

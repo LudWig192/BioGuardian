@@ -20,13 +20,9 @@ const PopularServices = () => {
       <div className="services-iconcliente">
         {clienteicons.map((clienteicon, index) => (
           <div key={index} className={`iconcliente-card ${clienteicon.highlighted ? 'highlighted' : ''}`}>
-            <div className="clienteicon-info-iconcliente">
-              <div className="clienteicon-iconcliente">{clienteicon.icon}</div>
-              <div>
-                <div className="clienteicon-title-iconcliente">{clienteicon.title}</div>
-                <div className="clienteicon-subtitle-iconcliente">{clienteicon.subtitle}</div>
-              </div>
-            </div>
+            <div className="clienteicon-iconcliente">{clienteicon.icon}</div>
+            <div className="clienteicon-title-iconcliente">{clienteicon.title}</div>
+            <div className="clienteicon-subtitle-iconcliente">{clienteicon.subtitle}</div>
           </div>
         ))}
       </div>
