@@ -30,8 +30,8 @@ body {
 
 .border-left,
 .icon-button {
-    border-left: 5px solid #5472f0 !important;
-    background: white;
+    /* border-left: 5px solid #54a3f0 !important; */
+    background: #54a3f0;
     color: black;
     border: 1px solid #ccc;
     padding: 10px 20px;
@@ -46,7 +46,7 @@ body {
 
 .border-left:hover,
 .icon-button:hover {
-    background-color: #f0f0f0;
+    background-color: #54a3f0;
     border-color: #ccc;
 }
 

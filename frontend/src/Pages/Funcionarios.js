@@ -1,12 +1,13 @@
 import React from "react";
 import Funcionario from "../Components/Funcionarios";
-
-const Login = () => {
+import NavegacaoAdm from '../Components/Navegacao-adm'
+const Funcionarios = () => {
     return (
         <>
+            <NavegacaoAdm />
             <Funcionario />
         </>
     );
 };
 
-export default Login;
+export default Funcionarios;

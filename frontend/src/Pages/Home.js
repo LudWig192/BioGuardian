@@ -8,10 +8,12 @@ import Pulseira from "../Components/PulseiraHome";
 import Modelo from "../Components/Modelo3DHome";
 import Medico from "../Components/MedicoHome";
 import '../Style/HomePage.css';
+import NavbarCSC from '../Components/Navegacao'
 
 function HomeCliente() {
   return (
     <div className="HomeSemCliente">
+     <NavbarCSC />
      <Banner />
      <Diagnostico />
      <Exame /> 

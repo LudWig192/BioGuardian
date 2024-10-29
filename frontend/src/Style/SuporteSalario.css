@@ -1,0 +1,68 @@
+.mental-health-support {
+    background-color: #ffffff;
+    /* Fundo branco para transmitir limpeza e profissionalismo */
+    padding: 30px;
+    /* Aumentar o padding para um aspecto mais espaçoso */
+    border-radius: 15px;
+    /* Bordas arredondadas mais sutis */
+    /* box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1); */
+    /* Sombra mais suave para dar profundidade */
+    margin: 30px 0;
+    font-family: 'Arial', sans-serif;
+    /* border: 1px solid #d3d3d3; */
+    /* Borda leve cinza claro para dar destaque */
+}
+
+.title {
+    color: #54d4f0;
+    /* Azul marinho escuro para um tom mais sério */
+    margin-bottom: 20px;
+    /* Espaçamento inferior aumentado */
+    font-size: 2em;
+    /* Tamanho da fonte maior para dar mais destaque */
+    font-weight: 700;
+    /* Negrito para maior ênfase */
+}
+
+.description,
+.importance-description,
+.call-to-action {
+    color: #333333;
+    /* Cinza escuro para melhor legibilidade */
+    line-height: 1.6;
+    /* Espaçamento entre linhas */
+    margin: 10px 0;
+    /* Margem para separar seções */
+}
+
+.resources-title,
+.importance-title {
+    color: #54d4f0;
+    /* Azul mais claro para os subtítulos */
+    margin-top: 25px;
+    /* Espaçamento superior aumentado */
+    font-size: 1.6em;
+    /* Tamanho de fonte maior para os subtítulos */
+    font-weight: 600;
+    /* Negrito para maior ênfase */
+}
+
+.resources-list {
+    list-style-type: disc;
+    /* Marcadores para a lista */
+    padding-left: 20px;
+    /* Espaçamento à esquerda para a lista */
+    color: #333333;
+    /* Cinza escuro para melhor legibilidade */
+}
+
+.resource-item {
+    margin-bottom: 8px;
+    /* Espaçamento entre os itens da lista */
+    padding: 5px;
+    /* Padding para melhor espaçamento */
+    border-left: 4px solid #54a3f0;
+    /* Borda esquerda para destacar cada item */
+    background-color: #f1f8ff;
+    /* Fundo leve para cada item */
+}

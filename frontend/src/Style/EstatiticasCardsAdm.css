@@ -1,0 +1,72 @@
+.latest-projects-container {
+    background: #ffffff; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    flex: 2;
+    font-family: 'Arial', sans-serif; /* Fonte limpa */
+    color: #333; /* Texto escuro */
+}
+
+.latest-projects-container h2 {
+    font-size: 1.8em; /* Tamanho do título */
+    color: #333; /* Cor escura para o título */
+    margin-bottom: 20px; /* Margem abaixo do título */
+    text-align: center; /* Centralizar o título */
+}
+
+.latest-projects-container table {
+    width: 100%; /* Tabela ocupa toda a largura */
+    border-collapse: collapse; /* Remover espaços entre as bordas */
+}
+
+.latest-projects-container th,
+.latest-projects-container td {
+    text-align: left; /* Alinhamento à esquerda */
+    padding: 15px; /* Espaçamento interno */
+}
+
+.latest-projects-container th {
+    background-color: #f1f1f1; /* Cinza muito claro para o cabeçalho */
+    color: #333; /* Cor escura para o cabeçalho */
+    font-weight: 600; /* Negrito */
+    text-transform: uppercase; /* Letras maiúsculas */
+}
+
+.latest-projects-container td {
+    background-color: #ffffff; /* Células brancas */
+    color: #333; /* Texto escuro nas células */
+}
+
+.status {
+    padding: 6px 12px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas mais suaves */
+    text-align: center; /* Centralizar o texto */
+    font-weight: 500; /* Peso da fonte regular */
+    font-size: 0.9em; /* Tamanho da fonte */
+}
+
+.status.concluído {
+    background-color: #e0f7e0; 
+    color: #2e7d32; 
+}
+
+.status.pendente {
+    background-color: #fff3cdc0; 
+    color: #856404; 
+}
+
+.status.em-andamento {
+    background-color: #d1ecf167; 
+    color: #0c5460; 
+}
+
+.status.em-breve {
+    background-color: #e2e3e536; /* Cinza suave */
+    color: #6c757d; /* Texto escuro */
+}
+
+/* Remover destaque ao passar o mouse */
+.latest-projects-container tr:hover {
+    background-color: transparent; /* Sem destaque */
+}

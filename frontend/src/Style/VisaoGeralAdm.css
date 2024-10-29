@@ -1,0 +1,81 @@
+.stats-overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f0f4f8;
+    /* Fundo suave para um toque limpo e profissional */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat {
+    background-color: #ffffff;
+    padding: 25px 15px;
+    /* Aumenta o padding para mais conforto visual */
+    border-radius: 10px;
+    text-align: center;
+    width: 15%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: 1px solid #e0e0e0;
+    /* Borda sutil para definir os cards */
+}
+
+.stat:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    /* Aumenta a sombra ao passar o mouse */
+    transform: translateY(-2px);
+    /* Eleva levemente o card */
+}
+
+.stat h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #34495e;
+    /* Cor escura para um visual profissional */
+    font-weight: 600;
+    /* Peso mais forte para maior destaque */
+}
+
+.stat p {
+    font-size: 28px;
+    /* Tamanho de texto destacado para valores principais */
+    font-weight: bold;
+    color: #2980b9;
+    /* Azul profissional para valores */
+    margin: 0;
+    /* Remove margens para alinhamento consistente */
+}
+
+.stat p:last-child {
+    font-size: 14px;
+    /* Menor tamanho para informações secundárias */
+    color: #7f8c8d;
+    /* Cor cinza para informações menos importantes */
+}
+
+.stat p:first-of-type {
+    font-size: 12px;
+    /* Tamanho menor para subtítulos */
+    color: #888;
+    /* Cor leve para diferenciação */
+    margin-top: 5px;
+    /* Espaçamento superior */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .stats-overview {
+        flex-direction: column;
+        /* Empilha os cards em telas menores */
+        align-items: center;
+    }
+
+    .stat {
+        width: 90%;
+        /* Aumenta a largura em dispositivos menores */
+        margin-bottom: 20px;
+        /* Espaço entre os cards */
+    }
+}

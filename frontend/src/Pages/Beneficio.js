@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarCSC from '../Components/Navegacao';
 import Banner from "../Components/BannerBaneficio";
 import Pontos from "../Components/PontosBeneficio"
 import Exame from "../Components/ExameBeneficio";
@@ -10,17 +11,18 @@ import Duvida from "../Components/DuvidaBeneficio";
 import "../Style/BeneficioPage.css";
 
 
-const Beneficio  = () => {
+const Beneficio = () => {
   return (
     <>
-  <Banner />
-  <Pontos />
-    <Exame />
-    <Cirugia />
-    <Plano />
-    <Unidade />
-    <Icons />
-  <Duvida />
+      <NavbarCSC />
+      <Banner />
+      <Pontos />
+      <Exame />
+      <Cirugia />
+      <Plano />
+      <Unidade />
+      <Icons />
+      <Duvida />
     </>
   );
 }

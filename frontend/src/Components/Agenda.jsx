@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 import Modal from '../Components/Modal_Exames';
@@ -18,12 +17,25 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     const handleOpenModal = (type, item = {}) => {
         setModalType(type);
         setModalData(item);
-        setFormData(item);
+        setFormData({
+            agendamento: item.agendamento || '',
+            paciente: item.paciente || '',
+            status: item.status || '',
+            procedimentos: item.procedimentos || '',
+            tipoPlano: item.tipoPlano || ''
+        });
     };
 
     const handleCloseModal = () => {
         setModalData(null);
         setModalType('');
+        setFormData({
+            agendamento: '',
+            paciente: '',
+            status: '',
+            procedimentos: '',
+            tipoPlano: ''
+        });
     };
 
     const handleChange = (e) => {
@@ -31,27 +43,8 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
         setFormData(prevData => ({ ...prevData, [name]: value }));
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            if (modalType === 'add') {
-                await onAdd(formData);
-            } else if (modalType === 'edit') {
-                await onEdit(formData);
-            } else if (modalType === 'delete' && modalData) {
-                if (window.confirm('Tem certeza de que deseja excluir este item?')) {
-                    await onDelete(modalData.id);
-                }
-            }
-        } catch (error) {
-            console.error('Erro ao realizar a operação:', error);
-            alert('Houve um problema ao realizar a operação. Por favor, tente novamente.');
-        }
-        handleCloseModal();
-    };
-
     return (
-        <div className="table-container">
+        <div className="table-Agenda">
             <button
                 className="add-button"
                 onClick={() => handleOpenModal('add')}
@@ -60,7 +53,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 <FaPlus /> Novo agendamento
             </button>
 
-            <table>
+            <table className="custom-table">
                 <thead>
                     <tr>
                         <th>Agendamento</th>
@@ -73,7 +66,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 </thead>
                 <tbody>
                     {data.map((item) => (
-                        <tr key={item.id}>
+                        <tr key={item.idAgenda}>
                             <td>{item.agendamento}</td>
                             <td>{item.paciente}</td>
                             <td>{item.status}</td>
@@ -102,11 +95,20 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                     data={formData}
                     onClose={handleCloseModal}
                     onChange={handleChange}
-                    onSubmit={handleSubmit}
+                    onSubmit={async () => {
+                        if (modalType === 'add') {
+                            await onAdd(formData);
+                        } else if (modalType === 'edit') {
+                            await onEdit({ ...modalData, ...formData });
+                        } else if (modalType === 'delete') {
+                            await onDelete(modalData.idAgenda);
+                        }
+                        handleCloseModal();
+                    }}
                 />
             )}
         </div>
     );
 };
+export default ResponsiveTable;
 
-export default ResponsiveTable; 

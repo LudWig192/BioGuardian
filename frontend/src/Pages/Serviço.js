@@ -6,10 +6,11 @@ import Suporte from "../Components/SuportServiço";
 import Medico from "../Components/MedicoServiço";
 import Animação from "../Components/TecnologiaServiço";
 import "../Style/ServicoPage.css";
-
+import NavbarCSC from '../Components/Navegacao'
 const Unidades = () => {
     return (
         <div className="servico-page">
+            <NavbarCSC />
             <Banner />
             <Icons />
             <BannerMini />

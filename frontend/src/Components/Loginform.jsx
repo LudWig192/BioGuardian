@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import '../Style/Login.css';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [error, setError] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
@@ -19,23 +18,20 @@ const LoginForm = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ email, senha }),
-                mode: 'cors',
             });
 
             if (response.ok) {
-                // Se o login for bem-sucedido
-                setIsLoggedIn(true);
-                setError('');
+                const user = await response.json();
 
-                // Login especifico
-                if (email === 'Adm@medley.com' && senha === 'admin123') {
-                    navigate('/Funcionarios'); // Rota específica para admin
-                } else if (email === 'Medico@medley.com' && senha === 'medico123') {
-                    navigate('/Agenda'); // Rota específica para médico
+                if (user.role === 'admin') {
+                    navigate('/PerfilAdm');
+                } else if (user.role === 'medico') {
+                    navigate('/HomeMedico');
                 } else {
-                    navigate('/Unidades'); // Rota padrão para outros logins
+                    navigate('/HomeCliente'); 
                 }
-                // Se o login falhar
+                setError(''); 
+            } else {
                 setError('Email ou senha incorretos!');
             }
         } catch (error) {
@@ -43,6 +39,8 @@ const LoginForm = () => {
             setError('Erro ao conectar com o servidor.');
         }
     };
+
+
     return (
         <div className="Background-2">
             <div className="container">
@@ -68,6 +66,7 @@ const LoginForm = () => {
                             required
                         />
                         <button type="submit" className="btn-primary">Salvar</button>
+                        {error && <p className="error-message">{error}</p>}
                     </form>
                     <div className="red-cdsto">
                         <p>Não tem <span className="link-text"><Link to="/Cadastro">Cadastro?</Link></span></p>

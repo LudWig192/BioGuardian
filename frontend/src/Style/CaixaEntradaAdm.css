@@ -1,0 +1,56 @@
+.inbox-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.inbox-container h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center; /* Centraliza o título */
+}
+
+.inbox-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.inbox-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s;
+}
+
+.inbox-container li:hover {
+    background-color: #f0f8ff; /* Leve mudança de cor ao passar o mouse */
+}
+
+.inbox-container .user {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+}
+
+.inbox-container .name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50; /* Cor do texto mais escura */
+}
+
+.inbox-container .message {
+    font-size: 0.95em;
+    color: #555; /* Cor do texto para a mensagem */
+}
+
+.inbox-container .time {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-left: 10px; /* Espaçamento entre a mensagem e o horário */
+    white-space: nowrap; /* Mantém o horário em uma linha */
+}

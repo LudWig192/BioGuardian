@@ -5,11 +5,12 @@
     justify-content: space-between;
     padding: 100px;
     background-color: #f0f8ff; 
-    background-image: url('../Imagens/Fundo.png'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     margin-top: -10px; 
+        background-image: url('../Imagens/Fundo.png'); /* Caminho da sua imagem de fundo */
+
 }
 
 .miniBanner-overlay {

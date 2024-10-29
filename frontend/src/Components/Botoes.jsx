@@ -6,25 +6,11 @@ import "../Style/Botao.css";
 import * as XLSX from 'xlsx';
 
 const ButtonGroup = ({ onDateRangeChange, onStatusFilterChange, onPlanFilterChange, data }) => {
-    const [startDate, setStartDate] = useState(new Date('2024-08-15'));
-    const [endDate, setEndDate] = useState(new Date('2024-08-23'));
+    
     const [statusFilter, setStatusFilter] = useState('');
     const [planFilter, setPlanFilter] = useState('');
 
-    const handleDateChange = () => {
-        const newStartDate = new Date(startDate);
-        const newEndDate = new Date(endDate);
-
-        if (startDate.toISOString().split('T')[0] === '2024-08-15') {
-            setStartDate(new Date('2024-08-23'));
-            setEndDate(new Date('2024-08-31'));
-        } else {
-            setStartDate(new Date('2024-08-15'));
-            setEndDate(new Date('2024-08-23')); 
-        }
-        onDateRangeChange(startDate, endDate);
-    };
-
+    
     const handleStatusChange = () => {
         let newStatusFilter;
         if (statusFilter === '') {
@@ -47,7 +33,7 @@ const ButtonGroup = ({ onDateRangeChange, onStatusFilterChange, onPlanFilterChan
         } else if (planFilter === 'Básico') {
             newPlanFilter = 'Premium';
         } else if (planFilter === 'Premium') {
-            newPlanFilter = '';
+            newPlanFilter = 'Padrão';
         } else {
             newPlanFilter = '';
         }
@@ -80,9 +66,6 @@ const ButtonGroup = ({ onDateRangeChange, onStatusFilterChange, onPlanFilterChan
     return (
         <div className="button-group">
             <div className="left-buttons">
-                <button className="border-left" onClick={handleDateChange}>
-                    {startDate.toISOString().split('T')[0]} - {endDate.toISOString().split('T')[0]}
-                </button>
                 <button className="border-left" onClick={handleStatusChange}>
                     {statusFilter === '' ? 'Status' : `Status: ${statusFilter}`}
                 </button>

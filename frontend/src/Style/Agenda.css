@@ -1,5 +1,5 @@
 .table-container {
-    overflow-x: auto;
+    overflow-x: auto; /* Permite rolagem horizontal */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -19,31 +19,33 @@
 }
 
 .add-button:hover {
-    background-color: #81b9f0;
+    background-color: #54a3f0;
 }
 
-.add-button .icon {
-    margin-right: 8px;
-}
-
-/* Estilo básico para a tabela */
-table {
+.custom-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: auto; /* Ajuste dinâmico das larguras das colunas */
 }
 
-th,
-td {
-    padding: 8px;
+.custom-table th,
+.custom-table td {
+    padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    word-break: break-word; /* Evita a sobreposição, quebrando palavras longas */
+    white-space: normal; /* Permite a quebra automática de linha */
 }
 
-th {
+.custom-table th {
     background-color: #f4f4f4;
+    min-width: 120px; /* Largura mínima para evitar compressão extrema */
 }
 
-/* Estilo para as ações, como ícones */
+.custom-table td {
+    min-width: 120px; /* Largura mínima para cada célula */
+}
+
 .actions {
     text-align: center;
 }
@@ -52,6 +54,7 @@ th {
     cursor: pointer;
     margin: 0 5px;
     transition: color 0.3s ease;
+    color: #54a3f0;
 }
 
 .edit-icon {
@@ -62,49 +65,66 @@ th {
     color: #f44336 !important;
 }
 
-/* Estilos específicos para telas menores */
-@media (max-width: 600px) {
-    table {
+/* Melhorando a responsividade */
+@media (max-width: 768px) {
+    .custom-table {
         display: block;
         width: 100%;
-        overflow-x: auto;
-        border: 1px solid #ddd;
+        border: none;
     }
 
-    thead {
+    .custom-table thead {
         display: none;
     }
 
-    tbody,
-    tr {
+    .custom-table tbody,
+    .custom-table tr {
         display: block;
         width: 100%;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
     }
 
-    td {
-        display: block;
-        width: 100%;
-        text-align: left;
-        position: relative;
+    .custom-table td {
+        display: flex;
+        justify-content: space-between; /* Isso garante que o rótulo fique à esquerda e o conteúdo à direita */
+        align-items: center;
         padding: 10px;
         box-sizing: border-box;
-        border-bottom: 1px solid #ddd;
-        white-space: nowrap;
+        position: relative;
+        border-bottom: none;
+        word-break: break-word; /* Quebra o texto longo em linhas menores */
+        white-space: normal; /* Garante que as palavras quebrem corretamente */
+        min-height: 50px; /* Garante uma altura mínima */
     }
 
-    td::before {
+    .custom-table td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 45%;
-        padding-left: 10px;
         font-weight: bold;
-        text-align: left;
-        background: #f4f4f4;
-        border-bottom: 1px solid #ddd;
+        flex: 1;
+        margin-right: 10px; /* Espaço entre o rótulo e o conteúdo */
+        text-align: left; /* Alinha o rótulo à esquerda */
+    }
+
+    .custom-table td span {
+        flex: 2;
+        text-align: right; /* Garante que o conteúdo fique à direita */
     }
 
     .actions {
         text-align: right;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-table td {
+        flex-direction: row; /* Garante que as informações fiquem em uma linha horizontal */
+        align-items: center;
+    }
+
+    .custom-table td::before {
+        margin-bottom: 5px; /* Espaço entre o rótulo e o valor */
     }
 }

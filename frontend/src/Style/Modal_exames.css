@@ -1,4 +1,4 @@
-/* .modal-overlay {
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,8 +11,8 @@
     z-index: 1000;
 }
 
-Estilo para o conteúdo do modal */
-/* .modal-content {
+/* Estilo para o conteúdo do modal */
+.modal-content {
     background: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -22,50 +22,50 @@ Estilo para o conteúdo do modal */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #000000;
     box-sizing: border-box;
-    /* z-index: 1001;
+    z-index: 1001;
     /* Adiciona um pouco de padding ao redor do conteúdo */
-    /* padding: 20px; */
+    padding: 20px;
     /* Adiciona um máximo de altura e rolagem se necessário */
-    /* max-height: 80vh; */
-    /* overflow-y: auto; */
-/* } */ 
+    max-height: 80vh;
+    overflow-y: auto;
+}
 
 /* Estilo para o título do modal */
-/* .modal-content h2 {
+.modal-content h2 {
     margin: 0 0 20px;
     color: #81b9f0;
     font-size: 1.75rem;
     font-weight: 600;
-} */
+}
 
 /* Estilo para labels */
-/* label {
+label {
     display: block;
     margin-bottom: 12px;
     font-weight: 500;
 }
 
 /* Estilo para inputs */
-/* input {
+input {
     width: calc(100% - 22px);
     /* Ajusta a largura para o padding */
-    /* padding: 12px;
+    padding: 12px;
     margin-top: 5px;
     border: 1px solid #6d6d6d46;
     border-radius: 5px;
     font-size: 1rem;
-    color: #000000; */
-    /* box-sizing: border-box;
-} */ 
+    color: #000000;
+    box-sizing: border-box;
+}
 
 /* Estilo para os botões do modal */
-/* .modal-buttons {
+.modal-buttons {
     margin-top: 20px;
     text-align: right;
 }
 
 /* Estilo geral para os botões */
-/* button {
+button {
     background-color: #009b17;
     color: white;
     border: none;
@@ -76,14 +76,14 @@ Estilo para o conteúdo do modal */
     font-size: 1rem;
     font-weight: 500;
     transition: background-color 0.3s, opacity 0.3s;
-} */ 
+}
 
 /* Estilo específico para o botão de cancelamento */
-/* button[type="button"] {
+button[type="button"] {
     background-color: #c60000;
 }
 
-Efeito de hover e foco para os botões
+/* Efeito de hover e foco para os botões */
 button:hover {
     opacity: 0.9;
 }
@@ -93,12 +93,12 @@ button:focus {
 }
 
 /* CSS para adicionar o efeito de desfoque ao fundo */
-/* .blur-background {
+.blur-background {
     position: relative;
     overflow: hidden;
-} */ 
+}
 
-/* .blur-background::before {
+.blur-background::before {
     content: '';
     position: fixed !important;
     top: 0;
@@ -109,4 +109,4 @@ button:focus {
     filter: blur(5px);
     z-index: 999;
     pointer-events: none;
-} */
+}

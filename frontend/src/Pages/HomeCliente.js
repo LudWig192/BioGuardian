@@ -9,10 +9,12 @@ import Marcar from "../Components/MarcarConsultaCliente"
 import Cirugia from "../Components/CirugiaCliente"
 import Tabela from "../Components/TabelaCliente";
 import "../Style/HomeClientePage.css";
+import NavbarCCC from '../Components/Navegacao-CCC'
 
 const HomeCliente = () => {
   return (
     <>
+      <NavbarCCC />
       <Banner />
       <Dicas />     
        <Cirugia />

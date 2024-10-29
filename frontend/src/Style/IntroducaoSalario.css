@@ -1,0 +1,60 @@
+.introduction-container {
+    margin: 20px 0;
+    /* Espaçamento superior e inferior */
+    padding: 20px;
+    /* Padding interno para uma aparência mais agradável */
+    background-color: #ffffff;
+    /* Fundo branco para um visual limpo */
+    border-radius: 12px;
+    /* Bordas arredondadas para um visual mais suave */
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    /* Sombra leve para profundidade */
+    font-family: 'Arial', sans-serif;
+    /* Fonte padrão */
+    /* border: 1px solid #e0e0e0; */
+    /* Borda leve para um acabamento mais profissional */
+}
+
+.introduction-title {
+    color: #54d4f0;
+    /* Azul escuro para o título, transmitindo confiança */
+    margin-bottom: 15px;
+    /* Espaçamento abaixo do título */
+    font-size: 2em;
+    /* Tamanho da fonte do título aumentado */
+    font-weight: bold;
+    /* Título em negrito */
+    text-align: center;
+    /* Centralizar o título */
+}
+
+.introduction-text,
+.introduction-note {
+    color: #4a4a4a;
+    /* Texto em cinza escuro para legibilidade */
+    line-height: 1.6;
+    /* Espaçamento entre linhas */
+    margin-bottom: 15px;
+    /* Margem inferior entre parágrafos */
+    font-size: 1.1em;
+    /* Tamanho da fonte do texto aumentado para melhor legibilidade */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .introduction-container {
+        padding: 15px;
+        /* Padding reduzido para telas menores */
+    }
+
+    .introduction-title {
+        font-size: 1.6em;
+        /* Tamanho da fonte do título reduzido */
+    }
+
+    .introduction-text,
+    .introduction-note {
+        font-size: 0.95em;
+        /* Tamanho da fonte do texto reduzido */
+    }
+}
