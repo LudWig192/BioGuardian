@@ -3,41 +3,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centraliza os elementos */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
-    width: 100%;
-    max-width: 600px;
-    /* Aumentei a largura máxima do calendário */
-    transition: box-shadow 0.3s ease;
-    /* Transição suave para o efeito de sombra */
+    width: 90%;
+    max-width: 800px;
+    background: #ffffff;
 }
 
-.date-header:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* Sombra mais intensa ao passar o mouse */
-}
-
+/* Título */
 .date-header h3 {
-    margin-bottom: 15px;
-    /* Distância entre o título e os botões */
     color: #333;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-align: center;
-    /* Centraliza o texto */
+    margin-bottom: 15px;
 }
 
 /* Botões dos dias */
 .day-buttons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: center; /* Centraliza os botões */
+    align-items: center;
     width: 100%;
+    flex-wrap: wrap; /* Permite que os botões quebrem para a linha de baixo */
+    overflow: hidden; /* Remove a barra de rolagem */
 }
 
 /* Estilo padrão para os dias */
@@ -47,194 +38,58 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 10px; /* Diminui o padding para ajuste */
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 10px;
-    width: 60px;
-    height: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+    width: 60px; /* Largura ajustada */
+    height: 60px; /* Altura ajustada */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     color: #000;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #6bd2ff, #52b4e2);
+    font-weight: 700;
+    background: linear-gradient(135deg, #54a3f0, #54a3f0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Efeito ao passar o mouse sobre os dias */
+/* Efeito ao passar o mouse */
 .day:hover {
-    background: linear-gradient(135deg, #52b4e2, #3a94c7);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #54a3f0, #54a3f0);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilo do dia selecionado */
 .selected-day {
-    background: linear-gradient(135deg, #4caf50, #43a047);
+    background: linear-gradient(135deg, #54a3f0, #54a3f0);
     color: white;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(-5px) scale(1.05);
-    border: 2px solid #388e3c;
-    /* Borda para destacar o dia selecionado */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
 }
 
 /* Efeito ao passar o mouse sobre o dia selecionado */
 .selected-day:hover {
-    background: linear-gradient(135deg, #388e3c, #2e7d32);
-    transform: translateY(-5px) scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Animações de clique */
 .day:active,
 .selected-day:active {
-    transform: translateY(0);
+    transform: scale(0.95);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para dias ocultos */
+.hidden {
+    display: none;
 }
 
 /* Melhorias responsivas */
 @media (max-width: 600px) {
-    .date-header h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-        /* Ajustado para melhor espaçamento */
-    }
-
     .day,
     .selected-day {
-        width: 30px;
-        height: 30px;
-        font-size: 20px;
+        width: 50px; /* Largura reduzida para caber na tela */
+        height: 50px;
+        font-size: 0.9rem; /* Tamanho da fonte reduzido */
     }
-}
-
-/* Estilo para o Modal */
-.custom-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    /* Largura do modal */
-    padding: 20px;
-    /* Espaçamento interno */
-    border-radius: 10px;
-    /* Bordas arredondadas */
-    background: #ffffff;
-    /* Cor de fundo do modal */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra */
-    display: flex;
-    /* Flexbox para alinhamento */
-    flex-direction: column;
-    /* Direção da coluna */
-}
-
-.custom-modal h2 {
-    margin-bottom: 20px;
-    /* Espaçamento inferior */
-    font-size: 24px;
-    /* Tamanho da fonte */
-    color: #333;
-    /* Cor do texto */
-}
-
-.custom-modal label {
-    margin-bottom: 10px;
-    /* Espaçamento inferior */
-    font-size: 16px;
-    /* Tamanho da fonte */
-}
-
-.custom-modal input,
-.custom-modal textarea,
-.custom-modal select {
-    width: 100%;
-    /* Largura total */
-    padding: 10px;
-    /* Preenchimento interno */
-    margin-bottom: 15px;
-    /* Espaçamento inferior */
-    border: 1px solid #ccc;
-    /* Borda */
-    border-radius: 5px;
-    /* Bordas arredondadas */
-    font-size: 16px;
-    /* Tamanho da fonte */
-}
-
-.custom-modal button {
-    padding: 10px;
-    /* Preenchimento interno */
-    border: none;
-    /* Sem borda */
-    border-radius: 5px;
-    /* Bordas arredondadas */
-    background-color: #007bff;
-    /* Cor de fundo */
-    color: white;
-    /* Cor do texto */
-    font-size: 16px;
-    /* Tamanho da fonte */
-    cursor: pointer;
-    /* Cursor de ponteiro */
-    transition: background-color 0.3s;
-    /* Transição suave */
-}
-
-.custom-modal button:hover {
-    background-color: #0056b3;
-    /* Cor ao passar o mouse */
-}
-
-.custom-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    /* Cor de fundo do overlay */
-}
-/* Estilo para os cartões de consulta */
-.appointment-card {
-    margin-left: 100px;
-    background-color: #f9f9f9; /* Cor de fundo do cartão */
-    border: 1px solid #e0e0e0; /* Borda do cartão */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px; /* Preenchimento interno reduzido */
-    margin-bottom: 10px; /* Espaçamento inferior entre os cartões */
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.2s; /* Transição suave ao passar o mouse */
-    max-width: 500px; /* Largura máxima do cartão */
-    font-size: 18px; /* Tamanho da fonte reduzido */
-}
-
-/* Estilo para o título do cartão */
-.appointment-card h4 {
-    margin-left: 100px;
-    margin: 0 0 5px; /* Margens do título ajustadas */
-    font-size: 16px; /* Tamanho da fonte do título reduzido */
-    color: #333; /* Cor do texto */
-}
-
-/* Estilo para os textos do cartão */
-.appointment-card p {
-    margin: 3px 0; /* Margens para os parágrafos ajustadas */
-    font-size: 12px; /* Tamanho da fonte dos parágrafos reduzido */
-    color: #666; /* Cor do texto */
-}
-
-/* Estilo para o texto pequeno */
-.appointment-card small {
-    display: block; /* Bloco para ocupar toda a largura */
-    margin-top: 5px; /* Margem superior reduzida */
-    font-size: 10px; /* Tamanho da fonte do texto pequeno reduzido */
-    color: #999; /* Cor do texto pequeno */
-}
-
-/* Estilo para o grupo de botões */
-.button-group {
-    display: flex; /* Flexbox para os botões */
-    justify-content: space-between; /* Espaçamento entre os botões */
-    margin-top: 10px; /* Margem superior para o grupo de botões */
-}
-
-.button-group button {
-    font-size: 12px; /* Tamanho da fonte dos botões reduzido */
-    padding: 5px 8px; /* Preenchimento interno reduzido para os botões */
 }

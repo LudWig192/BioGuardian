@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.comparativo-beneficios {
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    /* Fundo limpo e claro */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    /* Sombra mais pronunciada */
+    font-family: 'Roboto', sans-serif;
+    /* Fonte moderna */
+    border: 1px solid #d1d1d1;
+    /* Borda leve e sutil */
+}
+
+.comparativo-beneficios h2 {
+    font-size: 28px;
+    /* Tamanho aumentado para maior impacto */
+    margin-bottom: 30px;
+    text-align: center;
+    color: #5472f0;
+    /* Azul escuro para um tom mais profissional */
+    font-weight: 700;
+    /* Peso da fonte mais forte */
+}
+
+.beneficios-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    /* Espaço acima da tabela */
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #e2e2e2;
+    /* Borda leve */
+}
+
+th {
+    background-color: #f0f4f8;
+    /* Fundo neutro e suave */
+    color: #5472f0;
+    /* Texto escuro para contraste */
+    font-weight: 600;
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+td {
+    background-color: #ffffff;
+    /* Branco para linhas */
+    color: #34495e;
+    /* Cor um pouco mais escura para melhor legibilidade */
+}
+
+td:hover {
+    background-color: #f8f9fa;
+    /* Leve mudança ao passar o mouse */
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    /* Remove o padding */
+    list-style: none;
+    /* Remove os pontos da lista */
+}
+
+.beneficio-item {
+    color: #34495e;
+    /* Cor neutra e profissional */
+    margin: 5px 0;
+    position: relative;
+    padding-left: 1.5em;
+    /* Espaço para o ícone */
+    font-size: 16px;
+    /* Tamanho da fonte confortável */
+}
+
+.beneficio-item:before {
+    content: '✔';
+    /* Ícone de check */
+    position: absolute;
+    left: 0;
+    color: #5472f0;
+    /* Azul para ícones */
+    font-size: 18px;
+    /* Tamanho do ícone */
+}
+
+@media (max-width: 768px) {
+    .beneficios-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        display: block;
+        border: none;
+        padding: 10px;
+        position: relative;
+    }
+
+    th {
+        background-color: transparent;
+        /* Cabeçalho transparente em dispositivos menores */
+    }
+
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: #34495e;
+        /* Cor do texto do rótulo */
+    }
+}
+
+@media (max-width: 480px) {
+    .comparativo-beneficios {
+        padding: 20px;
+    }
+
+    .comparativo-beneficios h2 {
+        font-size: 24px;
+        /* Tamanho do título menor */
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}

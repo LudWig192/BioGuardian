@@ -29,6 +29,13 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     const handleCloseModal = () => {
         setModalData(null);
         setModalType('');
+        setFormData({
+            agendamento: '',
+            paciente: '',
+            status: '',
+            procedimentos: '',
+            tipoPlano: ''
+        });
     };
 
     const handleChange = (e) => {
@@ -46,7 +53,7 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 <FaPlus /> Novo agendamento
             </button>
 
-            <table>
+            <table className="custom-table">
                 <thead>
                     <tr>
                         <th>Agendamento</th>
@@ -103,5 +110,5 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
         </div>
     );
 };
-
 export default ResponsiveTable;
+

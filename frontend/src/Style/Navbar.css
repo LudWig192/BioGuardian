@@ -1,13 +1,18 @@
 /* Estilizando a navbar */
 .navbar {
-  background-color: #2c3e50; /* Azul escuro */
+  background-color: #54a2f038;
+  /* Fundo claro e profissional */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px 40px;
+  /* Aumentar padding para mais espaço vertical */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Sombra leve e sutil */
   z-index: 100;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
+  /* Fonte moderna e limpa */
 }
 
 /* Organizando os itens à esquerda (logo + links) */
@@ -18,20 +23,18 @@
 
 /* Logo */
 .navbar-logo img {
-  height: 55px;
-  margin-right: 30px; /* Espaçamento entre logo e links */
-  transition: transform 0.3s ease;
-}
-
-.navbar-logo img:hover {
-  transform: scale(1.1);
+  height: 60px;
+  /* Aumentar altura da logo */
+  margin-right: 25px;
+  /* Espaçamento entre logo e links */
 }
 
 /* Estilizando os links da navbar */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  /* Espaçamento consistente entre os links */
 }
 
 .navbar-links li {
@@ -42,54 +45,54 @@
 .nav-link {
   display: flex;
   align-items: center;
-  color: #ffffff; /* Cor da fonte branca */
+  color: #333;
+  /* Cor escura e profissional */
   text-decoration: none;
   font-size: 18px;
+  /* Aumentar tamanho da fonte para melhor legibilidade */
   font-weight: 500;
-  padding: 10px 20px;
+  /* Peso da fonte ajustado */
+  padding: 12px 15px;
+  /* Aumentar padding para mais conforto */
+  border-radius: 4px;
+  /* Bordas suaves */
   transition: background-color 0.3s ease, transform 0.2s ease;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
+  /* Transições suaves */
 }
 
 .nav-link:hover {
-  background-color: #34495e; /* Azul mais escuro no hover */
-  transform: scale(1.05);
+  background-color: rgba(51, 51, 51, 0.1);
+  /* Efeito de hover sutil */
+  transform: scale(1.02);
+  /* Pequeno efeito de elevação */
 }
 
 /* Espaçamento entre ícone e texto */
 .nav-link .icon {
-  margin-right: 10px;
-  font-size: 24px;
+  margin-right: 8px;
+  /* Espaçamento entre ícone e texto */
+  font-size: 22px;
+  /* Aumentar tamanho dos ícones */
+  color: #00d5ff;
+  /* Cor dos ícones */
 }
 
-/* Efeito especial ao passar o mouse */
-.nav-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(52, 152, 219, 0.4), rgba(41, 128, 185, 0.4)); /* Gradiente azul claro */
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease;
-  z-index: -1;
-}
-
-.nav-link:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Estilizando o avatar do usuário à direita */
+/* Estilizando a seção de informações do usuário */
 .navbar-right {
   display: flex;
   align-items: center;
 }
 
+.user-info {
+  margin-right: 15px;
+  /* Espaçamento entre texto e avatar */
+  color: #333;
+  /* Cor do texto */
+  font-size: 18px;
+  /* Aumentar tamanho da fonte */
+}
+
+/* Estilizando o avatar do usuário */
 .user-avatar {
   display: flex;
   align-items: center;
@@ -97,34 +100,42 @@
 
 .user-avatar img.avatar {
   width: 50px;
+  /* Aumentar tamanho do avatar */
   height: 50px;
-  border-radius: 50%; /* Faz o avatar ficar circular */
-  border: 2px solid #ffffff; /* Borda branca */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
+  /* Circular */
+  border: 2px solid #005f73;
+  /* Borda em azul */
+  transition: transform 0.2s ease;
+  /* Transição sutil */
 }
 
 .user-avatar img.avatar:hover {
-  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Sombra brilhante */
+  transform: scale(1.05);
+  /* Efeito de zoom discreto */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      padding: 10px;
+    flex-direction: column;
+    padding: 15px;
   }
 
   .navbar-left {
-      flex-direction: column;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Alinhamento à esquerda em dispositivos móveis */
   }
 
   .navbar-links {
-      flex-direction: column;
-      gap: 15px;
+    flex-direction: column;
+    gap: 10px;
+    /* Espaçamento em dispositivos móveis */
   }
 
   .navbar-right {
-      margin-top: 15px;
+    margin-top: 10px;
+    /* Margem superior para separar do conteúdo acima */
   }
 }

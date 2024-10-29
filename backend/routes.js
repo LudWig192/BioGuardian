@@ -2,165 +2,174 @@ const express = require('express');
 const connection = require('./db');
 const router = express.Router();
 
-
-// Rota para listar todos os registros
-router.get('/cadastro', (req, res) => {
-  connection.query('SELECT * FROM cadastro', (err, results) => {
+router.get('/cadastros', (req, res) => {
+  connection.query('SELECT * FROM cadastros', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
-      res.status(500).json({ error: 'Erro ao buscar os registros' });
-      return;
+      return res.status(500).json({ error: 'Erro ao buscar os registros' });
     }
     res.json(results);
   });
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('/cadastro/:idCadastro', (req, res) => {
+router.get('/cadastros/:idCadastro', (req, res) => {
   const { idCadastro } = req.params;
-  connection.query('SELECT * FROM cadastro WHERE idCadastro = ?', [idCadastro], (err, results) => {
+  connection.query('SELECT * FROM cadastros WHERE idCadastro = ?', [idCadastro], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
-      res.status(500).json({ error: 'Erro ao buscar o registro' });
-      return;
+      return res.status(500).json({ error: 'Erro ao buscar o registro' });
     }
     if (results.length === 0) {
-      res.status(404).json({ error: 'Registro não encontrado' });
-      return;
+      return res.status(404).json({ error: 'Registro não encontrado' });
     }
     res.json(results[0]);
   });
 });
 
 // Rota para criar um novo registro
-router.post('/cadastro', (req, res) => {
-  const { nome, email, senha } = req.body;
-  connection.query('INSERT INTO cadastro (nome, email, senha) VALUES (?, ?, ?)',
-    [nome, email, senha], (err, result) => {
-      if (err) {
-        console.error('Erro ao criar o registro:', err);
-        res.status(500).json({ error: 'Erro ao criar o registro' });
-        return;
-      }
-      res.status(201).json({ message: 'Registro criado com sucesso', idCadastro: result.insertId });
-    });
+router.post('/cadastros', (req, res) => {
+  const { nome, email, senha, role } = req.body;
+
+  // Verifique se o email já existe
+  connection.query('SELECT * FROM cadastros WHERE email = ?', [email], (err, results) => {
+    if (err) {
+      console.error('Erro ao verificar o email:', err);
+      return res.status(500).json({ error: 'Erro ao verificar o email' });
+    }
+
+    if (results.length > 0) {
+      return res.status(409).json({ message: 'Email já está cadastrado' });
+    }
+
+    // Se o email não existir, insira o novo registro
+    connection.query('INSERT INTO cadastros (nome, email, senha, role) VALUES (?, ?, ?, ?)',
+      [nome, email, senha, role], (err, result) => {
+        if (err) {
+          console.error('Erro ao criar o registro:', err);
+          return res.status(500).json({ error: 'Erro ao criar o registro' });
+        }
+        res.status(201).json({ message: 'Registro criado com sucesso', id: result.insertId });
+      });
+  });
 });
 
+
 // Rota para atualizar um registro existente pelo ID
-router.put('/cadastro/:idCadastro', (req, res) => {
+router.delete('/cadastros/:idCadastro', (req, res) => {
   const { idCadastro } = req.params;
-  const { nome, email, senha } = req.body;
-  connection.query('UPDATE cadastro SET nome = ?, email = ?, senha = ? WHERE idCadastro = ?',
-    [nome, email, senha, idCadastro], (err, result) => {
-      if (err) {
-        console.error('Erro ao atualizar o registro:', err);
-        res.status(500).json({ error: 'Erro ao atualizar o registro' });
-        return;
-      }
-      res.json({ message: 'Registro atualizado com sucesso' });
-    });
+  connection.query('DELETE FROM cadastros WHERE idCadastro = ?', [idCadastro], (err, result) => {
+    if (err) {
+      console.error('Erro ao excluir o registro:', err);
+      return res.status(500).json({ error: 'Erro ao excluir o registro' });
+    }
+    res.json({ message: 'Registro excluído com sucesso' });
+  });
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('/cadastro/:idCadastro', (req, res) => {
+router.delete('/cadastros/:idCadastro', (req, res) => {
   const { idCadastro } = req.params;
   connection.query('DELETE FROM cadastro WHERE idCadastro = ?', [idCadastro], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
-      res.status(500).json({ error: 'Erro ao excluir o registro' });
-      return;
+      return res.status(500).json({ error: 'Erro ao excluir o registro' });
     }
     res.json({ message: 'Registro excluído com sucesso' });
   });
 });
 
 ////////////////////////////////////////Login/////////////////////////////////////////////////
+// Rota de login
+router.post('/login', (req, res) => {
+  const { email, senha } = req.body;
 
-// Rota para listar todos os registros
+  // Consulta para verificar se o usuário existe
+  connection.query('SELECT * FROM cadastros WHERE email = ? AND senha = ?', [email, senha], (err, results) => {
+    if (err) {
+      console.error('Erro ao consultar o banco de dados:', err);
+      return res.status(500).json({ error: 'Erro no servidor' });
+    }
+
+    // Verifica se o usuário foi encontrado
+    if (results.length > 0) {
+      const user = results[0];
+      res.json({
+        message: 'Login bem-sucedido!',
+        role: user.role,
+      });
+    } else {
+      return res.status(401).json({ error: 'Email ou senha incorretos!' });
+    }
+  });
+});
+
+// Rota para listar todos os registros de login
 router.get('/Login', (req, res) => {
   connection.query('SELECT * FROM Login', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
-      res.status(500).json({ error: 'Erro ao buscar os registros' });
-      return;
+      return res.status(500).json({ error: 'Erro ao buscar os registros' });
     }
     res.json(results);
   });
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('/login/:idLogin', (req, res) => {
+router.get('/Login/:idLogin', (req, res) => {
   const { idLogin } = req.params;
-  connection.query('SELECT * FROM cadastro WHERE idLogin = ?', [idLogin], (err, results) => {
+  connection.query('SELECT * FROM Login WHERE idLogin = ?', [idLogin], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
-      res.status(500).json({ error: 'Erro ao buscar o registro' });
-      return;
+      return res.status(500).json({ error: 'Erro ao buscar o registro' });
     }
     if (results.length === 0) {
-      res.status(404).json({ error: 'Registro não encontrado' });
-      return;
+      return res.status(404).json({ error: 'Registro não encontrado' });
     }
     res.json(results[0]);
   });
 });
 
-// Rota para logar no sistema
-router.post('/login', (req, res) => {
+// Rota para criar um novo registro de login
+router.post('/Login', (req, res) => {
   const { email, senha } = req.body;
-  connection.query('select * from cadastro where email = ? and senha = ?',
-    [email, senha], (err, result) => {
-      if (err) {
-        console.error('Erro ao criar o registro:', err);
-        res.status(500).json({ error: 'Erro ao criar o registro' });
-        return;
-      }
-      res.json(result);
-      // res.status(201).json({ message: 'Registro criado com sucesso', idLogin: result.insertId });
-    });
+
+  connection.query('INSERT INTO Login (email, senha) VALUES (?, ?)', [email, senha], (err, result) => {
+    if (err) {
+      console.error('Erro ao criar o registro:', err);
+      return res.status(500).json({ error: 'Erro ao criar o registro' });
+    }
+    res.status(201).json({ message: 'Registro criado com sucesso', idLogin: result.insertId });
+  });
 });
 
-// Rota para criar um novo registro
-// router.post('/Login', (req, res) => {
-//   const { email, senha } = req.body;
-//   connection.query('INSERT INTO Login ( email, senha) VALUES (?, ?)',
-//     [email, senha], (err, result) => {
-//       if (err) {
-//         console.error('Erro ao criar o registro:', err);
-//         res.status(500).json({ error: 'Erro ao criar o registro' });
-//         return;
-//       }
-//       res.status(201).json({ message: 'Registro criado com sucesso', idLogin: result.insertId });
-//     });
-// });
-
-// Rota para atualizar um registro existente pelo ID
-router.put('/login/:idLogin', (req, res) => {
+// Rota para atualizar um registro de login existente pelo ID
+router.put('/Login/:idLogin', (req, res) => {
   const { idLogin } = req.params;
   const { email, senha } = req.body;
-  connection.query('UPDATE cadastro SET email = ?, senha = ? WHERE idLogin = ?',
-    [email, senha, idLogin], (err, result) => {
-      if (err) {
-        console.error('Erro ao atualizar o registro:', err);
-        res.status(500).json({ error: 'Erro ao atualizar o registro' });
-        return;
-      }
-      res.json({ message: 'Registro atualizado com sucesso' });
-    });
+
+  connection.query('UPDATE Login SET email = ?, senha = ? WHERE idLogin = ?', [email, senha, idLogin], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar o registro:', err);
+      return res.status(500).json({ error: 'Erro ao atualizar o registro' });
+    }
+    res.json({ message: 'Registro atualizado com sucesso' });
+  });
 });
 
-// Rota para excluir um registro pelo ID
-router.delete('/login/:idLogin', (req, res) => {
+// Rota para excluir um registro de login pelo ID
+router.delete('/Login/:idLogin', (req, res) => {
   const { idLogin } = req.params;
-  connection.query('DELETE FROM cadastro WHERE idLogin = ?', [idLogin], (err, result) => {
+
+  connection.query('DELETE FROM Login WHERE idLogin = ?', [idLogin], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
-      res.status(500).json({ error: 'Erro ao excluir o registro' });
-      return;
+      return res.status(500).json({ error: 'Erro ao excluir o registro' });
     }
     res.json({ message: 'Registro excluído com sucesso' });
   });
 });
+
 
 
 

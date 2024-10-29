@@ -1,0 +1,90 @@
+.user-profiles-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha */
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 40px;
+}
+
+.user-profile-card {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #e3e6f0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    width: calc(25% - 20px); /* 4 cartões por linha em telas maiores */
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.user-profile-image {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.user-profile-info {
+    flex-grow: 1;
+}
+
+.user-profile-name {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.user-profile-email {
+    margin: 5px 0;
+    font-size: 0.875em;
+    color: #6c757d;
+}
+
+.user-profile-role {
+    font-weight: 500;
+    font-size: 0.875em;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Cores de papel */
+.user-profile-role--admin {
+    color: #fd7e14;
+}
+
+.user-profile-role--support-lead {
+    color: #007bff;
+}
+
+.user-profile-role--designer {
+    color: #28a745;
+}
+
+.user-profile-role--developer {
+    color: #6f42c1;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+    .user-profile-card {
+        width: calc(33.33% - 20px); /* 3 cartões por linha */
+    }
+}
+
+@media (max-width: 800px) {
+    .user-profile-card {
+        width: calc(50% - 20px); /* 2 cartões por linha */
+    }
+}
+
+@media (max-width: 500px) {
+    .user-profile-card {
+        width: 100%; /* 1 cartão por linha */
+    }
+}

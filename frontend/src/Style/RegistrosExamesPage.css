@@ -1,0 +1,68 @@
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os painéis se reorganicem em telas menores */
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.left-panel {
+    flex: 2;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        flex-direction: column; /* Os painéis passam a ficar um embaixo do outro */
+    }
+
+    .left-panel {
+        margin-right: 0;
+        margin-bottom: 20px; /* Espaçamento entre os painéis */
+        width: 100%;
+    }
+
+    .right-panel {
+        width: 100%;
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .left-panel, .right-panel {
+        padding: 15px; /* Ajusta o espaçamento interno em telas menores */
+        box-shadow: none; /* Remove a sombra para um visual mais limpo em dispositivos móveis */
+    }
+
+    .dashboard-container {
+        padding: 10px; /* Reduz o padding geral para economizar espaço em telas pequenas */
+    }
+}
+
+/* Ajuste para telas muito pequenas (ex.: smartphones menores) */
+@media (max-width: 480px) {
+    .left-panel, .right-panel {
+        padding: 10px;
+        border-radius: 5px; /* Suaviza os cantos em telas muito pequenas */
+    }
+
+    .dashboard-container {
+        padding: 5px; /* Reduz ainda mais o padding para melhor ajuste */
+    }
+}

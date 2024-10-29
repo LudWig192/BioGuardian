@@ -4,6 +4,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
+import AccessibilityIcon from '@mui/icons-material/Accessibility';
 
 // Estilização CSS
 import "../Style/Navbar.css";
@@ -45,9 +46,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-right">
+                <div className="user-info">
+                    <span className="user-name">Usuário</span>
+                </div>
                 <div className="user-avatar">
                     <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")} // Insira a imagem do usuário aqui
+                        src={require("../Imagens/Calvo-removebg-preview.png")}
                         alt="User Avatar"
                         className="avatar"
                     />

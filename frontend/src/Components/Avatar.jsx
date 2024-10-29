@@ -7,7 +7,6 @@ import { TbMessageCircleFilled } from "react-icons/tb";
 import { TfiAgenda } from "react-icons/tfi";
 import { QRCodeSVG } from 'qrcode.react';
 
-// Componente Switch
 const Switch = () => {
     const [isChecked, setIsChecked] = useState(false);
 
@@ -16,7 +15,7 @@ const Switch = () => {
     };
 
     return (
-        <label className="switch">
+        <label className="avatar-switch">
             <input
                 type="checkbox"
                 checked={isChecked}
@@ -25,7 +24,6 @@ const Switch = () => {
     );
 };
 
-// Componente Principal
 const SwitchWithIconsAndAvatar = ({ notificationCount, latestPatient }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [showQRCode, setShowQRCode] = useState(false);
@@ -42,19 +40,18 @@ const SwitchWithIconsAndAvatar = ({ notificationCount, latestPatient }) => {
     const qrData = "https://youtu.be/LVMHYzVS9Y4?si=PrgPJHOBqDDJ_hnn";
 
     return (
-        <div className="container">
+        <div className="avatar-container">
             <Switch />
-            <div className="right-items">
-                <div className="icons">
-                   
-                    <TbMessageCircleFilled className="icon" onClick={toggleQRCode} />
-                    <div className="notification-icon" onClick={toggleDropdown}>
-                        <FaBell className="icon" />
+            <div className="avatar-right-items">
+                <div className="avatar-icons">
+                    <TbMessageCircleFilled className="avatar-icon" onClick={toggleQRCode} />
+                    <div className="avatar-notification-icon" onClick={toggleDropdown}>
+                        <FaBell className="avatar-icon" />
                         {notificationCount > 0 && (
-                            <span className="notification-count">{notificationCount}</span>
+                            <span className="avatar-notification-count">{notificationCount}</span>
                         )}
                         {isDropdownOpen && latestPatient && (
-                            <div className="dropdown">
+                            <div className="avatar-dropdown">
                                 <p><strong>Paciente adicionado:</strong></p>
                                 <p><strong>Nome:</strong> {latestPatient.paciente}</p>
                                 <p><strong>Tipo de Exame:</strong> {latestPatient.procedimentos}</p>
@@ -63,11 +60,11 @@ const SwitchWithIconsAndAvatar = ({ notificationCount, latestPatient }) => {
                         )}
                     </div>
                 </div>
-                <div className="avatar">
+                <div className="avatar-avatar">
                     <img src={Medico} alt="Avatar" />
                 </div>
                 {showQRCode && (
-                    <div className="qr-code">
+                    <div className="avatar-qr-code">
                         <QRCodeSVG value={qrData} />
                     </div>
                 )}

@@ -1,70 +1,82 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-// Paginas do Cliente sem cadastro
-import Home from "./Pages/Home";
-import Serviço from "./Pages/Serviço"
-import Beneficio from "./Pages/Beneficio";
-import Cadastro from "./Pages/Cadastro";
-import LoginForm from "./Pages/Login";
+//Pagina de Cliente sem cadastro
+import Home from "./Pages/Home.js";
+import Cadastro from "./Pages/Cadastro.js";
+import LoginForm from "./Pages/Login.js";
+import Beneficio from "./Pages/Beneficio.js";
 
-// Paginas do cliente com cadastro
-import HomeCliente from "./Pages/HomeCliente";
-import Exames from "./Pages/Exames";
-import Contato from "./Pages/Contato";
-import Unidades from "./Pages/Unidades";
+//Paginas de Cliente com cadastro
+import HomeCliente from "./Pages/HomeCliente.js";
+import Exames from "./Pages/Exames.js"
+import Contato from "./Pages/Contato.js";
+import Unidades from './Pages/Unidades.js'
+import Agendamento from './Pages/Agendamento.js';
 
-//paginas do medico
-import HomeMedico from "./Pages/HomeMedico";
-import Agenda from "./Pages/Agenda";
+//Paginas do Medico
+import HomeMedico from '../src/Pages/HomeMedico.js';
+import Resultados from './Pages/Resultados.js'
+import Agenda from "./Pages/Agenda.js";
 
-//paginas do adm
-import Funcionarios from "./Pages/Funcionarios";
-import TabelaUsuarios from "./Pages/ListaUsuarios";
+//Paginas do Adm
+import Salario from './Pages/Salario.js';
+import Funcionarios from "./Pages/Funcionarios.js";
+import Registros from './Pages/RegistroExames.js';
+import Administrador from './Pages/Administrador.js';
+import Clientes from "./Pages/ListaUsuarios.js";
+import PerfilAdm from './Pages/PerfilAdm.js';
 
-//Navegaçôes
-import NavegacaoCSC from './Components/Navegacao'
-import NavegacaoCCC from './Components/Navegacao-CCC'
-import NavegacaoAdm from './Components/Navegacao-adm'
-import NavegacaoMedico from './Components/Navegacao-medico'
+//Navegações
+import NavegacaoCCC from './Components/Navegacao-CCC.jsx';
+import NavegacaoCSC from './Components/Navegacao.jsx';
+import NavegacaoMedico from './Components/Navegacao-medico.jsx';
+import NavegacaoAdm from './Components/Navegacao-adm.jsx';
+
+
+
+
 
 const Rotas = () => {
-    return (
-        <Routes>
-            
-            {/* Cliente sem cadastro */}
-            <Route path="/" element={<Home />} />
-            <Route path="/Serviço" element={<Serviço />} />
-            <Route path="/Beneficio" element={<Beneficio />} />
-            <Route path="/Login" element={<LoginForm />} />
-            <Route path="/Cadastro" element={<Cadastro />} />
-            
+        return (
+                <>
+                        <Routes>
+                                {/* Cliente sem cadastro */}
+                                <Route path="/" exact element={<Home />} />
+                                <Route path="/Beneficio" element={<Beneficio />} />
+                                <Route path="/Login" element={<LoginForm />} />
+                                <Route path="/Cadastro" exact element={<Cadastro />} />
+                                <Route path="/Exames" element={<Exames />} />
+                                
+                                {/* Cliente com cadastro */}
+                                <Route path="/HomeCliente" element={<HomeCliente />} />
+                                <Route path="/Exames" element={<Exames />} />
+                                <Route path="/Contato" element={<Contato />} />
+                                <Route path="/Unidades" element={<Unidades />} />
+                                <Route path="/Agendamento" element={<Agendamento />} />
+                                <Route path="/Resultados" element={<Resultados />} />
 
-            {/* Cliente com cadastro */}
-            <Route path="/HomeCliente" element={<HomeCliente />} />
-            <Route path="/Exames" element={<Exames />} />
-            <Route path="/Contato" element={<Contato />} />
-            <Route path="/Unidades" element={<Unidades />} />
-            
-            
-            {/* Rotas do Medico */}
-            <Route path="/HomeMedico" element={<HomeMedico />} />
-            <Route path="/Agenda" element={<Agenda />} />
+                                {/* Rotas do medico */}
+                                <Route path="/HomeMedico" element={<HomeMedico />} />
+                                <Route path="/Agenda" element={<Agenda />} />
+                               
+                                {/* Rotas do Adm*/}
+                                <Route path="/Salario" element={<Salario />} />
+                                <Route path="/Funcionarios" element={<Funcionarios />} />
+                                <Route path="/Clientes" element={<Clientes/>} />
+                                <Route path="/PerfilAdm" element={<PerfilAdm />} />
+                                <Route path="/Registros" element={<Registros />} />
+                                <Route path="/Administrador" element={<Administrador />} />
 
-
-            {/* Rotas do Admin */}
-            <Route path="/Funcionarios" element={<Funcionarios />} />
-            <Route path="/TabelaUsuarios" element={<TabelaUsuarios />} />
-
-
-            {/* Navegaçôes */}
-            <Route path="/CSC" element={<NavegacaoCSC />} />
-            <Route path="/CCC" element={<NavegacaoCCC/>} />
-            <Route path="/NavAdm" element={<NavegacaoAdm />} />
-            <Route path="/NavMedico" element={<NavegacaoMedico />} />
-            
-        </Routes>
-    );
+                                {/* Navegações*/}
+                                <Route path="/NaveCSC" element={<NavegacaoCSC />} />
+                                <Route path="/NaveCCC" element={<NavegacaoCCC />} />
+                                <Route path="/NaveMedico" element={<NavegacaoMedico />} />
+                                <Route path="/NaveAdm" element={<NavegacaoAdm />} />
+                
+                        </Routes>
+                </>
+        );
 };
 
 export default Rotas;

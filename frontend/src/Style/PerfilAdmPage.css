@@ -1,0 +1,45 @@
+.perfil-adm-hospitalar {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Arial, sans-serif';
+    padding: 20px;
+    gap: 20px; /* Espaçamento entre os dois painéis */
+}
+
+.perfil-adm-hospitalar__left-panel {
+    width: 25%;
+    min-width: 250px; /* Largura mínima para o painel esquerdo */
+    padding-right: 20px;
+}
+
+.perfil-adm-hospitalar__right-panel {
+    width: 75%;
+    min-width: 300px;
+}
+
+.perfil-adm-hospitalar__charts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que os gráficos quebrem linha se necessário */
+    gap: 20px;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .perfil-adm-hospitalar {
+        flex-direction: column; /* Coloca os painéis em coluna em telas pequenas */
+        padding: 10px;
+    }
+
+    .perfil-adm-hospitalar__left-panel, .perfil-adm-hospitalar__right-panel {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .perfil-adm-hospitalar__charts {
+        flex-direction: column;
+        align-items: center;
+    }
+}

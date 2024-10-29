@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../Style/Cadastro.css';
 import { Link } from 'react-router-dom';
+
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
-    senha: ''
+    senha: '',
+    role: 'comum'
   });
 
   const handleChange = (e) => {
@@ -22,15 +24,19 @@ const CadastroForm = () => {
     try {
       const response = await axios.post('http://localhost:3001/cadastros', formData);
       alert(response.data.message);
-      // Limpar o formulário após o envio bem-sucedido
       setFormData({
         nome: '',
         email: '',
-        senha: ''
+        senha: '',
+        role: 'comum'
       });
     } catch (error) {
       console.error('Erro ao criar cadastro:', error);
-      alert('Erro ao criar cadastro. Verifique o console para mais detalhes.');
+      if (error.response && error.response.status === 409) {
+        alert(error.response.data.message);
+      } else {
+        alert('Erro ao criar cadastro. Verifique o console para mais detalhes.');
+      }
     }
   };
 
@@ -68,13 +74,13 @@ const CadastroForm = () => {
               required
             />
             <label className="form-check-label">
-              <input type="checkbox" required/>
+              <input type="checkbox" required />
               Concordo com os termos de uso
             </label>
             <button type="submit" className="btn-primary">Salvar</button>
           </form>
           <div className="red-lgn">
-          <p>Não tem <span className="link-text"><Link to="/Login">Login?</Link></span></p>
+            <p>Não tem <span className="link-text"><Link to="/Login">Login?</Link></span></p>
           </div>
         </div>
       </div>

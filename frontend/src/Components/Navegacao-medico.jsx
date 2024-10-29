@@ -16,22 +16,13 @@ const Navbaradm = () => {
                     </Link>
                 </div>
                 <ul className="navbar-links">
-
-
+                    
                     <li>
                         <Link to="/HomeMedico" className="nav-link">
                             <HomeIcon className="icon" /> <span>Home</span>
                         </Link>
                     </li>
                     
-                    {/* Pagina Faltando*/}
-                    <li>
-                        <Link to="/" className="nav-link">
-                            <InfoIcon className="icon" /> <span>Resultado de Exames</span>
-                        </Link>
-                    </li>
-
-
                     <li>
                         <Link to="/Agenda" className="nav-link">
                             <LocalMallIcon className="icon" /> <span>Agenda</span>

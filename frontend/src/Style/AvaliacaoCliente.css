@@ -1,0 +1,131 @@
+/* Estilos para o componente de Avaliações */
+.avaliacoes {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #007bff;
+}
+
+.patient-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.patient-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+.doctor-name {
+    font-size: 1em;
+    color: #666;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.rating {
+    color: #f39c12;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.star-icon {
+    color: #f39c12;
+    margin-right: 2px;
+}
+
+.comment {
+    font-size: 1em;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .avaliacoes {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .patient-name {
+        font-size: 1.1em;
+    }
+
+    .doctor-name {
+        font-size: 0.9em;
+    }
+
+    .rating {
+        font-size: 1.3em;
+    }
+
+    .comment {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .patient-name {
+        font-size: 1em;
+    }
+
+    .doctor-name {
+        font-size: 0.8em;
+    }
+}

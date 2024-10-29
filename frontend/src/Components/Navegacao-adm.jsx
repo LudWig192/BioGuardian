@@ -17,9 +17,8 @@ const Navbaradm = () => {
                 </div>
                 <ul className="navbar-links">
                     
-                    {/* Pagina Faltando*/}
                     <li>
-                        <Link to="/" className="nav-link">
+                        <Link to="/PerfilAdm" className="nav-link">
                             <HomeIcon className="icon" /> <span>Home</span>
                         </Link>
                     </li>
@@ -31,22 +30,20 @@ const Navbaradm = () => {
                         </Link>
                     </li>
                     
-                     {/* Pagina Faltando*/}
                     <li>
-                        <Link to="/" className="nav-link">
+                        <Link to="/Clientes" className="nav-link">
                             <LocalMallIcon className="icon" /> <span>Clientes</span>
                         </Link>
                     </li>
                     
-                    {/* Pagina Faltando*/}
                     <li>
-                        <Link to="/" className="nav-link">
+                        <Link to="/Salario" className="nav-link">
                             <ContactMailIcon className="icon" /> <span>Salario do medico</span>
                         </Link>
                     </li>
                     
                     <li>
-                        <Link to="/TabelaUsuarios" className="nav-link">
+                        <Link to="/Registros" className="nav-link">
                             <LocalMallIcon className="icon" /> <span>Registros</span>
                         </Link>
                     </li>

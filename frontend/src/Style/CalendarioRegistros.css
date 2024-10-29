@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.custom-calendar-wrapper {
+    max-width: 100%; 
+    width: 90%; 
+    margin: 20px auto;
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    flex: 1;
+}
+
+.custom-calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-bottom: 15px;
+}
+
+.custom-calendar-title {
+    font-size: 1.8em; 
+    margin: 0 15px;
+    font-weight: bold;
+    color: #0056b3; 
+}
+
+.nav-button {
+    cursor: pointer;
+    padding: 8px 12px; 
+    border: none;
+    border-radius: 6px;
+    background-color: #54a3f0; 
+    color: white;
+    font-size: 1em; /* Diminuído o tamanho do texto */
+    transition: background-color 0.3s, transform 0.2s; /* Efeito suave */
+}
+
+.nav-button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Pequena elevação ao passar o mouse */
+}
+
+.custom-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px; /* Diminuído o gap */
+}
+
+.custom-day {
+    text-align: center;
+    padding: 14px; /* Aumentado para mais conforto */
+    border-radius: 10px; /* Bordas mais suaves */
+    background-color: #ecf0f1; /* Fundo leve */
+    cursor: pointer;
+    font-size: 1.1em; /* Aumentado o tamanho do texto */
+    min-height: 60px; /* Aumentado para altura adequada */
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid #bdc3c7; /* Borda cinza suave */
+}
+
+.custom-day:hover {
+    background-color: #d1d1d1; /* Fundo cinza claro ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no tamanho */
+}
+
+.weekday-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    color: #34495e; /* Azul escuro */
+    margin-bottom: 10px; /* Ajuste de margem */
+}
+
+.weekday {
+    text-align: center;
+    padding: 8px; /* Conforto visual */
+    background-color: #3498db; /* Azul profissional */
+    color: white;
+    border-radius: 5px;
+    font-size: 1em; /* Tamanho do texto */
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    .custom-calendar-wrapper {
+        width: 95%; /* Permite que o calendário utilize a largura máxima do dispositivo */
+        padding: 10px; /* Reduz o padding para melhorar a apresentação em telas pequenas */
+    }
+
+    .custom-calendar-grid {
+        grid-template-columns: repeat(7, 1fr); /* Mantém 7 colunas */
+    }
+
+    .custom-day {
+        font-size: 1em; /* Tamanho do texto menor */
+        padding: 10px; /* Menor padding para economizar espaço */
+    }
+
+    .nav-button {
+        font-size: 1em; /* Tamanho do botão menor */
+        padding: 8px 10px; /* Ajuste do padding do botão */
+    }
+}

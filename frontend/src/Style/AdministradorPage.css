@@ -1,0 +1,16 @@
+body {
+    background-color: white !important;
+}
+
+.dashboard {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Responsividade para a classe dashboard */
+@media (max-width: 600px) {
+    .dashboard {
+        flex-direction: column;
+    }
+}

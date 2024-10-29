@@ -22,9 +22,8 @@ const NavbarCCC = () => {
                         </Link>
                     </li>
                     
-                    {/* Pagina Faltando*/}
                     <li>
-                        <Link to="/" className="nav-link">
+                        <Link to="/Agendamento" className="nav-link">
                             <InfoIcon className="icon" /> <span>Agendamento</span>
                         </Link>
                     </li>
@@ -35,9 +34,8 @@ const NavbarCCC = () => {
                         </Link>
                     </li>
                     
-                    {/* Pagina Faltando*/}
                     <li>
-                        <Link to="/" className="nav-link">
+                        <Link to="/Resultados" className="nav-link">
                             <LocalMallIcon className="icon" /> <span>Resultado</span>
                         </Link>
                     </li>

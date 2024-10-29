@@ -1,0 +1,132 @@
+.painel-medicos {
+    padding: 40px;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.painel-medicos h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #54d4f0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.linha-medico {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.linha-medico:hover {
+    background-color: #e9f5ff;
+}
+
+.linha-medico:last-child {
+    border-bottom: none;
+}
+
+.informacao-medico {
+    display: flex;
+    align-items: center;
+    flex: 2;
+}
+
+.icone-medico {
+    width: 80px;
+    /* largura fixa */
+    height: 80px;
+    /* altura fixa */
+    margin-right: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* Esconde qualquer parte que extrapole */
+    border: 2px solid #54a3f0;
+    /* Borda azul */
+}
+
+.icone-medico img {
+    width: 100%;
+    /* Largura total do contêiner */
+    height: 100%;
+    /* Altura total do contêiner */
+    object-fit: cover;
+    /* Cobre o contêiner mantendo a proporção */
+}
+
+.dados-medico {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-medico {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+.especialidade {
+    color: #555;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.salario {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 4px;
+}
+
+.data {
+    font-size: 14px;
+    color: #666;
+}
+
+.status {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    min-width: 100px;
+    background-color: #d4edda;
+    /* Fundo claro para status */
+    color: #155724;
+    /* Cor para o texto do status */
+    font-weight: bold;
+}
+
+.status.aprovado {
+    background-color: #d4edda;
+    /* Verde claro para status aprovado */
+    color: #155724;
+    /* Texto escuro */
+}
+
+.status.reprovado {
+    background-color: #f8d7da;
+    /* Vermelho claro para status reprovado */
+    color: #721c24;
+    /* Texto escuro */
+}
+
+@media (max-width: 768px) {
+    .linha-medico {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .status {
+        margin-top: 10px;
+        width: 100%;
+        text-align: left;
+    }
+}

@@ -1,0 +1,119 @@
+.exam-list {
+    background-color: #f5f8fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid #d1d1d1;
+}
+
+.exam-list-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.8em;
+    text-align: center;
+    color: #6854f0 ;
+    border-bottom: 2px solid #d1d1d1;
+    padding-bottom: 10px;
+}
+
+.exam-item-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.exam-item-container:hover {
+    background-color: #f0f4f8;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.exam-item-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    /* border: 2px solid #007bff; */
+}
+
+.exam-details {
+    flex-grow: 1;
+}
+
+.exam-title {
+    font-size: 1.4em;
+    color: #333;
+    margin: 0 0 5px;
+}
+
+.exam-info {
+    font-size: 1em;
+    color: #6c757d;
+}
+
+.exam-status {
+    font-weight: 600;
+    font-size: 1em;
+    text-align: right;
+    min-width: 150px;
+}
+
+.status-aguardando {
+    color: #ffc107;
+}
+
+.status-disponivel {
+    color: #28a745;
+}
+
+.status-cancelado {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.nav-link {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.resultado-exame-link {
+    color: #28a745;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.resultado-exame-link:hover {
+    color: #218838;
+}
+
+@media (max-width: 768px) {
+    .exam-item-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .exam-status {
+        text-align: left;
+        min-width: auto;
+        margin-top: 10px;
+    }
+
+    .exam-info {
+        text-align: left;
+    }
+
+    .exam-title {
+        font-size: 1.2em;
+    }
+}
