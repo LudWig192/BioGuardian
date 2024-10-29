@@ -7,7 +7,6 @@
     align-items: center; /* Centraliza horizontalmente */
 }
 
-
 .cardsExameCliente-header {
     font-size: 32px; /* Tamanho da fonte do cabeçalho */
     font-weight: bold; /* Negrito */
@@ -100,24 +99,20 @@
     margin-bottom: 10px; /* Espaço abaixo do perfil */
 }
 
-.person-examecliente-ball {
-    width: 30px; /* Largura da bola */
-    height: 30px; /* Altura da bola */
-    border-radius: 50%; /* Arredonda a bola */
-    overflow: hidden; /* Esconde o excesso de conteúdo */
-    margin-right: 10px; /* Espaço entre a bola e o nome */
-    border: 2px solid #ddd; /* Borda da bola, opcional */
-}
-
-.person-photo {
-    width: 100%; /* Imagem ocupa toda a largura da bola */
-    height: 100%; /* Imagem ocupa toda a altura da bola */
-    object-fit: cover; /* Mantém a proporção da imagem */
-}
-
-.person-examecliente-name {
-    font-size: 14px; /* Tamanho da fonte do nome */
-    color: #333; /* Cor do texto do nome */
+.avatarExameCliente {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: 40px; /* Ajuste o tamanho conforme necessário */
+    background-color: #54a3f0; /* Cor de fundo do avatar */
+    color: white; /* Cor do texto */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    border-radius: 50%; /* Faz o avatar ser circular */
+    font-weight: bold;
+    font-size: 18px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    line-height: 40px; /* Alinha verticalmente o texto no círculo */
+    margin-right: 10px; /* Adiciona espaço entre o avatar e o nome */
 }
 
 /* Media Queries para responsividade */

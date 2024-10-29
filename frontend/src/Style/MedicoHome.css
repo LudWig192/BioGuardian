@@ -1,75 +1,148 @@
-.medicoHome-team-section {
-  text-align: center;
-  padding: 150px;
-}
-
-.medicoHome-team-title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #6854f0;
-  font-weight: bold
-}
-
-.medicoHome-consultants-grid {
+.doctorHome-medico-home {
   display: flex;
-  justify-content: center; /* Centraliza os cards */
-  gap: 20px;
-  flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha */
-}
-
-.medicoHome-consultant-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 10px;
-  width: 250px; /* Largura padrão para telas grandes */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  flex: 1 1 200px; /* Flex para permitir que o card encolha até 200px */
-  max-width: 250px; /* Tamanho máximo do card */
-}
-
-.medicoHome-consultant-card:hover {
-  transform: scale(1.05);
-}
-
-.medicoHome-consultant-image {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-}
-
-.medicoHome-consultant-info {
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-top: 40px; /* Adjust this value as needed to position lower */
 }
 
-.medicoHome-consultant-name {
-  font-size: 18px;
-  margin: 10px 0 5px 0;
-  color: #333;
+.doctorHome-title {
+  font-size: 32px; /* Title size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 20px; /* Space between title and cards */
+  color: #6854f0; /* Title color */
 }
 
-.medicoHome-consultant-specialty {
-  color: #54a3f0;
-  font-size: 16px;
+.doctorHome-doctors-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between doctor cards */
+  flex-wrap: wrap; /* Allow wrapping of cards */
+  padding: 0 10px; /* Padding for small screens */
 }
 
-/* Media Queries para responsividade */
+.doctorHome-doctor-card {
+  position: relative;
+  width: 250px; /* Default width */
+  height: 320px; /* Default height */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Animation on hover */
+}
+
+.doctorHome-doctor-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.doctorHome-doctor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.doctorHome-doctor-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white; /* Background for doctor info */
+  color: black; /* Text color */
+  padding: 10px; /* Padding around text */
+  text-align: center; /* Center text */
+}
+
+.doctorHome-doctor-name {
+  font-size: 18px; /* Name size */
+  font-weight: bold; /* Bold name */
+}
+
+.doctorHome-doctor-role {
+  font-size: 14px; /* Role size */
+  color: black; /* Role color */
+}
+
+.doctorHome-doctor-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #54a3f0; /* Overlay color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Fade effect */
+}
+
+.doctorHome-doctor-card:hover .doctorHome-doctor-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.doctorHome-social-links {
+  display: flex;
+  flex-direction: column; /* Stack icons vertically */
+  align-items: center; /* Center-align icons */
+  gap: 10px; /* Space between icons */
+  color: #fff; /* Set icons color to white */
+}
+
+.doctorHome-social-icon-container {
+  display: flex;
+  align-items: center; /* Align icons and text vertically centered */
+  font-size: 24px; /* Size of the social icons */
+  color: #fff; /* Ensure icons are white */
+  margin-bottom: 10px; /* Space between each icon and the next */
+}
+
+.doctorHome-social-icon {
+  margin-right: 8px; /* Additional spacing between icon and name */
+}
+
+/* Added this class to ensure text and icons are aligned */
+.doctorHome-social-text {
+  display: flex;
+  align-items: center; /* Center the text vertically with the icon */
+}
+
+.doctorHome-doctor-name {
+  margin-top: 15px; /* Space above doctor name */
+  font-size: 18px; /* Size of doctor name */
+  font-weight: bold; /* Bold text */
+  color: black; /* Text color */
+  text-align: center; /* Center text */
+}
+
+
+a {
+  color: white;
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .medicoHome-team-section {
-    padding: 100px 20px; /* Reduzindo o padding em telas menores */
+  .doctorHome-doctor-card {
+    width: 180px; /* Smaller card width for medium screens */
+    height: 240px; /* Adjust height accordingly */
   }
-  .medicoHome-team-title {
-    font-size: 20px; /* Ajustando o tamanho da fonte */
+
+  .doctorHome-title {
+    font-size: 20px; /* Slightly smaller title on smaller screens */
+  }
+
+  .doctorHome-doctors-list {
+    gap: 15px; /* Reduce gap between cards */
+    padding: 0 5px; /* Less padding on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  .medicoHome-team-title {
-    font-size: 18px; /* Ajustando o tamanho da fonte para telas muito pequenas */
+  .doctorHome-doctor-card {
+    width: 150px; /* Even smaller card width for small screens */
+    height: 200px; /* Adjust height for small screens */
   }
-  .medicoHome-consultant-card {
-    width: 90%; /* Fazendo o card ocupar 90% da largura da tela em dispositivos pequenos */
-    max-width: none; /* Removendo o max-width para telas pequenas */
+
+  .doctorHome-title {
+    font-size: 18px; /* Smaller title for very small screens */
   }
 }

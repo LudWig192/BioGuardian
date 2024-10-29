@@ -7,7 +7,7 @@ import Plano from "../Components/PlanoBeneficio";
 import Unidade from "../Components/UnidadeBeneficio";
 import Cirugia from "../Components/CirugiaBeneficio";
 import Duvida from "../Components/DuvidaBeneficio";
-import "../Style/BeneficioPage.css"
+import "../Style/BeneficioPage.css";
 
 
 const Beneficio  = () => {
@@ -18,7 +18,7 @@ const Beneficio  = () => {
     <Exame />
     <Cirugia />
     <Plano />
-      <Unidade />
+    <Unidade />
     <Icons />
   <Duvida />
     </>

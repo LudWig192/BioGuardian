@@ -15,9 +15,9 @@ const InfoSection = () => {
         />
         <div className="banner-cliente-content-container">
           <div className="banner-cliente-content">
-            <div className="titulo-BannerCliente">Tratamento Ortopédico para Dor Aguda</div>
+            <div className="titulo-BannerCliente">Bem-vindo ao BioGuardian</div>
             <div className="subtitulo-BannerCliente">
-              Oferecemos cuidados médicos especializados para alívio rápido e eficaz da dor.
+              Agora, sua saúde e a de sua família estão monitoradas em tempo real, com suporte de inteligência artificial e acesso a uma equipe de saúde qualificada, prontos para atender você sempre que precisar.
             </div>
           </div>
         </div>
@@ -26,39 +26,39 @@ const InfoSection = () => {
       {/* Cards Section Positioned Below the Banner */}
       <div className="cards-bannercliente-container"> 
         <div className="row-bannercliente"> 
-          <div className="col-md-3-bannercliente justify-content-bannercliente"> 
+          <div className="col-md-3-bannercliente"> 
             <div className="info-card-bannercliente"> 
               <i className="bi bi-clock-history info-icon"></i>
-              <div className="titulo-card-BannerCliente">Serviço 24 Horas</div>
+              <div className="titulo-card-BannerCliente">Monitoramento 24/7</div>
               <div className="descricao-card-BannerCliente">
-                Oferecendo suporte inabalável a qualquer hora, nosso serviço 24 horas garante atendimento contínuo.
+                Acompanhe a saúde da sua família com alertas personalizados, identificando anomalias rapidamente para agir antes que problemas apareçam.
               </div>
             </div>
           </div>
-          <div className="col-md-3-bannercliente justify-content-bannercliente"> 
+          <div className="col-md-3-bannercliente"> 
             <div className="info-card-bannercliente"> 
               <i className="bi bi-person info-icon"></i>
-              <div className="titulo-card-BannerCliente">Médico Qualificado</div>
+              <div className="titulo-card-BannerCliente">Profissionais Dedicados</div>
               <div className="descricao-card-BannerCliente">
-                Um médico qualificado possui um conhecimento abrangente das ciências médicas.
+                Tenha acesso direto a profissionais qualificados para suporte em consultas e orientação médica contínua.
               </div>
             </div>
           </div>
-          <div className="col-md-3-bannercliente justify-content-center-bannercliente"> 
+          <div className="col-md-3-bannercliente"> 
             <div className="info-card-bannercliente"> 
               <i className="bi bi-heart-pulse info-icon"></i>
-              <div className="titulo-card-BannerCliente">Cuidado de Emergência</div>
+              <div className="titulo-card-BannerCliente">Pronto Atendimento</div>
               <div className="descricao-card-BannerCliente">
-                Sua intervenção oportuna desempenha um papel crucial na estabilização dos pacientes e na salvaguarda de vidas.
+                Para emergências, médicos de plantão são acionados diretamente para o seu local, garantindo o suporte que você precisa.
               </div>
             </div>
           </div>
-          <div className="col-md-3-bannercliente justify-content-bannercliente"> 
+          <div className="col-md-3-bannercliente"> 
             <div className="info-card-bannercliente"> 
               <i className="bi bi-hospital info-icon"></i>
-              <div className="titulo-card-BannerCliente">Sala de Operações</div>
+              <div className="titulo-card-BannerCliente">Tecnologia Avançada</div>
               <div className="descricao-card-BannerCliente">
-                Equipado com ferramentas e tecnologias especializadas para garantir a segurança.
+                Monitoramento e suporte com as melhores ferramentas e tecnologias, garantindo segurança e atendimento de ponta.
               </div>
             </div>
           </div>

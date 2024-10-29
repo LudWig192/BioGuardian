@@ -1,12 +1,9 @@
 import React from 'react';
 import { FaFlask, FaSyringe } from 'react-icons/fa';
-import Psicologia from '../Imagens/Psicologo.jpg'; // Verifique se o caminho da imagem está correto
-import '../Style/MarcarConsultaCliente.css'; // Verifique se o caminho do CSS está correto
+import Psicologia from '../Imagens/Psicologo.jpg';
+import '../Style/MarcarConsultaCliente.css';
 
 const ClinicalTrials = () => {
-  // Verifique se o componente está sendo renderizado
-  console.log('ClinicalTrials Component Rendered');
-
   return (
     <div className="MarcarConsulta-container">
       <div className="content-MarcarConsulta"> 

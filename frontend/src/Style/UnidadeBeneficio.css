@@ -1,6 +1,6 @@
 .unidadebeneficio-container {
   color: #6854f0;
-  padding: 50px;
+  padding: -32px;
   text-align: center;
   margin: 0 auto;
   border-radius: 8px;
@@ -15,7 +15,6 @@
 .unidadebeneficio-title {
   font-size: 32px;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .unidadebeneficio-description {
@@ -35,7 +34,7 @@
 }
 
 .unidadebeneficio-card {
-  background-color: #1c1c1c;
+  background-color: white;
   border-radius: 15px;
   overflow: hidden;
   width: 30%; /* Mantém a largura original */
@@ -48,6 +47,15 @@
 .unidadebeneficio-info {
   padding: 20px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinha o conteúdo no espaço disponível */
+}
+
+.unidadebeneficio-name {
+  font-size: 1.5em; /* Aumenta o tamanho da fonte */
+  color: #6854f0; /* Ajuste a cor conforme necessário */
+  font-weight: bold;
 }
 
 .unidadebeneficio-more {
@@ -56,8 +64,35 @@
 
 .unidadebeneficio-image {
   width: 100%;
-  height: auto;
+  height: 200px; /* Define uma altura fixa para as imagens */
+  object-fit: cover; /* Faz a imagem cobrir o espaço disponível */
   border-bottom: 3px solid #6854f0;
+}
+
+/* Estilização do botão */
+.unidadebeneficio-button {
+  background-color: #6854f0;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 20px; /* Espaço acima do botão */
+  align-self: center; /* Centraliza o botão no contêiner */
+}
+
+.unidadebeneficio-button:hover {
+  background-color: #5140c0;
+  transform: scale(1.05);
+}
+
+.unidadebeneficio-button:active {
+  background-color: #3e3090;
+  transform: scale(0.95);
 }
 
 /* Responsividade para telas menores */

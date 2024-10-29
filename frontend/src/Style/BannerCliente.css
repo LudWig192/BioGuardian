@@ -1,148 +1,152 @@
 /* Banner Section */
 .banner-cliente-section {
     position: relative;
-    height: 600px; /* Altura do banner ajustável */
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do contêiner */
+    overflow: hidden;
 }
 
-/* Estilo para a imagem do banner */
 .banner-cliente-img {
-    width: 100%; /* Faz a imagem ocupar toda a largura */
-    height: 100%; /* Faz a imagem ocupar toda a altura */
-    object-fit: cover; /* Cobre toda a área mantendo a proporção */
-    position: absolute; /* Posiciona a imagem para ficar atrás do conteúdo */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Mantém a imagem atrás do conteúdo */
+    z-index: -1;
 }
 
-/* Contêiner para o conteúdo do banner */
 .banner-cliente-content-container {
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
-    width: 100%; /* Ocupa toda a largura do banner */
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
     position: relative;
-    padding: 0 5vw; /* Ajuste conforme necessário para padding responsivo */
-    z-index: 2; /* Mantém o conteúdo sobre o banner */
+    padding: 0 5vw;
+    z-index: 2;
 }
 
-/* Texto do Banner */
 .banner-cliente-content {
     color: white;
-    text-align: left; /* Alinha o texto à esquerda */
-    max-width: 50%; /* Define a largura máxima do texto como 50% da largura do banner */
+        max-width: 50%;
 }
 
 .titulo-BannerCliente {
-    font-size: 3.5vw; /* Tamanho do título menor proporcional à largura da viewport */
-    margin-bottom: 1rem; /* Espaço abaixo do título */
+    font-size: 48px;
+    margin-bottom: 1rem;
 }
 
-/* Estilo para o subtítulo do Banner */
 .subtitulo-BannerCliente {
-    font-size: 2vw; /* Tamanho do subtítulo proporcional à largura da viewport */
-    color: #f8f9fa; /* Cor do texto, um tom de branco */
-    margin-top: 1rem; /* Espaço acima do subtítulo para alinhamento abaixo do título */
-    line-height: 1.4; /* Altura da linha para melhor legibilidade */
-    text-align: left; /* Alinha o subtítulo à esquerda */
+    font-size: 20px;
+    color: #f8f9fa;
+    margin-top: 1rem;
+    line-height: 1.4;
+    text-align: justify;
 }
 
-/* Cards Section Positioned Below the Banner */
+/* Cards Section */
 .cards-bannercliente-container {
     width: 90%;
-    margin: 20px auto; /* Centraliza os cards e adiciona margem acima e abaixo */
-    z-index: 2; /* Garante que os cards fiquem sobre o banner */
+    margin: 20px auto;
+    z-index: 2;
     display: flex;
-    justify-content: space-between; /* Espaçamento igual entre os cards */
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* Estilizando os cards */
 .row-bannercliente {
-    display: flex; /* Usa flexbox para alinhamento */
-    justify-content: center; /* Centraliza os cards na linha */
-    gap: 1rem; /* Espaço entre os cards */
-    flex-wrap: wrap; /* Permite quebrar linha em dispositivos menores */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .col-md-3-bannercliente {
-    flex: 1 1 22%; /* Todos os cards terão o mesmo tamanho */
-    max-width: 22%; /* Define a largura máxima como 22% para uniformizar */
-    min-width: 200px; /* Define uma largura mínima para os cards */
+    flex: 1 1 22%;
+    max-width: 22%;
+    min-width: 200px;
 }
 
-/* Estilo dos cards individuais */
 .info-card-bannercliente {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease; /* Efeito ao passar o mouse */
-    height: 100%; /* Garante que todos os cards tenham a mesma altura */
+    text-align: justify;
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Ícone dentro do card */
 .info-icon {
     font-size: 2.5rem;
-    color: #1cc7d0; /* Cor do ícone */
+    color: #54a3f0;
+    margin-bottom: 10px;
 }
 
-/* Título do card */
+/* Tamanho fixo para o título e descrição dos cards */
 .titulo-card-BannerCliente {
     margin-top: 10px;
     font-weight: 600;
-    color: #0d6efd; /* Azul do Bootstrap */
+    color: #54a3f0;
+    font-size: 1.25rem; /* Define um tamanho fixo */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: flex; /* Flex para centralizar verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
 }
 
-/* Descrição do card */
 .descricao-card-BannerCliente {
-    font-size: 1rem;
-    color: #6c757d; /* Cor do texto para descrição */
+    font-size: 1rem; /* Define um tamanho fixo */
+    color: black;
     margin-top: 0.5rem;
+    line-height: 1.4;
+    text-align: justify;
+    width: 100%;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .banner-cliente-section {
-        height: auto; /* Ajusta a altura do banner para auto em telas menores */
+        height: auto;
     }
 
     .banner-cliente-content-container {
-        padding: 0 2vw; /* Reduz o padding para telas menores */
+        padding: 0 2vw;
     }
 
     .cards-bannercliente-container {
-        width: 95%; /* Aumenta a largura dos cards em telas menores */
-        padding: 1rem; /* Adiciona padding para os cards */
+        width: 95%;
+        padding: 1rem;
     }
 
     .row-bannercliente {
-        flex-direction: column; /* Empilha os cards em telas menores */
-        align-items: center; /* Centraliza os cards na coluna */
+        flex-direction: column;
+        align-items: center;
     }
 
     .col-md-3-bannercliente {
-        max-width: 90%; /* Cada card ocupa 90% da largura em telas menores */
-        min-width: auto; /* Remove a largura mínima em telas menores */
+        max-width: 90%;
+        min-width: auto;
     }
 
     .titulo-BannerCliente {
-        font-size: 5vw; /* Ajuste o tamanho do título em dispositivos móveis */
+        font-size: 5vw;
     }
 
     .subtitulo-BannerCliente {
-        font-size: 4vw; /* Ajusta o tamanho do subtítulo em dispositivos móveis */
-        max-width: 100%; /* Ocupa toda a largura disponível em telas menores */
-        margin-top: 0.5rem; /* Ajuste menor para telas menores */
+        font-size: 4vw;
+        max-width: 100%;
+        margin-top: 0.5rem;
     }
 
     .info-icon {
-        font-size: 3.5rem; /* Aumenta o tamanho dos ícones em dispositivos móveis */
+        font-size: 3.5rem;
     }
 }

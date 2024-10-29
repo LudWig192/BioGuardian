@@ -1,83 +1,160 @@
-.doctor-serviços-container {
-    padding: 200px;
-    margin-top: 50px; /* Adiciona um espaço acima do componente */
-}
-
-/* Estilos para o título */
-.doctor-serviços-title {
-    font-size: 2rem;
+.medicoServiço-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da tela */
+  }
+  
+  .medicoServiço-header {
+    font-size: 32px;
+    font-weight: bold;
+    color: #6854f0;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o texto do cabeçalho */
+  }
+  
+  .medicoServiço-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centraliza os cartões no eixo horizontal */
+  }
+  
+  .profissional-card.medicoServiço {
+    width: 250px; /* Largura fixa para manter o layout */
+    max-width: 100%; /* Permite que o cartão se ajuste em telas menores */
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto dentro do cartão */
+  }
+  
+  .avatar-container-medicoServiço {
+    width: 160px; /* Tamanho do contêiner do avatar */
+    height: 160px; /* Mantém a mesma altura para um formato quadrado */
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente a imagem */
+    justify-content: center; /* Centraliza horizontalmente a imagem */
+    margin: 0 auto; /* Centraliza o contêiner do avatar */
+    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas */
+  }
+  
+  .avatar.medicoServiço {
+    width: 78%; /* A imagem ocupará 78% da largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 100%; /* Garante que a altura da imagem não ultrapasse o contêiner */
+    object-fit: cover; /* Mantém a proporção da imagem ao cobrir o contêiner */
+    border-radius: 8px; /* Bordas levemente arredondadas na imagem */
+    border: 2px solid #fff; /* Adiciona uma borda branca em volta da imagem */
+  }
+  
+  .info-medicoServiço {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza as informações */
+  }
+  
+  .medicoServiço-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .medicoServiço-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 5px;
+  }
+  
+  .medicoServiço-description {
+    font-size: 14px;
+    color: black;
     margin-bottom: 10px;
-    text-align: center;
-    color: #54d4f0;
-}
-
-/* Estilos para a descrição */
-.doctor-serviços-description {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #54d4f0;
-}
-
-/* Estilos para a grid de médicos */
-.doctor-serviços-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsivo */
-    gap: 20px; /* Espaço entre os cards */
-    justify-content: center; /* Centraliza os cards */
-    max-width: 800px; /* Largura máxima da grid */
-    margin: 0 auto; /* Centraliza a grid na página */
-}
-
-/* Estilos para cada card do médico */
-.doctor-serviços-card {
-    background-color: white; /* Fundo branco */
-    border: 1px solid #ddd; /* Borda leve */
-    overflow: hidden; /* Para evitar overflow */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s; /* Transição suave ao passar o mouse */
-}
-
-/* Efeito ao passar o mouse sobre o card */
-.doctor-serviços-card:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente o card */
-}
-
-/* Estilos para a imagem do médico */
-.doctor-serviços-image {
-    width: 100%; /* Largura total */
-    height: auto; /* Altura automática */
-}
-
-/* Estilos para as informações do médico */
-.doctor-serviços-info {
-    padding: 15px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    background-color: #5472f0; /* Cor de fundo azul */
-    color: white; /* Cor do texto */
-}
-
-/* Estilos para o nome e título do médico */
-.doctor-serviços-name {
-    font-size: 1.5rem; /* Tamanho da fonte */
-    margin: 10px 0; /* Margens acima e abaixo */
-}
-
-/* Media queries para responsividade */
-@media (max-width: 768px) {
-    .doctor-serviços-container {
-        padding: 100px; /* Reduz o padding em telas menores */
+    text-align: justify;
+  }
+  
+  .medicoServiço-contact {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .medicoServiço-media {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centraliza os ícones de redes sociais */
+    color: black;
+  }
+  
+  .medicoServiço-icon {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .medicoServiço-icon:hover {
+    color: black; /* Cor ao passar o mouse */
+  }
+  
+  /* Media Queries para responsividade */
+  @media (max-width: 768px) {
+    .medicoServiço-header {
+      font-size: 20px; /* Ajusta o tamanho da fonte do cabeçalho */
     }
-
-    .doctor-serviços-title {
-        font-size: 1.5rem; /* Reduz o tamanho da fonte em telas menores */
+  
+    .profissional-card.medicoServiço {
+      width: 90%; /* Aumenta a largura em telas menores */
+      max-width: 300px; /* Permite que os cartões sejam um pouco mais largos */
     }
-
-    .doctor-serviços-description {
-        font-size: 1rem; /* Reduz o tamanho da fonte em telas menores */
+  
+    .medicoServiço-name {
+      font-size: 16px; /* Ajusta o tamanho do nome */
     }
-
-    .doctor-serviços-name {
-        font-size: 1.2rem; /* Reduz o tamanho da fonte do nome do médico */
+  
+    .medicoServiço-title {
+      font-size: 14px; /* Ajusta o tamanho do título */
     }
-}
+  
+    .medicoServiço-description {
+      font-size: 12px; /* Ajusta o tamanho da descrição */
+    }
+  
+    .medicoServiço-contact {
+      font-size: 12px; /* Ajusta o tamanho do contato */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .medicoServiço-header {
+      font-size: 18px; /* Ajusta o tamanho da fonte do cabeçalho em telas menores */
+    }
+  
+    .profissional-card.medicoServiço {
+      width: 95%; /* Largura máxima em telas muito pequenas */
+    }
+  
+    .medicoServiço-name {
+      font-size: 14px; /* Ajusta o tamanho do nome */
+    }
+  
+    .medicoServiço-title {
+      font-size: 12px; /* Ajusta o tamanho do título */
+    }
+  
+    .medicoServiço-description {
+      font-size: 10px; /* Ajusta o tamanho da descrição */
+    }
+  
+    .medicoServiço-contact {
+      font-size: 10px; /* Ajusta o tamanho do contato */
+    }
+  }
+  
