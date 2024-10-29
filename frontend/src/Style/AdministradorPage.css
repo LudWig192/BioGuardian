@@ -8,7 +8,6 @@ body {
     padding: 20px;
 }
 
-/* Responsividade para a classe dashboard */
 @media (max-width: 600px) {
     .dashboard {
         flex-direction: column;

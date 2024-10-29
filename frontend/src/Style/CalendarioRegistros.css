@@ -38,73 +38,73 @@ body {
     border-radius: 6px;
     background-color: #54a3f0; 
     color: white;
-    font-size: 1em; /* Diminuído o tamanho do texto */
-    transition: background-color 0.3s, transform 0.2s; /* Efeito suave */
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .nav-button:hover {
-    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
-    transform: translateY(-2px); /* Pequena elevação ao passar o mouse */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .custom-calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 8px; /* Diminuído o gap */
+    gap: 8px;
 }
 
 .custom-day {
     text-align: center;
-    padding: 14px; /* Aumentado para mais conforto */
-    border-radius: 10px; /* Bordas mais suaves */
-    background-color: #ecf0f1; /* Fundo leve */
+    padding: 14px;
+    border-radius: 10px;
+    background-color: #ecf0f1; 
     cursor: pointer;
-    font-size: 1.1em; /* Aumentado o tamanho do texto */
-    min-height: 60px; /* Aumentado para altura adequada */
+    font-size: 1.1em; 
+    min-height: 60px;
     transition: background-color 0.3s, transform 0.2s;
-    border: 1px solid #bdc3c7; /* Borda cinza suave */
+    border: 1px solid #bdc3c7;
 }
 
 .custom-day:hover {
-    background-color: #d1d1d1; /* Fundo cinza claro ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento no tamanho */
+    background-color: #d1d1d1; 
+    transform: scale(1.05);
 }
 
 .weekday-header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     font-weight: bold;
-    color: #34495e; /* Azul escuro */
-    margin-bottom: 10px; /* Ajuste de margem */
+    color: #34495e;
+    margin-bottom: 10px;
 }
 
 .weekday {
     text-align: center;
-    padding: 8px; /* Conforto visual */
-    background-color: #3498db; /* Azul profissional */
+    padding: 8px; 
+    background-color: #3498db;
     color: white;
     border-radius: 5px;
-    font-size: 1em; /* Tamanho do texto */
+    font-size: 1em; 
 }
 
-/* Ajustes para responsividade */
+/* responsividade */
 @media (max-width: 768px) {
     .custom-calendar-wrapper {
-        width: 95%; /* Permite que o calendário utilize a largura máxima do dispositivo */
-        padding: 10px; /* Reduz o padding para melhorar a apresentação em telas pequenas */
+        width: 95%;
+        padding: 10px;
     }
 
     .custom-calendar-grid {
-        grid-template-columns: repeat(7, 1fr); /* Mantém 7 colunas */
+        grid-template-columns: repeat(7, 1fr)
     }
 
     .custom-day {
-        font-size: 1em; /* Tamanho do texto menor */
-        padding: 10px; /* Menor padding para economizar espaço */
+        font-size: 1em;
+        padding: 10px;
     }
 
     .nav-button {
-        font-size: 1em; /* Tamanho do botão menor */
-        padding: 8px 10px; /* Ajuste do padding do botão */
+        font-size: 1em;
+        padding: 8px 10px;
     }
 }

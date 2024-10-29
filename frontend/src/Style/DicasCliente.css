@@ -1,5 +1,5 @@
 .dicasclienteicons {
-    padding: 290px; /* Padding para telas maiores */
+    padding: 290px; 
     text-align: center;
     font-family: 'Arial', sans-serif;
 }
@@ -39,7 +39,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 300px; /* Mantém uma altura mínima para os cards */
+    min-height: 300px;
 }
 
 .icon-dicascliente {
@@ -66,43 +66,43 @@
     transform: translateY(-10px);
 }
 
-/* Media Queries para responsividade */
+/* Responsividade */
 @media (max-width: 1024px) {
     .dicasclienteicons {
-        padding: 150px 20px; /* Reduz o padding para telas menores */
+        padding: 150px 20px;
     }
 
     .dicasclientes-cards {
-        grid-template-columns: repeat(2, 1fr); /* Dois cards por linha em telas menores */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .dicasclienteicons {
-        padding: 100px 20px; /* Menos padding em telas pequenas */
+        padding: 100px 20px;
     }
 
     .dicasclientes-cards {
-        grid-template-columns: 1fr; /* Um card por linha em telas pequenas */
+        grid-template-columns: 1fr;
     }
 
     .dicasclienteicons-title {
-        font-size: 28px; /* Ajustar o tamanho da fonte para título */
+        font-size: 28px;
     }
 
     .dicasclienteicons-intro {
-        font-size: 14px; /* Ajustar o tamanho da fonte para introdução */
+        font-size: 14px;
     }
     
     .icon-dicascliente {
-        font-size: 36px; /* Reduzir o tamanho do ícone em telas menores */
+        font-size: 36px;
     }
     
     .title-dicascliente {
-        font-size: 16px; /* Ajustar o tamanho do título */
+        font-size: 16px;
     }
     
     .description-dicascliente {
-        font-size: 12px; /* Ajustar o tamanho da descrição */
+        font-size: 12px;
     }
 }

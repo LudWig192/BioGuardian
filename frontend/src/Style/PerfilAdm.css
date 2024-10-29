@@ -55,6 +55,8 @@
     /* Margens superior e inferior */
     font-size: 16px;
     /* Tamanho da fonte */
+    display: flex;
+    justify-content: center;
 }
 
 .bio {

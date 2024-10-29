@@ -5,27 +5,27 @@
 }
 
 .titulo-examebeneficio {
-  font-size: 32px; /* Tamanho do título */
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px; /* Espaço abaixo do título */
+  margin-bottom: 20px; 
   color: #6854f0;
 }
 
 .descricao-servicos-examebeneficio {
-  font-size: 16px; /* Tamanho do texto */
-  color: #666; /* Cor do texto */
-  margin-bottom: 30px; /* Espaço abaixo da descrição */
-  max-width: 600px; /* Limitar a largura do texto */
-  margin-left: auto; /* Centralizar horizontalmente */
-  margin-right: auto; /* Centralizar horizontalmente */
+  font-size: 16px; 
+  color: #666; 
+  margin-bottom: 30px; 
+  max-width: 600px; 
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .cards-container-examebeneficio {
   display: flex;
-  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
-  justify-content: center; /* Centralizar os cards na linha */
-  gap: 20px; /* Espaçamento entre os cards */
-  margin-bottom: 20px; /* Espaço entre as fileiras de cards */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px; 
+  margin-bottom: 20px;
 }
 
 .card-examebeneficio {
@@ -34,60 +34,60 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 100%; /* Ajustar a largura para 100% */
-  max-width: 500px; /* Largura máxima dos cards */
-  height: auto; /* Altura automática */
-  display: flex; /* Flex para alinhar a imagem e o texto lado a lado */
-  flex-direction: row; /* Manter alinhamento horizontal */
+  width: 100%; 
+  max-width: 500px; 
+  height: auto; 
+  display: flex; 
+  flex-direction: row; 
 }
 
 .imagem-examebeneficio {
-  width: 50%; /* Largura da imagem */
-  height: auto; /* Manter a proporção da imagem */
-  object-fit: cover; /* Ajustar a imagem */
+  width: 50%; 
+  height: auto; 
+  object-fit: cover; 
 }
 
 .texto-examebeneficio {
   padding: 15px;
   display: flex;
-  flex-direction: column; /* Alinhar título e descrição verticalmente */
-  justify-content: center; /* Centralizar o texto verticalmente */
-  align-items: center; /* Centralizar o texto horizontalmente */
-  text-align: center; /* Centralizar o texto */
-  flex-grow: 1; /* Permitir que o texto ocupe o espaço disponível */
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
 }
 
 .titulo-card-examebeneficio {
-  font-size: 24px; /* Aumentar o tamanho do título dentro do card */
+  font-size: 24px;
   font-weight: bold;
-  margin: 0 0 5px; /* Ajustar a margem do título */
-  color: #6854f0; /* Cor do título */
+  margin: 0 0 5px;
+  color: #6854f0;
 }
 
 .descricao-examebeneficio {
-  font-size: 14px; /* Aumentar o tamanho da descrição */
-  color: #666; /* Cor da descrição */
-  line-height: 1.4; /* Altura da linha para melhor legibilidade */
+  font-size: 14px;
+  color: #666; 
+  line-height: 1.4; 
 }
 
-/* Consultas de mídia para responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
   .cards-container-examebeneficio {
-    justify-content: space-between; /* Espaçamento adequado entre os cards em telas médias */
+    justify-content: space-between;
   }
   
   .card-examebeneficio {
-    width: 45%; /* Os cards ocuparão 45% da largura em telas médias */
+    width: 45%;
   }
 }
 
 @media (max-width: 480px) {
   .card-examebeneficio {
-      width: 100%; /* Os cards ocuparão 100% da largura em telas pequenas */
-      flex-direction: column; /* Alterar para coluna em telas pequenas */
+      width: 100%;
+      flex-direction: column;
   }
   
   .imagem-examebeneficio {
-      width: 100%; /* A imagem ocupará 100% da largura do card */
+      width: 100%;
   }
 }

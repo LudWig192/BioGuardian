@@ -106,7 +106,7 @@ const FuncionariosPage = () => {
         </div>
         <div className="user-info funcionario">
           <span className="user-name funcionario">Admin</span>
-          <span className="user-email funcionario">admin@example.com</span>
+          <span className="user-email funcionario">Adm@medley.com</span>
         </div>
       </div>
       <main className="funcionario">

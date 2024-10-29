@@ -1,47 +1,47 @@
 
 .BannerHome-section {
     display: flex;
-    flex-direction: row; /* Itens lado a lado em telas maiores */
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center; /* Alinhamento central */
-    position: relative; /* Para posicionar a imagem de fundo corretamente */
-    padding: 40px; /* Espaçamento interno */
-    border-radius: 8px; /* Bordas arredondadas */
-    color: #fff; /* Cor do texto */
-    height: 100vh; /* Ocupa 100% da altura da tela */
-    overflow: hidden; /* Evita que elementos sejam cortados */
+    align-items: center;
+    position: relative;
+    padding: 40px; 
+    border-radius: 8px;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .BannerHome-background {
-    position: absolute; /* Permite que a imagem fique como fundo */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantém a proporção da imagem */
-    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+    object-fit: cover;
+    z-index: -1;
 }
 
 .BannerHome-content {
-    max-width: 45%; /* Largura máxima do conteúdo */
-    flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
-    z-index: 1; /* Garante que o conteúdo fique acima da imagem */
+    max-width: 45%;
+    flex: 1;
+    z-index: 1;
 }
 
 .BannerHome-title {
     font-size: 48px;
     line-height: 1.2;
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    margin-bottom: 20px;
 }
 
 .BannerHome-description {
     font-size: 20px;
-    margin-bottom: 30px; /* Espaçamento abaixo da descrição */
-    text-align: justify; /* Alinhamento justificado */
+    margin-bottom: 30px;
+    text-align: justify;
 }
 
 .BannerHome-button {
-    background-color: #54a3f0; /* Cor azul para o botão */
+    background-color: #54a3f0;
     color: #fff;
     padding: 12px 24px;
     border: none;
@@ -50,39 +50,39 @@
     font-size: 16px;
 }
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) { /* Para tablets e telas menores */
+/* Responsividade */
+@media (max-width: 768px) { 
     .BannerHome-section {
-        flex-direction: column; /* Muda para coluna em telas menores */
-        padding: 20px; /* Reduz o espaçamento interno */
-        height: auto; /* Ajusta a altura para auto */
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
     }
 
     .BannerHome-content {
-        max-width: 100%; /* Altera a largura máxima */
-        text-align: center; /* Centraliza o texto */
+        max-width: 100%; 
+        text-align: center;
     }
 
     .BannerHome-title {
-        font-size: 36px; /* Reduz o tamanho da fonte */
+        font-size: 36px;
     }
 
     .BannerHome-description {
-        font-size: 14px; /* Reduz o tamanho da fonte */
+        font-size: 14px;
     }
 
     .BannerHome-button {
-        padding: 10px 20px; /* Ajusta o padding do botão */
-        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
 
-@media (max-width: 480px) { /* Para smartphones */
+@media (max-width: 480px) {
     .BannerHome-title {
-        font-size: 28px; /* Reduz ainda mais o tamanho da fonte */
+        font-size: 28px;
     }
 
     .BannerHome-description {
-        font-size: 12px; /* Reduz o tamanho da fonte */
+        font-size: 12px;
     }
 }

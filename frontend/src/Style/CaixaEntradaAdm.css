@@ -10,7 +10,7 @@
     font-size: 1.5em;
     color: #333;
     margin-bottom: 15px;
-    text-align: center; /* Centraliza o título */
+    text-align: center;
 }
 
 .inbox-container ul {
@@ -28,29 +28,29 @@
 }
 
 .inbox-container li:hover {
-    background-color: #f0f8ff; /* Leve mudança de cor ao passar o mouse */
+    background-color: #f0f8ff;
 }
 
 .inbox-container .user {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+    flex-grow: 1; 
 }
 
 .inbox-container .name {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #2c3e50; /* Cor do texto mais escura */
+    color: #2c3e50; 
 }
 
 .inbox-container .message {
     font-size: 0.95em;
-    color: #555; /* Cor do texto para a mensagem */
+    color: #555;
 }
 
 .inbox-container .time {
     font-size: 0.9em;
     color: #7f8c8d;
-    margin-left: 10px; /* Espaçamento entre a mensagem e o horário */
-    white-space: nowrap; /* Mantém o horário em uma linha */
+    margin-left: 10px; 
+    white-space: nowrap;
 }

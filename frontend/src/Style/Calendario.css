@@ -9,7 +9,6 @@
     font-family: 'Arial', sans-serif;
   }
   
-  /* Cabeçalho do calendário */
   .calendar-header {
     display: flex;
     justify-content: space-between;
@@ -17,7 +16,6 @@
     margin-bottom: 15px;
   }
   
-  /* Botões de navegação no calendário */
   .calendar-nav-button {
     background-color: #6200ea;
     color: white;
@@ -33,14 +31,12 @@
     background-color: #3700b3;
   }
   
-  /* Texto da data no centro */
   .calendar-date {
     font-size: 18px;
     font-weight: bold;
     color: #333;
   }
   
-  /* Corpo do calendário (card do dia) */
   .calendar-body {
     display: flex;
     justify-content: center;
@@ -48,21 +44,18 @@
     padding: 10px 0;
   }
   
-  /* Estilização do card da data */
   .calendar-day-card {
     text-align: center;
     font-size: 16px;
     color: #333;
   }
   
-  /* Data (formatada em dd/mm/yyyy) */
   .calendar-day-card h3 {
     font-size: 24px;
     margin: 5px 0;
     color: #6200ea;
   }
   
-  /* Textarea para relatório */
   .report-textarea {
     width: 100%;
     height: 100px;
@@ -81,7 +74,6 @@
     background-color: #ffffff;
   }
   
-  /* Botão para salvar relatório */
   .save-report-button {
     width: 100%;
     padding: 10px;

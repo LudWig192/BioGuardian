@@ -33,10 +33,6 @@ import NavegacaoCSC from './Components/Navegacao.jsx';
 import NavegacaoMedico from './Components/Navegacao-medico.jsx';
 import NavegacaoAdm from './Components/Navegacao-adm.jsx';
 
-
-
-
-
 const Rotas = () => {
         return (
                 <>

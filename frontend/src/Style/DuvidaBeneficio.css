@@ -72,7 +72,7 @@
   color: #007bff;
 }
 
-/* Media Queries para Responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
   .DuvidaBeneficio.faq-container-perguntas {
     flex-direction: column;

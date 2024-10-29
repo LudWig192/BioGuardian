@@ -26,7 +26,6 @@
     }
 }
 
-/* Estilo do Switch com ícones e avatar */
 .switch-container {
     display: flex;
     align-items: center;
@@ -44,7 +43,7 @@
 
 .button-group {
     display: flex;
-    flex-wrap: wrap; /* Permite que os botões se movam para a próxima linha */
+    flex-wrap: wrap; 
     justify-content: space-between;
     margin-bottom: 20px;
 }
@@ -53,7 +52,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    overflow-x: auto; /* Permite rolagem horizontal */
+    overflow-x: auto; 
 }
 
 .responsive-table th,
@@ -61,14 +60,13 @@
     border: 1px solid #ccc;
     padding: 10px;
     text-align: left;
-    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    white-space: nowrap; 
 }
 
 .responsive-table th {
     background-color: #f4f4f4;
 }
 
-/* Estilo responsivo */
 @media (max-width: 768px) {
     .App {
         padding: 10px;
@@ -80,14 +78,14 @@
 
     .button-group {
         flex-direction: column;
-        align-items: stretch; /* Faz os botões ocuparem toda a largura */
+        align-items: stretch;
     }
 
     .responsive-table th,
     .responsive-table td {
         padding: 5px;
         font-size: 0.9rem;
-        white-space: normal; /* Permite que o texto quebre em várias linhas */
+        white-space: normal; 
     }
 }
 

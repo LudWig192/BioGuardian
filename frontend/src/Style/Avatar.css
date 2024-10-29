@@ -116,27 +116,25 @@
 
 .avatar-qr-code {
     position: absolute;
-    top: 50px; /* Ajuste a posição conforme necessário */
-    right: 0; /* Ajuste a posição conforme necessário */
+    top: 50px; 
     background: #fff;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .avatar-container {
-        flex-direction: column; /* Altera a direção para coluna em telas menores */
+        flex-direction: column;
         align-items: flex-end;
     }
 
     .avatar-icons {
-        margin-bottom: 10px; /* Espaço entre os ícones e o avatar */
+        margin-bottom: 10px; 
     }
 
     .avatar-avatar img {
-        width: 40px; /* Ajusta o tamanho da imagem do avatar */
+        width: 40px; 
         height: 40px;
     }
 }

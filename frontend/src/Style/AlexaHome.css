@@ -1,5 +1,3 @@
-/* Alexa.css */
-
 .pulseira-container {
     display: flex;
     flex-direction: row;
@@ -54,8 +52,8 @@
 
 .sketchfab-embed-wrapper {
     width: 100%;
-    max-width: 400px; /* Limitar a largura do modelo 3D */
-    aspect-ratio: 1 / 1; /* Mantém a proporção */
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
 }
 
 .sketchfab-embed-wrapper iframe {

@@ -1,4 +1,3 @@
-/* Cabeçalho da Data */
 .date-header {
     display: flex;
     flex-direction: column;
@@ -11,7 +10,6 @@
     background: #ffffff;
 }
 
-/* Título */
 .date-header h3 {
     color: #333;
     font-size: 2rem;
@@ -21,14 +19,13 @@
     margin-bottom: 15px;
 }
 
-/* Botões dos dias */
 .day-buttons {
     display: flex;
-    justify-content: center; /* Centraliza os botões */
+    justify-content: center;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap; /* Permite que os botões quebrem para a linha de baixo */
-    overflow: hidden; /* Remove a barra de rolagem */
+    flex-wrap: wrap;
+    overflow: hidden; 
 }
 
 /* Estilo padrão para os dias */

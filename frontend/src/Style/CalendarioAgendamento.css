@@ -7,7 +7,7 @@
 }
 
 .agendamento-calendar {
-    max-width: 400px; /* Mantendo o tamanho original */
+    max-width: 400px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -36,7 +36,7 @@
 
 .agendamento-days {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* Mantendo 7 colunas */
+    grid-template-columns: repeat(7, 1fr);
     gap: 5px;
     padding: 10px;
 }
@@ -55,8 +55,8 @@
     box-sizing: border-box;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
-    min-width: 40px; /* Definindo um tamanho mínimo */
-    min-height: 40px; /* Definindo um tamanho mínimo */
+    min-width: 40px;
+    min-height: 40px;
 }
 
 .agendamento-empty {
@@ -81,21 +81,21 @@
     margin: 0;
 }
 
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
     .agendamento-calendar {
         max-width: 100%;
     }
 
     .agendamento-days {
-        grid-template-columns: repeat(7, 1fr); /* Mantendo 7 colunas */
-        gap: 5px; /* Espaçamento entre os dias */
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
     }
 
     .agendamento-day {
-        padding: 10px; /* Mantendo um padding menor */
-        min-width: 35px; /* Reduzindo um pouco o tamanho mínimo */
-        min-height: 35px; /* Reduzindo um pouco o tamanho mínimo */
+        padding: 10px;
+        min-width: 35px;
+        min-height: 35px;
     }
 }
 
@@ -105,17 +105,17 @@
     }
 
     .agendamento-days {
-        grid-template-columns: repeat(7, 1fr); /* Mantendo 7 colunas mesmo em telas pequenas */
+        grid-template-columns: repeat(7, 1fr);
         gap: 5px;
     }
 
     .agendamento-day {
         padding: 8px;
-        min-width: 30px; /* Ajuste de tamanho mínimo para telas pequenas */
+        min-width: 30px;
         min-height: 30px;
     }
 
     .agendamento-month-title {
-        font-size: 1.2em; /* Reduzindo tamanho do título em telas pequenas */
+        font-size: 1.2em;
     }
 }

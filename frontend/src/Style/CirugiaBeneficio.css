@@ -70,29 +70,29 @@
 
 @media (max-width: 768px) {
   .cirurgiabeneficio-container {
-    flex-direction: column; /* Muda a direção para coluna em telas menores */
-    padding: 20px; /* Reduz o padding */
-    margin-top: 100px; /* Ajusta a margem superior */
+    flex-direction: column; 
+    padding: 20px; 
+    margin-top: 100px;
   }
 
   .cirurgiabeneficio-features {
-    flex-direction: column; /* Muda a direção para coluna para os recursos */
-    gap: 10px; /* Reduz o espaço entre os itens */
+    flex-direction: column;
+    gap: 10px;
   }
 
   .cirurgiabeneficio-feature {
-    flex-basis: 100%; /* Faz os recursos ocuparem toda a largura */
+    flex-basis: 100%; 
   }
 
   .cirurgiabeneficio-eye-care-image img {
-    width: 100%; /* Faz a imagem ocupar 100% da largura */
+    width: 100%; 
   }
 
   .cirurgiabeneficio-main-title {
-    font-size: 28px; /* Reduz o tamanho do título principal */
+    font-size: 28px;
   }
 
   .cirurgiabeneficio-description {
-    font-size: 14px; /* Reduz o tamanho da descrição */
+    font-size: 14px;
   }
 }
