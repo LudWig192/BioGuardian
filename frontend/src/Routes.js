@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-//Pagina de Cliente sem cadastro
+// Pagina de Cliente sem cadastro
 import Home from "./Pages/Home.js";
 import Cadastro from "./Pages/Cadastro.js";
 
@@ -9,27 +9,27 @@ import LoginForm from "./Pages/Login.js";
 import Beneficio from "./Pages/Beneficio.js";
 import Servicos from './Pages/Serviço.js'
 
-//Paginas de Cliente com cadastro
+// Paginas de Cliente com cadastro
 import HomeCliente from "./Pages/HomeCliente.js";
 import Exames from "./Pages/Exames.js"
 import Contato from "./Pages/Contato.js";
 import Unidades from './Pages/Unidades.js'
 import Agendamento from './Pages/Agendamento.js';
 
-//Paginas do Medico
+// Paginas do Medico
 import HomeMedico from '../src/Pages/HomeMedico.js';
 import Resultados from './Pages/Resultados.js'
 import Agenda from "./Pages/Agenda.js";
 
-//Paginas do Adm
+// Paginas do Adm
 import Salario from './Pages/Salario.js';
 import Funcionarios from "./Pages/Funcionarios.js";
 import Registros from './Pages/RegistroExames.js';
 import Administrador from './Pages/Administrador.js';
-import Clientes from "./Pages/ListaUsuarios.js";
+import Clientes from "./Pages/ListaClientes.js";
 import PerfilAdm from './Pages/PerfilAdm.js';
 
-//Navegações
+// Navegações
 import NavegacaoCCC from './Components/Navegacao-CCC.jsx';
 import NavegacaoCSC from './Components/Navegacao.jsx';
 import NavegacaoMedico from './Components/Navegacao-medico.jsx';

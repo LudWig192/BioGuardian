@@ -51,21 +51,21 @@ const GraficosAdm = () => {
         <div className="graficos-container">
             <div className="grafico">
                 <h3>Estado dos Pacientes</h3>
-                <div className="chart-container">
+                <div className="chart-container-PerAdm">
                     <Pie data={pieData} options={{ maintainAspectRatio: false }} />
                 </div>
             </div>
 
             <div className="grafico">
                 <h3>Internações por Mês</h3>
-                <div className="chart-container">
+                <div className="chart-container-PerAdm">
                     <Bar data={barData} options={{ maintainAspectRatio: false }} />
                 </div>
             </div>
 
             <div className="grafico">
                 <h3>Consultas</h3>
-                <div className="chart-container">
+                <div className="chart-container-PerAdm">
                     <Line data={lineData} options={{ maintainAspectRatio: false }} />
                 </div>
             </div>

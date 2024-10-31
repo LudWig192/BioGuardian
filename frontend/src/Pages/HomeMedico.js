@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../Style/HomeMedico.css';
 
 // IMPORTE OS COMPONENTES
+import Navbaradm from '../Components/Navegacao-medico';
 import Cabecalho from '../Components/Calendario';
 import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
@@ -28,6 +29,7 @@ const HomeMedico = () => {
 
   return (
     <Container fluid>
+      <Navbaradm />
       {/* <Row className='Status'> */}
       <Row className=''>
         <Col md={6}>

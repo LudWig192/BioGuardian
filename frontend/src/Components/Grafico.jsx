@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
-import '../Style/Grafico.css'; // Importando o arquivo CSS
+import '../Style/MedicoGrafico.css'; // Importando o arquivo CSS
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -84,7 +84,7 @@ const options = {
 
 function MyChart() {
   return (
-    <div className="chart-container"> {/* Usando a classe definida no CSS */}
+    <div className="graph-container"> {/* Nome da classe atualizado */}
       <Line data={data} options={options} />
     </div>
   );

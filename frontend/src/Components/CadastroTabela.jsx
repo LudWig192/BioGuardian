@@ -1,5 +1,9 @@
+// IMPORT BIBLIOTECAS
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+//IMPORT ESTILIZAÇÃO
+import '../Style/ClienteTab.css'
 
 const TabelaCadastro = () => {
   const [cadastros, setCadastros] = useState([]);
@@ -38,6 +42,7 @@ const TabelaCadastro = () => {
             <th>Nome</th>
             <th>Email</th>
             <th>Senha</th>
+            <th>Ações</th>
             {/* Adicione mais colunas, se necessário */}
           </tr>
         </thead>

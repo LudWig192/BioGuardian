@@ -39,7 +39,7 @@
 }
 
 /* Container para os gráficos com padding */
-.chart-container {
+.chart-container-PerAdm{
     height: 200px;
     /* Altura para os gráficos */
     margin-top: 10px;
