@@ -1,5 +1,5 @@
 // IMPORTS DAS BIBLIOTECAS
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 // IMPORT ESTILIZAÇÃO
@@ -28,6 +28,7 @@ const HomeMedico = () => {
   };
 
   return (
+    
     <Container fluid>
       <Navbaradm />
       {/* <Row className='Status'> */}
@@ -39,12 +40,6 @@ const HomeMedico = () => {
           <Cabecalho className="cabecalhoBody" onSelectDay={handleSelectDay} />
         </Col>
       </Row>
-
-      {/* <Row className='Consultas'>
-        <Col md={12}>
-          <Cabecalho onSelectDay={handleSelectDay} />
-        </Col>
-      </Row> */}
 
       {/* Gráfico e Bloco de notas */}
       <Row className='Relatorio'>

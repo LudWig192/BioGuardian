@@ -1,4 +1,7 @@
+//IMPORT BIBLIOTECAS
 import React, { useState, useEffect } from "react";
+
+//IMPORT ESTILIZAÇÃO
 import "../Style/Anotacoes.css"; // Importando o CSS
 
 function NoteApp() {
@@ -65,7 +68,7 @@ function NoteApp() {
         onChange={(e) => setNote(e.target.value)}
         placeholder="Escreva sua nota aqui..."
       />
-      <button className="note-button" onClick={handleAddNote}>
+      <button className="Botao-Notas" onClick={handleAddNote}>
         {isEditing ? "Editar Nota" : "Adicionar Nota"}
       </button>
 
