@@ -1,11 +1,12 @@
 // IMPORTS DAS BIBLIOTECAS
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 // IMPORT ESTILIZAÇÃO
 import '../Style/HomeMedico.css';
 
 // IMPORTE OS COMPONENTES
+import Navbaradm from '../Components/Navegacao-medico';
 import Cabecalho from '../Components/Calendario';
 import Anatomy from '../../src/Corpo/Anatomy';
 import Anotações from '../Components/Anotacoes';
@@ -27,7 +28,9 @@ const HomeMedico = () => {
   };
 
   return (
+    
     <Container fluid>
+      <Navbaradm />
       {/* <Row className='Status'> */}
       <Row className=''>
         <Col md={6}>
@@ -37,12 +40,6 @@ const HomeMedico = () => {
           <Cabecalho className="cabecalhoBody" onSelectDay={handleSelectDay} />
         </Col>
       </Row>
-
-      {/* <Row className='Consultas'>
-        <Col md={12}>
-          <Cabecalho onSelectDay={handleSelectDay} />
-        </Col>
-      </Row> */}
 
       {/* Gráfico e Bloco de notas */}
       <Row className='Relatorio'>

@@ -1,0 +1,95 @@
+/* Estilos gerais da tabela */
+table {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #f7faff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo das células do cabeçalho */
+thead th {
+    background-color: #0077b6;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #005f87;
+}
+
+/* Estilo das células de dados */
+tbody td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #cce7ff;
+    color: #333;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Alternância de cores nas linhas */
+tbody tr:nth-child(even) {
+    background-color: #e0f1ff;
+}
+
+/* Efeito de destaque ao passar o cursor sobre uma linha */
+tbody tr:hover {
+    background-color: #d0ebff;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo do botão de exclusão */
+button {
+    margin-left: 25%;
+    background-color: #d00000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de hover no botão de exclusão */
+button:hover {
+    background-color: #b00000;
+    transform: scale(1.05);
+}
+
+/* Efeito de clique no botão de exclusão */
+button:active {
+    background-color: #a00000;
+    transform: scale(1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+  
+    thead {
+        display: none;
+    }
+  
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+  
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+    }
+}
+    

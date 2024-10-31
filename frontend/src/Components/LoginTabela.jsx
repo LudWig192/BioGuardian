@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+//IMPORTE ESTILIZAÇÃO AQ
+import '../Style/TabelLogin.css';
+
 const TabelaLogin = () => {
     const [cadastros, setCadastros] = useState([]);
 
@@ -37,6 +40,7 @@ const TabelaLogin = () => {
                         <th>ID</th>
                         <th>Email</th>
                         <th>Senha</th>
+                        <th>Ações</th>
                         {/* Adicione mais colunas, se necessário */}
                     </tr>
                 </thead>

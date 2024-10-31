@@ -1,4 +1,4 @@
-.chart-container {
+.graph-container {
     width: 500px;    /* Largura do gráfico */
     height: 375px;   /* Altura do gráfico */
     margin: 40px auto;  /* Centraliza o gráfico horizontalmente */
@@ -15,14 +15,14 @@
     transition: all 0.3s ease-in-out; /* Suaviza as transições */
 }
 
-.chart-container canvas {
+.graph-container canvas {
     padding: 15px; /* Aumentando o espaçamento interno do gráfico */
     border-radius: 10px; /* Bordas arredondadas no gráfico */
     background-color: #fff; /* Fundo branco para destacar o gráfico */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Leve sombra para o canvas */
 }
 
-.chart-container:hover {
+.graph-container:hover {
     transform: scale(1.05) translateY(-200px); /* Aumenta o efeito de zoom para 5% */
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25); /* Aumenta a sombra no hover */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Suaviza todas as transições */
@@ -30,12 +30,10 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .chart-container {
-        margin-top:330px;
+    .graph-container {
+        margin-top: 330px;
         width: 100%;    /* Ajusta para ocupar a largura inteira da tela menor */
         height: auto;   /* Altura automática para se ajustar */
-        /* margin: 20px auto;   */
         transform: translateY(-100px); /* Reduz o deslocamento vertical em telas menores */
     }
 }
-  
