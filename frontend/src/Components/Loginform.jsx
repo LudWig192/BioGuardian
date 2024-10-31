@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import '../Style/Login.css';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -28,9 +28,9 @@ const LoginForm = () => {
                 } else if (user.role === 'medico') {
                     navigate('/HomeMedico');
                 } else {
-                    navigate('/HomeCliente'); 
+                    navigate('/HomeCliente');
                 }
-                setError(''); 
+                setError('');
             } else {
                 setError('Email ou senha incorretos!');
             }
@@ -40,6 +40,30 @@ const LoginForm = () => {
         }
     };
 
+    const [sequencia, setSequencia] = useState('');
+    const codigoSecreto = 'wwssadadba'; 
+
+    const handleKeyPress = (event) => {
+        const teclaPressionada = event.key; // Captura a tecla pressionada
+        setSequencia(prev => prev + teclaPressionada); // Adiciona a tecla à sequência
+
+        if (sequencia + teclaPressionada === codigoSecreto) {
+            navigate('/interrogacao');
+        }
+
+        // Reinicia a sequência se passar do comprimento do código
+        if (sequencia.length >= codigoSecreto.length) {
+            setSequencia(''); // Reinicia
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('keypress', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keypress', handleKeyPress); // Limpa o event listener
+        };
+    }, [sequencia]);
 
     return (
         <div className="Background-2">

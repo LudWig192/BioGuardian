@@ -35,6 +35,9 @@ import NavegacaoCSC from './Components/Navegacao.jsx';
 import NavegacaoMedico from './Components/Navegacao-medico.jsx';
 import NavegacaoAdm from './Components/Navegacao-adm.jsx';
 
+//?????????
+import Interrogacao from './Pages/Secreto.js'
+
 const Rotas = () => {
         return (
                 <>
@@ -72,6 +75,9 @@ const Rotas = () => {
                                 <Route path="/NaveCCC" element={<NavegacaoCCC />} />
                                 <Route path="/NaveMedico" element={<NavegacaoMedico />} />
                                 <Route path="/NaveAdm" element={<NavegacaoAdm />} />
+
+                                {/* ????????????? */}
+                                <Route path="/interrogacao" element={<Interrogacao  />} />
                 
                         </Routes>
                 </>

@@ -20,7 +20,7 @@ const FuncionariosPage = () => {
 
   useEffect(() => {
     buscarMedicos();
-    const intervalId = setInterval(buscarMedicos, 1000);
+    const intervalId = setInterval(buscarMedicos, 5000);
     return () => clearInterval(intervalId);
   }, []);
 
