@@ -41,11 +41,11 @@ const CadastroForm = () => {
   };
 
   return (
-    <div className="Background">
-      <div className="container">
-        <div className="form-container">
-          <h2>Cadastro</h2>
-          <form onSubmit={handleSubmit} className="custom-form">
+    <div className='cadastro-tudo'>
+      <div className='cadastro-container'>
+        <h2 className='cadastro-titulo'>Cadastro</h2>
+        <form onSubmit={handleSubmit} className='cadastro-form'>
+          <div className="cadastro-input-wrapper">
             <input
               type="text"
               name="nome"
@@ -55,6 +55,12 @@ const CadastroForm = () => {
               className="form-control"
               required
             />
+            <i className="material-symbols-rounded">
+              person
+            </i>
+          </div>
+
+          <div className="cadastro-input-wrapper">
             <input
               type="email"
               name="email"
@@ -64,6 +70,12 @@ const CadastroForm = () => {
               className="form-control"
               required
             />
+            <i className="material-symbols-outlined">
+              mail
+            </i>
+          </div>
+
+          <div className="cadastro-input-wrapper">
             <input
               type="password"
               name="senha"
@@ -73,16 +85,25 @@ const CadastroForm = () => {
               className="form-control"
               required
             />
-            <label className="form-check-label">
-              <input type="checkbox" required />
-              Concordo com os termos de uso
-            </label>
-            <button type="submit" className="btn-primary">Salvar</button>
-          </form>
-          <div className="red-lgn">
-            <p>Não tem <span className="link-text"><Link to="/Login">Login?</Link></span></p>
+            <i className="material-symbols-rounded">
+              lock
+            </i>
           </div>
-        </div>
+
+          <div className="cadastro-checkbox">
+            <label>
+              <input
+                type="checkbox"
+                required
+              />
+              Aceito os termos e condições
+            </label>
+          </div>
+
+          <button type="submit" className="cadastro-btn">Cadastrar</button>
+        </form>
+
+        <p className='cadastro-redi-log'>Já tem<Link to="/Login">Login?</Link></p>
       </div>
     </div>
   );

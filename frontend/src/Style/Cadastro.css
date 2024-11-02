@@ -1,73 +1,174 @@
-.Background {
-  height: 100vh;
-  background: url('https://plus.unsplash.com/premium_photo-1682130157004-057c137d96d5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+.cadastro-tudo {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('../Imagens/fundo.png') no-repeat center center fixed;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.form-container {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  width: 100%;
+.cadastro-container {
+  background-color: white;
+  padding: 2rem 4rem;
+  border-radius: 0.5rem;
   max-width: 500px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.custom-form {
-  width: 100%;
-  font-weight: bold;
-}
-
-.custom-form .form-control {
-  border-radius: 8px;
-  border: 1px solid black;
-  padding: 12px;
-  font-size: 15px;
-  margin-bottom: 15px;
-}
-
-.custom-form .form-check-input {
-  border-radius: 3px;
-}
-
-.custom-form .btn-primary {
-  border-radius: 15px;
-  width: 100%;
-  padding: 10px;
-  margin: 20px 0;
-  background-color: #6854f0;
-  color: black;
-  font-weight: bold;
-}
-
-h2 {
-  margin-bottom: 20px;
-  color: #333;
-  font-weight: bold;
-}
-
-.link-text {
-  margin-left: 5px;
-}
-
-.link-text a {
-  color: black;
-  text-decoration: underline #54a3f0;
-}
-
-.form-check-label {
+.cadastro-container .cadastro-titulo {
   text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
+
+.cadastro-container .cadastro-Media {
+  display: flex;
+  gap: 1.31rem;
+}
+
+.cadastro-Media .cadastro-Media-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.81rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  border-radius: 0.31rem;
+  border: 1px solid #D5CBFF;
+  background: #F9F8FF;
+  transition: 0.3s ease;
+}
+
+.cadastro-Media .Login-Media-button:hover {
+  border: 1px solid #D5CBFF;
+  border-color: #5F41E4;
+
+}
+
+.cadastro-Media .cadastro-Media-button .media-icon {
+  width: 23px;
+}
+
+.cadastro-container .separador {
+  margin: 1.5rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.cadastro-container .separador span {
+  position: relative;
+  background: white;
+  padding: 0 0.9rem;
+  font-size: 1.06rem;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.cadastro .separador::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  width: 100%;
+  background: #bfb3f2;
+  height: 1px;
+}
+
+.cadastro-form .cadastro-input-wrapper {
+  height: 54px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.cadastro-form .cadastro-input-wrapper .form-control {
+  height: 100%;
+  width: 100%;
+  padding: 0 1.25rem 0 3.12rem;
+  border-radius: 0.31rem;
+  border: 1px solid #bfb3f2;
+  outline: none;
+  font-size: 1.06rem;
+  transition: 0.2s ease;
+}
+
+.cadastro-form .cadastro-input-wrapper .form-control:focus {
+  border-color: #5F41E4;
+
+}
+
+.cadastro-form .cadastro-input-wrapper .form-control::placeholder {
+  color: #a395e0;
+
+}
+
+.cadastro-form .cadastro-input-wrapper i {
+  color: #a395e0;
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+.cadastro-form .cadastro-input-wrapper .form-control:focus i {
+  color: #5F41E4;
+}
+
+.cadastro-form .cadastro-btn {
+  width: 100%;
+  margin-top: 1rem;
+  height: 54px;
+  background: #5F41E4;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.125rem;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.31rem;
+  border: none;
+  transition: 0.2s ease;
+}
+
+.cadastro-form .cadastro-btn:hover {
+  background: #4320df;
+  transition: 0.2s ease;
+
+}
+
+.cadastro-container .cadastro-redi-log {
+  text-align: center;
+  font-weight: 500;
+  margin: 1.75rem 0 0.31rem;
+
+}
+
+.cadastro-container a {
+  color: #5F41E4;
+  margin-left: 4px;
+  text-decoration: none;
+}
+
+.cadastro-container a:hover {
+  text-decoration: underline;
+}
+
+.cadastro-checkbox label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -0.46rem;
+  justify-content: center;
+}
+
+.cadastro-checkbox input[type="checkbox"] {
+  margin-right: 0.5rem;
 }

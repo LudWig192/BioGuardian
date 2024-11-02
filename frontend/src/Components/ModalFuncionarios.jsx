@@ -15,7 +15,7 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
         <h2 className="funcionarioModal-title">
           {dadosMedico.idMedico ? 'Editar Médico' : 'Adicionar Médico'}
         </h2>
-        <form onSubmit={onAddDoctor}>
+        <form onSubmit={onAddDoctor} className='modal-funcionarios-form'>
           <input
             type="text"
             name="nome"

@@ -37,14 +37,14 @@
 }
 
 /* Estilo para labels */
-label {
+.Modal-Exames-form label {
     display: block;
     margin-bottom: 12px;
     font-weight: 500;
 }
 
 /* Estilo para inputs */
-input {
+.Modal-Exames-form input {
     width: calc(100% - 22px);
     /* Ajusta a largura para o padding */
     padding: 12px;
@@ -63,7 +63,7 @@ input {
 }
 
 /* Estilo geral para os botões */
-button {
+.modal-exames-btn button {
     background-color: #009b17;
     color: white;
     border: none;
@@ -77,16 +77,16 @@ button {
 }
 
 /* Estilo específico para o botão de cancelamento */
-button[type="button"] {
+.modal-exames-btn button[type="button"] {
     background-color: #c60000;
 }
 
 /* Efeito de hover e foco para os botões */
-button:hover {
+.modal-exames-btn button:hover {
     opacity: 0.9;
 }
 
-button:focus {
+.modal-exames-btn button:focus {
     outline: none;
 }
 

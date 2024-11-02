@@ -19,9 +19,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     max-height: 80vh;
-    /* Limita a altura do modal */
     overflow-y: auto;
-    /* Adiciona barra de rolagem vertical */
 }
 
 .funcionarioModal-title {
@@ -69,7 +67,7 @@
     /* Cor do botão ao passar o mouse */
 }
 
-input,
+.modal-funcionarios-form input,
 select {
     width: 100%;
     padding: 8px;
@@ -80,7 +78,7 @@ select {
     box-sizing: border-box;
 }
 
-input:focus,
+.modal-funcionarios-form input:focus,
 select:focus {
     border-color: #5472f0;
     outline: none;

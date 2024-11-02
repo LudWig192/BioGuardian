@@ -68,7 +68,6 @@
 .cardsResultadoCliente-text {
     font-size: 14px; /* Tamanho da fonte da descrição */
     margin-bottom: 15px; /* Espaço abaixo da descrição */
-    text-align: justify;
     color: black;
 }
 

@@ -30,7 +30,7 @@
 
 .banner-cliente-content {
     color: white;
-        max-width: 50%;
+    max-width: 50%;
 }
 
 .titulo-BannerCliente {
@@ -74,12 +74,19 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: justify;
     transition: transform 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.descricao-card-BannerCliente p {
+    text-align: center;
+    justify-content: center;
+
 }
 
 .info-icon {
@@ -93,20 +100,25 @@
     margin-top: 10px;
     font-weight: 600;
     color: #54a3f0;
-    font-size: 1.25rem; /* Define um tamanho fixo */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    display: flex; /* Flex para centralizar verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    font-size: 1.25rem;
+    /* Define um tamanho fixo */
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    display: flex;
+    /* Flex para centralizar verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
     width: 100%;
 }
 
 .descricao-card-BannerCliente {
-    font-size: 1rem; /* Define um tamanho fixo */
+    font-size: 1rem;
+    /* Define um tamanho fixo */
     color: black;
     margin-top: 0.5rem;
     line-height: 1.4;
-    text-align: justify;
     width: 100%;
 }
 

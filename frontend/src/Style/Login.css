@@ -1,75 +1,173 @@
-.Background-2 {
-    height: 100vh;
-    background: url('https://images.pexels.com/photos/3957992/pexels-photo-3957992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center fixed;
+.login-tudo {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('../Imagens/fundo.png') no-repeat center center fixed;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.form-container {
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    width: 100%;
+.Login-container {
+    background-color: white;
+    padding: 2rem 4rem;
+    border-radius: 0.5rem;
     max-width: 500px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.Login-container .login-titulo {
+    text-align: center;
+    font-size: 1.37rem;
+    font-weight: 600;
+    margin-bottom: 1.87rem;
+}
+
+.Login-container .Login-Media {
     display: flex;
-    flex-direction: column;
+    gap: 1.31rem;
+}
+
+.Login-Media .Login-Media-button {
+    display: flex;
+    width: 100%;
     align-items: center;
-}
-
-.custom-form {
-    width: 100%;
-    font-weight: bold;
-}
-
-.custom-form .form-control {
-    border-radius: 8px;
-    border: 1px solid black;
-    padding: 12px;
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-.custom-form .form-check-input {
-    border-radius: 3px;
-}
-
-.custom-form .btn-primary {
-    border-radius: 15px;
-    width: 100%;
-    padding: 10px;
-    margin: 20px 0;
-    background-color: #6854f0;
-    color: black;
-    font-weight: bold;
-}
-
-h2 {
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: bold;
-}
-
-.red-cdsto p {
     justify-content: center;
-    display: flex;
-    align-items: center;
+    gap: 0.81rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 0;
+    border-radius: 0.31rem;
+    border: 1px solid #D5CBFF;
+    background: #F9F8FF;
+    transition: 0.3s ease;
 }
 
-.link-text {
+.Login-Media .Login-Media-button:hover {
+    border: 1px solid #D5CBFF;
+    border-color: #5F41E4;
+
+}
+
+.Login-Media .Login-Media-button .media-icon {
+    width: 23px;
+}
+
+.Login-container .separador {
+    margin: 1.5rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.Login-container .separador span {
+    position: relative;
+    background: white;
+    padding: 0 0.9rem;
+    font-size: 1.06rem;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.Login-container .separador::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    width: 100%;
+    background: #bfb3f2;
+    height: 1px;
+}
+
+.login-form .login-input-wrapper {
+    height: 54px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.login-form .login-input-wrapper .form-control {
+    height: 100%;
+    width: 100%;
+    padding: 0 1.25rem 0 3.12rem;
+    border-radius: 0.31rem;
+    border: 1px solid #bfb3f2;
+    outline: none;
+    font-size: 1.06rem;
+    transition: 0.2s ease;
+}
+
+.login-form .login-input-wrapper .form-control:focus {
+    border-color: #5F41E4;
+
+}
+
+.login-form .login-input-wrapper .form-control::placeholder {
+    color: #a395e0;
+
+}
+
+.login-form .login-input-wrapper i {
+    color: #a395e0;
+    position: absolute;
+    top: 50%;
+    left: 0.9rem;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+    pointer-events: none;
+}
+
+.login-form .login-input-wrapper .form-control:focus~i {
+    color: #5F41E4;
+}
+
+.login-form .login-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    /*Deixa na pagina de login*/
+    height: 54px;
+    background: #5F41E4;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.125rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.31rem;
+    border: none;
+    transition: 0.2s ease;
+}
+
+.login-form .login-btn:hover {
+    background: #4320df;
+    transition: 0.2s ease;
+
+}
+
+.Login-container .Login-redi-cada {
+    text-align: center;
+    font-weight: 500;
+    margin: 1.75rem 0 0.31rem;
+
+}
+
+.Login-container a {
+    color: #5F41E4;
     margin-left: 4px;
+    text-decoration: none;
 }
 
-.link-text a {
-    color: black;
-    text-decoration: underline #54a3f0;
+.Login-container a:hover {
+    text-decoration: underline;
 }
+
+/*
+.login-form /*Aqui a classe do checkbox 
+display: block;
+width: fit-content;
+margin-top: -0.46rem;
+
+
+*/

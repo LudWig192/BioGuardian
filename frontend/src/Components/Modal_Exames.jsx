@@ -47,7 +47,7 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit} className='Modal-Exames-form'>
             {type === 'edit' || type === 'add' ? (
               <>
                 <label>
@@ -114,7 +114,7 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
                   <button type="submit">
                     {type === 'edit' ? 'Salvar' : 'Adicionar'}
                   </button>
-                  <button type="button" onClick={onClose}>Fechar</button>
+                  <button type="button" className="modal-exames-btn"onClick={onClose}>Fechar</button>
                 </div>
               </>
             ) : null}
