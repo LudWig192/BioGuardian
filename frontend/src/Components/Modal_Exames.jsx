@@ -73,14 +73,17 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
                 </label>
                 <label>
                   Status:
-                  <input
-                    type="text"
+                  <select
                     name="status"
                     value={data.status || ''}
                     onChange={handleInputChange}
-                    placeholder="Confirmado, pendente ou cancelado"
                     required
-                  />
+                  >
+                    <option value="" disabled>Selecione o status</option>
+                    <option value="confirmado">Confirmado</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="cancelado">Cancelado</option>
+                  </select>
                 </label>
                 <label>
                   Procedimentos:
@@ -95,14 +98,17 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
                 </label>
                 <label>
                   Tipo de Plano:
-                  <input
-                    type="text"
+                  <select
                     name="tipoPlano"
                     value={data.tipoPlano || ''}
                     onChange={handleInputChange}
-                    placeholder="Insira o tipo de plano"
                     required
-                  />
+                  >
+                    <option value="" disabled>Selecione o tipo de plano</option>
+                    <option value="padrão">Padrão</option>
+                    <option value="premium">Premium</option>
+                    <option value="básico">Básico</option>
+                  </select>
                 </label>
                 <div className="modal-buttons">
                   <button type="submit">

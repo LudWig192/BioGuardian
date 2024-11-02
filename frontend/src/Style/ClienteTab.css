@@ -1,8 +1,10 @@
-/* Estilos gerais da tabela */
-table {
+.tabela-cadastro-container {
     width: 90%;
-    max-width: 900px;
+    max-width: 40%;
     margin: 20px auto;
+}
+
+.tabela-cadastro {
     border-collapse: collapse;
     background-color: #f7faff;
     font-family: Arial, sans-serif;
@@ -11,10 +13,11 @@ table {
     overflow: hidden;
 }
 
-/* Estilo das células do cabeçalho */
-thead th {
+.tabela-cadastro-thead {
     background-color: #0077b6;
-    color: white;
+}
+
+.tabela-cadastro-th {
     padding: 12px 15px;
     text-align: left;
     font-size: 1.1rem;
@@ -23,8 +26,7 @@ thead th {
     border-bottom: 2px solid #005f87;
 }
 
-/* Estilo das células de dados */
-tbody td {
+.tabela-cadastro-td {
     padding: 14px 15px;
     border-bottom: 1px solid #cce7ff;
     color: #333;
@@ -32,19 +34,16 @@ tbody td {
     font-size: 0.95rem;
 }
 
-/* Alternância de cores nas linhas */
-tbody tr:nth-child(even) {
+.tabela-cadastro-tr:nth-child(even) {
     background-color: #e0f1ff;
 }
 
-/* Efeito de destaque ao passar o cursor sobre uma linha */
-tbody tr:hover {
+.tabela-cadastro-tr:hover {
     background-color: #d0ebff;
     transition: background-color 0.3s ease;
 }
 
-/* Estilo do botão de exclusão */
-button {
+.tabela-button {
     margin-left: 25%;
     background-color: #d00000;
     color: white;
@@ -57,39 +56,35 @@ button {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Efeito de hover no botão de exclusão */
-button:hover {
+.tabela-button:hover {
     background-color: #b00000;
     transform: scale(1.05);
 }
 
-/* Efeito de clique no botão de exclusão */
-button:active {
+.tabela-button:active {
     background-color: #a00000;
     transform: scale(1);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsividade para dispositivos menores */
 @media (max-width: 600px) {
-    table {
+    .tabela-cadastro {
         width: 100%;
     }
-  
-    thead {
+
+    .tabela-cadastro-thead {
         display: none;
     }
-  
-    tbody td {
+
+    .tabela-cadastro-td {
         display: flex;
         justify-content: space-between;
         padding: 10px;
     }
-  
-    tbody td::before {
+
+    .tabela-cadastro-td::before {
         content: attr(data-label);
         font-weight: bold;
         color: #333;
     }
 }
-    

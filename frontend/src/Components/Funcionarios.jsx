@@ -120,56 +120,59 @@ const FuncionariosPage = () => {
             </button>
           </div>
         </div>
-        <table className="product-table funcionario">
-          <thead>
-            <tr className="funcionario">
-              <th className="funcionario">Nome</th>
-              <th className="funcionario">Especialidade</th>
-              <th className="funcionario">Número do Registro</th>
-              <th className="funcionario">Horário de Trabalho</th>
-              <th className="funcionario">Status</th>
-              <th className="funcionario">Plantão</th>
-              <th className="funcionario">Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {medicos.map((medico, index) => (
-              <tr key={medico.idMedico} className="funcionario">
-                <td className="funcionario">{medico.nome}</td>
-                <td className="funcionario">{medico.especialidade}</td>
-                <td className="funcionario">{medico.numeroRegistro}</td>
-                <td className="funcionario">{medico.horarioTrabalho}</td>
-                <td className="funcionario">
-                  <span className={`status-badge ${medico.status === 'ativo' ? 'active' : 'inactive'}`}>
-                    {medico.status}
-                  </span>
-                </td>
-                <td className="funcionario">{medico.plantao}</td>
-                <td className="funcionario">
-                  <button className="button-custom" onClick={() => handleModalShow('editar', index)}>
-                    Editar
-                  </button>
-                  <button className="button-custom red" onClick={() => handleExcluirMedico(index)}>
-                    Excluir
-                  </button>
-                </td>
+
+        <div style={{ overflowX: 'auto' }}>
+          <table className="product-table funcionario">
+            <thead>
+              <tr className="funcionario">
+                <th className="funcionario">Nome</th>
+                <th className="funcionario">Especialidade</th>
+                <th className="funcionario">Número do Registro</th>
+                <th className="funcionario">Horário de Trabalho</th>
+                <th className="funcionario">Status</th>
+                <th className="funcionario">Plantão</th>
+                <th className="funcionario">Ações</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {medicos.map((medico, index) => (
+                <tr key={medico.idMedico} className="funcionario">
+                  <td className="funcionario">{medico.nome}</td>
+                  <td className="funcionario">{medico.especialidade}</td>
+                  <td className="funcionario">{medico.numeroRegistro}</td>
+                  <td className="funcionario">{medico.horarioTrabalho}</td>
+                  <td className="funcionario">
+                    <span className={`status-badge ${medico.status === 'ativo' ? 'active' : 'inactive'}`}>
+                      {medico.status}
+                    </span>
+                  </td>
+                  <td className="funcionario">{medico.plantao}</td>
+                  <td className="funcionario">
+                    <button className="button-custom" onClick={() => handleModalShow('editar', index)}>
+                      Editar
+                    </button>
+                    <button className="button-custom red" onClick={() => handleExcluirMedico(index)}>
+                      Excluir
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </main>
       {
-        isModalOpen && (
-          <ModalFuncionarios
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
-            onAddDoctor={modalType === 'adicionar' ? handleAdicionarMedico : handleEditarMedico}
-            dadosMedico={dadosMedico}
-            setDadosMedico={setDadosMedico}
-            onExcluir={() => handleExcluirMedico(currentIndex)}
-          />
-        )
-      }
+    isModalOpen && (
+      <ModalFuncionarios
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onAddDoctor={modalType === 'adicionar' ? handleAdicionarMedico : handleEditarMedico}
+        dadosMedico={dadosMedico}
+        setDadosMedico={setDadosMedico}
+        onExcluir={() => handleExcluirMedico(currentIndex)}
+      />
+    )
+  }
     </div >
   );
 };

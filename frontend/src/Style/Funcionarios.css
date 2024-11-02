@@ -172,7 +172,7 @@ main {
     transform: scale(0.98);
 }
 
-
+/* Adicione ao final do seu CSS existente */
 
 @media (max-width: 768px) {
     .header-container {
@@ -180,16 +180,53 @@ main {
         align-items: flex-start;
     }
 
-    .search-bar {
-        margin-bottom: 10px;
+    .search-bar-container {
+        margin-top: 10px;
+        width: 100%;
     }
 
-    .icon-container {
-        justify-content: space-between;
+    .search-bar {
         width: 100%;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button-group-funcionario {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-custom {
+        width: 100%;
+        margin: 5px 0;
     }
 
     .product-table {
         font-size: 0.9rem;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .product-table th,
+    .product-table td {
+        padding: 8px;
+        word-wrap: break-word;
+    }
+
+    .product-table th {
+        font-size: 0.9rem;
+    }
+
+    .status-badge {
+        font-size: 0.8rem;
+    }
+
+    .mensagem {
+        font-size: 0.9rem;
+        margin: 10px 0;
+        color: green;
     }
 }

@@ -12,7 +12,7 @@ import '../Style/Cliente.css'
 const ListaClientes = () => {
   return (
     <>
-      <div>
+      <div className="LC">
         <NavegacaoAdm />
         <h1>Lista de Usuários</h1>
         <h2>Cadastro</h2>

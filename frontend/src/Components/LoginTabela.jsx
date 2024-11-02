@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-//IMPORTE ESTILIZAÇÃO AQ
 import '../Style/TabelLogin.css';
 
 const TabelaLogin = () => {
@@ -33,32 +31,31 @@ const TabelaLogin = () => {
     };
 
     return (
-        <div>
-            <table border={2} cellPadding={5} cellSpacing={5}>
-                <thead>
+        <div className="tabela-login-container">
+            <table className="tabela-login">
+                <thead className="tabela-login-thead">
                     <tr>
-                        <th>ID</th>
-                        <th>Email</th>
-                        <th>Senha</th>
-                        <th>Ações</th>
-                        {/* Adicione mais colunas, se necessário */}
+                        <th className="tabela-login-th">ID</th>
+                        <th className="tabela-login-th">Email</th>
+                        <th className="tabela-login-th">Senha</th>
+                        <th className="tabela-login-th">Ações</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="tabela-login-tbody">
                     {cadastros.map((cadastro) => (
-                        <tr key={cadastro.idLogin}>
-                            <td>{cadastro.idLogin}</td>
-                            <td>{cadastro.email}</td>
-                            <td>{cadastro.senha}</td>
-                            <td>
+                        <tr key={cadastro.idLogin} className="tabela-login-tr">
+                            <td className="tabela-login-td">{cadastro.idLogin}</td>
+                            <td className="tabela-login-td">{cadastro.email}</td>
+                            <td className="tabela-login-td">{cadastro.senha}</td>
+                            <td className="tabela-login-td">
                                 <button
+                                    className="tabela-login-button"
                                     variant="danger"
                                     onClick={() => handleExcluirUsuario(cadastro.idLogin)}
                                 >
                                     Excluir
                                 </button>
                             </td>
-                            {/* Renderizar outras colunas, se necessário */}
                         </tr>
                     ))}
                 </tbody>

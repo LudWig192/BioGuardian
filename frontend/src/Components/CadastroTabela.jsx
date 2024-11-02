@@ -1,7 +1,6 @@
 // IMPORT BIBLIOTECAS
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 //IMPORT ESTILIZAÇÃO
 import '../Style/ClienteTab.css'
 
@@ -34,34 +33,33 @@ const TabelaCadastro = () => {
   };
 
   return (
-    <div>
-      <table border={2} cellPadding={5} cellSpacing={5}>
-        <thead>
+    <div className="tabela-cadastro-container">
+      <table className="tabela-cadastro">
+        <thead className="tabela-cadastro-thead">
           <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Senha</th>
-            <th>Ações</th>
-            {/* Adicione mais colunas, se necessário */}
+            <th className="tabela-cadastro-th">ID</th>
+            <th className="tabela-cadastro-th">Nome</th>
+            <th className="tabela-cadastro-th">Email</th>
+            <th className="tabela-cadastro-th">Senha</th>
+            <th className="tabela-cadastro-th">Ações</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="tabela-cadastro-tbody">
           {cadastros.map((cadastro) => (
-            <tr key={cadastro.idCadastro}>
-              <td>{cadastro.idCadastro}</td>
-              <td>{cadastro.nome}</td>
-              <td>{cadastro.email}</td>
-              <td>{cadastro.senha}</td>
-              <td>
+            <tr key={cadastro.idCadastro} className="tabela-tr">
+              <td className="tabela-cadastro-td">{cadastro.idCadastro}</td>
+              <td className="tabela-cadastro-td">{cadastro.nome}</td>
+              <td className="tabela-cadastro-td">{cadastro.email}</td>
+              <td className="tabela-cadastro-td">{cadastro.senha}</td>
+              <td className="tabela-cadastro-td">
                 <button
+                  className="tabela-button"
                   variant="danger"
                   onClick={() => handleExcluirUsuario(cadastro.idCadastro)}
                 >
                   Excluir
                 </button>
               </td>
-              {/* Renderizar outras colunas, se necessário */}
             </tr>
           ))}
         </tbody>

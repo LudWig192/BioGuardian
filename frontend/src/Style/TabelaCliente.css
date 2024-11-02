@@ -14,7 +14,7 @@
 }
 
 .Medico24cliente-text {
-  flex: 1 1 300px; /* Flex-grow, flex-shrink, e base de largura mínima */
+  flex: 1 1 300px; 
   padding-right: 2rem;
 }
 

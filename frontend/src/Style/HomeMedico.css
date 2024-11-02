@@ -65,7 +65,6 @@
 
 /* Efeito de linha decorativa abaixo do título */
 .Informacoes::after {
-  content: '';
   display: block;
   width: 50px;
   height: 4px;

@@ -14,16 +14,15 @@ const reviews = [
         doctorName: 'Dr. João Silva',
         rating: 5,
         comment: 'Excelente atendimento! O Dr. João foi muito atencioso e esclareceu todas as minhas dúvidas.',
-        photo: 'url_da_foto_1.jpg', // Substitua pela URL da foto
+        photo: 'url_da_foto_1.jpg',
     },
-    // Adicione mais avaliações aqui
     {
         id: 2,
         patientName: 'Bruna Souza',
         doctorName: 'Dra. Maria Oliveira',
         rating: 5,
         comment: 'A Dra. Maria é uma profissional incrível. O cuidado e a atenção dela me fizeram sentir muito à vontade.',
-        photo: 'url_da_foto_2.jpg', // Substitua pela URL da foto
+        photo: 'url_da_foto_2.jpg',
     },
     {
         id: 3,
@@ -31,7 +30,7 @@ const reviews = [
         doctorName: 'Dr. Carlos Ferreira',
         rating: 5,
         comment: 'Médico extremamente competente e dedicado. Recomendo a todos que precisarem de atendimento!',
-        photo: 'url_da_foto_3.jpg', // Substitua pela URL da foto
+        photo: 'url_da_foto_3.jpg',
     },
     {
         id: 4,
@@ -39,7 +38,7 @@ const reviews = [
         doctorName: 'Dra. Ana Clara',
         rating: 5,
         comment: 'A Dra. Ana foi maravilhosa! Me deixou tranquila durante todo o processo e demonstrou muito conhecimento.',
-        photo: 'url_da_foto_4.jpg', // Substitua pela URL da foto
+        photo: 'url_da_foto_4.jpg',
     },
 ];
 

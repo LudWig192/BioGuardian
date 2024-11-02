@@ -1,0 +1,90 @@
+.tabela-login-container {
+    width: 90%;
+    max-width: 33%;
+    margin: 20px auto;
+}
+
+.tabela-login {
+    border-collapse: collapse;
+    background-color: #f7faff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela-login-thead {
+    background-color: #0077b6;
+}
+
+.tabela-login-th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #005f87;
+}
+
+.tabela-login-td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #cce7ff;
+    color: #333;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.tabela-login-tr:nth-child(even) {
+    background-color: #e0f1ff;
+}
+
+.tabela-login-tr:hover {
+    background-color: #d0ebff;
+    transition: background-color 0.3s ease;
+}
+
+.tabela-login-button {
+    margin-left: 25%;
+    background-color: #d00000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-login-button:hover {
+    background-color: #b00000;
+    transform: scale(1.05);
+}
+
+.tabela-login-button:active {
+    background-color: #a00000;
+    transform: scale(1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .tabela-login {
+        width: 100%;
+    }
+  
+    .tabela-login-thead {
+        display: none;
+    }
+  
+    .tabela-login-td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+  
+    .tabela-login-td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+    }
+}

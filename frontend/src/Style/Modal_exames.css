@@ -23,9 +23,7 @@
     color: #000000;
     box-sizing: border-box;
     z-index: 1001;
-    /* Adiciona um pouco de padding ao redor do conteúdo */
     padding: 20px;
-    /* Adiciona um máximo de altura e rolagem se necessário */
     max-height: 80vh;
     overflow-y: auto;
 }
