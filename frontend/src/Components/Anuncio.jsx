@@ -1,4 +1,3 @@
-// Anuncio.js
 import React from 'react';
 import "../Style/Anuncio.css";
 

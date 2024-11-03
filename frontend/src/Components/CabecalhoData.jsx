@@ -1,4 +1,3 @@
-// src/Components/CabecalhoData.js
 import React, { useState } from "react";
 import "../Style/Cabecalhodata.css";
 

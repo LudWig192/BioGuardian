@@ -1,8 +1,6 @@
-//IMPORT BIBLIOTECAS
 import React, { useState, useEffect } from "react";
 
-//IMPORT ESTILIZAÇÃO
-import "../Style/Anotacoes.css"; // Importando o CSS
+import "../Style/Anotacoes.css";
 
 function NoteApp() {
   const [note, setNote] = useState("");
@@ -33,14 +31,14 @@ function NoteApp() {
   const handleAddNote = () => {
     if (note) {
       if (isEditing) {
-        // Editar a nota existente
+
         const updatedNotes = [...notes];
         updatedNotes[currentNoteIndex] = note;
         setNotes(updatedNotes);
         setIsEditing(false);
         setCurrentNoteIndex(null);
       } else {
-        // Adicionar uma nova nota
+
         const updatedNotes = [...notes, note];
         setNotes(updatedNotes);
       }

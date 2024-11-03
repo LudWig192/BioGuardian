@@ -5,7 +5,7 @@ const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
 
-  // ID DO CARD
+
   const slides = [
     { name: 'Nome 1', topics: ['Lorem 1', 'Lorem 2', 'Lorem 3'], img: 'https://randomuser.me/api/portraits/men/1.jpg' },
     { name: 'Nome 2', topics: ['Lorem A', 'Lorem B', 'Lorem C'], img: 'https://randomuser.me/api/portraits/men/2.jpg' },
@@ -14,7 +14,7 @@ const Slider = () => {
     { name: 'Nome 5', topics: ['Lorem G', 'Lorem H', 'Lorem I'], img: 'https://randomuser.me/api/portraits/men/5.jpg' },
   ];
 
-  const transitionDuration = 500; // Tempo de transição em milissegundos
+  const transitionDuration = 500; 
 
   const nextSlide = () => {
     if (transitioning) return;

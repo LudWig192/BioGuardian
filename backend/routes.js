@@ -176,8 +176,8 @@ router.delete('/Login/:idLogin', (req, res) => {
 ////////////////////////////////////////Contato//////////////////////////////////////////////////////
 
 // Rota para listar todos os registros
-router.get('/Contato', (req, res) => {
-  connection.query('SELECT * FROM Contato', (err, results) => {
+router.get('/contato', (req, res) => {
+  connection.query('SELECT * FROM contato', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
       res.status(500).json({ error: 'Erro ao buscar os registros' });
@@ -188,9 +188,9 @@ router.get('/Contato', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('/Contato/:idContato', (req, res) => {
+router.get('/contato/:idContato', (req, res) => {
   const { idContato } = req.params;
-  connection.query('SELECT * FROM Contato WHERE idContato = ?', [idContato], (err, results) => {
+  connection.query('SELECT * FROM contato WHERE idContato = ?', [idContato], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -205,10 +205,10 @@ router.get('/Contato/:idContato', (req, res) => {
 });
 
 // Rota para criar um novo registro
-router.post('/Contato', (req, res) => {
-  const { nome, email, telefone, cpf } = req.body;
-  connection.query('INSERT INTO Contato (nome, email, telefone, cpf) VALUES (?, ?, ?, ?)',
-    [nome, email, telefone, cpf], (err, result) => {
+router.post('/contato', (req, res) => {
+  const { nome, email, mensagem } = req.body;
+  connection.query('INSERT INTO contato (nome, email_ou_telefone, mensagem) VALUES (?, ?, ?)',
+    [nome, email, mensagem], (err, result) => {
       if (err) {
         console.error('Erro ao criar o registro:', err);
         res.status(500).json({ error: 'Erro ao criar o registro' });
@@ -219,11 +219,11 @@ router.post('/Contato', (req, res) => {
 });
 
 // Rota para atualizar um registro existente pelo ID
-router.put('/Contato/:idContato', (req, res) => {
+router.put('/contato/:idContato', (req, res) => {
   const { idContato } = req.params;
-  const { nome, email, telefone, cpf } = req.body;
-  connection.query('UPDATE Contato SET nome = ?, email = ?, telefone = ?, cpf = ?  WHERE idContato = ?',
-    [nome, email, telefone, cpf, idContato], (err, result) => {
+  const { nome, email_ou_telefone, mensagem } = req.body;
+  connection.query('UPDATE contato SET nome = ?, email_ou_telefone = ?, mensagem = ? WHERE idContato = ?',
+    [nome, email_ou_telefone, mensagem, idContato], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -234,9 +234,9 @@ router.put('/Contato/:idContato', (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('/Contato/:idContato', (req, res) => {
+router.delete('/contato/:idContato', (req, res) => {
   const { idContato } = req.params;
-  connection.query('DELETE FROM Contato WHERE idContato = ?', [idContato], (err, result) => {
+  connection.query('DELETE FROM contato WHERE idContato = ?', [idContato], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });
