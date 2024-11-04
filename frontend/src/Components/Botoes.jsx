@@ -6,11 +6,11 @@ import "../Style/Botao.css";
 import * as XLSX from 'xlsx';
 
 const ButtonGroup = ({ onDateRangeChange, onStatusFilterChange, onPlanFilterChange, data }) => {
-    
+
     const [statusFilter, setStatusFilter] = useState('');
     const [planFilter, setPlanFilter] = useState('');
 
-    
+
     const handleStatusChange = () => {
         let newStatusFilter;
         if (statusFilter === '') {
@@ -64,18 +64,20 @@ const ButtonGroup = ({ onDateRangeChange, onStatusFilterChange, onPlanFilterChan
     };
 
     return (
-        <div className="button-group">
-            <div className="left-buttons">
-                <button className="border-left" onClick={handleStatusChange}>
-                    {statusFilter === '' ? 'Status' : `Status: ${statusFilter}`}
-                </button>
-                <button className="border-left" onClick={handlePlanChange}>
-                    {planFilter === '' ? 'Plano' : `Plano: ${planFilter}`}
-                </button>
-            </div>
-            <div className="right-buttons">
-                <button className="icon-button" onClick={handleExportToExcel}><GrDocumentExcel /></button>
-                <button className="icon-button" onClick={handlePrint}><AiFillPrinter /></button>
+        <div className='button-tudo'>
+            <div className="button-group">
+                <div className="left-buttons">
+                    <button className="border-left" onClick={handleStatusChange}>
+                        {statusFilter === '' ? 'Status' : `Status: ${statusFilter}`}
+                    </button>
+                    <button className="border-left" onClick={handlePlanChange}>
+                        {planFilter === '' ? 'Plano' : `Plano: ${planFilter}`}
+                    </button>
+                </div>
+                <div className="right-buttons">
+                    <button className="icon-button" onClick={handleExportToExcel}><GrDocumentExcel /></button>
+                    <button className="icon-button" onClick={handlePrint}><AiFillPrinter /></button>
+                </div>
             </div>
         </div>
     );

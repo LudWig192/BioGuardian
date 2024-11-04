@@ -8,7 +8,7 @@ import Anestesia from "../Imagens/Anestesia.jpg";
 const Servicos = () => {
   return (
     <div className="servicos-container-examebeneficio"> 
-      <div className="titulo-examebeneficio">Atendimentos de Saúde</div> {/* Alterado aqui */}
+      <div className="titulo-examebeneficio">Atendimentos de Saúde</div>
       <div className="descricao-servicos-examebeneficio">
         Monitoramento contínuo da saúde da sua família com suporte médico disponível. 
       </div>

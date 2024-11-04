@@ -1,10 +1,5 @@
-// IMPORT AS BIBLIOTECAS AQ
 import React from 'react';
-
-//IMPORT DA ESTILIZAÇÃO
 import '../Style/Paciente.css';
-
-//IMPORT DE IMAGENS
 import Paciente0 from '../Imagens/Paciente 0.jpeg'
 
 function UserProfile() {

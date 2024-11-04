@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { FaSync, FaMoneyBillAlt } from 'react-icons/fa';
-import '../Style/Salario.css'; // Certifique-se de que o caminho está correto
+import '../Style/Salario.css';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 

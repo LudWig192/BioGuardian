@@ -1,18 +1,16 @@
 import React from 'react';
 import { Card, CardContent, Typography, Box } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import '../Style/Monitoramento.css'; // Importando o arquivo CSS
+import '../Style/Monitoramento.css';
 
-// Componente principal de monitoramento
+
 const MonitoringChart = ({ member, healthData }) => {
   return (
     <Card className="chart-container">
       <CardContent>
-        {/* Título do gráfico */}
         <Typography variant="h6" className="chart-title">
           Monitoramento de {member.name}
         </Typography>
-        {/* Contêiner para o gráfico responsivo */}
         <Box className="chart-box">
           <ResponsiveContainer width="100%" height={250}>
             <LineChart data={healthData}>

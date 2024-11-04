@@ -27,22 +27,24 @@ const CustomCalendar = ({ onSelectDay }) => {
     };
 
     return (
-        <div className="custom-calendar-wrapper">
-            <div className="custom-calendar-header">
-                <button className="nav-button" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1))}>{'<'}</button>
-                <div className="custom-calendar-title">{currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}</div>
-                <button className="nav-button" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1))}>{'>'}</button>
-            </div>
-            <div className="custom-calendar-grid">
-                {getDaysArray().map(day => (
-                    <div
-                        className={`custom-day ${selectedDay === day ? 'custom-selected-day' : ''}`}
-                        key={day}
-                        onClick={() => handleDayClick(day)}
-                    >
-                        {day}
-                    </div>
-                ))}
+        <div className='calendario-tudo'>
+            <div className="custom-calendar-wrapper">
+                <div className="custom-calendar-header">
+                    <button className="nav-button" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1))}>{'<'}</button>
+                    <div className="custom-calendar-title">{currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}</div>
+                    <button className="nav-button" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1))}>{'>'}</button>
+                </div>
+                <div className="custom-calendar-grid">
+                    {getDaysArray().map(day => (
+                        <div
+                            className={`custom-day ${selectedDay === day ? 'custom-selected-day' : ''}`}
+                            key={day}
+                            onClick={() => handleDayClick(day)}
+                        >
+                            {day}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

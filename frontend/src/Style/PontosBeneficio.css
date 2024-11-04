@@ -72,42 +72,42 @@
   background-color: #0056b3;
 }
 
-/* Media Queries para Responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
   .pontosbene-container {
-    flex-direction: column; /* Altera a direção do flex para coluna */
-    padding: 30px; /* Reduz o padding para telas menores */
+    flex-direction: column;
+    padding: 30px; 
   }
 
   .image-pontosbene {
-    margin-right: 0; /* Remove a margem à direita na coluna */
-    margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
   .pontosbene-image {
-    width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
-    max-width: 400px; /* Define um tamanho máximo para a imagem */
+    width: 100%;
+    max-width: 400px;
   }
 
   .content-pontosbene {
-    padding-left: 0; /* Remove o padding esquerdo */
-    max-width: 100%; /* Faz o conteúdo ocupar toda a largura disponível */
+    padding-left: 0;
+    max-width: 100%;
   }
 
   .content-pontosbene > .pontosbene {
-    font-size: 24px; /* Reduz o tamanho do texto do título */
+    font-size: 24px;
   }
 
   .content-pontosbene > .pontosbene + .pontosbene {
-    font-size: 14px; /* Reduz o tamanho do texto do parágrafo */
+    font-size: 14px;
   }
 
   .icon-pontosbene {
-    font-size: 18px; /* Reduz o tamanho do ícone */
+    font-size: 18px;
   }
 
   .pontosbene-btn {
-    font-size: 14px; /* Reduz o tamanho do texto do botão */
-    padding: 10px 20px; /* Ajusta o padding do botão */
+    font-size: 14px;
+    padding: 10px 20px;
   }
 }

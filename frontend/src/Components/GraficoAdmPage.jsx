@@ -3,7 +3,6 @@ import { Pie, Bar, Line } from 'react-chartjs-2';
 import '../Style/GraficoAdmPage.css';
 
 const GraficosAdm = () => {
-    // Dados do gráfico de pizza
     const pieData = {
         labels: ['Pacientes em Alta', 'Pacientes em Internação'],
         datasets: [
@@ -26,7 +25,6 @@ const GraficosAdm = () => {
         ],
     };
 
-    // Dados do gráfico de linhas
     const lineData = {
         labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
         datasets: [

@@ -117,7 +117,7 @@ h4 {
   color: #0056b3;
 }
 
-/* Layout responsivo para dispositivos móveis */
+/* Responsividade */
 @media (max-width: 600px) {
   .prescriptions {
     padding: 20px;

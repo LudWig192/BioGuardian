@@ -8,7 +8,6 @@ const FeaturedServices = () => {
       <span className="subtitle info-coracao">We cover a big variety of medical services</span>
 
       <div className="main-content info-coracao">
-        {/* Cards de serviços */}
         <div className="services-cards info-coracao">
           <div className="info-coracao">
             <img src="/icons/checkup.png" alt="Free Checkup" className="service-icon info-coracao" />
@@ -27,7 +26,6 @@ const FeaturedServices = () => {
           </div>
         </div>
 
-        {/* Seção de horário e taxas */}
         <div className="info-section info-coracao">
           <div className="working-hours info-coracao">
             <h2 className="section-title info-coracao">WORKING HOURS</h2>

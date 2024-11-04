@@ -23,9 +23,9 @@
 }
 
 .BeneficioIcons-services {
-    display: grid; /* Usando grid para layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas por padrão */
-    gap: 30px; /* Espaçamento entre os cards */
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Alinha os itens ao topo */
+    justify-content: flex-start;
     padding: 20px 15px;
     border-radius: 10px;
     transition: transform 0.3s;
@@ -55,18 +55,18 @@
     border-radius: 50%;
     border: 2px solid #54a3f0;
     margin-bottom: 10px;
-    transition: color 0.3s, background-color 0.3s; /* Suaviza a transição de cor */
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .BeneficioIcons-serviceItem:hover .BeneficioIcon {
-    color: #54a3f0; /* Cor do ícone ao passar o mouse */
-    background-color: #5472f0; /* Cor de fundo do ícone ao passar o mouse */
+    color: #54a3f0;
+    background-color: #5472f0;
 }
 
 .BeneficioIcons-serviceTitle {
     font-size: 1em;
     font-weight: bold;
-    margin: 10px 0; /* Margem ajustada */
+    margin: 10px 0;
     text-transform: uppercase;
     color: #54a3f0;
 }
@@ -77,31 +77,31 @@
     line-height: 1.4em;
 }
 
-/* Media Queries para responsividade */
+/* Responsividade */
 @media (max-width: 1024px) {
     .BeneficioIcons-services {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
 @media (max-width: 600px) {
     .BeneficioIcons-services {
-        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+        grid-template-columns: 1fr; 
     }
 
     .BeneficioIcons-title {
-        font-size: 2em; /* Reduzir o tamanho da fonte */
+        font-size: 2em; 
     }
 
     .BeneficioIcons-description {
-        font-size: 0.9em; /* Reduzir o tamanho da fonte */
+        font-size: 0.9em;
     }
 
     .BeneficioIcons-serviceTitle {
-        font-size: 0.9em; /* Ajustar título */
+        font-size: 0.9em;
     }
 
     .BeneficioIcons-serviceDescription {
-        font-size: 0.7em; /* Ajustar descrição */
+        font-size: 0.7em; 
     }
 }

@@ -26,7 +26,6 @@ function Tabela() {
   };
 
   const handlePhoneChange = (e) => {
-    // Remove tudo que não seja dígito
     const value = e.target.value.replace(/\D/g, '');
     atualizarPessoa('telefone', value);
   };

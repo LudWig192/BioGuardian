@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Style/Comparativo.css';
 
-// Dados dos benefícios
 const beneficios = [
     {
         hospital: 'Hospital das Clínicas',
@@ -35,7 +34,6 @@ const beneficios = [
     },
 ];
 
-// Componente de Comparativo de Benefícios
 const ComparativoBeneficios = () => {
     return (
         <div className="comparativo-beneficios">

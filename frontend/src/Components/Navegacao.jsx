@@ -5,8 +5,6 @@ import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import AccessibilityIcon from '@mui/icons-material/Accessibility';
-
-// Estilização CSS
 import "../Style/Navbar.css";
 
 const Navbar = () => {

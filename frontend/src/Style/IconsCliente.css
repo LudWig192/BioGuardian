@@ -18,6 +18,7 @@
   gap: 15px;
 }
 
+/* Responsividade */
 @media (max-width: 900px) {
   .services-iconcliente {
     grid-template-columns: repeat(2, 1fr);

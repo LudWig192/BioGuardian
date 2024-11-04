@@ -9,12 +9,11 @@
     margin: 190px auto;
     position: relative;
     overflow: hidden;
-    background-image: url('../Imagens/fundo.png'); /* Imagem de fundo */
+    background-image: url('../Imagens/fundo.png');
     background-size: cover;
     background-position: center;
 }
 
-/* Pseudo-elemento para a camada de cor sobre o fundo */
 .MarcarConsulta-container::before {
     content: '';
     position: absolute;
@@ -22,11 +21,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(104, 84, 240, 0.7); /* Cor de sobreposição #6854f0 */
-    z-index: 1; /* Coloca a camada abaixo do conteúdo */
+    background-color: rgba(104, 84, 240, 0.7);
+    z-index: 1;
 }
 
-/* Estilo para o conteúdo para garantir que fique acima da sobreposição */
 .content-MarcarConsulta {
     max-width: 50%;
     z-index: 2;
@@ -35,7 +33,6 @@
     border-radius: 20px;
 }
 
-/* Estilos da imagem para mantê-la sem a camada de cor */
 .image-container-MarcarConsulta {
     max-width: 50%;
     z-index: 2;
@@ -48,7 +45,6 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Outros estilos permanecem os mesmos... */
 .main-MarcarConsulta {
     font-size: 2.5rem;
     font-weight: bold;
@@ -109,7 +105,7 @@
     margin-right: 10px;
 }
 
-/* Mídia query para responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
     .MarcarConsulta-container {
         flex-direction: column;

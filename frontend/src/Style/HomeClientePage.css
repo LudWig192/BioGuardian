@@ -1,13 +1,10 @@
-/* homecliente.css */
-
-/* Estilos gerais */
 .homecliente-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
   }
   
-  /* Responsividade para dispositivos menores que 1024px */
+/* Responsividade */
   @media (max-width: 1024px) {
     .homecliente-container {
       padding: 15px;
@@ -19,7 +16,6 @@
     }
   }
   
-  /* Responsividade para dispositivos menores que 768px */
   @media (max-width: 768px) {
     .homecliente-container {
       padding: 10px;
@@ -36,7 +32,6 @@
     }
   }
   
-  /* Responsividade para dispositivos menores que 480px */
   @media (max-width: 480px) {
     .homecliente-container {
       padding: 5px;

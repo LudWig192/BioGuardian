@@ -1,4 +1,3 @@
-// DayDetails.js
 import React from "react";
 
 const DayDetails = ({ selectedDay }) => {

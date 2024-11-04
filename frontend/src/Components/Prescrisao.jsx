@@ -1,43 +1,34 @@
-//IMPORTE AS BIBLIOTECAS AQUI
 import React, { useState, useEffect } from 'react';
 import { FaPills } from 'react-icons/fa';
-
-//IMPORTE ESTILIZAÇÃO AQUI
 import '../Style/Prescrisao.css';
-
-//-----------------------------------------------------------------
 
 function Prescriptions() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [prescriptions, setPrescriptions] = useState([]);
 
-  // Carregar prescrições do Local Storage ao montar o componente
   useEffect(() => {
     const storedPrescriptions = JSON.parse(localStorage.getItem('prescriptions')) || [];
     setPrescriptions(storedPrescriptions);
   }, []);
 
-  // Atualiza o Local Storage sempre que a lista de prescrições mudar
   useEffect(() => {
     localStorage.setItem('prescriptions', JSON.stringify(prescriptions));
   }, [prescriptions]);
 
-  // Função para capturar o arquivo selecionado
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
 
-  // Função para adicionar a prescrição com o nome do arquivo
   const handleAddPrescription = () => {
     if (selectedFile) {
       const newPrescription = {
-        name: selectedFile.name, // Usa o nome do arquivo como nome da prescrição
-        date: new Date().toLocaleDateString(), // Data atual
-        duration: 'N/A', // Duração indefinida
-        fileUrl: URL.createObjectURL(selectedFile), // Cria uma URL temporária para abrir o arquivo
+        name: selectedFile.name,
+        date: new Date().toLocaleDateString(),
+        duration: 'N/A',
+        fileUrl: URL.createObjectURL(selectedFile), 
       };
-      setPrescriptions([...prescriptions, newPrescription]); // Adiciona à lista de prescrições
-      setSelectedFile(null); // Limpa o arquivo selecionado após o upload
+      setPrescriptions([...prescriptions, newPrescription]); 
+      setSelectedFile(null);
     } else {
       alert('Por favor, selecione um arquivo antes de adicionar.');
     }
@@ -68,7 +59,6 @@ function Prescriptions() {
               <p>{prescription.name}</p>
               <p>{prescription.date}</p>
               <p>{prescription.duration}</p>
-              {/* Link para abrir o arquivo */}
               {prescription.fileUrl && (
                 <a
                   href={prescription.fileUrl}

@@ -1,7 +1,5 @@
-// IMPORT BIBLIOTECAS
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//IMPORT ESTILIZAÇÃO
 import '../Style/ClienteTab.css'
 
 const TabelaCadastro = () => {
@@ -13,7 +11,7 @@ const TabelaCadastro = () => {
         const { data } = await axios.get("http://localhost:3001/cadastros");
         setCadastros(data);
       } catch (error) {
-        console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
+        console.error("Erro ao buscar usuários:", error); 
       }
     };
 
@@ -23,7 +21,6 @@ const TabelaCadastro = () => {
   const handleExcluirUsuario = async (idCadastro) => {
     try {
       await axios.delete(`http://localhost:3001/cadastros/${idCadastro}`);
-      // Atualiza a lista de cadastros após a exclusão
       const { data } = await axios.get("http://localhost:3001/cadastros");
       setCadastros(data);
       console.log("Usuário excluído com sucesso!");

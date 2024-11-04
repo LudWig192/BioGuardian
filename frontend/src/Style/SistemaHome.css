@@ -23,8 +23,8 @@ body {
   
   .main-content.info-coracao {
     display: flex;
-    justify-content: center; /* Centraliza os cards */
-    flex-wrap: wrap; /* Permite que os cards se ajustem em múltiplas linhas */
+    justify-content: center;
+    flex-wrap: wrap;
   }
   
   .services-cards.info-coracao {
@@ -39,13 +39,13 @@ body {
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
-    width: 200px; /* Largura fixa para os cards */
+    width: 200px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s; /* Transição suave para o efeito hover */
+    transition: transform 0.2s;
   }
   
   .card.info-coracao:hover {
-    transform: scale(1.05); /* Aumenta o card ao passar o mouse */
+    transform: scale(1.05);
   }
   
   .service-icon.info-coracao {
@@ -57,11 +57,11 @@ body {
   .info-section.info-coracao {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alinha ao topo */
+    justify-content: flex-start;
     text-align: left;
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 600px; /* Limite de largura para melhor legibilidade */
-    margin: 20px auto; /* Centraliza a seção */
+    width: 100%; 
+    max-width: 600px; 
+    margin: 20px auto;
   }
   
   .working-hours.info-coracao,
@@ -93,21 +93,21 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 20px; /* Espaço acima do botão */
+    margin-top: 20px;
   }
   
   .checkout-button.info-coracao:hover {
-    background-color: #3498db; /* Cor do botão ao passar o mouse */
+    background-color: #3498db;
   }
   
   /* Responsividade */
   @media (max-width: 768px) {
     .main-content.info-coracao {
-      flex-direction: column; /* Alinha tudo verticalmente em telas pequenas */
+      flex-direction: column;
     }
   
     .info-section.info-coracao {
-      width: 90%; /* Maior largura em telas pequenas */
+      width: 90%;
     }
   }
   

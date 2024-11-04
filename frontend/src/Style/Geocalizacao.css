@@ -43,7 +43,6 @@
     clip-path: inset(0 0 0 0);
     background: conic-gradient(#46f0d7 var(--rate, 0%), transparent var(--rate, 0%));
     transition: background 0.5s;
-    /* Animação suave */
 }
 
 .rate-percentage {

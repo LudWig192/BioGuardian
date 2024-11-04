@@ -1,23 +1,23 @@
 .user-profile-container {
-  background: linear-gradient(135deg, #f0f4ff, #d9e3f0); /* Gradiente de fundo suave */
+  background: linear-gradient(135deg, #f0f4ff, #d9e3f0);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra mais intensa */
-  max-width: 450px; /* Largura maior para um layout espaçoso */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
   margin: auto;
   transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
 
 .user-profile-container:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
-  transform: translateY(-5px); /* Leve efeito de elevação */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
 .user-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Poppins', sans-serif; /* Tipografia moderna e estilosa */
+  font-family: 'Poppins', sans-serif;
 }
 
 .profile-photo-section {
@@ -40,7 +40,7 @@
 }
 
 .user-photo:hover {
-  transform: scale(1.1); /* Zoom mais acentuado */
+  transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -59,11 +59,11 @@
 }
 
 .update-button {
-  background: linear-gradient(135deg, #28a745, #218838); /* Gradiente no botão */
+  background: linear-gradient(135deg, #28a745, #218838);
   color: #fff;
   padding: 12px 25px;
   border: none;
-  border-radius: 50px; /* Bordas mais arredondadas */
+  border-radius: 50px;
   cursor: pointer;
   margin-top: 15px;
   transition: background 0.4s ease, transform 0.3s ease;
@@ -72,7 +72,7 @@
 
 .update-button:hover {
   background: linear-gradient(135deg, #218838, #1e7e34);
-  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+  transform: scale(1.05);
 }
 
 .info-section {
@@ -86,7 +86,7 @@
 }
 
 .info-section:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra ao passar o mouse */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
 }
 
 .info-details {
@@ -97,7 +97,7 @@
 
 .info-details p {
   margin: 10px 0;
-  font-size: 1.1em; /* Aumentei o tamanho da fonte para melhorar a legibilidade */
+  font-size: 1.1em;
 }
 
 .info-details p strong {

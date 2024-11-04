@@ -3,12 +3,12 @@
     flex-direction: row;
     font-family: 'Arial, sans-serif';
     padding: 20px;
-    gap: 20px; /* Espaçamento entre os dois painéis */
+    gap: 20px;
 }
 
 .perfil-adm-hospitalar__left-panel {
     width: 25%;
-    min-width: 250px; /* Largura mínima para o painel esquerdo */
+    min-width: 250px;
     padding-right: 20px;
 }
 
@@ -22,14 +22,14 @@
     justify-content: space-between;
     margin-top: 20px;
     flex-direction: row;
-    flex-wrap: wrap; /* Permite que os gráficos quebrem linha se necessário */
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-/* Estilos Responsivos */
+/* Responsividade */
 @media (max-width: 768px) {
     .perfil-adm-hospitalar {
-        flex-direction: column; /* Coloca os painéis em coluna em telas pequenas */
+        flex-direction: column; 
         padding: 10px;
     }
 

@@ -5,7 +5,6 @@ import Alice from '../Imagens/Alice.jpg';
 import Joao from '../Imagens/JoaoEnfer.jpeg';
 import Laura from '../Imagens/Laura.jpg';
 
-// Mapeamento das cores para cada papel
 const roleColors = {
     neurologia: "#5472f0", 
     "enfermeiro-chefe": "#6854f0", 

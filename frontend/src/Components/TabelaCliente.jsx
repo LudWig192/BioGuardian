@@ -4,7 +4,7 @@ import Medico from "../Imagens/MedicoMonitorar.png";
 
 const CustomerSatisfaction = () => {
   return (
-    <div className="Medico24cliente-container"> {/* Contêiner pai */}
+    <div className="Medico24cliente-container"> 
       <div className="Medico24cliente-customer"> 
         <div className="Medico24cliente-text"> 
           <div className="Medico24cliente-title">BioGuardian: Monitoramento de Saúde 24 horas</div> 
@@ -14,7 +14,7 @@ const CustomerSatisfaction = () => {
         </div>
         <div className="Medico24cliente-graphic"> 
           <img
-            src={Medico} // Substitua pelo caminho correto da sua imagem
+            src={Medico} 
             alt="Ilustração"
             className="Medico24cliente-illustration" 
           />

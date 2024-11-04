@@ -16,7 +16,6 @@
 .task-status-box {
     display: flex;
     justify-content: space-between;
-    /* Mantém a responsividade */
 }
 
 .task-status-item {

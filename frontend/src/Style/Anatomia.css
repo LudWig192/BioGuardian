@@ -8,7 +8,6 @@
   z-index: 1;
   padding-top: 100px;
   padding-left: 200px;
-  /* Aumenta ainda mais o espaçamento superior */
 }
 
 .body-and-table {
@@ -35,6 +34,7 @@
   margin-top: 50px;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .body-and-table {
     flex-direction: column;
@@ -55,7 +55,6 @@
 
   .app-container {
     padding-left: 0;
-    /* Aumenta ainda mais o espaçamento superior */
   }
   .Consultas {
     padding-left: 0;

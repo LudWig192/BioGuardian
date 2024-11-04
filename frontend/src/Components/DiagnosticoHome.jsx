@@ -6,7 +6,6 @@ const OnlineLearningSection = () => {
     return (
         <div className="online-learning-section">
             <div className="online-learning-people-grid">
-                {/* Imagem incorporada diretamente no componente */}
                 <img 
                     className="online-learning-person"
                     src={require('../Imagens/BeneficioHome.png')} 

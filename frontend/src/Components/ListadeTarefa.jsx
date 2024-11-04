@@ -51,7 +51,6 @@ const ListaDeTarefa = ({ selectedDate, onExamesFiltrados }) => {
         <div className="exam-list">
             <h2 className="exam-list-title">Registro de Exames para {selectedDate}</h2>
 
-            {/* Campo de filtro */}
             <input
                 type="text"
                 placeholder="Filtrar exames..."

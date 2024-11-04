@@ -70,7 +70,6 @@ const Medicos = ({ selectedDate }) => {
             return;
         }
 
-        // Verifica se o horário está entre 08:00 e 17:00
         const hour = appointmentDate.getHours();
         if (hour < 8 || hour > 17) {
             setErrorMessage('Não é possível agendar nesse horário. O horário deve estar entre 08:00 e 17:00.');
@@ -87,64 +86,67 @@ const Medicos = ({ selectedDate }) => {
     };
 
     return (
-        <div className="doctors-list-container">
-            <h2>Médicos</h2>
-            <div className="doctors-scroll">
-                <table className="doctors-table">
-                    <thead>
-                        <tr>
-                            <th>Foto</th>
-                            <th>Nome</th>
-                            <th>Especialidade</th>
-                            <th>Avaliação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {doctorsData.map((doctor, index) => (
-                            <tr key={index} onClick={() => handleOpenModal(doctor)}>
-                                <td>
-                                    <img src={doctor.photo} alt={doctor.name} className="doctor-photo" />
-                                </td>
-                                <td>{doctor.name}</td>
-                                <td>{doctor.specialty}</td>
-                                <td className="doctor-score">{doctor.score}</td>
+        <div className='medicos-tudo'>
+            <div className="doctors-list-container">
+                <h2>Médicos</h2>
+                <div className="doctors-scroll">
+                    <table className="doctors-table">
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nome</th>
+                                <th>Especialidade</th>
+                                <th>Avaliação</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-
-            {modalOpen && (
-                <div className="modal-overlay">
-                    <div className="modal-content">
-                        <h3>Agendar Consulta com {selectedDoctor.name}</h3>
-                        <p><strong>Especialidade:</strong> {selectedDoctor.specialty}</p>
-                        <p>{selectedDoctor.bio}</p>
-                        {selectedDate && <p><strong>Data para uma consulta:</strong> {selectedDate.toLocaleDateString()}</p>}
-                        <form onSubmit={handleSubmit}>
-                            <div>
-                                <label>Nome Completo:</label>
-                                <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
-                            </div>
-                            <div>
-                                <label>Aniversário:</label>
-                                <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} required />
-                            </div>
-                            <div>
-                                <label>Horário da Consulta:</label>
-                                <input type="time" name="appointmentTime" value={formData.appointmentTime} onChange={handleChange} required />
-                            </div>
-                            <div className="modal-buttons">
-                                <button type="submit">Agendar Consulta</button>
-                                <button type="button" onClick={handleCloseModal}>Fechar</button>
-                            </div>
-                        </form>
-                        {successMessage && <p className="success-message">{successMessage}</p>}
-                        {errorMessage && <p className="error-message">{errorMessage}</p>}
-                    </div>
+                        </thead>
+                        <tbody>
+                            {doctorsData.map((doctor, index) => (
+                                <tr key={index} onClick={() => handleOpenModal(doctor)}>
+                                    <td>
+                                        <img src={doctor.photo} alt={doctor.name} className="doctor-photo" />
+                                    </td>
+                                    <td>{doctor.name}</td>
+                                    <td>{doctor.specialty}</td>
+                                    <td className="doctor-score">{doctor.score}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
-            )}
+
+                {modalOpen && (
+                    <div className="modal-overlay">
+                        <div className="modal-content">
+                            <h3>Agendar Consulta com {selectedDoctor.name}</h3>
+                            <p><strong>Especialidade:</strong> {selectedDoctor.specialty}</p>
+                            <p>{selectedDoctor.bio}</p>
+                            {selectedDate && <p><strong>Data para uma consulta:</strong> {selectedDate.toLocaleDateString()}</p>}
+                            <form onSubmit={handleSubmit}>
+                                <div>
+                                    <label>Nome Completo:</label>
+                                    <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required />
+                                </div>
+                                <div>
+                                    <label>Aniversário:</label>
+                                    <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} required />
+                                </div>
+                                <div>
+                                    <label>Horário da Consulta:</label>
+                                    <input type="time" name="appointmentTime" value={formData.appointmentTime} onChange={handleChange} required />
+                                </div>
+                                <div className="modal-buttons">
+                                    <button type="submit">Agendar Consulta</button>
+                                    <button type="button" onClick={handleCloseModal}>Fechar</button>
+                                </div>
+                            </form>
+                            {successMessage && <p className="success-message">{successMessage}</p>}
+                            {errorMessage && <p className="error-message">{errorMessage}</p>}
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
+
     );
 };
 

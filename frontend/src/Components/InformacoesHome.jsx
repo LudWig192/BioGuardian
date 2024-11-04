@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Style/InformacoesHome.css'; // Arquivo CSS separado para estilo
+import '../Style/InformacoesHome.css';
 import { FaUserMd, FaAmbulance, FaClock, FaHospital } from 'react-icons/fa';
 import Stethoscope from "../Imagens/Stethoscope.png"
 

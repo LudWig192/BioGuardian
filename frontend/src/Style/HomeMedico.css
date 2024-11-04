@@ -1,4 +1,3 @@
-/* Estilos gerais para o status */
 .Status {
   max-height: 400px;
   max-width: 400px;
@@ -8,13 +7,11 @@
   align-items: center;
 }
 
-/* Estilos para o corpo do exemplo */
 .corpoExemplo {
   height: 300px;
   width: 300px;
 }
 
-/* Estilos para a seção de consultas */
 .Consultas {
   display: flex;
   flex-direction: column;
@@ -23,17 +20,14 @@
   width: 100%;
 }
 
-/* Estilos para o cliente */
 .Cliente {
   margin-left: 70px;
 }
 
-/* Estilos para o perfil */
 .Perfil {
   flex: 1;
 }
 
-/* Estilos para os elementos do perfil */
 .Elementos-perfil {
   flex: 2;
   display: flex;
@@ -41,12 +35,10 @@
   gap: 20px;
 }
 
-/* Estilos para o relatório */
 .Relatorio {
   display: flex;
 }
 
-/* Estilos para as informações */
 .Informacoes {
   background-color: #e0e6f8;
   color: #333;
@@ -63,7 +55,6 @@
   transform: translateY(-100px);
 }
 
-/* Efeito de linha decorativa abaixo do título */
 .Informacoes::after {
   display: block;
   width: 50px;
@@ -73,10 +64,10 @@
   border-radius: 4px;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .Consultas {
     padding-left: 0;
-    /* padding-left: 515px; */
     margin-top: -395px;
     width: 100%;
   }

@@ -66,7 +66,7 @@
   height: auto;
 }
 
-/* Media Queries para responsividade */
+/* Responsividade */
 @media (max-width: 1024px) {
   .expertise-section {
     padding: 80px 20px;
@@ -75,7 +75,6 @@
 
   .expertise-items {
     grid-template-columns: 1fr;
-    /* Ajusta para uma coluna em telas menores */
   }
 
   .expertise-content,

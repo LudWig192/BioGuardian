@@ -1,8 +1,8 @@
 import React from 'react';
-import '../Style/ResultadoExameCliente.css'; // Verifique se o caminho está correto
+import '../Style/ResultadoExameCliente.css';
 import Hemograma from "../Imagens/Hemograma_Completo.webp";
-import ExameUrina from "../Imagens/Exame_Urina2.jpg"; // Imagem do exame de urina
-import ExamePediatrico from "../Imagens/Exame_Pediatrico2.jpeg"; // Imagem do exame pediátrico
+import ExameUrina from "../Imagens/Exame_Urina2.jpg";
+import ExamePediatrico from "../Imagens/Exame_Pediatrico2.jpeg";
 import pessoa1 from "../Imagens/Bom.png";
 import pessoa2 from "../Imagens/Bom.png";
 import pessoa3 from "../Imagens/Bom.png";

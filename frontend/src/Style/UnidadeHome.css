@@ -1,86 +1,75 @@
-/* Contêiner principal */
 .UnidadeHome-featured-properties-wrapper {
   display: flex;
-  justify-content: center; /* Centraliza o conteúdo */
+  justify-content: center;
   padding: 40px;
   background-color: #fff;
 }
 
-/* Seção de conteúdo */
 .UnidadeHome-featured-properties {
   display: flex;
-  flex-direction: row; /* Posição padrão em linha */
+  flex-direction: row;
   width: 100%;
-  flex-wrap: wrap; /* Permite que os elementos se reorganizem em telas menores */
+  flex-wrap: wrap;
 }
 
-/* Seção de conteúdo principal */
 .UnidadeHome-content {
-  flex: 3; /* Flex-grow para permitir que essa seção ocupe mais espaço */
+  flex: 3; 
 }
 
-/* Título das Propriedades Destacadas */
 .UnidadeHome-featured-title {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
-  color: #6854f0; /* Cor do título */
+  color: #6854f0;
 }
 
-/* Lista de propriedades */
 .UnidadeHome-properties-list {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* Permite que os cards se ajustem em telas menores */
-  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Cada card de propriedade */
 .UnidadeHome-property-card {
   background-color: #f5f5f5;
   border-radius: 20px;
   overflow: hidden;
-  width: 300px; /* Largura do card */
+  width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  margin-bottom: 20px; /* Espaçamento inferior para melhor visualização */
+  margin-bottom: 20px;
 }
 
 .UnidadeHome-property-card:hover {
   transform: scale(1.05);
 }
 
-/* Ajuste da imagem no card */
 .UnidadeHome-property-card img {
-  width: 100%; /* Largura da imagem */
-  height: 200px; /* Altura fixa para a imagem */
-  object-fit: cover; /* Mantém a proporção da imagem */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-/* Informações da propriedade */
 .UnidadeHome-property-info {
   padding: 15px;
   text-align: center;
 }
 
-/* Nome da propriedade */
 .UnidadeHome-property-info .UnidadeHome-property-name {
   font-size: 18px;
   margin-bottom: 5px;
-  font-weight: bold; /* Negrito para destaque */
-  color: black; /* Cor do texto */
+  font-weight: bold;
+  color: black;
 }
 
-/* Localização da propriedade */
 .UnidadeHome-property-info .UnidadeHome-property-location {
   font-size: 14px;
   color: black;
 }
 
-/* Seção lateral à direita */
 .UnidadeHome-sidebar-Home {
-  flex: 0 0 350px; /* Largura ajustada para a sidebar */
+  flex: 0 0 350px;
   background-color: #f9f9f9;
   padding: 30px;
   border-radius: 20px;
@@ -88,26 +77,23 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 20px; /* Mantém o espaçamento entre sidebar e cards */
+  margin-left: 20px;
 }
 
-/* Título da barra lateral */
 .UnidadeHome-sidebar-title {
   font-size: 22px;
   margin-bottom: 15px;
-  font-weight: bold; /* Adicionado para destacar o título */
-  color: #54d4f0; /* Cor do texto para melhor legibilidade */
+  font-weight: bold;
+  color: #54d4f0;
 }
 
-/* Descrição da barra lateral */
 .UnidadeHome-sidebar-description {
-  color: #555; /* Ajustado para um tom mais escuro */
+  color: #555;
   font-size: 14px;
   margin-bottom: 30px;
-  line-height: 1.5; /* Adicionado para melhor espaçamento entre linhas */
+  line-height: 1.5;
 }
 
-/* Botão de explorar */
 .UnidadeHome-explore-btn {
   display: flex;
   align-items: center;
@@ -126,35 +112,35 @@
 }
 
 .UnidadeHome-explore-btn:hover {
-  background-color: #4f62e2; /* Um tom levemente mais escuro no hover */
+  background-color: #4f62e2;
 }
 
 /* Responsividade */
 @media (max-width: 1024px) {
   .UnidadeHome-featured-properties {
-    flex-direction: column; /* Coloca a sidebar abaixo do conteúdo principal */
-    align-items: center; /* Centraliza os itens */
+    flex-direction: column;
+    align-items: center;
   }
 
   .UnidadeHome-sidebar-Home {
-    flex: 0 0 100%; /* Sidebar ocupa toda a largura em telas menores */
-    margin-left: 0; /* Remove a margem à esquerda */
-    margin-top: 20px; /* Adiciona margem superior para espaçamento */
+    flex: 0 0 100%;
+    margin-left: 0;
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .UnidadeHome-properties-list {
-    flex-direction: column; /* Muda os cards para coluna */
-    align-items: center; /* Centraliza os cards */
+    flex-direction: column;
+    align-items: center;
   }
 
   .UnidadeHome-property-card {
-    width: 90%; /* Largura ajustada dos cards */
-    margin-bottom: 15px; /* Reduz o espaçamento inferior */
+    width: 90%;
+    margin-bottom: 15px;
   }
 
   .UnidadeHome-sidebar-Home {
-    margin-left: 0; /* Remove margem esquerda na sidebar */
+    margin-left: 0;
   }
 }

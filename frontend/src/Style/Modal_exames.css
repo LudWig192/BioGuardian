@@ -11,7 +11,6 @@
     z-index: 1000;
 }
 
-/* Estilo para o conteúdo do modal */
 .modal-content {
     background: #f9f9f9;
     padding: 20px;
@@ -28,7 +27,6 @@
     overflow-y: auto;
 }
 
-/* Estilo para o título do modal */
 .modal-content h2 {
     margin: 0 0 20px;
     color: #81b9f0;
@@ -36,17 +34,14 @@
     font-weight: 600;
 }
 
-/* Estilo para labels */
 .Modal-Exames-form label {
     display: block;
     margin-bottom: 12px;
     font-weight: 500;
 }
 
-/* Estilo para inputs */
 .Modal-Exames-form input {
     width: calc(100% - 22px);
-    /* Ajusta a largura para o padding */
     padding: 12px;
     margin-top: 5px;
     border: 1px solid #6d6d6d46;
@@ -56,13 +51,11 @@
     box-sizing: border-box;
 }
 
-/* Estilo para os botões do modal */
 .modal-buttons {
     margin-top: 20px;
     text-align: right;
 }
 
-/* Estilo geral para os botões */
 .modal-exames-btn button {
     background-color: #009b17;
     color: white;
@@ -76,12 +69,10 @@
     transition: background-color 0.3s, opacity 0.3s;
 }
 
-/* Estilo específico para o botão de cancelamento */
 .modal-exames-btn button[type="button"] {
     background-color: #c60000;
 }
 
-/* Efeito de hover e foco para os botões */
 .modal-exames-btn button:hover {
     opacity: 0.9;
 }
@@ -90,7 +81,6 @@
     outline: none;
 }
 
-/* CSS para adicionar o efeito de desfoque ao fundo */
 .blur-background {
     position: relative;
     overflow: hidden;

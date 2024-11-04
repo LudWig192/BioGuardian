@@ -95,27 +95,20 @@
     margin-bottom: 10px;
 }
 
-/* Tamanho fixo para o título e descrição dos cards */
 .titulo-card-BannerCliente {
     margin-top: 10px;
     font-weight: 600;
     color: #54a3f0;
     font-size: 1.25rem;
-    /* Define um tamanho fixo */
     text-align: center;
-    /* Centraliza o texto horizontalmente */
     display: flex;
-    /* Flex para centralizar verticalmente */
     justify-content: center;
-    /* Centraliza horizontalmente */
     align-items: center;
-    /* Centraliza verticalmente */
     width: 100%;
 }
 
 .descricao-card-BannerCliente {
     font-size: 1rem;
-    /* Define um tamanho fixo */
     color: black;
     margin-top: 0.5rem;
     line-height: 1.4;

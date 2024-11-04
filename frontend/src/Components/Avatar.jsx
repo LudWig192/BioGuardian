@@ -1,4 +1,3 @@
-// src/Componentes/Avatar.jsx
 import React, { useState } from 'react';
 import '../Style/Avatar.css';
 import Medico from '../Imagens/Calvo-removebg-preview.png';

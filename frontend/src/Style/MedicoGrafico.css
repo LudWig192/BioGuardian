@@ -1,39 +1,39 @@
 .graph-container {
-    width: 500px;    /* Largura do gráfico */
-    height: 375px;   /* Altura do gráfico */
-    margin: 40px auto;  /* Centraliza o gráfico horizontalmente */
+    width: 500px;  
+    height: 375px; 
+    margin: 40px auto; 
     margin-top: 250px;
-    background-color: #b4d7fa; /* Cor de fundo suave com um tom azulado claro */
-    border: 2px solid #ccc; /* Borda leve e neutra */
-    border-radius: 20px; /* Bordas mais arredondadas para um visual moderno */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais intensa para maior destaque */
-    padding: 30px; /* Aumentando o espaçamento interno */
+    background-color: #b4d7fa; 
+    border: 2px solid #ccc; 
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); 
+    padding: 30px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-200px); /* Move o gráfico 200px para cima */
-    transition: all 0.3s ease-in-out; /* Suaviza as transições */
+    transform: translateY(-200px);
+    transition: all 0.3s ease-in-out;
 }
 
 .graph-container canvas {
-    padding: 15px; /* Aumentando o espaçamento interno do gráfico */
-    border-radius: 10px; /* Bordas arredondadas no gráfico */
-    background-color: #fff; /* Fundo branco para destacar o gráfico */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Leve sombra para o canvas */
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .graph-container:hover {
-    transform: scale(1.05) translateY(-200px); /* Aumenta o efeito de zoom para 5% */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25); /* Aumenta a sombra no hover */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Suaviza todas as transições */
+    transform: scale(1.05) translateY(-200px); 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .graph-container {
         margin-top: 330px;
-        width: 100%;    /* Ajusta para ocupar a largura inteira da tela menor */
-        height: auto;   /* Altura automática para se ajustar */
-        transform: translateY(-100px); /* Reduz o deslocamento vertical em telas menores */
+        width: 100%;   
+        height: auto;  
+        transform: translateY(-100px);
     }
 }

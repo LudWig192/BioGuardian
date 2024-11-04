@@ -1,6 +1,5 @@
-// src/Components/ItemTarefa.js
 import React from "react";
-import "../Style/ItemdeTarefa.css"; // CSS para o item de tarefa
+import "../Style/ItemdeTarefa.css";
 
 const ItemTarefa = ({ title, date, time, doctor, status, img }) => {
     return (

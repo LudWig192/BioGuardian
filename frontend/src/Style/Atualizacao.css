@@ -107,6 +107,8 @@
     animation: fadeIn 0.3s ease;
 }
 
+/* Responsividade */
+
 @media (max-width: 768px) {
     .atualizacao-container {
         max-width: 90%;

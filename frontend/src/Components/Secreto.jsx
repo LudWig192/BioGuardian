@@ -56,6 +56,7 @@ const MusicPlayer = () => {
       composer: "Alyson Paschoal",
       src: IDM,
     },
+    
   ];
 
   useEffect(() => {

@@ -1,11 +1,11 @@
 import React from 'react';
-import { FaUserMd } from 'react-icons/fa'; // Ícone para a seção
-import '../Style/TabelaSalario.css'; // Importando o CSS do componente
+import { FaUserMd } from 'react-icons/fa'; 
+import '../Style/TabelaSalario.css';
 import Deolaine from '../Imagens/Deolaine.jpg';
 import Marcos from '../Imagens/Marcos.png';
 import Alice from '../Imagens/Alice.jpg';
 
-// Dados dos médicos
+
 const medicos = [
     {
         nome: 'Deolaine Freitas',

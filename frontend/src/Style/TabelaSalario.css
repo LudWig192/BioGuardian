@@ -42,24 +42,17 @@
 
 .icone-medico {
     width: 80px;
-    /* largura fixa */
     height: 80px;
-    /* altura fixa */
     margin-right: 15px;
     border-radius: 50%;
     overflow: hidden;
-    /* Esconde qualquer parte que extrapole */
     border: 2px solid #54a3f0;
-    /* Borda azul */
 }
 
 .icone-medico img {
     width: 100%;
-    /* Largura total do contêiner */
     height: 100%;
-    /* Altura total do contêiner */
     object-fit: cover;
-    /* Cobre o contêiner mantendo a proporção */
 }
 
 .dados-medico {
@@ -98,26 +91,21 @@
     text-align: center;
     min-width: 100px;
     background-color: #d4edda;
-    /* Fundo claro para status */
     color: #155724;
-    /* Cor para o texto do status */
     font-weight: bold;
 }
 
 .status.aprovado {
     background-color: #d4edda;
-    /* Verde claro para status aprovado */
     color: #155724;
-    /* Texto escuro */
 }
 
 .status.reprovado {
     background-color: #f8d7da;
-    /* Vermelho claro para status reprovado */
     color: #721c24;
-    /* Texto escuro */
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     .linha-medico {
         flex-direction: column;

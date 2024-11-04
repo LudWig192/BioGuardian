@@ -11,7 +11,7 @@ const TabelaLogin = () => {
                 const { data } = await axios.get("http://localhost:3001/Login");
                 setCadastros(data);
             } catch (error) {
-                console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
+                console.error("Erro ao buscar usuários:", error); 
             }
         };
 
@@ -21,7 +21,7 @@ const TabelaLogin = () => {
     const handleExcluirUsuario = async (idLogin) => {
         try {
             await axios.delete(`http://localhost:3001/Login/${idLogin}`);
-            // Atualiza a lista de cadastros após a exclusão
+            
             const { data } = await axios.get("http://localhost:3001/Login");
             setCadastros(data);
             console.log("Usuário excluído com sucesso!");

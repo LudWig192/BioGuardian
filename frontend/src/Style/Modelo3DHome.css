@@ -15,14 +15,14 @@
 
 .text-section-alexia {
   max-width: 45%;
-  text-align: justify; /* Alinhamento justificado para melhorar a distribuição */
+  text-align: justify;
 }
 
 .language-title-alexia {
   font-size: 2rem;
   color: #6854f0;
   margin-bottom: 10px;
-  text-align: left; /* Alinhamento à esquerda */
+  text-align: left; 
   font-weight: bold;
 }
 
@@ -30,7 +30,7 @@
   font-size: 1.1rem;
   margin-bottom: 10px;
   font-weight: 500;
-  text-align: left; /* Alinhamento à esquerda */
+  text-align: left;
 }
 
 .description-3D {
@@ -43,7 +43,7 @@
 .buttons-alexia {
   margin-top: 20px;
   display: flex;
-  justify-content: flex-start; /* Alinhamento dos botões à esquerda */
+  justify-content: flex-start;
 }
 
 .get-started-btn {
@@ -92,7 +92,7 @@
 
   .text-section-alexia {
     max-width: 100%;
-    text-align: center; /* Texto centralizado em telas menores */
+    text-align: center; 
     margin-bottom: 20px;
   }
 

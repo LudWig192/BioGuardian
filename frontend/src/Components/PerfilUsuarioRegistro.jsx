@@ -1,6 +1,6 @@
 import React from "react";
 import "../Style/PerfilUsuarioRegistros.css";
-import Adm from "../Imagens/lucky-removebg-preview.png"; // Imagem do usuário
+import Adm from "../Imagens/lucky-removebg-preview.png";
 
 const UserProfile = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Style/ExameHome.css';
-import ExameSangue from "../Imagens/Exame_de_Sangue.png"; // Substitua com as imagens corretas
+import ExameSangue from "../Imagens/Exame_de_Sangue.png";
 import ExameUrina from "../Imagens/Exame_de_Urina.jpg";
 import ExameImagem from "../Imagens/Exame_de_Imagem.jpeg";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';  // Checkmark icon
-import '../Style/PontosBeneficio.css';  // Link to CSS
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'; 
+import '../Style/PontosBeneficio.css';
 import Pontos from "../Imagens/PontosBene (2).png";
 
 const MedicalSection = () => {
@@ -9,7 +9,7 @@ const MedicalSection = () => {
     <div className="pontosbene-container"> 
       <div className="image-pontosbene"> 
         <img
-          src={Pontos} // Replace with actual image URL
+          src={Pontos}
           alt="Doctors with X-ray"
           className="pontosbene-image" 
         />

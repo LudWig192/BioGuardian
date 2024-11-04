@@ -102,6 +102,8 @@
   transform: scale(1.05);
 }
 
+/* Responsividade */
+
 @media (max-width: 768px) {
   .pricing-plans {
     flex-direction: column;

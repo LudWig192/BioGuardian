@@ -4,10 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlask, faVial, faXRay, faHeartbeat, faChartPie, faBrain } from '@fortawesome/free-solid-svg-icons';
-import '../Style/ExameInformações.css'; // Certifique-se de que o caminho do CSS está correto
+import '../Style/ExameInformações.css';
 import Banner from "../Imagens/BannerExame.webp";
 
-// Componente do Modal
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
@@ -19,7 +18,7 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           <FontAwesomeIcon icon={props.icon} className="modal-icon-examesIn" /> 
-          {props.examName} {/* Nome do exame */}
+          {props.examName}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="modal-body-examesIn"> 

@@ -1,6 +1,6 @@
 .user-profiles-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha */
+    flex-wrap: wrap; 
     justify-content: space-between;
     gap: 20px;
     padding: 20px;
@@ -14,7 +14,7 @@
     border: 1px solid #e3e6f0;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     padding: 20px;
-    width: calc(25% - 20px); /* 4 cartões por linha em telas maiores */
+    width: calc(25% - 20px);
     text-align: left;
     display: flex;
     align-items: center;
@@ -53,7 +53,6 @@
     margin-top: 5px;
 }
 
-/* Cores de papel */
 .user-profile-role--admin {
     color: #fd7e14;
 }
@@ -70,21 +69,21 @@
     color: #6f42c1;
 }
 
-/* Media Queries para Responsividade */
+/* Responsividade */
 @media (max-width: 1200px) {
     .user-profile-card {
-        width: calc(33.33% - 20px); /* 3 cartões por linha */
+        width: calc(33.33% - 20px);
     }
 }
 
 @media (max-width: 800px) {
     .user-profile-card {
-        width: calc(50% - 20px); /* 2 cartões por linha */
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 500px) {
     .user-profile-card {
-        width: 100%; /* 1 cartão por linha */
+        width: 100%;
     }
 }

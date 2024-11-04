@@ -1,10 +1,8 @@
-/* CSS existente */
-
 .tecnologia {
   display: flex;
   height: 100vh;
   overflow: hidden;
-  margin-top: 150px; /* Espaçamento adicionado na parte superior */
+  margin-top: 150px;
 }
 
 .left-tecnologia {
@@ -19,48 +17,48 @@
 
 .right-tecnologia {
   width: 67%;
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo quase branco, semitransparente */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 60px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-  grid-template-rows: repeat(2, 1fr); /* Duas linhas para quatro cards */
-  gap: 40px; /* Aumenta o espaço entre os cartões */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
   align-items: center;
 }
 
 .service-card-tecnologia {
   display: flex;
-  flex-direction: column; /* Coloca os ícones e títulos acima do texto */
-  align-items: center; /* Centraliza os itens dentro do cartão */
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo quase branco, semitransparente */
-  padding: 15px; /* Reduz o padding */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
   border-radius: 8px;
-  border: 2px solid rgba(0, 0, 0, 0.2); /* Borda transparente */
-  color: black; /* Texto em preto para melhor contraste */
-  overflow: hidden; /* Para garantir que o fundo não vaze para fora do cartão */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
-  width: 90%; /* Largura reduzida */
-  height: 200px; /* Altura ajustada para cards menores */
-  margin: 0 auto; /* Centraliza os cartões */
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: black; 
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
 }
 
 .service-card-tecnologia:hover {
-  transform: translateY(-5px); /* Elevação no hover */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra no hover */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .service-icon-tecnologia {
-  font-size: 50px; /* Tamanho do ícone ajustado */
-  margin-bottom: 10px; /* Espaçamento entre o ícone e o título */
-  color: #54a3f0; /* Cor do ícone */
+  font-size: 50px;
+  margin-bottom: 10px; 
+  color: #54a3f0;
 }
 
 .tecnologia-title {
   font-size: 1.2rem;
-  margin: 0 0 5px 0; /* Removendo margens desnecessárias */
-  text-align: center; /* Centraliza o título */
-  color: #54a3f0; /* Cor do ícone */
+  margin: 0 0 5px 0;
+  text-align: center;
+  color: #54a3f0;
   font-weight: bold;
 }
 
@@ -68,44 +66,44 @@
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
-  color: black; /* Texto em preto com leve transparência */
-  text-align: center; /* Centraliza o texto secundário */
+  color: black;
+  text-align: center;
 }
 
-/* Media Queries para Responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
   .tecnologia {
-    flex-direction: column; /* Muda para coluna em telas menores */
-    height: auto; /* Ajusta a altura */
+    flex-direction: column;
+    height: auto;
   }
 
   .left-tecnologia {
-    width: 100%; /* Largura total para a imagem */
+    width: 100%;
   }
 
   .right-tecnologia {
-    width: 100%; /* Largura total para a seção de serviços */
-    padding: 30px; /* Reduz o padding em telas menores */
+    width: 100%; 
+    padding: 30px;
     display: grid; 
-    grid-template-columns: 1fr; /* Uma coluna para cards em telas menores */
-    gap: 20px; /* Reduz o espaço entre os cartões */
+    grid-template-columns: 1fr; 
+    gap: 20px;
   }
 
   .service-card-tecnologia {
-    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .service-icon-tecnologia {
-    font-size: 40px; /* Ajusta o tamanho do ícone */
+    font-size: 40px;
   }
 
   .tecnologia-title {
-    font-size: 1rem; /* Ajusta o tamanho do título */
+    font-size: 1rem;
   }
 
   .tecnologia-description {
-    font-size: 0.8rem; /* Ajusta o tamanho da descrição */
+    font-size: 0.8rem;
   }
 }

@@ -1,14 +1,9 @@
-/* src/Style/Painel.css */
-
-* {
+.painel-tudo * {
     box-sizing: border-box;
-}
-
-body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Fundo neutro suave */
+    background-color: #ffffff;
 }
 
 .painel-container {
@@ -16,32 +11,31 @@ body {
     margin: auto;
     padding: 40px;
     border-radius: 10px;
-    background-color: #ffffff; /* Fundo branco para o painel */
-    /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); */
+    background-color: #ffffff;
 }
 
 .painel-title {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #2c3e50; /* Azul escuro */
+    color: #2c3e50;
     text-align: center;
 }
 
 .painel-cards {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha em telas menores */
-    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .card {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: calc(25% - 20px); /* Largura padrão dos cards */
+    width: calc(25% - 20px);
     text-align: center;
-    background-color: #eafaf1; /* Verde claro */
+    background-color: #eafaf1;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -52,30 +46,30 @@ body {
 
 .card-icon {
     margin-bottom: 15px;
-    color: #54a3f0; /* Cor do ícone */
+    color: #54a3f0;
 }
 
 .card-content h2 {
-    font-size: 22px; /* Tamanho maior para os números */
+    font-size: 22px;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #2c3e50; /* Azul escuro */
+    color: #2c3e50;
 }
 
 .card-content p {
     font-size: 16px;
-    color: #555; /* Cor mais suave para o texto */
+    color: #555;
 }
 
-/* Estilos Responsivos */
+/* Responsividade */
 @media (max-width: 900px) {
     .card {
-        width: calc(50% - 20px); /* Duas colunas em telas médias */
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 600px) {
     .card {
-        width: calc(100% - 20px); /* Uma coluna em telas pequenas */
+        width: calc(100% - 20px);
     }
 }

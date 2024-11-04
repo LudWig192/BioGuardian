@@ -1,37 +1,27 @@
-/* Estilo geral do cabeçalho */
 .date-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
     position: relative;
-    max-width: 725px;
     width: 100%;
     margin: 110px 0 0 -20px;
-    /* Permitir que o cabeçalho se ajuste à largura */
 }
 
-/* Título do Mês */
 .date-header h3 {
     margin-bottom: 10px;
     color: #6a82fb;
-    /* Roxo azulado */
 }
 
-/* Navegação da semana */
 .week-navigation {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Centralizar conteúdo */
     flex-wrap: nowrap;
-    /* Não permitir quebra de linha */
 }
 
-/* Estilo dos botões de navegação (setas) */
 .week-navigation button {
     background-color: #6a82fb;
-    /* Roxo azulado */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -44,7 +34,6 @@
 
 .week-navigation button:hover {
     background-color: #5145cd;
-    /* Roxo mais escuro */
 }
 
 .week-navigation button:focus {
@@ -52,19 +41,15 @@
     box-shadow: 0 0 8px rgba(106, 130, 251, 0.5);
 }
 
-/* Estilo dos botões dos dias */
 .day-buttons {
     display: flex;
     gap: 5px;
     flex-wrap: nowrap;
-    /* Não permitir quebra de linha */
     justify-content: center;
-    /* Centralizar os botões */
 }
 
 .day-buttons button {
     background-color: #e9eff7;
-    /* Azul claro */
     color: #333;
     border: 1px solid #ddd;
     padding: 10px 5px;
@@ -73,27 +58,22 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
     font-size: 14px;
-    min-width: 40px;
-    max-width: 60px;
-    /* Definindo uma largura máxima para manter o formato */
+    min-width: 55px;
+    max-width: 100px;
     flex: 1;
-    /* Permitir que os botões se ajustem */
 }
 
 .day-buttons button:hover {
     background-color: #dce4f7;
-    /* Azul um pouco mais escuro */
 }
 
 .day-buttons button.selected-day {
     background-color: #6a82fb;
-    /* Roxo azulado */
     color: white;
     border-color: #6a82fb;
     font-weight: bold;
 }
 
-/* Estilo para os ícones de edição e exclusão */
 .appointment-options {
     display: flex;
     justify-content: flex-end;
@@ -105,7 +85,6 @@
     cursor: pointer;
     margin-left: 10px;
     color: #9b59b6;
-    /* Roxo suave */
     transition: color 0.3s ease, transform 0.3s ease;
     padding: 3px 6px;
     border-radius: 5px;
@@ -121,7 +100,6 @@
     color: white;
 }
 
-/* Container do Appointment */
 .appointment-container {
     margin-bottom: 20px;
     display: flex;
@@ -131,7 +109,6 @@
     width: 100%;
 }
 
-/* Estilo da Hora */
 .appointment-datetime {
     font-size: 16px;
     color: #6a82fb;
@@ -141,7 +118,6 @@
     text-align: left;
 }
 
-/* Estilo do Card de Exame */
 .appointment-card {
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -169,11 +145,9 @@
     margin: 5px 0;
 }
 
-/* Layout Geral */
 .appointments {
     padding: 20px;
     background-color: #f0f4f8;
-    /* Fundo azul claro */
     border-radius: 20px;
     margin-top: 30px;
     margin-right: 40px;
@@ -186,7 +160,6 @@
     font-weight: bold;
 }
 
-/* Estilo para o título sem consultas */
 .appointments p {
     font-size: 16px;
     color: #666;
@@ -218,7 +191,8 @@
 .mobile{
     display:none;
 }
-/* Estilo Responsivo */
+
+/* Responsividade */
 @media (max-width: 768px) {
     .desk{
         display: none;
@@ -228,22 +202,11 @@
     }
     .date-header {
         display: unset;
-        /* flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px;
-        position: relative;
-        max-width: 725px;
-        width: 100%;
-        margin: 110px 0 0 -20px; */
     }
 
     .day-buttons button {
-        /* flex: 1 0 20%; */
-        /* Ajusta o tamanho dos botões em telas menores */
         min-width: 40px;
-        /* Tamanho mínimo do botão */
         max-width: none;
-        /* Remove a largura máxima para flexibilidade */
     }
     .day-buttons {
         gap: 0px;
@@ -262,7 +225,6 @@
 
     .appointment-card {
         width: 100%;
-        /* Largura total em telas pequenas */
     }
 
     .week-navigation {

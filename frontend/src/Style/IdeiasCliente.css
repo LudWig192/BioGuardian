@@ -1,62 +1,55 @@
-/* Estilo para o contêiner principal da seção de informações */
 .info-supervisão-container {
-    display: flex; /* Exibe a imagem e os cartões lado a lado */
-    align-items: center; /* Alinha a imagem e os cartões ao centro verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    padding: 20px;
-    background-color: #f9f9f9; /* Cor de fundo clara */
-    height: 100vh; /* Ocupa 100% da altura da tela */
-  }
-  
-  /* Estilo para o contêiner de imagem */
-  .image-container-supervisão {
-    margin: 0 20px; /* Margem à esquerda e direita da imagem para espaçamento */
-  }
-  
-  /* Estilo para a imagem do médico */
-  .doctor-image-supervisão {
-    width: 100%; /* Ocupa 100% do contêiner pai */
-    max-width: 400px; /* Largura máxima da imagem */
-    border-radius: 8px; /* Bordas arredondadas */
-  }
-  
-  /* Estilo para o contêiner dos cartões de informação */
-  .supervisão-cards-container {
-    display: flex; /* Exibe os cartões em linha */
-    flex-direction: column; /* Mantém os cartões em coluna */
-    gap: 20px; /* Espaçamento entre os cartões */
-  }
-  
-  /* Estilo para cada cartão de informação */
-  .info-card-supervisão {
-    background-color: white; /* Cor de fundo do cartão */
-    border: 1px solid #e0e0e0; /* Bordas cinzas */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    width: 250px; /* Largura fixa dos cartões */
-    text-align: center; /* Centraliza o texto */
-  }
-  
-  /* Estilo para os ícones dentro dos cartões */
-  .icon-supervisão {
-    font-size: 24px; /* Tamanho do ícone */
-    color: #007bff; /* Cor do ícone */
-    margin-bottom: 10px; /* Espaçamento inferior do ícone */
-  }
-  
-  /* Estilo para os títulos */
-  .title-supervisão {
-    font-size: 18px; /* Tamanho da fonte do título */
-    font-weight: bold; /* Negrito */
-    color: #333; /* Cor do texto do título */
-    margin-bottom: 10px; /* Espaçamento inferior do título */
-  }
-  
-  /* Estilo para as descrições */
-  .description-supervisão {
-    font-size: 14px; /* Tamanho da fonte da descrição */
-    color: #666; /* Cor do texto da descrição */
-    line-height: 1.5; /* Espaçamento entre linhas */
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+
+.image-container-supervisão {
+  margin: 0 20px;
+}
+
+
+.doctor-image-supervisão {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.supervisão-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card-supervisão {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.icon-supervisão {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.title-supervisão {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description-supervisão {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}

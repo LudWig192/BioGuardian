@@ -85,7 +85,7 @@ p {
     font-style: italic;
     margin-top: 5px;
 }
-
+/* Responsividade */
 @media (max-width: 768px) {
     .avaliacoes {
         width: 95%;

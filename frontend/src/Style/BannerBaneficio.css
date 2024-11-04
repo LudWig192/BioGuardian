@@ -1,13 +1,12 @@
-/* Estrutura do container principal com imagem de fundo */
 .bannerbeneficio-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../Imagens/fundo.png'); /* Adicione a URL da imagem aqui */
-    background-size: cover; /* A imagem cobre toda a área */
-    background-position: center; /* A imagem está centralizada */
-    background-repeat: no-repeat; /* A imagem não se repete */
+    background-image: url('../Imagens/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 40px;
     position: relative;
 }
@@ -23,9 +22,9 @@
 
 .text-bannerbeneficio {
     flex: 1;
-    text-align: left; 
+    text-align: left;
     padding: 20px;
-    border-radius: 10px; 
+    border-radius: 10px;
     margin-right: 20px;
 }
 
@@ -58,14 +57,14 @@
 
 .image-bannerbeneficio {
     flex: 1;
-    text-align: center; 
+    text-align: center;
 }
 
 .bannerbeneficio-image {
     width: 100%;
     max-width: 600px;
     height: auto;
-    border-radius: 15px; 
+    border-radius: 15px;
     border: 10px solid #e0f0ff;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
@@ -132,6 +131,7 @@
     z-index: 0;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     .bannerbeneficio-content {
         flex-direction: column;

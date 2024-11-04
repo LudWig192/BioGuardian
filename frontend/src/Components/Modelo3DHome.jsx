@@ -19,7 +19,6 @@ const LanguageCard = () => {
         </div>
       </div>
       <div className="image-section-alexia">
-        {/* Embedding the Sketchfab iframe */}
         <div className="sketchfab-embed-wrapper">
           <iframe 
             title="Aparelho de Monitoramento de Saúde" 

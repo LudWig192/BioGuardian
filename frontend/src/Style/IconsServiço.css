@@ -1,110 +1,99 @@
-/* Estilo para a seção principal */
 .section-servicoicons {
-    padding: 300px 0;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  /* Container principal */
-  .container-servicoicons {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Título */
-  .titulo-servicoicons {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #6854f0;
-  }
-  
-  /* Estilos para as colunas */
+  padding: 300px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.container-servicoicons {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo-servicoicons {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #6854f0;
+}
+
+.col-md-4-servicoicons {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.icon-servicoicons {
+  font-size: 40px;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.icon-xlg-servicoicons {
+  font-size: 60px;
+}
+
+.font-servicoicons {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #54a3f0;
+}
+
+.descricao-servicoicons {
+  font-size: 16px;
+  color: black;
+}
+
+.row-servicoicons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .col-md-4-servicoicons {
-    flex: 0 0 33.3333%;
-    max-width: 33.3333%;
-    padding: 15px;
-    box-sizing: border-box;
+    max-width: 50%;
+    flex: 0 0 50%;
   }
-  
-  /* Estilos para os ícones */
-  .icon-servicoicons {
-    font-size: 40px;
-    color: #3498db;
-    margin-bottom: 15px;
+
+  .titulo-servicoicons {
+    font-size: 22px;
   }
-  
-  /* Estilo para os ícones com tamanho extra grande */
-  .icon-xlg-servicoicons {
-    font-size: 60px;
-  }
-  
-  /* Fontes de descrição */
+
   .font-servicoicons {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #54a3f0;
+    font-size: 18px;
   }
-  
-  /* Descrição abaixo dos títulos */
+
   .descricao-servicoicons {
+    font-size: 14px;
+  }
+
+  .icon-xlg-servicoicons {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-4-servicoicons {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .titulo-servicoicons {
+    font-size: 20px;
+  }
+
+  .font-servicoicons {
     font-size: 16px;
-    color: black;
   }
-  
-  /* Estilo para a linha de serviço */
-  .row-servicoicons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+  .descricao-servicoicons {
+    font-size: 14px;
   }
-  
-  /* Responsividade para tablets (telas menores que 768px) */
-  @media (max-width: 768px) {
-    .col-md-4-servicoicons {
-      max-width: 50%;
-      flex: 0 0 50%;
-    }
-  
-    .titulo-servicoicons {
-      font-size: 22px;
-    }
-  
-    .font-servicoicons {
-      font-size: 18px;
-    }
-  
-    .descricao-servicoicons {
-      font-size: 14px;
-    }
-  
-    .icon-xlg-servicoicons {
-      font-size: 50px;
-    }
+
+  .icon-xlg-servicoicons {
+    font-size: 40px;
   }
-  
-  /* Responsividade para smartphones (telas menores que 576px) */
-  @media (max-width: 576px) {
-    .col-md-4-servicoicons {
-      max-width: 100%;
-      flex: 0 0 100%;
-    }
-  
-    .titulo-servicoicons {
-      font-size: 20px;
-    }
-  
-    .font-servicoicons {
-      font-size: 16px;
-    }
-  
-    .descricao-servicoicons {
-      font-size: 14px;
-    }
-  
-    .icon-xlg-servicoicons {
-      font-size: 40px;
-    }
-  }
-  
+}

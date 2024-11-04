@@ -4,12 +4,10 @@ import '../Style/HistoricoMedico.css';
 const HistoricoMedico = ({ familyMembers, medicalRecords }) => {
   const [selectedMember, setSelectedMember] = useState(familyMembers[0].name);
 
-  // Filtra os registros médicos com base no membro selecionado
   const filteredRecords = medicalRecords.filter(
     (record) => record.memberName === selectedMember
   );
-
-  // Manipula a troca de membro da família
+  
   const handleMemberChange = (e) => {
     setSelectedMember(e.target.value);
   };

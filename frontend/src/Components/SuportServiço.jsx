@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Style/SuportServiço.css'; // Importação do CSS
-import Pediatria from "../Imagens/Pediatria.png"; // Imagem importada corretamente
+import '../Style/SuportServiço.css';
+import Pediatria from "../Imagens/Pediatria.png";
 import ExameImagem from "../Imagens/ExameImagem.png";
 import Raio from "../Imagens/ExameRaio.png";
 import Laboratório from "../Imagens/ExameLaboratorio.png";

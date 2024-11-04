@@ -1,37 +1,33 @@
-/* Estilos gerais do contêiner */
 .chart-container {
   margin-top: 20px;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 700px;
-  margin: 0 auto; /* Centraliza o card */
-  background-color: #ffffff; /* Fundo branco */
+  margin: 0 auto;
+  background-color: #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chart-container:hover {
-  transform: translateY(-5px); /* Efeito ao passar o mouse */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo do título */
 .chart-title {
   text-align: center;
   font-size: 1.6rem;
   margin-bottom: 20px;
   font-weight: bold;
   color: #333;
-  letter-spacing: 0.5px; /* Espaçamento entre letras */
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
-/* Estilos do contêiner do gráfico */
 .chart-box {
-  height: 300px; /* Altura do gráfico */
+  height: 300px;
 }
 
-/* Estilo para o tooltip do gráfico */
 .recharts-tooltip-wrapper {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
@@ -39,9 +35,8 @@
   padding: 10px;
 }
 
-/* Estilos para as linhas do gráfico */
 .recharts-line {
-  stroke-width: 2; /* Espessura das linhas */
+  stroke-width: 2;
 }
 
 .recharts-legend-item {
@@ -49,11 +44,10 @@
   font-weight: 500;
 }
 
-/* Ajustes responsivos */
 @media (max-width: 768px) {
   .chart-container {
       padding: 15px;
-      max-width: 95%; /* O card se adapta a telas menores */
+      max-width: 95%;
   }
 
   .chart-title {
@@ -61,6 +55,6 @@
   }
 
   .chart-box {
-      height: 200px; /* Reduz a altura do gráfico em telas menores */
+      height: 200px;
   }
 }

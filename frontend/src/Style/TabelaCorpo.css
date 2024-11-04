@@ -1,92 +1,87 @@
-/* Layout principal da aplicação */
 .app-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 20px;
-    min-height: 40vh;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  min-height: 40vh;
+}
+
+.corpo-container,
+.tabela-container {
+  flex: 1;
+}
+
+.tabela-container {
+  padding: 0;
+  width: 50%;
+  max-width: 100%;
+  margin-top: -270px;
+  margin-left: 20px;
+}
+
+.tabela-container h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.tabela-problemas {
+  width: 80%;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin: 0 auto;
+}
+
+.tabela-problemas th,
+.tabela-problemas td {
+  border: 1px solid #000000;
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabela-problemas th {
+  background-color: #f8f9fa;
+}
+
+.tabela-problemas tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabela-problemas tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
   }
-  
-  /* Contêineres para corpo e tabela */
-  .corpo-container, .tabela-container {
-    flex: 1;
-  }
-  
-  /* Estilo para o contêiner da tabela */
+
   .tabela-container {
-    padding: 0;
-    width: 50%;
-    max-width: 100%;
-    margin-top: -270px;
-    margin-left: 20px; /* Adiciona margem à esquerda para mover a tabela para a direita */
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0;
   }
-  
-  /* Título da tabela */
-  .tabela-container h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  /* Estilo da tabela */
+
   .tabela-problemas {
-    width: 80%; /* Ajusta a largura da tabela para 80% do contêiner */
-    border-collapse: collapse;
-    table-layout: auto; /* Ajusta a largura das colunas conforme o conteúdo */
-    margin: 0 auto; /* Centraliza a tabela horizontalmente */
+    width: 100%;
+    font-size: 12px;
   }
-  
-  /* Estilo das células da tabela */
-  .tabela-problemas th, .tabela-problemas td {
-    border: 1px solid #000000;
-    padding: 8px;
-    text-align: left;
-    font-size: 14px;
+
+  .tabela-problemas th,
+  .tabela-problemas td {
+    padding: 6px;
   }
-  
-  /* Estilo do cabeçalho da tabela */
-  .tabela-problemas th {
-    background-color: #f8f9fa;
+}
+
+@media (max-width: 480px) {
+  .tabela-problemas {
+    font-size: 10px;
   }
-  
-  /* Estilo das linhas alternadas da tabela */
-  .tabela-problemas tr:nth-child(even) {
-    background-color: #f9f9f9;
+
+  .tabela-problemas th,
+  .tabela-problemas td {
+    padding: 4px;
   }
-  
-  /* Estilo para o hover das linhas da tabela */
-  .tabela-problemas tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
-    .app-container {
-      flex-direction: column;
-    }
-  
-    .tabela-container {
-      width: 100%;
-      margin-top: 20px;
-      margin-left: 0; /* Remove a margem à esquerda em telas menores */
-    }
-  
-    .tabela-problemas {
-      width: 100%; /* Ajusta a tabela para usar a largura total disponível em telas menores */
-      font-size: 12px; /* Reduz o tamanho da fonte para dispositivos menores */
-    }
-  
-    .tabela-problemas th, .tabela-problemas td {
-      padding: 6px; /* Ajusta o padding para dispositivos menores */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .tabela-problemas {
-      font-size: 10px; /* Reduz ainda mais o tamanho da fonte para dispositivos muito pequenos */
-    }
-  
-    .tabela-problemas th, .tabela-problemas td {
-      padding: 4px; /* Ajusta o padding para dispositivos muito pequenos */
-    }
-  }
+}

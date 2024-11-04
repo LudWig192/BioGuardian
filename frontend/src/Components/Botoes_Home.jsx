@@ -1,5 +1,3 @@
-// Buttons.js
-
 import React from 'react';
 import "../Style/Botao_Home.css"
 

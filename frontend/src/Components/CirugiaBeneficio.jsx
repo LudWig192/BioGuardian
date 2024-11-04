@@ -16,10 +16,7 @@ const EyeCareServices = () => {
         overflow: 'hidden'
       }}
     >
-      {/* Overlay para cobrir o fundo */}
       <div className="cirurgiabeneficio-overlay"></div>
-      
-      {/* Texto e conteúdo sobreposto */}
       <div className="cirurgiabeneficio-text" style={{ zIndex: 2 }}>
         <div className="cirurgiabeneficio-main-title">Nossas Cirurgias</div>
         <div className="cirurgiabeneficio-description">

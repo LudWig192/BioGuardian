@@ -1,134 +1,131 @@
-/* ResultadoExameCliente.css */
-
 .cardsResultadoCliente-container {
-    max-width: 1200px; /* Largura máxima do contêiner */
-    margin: 260px auto 0; /* Centraliza o contêiner e adiciona margem superior */
-    padding: 20px; /* Espaçamento interno */
-    display: flex; /* Adicionado para centralizar conteúdo */
-    flex-direction: column; /* Empilha elementos verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
+    max-width: 1200px;
+    margin: 260px auto 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cardsResultadoCliente-header {
-    font-size: 32px; /* Tamanho da fonte do cabeçalho */
-    font-weight: bold; /* Negrito */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+    font-size: 32px; 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
     color: #6854f0;
 }
 
 .cardsResultadoCliente {
-    display: flex; /* Utiliza flexbox para o layout */
-    flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte */
-    gap: 20px; /* Espaçamento entre os cards */
-    justify-content: center; /* Centraliza os cards horizontalmente */
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .cardsResultadoCliente-card {
-    background-color: #fff; /* Cor de fundo dos cards */
-    border: 1px solid #ddd; /* Borda dos cards */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow: hidden; /* Esconde o excesso de conteúdo */
-    width: calc(33.333% - 20px); /* Três cards por linha, considerando o espaço */
-    display: flex; /* Utiliza flexbox para permitir o alinhamento */
-    flex-direction: column; /* Faz os filhos serem empilhados verticalmente */
-    transition: transform 0.3s; /* Transição suave para transformação */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
 }
 
 .cardsResultadoCliente-card:hover {
-    transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 .cardsResultadoCliente-image {
-    width: 100%; /* Imagem ocupa toda a largura do card */
-    height: auto; /* Altura automática para manter a proporção */
+    width: 100%;
+    height: auto;
 }
 
 .cardsResultadoCliente-content {
-    flex: 1; /* Faz com que o conteúdo ocupe o espaço disponível */
-    padding: 15px; /* Espaçamento interno do conteúdo do card */
-    text-align: left; /* Alinha o texto à esquerda */
-    display: flex; /* Permite o uso de flexbox */
-    flex-direction: column; /* Empilha os elementos verticalmente */
-    justify-content: space-between; /* Garante que o espaço entre os elementos seja distribuído */
+    flex: 1; 
+    padding: 15px; 
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .cardsResultadoCliente-date {
-    font-size: 14px; /* Tamanho da fonte da data */
-    margin-bottom: 5px; /* Espaçamento abaixo da data */
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .cardsResultadoCliente-title {
-    font-weight: bold; /* Negrito para o título */
-    font-size: 18px; /* Aumentando o tamanho da fonte do título */
-    margin: 5px 0 10px; /* Espaçamento acima e abaixo do título */
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0 10px;
 }
 
 .cardsResultadoCliente-text {
-    font-size: 14px; /* Tamanho da fonte da descrição */
-    margin-bottom: 15px; /* Espaço abaixo da descrição */
+    font-size: 14px;
+    margin-bottom: 15px;
     color: black;
 }
 
 .cardsResultadoCliente-button-container {
-    display: flex; /* Usar flexbox para centralizar o botão */
-    justify-content: center; /* Centraliza o botão */
-    margin-top: auto; /* Move o botão para o fundo do card */
-    padding-bottom: 15px; /* Adiciona espaçamento abaixo do botão */
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding-bottom: 15px;
 }
 
 .cardsResultadoCliente-link {
-    width: 100%; /* Faz o botão ocupar toda a largura do contêiner */
-    text-align: center; /* Centraliza o texto no botão */
-    text-decoration: none; /* Remove o sublinhado */
-    background-color: #54a3f0; /* Cor de fundo do botão */
-    color: #ffffff; /* Cor do texto do botão */
-    font-weight: bold; /* Negrito */
-    padding: 10px; /* Espaçamento interno do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 4px; /* Bordas arredondadas do botão */
-    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+    width: 100%; 
+    text-align: center; 
+    text-decoration: none; 
+    background-color: #54a3f0;
+    color: #ffffff; 
+    font-weight: bold; 
+    padding: 10px; 
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 .cardsResultadoCliente-link:hover {
-    background-color: #007bbf; /* Cor de fundo ao passar o mouse */
+    background-color: #007bbf; 
 }
 
-/* Estilos para as informações da pessoa */
 .person-resultadoCliente-info {
-    display: flex; /* Usar flexbox para alinhar a imagem e o nome */
-    align-items: center; /* Centraliza verticalmente */
-    margin-bottom: 10px; /* Espaço abaixo do perfil */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .avatarResultadoCliente {
-    width: 30px; /* Largura do avatar */
-    height: 30px; /* Altura do avatar */
-    border-radius: 50%; /* Torna o avatar redondo */
-    background-color: #007bff; /* Cor de fundo do avatar */
-    color: white; /* Cor do texto do avatar */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold; /* Estilo do texto */
-    margin-right: 10px; /* Espaço entre o avatar e o nome */
+    font-weight: bold;
+    margin-right: 10px;
 }
 
 .person-resultadoCliente-name {
-    font-size: 15px; /* Tamanho da fonte do nome */
-    color: black; /* Cor do texto do nome */
+    font-size: 15px; 
+    color: black;
 }
 
-/* Media Queries para responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
     .cardsResultadoCliente-card {
-        width: calc(50% - 20px); /* Dois cards por linha em telas menores */
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
     .cardsResultadoCliente-card {
-        width: 100%; /* Um card por linha em telas muito pequenas */
+        width: 100%;
     }
 }

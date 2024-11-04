@@ -4,7 +4,7 @@
     gap: 20px;
     justify-content: space-around;
     padding: 20px;
-    background-color: #f3f6f9; /* Fundo suave para um contraste profissional */
+    background-color: #f3f6f9;
     border-radius: 10px;
 }
 
@@ -26,9 +26,9 @@
 .card_adm-title {
     margin-bottom: 15px;
     font-size: 1.3em;
-    color: #2e4057; /* Azul mais escuro para um toque sofisticado */
+    color: #2e4057;
     font-weight: 600;
-    padding-bottom: 0; /* Garantir que não haja borda inferior */
+    padding-bottom: 0;
     border-bottom: none;
 }
 

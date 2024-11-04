@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
-import '../Style/MedicoServiço.css'; // Importando CSS externo
+import '../Style/MedicoServiço.css';
 import Medica from "../Imagens/Medico24h1 (1).png";
 import Medico from "../Imagens/Medico24h1 (3).png";
 import SegundaMedica from "../Imagens/Medico24h1 (2).png";

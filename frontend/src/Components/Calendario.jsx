@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "../Style/Cabecalhodata.css";
 
-// Função para gerar os dias da semana considerando a data e o mês correto
 const generateDaysOfWeek = (startDate) => {
     const daysInWeek = 7;
     const days = [];
 
     for (let i = 0; i < daysInWeek; i++) {
         const currentDate = new Date(startDate);
-        currentDate.setDate(currentDate.getDate() + i); // Adiciona dias à data inicial
+        currentDate.setDate(currentDate.getDate() + i); 
 
         const day = currentDate.getDate();
-        const label = currentDate.toLocaleDateString('pt-BR', { weekday: 'long' }); // Retorna o nome do dia da semana em português
+        const label = currentDate.toLocaleDateString('pt-BR', { weekday: 'long' }); 
 
         days.push({
             day,
@@ -30,7 +29,7 @@ const Cabecalho = () => {
     const [formDetails, setFormDetails] = useState({ title: "", description: "", time: "", doctor: "" });
     const [isEditing, setIsEditing] = useState(false);
     const [editIndex, setEditIndex] = useState(null);
-    const [weekOffset, setWeekOffset] = useState(0); // Controle de qual semana estamos exibindo
+    const [weekOffset, setWeekOffset] = useState(0);
 
     useEffect(() => {
         const today = new Date().getDate();
@@ -92,22 +91,18 @@ const Cabecalho = () => {
         setEditIndex(null);
     };
 
-    // Navegar entre semanas
     const nextWeek = () => {
-        setWeekOffset(weekOffset + 7); // Avança 7 dias
+        setWeekOffset(weekOffset + 7); 
     };
 
     const prevWeek = () => {
-        setWeekOffset(weekOffset - 7); // Retrocede 7 dias
+        setWeekOffset(weekOffset - 7);
     };
 
-    // Dias calculados com base na semana
     const days = generateDaysOfWeek(new Date(new Date().setDate(new Date().getDate() + weekOffset)));
 
-    // Filtrar os appointments para o dia selecionado
     const filteredAppointments = appointments.filter((appointment) => appointment.day === selectedDay);
-
-    // Mês atual
+    
     const currentMonth = new Date().toLocaleString('pt-BR', { month: 'long', year: 'numeric' });
 
     return (

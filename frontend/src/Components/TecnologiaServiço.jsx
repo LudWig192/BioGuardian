@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHeartbeat, FaShieldAlt, FaUserMd, FaAmbulance } from "react-icons/fa";
-import "../Style/TecnologiaServiço.css"; // Importando o arquivo CSS
+import "../Style/TecnologiaServiço.css";
 import Tecnologia from "../Imagens/Tecnologia (2).png";
 
 const MedicoServices = () => {

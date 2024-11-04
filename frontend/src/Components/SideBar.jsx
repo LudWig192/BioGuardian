@@ -5,7 +5,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { Link } from 'react-router-dom';
-import '../Style/Navbar.css'; // Certifique-se de que o caminho está correto
+import '../Style/Navbar.css';
 
 const Navbar = () => {
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Swal from 'sweetalert2'; // Importa o SweetAlert2
+import Swal from 'sweetalert2';
 import '../Style/CalendarioAgendamento.css';
 
 const Calendar = ({ onDateSelect }) => {

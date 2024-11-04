@@ -1,83 +1,57 @@
-/* Estilizando a navbar */
 .navbar {
   background-color: #54a2f038;
-  /* Fundo claro e profissional */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  /* Aumentar padding para mais espaço vertical */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  /* Sombra leve e sutil */
   z-index: 100;
   width: 100%;
   font-family: 'Roboto', sans-serif;
-  /* Fonte moderna e limpa */
 }
 
-/* Organizando os itens à esquerda (logo + links) */
 .navbar-left {
   display: flex;
   align-items: center;
 }
 
-/* Logo */
 .navbar-logo img {
-  height: 60px;
-  /* Aumentar altura da logo */
-  margin-right: 25px;
-  /* Espaçamento entre logo e links */
+  height: 60px;  margin-right: 25px;
 }
 
-/* Estilizando os links da navbar */
 .navbar-links {
   list-style: none;
   display: flex;
   gap: 30px;
-  /* Espaçamento consistente entre os links */
 }
 
 .navbar-links li {
   display: inline-block;
 }
 
-/* Estilização dos links com ícones */
 .nav-link {
   display: flex;
   align-items: center;
   color: #333;
-  /* Cor escura e profissional */
   text-decoration: none;
   font-size: 18px;
-  /* Aumentar tamanho da fonte para melhor legibilidade */
   font-weight: 500;
-  /* Peso da fonte ajustado */
   padding: 12px 15px;
-  /* Aumentar padding para mais conforto */
   border-radius: 4px;
-  /* Bordas suaves */
   transition: background-color 0.3s ease, transform 0.2s ease;
-  /* Transições suaves */
 }
 
 .nav-link:hover {
   background-color: rgba(51, 51, 51, 0.1);
-  /* Efeito de hover sutil */
   transform: scale(1.02);
-  /* Pequeno efeito de elevação */
 }
 
-/* Espaçamento entre ícone e texto */
 .nav-link .icon {
   margin-right: 8px;
-  /* Espaçamento entre ícone e texto */
   font-size: 22px;
-  /* Aumentar tamanho dos ícones */
   color: #00d5ff;
-  /* Cor dos ícones */
 }
 
-/* Estilizando a seção de informações do usuário */
 .navbar-right {
   display: flex;
   align-items: center;
@@ -85,14 +59,10 @@
 
 .user-info {
   margin-right: 15px;
-  /* Espaçamento entre texto e avatar */
   color: #333;
-  /* Cor do texto */
   font-size: 18px;
-  /* Aumentar tamanho da fonte */
 }
 
-/* Estilizando o avatar do usuário */
 .user-avatar {
   display: flex;
   align-items: center;
@@ -100,19 +70,14 @@
 
 .user-avatar img.avatar {
   width: 50px;
-  /* Aumentar tamanho do avatar */
   height: 50px;
   border-radius: 50%;
-  /* Circular */
   border: 2px solid #005f73;
-  /* Borda em azul */
   transition: transform 0.2s ease;
-  /* Transição sutil */
 }
 
 .user-avatar img.avatar:hover {
   transform: scale(1.05);
-  /* Efeito de zoom discreto */
 }
 
 /* Responsividade */
@@ -125,17 +90,14 @@
   .navbar-left {
     flex-direction: column;
     align-items: flex-start;
-    /* Alinhamento à esquerda em dispositivos móveis */
   }
 
   .navbar-links {
     flex-direction: column;
     gap: 10px;
-    /* Espaçamento em dispositivos móveis */
   }
 
   .navbar-right {
     margin-top: 10px;
-    /* Margem superior para separar do conteúdo acima */
   }
 }

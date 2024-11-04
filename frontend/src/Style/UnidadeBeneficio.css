@@ -1,6 +1,6 @@
 .unidadebeneficio-container {
   color: #6854f0;
-  padding: 0 20px; /* Padding para afastar os cards das laterais */
+  padding: 0 20px;
   text-align: center;
   margin: 0 auto;
   border-radius: 8px;
@@ -28,9 +28,9 @@
 
 .unidadebeneficio-cards {
   display: flex;
-  justify-content: center; /* Centraliza os cartões */
+  justify-content: center;
   align-items: flex-start;
-  gap: 40px; /* Pequeno espaçamento entre os cartões */
+  gap: 40px;
   flex-wrap: wrap;
 }
 
@@ -38,12 +38,12 @@
   background-color: white;
   border-radius: 15px;
   overflow: hidden;
-  width: 23%; /* Largura dos cartões em telas grandes */
+  width: 23%;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  margin: 0; /* Remove margem adicional */
+  margin: 0;
 }
 
 .unidadebeneficio-info {
@@ -96,27 +96,24 @@
   transform: scale(0.95);
 }
 
-/* Responsividade para telas médias */
 @media (max-width: 1024px) {
   .unidadebeneficio-card {
-    width: 48%; /* Duas colunas em telas médias */
+    width: 48%; 
   }
 }
 
-/* Responsividade para tablets e telas menores */
 @media (max-width: 768px) {
   .unidadebeneficio-card {
-    width: 48%; /* Duas colunas em tablets */
+    width: 48%;
   }
   .unidadebeneficio-title {
     font-size: 28px;
   }
 }
 
-/* Responsividade para telas muito pequenas */
 @media (max-width: 480px) {
   .unidadebeneficio-card {
-    width: 100%; /* Cartões ocupam toda a largura em telas muito pequenas */
+    width: 100%;
   }
   .unidadebeneficio-title {
     font-size: 24px;

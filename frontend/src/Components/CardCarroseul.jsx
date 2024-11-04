@@ -1,14 +1,12 @@
-// src/components/SwiperComponent.jsx
-
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; // Importando o CSS do Swiper
-import 'swiper/css/pagination'; // Importando CSS da paginação
-import 'swiper/css/navigation'; // Importando CSS da navegação
+import 'swiper/swiper-bundle.css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import '../Style/CardCarroseul.css';
 
 const SwiperComponent = () => {
-  // Perfis dos usuários
+  
   const profiles = [
     { id: 1, img: 'images/profile1.jpg', name: 'Someone Name', profession: 'Web Developer' },
     { id: 2, img: 'images/profile2.jpg', name: 'Someone Name', profession: 'Web Developer' },

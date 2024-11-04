@@ -18,7 +18,7 @@ const SatisfactionRate = () => {
                     return satisfactionRate;
                 }
             });
-        }, 20); // Ajuste a velocidade da animação
+        }, 20);
         return () => clearInterval(interval);
     }, [satisfactionRate]);
 

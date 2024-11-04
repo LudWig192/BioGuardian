@@ -3,22 +3,20 @@ import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
 import '../Style/GraficoPerfilAdm.css';
 
-// Registra as escalas e elementos necessários
 Chart.register(...registerables);
 
 const PostDensityChart = () => {
-    // Dados fictícios para o gráfico
     const data = {
-        labels: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'], // Dias da semana
+        labels: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'], 
         datasets: [
             {
                 label: 'Atendimentos Diários',
-                data: [30, 45, 40, 55, 50, 70, 65], // Número de atendimentos por dia
+                data: [30, 45, 40, 55, 50, 70, 65],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 3,
                 fill: true,
-                tension: 0.4, // Suaviza a linha
+                tension: 0.4,
             },
         ],
     };

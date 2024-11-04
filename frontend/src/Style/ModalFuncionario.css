@@ -31,40 +31,38 @@
 
 .funcionarioModal-buttons {
     display: flex;
-    /* Mantém os botões lado a lado */
     justify-content: space-between;
-    /* Espaço igual entre os botões */
     margin-top: 20px;
 }
 
-.funcionarioModal-buttons button {
+.funcionarioModal-buttons .Fechar-modFun {
     padding: 10px 15px;
-    /* Tamanho do botão */
     border-radius: 8px;
     border: 1px solid #ddd;
-    /* Adiciona uma borda */
-    background-color: #5472f0;
-    /* Cor do botão */
+    background-color:  red;
     color: white;
-    /* Cor do texto */
     cursor: pointer;
     font-size: 14px;
-    /* Tamanho da fonte */
     transition: background-color 0.3s ease;
     flex: 1;
-    /* Para que ambos os botões ocupem espaço igual */
     margin-right: 10px;
-    /* Espaçamento entre os botões */
+}
+
+.funcionarioModal-buttons .salvar-modFun {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    margin-right: 10px;
 }
 
 .funcionarioModal-buttons button:last-child {
     margin-right: 0;
-    /* Remove a margem do último botão */
-}
-
-.funcionarioModal-buttons button:hover {
-    background-color: #4758d3;
-    /* Cor do botão ao passar o mouse */
 }
 
 .modal-funcionarios-form input,

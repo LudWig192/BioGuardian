@@ -49,7 +49,6 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
             required
           />
 
-          {/* Campo de seleção para Status */}
           <select
             name="status"
             value={dadosMedico.status}
@@ -61,7 +60,6 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
             <option value="inativo">Inativo</option>
           </select>
 
-          {/* Campo de seleção para Plantão */}
           <select
             name="plantao"
             value={dadosMedico.plantao}
@@ -74,8 +72,8 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
           </select>
 
           <div className="funcionarioModal-buttons">
-            <button type="submit">{dadosMedico.idMedico ? 'Salvar' : 'Adicionar'}</button>
-            <button type="button" onClick={onClose}>Fechar</button>
+            <button className="salvar-modFun" type="submit">{dadosMedico.idMedico ? 'Salvar' : 'Adicionar'}</button>
+            <button className="Fechar-modFun" type="button" onClick={onClose}>Fechar</button>
           </div>
         </form>
       </div>

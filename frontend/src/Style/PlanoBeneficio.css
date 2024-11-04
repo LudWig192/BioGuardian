@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha em telas menores */
+  flex-wrap: wrap;
 }
 
 .PricingCard-PlanoBeneficio {
@@ -29,7 +29,7 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  transition: transform 0.3s; /* Transição suave para o hover */
+  transition: transform 0.3s;
 }
 
 .Card-header-PlanoBeneficio {
@@ -92,10 +92,9 @@
 }
 
 .Card-button-PlanoBeneficio:hover {
-  background-color: #54a3f0; /* Cor ao passar o mouse */
+  background-color: #54a3f0;
 }
 
-/* Destaque para o plano familiar */
 .PricingCard-PlanoBeneficio:nth-child(2) {
   border: 3px solid #54a3f0;
   box-shadow: 0 4px 12px #54a3f0;
@@ -104,16 +103,16 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .PlanoBeneficio-title {
-    font-size: 28px; /* Tamanho da fonte menor para telas menores */
+    font-size: 28px;
   }
 
   .PlanoBeneficio-cards {
-    flex-direction: column; /* Muda para coluna em telas menores */
-    align-items: center; /* Centraliza os cards */
+    flex-direction: column;
+    align-items: center; 
   }
 
   .PricingCard-PlanoBeneficio {
-    width: 100%; /* Largura total em telas menores */
-    max-width: 300px; /* Limite máximo da largura */
+    width: 100%; 
+    max-width: 300px;
   }
 }

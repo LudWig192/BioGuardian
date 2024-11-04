@@ -1,68 +1,67 @@
-/* InformacoesHomeSem.css */
 .why-choose-us {
-    padding: 50px 0; /* Espaçamento na parte superior e inferior */
+    padding: 50px 0;
 }
 
 .container-InformacaoHomeSem {
-    max-width: 1200px; /* Largura máxima da seção */
-    margin: 0 auto; /* Centraliza a seção */
-    text-align: left; /* Alinhamento do texto à esquerda */
+    max-width: 1200px;
+    margin: 0 auto; 
+    text-align: left;
 }
 
 h2 {
-    margin-bottom: 20px; /* Espaçamento inferior do título */
-    position: relative; /* Para usar o pseudo-elemento após */
+    margin-bottom: 20px; 
+    position: relative; 
 }
 
 h2::after {
-    display: block; /* Cria um bloco após o título */
-    width: 50px; /* Largura da linha */
-    height: 2px; /* Altura da linha */
-    background-color: #00bfff; /* Cor da linha */
-    margin-top: 10px; /* Espaçamento superior da linha */
+    display: block;
+    width: 50px; 
+    height: 2px; 
+    background-color: #00bfff; 
+    margin-top: 10px; 
 }
 
-.content-HomeSem { /* Mantém os cards e a imagem lado a lado */
-    display: flex; /* Exibe os elementos em linha */
-    justify-content: center; /* Centraliza os elementos horizontalmente */
-    align-items: center; /* Alinha os itens verticalmente */
+.content-HomeSem {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .left-section {
-    display: grid; /* Usando grid para os cards */
-    grid-template-columns: 1fr 1fr; /* Dois cards por linha */
-    gap: 20px; /* Espaçamento entre os cards */
-    max-width: 60%; /* Mantém a seção dos cards ocupando 60% da largura */
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    max-width: 60%; 
 }
 
 .card-informacaoSem {
-    display: flex; /* Exibe o conteúdo do card em linha */
-    flex-direction: column; /* Alinha o conteúdo em coluna */
-    align-items: center; /* Centraliza o conteúdo (ícone e texto) horizontalmente */
-    background-color: #fff; /* Cor de fundo do card */
-    padding: 20px; /* Espaçamento interno do card */
-    border-radius: 10px; /* Bordas arredondadas do card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra do card */
-    text-align: center; /* Alinha o texto no centro */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
 }
 
 .icon-InformacaoHomeSem {
-    font-size: 2rem; /* Tamanho do ícone */
-    color: #00bfff; /* Cor do ícone */
-    margin-bottom: 10px; /* Espaçamento abaixo do ícone */
+    font-size: 2rem; 
+    color: #00bfff;
+    margin-bottom: 10px; 
 }
 
 h3 {
-    font-size: 1.2rem; /* Tamanho do título do card */
-    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .right-HomeSem {
-    flex-shrink: 0; /* Impede que a imagem encolha */
+    flex-shrink: 0;
 }
 
 .right-HomeSem img {
-    width: 191px; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-left: 20px; /* Espaço entre a imagem e os cards */
+    width: 191px;
+    height: auto; 
+    margin-left: 20px; 
 }

@@ -4,7 +4,7 @@
 
 .BannerServiço__imagem {
   display: flex;
-  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   color: white;
@@ -25,23 +25,23 @@
   position: relative;
   z-index: 1;
   padding: 50px;
-  max-width: 50%; /* Ajuste a largura conforme necessário */
-  text-align: left; /* Alinhamento à esquerda do texto */
+  max-width: 50%;
+  text-align: left;
   text-align: justify ;
 }
 
 .BannerServiço__title {
   font-size: 48px;
-  margin-bottom: 10px; /* Ajustado para menor espaço */
-  text-align: left; /* Alinhamento à esquerda do título */
+  margin-bottom: 10px; 
+  text-align: left; 
 }
 
 .BannerServiço__description {
   font-size: 20px;
-  margin-top: 10px; /* Espaçamento acima da descrição */
-  margin-bottom: 20px; /* Espaçamento abaixo da descrição */
-  text-align: justify; /* Alinhamento justificado */
-  line-height: 1.5; /* Aumenta a altura da linha para melhor legibilidade */
+  margin-top: 10px; 
+  margin-bottom: 20px; 
+  text-align: justify; 
+  line-height: 1.5;
 }
 
 .BannerServiço__info-section {
@@ -69,14 +69,14 @@
   color: #54a3f0;
 }
 .BannerServiço__card-title {
-  font-size: 1.25rem; /* Tamanho da fonte */
-  height: 50px; /* Altura fixa para garantir que todos os títulos ocupem o mesmo espaço */
+  font-size: 1.25rem; 
+  height: 50px; 
   display: flex;
-  align-items: center; /* Centraliza o texto verticalmente */
-  justify-content: center; /* Centraliza o texto horizontalmente, se necessário */
-  margin-bottom: 10px; /* Espaçamento abaixo do título */
-  color: #54a3f0; /* Cor do texto */
-  font-weight: bold; /* Negrito para destaque */
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 10px; 
+  color: #54a3f0;
+  font-weight: bold;
 }
 
 
@@ -91,18 +91,18 @@
 @media (max-width: 1024px) {
   .BannerServiço__imagem-content {
     max-width: 70%;
-    margin-left: 10%; /* Ajuste para 10% para telas menores */
-    text-align: left; /* Mantém o alinhamento à esquerda */
+    margin-left: 10%; 
+    text-align: left; 
   }
 
   .BannerServiço__title {
     font-size: 2.5rem;
-    text-align: left; /* Alinhamento à esquerda do título */
+    text-align: left;
   }
 
   .BannerServiço__description {
     font-size: 1.1rem;
-    text-align: justify; /* Mantém o alinhamento justificado */
+    text-align: justify; 
   }
 }
 
@@ -114,34 +114,34 @@
   }
 
   .BannerServiço__imagem-content {
-    max-width: 90%; /* Aumenta a largura máxima em telas menores */
+    max-width: 90%; 
     padding: 20px;
     margin: 0 auto;
-    text-align: left; /* Mantém o alinhamento à esquerda */
+    text-align: left; 
   }
 
   .BannerServiço__info-section {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 20px; /* Espaçamento adicional */
+    margin-top: 20px; 
   }
 
   .BannerServiço__info-card {
     width: 90%;
-    margin: 15px 0; /* Ajusta o espaçamento vertical */
-    padding: 15px; /* Reduz o padding */
+    margin: 15px 0;
+    padding: 15px;
   }
 
   .BannerServiço__title {
     font-size: 2rem;
-    text-align: left; /* Alinhamento à esquerda do título */
+    text-align: left; 
   }
 
   .BannerServiço__description {
     font-size: 1rem;
     line-height: 1.4;
-    text-align: justify; /* Mantém o alinhamento justificado */
+    text-align: justify; 
   }
 }
 
@@ -152,13 +152,13 @@
 
   .BannerServiço__title {
     font-size: 1.8rem;
-    text-align: left; /* Alinhamento à esquerda do título */
+    text-align: left; 
   }
 
   .BannerServiço__description {
     font-size: 0.9rem;
     line-height: 1.3;
-    text-align: justify; /* Mantém o alinhamento justificado */
+    text-align: justify;
   }
 
   .BannerServiço__info-card {

@@ -5,14 +5,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-
-// IMPORT ESTILIZAÇÃO
 import "../Style/NavbarCCC.css";
 
 const NavbarCCC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-
-    // Função para alternar a visibilidade do dropdown
+    
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };

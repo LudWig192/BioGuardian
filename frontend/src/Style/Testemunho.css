@@ -3,9 +3,8 @@
     border-radius: 10px;
     margin: 20px 0;
     background-color: #ffffff;
-    /* Fundo suave */
+
     font-family: 'Arial', sans-serif;
-    /* Fonte profissional */
 }
 
 .testemunhos h2 {
@@ -13,9 +12,7 @@
     margin-bottom: 30px;
     text-align: center;
     color: #54d4f0;
-    /* Azul escuro */
     font-weight: bold;
-    /* Negrito para destaque */
 }
 
 .testemunhos-container {
@@ -23,81 +20,61 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    /* Reduzir o espaço entre os cards */
 }
 
 .testemunho-card {
     background: #ffffff;
     border-radius: 8px;
-    /* Borda mais suave */
     padding: 20px;
     width: 300px;
-    /* Largura maior para um visual mais robusto */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Sombra leve */
     transition: transform 0.3s, box-shadow 0.3s;
-    /* Transição mais suave */
     text-align: center;
 }
 
 .testemunho-card:hover {
     transform: translateY(-5px);
-    /* Aumento ao passar o mouse */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra mais pronunciada */
 }
 
 .foto-medico {
     width: 100px;
-    /* Largura ajustada */
     height: 100px;
-    /* Altura ajustada */
     object-fit: cover;
-    /* Cobrir o espaço disponível */
     border-radius: 50%;
-    /* Bordas arredondadas */
     margin-bottom: 15px;
-    /* Espaçamento inferior maior */
 }
 
 .testemunho-card h3 {
     margin: 10px 0 5px 0;
     font-size: 22px;
-    /* Aumentar o tamanho da fonte do nome */
     color: #34495e;
-    /* Cor neutra */
 }
 
 .testemunho-card p {
     margin: 5px 0;
     color: #7f8c8d;
-    /* Cor de texto suave */
 }
 
 .depoimento {
     font-style: italic;
     color: #555;
-    /* Cor de texto menos pronunciada para o depoimento */
     margin-top: 10px;
-    /* Espaçamento superior maior */
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .testemunho-card {
         width: 90%;
-        /* Responsivo para telas menores */
     }
 }
 
 @media (max-width: 480px) {
     .testemunhos {
         padding: 20px;
-        /* Menos padding em telas menores */
     }
 
     .testemunhos h2 {
         font-size: 24px;
-        /* Tamanho do título menor */
     }
 }

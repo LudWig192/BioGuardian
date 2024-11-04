@@ -91,7 +91,7 @@
     margin-right: 5px;
 }
 
-/* Media Queries para telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
     .grafico-container {
         padding: 20px;

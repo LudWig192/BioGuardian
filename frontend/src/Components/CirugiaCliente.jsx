@@ -5,7 +5,7 @@ import Cirurgia from "../Imagens/Cirurgia.jpg";
 const DiagnoseTreat = () => {
   return (
     <div className="diagnose-container-cirugia-cliente"> 
-      <div className="overlay-cirurgia-cliente"></div> {/* Camada de sobreposição */}
+      <div className="overlay-cirurgia-cliente"></div>
       <div className="image-cirugia-cliente"> 
         <img 
           src={Cirurgia}

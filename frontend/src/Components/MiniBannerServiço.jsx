@@ -1,12 +1,12 @@
 import React from 'react';
 import '../Style/MiniBannerServiço.css';
-import { FaHeartbeat, FaClock, FaStethoscope, FaCommentMedical } from 'react-icons/fa'; // Usando ícones relacionados à saúde
-import MiniBanner from "../Imagens/MiniBanner.png"; // Importando a imagem
+import { FaHeartbeat, FaClock, FaStethoscope, FaCommentMedical } from 'react-icons/fa'; 
+import MiniBanner from "../Imagens/MiniBanner.png"; 
 
 const Achievements = () => {
   return (
     <div className="miniBanner-achievements-container miniBanner-ServiçoQualidade">
-      <div className="miniBanner-overlay" /> {/* Div para a cor de fundo */}
+      <div className="miniBanner-overlay" />
       <div className="miniBanner-image-achievements"> 
         <img src={MiniBanner} alt="Doctors with X-ray" />
       </div>
