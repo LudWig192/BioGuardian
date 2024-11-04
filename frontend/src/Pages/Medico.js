@@ -1,19 +1,12 @@
-//// IMPORTS
 import React from "react";
-import "../Style/Medico.css";
-
-
-//// IMPORT BOOTSTRAP 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Image } from "react-bootstrap";
+import avatar from "../Imagens/Medico.avif";
+import "../Style/Medico.css";
 
-
-//// IMAGENS
- import avatar from "../Imagens/Medico.avif";
-
- function ShapeExample() {
+function ShapeExample() {
   return (
     <Container className="main">
       <Row>

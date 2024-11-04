@@ -1,11 +1,5 @@
-// IMPORTS DAS BIBLIOTECAS
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-
-// IMPORT ESTILIZAÇÃO
-import '../Style/HomeMedico.css';
-
-// IMPORTE OS COMPONENTES
 import Navbaradm from '../Components/Navegacao-medico';
 import Cabecalho from '../Components/Calendario';
 import Anatomy from '../../src/Corpo/Anatomy';
@@ -13,25 +7,24 @@ import Anotações from '../Components/Anotacoes';
 import Grafico from "../Components/Grafico";
 import Paciente from "../Components/Paciente";
 import TestReports from '../Components/TestReports';
-import Prescriptions from '../Components/Prescrisao';
+import Prescriptions from '../Components/Prescrisao'
+import '../Style/HomeMedico.css';
 
-// ----------------------------------------------------- 
 
 const HomeMedico = () => {
 
 
 
-  const [selectedDay, setSelectedDay] = useState("10"); // Estado para o dia selecionado
+  const [selectedDay, setSelectedDay] = useState("10");
 
   const handleSelectDay = (day) => {
-    setSelectedDay(day); // Atualiza o dia selecionado
+    setSelectedDay(day);
   };
 
   return (
     
     <Container fluid>
       <Navbaradm />
-      {/* <Row className='Status'> */}
       <Row className=''>
         <Col md={6}>
           <Anatomy />
@@ -41,7 +34,6 @@ const HomeMedico = () => {
         </Col>
       </Row>
 
-      {/* Gráfico e Bloco de notas */}
       <Row className='Relatorio'>
         <Col md={6} sm={12}>
           <Grafico />

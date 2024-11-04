@@ -87,7 +87,7 @@
 
 @media (max-width: 768px) {
   .services-grid-suport {
-    grid-template-columns: 1fr; /
+    grid-template-columns: 1fr;
   }
 
   .services-title-suport {
