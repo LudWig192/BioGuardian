@@ -6,6 +6,7 @@ import Colesterol from "../Imagens/Colesterol.jpeg";
 import pessoa1 from "../Imagens/Bom.png";
 import pessoa2 from "../Imagens/Bom.png";
 import pessoa3 from "../Imagens/Bom.png";
+import { Link } from "react-router-dom";
 
 const NewsCards = () => {
     const articles = [
@@ -50,7 +51,9 @@ const NewsCards = () => {
                             <div className="cardsExameCliente-title">{article.title}</div>
                             <span className="cardsExameCliente-text">{article.description}</span>
                             <div className="cardsExameCliente-button-container">
-                                <a href="#" className="cardsExameCliente-link">Acessar</a>
+                                <Link to="/Exames">
+                                    <p className='cardsExameCliente-link'>Acessar</p>
+                                </Link>
                             </div>
                         </div>
                     </div>

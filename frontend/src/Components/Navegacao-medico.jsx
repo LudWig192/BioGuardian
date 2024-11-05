@@ -43,7 +43,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-right">
                 <div className="user-info">
-                    <span className="user-name">Usuário</span>
+                    <span className="user-name">Medico</span>
                 </div>
                 <div className="user-avatar" onClick={toggleDropdown}>
                     <img

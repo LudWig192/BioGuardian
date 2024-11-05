@@ -6,6 +6,7 @@ import ExamePediatrico from "../Imagens/Exame_Pediatrico2.jpeg";
 import pessoa1 from "../Imagens/Bom.png";
 import pessoa2 from "../Imagens/Bom.png";
 import pessoa3 from "../Imagens/Bom.png";
+import { Link } from "react-router-dom";
 
 const NewsCards = () => {
     const articles = [
@@ -50,7 +51,9 @@ const NewsCards = () => {
                             <div className="cardsResultadoCliente-title">{article.title}</div>
                             <span className="cardsResultadoCliente-text">{article.description}</span>
                             <div className="cardsResultadoCliente-button-container">
-                                <a href="#" className="cardsResultadoCliente-link">Acessar</a>
+                                <Link to="/Agendamento">
+                                    <p className="cardsResultadoCliente-link">Acessar</p>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import "../Style/Navbar.css";
 
@@ -29,21 +30,40 @@ const Navbar = () => {
                 </div>
                 <ul className="navbar-links">
                     <li>
-                        <Link to="/HomeMedico" className="nav-link">
+                        <Link to="/PerfilAdm" className="nav-link">
                             <HomeIcon className="icon" /> <span>Home</span>
                         </Link>
                     </li>
 
+
                     <li>
-                        <Link to="/Agenda" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Agenda</span>
+                        <Link to="/Funcionarios" className="nav-link">
+                            <InfoIcon className="icon" /> <span>Funcionarios</span>
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/Clientes" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Clientes</span>
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/Salario" className="nav-link">
+                            <ContactMailIcon className="icon" /> <span>Salario do medico</span>
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/Registros" className="nav-link">
+                            <LocalMallIcon className="icon" /> <span>Registros</span>
                         </Link>
                     </li>
                 </ul>
             </div>
             <div className="navbar-right">
                 <div className="user-info">
-                    <span className="user-name">Usuário</span>
+                    <span className="user-name">Admin</span>
                 </div>
                 <div className="user-avatar" onClick={toggleDropdown}>
                     <img
