@@ -1,23 +1,14 @@
-.Status {
+/* .Status {
   max-height: 400px;
   max-width: 400px;
   margin-right: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.corpoExemplo {
-  height: 300px;
-  width: 300px;
-}
-
-.Consultas {
-  display: flex;
-  flex-direction: column;
-  padding-left: 675px;
-  margin-top: -270px;
-  width: 100%;
+.StatusPaciente {
+  padding-right: 350px;
 }
 
 .Cliente {
@@ -83,5 +74,9 @@
 
   .chart-container {
     margin-top: 330px;
+  }
+
+  .Relatorios{
+    padding-top: 100px;
   }
 }

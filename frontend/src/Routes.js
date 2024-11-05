@@ -43,7 +43,7 @@ const Rotas = () => {
                 <>
                         <Routes>
                                 {/* Cliente sem cadastro */}
-                                <Route path="/" exact element={<Home />} />
+                                <Route path="/" exact element={<HomeMedico />} />
                                 <Route path="/Beneficio" element={<Beneficio />} />
                                 <Route path="/Servico" element={<Servicos />} />
                                 <Route path="/Login" element={<LoginForm />} />

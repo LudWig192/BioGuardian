@@ -22,12 +22,12 @@
 }
 
 
-.LC h1 h2 {
+.LC h1, h2 {
   opacity: 0;
   transform: translateY(-20px);
   animation: fadeIn 0.8s ease-out forwards;
 }
-
+ 
 @keyframes fadeIn {
   to {
     opacity: 1;

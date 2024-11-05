@@ -13,8 +13,6 @@ import '../Style/HomeMedico.css';
 
 const HomeMedico = () => {
 
-
-
   const [selectedDay, setSelectedDay] = useState("10");
 
   const handleSelectDay = (day) => {
@@ -22,43 +20,44 @@ const HomeMedico = () => {
   };
 
   return (
-    
-    <Container fluid>
+    <>
       <Navbaradm />
-      <Row className=''>
-        <Col md={6}>
-          <Anatomy />
-        </Col>
-        <Col md={6}>
-          <Cabecalho className="cabecalhoBody" onSelectDay={handleSelectDay} />
-        </Col>
-      </Row>
+      <Container>
+        <Row className='CorpoMedico'>
+          <Col md={6} className='StatusPaciente'>
+            <Anatomy />
+          </Col>
+          <Col md={6}>
+            <Cabecalho className="cabecalhoMEDICO" onSelectDay={handleSelectDay} />
+          </Col>
+        </Row>
 
-      <Row className='Relatorio'>
-        <Col md={6} sm={12}>
-          <Grafico />
-        </Col>
-        <Col md={6} sm={12}>
-          <Anotações />
-        </Col>
-      </Row>
+        <Row className='Relatorio'>
+          <Col md={6} sm={12}>
+            <Grafico />
+          </Col>
+          <Col md={6} sm={12}>
+            <Anotações />
+          </Col>
+        </Row>
 
-      <Row className='Informacoes'>
-        <Col>
-          <h2>Informações</h2>
-        </Col>
-      </Row>
+        <Row className='Informacoes'>
+          <Col>
+            <h2>Informações</h2>
+          </Col>
+        </Row>
 
-      <Row className='Cliente'>
-        <Col className='Perfil'>
-          <Paciente />
-        </Col>
-        <Col className="Elementos-perfil">
-          <TestReports />
-          <Prescriptions />
-        </Col>
-      </Row>
-    </Container>
+        <Row className='Cliente'>
+          <Col className='Perfil'>
+            <Paciente />
+          </Col>
+          <Col className="Elementos-perfil">
+            <TestReports />
+            <Prescriptions />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 
