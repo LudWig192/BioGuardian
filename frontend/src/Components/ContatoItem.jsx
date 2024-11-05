@@ -3,7 +3,7 @@ import React from 'react';
 const CadastroItem = ({ cadastro, onDelete }) => {
   return (
     <tr>
-      <td>{cadastro.id}</td>
+      <td>{cadastro.idContato}</td>
       <td>{cadastro.nome}</td>
       <td>{cadastro.email_ou_telefone}</td>
       <td>{cadastro.mensagem}</td>
