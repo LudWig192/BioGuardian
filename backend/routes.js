@@ -1,6 +1,11 @@
 const express = require('express');
 const connection = require('./db');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const moment = require('moment-timezone');
+
 
 router.get('/cadastros', (req, res) => {
   connection.query('SELECT * FROM cadastros', (err, results) => {
@@ -310,64 +315,46 @@ router.delete('/medicos/:idMedico', (req, res) => {
 
 /////////////////////////////////////Agendamentos//////////////////////////////
 
-// Rota para listar todos os agendamentos
-router.get('/agenda', (req, res) => {
-  const query = 'SELECT * FROM agenda';
-  connection.query(query, (err, results) => {
+// Configurar o diretório para onde os arquivos serão enviados
+const documentosPath = path.join(__dirname, 'documentos');
+
+// Configuração do Multer para armazenar arquivos
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, documentosPath);  // Salva os arquivos na pasta 'documentos'
+  },
+  filename: (req, file, cb) => {
+    const fileName = file.originalname;  // Usar o nome original do arquivo
+    cb(null, fileName);  // Salva com o nome original do arquivo
+  }
+});
+
+// Inicializa o Multer com a configuração de storage
+const upload = multer({ storage });
+
+// Rota para upload de documentos
+router.post('/upload', upload.single('file'), (req, res) => {
+  const { file } = req;  // Pega o arquivo enviado
+  const originalFileName = file.originalname;  // Nome original do arquivo
+  const uploadTime = new Date();  // Hora atual do upload
+
+  // Insere o nome do arquivo e o timestamp no banco de dados
+  const query = 'INSERT INTO documentos (nome, upload_time) VALUES (?, ?)';
+  connection.query(query, [originalFileName, uploadTime], (err, results) => {
     if (err) {
-      console.error('Erro ao consultar os agendamentos:', err);
-      res.status(500).send('Erro no servidor');
-      return;
+      console.error('Erro ao inserir no banco de dados:', err);
+      return res.status(500).json({ message: 'Erro ao salvar o documento.' });
     }
-    res.json(results);
+
+    // Retorna sucesso ao cliente
+    res.status(200).json({ message: 'Arquivo enviado com sucesso!', file: originalFileName });
   });
 });
 
-// Rota para adicionar um agendamento
-router.post('/agenda', (req, res) => {
-  const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
-  const query = 'INSERT INTO agenda (agendamento, paciente, status, procedimentos, tipoPlano) VALUES (?, ?, ?, ?, ?)';
 
-  connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano], (err) => {
-    if (err) {
-      console.error('Erro ao adicionar um agendamento:', err);
-      res.status(500).send('Erro no servidor');
-      return;
-    }
-    res.status(201).send('Agendamento adicionado com sucesso');
-  });
-});
 
-// Rota para editar um agendamento
-router.put('/agenda/:idAgenda', (req, res) => {
-  const { idAgenda } = req.params;
-  const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
-  const query = 'UPDATE agenda SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
-
-  connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano, idAgenda], (err) => {
-    if (err) {
-      console.error('Erro ao editar esse agendamento:', err);
-      res.status(500).send('Erro no servidor');
-      return;
-    }
-    res.send(' Agendamento editado com sucesso');
-  });
-});
-
-// Rota para excluir um agendamento
-router.delete('/Agenda/:idAgenda', (req, res) => {
-  const { idAgenda } = req.params;
-  const query = 'DELETE FROM agenda WHERE idAgenda = ?';
-
-  connection.query(query, [idAgenda], (err) => {
-    if (err) {
-      console.error('Erro ao excluir agendamento:', err);
-      res.status(500).send('Erro no servidor');
-      return;
-    }
-    res.send('Agendamento excluído com sucesso');
-  });
-});
 
 
 module.exports = router;
+
+

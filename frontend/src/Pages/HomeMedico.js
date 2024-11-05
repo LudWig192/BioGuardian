@@ -25,7 +25,6 @@ const HomeMedico = () => {
     <>
       <Navbaradm />
       <Container fluid>
-
         <Row className=''>
           <Col md={6}>
             <Anatomy />

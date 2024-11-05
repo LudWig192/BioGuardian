@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { FaPills } from 'react-icons/fa';
+import axios from 'axios';  // Importar axios para fazer requisições HTTP
 import '../Style/Prescrisao.css';
 
 function Prescriptions() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [prescriptions, setPrescriptions] = useState([]);
+  const [loading, setLoading] = useState(false);  // Para mostrar carregando
 
   useEffect(() => {
+    // Recupera as prescrições do localStorage
     const storedPrescriptions = JSON.parse(localStorage.getItem('prescriptions')) || [];
     setPrescriptions(storedPrescriptions);
   }, []);
 
   useEffect(() => {
+    // Atualiza o localStorage quando a lista de prescrições muda
     localStorage.setItem('prescriptions', JSON.stringify(prescriptions));
   }, [prescriptions]);
 
@@ -19,16 +23,35 @@ function Prescriptions() {
     setSelectedFile(event.target.files[0]);
   };
 
-  const handleAddPrescription = () => {
+  const handleAddPrescription = async () => {
     if (selectedFile) {
-      const newPrescription = {
-        name: selectedFile.name,
-        date: new Date().toLocaleDateString(),
-        duration: 'N/A',
-        fileUrl: URL.createObjectURL(selectedFile), 
-      };
-      setPrescriptions([...prescriptions, newPrescription]); 
-      setSelectedFile(null);
+      setLoading(true);  // Inicia o estado de carregando
+
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+
+      try {
+        // Envia o arquivo para o backend
+        const response = await axios.post('http://localhost:3001/upload', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        });
+
+        // Cria uma nova prescrição com o nome e URL do arquivo
+        const newPrescription = {
+          name: selectedFile.name,
+          date: new Date().toLocaleDateString(),
+          duration: 'N/A',
+          fileUrl: response.data.file.path,  // Caminho do arquivo no backend
+        };
+
+        // Atualiza o estado das prescrições com a nova prescrição
+        setPrescriptions([...prescriptions, newPrescription]);
+        setSelectedFile(null);  // Limpa o arquivo selecionado
+      } catch (error) {
+        alert('Erro ao enviar o documento. Tente novamente!');
+      } finally {
+        setLoading(false);  // Finaliza o estado de carregando
+      }
     } else {
       alert('Por favor, selecione um arquivo antes de adicionar.');
     }
@@ -47,7 +70,13 @@ function Prescriptions() {
           onChange={handleFileChange}
           accept=".pdf, .docx, .txt, .png, .jpg"
         />
-        <button onClick={handleAddPrescription} className='adicionar'>+ Adicionar Documento</button>
+        <button
+          onClick={handleAddPrescription}
+          className='adicionar'
+          disabled={loading}  // Desativa o botão enquanto está carregando
+        >
+          {loading ? 'Carregando...' : '+ Adicionar Documento'}
+        </button>
       </div>
 
       <div className="prescription-list">
