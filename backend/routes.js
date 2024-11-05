@@ -314,6 +314,7 @@ router.delete('/medicos/:idMedico', (req, res) => {
 });
 
 /////////////////////////////////////Agenda//////////////////////////////
+
 // Rota para listar todos as agenda
 router.get('/agenda', (req, res) => {
   const query = 'SELECT * FROM agenda';
@@ -326,12 +327,12 @@ router.get('/agenda', (req, res) => {
     res.json(results);
   });
 });
- 
+
 // Rota para adicionar uma agenda
 router.post('/agenda', (req, res) => {
   const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
   const query = 'INSERT INTO agenda (agendamento, paciente, status, procedimentos, tipoPlano) VALUES (?, ?, ?, ?, ?)';
- 
+
   connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano], (err) => {
     if (err) {
       console.error('Erro ao adicionar uma agenda:', err);
@@ -341,13 +342,13 @@ router.post('/agenda', (req, res) => {
     res.status(201).send('Agenda adicionado com sucesso');
   });
 });
- 
+
 // Rota para editar uma agenda
 router.put('/agendamentos/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
   const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
   const query = 'UPDATE agendamentos SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
- 
+
   connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano, idAgenda], (err) => {
     if (err) {
       console.error('Erro ao editar esse agendamento:', err);
@@ -357,12 +358,12 @@ router.put('/agendamentos/:idAgenda', (req, res) => {
     res.send(' Agendamento editado com sucesso');
   });
 });
- 
+
 // Rota para excluir uma agenda
 router.delete('/Agenda/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
   const query = 'DELETE FROM agenda WHERE idAgenda = ?';
- 
+
   connection.query(query, [idAgenda], (err) => {
     if (err) {
       console.error('Erro ao excluir a agenda:', err);
@@ -373,39 +374,60 @@ router.delete('/Agenda/:idAgenda', (req, res) => {
   });
 });
 
-////////////////////////// Documentos/////////////////////
-const documentosPath = path.join(__dirname, 'documentos');
+///////////////////Documentos///////////////////////
 
-// Configuração do Multer para armazenar arquivos
+// Configuração do Multer para armazenamento de arquivos
+const documentosPath = path.join(__dirname, 'documentos');  // Pasta onde os documentos serão salvos
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, documentosPath);  // Salva os arquivos na pasta 'documentos'
   },
   filename: (req, file, cb) => {
-    const fileName = file.originalname;  // Usar o nome original do arquivo
-    cb(null, fileName);  // Salva com o nome original do arquivo
+    const timestamp = Date.now();  // Adiciona um timestamp para evitar nome duplicado
+    cb(null, timestamp + '-' + file.originalname);  // Nome do arquivo será único
   }
 });
 
-// Inicializa o Multer com a configuração de storage
+// Inicializa o multer com a configuração de armazenamento
 const upload = multer({ storage });
 
 // Rota para upload de documentos
 router.post('/upload', upload.single('file'), (req, res) => {
-  const { file } = req;  // Pega o arquivo enviado
+  const { file } = req;
   const originalFileName = file.originalname;  // Nome original do arquivo
-  const uploadTime = new Date();  // Hora atual do upload
+  const savedFileName = file.filename;         // Nome do arquivo salvo no servidor
 
-  // Insere o nome do arquivo e o timestamp no banco de dados
-  const query = 'INSERT INTO documentos (nome, upload_time) VALUES (?, ?)';
-  connection.query(query, [originalFileName, uploadTime], (err, results) => {
+  // Salvar o nome do arquivo no banco de dados
+  const query = 'INSERT INTO documentos (nome) VALUES (?)';
+  connection.query(query, [originalFileName], (err, results) => {
     if (err) {
-      console.error('Erro ao inserir no banco de dados:', err);
+      console.error('Erro ao salvar no banco:', err);
       return res.status(500).json({ message: 'Erro ao salvar o documento.' });
     }
 
-    // Retorna sucesso ao cliente
-    res.status(200).json({ message: 'Arquivo enviado com sucesso!', file: originalFileName });
+    // Retorna o caminho e o nome do arquivo para o frontend
+    res.status(200).json({
+      message: 'Arquivo enviado com sucesso!',
+      file: {
+        path: `http://localhost:3001/documentos/${savedFileName}`,  // URL para acessar o arquivo
+        name: originalFileName  // Nome original do arquivo
+      }
+    });
+  });
+});
+
+// Rota para buscar documentos armazenados
+router.get('/documentos', (req, res) => {
+  const query = 'SELECT idDocumento, nome, upload_time FROM documentos ORDER BY upload_time DESC';
+
+  connection.query(query, (err, results) => {
+    if (err) {
+      console.error('Erro ao buscar documentos:', err);
+      return res.status(500).json({ message: 'Erro ao buscar documentos.' });
+    }
+
+    res.status(200).json({ documents: results });
   });
 });
 
