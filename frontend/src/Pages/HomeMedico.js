@@ -1,19 +1,21 @@
+//IMPORT DAS BIBLIOTECAS
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Navbaradm from '../Components/Navegacao-medico';
-import Cabecalho from '../Components/Calendario';
-import Anatomy from '../../src/Corpo/Anatomy';
-import Anotações from '../Components/Anotacoes';
-import Grafico from "../Components/Grafico";
+
+//IMPORT DOS COMPONENTES
+import Navbaradm from '../Components/Navegacao-medico'; //LOGIN ESPECIFICO
+import Cabecalho from '../Components/Calendario'; 
+import Anatomy from '../../src/Corpo/Anatomy'; //CORPO
+import Anotações from '../Components/Anotacoes'; //BLOCO DE NOTAS
+import Grafico from "../Components/Grafico";  
 import Paciente from "../Components/Paciente";
 import TestReports from '../Components/TestReports';
 import Prescriptions from '../Components/Prescrisao'
+
+//IMPORT DA ESTILIZAÇÃO
 import '../Style/HomeMedico.css';
 
-
 const HomeMedico = () => {
-
-
 
   const [selectedDay, setSelectedDay] = useState("10");
 
@@ -24,16 +26,15 @@ const HomeMedico = () => {
   return (
     <>
       <Navbaradm />
-      <Container fluid>
-        <Row className=''>
-          <Col md={6}>
+      <Container>
+        <Row className='CorpoMedico'>
+          <Col md={6} className='StatusPaciente'>
             <Anatomy />
           </Col>
-          <Col md={6}>
-            <Cabecalho className="cabecalhoBody" onSelectDay={handleSelectDay} />
+          <Col md={6} className="cabecalhoMEDICO">
+            <Cabecalho  onSelectDay={handleSelectDay} />
           </Col>
         </Row>
-
         <Row className='Relatorio'>
           <Col md={6} sm={12}>
             <Grafico />

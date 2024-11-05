@@ -313,9 +313,67 @@ router.delete('/medicos/:idMedico', (req, res) => {
   });
 });
 
-/////////////////////////////////////Agendamentos//////////////////////////////
+/////////////////////////////////////Agenda//////////////////////////////
+// Rota para listar todos as agenda
+router.get('/agenda', (req, res) => {
+  const query = 'SELECT * FROM agenda';
+  connection.query(query, (err, results) => {
+    if (err) {
+      console.error('Erro ao consultar as agenda:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.json(results);
+  });
+});
+ 
+// Rota para adicionar uma agenda
+router.post('/agenda', (req, res) => {
+  const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
+  const query = 'INSERT INTO agenda (agendamento, paciente, status, procedimentos, tipoPlano) VALUES (?, ?, ?, ?, ?)';
+ 
+  connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano], (err) => {
+    if (err) {
+      console.error('Erro ao adicionar uma agenda:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.status(201).send('Agenda adicionado com sucesso');
+  });
+});
+ 
+// Rota para editar uma agenda
+router.put('/agendamentos/:idAgenda', (req, res) => {
+  const { idAgenda } = req.params;
+  const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
+  const query = 'UPDATE agendamentos SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
+ 
+  connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano, idAgenda], (err) => {
+    if (err) {
+      console.error('Erro ao editar esse agendamento:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.send(' Agendamento editado com sucesso');
+  });
+});
+ 
+// Rota para excluir uma agenda
+router.delete('/Agenda/:idAgenda', (req, res) => {
+  const { idAgenda } = req.params;
+  const query = 'DELETE FROM agenda WHERE idAgenda = ?';
+ 
+  connection.query(query, [idAgenda], (err) => {
+    if (err) {
+      console.error('Erro ao excluir a agenda:', err);
+      res.status(500).send('Erro no servidor');
+      return;
+    }
+    res.send('Agenda excluída com sucesso');
+  });
+});
 
-// Configurar o diretório para onde os arquivos serão enviados
+////////////////////////// Documentos/////////////////////
 const documentosPath = path.join(__dirname, 'documentos');
 
 // Configuração do Multer para armazenar arquivos

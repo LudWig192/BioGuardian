@@ -1,25 +1,22 @@
+// IMPORT DE BIBLIOTECA 
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import "../Style/Cabecalhodata.css";
 
+// IMPORT ESTILIZAÇÃO
+import "../Style/CabecalhoMEDICO.css";
+
+// Função para gerar os dias da semana a partir de uma data de início
 const generateDaysOfWeek = (startDate) => {
     const daysInWeek = 7;
-    const days = [];
-
-    for (let i = 0; i < daysInWeek; i++) {
+    return Array.from({ length: daysInWeek }, (_, i) => {
         const currentDate = new Date(startDate);
-        currentDate.setDate(currentDate.getDate() + i); 
+        currentDate.setDate(currentDate.getDate() + i);
 
-        const day = currentDate.getDate();
-        const label = currentDate.toLocaleDateString('pt-BR', { weekday: 'long' }); 
-
-        days.push({
-            day,
-            label,
-        });
-    }
-
-    return days;
+        return {
+            day: currentDate.getDate(),
+            label: currentDate.toLocaleDateString("pt-BR", { weekday: "long" })
+        };
+    });
 };
 
 const Cabecalho = () => {
@@ -34,6 +31,7 @@ const Cabecalho = () => {
     useEffect(() => {
         const today = new Date().getDate();
         setSelectedDay(today.toString());
+
         const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
         setAppointments(storedAppointments);
     }, []);
@@ -46,19 +44,11 @@ const Cabecalho = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newAppointment = {
-            day: selectedDay,
-            ...formDetails,
-        };
+        const newAppointment = { day: selectedDay, ...formDetails };
 
-        let updatedAppointments;
-        if (isEditing) {
-            updatedAppointments = appointments.map((appointment, index) =>
-                index === editIndex ? newAppointment : appointment
-            );
-        } else {
-            updatedAppointments = [...appointments, newAppointment];
-        }
+        const updatedAppointments = isEditing
+            ? appointments.map((appointment, index) => (index === editIndex ? newAppointment : appointment))
+            : [...appointments, newAppointment];
 
         setAppointments(updatedAppointments);
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
@@ -67,12 +57,11 @@ const Cabecalho = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormDetails({ ...formDetails, [name]: value });
+        setFormDetails((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleEdit = (index) => {
-        const appointmentToEdit = appointments[index];
-        setFormDetails(appointmentToEdit);
+        setFormDetails(appointments[index]);
         setEditIndex(index);
         setIsEditing(true);
         setIsModalOpen(true);
@@ -91,27 +80,25 @@ const Cabecalho = () => {
         setEditIndex(null);
     };
 
-    const nextWeek = () => {
-        setWeekOffset(weekOffset + 7); 
-    };
-
-    const prevWeek = () => {
-        setWeekOffset(weekOffset - 7);
+    const changeWeek = (direction) => {
+        setWeekOffset((prev) => prev + direction * 7);
     };
 
     const days = generateDaysOfWeek(new Date(new Date().setDate(new Date().getDate() + weekOffset)));
-
     const filteredAppointments = appointments.filter((appointment) => appointment.day === selectedDay);
-    
-    const currentMonth = new Date().toLocaleString('pt-BR', { month: 'long', year: 'numeric' });
+    const currentMonth = new Date().toLocaleString("pt-BR", { month: "long", year: "numeric" });
 
     return (
         <>
             <div className="date-header">
                 <h3 className="Mes">{currentMonth.toUpperCase()}</h3>
                 <div className="week-navigation">
-                    <button className="btnAnterior desk" onClick={prevWeek} aria-label="Semana anterior">⬅</button>
-                    <button className="btnAnterior mobile" onClick={prevWeek} aria-label="Semana anterior">Anterior</button>
+                    <button className="btnAnterior desk" onClick={() => changeWeek(-1)} aria-label="Semana anterior">
+                        ⬅
+                    </button>
+                    <button className="btnAnterior mobile" onClick={() => changeWeek(-1)} aria-label="Semana anterior">
+                        Anterior
+                    </button>
                     <div className="day-buttons">
                         {days.map(({ day, label }) => (
                             <button
@@ -124,8 +111,12 @@ const Cabecalho = () => {
                             </button>
                         ))}
                     </div>
-                    <button className="btnProximo desk" onClick={nextWeek} aria-label="Próxima semana">➡</button>
-                    <button className="btnProximo mobile" onClick={nextWeek} aria-label="Próxima semana">Próximo</button>
+                    <button className="btnProximo desk" onClick={() => changeWeek(1)} aria-label="Próxima semana">
+                        ➡
+                    </button>
+                    <button className="btnProximo mobile" onClick={() => changeWeek(1)} aria-label="Próxima semana">
+                        Próximo
+                    </button>
                 </div>
             </div>
 
@@ -141,9 +132,12 @@ const Cabecalho = () => {
                             <div className="appointment-card">
                                 <h4>{appointment.title.toUpperCase()}</h4>
                                 <p>{appointment.doctor}</p>
+                                <p>{appointment.description}</p>
+
+                                {/* Botões de edição e exclusão dentro do appointment-card */}
                                 <div className="appointment-options">
-                                    <span className="edit-symbol" onClick={() => handleEdit(index)}>...</span>
-                                    <span className="delete-symbol" onClick={() => handleDelete(index)}>Excluir</span>
+                                    <button className="edit-button" onClick={() => handleEdit(index)}>Editar</button>
+                                    <button className="delete-button" onClick={() => handleDelete(index)}>Excluir</button>
                                 </div>
                             </div>
                         </div>
@@ -152,6 +146,7 @@ const Cabecalho = () => {
                     <p>Não há consultas agendadas para este dia.</p>
                 )}
             </div>
+
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={resetForm}
@@ -177,16 +172,6 @@ const Cabecalho = () => {
                         <textarea
                             name="description"
                             value={formDetails.description}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        Médico:
-                        <input
-                            type="text"
-                            name="doctor"
-                            value={formDetails.doctor}
                             onChange={handleChange}
                             required
                         />

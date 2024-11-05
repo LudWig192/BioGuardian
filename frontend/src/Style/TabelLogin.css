@@ -1,50 +1,92 @@
+/* Container Geral */
 .tabela-login-container {
     width: 90%;
-    max-width: 33%;
+    max-width: 800px;
     margin: 20px auto;
+    padding: 20px;
+    background-color: #f1f5f9;
+    border: 1px solid #d0e1ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Animação */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabeçalho */
+.tabela-login-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.tabela-login-title {
+    font-size: 1.5rem;
+    color: #0077b6;
+    font-weight: bold;
+}
+
+/* Tabela */
 .tabela-login {
+    width: 100%;
     border-collapse: collapse;
-    background-color: #f7faff;
-    font-family: Arial, sans-serif;
+    background-color: #ffffff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
 }
 
+/* Cabeçalho da Tabela */
 .tabela-login-thead {
-    background-color: #0077b6;
+    background-color: #4a90e2;
 }
 
 .tabela-login-th {
     padding: 12px 15px;
-    text-align: left;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #005f87;
-}
-
-.tabela-login-td {
-    padding: 14px 15px;
-    border-bottom: 1px solid #cce7ff;
     color: #333;
+    font-size: 1rem;
+    text-transform: uppercase;
     text-align: left;
+    border-bottom: 2px solid #0579f5;
+}
+
+/* Corpo da Tabela */
+.tabela-login-body {
     font-size: 0.95rem;
+    color: #333;
 }
 
-.tabela-login-tr:nth-child(even) {
-    background-color: #e0f1ff;
+/* Linhas e Cores Alternadas */
+.tabela-login-row:nth-child(odd) {
+    background-color: #f0f8ff; /* Cor para linhas ímpares */
 }
 
-.tabela-login-tr:hover {
-    background-color: #d0ebff;
+.tabela-login-row:nth-child(even) {
+    background-color: #e1f0ff; /* Cor para linhas pares */
+}
+
+/* Hover nas Linhas */
+.tabela-login-row:hover {
+    background-color: #b3daff; /* Cor de hover */
     transition: background-color 0.3s ease;
 }
 
+/* Células */
+.tabela-login-td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #cce7ff;
+}
+
+/* Ações */
+.tabela-login-actions {
+    display: flex;
+    justify-content: center;
+}
+
 .tabela-login-button {
-    margin-left: 25%;
     background-color: #d00000;
     color: white;
     border: none;
@@ -71,6 +113,7 @@
 @media (max-width: 600px) {
     .tabela-login {
         width: 100%;
+        box-shadow: none;
     }
   
     .tabela-login-thead {
@@ -80,12 +123,11 @@
     .tabela-login-td {
         display: flex;
         justify-content: space-between;
-        padding: 10px;
+        padding: 12px;
     }
   
     .tabela-login-td::before {
         content: attr(data-label);
         font-weight: bold;
-        color: #333;
     }
 }

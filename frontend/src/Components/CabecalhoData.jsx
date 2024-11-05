@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Style/Cabecalhodata.css";
+import "../Style/CabecalhoMEDICO.css";
 
 const days = [
     { day: "1", label: "Dom" },

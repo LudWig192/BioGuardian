@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import '../Style/TabelLogin.css';
+import '../Style/TabelContato.css';
 
-const TabelaLogin = () => {
+const TabelaContato = () => {
     const [cadastros, setCadastros] = useState([]);
 
     useEffect(() => {
@@ -37,8 +37,9 @@ const TabelaLogin = () => {
                     <tr>
                         <th className="tabela-contato-th">ID</th>
                         <th className="tabela-contato-th">Nome</th>
-                        <th className="tabela-contato-th">Email ou telefone</th>
+                        <th className="tabela-contato-th">Email ou Telefone</th>
                         <th className="tabela-contato-th">Mensagem</th>
+                        <th className="tabela-contato-th">Ações</th>
                     </tr>
                 </thead>
                 <tbody className="tabela-contato-tbody">
@@ -65,4 +66,4 @@ const TabelaLogin = () => {
     );
 };
 
-export default TabelaLogin;
+export default TabelaContato;

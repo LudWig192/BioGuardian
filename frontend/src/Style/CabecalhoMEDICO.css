@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    padding-right: 10px;
     position: relative;
-    width: 100%;
     margin: 110px 0 0 -20px;
 }
 
@@ -59,7 +59,7 @@
     text-align: center;
     font-size: 14px;
     min-width: 55px;
-    max-width: 100px;
+    max-width: 70px;
     flex: 1;
 }
 
@@ -77,27 +77,34 @@
 .appointment-options {
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.edit-symbol,
-.delete-symbol {
-    font-size: 14px;
+.edit-button, .delete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2px;
     cursor: pointer;
-    margin-left: 10px;
-    color: #9b59b6;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 3px 6px;
-    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.edit-symbol:hover {
-    background-color: #28a745;
+.edit-button {
+    background-color: #28a745; /* cor para o botão de edição */
     color: white;
 }
 
-.delete-symbol:hover {
-    background-color: #dc3545;
+.edit-button:hover {
+    background-color: #218838;
+}
+
+.delete-button {
+    background-color: #dc3545; /* cor para o botão de exclusão */
     color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
 }
 
 .appointment-container {
@@ -165,16 +172,85 @@
     color: #666;
 }
 
+
 .custom-modal {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
-    background-color: #fff;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
     width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.custom-modal h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.custom-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.custom-modal label {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.custom-modal input[type="text"],
+.custom-modal select,
+.custom-modal textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.custom-modal input[type="text"]:focus,
+.custom-modal select:focus,
+.custom-modal textarea:focus {
+    border-color: #6a82fb;
+    outline: none;
+}
+
+.custom-modal button[type="submit"],
+.custom-modal button[type="button"] {
+    background-color: #6a82fb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.custom-modal button[type="submit"]:hover {
+    background-color: #5145cd;
+}
+
+.custom-modal button[type="button"] {
+    background-color: #bbb;
+    color: #333;
+}
+
+.custom-modal button[type="button"]:hover {
+    background-color: #999;
 }
 
 .custom-overlay {
@@ -187,6 +263,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999;
 }
 
 .mobile {
@@ -204,7 +281,7 @@
     }
 
     .date-header {
-        display: unset;
+        padding-top: 200px;
     }
 
     .day-buttons button {
@@ -250,4 +327,24 @@
         margin-top: 110px;
         margin-left: 590px;
     }
+
+    .custom-modal {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .custom-modal h2 {
+        font-size: 18px;
+    }
+
+    .custom-modal form {
+        gap: 10px;
+    }
+
+    .custom-modal button[type="submit"],
+    .custom-modal button[type="button"] {
+        font-size: 14px;
+    }
+
+    
 }
