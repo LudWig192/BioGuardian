@@ -311,8 +311,8 @@ router.delete('/medicos/:idMedico', (req, res) => {
 /////////////////////////////////////Agendamentos//////////////////////////////
 
 // Rota para listar todos os agendamentos
-router.get('/agendamentos', (req, res) => {
-  const query = 'SELECT * FROM agendamentos';
+router.get('/agenda', (req, res) => {
+  const query = 'SELECT * FROM agenda';
   connection.query(query, (err, results) => {
     if (err) {
       console.error('Erro ao consultar os agendamentos:', err);
@@ -324,9 +324,9 @@ router.get('/agendamentos', (req, res) => {
 });
 
 // Rota para adicionar um agendamento
-router.post('/agendamentos', (req, res) => {
+router.post('/agenda', (req, res) => {
   const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
-  const query = 'INSERT INTO agendamentos (agendamento, paciente, status, procedimentos, tipoPlano) VALUES (?, ?, ?, ?, ?)';
+  const query = 'INSERT INTO agenda (agendamento, paciente, status, procedimentos, tipoPlano) VALUES (?, ?, ?, ?, ?)';
 
   connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano], (err) => {
     if (err) {
@@ -339,10 +339,10 @@ router.post('/agendamentos', (req, res) => {
 });
 
 // Rota para editar um agendamento
-router.put('/agendamentos/:idAgenda', (req, res) => {
+router.put('/agenda/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
   const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
-  const query = 'UPDATE agendamentos SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
+  const query = 'UPDATE agenda SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
 
   connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano, idAgenda], (err) => {
     if (err) {
@@ -355,9 +355,9 @@ router.put('/agendamentos/:idAgenda', (req, res) => {
 });
 
 // Rota para excluir um agendamento
-router.delete('/Agendamentos/:idAgenda', (req, res) => {
+router.delete('/Agenda/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
-  const query = 'DELETE FROM agendamentos WHERE idAgenda = ?';
+  const query = 'DELETE FROM agenda WHERE idAgenda = ?';
 
   connection.query(query, [idAgenda], (err) => {
     if (err) {

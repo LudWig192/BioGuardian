@@ -16,7 +16,8 @@
 }
 
 .navbar-logo img {
-  height: 60px;  margin-right: 25px;
+  height: 60px;
+  margin-right: 25px;
 }
 
 .navbar-links {
@@ -100,4 +101,50 @@
   .navbar-right {
     margin-top: 10px;
   }
+}
+
+.user-avatar {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: black;
+  border-radius: 10px;
+  width: 150px;
+  z-index: 1000;
+  display: none;
+}
+
+.user-avatar:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f4f4f4;
 }

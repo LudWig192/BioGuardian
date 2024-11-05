@@ -13,7 +13,7 @@ const Agenda = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:3001/agendamentos');
+            const response = await fetch('http://localhost:3001/agenda');
             if (!response.ok) throw new Error('Erro ao buscar dados');
             const data = await response.json();
 
@@ -37,7 +37,7 @@ const Agenda = () => {
 
     const handleEdit = async (editedItem) => {
         try {
-            const response = await fetch(`http://localhost:3001/agendamentos/${editedItem.idAgenda}`, {
+            const response = await fetch(`http://localhost:3001/agenda/${editedItem.idAgenda}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(editedItem),
@@ -55,7 +55,7 @@ const Agenda = () => {
 
     const handleDelete = async (idAgenda) => {
         try {
-            const response = await fetch(`http://localhost:3001/agendamentos/${idAgenda}`, {
+            const response = await fetch(`http://localhost:3001/agenda/${idAgenda}`, {
                 method: 'DELETE',
             });
 
@@ -71,7 +71,7 @@ const Agenda = () => {
 
     const handleAdd = async (newItem) => {
         try {
-            const response = await fetch('http://localhost:3001/agendamentos', {
+            const response = await fetch('http://localhost:3001/agenda', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newItem),

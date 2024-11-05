@@ -188,18 +188,21 @@
     align-items: center;
     justify-content: center;
 }
-.mobile{
-    display:none;
+
+.mobile {
+    display: none;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .desk{
+    .desk {
         display: none;
     }
-    .mobile{
-        display:block;
+
+    .mobile {
+        display: block;
     }
+
     .date-header {
         display: unset;
     }
@@ -208,6 +211,7 @@
         min-width: 40px;
         max-width: none;
     }
+
     .day-buttons {
         gap: 0px;
         margin: 5px 0;

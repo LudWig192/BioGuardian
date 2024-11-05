@@ -5,13 +5,18 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-import "../Style/NavbarCCC.css";
+import "../Style/Navbar.css";
 
 const NavbarCCC = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    
+
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("authToken");
+        window.location.href = "/";
     };
 
     return (
@@ -59,15 +64,13 @@ const NavbarCCC = () => {
             <div className="navbar-right">
                 <div className="user-avatar" onClick={toggleDropdown}>
                     <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")} 
+                        src={require("../Imagens/Calvo-removebg-preview.png")}
                         alt="User Avatar"
                         className="avatar"
                     />
                     {dropdownOpen && (
                         <div className="dropdown-menu">
-                            <Link to="/perfil" className="dropdown-item">Perfil</Link>
-                            <Link to="/configuracoes" className="dropdown-item">Configurações</Link>
-                            <Link to="/logout" className="dropdown-item">Sair</Link>
+                            <li onClick={handleLogout} className="dropdown-item">Sair</li>
                         </div>
                     )}
                 </div>

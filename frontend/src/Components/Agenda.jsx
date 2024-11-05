@@ -3,6 +3,7 @@ import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 import Modal from '../Components/Modal_Exames';
 import '../Style/Agenda.css';
 
+
 const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
     const [modalData, setModalData] = useState(null);
     const [modalType, setModalType] = useState('');
