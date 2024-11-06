@@ -374,52 +374,48 @@ router.delete('/Agenda/:idAgenda', (req, res) => {
   });
 });
 
-///////////////////Documentos///////////////////////
+////////////////////////////////////Documentos///////////////////////////
 
-// Configuração do Multer para armazenamento de arquivos
-const documentosPath = path.join(__dirname, 'documentos');  // Pasta onde os documentos serão salvos
+const documentosPath = path.join(__dirname, 'documentos'); 
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, documentosPath);  // Salva os arquivos na pasta 'documentos'
+    cb(null, documentosPath);
   },
   filename: (req, file, cb) => {
-    const timestamp = Date.now();  // Adiciona um timestamp para evitar nome duplicado
-    cb(null, timestamp + '-' + file.originalname);  // Nome do arquivo será único
+    const timestamp = Date.now();
+    cb(null, timestamp + '-' + file.originalname);
   }
 });
 
-// Inicializa o multer com a configuração de armazenamento
 const upload = multer({ storage });
 
-// Rota para upload de documentos
 router.post('/upload', upload.single('file'), (req, res) => {
   const { file } = req;
-  const originalFileName = file.originalname;  // Nome original do arquivo
-  const savedFileName = file.filename;         // Nome do arquivo salvo no servidor
+  const originalFileName = file.originalname;
+  const savedFileName = file.filename;
 
-  // Salvar o nome do arquivo no banco de dados
-  const query = 'INSERT INTO documentos (nome) VALUES (?)';
-  connection.query(query, [originalFileName], (err, results) => {
+  const tempo = new Date().toISOString().split('T')[0]; 
+
+  const query = 'INSERT INTO documentos (nome, tempo) VALUES (?, ?)';
+  connection.query(query, [originalFileName, tempo], (err, results) => {
     if (err) {
       console.error('Erro ao salvar no banco:', err);
       return res.status(500).json({ message: 'Erro ao salvar o documento.' });
     }
 
-    // Retorna o caminho e o nome do arquivo para o frontend
     res.status(200).json({
       message: 'Arquivo enviado com sucesso!',
       file: {
-        path: `http://localhost:3001/documentos/${savedFileName}`,  // URL para acessar o arquivo
-        name: originalFileName  // Nome original do arquivo
+        path: `http://localhost:3001/documentos/${savedFileName}`, 
+        name: originalFileName
       }
     });
   });
 });
 
-// Rota para buscar documentos armazenados
 router.get('/documentos', (req, res) => {
-  const query = 'SELECT idDocumento, nome, upload_time FROM documentos ORDER BY upload_time DESC';
+  const query = 'SELECT idDocumento, nome, tempo FROM documentos ORDER BY tempo DESC';
 
   connection.query(query, (err, results) => {
     if (err) {
@@ -427,13 +423,14 @@ router.get('/documentos', (req, res) => {
       return res.status(500).json({ message: 'Erro ao buscar documentos.' });
     }
 
+    results.forEach(doc => {
+      const tempo = new Date(doc.tempo);
+      doc.tempo = `${tempo.getDate().toString().padStart(2, '0')}/${(tempo.getMonth() + 1).toString().padStart(2, '0')}/${tempo.getFullYear()}`;
+    });
+
     res.status(200).json({ documents: results });
   });
 });
-
-
-
-
 
 module.exports = router;
 
