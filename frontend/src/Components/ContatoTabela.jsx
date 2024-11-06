@@ -20,7 +20,7 @@ const TabelaContato = () => {
 
     const handleExcluirUsuario = async (idContato) => {
         try {
-            await axios.delete(`http://localhost:3001/Login/${idContato}`);
+            await axios.delete(`http://localhost:3001/contato/${idContato}`);
             
             const { data } = await axios.get("http://localhost:3001/contato");
             setCadastros(data);
