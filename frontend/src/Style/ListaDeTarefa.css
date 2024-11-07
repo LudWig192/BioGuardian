@@ -14,7 +14,7 @@
     font-weight: 700;
     font-size: 1.8em;
     text-align: center;
-    color: #6854f0 ;
+    color: #6854f0;
     border-bottom: 2px solid #d1d1d1;
     padding-bottom: 10px;
 }
@@ -117,4 +117,36 @@
     .exam-title {
         font-size: 1.2em;
     }
+}
+
+.filter-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filtros-exames {
+    background-color: #f9f9f9;
+    /* cor de fundo */
+    transition: background-color 0.3s ease;
+}
+
+.filtros-exames:focus {
+    background-color: #e6e6e6;
+    /* cor de fundo quando o input é focado */
+    border-color: #007bff;
+    outline: none;
+}
+
+.filter-input::placeholder {
+    color: #aaa;
+    /* cor do placeholder */
+}
+
+.filtros-exames {
+    margin-bottom: 20px;
+    /* Espaço inferior, caso você queira mais espaçamento */
 }

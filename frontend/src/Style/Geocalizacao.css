@@ -1,20 +1,21 @@
-.satisfaction-rate {
+.satisfaction-rate-satisfacao {
     background-color: #ffffff;
     padding: 25px;
     border-radius: 12px;
-    width: 48%;
+    width: 48%; /* Inicialmente ocupa 48% da largura */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 20px 0;
+    transition: width 0.3s ease-in-out; /* Transição suave ao alterar a largura */
 }
 
-.satisfaction-title {
+.satisfaction-title-satisfacao {
     font-size: 1.5em;
     color: #2c3e50;
     margin-bottom: 15px;
 }
 
-.rate-container {
+.rate-container-satisfacao {
     position: relative;
     margin: 20px 0;
     display: flex;
@@ -22,7 +23,7 @@
     align-items: center;
 }
 
-.rate-circle {
+.rate-circle-satisfacao {
     position: relative;
     width: 100px;
     height: 100px;
@@ -35,7 +36,7 @@
     justify-content: center;
 }
 
-.rate-fill {
+.rate-fill-satisfacao {
     position: absolute;
     width: 100px;
     height: 100px;
@@ -45,25 +46,25 @@
     transition: background 0.5s;
 }
 
-.rate-percentage {
+.rate-percentage-satisfacao {
     font-size: 24px;
     font-weight: bold;
     color: #333;
     position: absolute;
 }
 
-.rate-icon {
+.rate-icon-satisfacao {
     margin-top: -10px;
 }
 
-.rate-description {
+.rate-description-satisfacao {
     font-size: 14px;
     color: #666;
     margin-top: 10px;
     line-height: 1.5;
 }
 
-.rate-bar {
+.rate-bar-satisfacao {
     background-color: #ddd;
     border-radius: 5px;
     height: 10px;
@@ -71,8 +72,16 @@
     margin-top: 15px;
 }
 
-.filled-bar {
+.filled-bar-satisfacao {
     background-color: #54a3f0;
     height: 100%;
     border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .satisfaction-rate-satisfacao {
+        width: 100%; /* Garantir que ocupe 100% da largura em telas pequenas */
+        margin: 10px 0; /* Ajustar a margem para não ficar apertado */
+    }
 }

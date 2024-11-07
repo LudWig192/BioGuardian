@@ -1,3 +1,17 @@
+.custom-confirm-button {
+    background-color: #54a3f0 !important;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+.custom-confirm-button:hover {
+    background-color: #54a3f0;
+}
+ 
 .agendamento-calendar-container {
     display: flex;
     justify-content: center;
@@ -5,7 +19,7 @@
     margin-bottom: 40px;
     width: 100%;
 }
-
+ 
 .agendamento-calendar {
     max-width: 400px;
     width: 100%;
@@ -16,38 +30,38 @@
     background-color: #fff;
     margin: 0 auto;
 }
-
+ 
 .agendamento-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background: #54d4f0;
+    background: #5472f0;
     color: #ffffff;
 }
-
+ 
 .agendamento-arrow {
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #5472f0;
+    color: #54a3f0;
 }
-
+ 
 .agendamento-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
     padding: 10px;
 }
-
+ 
 .agendamento-day-name {
     font-weight: bold;
     text-align: center;
     margin-bottom: 5px;
-    color: #555;
+    color: #000000;
 }
-
+ 
 .agendamento-day {
     padding: 10px;
     text-align: center;
@@ -58,63 +72,62 @@
     min-width: 40px;
     min-height: 40px;
 }
-
+ 
 .agendamento-empty {
     background-color: #f9f9f9;
 }
-
+ 
 .selected {
     background-color: #007bff;
     color: white;
     border-radius: 50%;
 }
-
+ 
 .today {
-    background-color: #28a745;
-    color: white;
+    background-color: #46f0d7;
+    color: rgb(0, 0, 0);
     border-radius: 50%;
 }
-
+ 
 .agendamento-month-title {
     font-size: 1.5em;
     font-weight: bold;
     margin: 0;
 }
-
-/* Responsividade */
+ 
 @media (max-width: 768px) {
     .agendamento-calendar {
         max-width: 100%;
     }
-
+ 
     .agendamento-days {
         grid-template-columns: repeat(7, 1fr);
         gap: 5px;
     }
-
+ 
     .agendamento-day {
         padding: 10px;
         min-width: 35px;
         min-height: 35px;
     }
 }
-
+ 
 @media (max-width: 480px) {
     .agendamento-calendar {
         max-width: 100%;
     }
-
+ 
     .agendamento-days {
         grid-template-columns: repeat(7, 1fr);
         gap: 5px;
     }
-
+ 
     .agendamento-day {
         padding: 8px;
         min-width: 30px;
         min-height: 30px;
     }
-
+ 
     .agendamento-month-title {
         font-size: 1.2em;
     }

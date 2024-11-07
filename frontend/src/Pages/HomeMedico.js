@@ -4,10 +4,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 //IMPORT DOS COMPONENTES
 import Navbaradm from '../Components/Navegacao-medico'; //LOGIN ESPECIFICO
-import Cabecalho from '../Components/Calendario'; 
+import Cabecalho from '../Components/Calendario';
 import Anatomy from '../../src/Corpo/Anatomy'; //CORPO
 import Anotações from '../Components/Anotacoes'; //BLOCO DE NOTAS
-import Grafico from "../Components/Grafico";  
+import Grafico from "../Components/GraficoMedico";
 import Paciente from "../Components/Paciente";
 import TestReports from '../Components/TestReports';
 import Prescriptions from '../Components/Prescrisao'
@@ -32,11 +32,11 @@ const HomeMedico = () => {
             <Anatomy />
           </Col>
           <Col md={6} className="cabecalhoMEDICO">
-            <Cabecalho  onSelectDay={handleSelectDay} />
+            <Cabecalho onSelectDay={handleSelectDay} />
           </Col>
         </Row>
         <Row className='Relatorio'>
-          <Col md={6} sm={12}>
+          <Col md={6} sm={12} className='Grafico-Medico'>
             <Grafico />
           </Col>
           <Col md={6} sm={12}>

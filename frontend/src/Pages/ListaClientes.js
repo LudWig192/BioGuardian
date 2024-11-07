@@ -1,11 +1,9 @@
-// BIBLIOTECAS
 import React from "react";
 
 // IMPORT OS COMPONENTES AQ
 import TabelaCadastro from "../Components/CadastroTabela";
 import TabelaLogin from "../Components/LoginTabela";
 import NavegacaoAdm from '../Components/Navegacao-adm'
-import TabelaContato from '../Components/ContatoTabela'
 
 // IMPORT ESTILIZACAO
 import '../Style/Cliente.css'
@@ -20,8 +18,6 @@ const ListaClientes = () => {
         <TabelaCadastro />
         <h2>Login</h2>
         <TabelaLogin />
-        <h2>Contato</h2>
-        <TabelaContato />
       </div>
     </>
   );

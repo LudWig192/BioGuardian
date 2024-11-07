@@ -23,20 +23,20 @@ const SatisfactionRate = () => {
     }, [satisfactionRate]);
 
     return (
-        <div className="satisfaction-rate">
-            <h3 className="satisfaction-title">Taxa de Satisfação dos Funcionários</h3>
-            <div className="rate-container">
-                <div className="rate-circle">
-                    <div className="rate-fill" style={{ '--rate': rate + '%' }}></div>
-                    <span className="rate-percentage">{rate}%</span>
+        <div className="satisfaction-rate-satisfacao">
+            <h3 className="satisfaction-title-satisfacao">Taxa de Satisfação dos Funcionários</h3>
+            <div className="rate-container-satisfacao">
+                <div className="rate-circle-satisfacao">
+                    <div className="rate-fill-satisfacao" style={{ '--rate': rate + '%' }}></div>
+                    <span className="rate-percentage-satisfacao">{rate}%</span>
                 </div>
-                <div className="rate-icon">
+                <div className="rate-icon-satisfacao">
                     <FaSmile size={60} color="#54a3f0" />
                 </div>
             </div>
-            <p className="rate-description">{description}</p>
-            <div className="rate-bar">
-                <div className="filled-bar" style={{ width: `${satisfactionRate}%` }}></div>
+            <p className="rate-description-satisfacao">{description}</p>
+            <div className="rate-bar-satisfacao">
+                <div className="filled-bar-satisfacao" style={{ width: `${satisfactionRate}%` }}></div>
             </div>
         </div>
     );

@@ -1,24 +1,24 @@
-// IMPORT DE BIBLIOTECA 
+// IMPORT DE BIBLIOTECA
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-
+ 
 // IMPORT ESTILIZAÇÃO
 import "../Style/CabecalhoMEDICO.css";
-
+ 
 // Função para gerar os dias da semana a partir de uma data de início
 const generateDaysOfWeek = (startDate) => {
     const daysInWeek = 7;
     return Array.from({ length: daysInWeek }, (_, i) => {
         const currentDate = new Date(startDate);
         currentDate.setDate(currentDate.getDate() + i);
-
+ 
         return {
             day: currentDate.getDate(),
             label: currentDate.toLocaleDateString("pt-BR", { weekday: "long" })
         };
     });
 };
-
+ 
 const Cabecalho = () => {
     const [selectedDay, setSelectedDay] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,67 +27,67 @@ const Cabecalho = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [editIndex, setEditIndex] = useState(null);
     const [weekOffset, setWeekOffset] = useState(0);
-
+ 
     useEffect(() => {
         const today = new Date().getDate();
         setSelectedDay(today.toString());
-
+ 
         const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
         setAppointments(storedAppointments);
     }, []);
-
+ 
     const handleDayClick = (day) => {
         setSelectedDay(day);
         setIsModalOpen(true);
         setIsEditing(false);
     };
-
+ 
     const handleSubmit = (e) => {
         e.preventDefault();
         const newAppointment = { day: selectedDay, ...formDetails };
-
+ 
         const updatedAppointments = isEditing
             ? appointments.map((appointment, index) => (index === editIndex ? newAppointment : appointment))
             : [...appointments, newAppointment];
-
+ 
         setAppointments(updatedAppointments);
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
         resetForm();
     };
-
+ 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormDetails((prev) => ({ ...prev, [name]: value }));
     };
-
+ 
     const handleEdit = (index) => {
         setFormDetails(appointments[index]);
         setEditIndex(index);
         setIsEditing(true);
         setIsModalOpen(true);
     };
-
+ 
     const handleDelete = (index) => {
         const updatedAppointments = appointments.filter((_, i) => i !== index);
         setAppointments(updatedAppointments);
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
     };
-
+ 
     const resetForm = () => {
         setIsModalOpen(false);
         setFormDetails({ title: "", description: "", time: "", doctor: "" });
         setIsEditing(false);
         setEditIndex(null);
     };
-
+ 
     const changeWeek = (direction) => {
         setWeekOffset((prev) => prev + direction * 7);
     };
-
+ 
     const days = generateDaysOfWeek(new Date(new Date().setDate(new Date().getDate() + weekOffset)));
     const filteredAppointments = appointments.filter((appointment) => appointment.day === selectedDay);
     const currentMonth = new Date().toLocaleString("pt-BR", { month: "long", year: "numeric" });
-
+ 
     return (
         <>
             <div className="date-header">
@@ -119,7 +119,7 @@ const Cabecalho = () => {
                     </button>
                 </div>
             </div>
-
+ 
             <div className="appointments">
                 <h2>Exames para o dia {selectedDay}:</h2>
                 {filteredAppointments.length > 0 ? (
@@ -133,7 +133,7 @@ const Cabecalho = () => {
                                 <h4>{appointment.title.toUpperCase()}</h4>
                                 <p>{appointment.doctor}</p>
                                 <p>{appointment.description}</p>
-
+ 
                                 {/* Botões de edição e exclusão dentro do appointment-card */}
                                 <div className="appointment-options">
                                     <button className="edit-button" onClick={() => handleEdit(index)}>Editar</button>
@@ -146,7 +146,7 @@ const Cabecalho = () => {
                     <p>Não há consultas agendadas para este dia.</p>
                 )}
             </div>
-
+ 
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={resetForm}
@@ -203,5 +203,5 @@ const Cabecalho = () => {
         </>
     );
 };
-
+ 
 export default Cabecalho;

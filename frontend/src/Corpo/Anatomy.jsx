@@ -5,7 +5,6 @@ import TabelaProblemas from '../Components/TabelaCorpo';
 import showAlertWithCountdown from '../Components/Alert';
 import '../Style/Anatomia.css';
 
-
 const problemasPorParte = {
   head: [
     { cor: 'red', descricao: 'Dor de cabeça leve' },
