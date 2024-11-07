@@ -6,15 +6,19 @@ import '../Style/AvaliacaoCliente.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
+// import Thiago from '../Imagens/Thiago.png';
+// import Bruna from '../Imagens/Bruna.jpeg';
+// import Tatiana from '../Imagens/Tatiana.jpeg';
+// import Caio from '../Imagens/Caioooooo.jpg';
 
 const reviews = [
     {
         id: 1,
-        patientName: 'Tiano Almeida',
+        patientName: 'Thiago Almeida',
         doctorName: 'Dr. João Silva',
         rating: 5,
         comment: 'Excelente atendimento! O Dr. João foi muito atencioso e esclareceu todas as minhas dúvidas.',
-        photo: 'url_da_foto_1.jpg',
+        // photo: Thiago,
     },
     {
         id: 2,
@@ -22,15 +26,15 @@ const reviews = [
         doctorName: 'Dra. Maria Oliveira',
         rating: 5,
         comment: 'A Dra. Maria é uma profissional incrível. O cuidado e a atenção dela me fizeram sentir muito à vontade.',
-        photo: 'url_da_foto_2.jpg',
+        // photo: Bruna,
     },
     {
         id: 3,
-        patientName: 'Renner Santos',
+        patientName: 'Caio Santos',
         doctorName: 'Dr. Carlos Ferreira',
         rating: 5,
         comment: 'Médico extremamente competente e dedicado. Recomendo a todos que precisarem de atendimento!',
-        photo: 'url_da_foto_3.jpg',
+        // photo: Caio,
     },
     {
         id: 4,
@@ -38,7 +42,7 @@ const reviews = [
         doctorName: 'Dra. Ana Clara',
         rating: 5,
         comment: 'A Dra. Ana foi maravilhosa! Me deixou tranquila durante todo o processo e demonstrou muito conhecimento.',
-        photo: 'url_da_foto_4.jpg',
+        // photo: Tatiana,
     },
 ];
 
@@ -55,30 +59,30 @@ const Avaliacoes = () => {
     };
 
     return (
-        <div className="avaliacoes">
-            <h2>Avaliações dos nossos clientes</h2>
-            <p>Veja o que nossos pacientes estão dizendo sobre nós!</p>
+        <div className="avaliacoes-container">
+            <h2 className="avaliacoes-title">Avaliações dos nossos clientes</h2>
+            <p className="avaliacoes-description">Veja o que nossos pacientes estão dizendo sobre nós!</p>
             <Slider {...settings}>
                 {reviews.map(({ id, patientName, doctorName, rating, comment, photo }) => (
-                    <div key={id} className="card">
-                        <div className="info">
-                            <img src={photo} alt={patientName} className="photo" />
-                            <div className="patient-details">
-                                <p className="patient-name">{patientName}</p>
-                                <p className="doctor-name">Dr(a). {doctorName}</p>
+                    <div key={id} className="avaliacao-card">
+                        <div className="avaliacao-info">
+                            <img src={photo} alt={patientName} className="avaliacao-photo" />
+                            <div className="avaliacao-patient-details">
+                                <p className="avaliacao-patient-name">{patientName}</p>
+                                <p className="avaliacao-doctor-name">Dr(a). {doctorName}</p>
                             </div>
                         </div>
-                        <div className="rating-container">
-                            <p className="rating">
+                        <div className="avaliacao-rating-container">
+                            <p className="avaliacao-rating">
                                 {[...Array(5)].map((_, index) => (
                                     <FontAwesomeIcon
                                         key={index}
                                         icon={index < rating ? solidStar : regularStar}
-                                        className="star-icon"
+                                        className="avaliacao-star-icon"
                                     />
                                 ))}
                             </p>
-                            <p className="comment">"{comment}"</p>
+                            <p className="avaliacao-comment">"{comment}"</p>
                         </div>
                     </div>
                 ))}

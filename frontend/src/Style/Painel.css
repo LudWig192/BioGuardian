@@ -1,75 +1,81 @@
-.painel-tudo * {
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-}
-
-.painel-container {
+/* src/Style/Painel.css */
+ 
+.painel-agendamento {
     max-width: 1200px;
     margin: auto;
     padding: 40px;
     border-radius: 10px;
     background-color: #ffffff;
 }
-
-.painel-title {
+ 
+.titulo-agendamento {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #2c3e50;
+    color: #000000;
     text-align: center;
 }
-
-.painel-cards {
+ 
+.linha-cartoes-agendamento {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
 }
-
-.card {
+ 
+.cartao-paciente-agendamento,
+.cartao-medico-agendamento,
+.cartao-enfermeiro-agendamento,
+.cartao-emergencia-agendamento {
     padding: 25px;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: calc(25% - 20px);
     text-align: center;
-    background-color: #eafaf1;
+    background-color: #ffffff;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.card:hover {
+ 
+.cartao-paciente-agendamento:hover,
+.cartao-medico-agendamento:hover,
+.cartao-enfermeiro-agendamento:hover,
+.cartao-emergencia-agendamento:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
-
-.card-icon {
+ 
+.icone-cartao-agendamento {
     margin-bottom: 15px;
     color: #54a3f0;
 }
-
-.card-content h2 {
+ 
+.conteudo-cartao-agendamento h2 {
     font-size: 22px;
     margin-bottom: 10px;
     font-weight: bold;
     color: #2c3e50;
 }
-
-.card-content p {
+ 
+.conteudo-cartao-agendamento p {
     font-size: 16px;
     color: #555;
 }
-
-/* Responsividade */
+ 
+/* Estilos Responsivos */
 @media (max-width: 900px) {
-    .card {
+    .cartao-paciente-agendamento,
+    .cartao-medico-agendamento,
+    .cartao-enfermeiro-agendamento,
+    .cartao-emergencia-agendamento {
         width: calc(50% - 20px);
     }
 }
-
+ 
 @media (max-width: 600px) {
-    .card {
+    .cartao-paciente-agendamento,
+    .cartao-medico-agendamento,
+    .cartao-enfermeiro-agendamento,
+    .cartao-emergencia-agendamento {
         width: calc(100% - 20px);
     }
 }

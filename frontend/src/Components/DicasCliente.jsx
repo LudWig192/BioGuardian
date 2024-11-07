@@ -25,7 +25,7 @@ const ElderlyCareSolutions = () => {
     {
       dicascliente: 4,
       icon: <FaStethoscope />,
-      title: 'Consulte um Médico Regularmente',
+      title: 'Consulte um Médico',
       description: 'Visite seu médico regularmente para monitorar sua saúde e fazer exames preventivos.',
     },
     {
@@ -45,9 +45,6 @@ const ElderlyCareSolutions = () => {
   return (
     <section className="dicasclienteicons"> 
       <div className="dicasclienteicons-title">Dicas para Melhorar a Saúde</div> 
-      <div className="dicasclienteicons-intro">
-        Siga estas dicas para promover uma vida saudável.
-      </div>
       <div className="dicasclientes-cards"> 
         {services.map(service => (
           <div key={service.dicascliente} className="dicascliente-card"> 

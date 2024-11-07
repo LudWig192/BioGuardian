@@ -5,7 +5,6 @@ import Deolaine from '../Imagens/Deolaine.jpg';
 import Marcos from '../Imagens/Marcos.png';
 import Alice from '../Imagens/Alice.jpg';
 
-
 const medicos = [
     {
         nome: 'Deolaine Freitas',
@@ -35,25 +34,25 @@ const medicos = [
 
 const PainelMedicos = () => {
     return (
-        <div className="painel-medicos">
+        <div className="painel-medicos-destaque">
             <h2>
-                <FaUserMd className="icon" />
+                <FaUserMd className="icon-destaque" />
                 Médicos Destaque do Mês
             </h2>
             {medicos.map((medico, index) => (
-                <div key={index} className="linha-medico">
-                    <div className="informacao-medico">
-                        <div className="icone-medico">
+                <div key={index} className="linha-medico-destaque">
+                    <div className="informacao-medico-destaque">
+                        <div className="icone-medico-destaque">
                             <img src={medico.imagem} alt={`Imagem de ${medico.nome}`} />
                         </div>
-                        <div className="dados-medico">
-                            <div className="nome-medico">{medico.nome}</div>
-                            <div className="especialidade">{medico.especialidade}</div>
-                            <div className="salario">R$ {medico.salario.toFixed(2)}</div>
-                            <div className="data">{medico.data}</div>
+                        <div className="dados-medico-destaque">
+                            <div className="nome-medico-destaque">{medico.nome}</div>
+                            <div className="especialidade-destaque">{medico.especialidade}</div>
+                            <div className="salario-destaque">R$ {medico.salario.toFixed(2)}</div>
+                            <div className="data-destaque">{medico.data}</div>
                         </div>
                     </div>
-                    <div className={`status ${medico.status.toLowerCase()}`}>{medico.status}</div>
+                    <div className={`status-destaque ${medico.status.toLowerCase()}`}>{medico.status}</div>
                 </div>
             ))}
         </div>
