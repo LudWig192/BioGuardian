@@ -29,13 +29,19 @@ import Administrador from './Pages/Administrador.js';
 import Clientes from "./Pages/ListaClientes.js";
 import PerfilAdm from './Pages/PerfilAdm.js';
 
-// Navegações
+// Navegações|Navbars
 import NavegacaoCCC from './Components/Navegacao-CCC.jsx';
 import NavegacaoCSC from './Components/Navegacao.jsx';
 import NavegacaoMedico from './Components/Navegacao-medico.jsx';
 import NavegacaoAdm from './Components/Navegacao-adm.jsx';
 
-//?????????
+// Rodapes
+import RodapeCCC from './Components/Footer-CCC.jsx'
+import RodapeCSC from './Components/Footer.jsx'
+import RodapeMedico from './Components/Footer-Medico.jsx'
+import RodapeAdm from './Components/Footer-adm.jsx'
+
+// ??????
 import Interrogacao from './Pages/Secreto.js'
 
 const Rotas = () => {
@@ -43,7 +49,7 @@ const Rotas = () => {
                 <>
                         <Routes>
                                 {/* Cliente sem cadastro */}
-                                <Route path="/" exact element={<HomeMedico />} />
+                                <Route path="/" exact element={<Home />} />
                                 <Route path="/Beneficio" element={<Beneficio />} />
                                 <Route path="/Servico" element={<Servicos />} />
                                 <Route path="/Login" element={<LoginForm />} />
@@ -75,6 +81,12 @@ const Rotas = () => {
                                 <Route path="/NaveCCC" element={<NavegacaoCCC />} />
                                 <Route path="/NaveMedico" element={<NavegacaoMedico />} />
                                 <Route path="/NaveAdm" element={<NavegacaoAdm />} />
+
+                                 {/* Rodapes */}
+                                 <Route path="/RodaCSC" element={<RodapeCSC />} />
+                                <Route path="/RodaCCC" element={<RodapeCCC />} />
+                                <Route path="/RodaMedico" element={<RodapeMedico />} />
+                                <Route path="/RodaAdm" element={<RodapeAdm />} />
 
                                 {/* ????????????? */}
                                 <Route path="/interrogacao" element={<Interrogacao  />} />

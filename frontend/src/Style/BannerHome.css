@@ -8,8 +8,7 @@
     border-radius: 8px; 
     color: #fff; 
     height: 100vh; 
-    overflow: hidden; 
-    margin-top: 80px; /* Deslocando o banner para baixo */
+    overflow: hidden;
 }
 
 .BannerHome-background {
@@ -37,7 +36,6 @@
 .BannerHome-description {
     font-size: 20px;
     margin-bottom: 30px; 
-    text-align: justify;
 }
 
 .BannerHome-button {

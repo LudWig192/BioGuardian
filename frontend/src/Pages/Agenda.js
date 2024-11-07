@@ -3,7 +3,8 @@ import ResponsiveTable from '../Components/Agenda.jsx';
 import ButtonGroup from '../Components/Botoes.jsx';
 import SwitchWithIconsAndAvatar from '../Components/Avatar.jsx';
 import NavbarMedico from '../Components/Navegacao-medico';
-import Footer from "../Components/Footer-Medico"
+import FooterMedico from "../Components/Footer-Medico"
+import '../Style/Agenda.css'
 
 
 const Agenda = () => {
@@ -111,28 +112,30 @@ const Agenda = () => {
 
 
     return (
-        <div className="App">
-            <>
-                <NavbarMedico />
-                <SwitchWithIconsAndAvatar
-                    notificationCount={notificationCount}
-                    latestPatient={latestPatient}
-                />
-                <h1 className='animated-heading'>Agenda Médica</h1>
-                <ButtonGroup
-                    onDateRangeChange={handleDateRangeChange}
-                    onStatusFilterChange={handleStatusFilterChange}
-                    onPlanFilterChange={handlePlanFilterChange}
-                    data={data}
-                />
-                <ResponsiveTable
-                    data={filteredData}
-                    onEdit={handleEdit}
-                    onDelete={handleDelete}
-                    onAdd={handleAdd}
-                />
-            </>
-            <Footer />
+        <div className='Agenda-tudo'>
+            <div className="App">
+                <>
+                    <NavbarMedico />
+                    <SwitchWithIconsAndAvatar
+                        notificationCount={notificationCount}
+                        latestPatient={latestPatient}
+                    />
+                    <h1 className='animated-heading'>Agenda Médica</h1>
+                    <ButtonGroup
+                        onDateRangeChange={handleDateRangeChange}
+                        onStatusFilterChange={handleStatusFilterChange}
+                        onPlanFilterChange={handlePlanFilterChange}
+                        data={data}
+                    />
+                    <ResponsiveTable
+                        data={filteredData}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                        onAdd={handleAdd}
+                    />
+                </>
+                <FooterMedico />
+            </div>
         </div>
     );
 };

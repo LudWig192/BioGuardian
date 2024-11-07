@@ -14,7 +14,7 @@ const Navbar = () => {
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
-        console.log('Dropdown aberto:', !isDropdownOpen);  // Verifique no console
+        console.log('Dropdown aberto:', !isDropdownOpen); 
     };
 
     const toggleMobileMenu = () => {
@@ -56,7 +56,7 @@ const Navbar = () => {
 
             <div className="navbar-center">
                 <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
-                    <li><Link to="/home" className="nav-link">Home</Link></li>
+                    <li><Link to="/" className="nav-link">Home</Link></li>
                     <li><Link to="/beneficio" className="nav-link">Benefício</Link></li>
                     <li><Link to="/servico" className="nav-link">Serviço</Link></li>
                 </ul>
@@ -70,13 +70,10 @@ const Navbar = () => {
                 </div>
                 {isDropdownOpen && (
                     <div className={`dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
-                        <Link to="/login" className="dropdown-item">
+                        <Link to="/Login" className="dropdown-item">
                             <LoginIcon className="dropdown-icon" /> Login
                         </Link>
-                        <Link to="/entrar" className="dropdown-item">
-                            <PersonAddIcon className="dropdown-icon" /> Entrar
-                        </Link>
-                        <Link to="/cadastrar" className="dropdown-item">
+                        <Link to="/cadastro" className="dropdown-item">
                             <PersonAddIcon className="dropdown-icon" /> Cadastrar
                         </Link>
                     </div>

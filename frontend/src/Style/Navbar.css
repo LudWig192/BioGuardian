@@ -5,19 +5,18 @@
   align-items: center;
   padding: 0 20px;
   background-color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0; /* Garante que a navbar fique alinhada à esquerda */
-  right: 0; /* Garante que a navbar ocupe toda a largura da tela */
-  width: 100%; /* Garante que a navbar ocupe 100% da largura da tela */
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: visible;
-  margin: 0; /* Remove qualquer margem que possa causar deslocamento */
+  margin: 0;
 }
 
 /* Corrigir a sobreposição da navbar com o conteúdo */
-
 
 .navbar-left .logo {
   width: 100px;

@@ -44,6 +44,7 @@ const Navbar = () => {
 
             <div className="navbar-center">
                 <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
+                <li><Link to="/PerfilAdm" className="nav-link">Home</Link></li>
                     <li><Link to="/Salario" className="nav-link">Salario</Link></li>
                     <li><Link to="/Funcionarios" className="nav-link">Funcionarios</Link></li>
                     <li><Link to="/Clientes" className="nav-link">Clientes</Link></li>
@@ -67,7 +68,7 @@ const Navbar = () => {
                     <MenuItem onClick={handleClose} component={Link} to="/PerfilAdm">
                         <AccountCircleIcon className="dropdown-icon" /> Ver Perfil
                     </MenuItem>
-                    <MenuItem onClick={handleClose} component={Link} to="/Home">
+                    <MenuItem onClick={handleClose} component={Link} to="/Login">
                         <LoginIcon className="dropdown-icon" /> Sair
                     </MenuItem>
                 </Menu>

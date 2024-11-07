@@ -1,6 +1,8 @@
-body {
+.administrador-page {
     background-color: white !important;
+    min-height: 200vh;
 }
+
 
 .dashboard {
     display: flex;

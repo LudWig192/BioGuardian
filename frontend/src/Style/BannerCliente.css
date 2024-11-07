@@ -82,7 +82,6 @@
 .descricao-card-BannerCliente {
     font-size: 0.9rem;
     color: black;
-    text-align: justify;
     flex-grow: 1; 
 }
 
