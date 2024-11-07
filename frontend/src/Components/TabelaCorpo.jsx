@@ -1,6 +1,12 @@
+//BIBLIOTECAS:
 import React from 'react';
-import '../Style/Tabelaproblemas.css'; 
-import Coracao from '../Components/Coracao'; 
+
+//COMPONENTES:
+
+
+//ESTILIZAÇÃO:
+import '../Style/Tabelaproblemas.css';
+ 
 
 function TabelaProblemas({ problemas, parteCorpo }) {
   return (
@@ -27,7 +33,6 @@ function TabelaProblemas({ problemas, parteCorpo }) {
         </tbody>
       </table>
       <div className="heartbeat-container">
-        <Coracao /> 
       </div>
     </div>
   );

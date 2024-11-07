@@ -1,13 +1,9 @@
-.StatusPaciente {
-  padding-right: 350px;
+  .StatusPaciente {
+  padding-right: 175px;
 }
 
 .cabecalhoMEDICO{
   padding-left: 10px;
-}
-
-.Cliente {
-  margin-left: 70px;
 }
 
 .Perfil {
@@ -52,15 +48,15 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .Consultas {
+  /* .Consultas {
     padding-left: 0;
     margin-top: -395px;
     width: 100%;
-  }
+  } */
 
   .StatusPaciente{
     padding-top: 100px;
-    
+    margin-left: 190px;
     max-height: 390px;
     max-width: 390px;
     margin-right: 0;
@@ -74,6 +70,27 @@
   }
 
   .Relatorios{
-    padding-top: 100px;
+    padding-top: 80px;
+    margin-left: 30px;
+  }
+
+  .Grafico-Medico{
+    padding-top: -40px;
+  }
+  .cabecalhoMEDICO{
+    margin-left: 17px;
+  }
+
+  .Informacoes{
+    margin-top: 200px;
+    margin-left: 40px;
+  }
+
+  .Cliente{
+    margin-left: 30px;
+  }
+
+  .Elementos-perfil{
+    margin-top: 50px;
   }
 }

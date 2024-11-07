@@ -31,7 +31,6 @@
 /* Responsividade */
 @media (max-width: 768px) {
     .graph-container {
-        margin-top: 330px;
         width: 100%;   
         height: auto;  
         transform: translateY(-100px);

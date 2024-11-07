@@ -7,14 +7,13 @@ import Navbaradm from '../Components/Navegacao-medico'; //LOGIN ESPECIFICO
 import Cabecalho from '../Components/Calendario'; 
 import Anatomy from '../../src/Corpo/Anatomy'; //CORPO
 import Anotações from '../Components/Anotacoes'; //BLOCO DE NOTAS
-import Grafico from "../Components/Grafico";  
+import Grafico from "../Components/GraficoMedico";
 import Paciente from "../Components/Paciente";
 import TestReports from '../Components/TestReports';
 import Prescriptions from '../Components/Prescrisao'
 
 //IMPORT DA ESTILIZAÇÃO
 import '../Style/HomeMedico.css';
-
 const HomeMedico = () => {
 
   const [selectedDay, setSelectedDay] = useState("10");
@@ -36,7 +35,7 @@ const HomeMedico = () => {
           </Col>
         </Row>
         <Row className='Relatorio'>
-          <Col md={6} sm={12}>
+          <Col md={6} sm={12} className='Grafico-Medico'>
             <Grafico />
           </Col>
           <Col md={6} sm={12}>

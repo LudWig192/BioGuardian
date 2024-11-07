@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 // Pagina de Cliente sem cadastro
 import Home from "./Pages/Home.js";
 import Cadastro from "./Pages/Cadastro.js";
-
 import LoginForm from "./Pages/Login.js";
 import Beneficio from "./Pages/Beneficio.js";
 import Servicos from './Pages/Serviço.js'
@@ -25,7 +24,6 @@ import Agenda from "./Pages/Agenda.js";
 import Salario from './Pages/Salario.js';
 import Funcionarios from "./Pages/Funcionarios.js";
 import Registros from './Pages/RegistroExames.js';
-import Administrador from './Pages/Administrador.js';
 import Clientes from "./Pages/ListaClientes.js";
 import PerfilAdm from './Pages/PerfilAdm.js';
 
@@ -68,7 +66,6 @@ const Rotas = () => {
                                 <Route path="/Clientes" element={<Clientes/>} />
                                 <Route path="/PerfilAdm" element={<PerfilAdm />} />
                                 <Route path="/Registros" element={<Registros />} />
-                                <Route path="/Administrador" element={<Administrador />} />
 
                                 {/* Navegações*/}
                                 <Route path="/NaveCSC" element={<NavegacaoCSC />} />

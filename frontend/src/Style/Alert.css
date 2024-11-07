@@ -60,3 +60,9 @@
   background: transparent !important;
   animation: none;
 }
+
+@media (max-width: 768px) {
+  .swal2-container{
+    padding-right: 130px;
+  }
+}

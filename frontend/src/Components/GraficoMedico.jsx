@@ -10,7 +10,7 @@ const data = {
   datasets: [
     {
       label: 'Anomalia',
-      data: [2, 1, 3, 2, 4],
+      data: [8, 2, 3, 6, 8],
       fill: false,
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 1)',

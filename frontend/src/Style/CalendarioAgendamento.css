@@ -63,11 +63,11 @@
     background-color: #f9f9f9;
 }
 
-.selected {
+/* .selected {
     background-color: #007bff;
     color: white;
     border-radius: 50%;
-}
+} */
 
 .today {
     background-color: #28a745;
