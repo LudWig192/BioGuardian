@@ -1,125 +1,119 @@
 .footer {
-    background-color: #f0f4f8; /* Azul claro para um toque hospitalar */
-    color: #333; /* Texto escuro para bom contraste */
-    padding: 40px 20px; /* Espaçamento interno generoso */
-    font-family: 'Arial', sans-serif; /* Fonte profissional */
-    text-align: left; /* Alinhamento à esquerda para melhor leitura */
-    /* border-top: 4px solid #007bff; Linha superior azul para destaque */
+    background-color: #ffffff;
+    box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: #333;
+    margin-top: 100px;
+    position: relative;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .footer-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px; /* Limite de largura para centralizar */
-    margin: auto; /* Centraliza o conteúdo */
+    padding: 20px;
+    flex-wrap: wrap; /* Permite que as colunas quebrem para uma nova linha se necessário */
 }
 
-/* Estilo das colunas do rodapé */
 .footer-column {
     flex: 1;
-    min-width: 220px; /* Largura mínima das colunas */
-    padding: 20px; /* Espaçamento interno nas colunas */
+    padding: 10px;
+    min-width: 200px; /* Define uma largura mínima para as colunas */
 }
 
-.footer-column h3 {
-    margin-bottom: 15px; /* Espaçamento inferior */
-    font-size: 20px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito para títulos */
-    color: #007bff; /* Cor dos títulos */
+.footer h3 {
+    color: black;
 }
 
-.footer-column p {
-    margin-bottom: 10px; /* Espaçamento entre parágrafos */
+.footer-text {
+    color: black;
+    margin: 5px 0;
+    transition: color 0.3s;
 }
 
-.footer-links {
-    list-style: none; /* Remove o estilo de lista */
-    padding: 0; /* Remove o padding padrão */
-    margin: 0; /* Remove a margem padrão */
-}
-
-.footer-links li {
-    margin-bottom: 10px; /* Espaçamento entre os links */
-}
-
-.footer-links a {
-    color: #000000; /* Cor dos links */
-    text-decoration: none; /* Remove o sublinhado */
-    transition: color 0.3s; /* Transição suave para cor */
-}
-
-.footer-links a:hover {
-    color: #0056b3; /* Cor ao passar o mouse */
-}
-
-.footer-form {
-    display: flex;
-    flex-direction: column; /* Alinha campos verticalmente */
-}
-
-.footer-form input {
-    width: 100%; /* Largura total dos campos */
-    padding: 12px; /* Espaçamento interno */
-    margin-bottom: 10px; /* Espaçamento entre os campos */
-    border: 1px solid #ccc; /* Borda leve */
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 16px; /* Tamanho da fonte */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
-}
-
-.footer-form button {
-    background-color: #007bff; /* Cor de fundo dos botões */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: #fff; /* Cor do texto */
-    padding: 12px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor em forma de mão ao passar o mouse */
-    transition: background-color 0.3s; /* Transição suave para cor de fundo */
-}
-
-.footer-form button:hover {
-    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+.footer-text:hover {
+    color: #007bff;
 }
 
 .footer-icons {
     display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    margin-top: 20px; /* Espaço entre o formulário e os ícones */
+    justify-content: flex-start;
+    margin-top: 20px;
 }
 
 .footer-icons a {
-    margin: 0 15px; /* Espaçamento horizontal entre os ícones */
-    font-size: 36px; /* Tamanho maior dos ícones */
-    color: inherit; /* Herda a cor do texto para links */
-    transition: transform 0.3s; /* Transição suave para o efeito de hover */
-}
-
-.footer-icons a:hover {
-    transform: scale(1.1); /* Leve aumento no tamanho ao passar o mouse */
+    margin: 0 15px;
+    transition: color 0.3s;
+    font-size: 24px;
 }
 
 /* Cores específicas para cada ícone */
-.footer-icons .facebook {
-    color: #3b5998; /* Azul do Facebook */
+.footer-icons a.facebook { color: #3b5998; }
+.footer-icons a.whatsapp { color: #25D366; }
+.footer-icons a.instagram { color: #e4405f; }
+.footer-icons a.linkedin { color: #0077b5; }
+
+.footer-icons a:hover {
+    color: #007bff;
 }
 
-.footer-icons .twitter {
-    color: #1DA1F2; /* Azul do Twitter */
+.footer-form input {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.footer-icons .instagram {
-    color: #C13584; /* Roxo do Instagram */
-}
-
-.footer-icons .linkedin {
-    color: #0077b5; /* Azul do LinkedIn */
+.footer-form button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .footer-bottom {
-    text-align: center; /* Alinhamento central para o rodapé */
-    padding: 20px 0; /* Espaçamento superior e inferior */
-    font-size: 14px; /* Tamanho da fonte reduzido */
-    color: #777; /* Cor do texto mais suave */
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer a {
+    color: #555;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .footer-icons {
+        justify-content: center; /* Centraliza os ícones em telas menores */
+    }
 }

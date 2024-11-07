@@ -9,6 +9,7 @@
     color: #fff; 
     height: 100vh; 
     overflow: hidden; 
+    margin-top: 80px; /* Deslocando o banner para baixo */
 }
 
 .BannerHome-background {
@@ -49,12 +50,12 @@
     font-size: 16px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) { 
     .BannerHome-section {
         flex-direction: column; 
         padding: 20px; 
         height: auto; 
+        margin-top: 20px; /* Garantindo o deslocamento no layout pequeno */
     }
 
     .BannerHome-content {

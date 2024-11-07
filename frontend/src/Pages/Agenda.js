@@ -3,6 +3,8 @@ import ResponsiveTable from '../Components/Agenda.jsx';
 import ButtonGroup from '../Components/Botoes.jsx';
 import SwitchWithIconsAndAvatar from '../Components/Avatar.jsx';
 import NavbarMedico from '../Components/Navegacao-medico';
+import Footer from "../Components/Footer-Medico"
+
 
 const Agenda = () => {
     const [data, setData] = useState([]);
@@ -130,6 +132,7 @@ const Agenda = () => {
                     onAdd={handleAdd}
                 />
             </>
+            <Footer />
         </div>
     );
 };

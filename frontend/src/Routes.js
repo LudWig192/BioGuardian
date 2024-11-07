@@ -7,7 +7,7 @@ import Cadastro from "./Pages/Cadastro.js";
 
 import LoginForm from "./Pages/Login.js";
 import Beneficio from "./Pages/Beneficio.js";
-import Servicos from './Pages/Serviço.js'
+import Servicos from './Pages/Servico.js'
 
 // Paginas de Cliente com cadastro
 import HomeCliente from "./Pages/HomeCliente.js";

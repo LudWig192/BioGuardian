@@ -28,10 +28,9 @@ const Footer1 = () => {
                 <div className="footer-column">
                     <h3>Informações Úteis</h3>
                     <div className="footer-info">
-                        <div className="footer-text">Agendamento de Consultas</div>
-                        <div className="footer-text">Exames e Resultados</div>
-                        <div className="footer-text">Contato de Emergência</div>
-                        <div className="footer-text">Localização da Unidade</div>
+                        <div className="footer-text">Exames</div>
+                        <div className="footer-text">Unidades</div>
+                        <div className="footer-text">Agendamentos</div>
                     </div>
                 </div>
                 <div className="footer-column email1">

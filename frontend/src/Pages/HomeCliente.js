@@ -9,7 +9,8 @@ import Marcar from "../Components/MarcarConsultaCliente"
 import Cirugia from "../Components/CirugiaCliente"
 import Tabela from "../Components/TabelaCliente";
 import "../Style/HomeClientePage.css";
-import NavbarCCC from '../Components/Navegacao-CCC'
+import NavbarCCC from '../Components/Navegacao-CCC';
+import FooterCCC from "../Components/Footer-CCC"
 
 const HomeCliente = () => {
   return (
@@ -23,6 +24,7 @@ const HomeCliente = () => {
       <Marcar /> 
      <Icons />
      <Tabela />
+     <FooterCCC />
     </>
   );
 };
