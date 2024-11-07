@@ -8,6 +8,7 @@ import Plano from "../Components/PlanoBeneficio";
 import Unidade from "../Components/UnidadeBeneficio";
 import Cirugia from "../Components/CirugiaBeneficio";
 import Duvida from "../Components/DuvidaBeneficio";
+import Footer from "../Components/Footer";
 import "../Style/BeneficioPage.css";
 
 
@@ -23,6 +24,7 @@ const Beneficio = () => {
       <Unidade />
       <Icons />
       <Duvida />
+      <Footer />
     </>
   );
 }

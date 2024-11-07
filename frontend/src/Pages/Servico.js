@@ -7,6 +7,8 @@ import Medico from "../Components/MedicoServiço";
 import Animação from "../Components/TecnologiaServiço";
 import "../Style/ServicoPage.css";
 import NavbarCSC from '../Components/Navegacao'
+import Footer from "../Components/Footer"
+
 const Unidades = () => {
     return (
         <div className="servico-page">
@@ -17,6 +19,7 @@ const Unidades = () => {
             <Suporte />
             <Animação />
             <Medico />
+            <Footer />
         </div>
     );
 };
