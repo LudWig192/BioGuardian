@@ -1,26 +1,26 @@
 import React from 'react';
 import '../Style/ModalFuncionario.css';
 
-const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDadosMedico, onExcluir }) => {
+const ModalFuncionarios = ({ isOpen, onClose, onAddFuncionario, dadosFuncionario, setDadosFuncionario, onExcluir }) => {
   if (!isOpen) return null;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setDadosMedico(prevData => ({ ...prevData, [name]: value }));
+    setDadosFuncionario(prevData => ({ ...prevData, [name]: value }));
   };
 
   return (
     <div className="funcionarioModal-overlay">
       <div className="funcionario-Modal-content">
         <h2 className="funcionarioModal-title">
-          {dadosMedico.idMedico ? 'Editar Médico' : 'Adicionar Médico'}
+          {dadosFuncionario.idFuncionario ? 'Editar Funcionário' : 'Adicionar Funcionário'}
         </h2>
-        <form onSubmit={onAddDoctor} className='modal-funcionarios-form'>
+        <form onSubmit={onAddFuncionario} className="modal-funcionarios-form">
           <input
             type="text"
             name="nome"
             placeholder="Nome"
-            value={dadosMedico.nome}
+            value={dadosFuncionario.nome}
             onChange={handleChange}
             required
           />
@@ -28,7 +28,7 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
             type="text"
             name="especialidade"
             placeholder="Especialidade"
-            value={dadosMedico.especialidade}
+            value={dadosFuncionario.especialidade}
             onChange={handleChange}
             required
           />
@@ -36,7 +36,7 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
             type="text"
             name="numeroRegistro"
             placeholder="Número do Registro"
-            value={dadosMedico.numeroRegistro}
+            value={dadosFuncionario.numeroRegistro}
             onChange={handleChange}
             required
           />
@@ -44,14 +44,13 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
             type="text"
             name="horarioTrabalho"
             placeholder="Ex: 10:00-12:00"
-            value={dadosMedico.horarioTrabalho}
+            value={dadosFuncionario.horarioTrabalho}
             onChange={handleChange}
             required
           />
-
           <select
             name="status"
-            value={dadosMedico.status}
+            value={dadosFuncionario.status}
             onChange={handleChange}
             required
           >
@@ -61,18 +60,20 @@ const ModalFuncionarios = ({ isOpen, onClose, onAddDoctor, dadosMedico, setDados
           </select>
 
           <select
-            name="plantao"
-            value={dadosMedico.plantao}
+            name="em_trabalho"
+            value={dadosFuncionario.em_trabalho}
             onChange={handleChange}
             required
           >
-            <option value="">Selecione Plantão</option>
+            <option value="">Selecione o Em Trabalho</option>
             <option value="sim">Sim</option>
             <option value="não">Não</option>
           </select>
 
           <div className="funcionarioModal-buttons">
-            <button className="salvar-modFun" type="submit">{dadosMedico.idMedico ? 'Salvar' : 'Adicionar'}</button>
+            <button className="salvar-modFun" type="submit">
+              {dadosFuncionario.idFuncionario ? 'Salvar' : 'Adicionar'}
+            </button>
             <button className="Fechar-modFun" type="button" onClick={onClose}>Fechar</button>
           </div>
         </form>

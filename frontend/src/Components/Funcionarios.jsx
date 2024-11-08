@@ -5,100 +5,100 @@ import ModalFuncionarios from '../Components/ModalFuncionarios.jsx';
 import Administrador from "../Imagens/Administrador.png";
 
 const FuncionariosPage = () => {
-  const [medicos, setMedicos] = useState([]);
+  const [funcionarios, setFuncionarios] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState('');
   const [currentIndex, setCurrentIndex] = useState(null);
-  const [dadosMedico, setDadosMedico] = useState({
+  const [dadosFuncionario, setDadosFuncionario] = useState({
     nome: '',
     numeroRegistro: '',
     horarioTrabalho: '',
     status: '',
     especialidade: '',
-    plantao: '',
+    em_trabalho: '',
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    buscarMedicos();
-    const intervalId = setInterval(buscarMedicos, 10000);
+    buscarFuncionarios();
+    const intervalId = setInterval(buscarFuncionarios, 5000);
     return () => clearInterval(intervalId);
   }, []);
 
-  const buscarMedicos = async () => {
+  const buscarFuncionarios = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/medicos');
-      if (!response.ok) throw new Error('Falha ao buscar médicos');
+      const response = await fetch('http://localhost:3001/funcionarios');
+      if (!response.ok) throw new Error('Falha ao buscar funcionários');
       const data = await response.json();
-      setMedicos(data);
+      setFuncionarios(data);
     } catch (error) {
       console.error(error);
-      setErrorMessage('Erro ao buscar médicos. Tente novamente.');
+      setErrorMessage('Erro ao buscar funcionários. Tente novamente.');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleAdicionarMedico = async (e) => {
+  const handleAdicionarFuncionario = async (e) => {
     e.preventDefault();
-    const novoMedico = { ...dadosMedico, avatar: Administrador };
+    const novoFuncionario = { ...dadosFuncionario, avatar: 'Administrador' };
 
     try {
-      await fetch('http://localhost:3001/medicos', {
+      await fetch('http://localhost:3001/funcionarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(novoMedico),
+        body: JSON.stringify(novoFuncionario),
       });
-      buscarMedicos();
+      buscarFuncionarios();
       fecharModal();
     } catch (error) {
       console.error(error);
-      setErrorMessage('Erro ao adicionar médico. Tente novamente.');
+      setErrorMessage('Erro ao adicionar um funcionário. Tente novamente.');
     }
   };
 
-  const handleEditarMedico = async (e) => {
+  const handleEditarFuncionario = async (e) => {
     e.preventDefault();
-    const medicoAtualizado = { ...dadosMedico };
+    const funcionarioAtualizado = { ...dadosFuncionario };
 
     try {
-      await fetch(`http://localhost:3001/medicos/${medicos[currentIndex].idMedico}`, {
+      await fetch(`http://localhost:3001/funcionarios/${funcionarios[currentIndex].idFuncionario}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(medicoAtualizado),
+        body: JSON.stringify(funcionarioAtualizado),
       });
-      buscarMedicos();
+      buscarFuncionarios();
       fecharModal();
     } catch (error) {
       console.error(error);
-      setErrorMessage('Erro ao editar médico. Tente novamente.');
+      setErrorMessage('Erro ao editar um funcionário. Tente novamente.');
     }
   };
 
-  const handleExcluirMedico = async (index) => {
-    if (index !== null && window.confirm("Tem certeza que deseja excluir este médico?")) {
+  const handleExcluirFuncionario = async (index) => {
+    if (index !== null && window.confirm("Tem certeza que deseja excluir este funcionário?")) {
       try {
-        await fetch(`http://localhost:3001/medicos/${medicos[index].idMedico}`, {
+        await fetch(`http://localhost:3001/funcionarios/${funcionarios[index].idFuncionario}`, {
           method: 'DELETE',
         });
-        buscarMedicos();
+        buscarFuncionarios();
       } catch (error) {
         console.error(error);
-        setErrorMessage('Erro ao excluir médico. Tente novamente.');
+        setErrorMessage('Erro ao excluir um funcionário. Tente novamente.');
       }
     }
   };
 
-  const resetarDadosMedico = () => {
-    setDadosMedico({
+  const resetarDadosFuncionario = () => {
+    setDadosFuncionario({
       nome: '',
       numeroRegistro: '',
       horarioTrabalho: '',
       status: '',
       especialidade: '',
-      plantao: '',
+      em_trabalho: '',
     });
     setCurrentIndex(null);
   };
@@ -107,16 +107,16 @@ const FuncionariosPage = () => {
     setModalType(tipo);
     if (tipo === 'editar' && index !== null) {
       setCurrentIndex(index);
-      setDadosMedico(medicos[index]);
+      setDadosFuncionario(funcionarios[index]);
     } else {
-      resetarDadosMedico();
+      resetarDadosFuncionario();
     }
     setIsModalOpen(true);
   };
 
   const fecharModal = () => {
     setIsModalOpen(false);
-    resetarDadosMedico();
+    resetarDadosFuncionario();
   };
 
   return (
@@ -127,15 +127,15 @@ const FuncionariosPage = () => {
       <main>
         <div className="toolbar-funcionarios">
           <div className="button-group-funcionarios">
-            <button className="button-custom filter-btn-funcionarios" aria-label="Filtrar médicos">
+            <button className="button-custom filter-btn-funcionarios" aria-label="Filtrar funcionários">
               <FaFilter /> Filtrar
             </button>
             <button
               className="button-custom primary add-doctor-btn-funcionarios"
               onClick={() => handleModalShow('adicionar')}
-              aria-label="Adicionar um novo médico"
+              aria-label="Adicionar um novo funcionário"
             >
-              <FaPlus /> Adicionar um novo Médico
+              <FaPlus /> Adicionar um novo Funcionário
             </button>
           </div>
         </div>
@@ -147,28 +147,30 @@ const FuncionariosPage = () => {
               <th>Número do Registro</th>
               <th>Horário de Trabalho</th>
               <th>Status</th>
-              <th>Plantão</th>
+              <th>Em trabalho</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
-            {medicos.map((medico, index) => (
-              <tr key={medico.idMedico}>
-                <td data-label="Nome">{medico.nome}</td>
-                <td data-label="Especialidade">{medico.especialidade}</td>
-                <td data-label="Número do Registro">{medico.numeroRegistro}</td>
-                <td data-label="Horário de Trabalho">{medico.horarioTrabalho}</td>
+            {funcionarios.map((funcionario, index) => (
+              <tr key={funcionario.idFuncionario}>
+                <td data-label="Nome">{funcionario.nome}</td>
+                <td data-label="Especialidade">{funcionario.especialidade}</td>
+                <td data-label="Número do Registro">{funcionario.numeroRegistro}</td>
+                <td data-label="Horário de Trabalho">{funcionario.horarioTrabalho}</td>
                 <td data-label="Status">
-                  <span className={`status-badge-funcionarios ${medico.status === 'ativo' ? 'active-funcionarios' : 'inactive-funcionarios'}`}>
-                    {medico.status}
+                  <span className={`status-badge-funcionarios ${funcionario.status === 'ativo' ? 'active-funcionarios' : 'inactive-funcionarios'}`}>
+                    {funcionario.status}
                   </span>
                 </td>
-                <td data-label="Plantão">{medico.plantao}</td>
+                <td data-label="Em Trabalho">
+                  <span>{funcionario.em_trabalho === 'sim' ? 'Sim' : 'Não'}</span>
+                </td>
                 <td data-label="Ações">
-                  <button className="button-custom edit-btn-funcionarios" onClick={() => handleModalShow('editar', index)} aria-label="Editar médico">
+                  <button className="button-custom edit-btn-funcionarios" onClick={() => handleModalShow('editar', index)} aria-label="Editar funcionário">
                     Editar
                   </button>
-                  <button className="button-custom delete-btn-funcionarios" onClick={() => handleExcluirMedico(index)} aria-label="Excluir médico">
+                  <button className="button-custom delete-btn-funcionarios" onClick={() => handleExcluirFuncionario(index)} aria-label="Excluir funcionário">
                     Excluir
                   </button>
                 </td>
@@ -181,21 +183,21 @@ const FuncionariosPage = () => {
         <ModalFuncionarios
           isOpen={isModalOpen}
           onClose={fecharModal}
-          onAddDoctor={modalType === 'adicionar' ? handleAdicionarMedico : handleEditarMedico}
-          dadosMedico={dadosMedico}
-          setDadosMedico={setDadosMedico}
-          onExcluir={() => handleExcluirMedico(currentIndex)}
+          onAddFuncionario={modalType === 'adicionar' ? handleAdicionarFuncionario : handleEditarFuncionario}
+          dadosFuncionario={dadosFuncionario}
+          setDadosFuncionario={setDadosFuncionario}
+          onExcluir={() => handleExcluirFuncionario(currentIndex)}
         >
-          <form onSubmit={modalType === 'adicionar' ? handleAdicionarMedico : handleEditarMedico}>
+          <form onSubmit={modalType === 'adicionar' ? handleAdicionarFuncionario : handleEditarFuncionario}>
             <div>
               <label>Número do Registro:</label>
               <input
                 type="text"
-                value={dadosMedico.numeroRegistro}
+                value={dadosFuncionario.numeroRegistro}
                 onChange={(e) => {
                   const value = e.target.value;
                   if (/^\d*$/.test(value) || value === '') {
-                    setDadosMedico({ ...dadosMedico, numeroRegistro: value });
+                    setDadosFuncionario({ ...dadosFuncionario, numeroRegistro: value });
                   }
                 }}
                 required
@@ -206,23 +208,22 @@ const FuncionariosPage = () => {
               <label>Especialidade:</label>
               <input
                 type="text"
-                value={dadosMedico.especialidade}
-                onChange={(e) => setDadosMedico({ ...dadosMedico, especialidade: e.target.value })}
+                value={dadosFuncionario.especialidade}
+                onChange={(e) => setDadosFuncionario({ ...dadosFuncionario, especialidade: e.target.value })}
                 required
                 placeholder="Especialidade"
               />
             </div>
             <div>
-              <label>Plantão:</label>
+              <label>Em Trabalho:</label>
               <select
-                value={dadosMedico.plantao}
-                onChange={(e) => setDadosMedico({ ...dadosMedico, plantao: e.target.value })}
+                value={dadosFuncionario.em_trabalho}
+                onChange={(e) => setDadosFuncionario({ ...dadosFuncionario, em_trabalho: e.target.value })}
                 required
               >
-                <option value="">Selecione o plantão</option>
-                <option value="Diurno">Diurno</option>
-                <option value="Vespertino">Vespertino</option>
-                <option value="Noturno">Noturno</option>
+                <option value="">Selecione o status</option>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
               </select>
             </div>
             <button type="submit" className="button-custom primary">

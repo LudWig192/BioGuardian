@@ -254,12 +254,12 @@ router.delete('/contato/:idContato', (req, res) => {
 
 //////////////////////////////////////Funcionarios///////////////////////////////
 
-// Rota para listar todos os médicos
-router.get('/medicos', (req, res) => {
-  const query = 'SELECT * FROM medicos';
+// Rota para listar todos os funcionarios
+router.get('/funcionarios', (req, res) => {
+  const query = 'SELECT * FROM funcionarios';
   connection.query(query, (err, results) => {
     if (err) {
-      console.error('Erro ao consultar médicos:', err);
+      console.error('Erro ao consultar funcionarios:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
@@ -267,52 +267,51 @@ router.get('/medicos', (req, res) => {
   });
 });
 
-// Rota para adicionar um médico
-router.post('/medicos', (req, res) => {
-  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao } = req.body;
-  const query = 'INSERT INTO medicos (nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao) VALUES (?, ?, ?, ?, ?, ?)';
+// Rota para adicionar um funcionario
+router.post('/funcionarios', (req, res) => {
+  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho } = req.body;
+  const query = 'INSERT INTO funcionarios (nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho) VALUES (?, ?, ?, ?, ?, ?)';
 
-  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao], (err) => {
+  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho], (err) => {
     if (err) {
-      console.error('Erro ao adicionar médico:', err);
+      console.error('Erro ao adicionar um funcionario:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.status(201).send('Médico adicionado com sucesso');
+    res.status(201).send('Funcionário adicionado com sucesso');
   });
 });
 
-// Rota para editar um médico
-router.put('/medicos/:idMedico', (req, res) => {
-  const { idMedico } = req.params;
-  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao } = req.body;
-  const query = 'UPDATE medicos SET nome = ?, especialidade = ?, numeroRegistro = ?, horarioTrabalho = ?, status = ?, plantao = ? WHERE idMedico = ?'; // Alterado para idMedico
+// Rota para editar um funcionario
+router.put('/funcionarios/:idFuncionario', (req, res) => {
+  const { idFuncionario } = req.params;
+  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho } = req.body;
+  const query = 'UPDATE funcionarios SET nome = ?, especialidade = ?, numeroRegistro = ?, horarioTrabalho = ?, status = ?, em_trabalho = ? WHERE idFuncionario = ?';
 
-  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao, idMedico], (err) => {
+  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho, idFuncionario], (err) => {
     if (err) {
-      console.error('Erro ao editar médico:', err);
+      console.error('Erro ao editar um funcionario:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.send('Médico editado com sucesso');
+    res.send('Funcionário editado com sucesso');
   });
 });
 
-// Rota para excluir um médico
-router.delete('/medicos/:idMedico', (req, res) => {
-  const { idMedico } = req.params;
-  const query = 'DELETE FROM medicos WHERE idMedico = ?';
+// Rota para excluir um funcionario
+router.delete('/funcionarios/:idFuncionario', (req, res) => {
+  const { idFuncionario } = req.params;
+  const query = 'DELETE FROM funcionarios WHERE idFuncionario = ?';
 
-  connection.query(query, [idMedico], (err) => {
+  connection.query(query, [idFuncionario], (err) => {
     if (err) {
-      console.error('Erro ao excluir médico:', err);
+      console.error('Erro ao excluir funcionario:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.send('Médico excluído com sucesso');
+    res.send('Funcionário excluído com sucesso');
   });
 });
-
 /////////////////////////////////////Agenda//////////////////////////////
 
 // Rota para listar todos as agenda
