@@ -95,7 +95,7 @@ const Agenda = () => {
 
     const handleDateRangeChange = (newRange) => {
         const filtered = data.filter(item => {
-            return new Date(item.agendamento) >= new Date(newRange.start) && new Date(item.agendamento) <= new Date(newRange.end);
+            return new Date(item.agenda) >= new Date(newRange.start) && new Date(item.agenda) <= new Date(newRange.end);
         });
         setFilteredData(filtered);
     };

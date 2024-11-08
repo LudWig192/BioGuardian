@@ -6,7 +6,7 @@ import Suporte from '../Components/SuporteSalario'
 import Testemunhos from '../Components/Testemunho';
 import Comparativo from '../Components/Comparativo';
 import NavegacaoAdm from '../Components/Navegacao-adm';
-import Footer from "../Components/Footer-adm";
+import FooterAdm from "../Components/Footer-adm";
 
 
 const PaginaSalario = () => {
@@ -24,7 +24,7 @@ const PaginaSalario = () => {
                     <Suporte />
                     <Testemunhos />
                     <Comparativo />
-                    <Footer />
+                    <FooterAdm />
                 </main>
             </div>
         </>

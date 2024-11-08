@@ -5,7 +5,7 @@ import TabelaCadastro from "../Components/CadastroTabela";
 import TabelaLogin from "../Components/LoginTabela";
 import NavegacaoAdm from '../Components/Navegacao-adm';
 import TabelaContato from '../Components/ContatoTabela';
-import Footer from "../Components/Footer-adm";
+import FooterAdm from "../Components/Footer-adm";
 
 
 // IMPORT ESTILIZACAO
@@ -23,7 +23,7 @@ const ListaClientes = () => {
         <TabelaLogin />
         <h2>Contato</h2>
         <TabelaContato />
-        <Footer />
+        <FooterAdm />
 
       </div>
     </>

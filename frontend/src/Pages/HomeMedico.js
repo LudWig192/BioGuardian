@@ -11,7 +11,7 @@ import Grafico from "../Components/GraficoMedico";
 import Paciente from "../Components/Paciente";
 import TestReports from '../Components/TestReports';
 import Prescriptions from '../Components/Prescrisao';
-import Footer from "../Components/Footer-Medico"
+import FooterMedico from "../Components/Footer-Medico"
 
 //IMPORT DA ESTILIZAÇÃO
 import '../Style/HomeMedico.css';
@@ -61,7 +61,7 @@ const HomeMedico = () => {
           </Col>
         </Row>
       </Container>
-      <Footer />
+      <FooterMedico />
     </>
   );
 };

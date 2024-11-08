@@ -2,7 +2,7 @@ import React from "react";
 import UnidadesComponent from "../Components/Unidades";
 import '../Style/Unidades.css';
 import NavbarCCC from '../Components/Navegacao-CCC'
-
+import FooterCCC from '../Components/Footer-CCC'
 const Unidades = () => {
     return (
         <>
@@ -15,8 +15,9 @@ const Unidades = () => {
                     Unidades parceiras em São Paulo:
                 </h3>
                 <UnidadesComponent />
+                <FooterCCC />
             </div>
-            {/* <Duvidas /> */}
+
         </>
     );
 };

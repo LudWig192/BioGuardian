@@ -344,10 +344,11 @@ router.post('/agenda', (req, res) => {
 });
 
 // Rota para editar uma agenda
-router.put('/agendamentos/:idAgenda', (req, res) => {
+router.put('/agenda/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
   const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
-  const query = 'UPDATE agendamentos SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
+
+  const query = 'UPDATE agenda SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
 
   connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano, idAgenda], (err) => {
     if (err) {
@@ -355,12 +356,12 @@ router.put('/agendamentos/:idAgenda', (req, res) => {
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.send(' Agendamento editado com sucesso');
+    res.send('Agenda editada com sucesso');
   });
 });
 
 // Rota para excluir uma agenda
-router.delete('/Agenda/:idAgenda', (req, res) => {
+router.delete('/agenda/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
   const query = 'DELETE FROM agenda WHERE idAgenda = ?';
 
@@ -376,7 +377,7 @@ router.delete('/Agenda/:idAgenda', (req, res) => {
 
 //////////////////////////////////////////Documentos/////////////////////////////////
 
-const documentosPath = path.join(__dirname, 'documentos'); 
+const documentosPath = path.join(__dirname, 'documentos');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -395,7 +396,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
   const originalFileName = file.originalname;
   const savedFileName = file.filename;
 
-  const tempo = new Date().toISOString().split('T')[0]; 
+  const tempo = new Date().toISOString().split('T')[0];
 
   const query = 'INSERT INTO documentos (nome, tempo) VALUES (?, ?)';
   connection.query(query, [originalFileName, tempo], (err, results) => {
@@ -407,7 +408,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
     res.status(200).json({
       message: 'Arquivo enviado com sucesso!',
       file: {
-        path: `http://localhost:3001/documentos/${savedFileName}`, 
+        path: `http://localhost:3001/documentos/${savedFileName}`,
         name: originalFileName
       }
     });

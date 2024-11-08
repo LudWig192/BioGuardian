@@ -6,7 +6,7 @@ import Calendar from "../Components/CalendarioRegistro";
 import UserProfile from "../Components/PerfilUsuarioRegistro";
 import "../Style/RegistrosExamesPage.css";
 import NavegacaoAdm from '../Components/Navegacao-adm'
-import Footer from "../Components/Footer-adm";
+import FooterAdm from "../Components/Footer-adm";
 
 
 const DashboardPage = () => {
@@ -38,7 +38,7 @@ const DashboardPage = () => {
                     <Calendar onSelectDay={handleSelectDay} />
                 </div>
             </div>
-            <Footer />
+            <FooterAdm />
         </>
     );
 };

@@ -6,7 +6,7 @@ import GeolocationChart from '../Components/Geocalizacao';
 import BestPosts from '../Components/PostagensAdm';
 import '../Style/PerfilAdmPage.css';
 import NavegacaoAdm from '../Components/Navegacao-adm';
-import Footer from "../Components/Footer-adm";
+import FooterAdm from "../Components/Footer-adm";
 
 
 const PerfilAdmHospitalar = () => {
@@ -24,7 +24,7 @@ const PerfilAdmHospitalar = () => {
                         <GeolocationChart />
                     </div>
                     <BestPosts />
-                    <Footer />
+                    <FooterAdm />
                 </div>
             </div>
         </>

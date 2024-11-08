@@ -1,5 +1,5 @@
 .dicasclienteicons {
-    padding: 290px; 
+    padding: 290px;
     text-align: center;
     font-family: 'Arial', sans-serif;
 }
@@ -30,7 +30,7 @@
 
 .dicascliente-card {
     background-color: #fff;
-    padding: 15px; 
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -40,26 +40,26 @@
     justify-content: center;
     align-items: center;
     width: 350px;
-    height: 290px; 
-    max-width: 220px; 
+    height: 290px;
+    max-width: 220px;
     margin: auto;
 }
 
 .icon-dicascliente {
-    font-size: 36px; 
+    font-size: 36px;
     color: #54a3f0;
     margin-bottom: 10px;
 }
 
 .title-dicascliente {
-    font-size: 20px; 
+    font-size: 20px;
     color: #54a3f0;
     font-weight: bold;
     margin: 10px 0;
 }
 
 .description-dicascliente {
-    font-size: 13px; 
+    font-size: 13px;
     color: black;
     margin: 10px 0;
     line-height: 1.5;
@@ -81,10 +81,11 @@
 }
 
 @media (max-width: 768px) {
-    .dicasclienteicons {
-        /* padding: 100px 20px; */
-    }
 
+    /* .dicasclienteicons {
+       padding: 100px 20px;
+    }
+     */
     .dicasclientes-cards {
         grid-template-columns: 1fr;
     }
