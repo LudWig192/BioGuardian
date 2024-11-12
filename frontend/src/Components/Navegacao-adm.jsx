@@ -44,19 +44,18 @@ const Navbar = () => {
 
             <div className="navbar-center">
                 <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
-                <li><Link to="/PerfilAdm" className="nav-link">Home</Link></li>
+                    <li><Link to="/PerfilAdm" className="nav-link">Home</Link></li>
                     <li><Link to="/Salario" className="nav-link">Salario</Link></li>
                     <li><Link to="/Funcionarios" className="nav-link">Funcionarios</Link></li>
                     <li><Link to="/Clientes" className="nav-link">Clientes</Link></li>
                     <li><Link to="/Registros" className="nav-link">Registro</Link></li>
                     <li><Link to="/Administrador" className="nav-link">Administrador</Link></li>
-
                 </ul>
             </div>
 
             <div className="navbar-right">
-                <IconButton onClick={handleAvatarClick}>
-                    <Avatar alt="User Avatar" src="/path-to-avatar-image.jpg" />
+              <IconButton onClick={handleAvatarClick}>
+                    <span className="avatar-letter">E</span>
                     <ArrowDropDownIcon />
                 </IconButton>
 

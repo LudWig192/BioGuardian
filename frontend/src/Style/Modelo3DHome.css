@@ -8,9 +8,10 @@
   position: relative;
   width: 100%;
   max-width: 863px;
-  margin: 150px auto;
+  margin: 200px auto;
   gap: 20px;
   box-sizing: border-box;
+
 }
 
 .text-section-alexia {
@@ -37,6 +38,7 @@
   color: black;
   line-height: 1.5;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .buttons-alexia {

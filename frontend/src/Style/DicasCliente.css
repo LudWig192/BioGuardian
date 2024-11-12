@@ -63,13 +63,14 @@
     color: black;
     margin: 10px 0;
     line-height: 1.5;
+    text-align: justify;
 }
 
 .dicascliente-card:hover {
     transform: translateY(-10px);
 }
 
-/* Responsividade */
+
 @media (max-width: 1024px) {
     .dicasclienteicons {
         padding: 150px 20px;

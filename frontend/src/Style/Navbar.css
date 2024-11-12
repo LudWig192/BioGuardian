@@ -16,8 +16,28 @@
   margin: 0;
 }
 
-/* Corrigir a sobreposição da navbar com o conteúdo */
+/* Barra de rolagem fixa ao lado da navbar */
+.scrollbar {
+  position: fixed;
+  top: 0; /* Posiciona a barra de rolagem no topo da página */
+  right: 0; /* Fixa a barra à direita da tela */
+  height: 100vh; /* Altura da tela inteira */
+  width: 10px; /* Largura da barra de rolagem */
+  background-color: #ccc; /* Cor de fundo da barra */
+}
 
+.scrollbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px; /* Tamanho da parte visível da barra de rolagem */
+  background-color: #54a3f0; /* Cor da barra de rolagem */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para o componente navbar-left */
 .navbar-left .logo {
   width: 100px;
   height: auto;
@@ -25,6 +45,7 @@
   display: block;
 }
 
+/* Estilo para os links da navbar */
 .navbar-center .navbar-links {
   display: flex;
   list-style: none;
@@ -45,7 +66,7 @@
   background-color: #54a3f0;
 }
 
-/* Ajuste no estilo da navbar-right */
+/* Estilo para a navbar-right */
 .navbar-right {
   position: relative;
   display: flex;
@@ -128,6 +149,19 @@
   .menu-icon {
     display: block;
     font-size: 24px;
-    color: #4B00FF;
+    color: black;
   }
+}
+
+.avatar-letter {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #54a3f0; /* cor de fundo */
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
 }

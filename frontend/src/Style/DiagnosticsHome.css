@@ -4,6 +4,7 @@
   justify-content: center;
   padding: 250px;
   flex-direction: row;
+  margin-top: -130px;
 }
 
 .online-learning-people-grid {
@@ -61,7 +62,7 @@
 @media (max-width: 1200px) {
   .online-learning-section {
     padding: 150px 20px;
-    flex-direction: column;
+    flex-direction: column; /* Garantir que o layout seja empilhado */
   }
 
   .online-learning-info-list {
@@ -79,7 +80,7 @@
 @media (max-width: 768px) {
   .online-learning-section {
     padding: 100px 15px;
-    flex-direction: column;
+    flex-direction: column; /* Certificando-se que o layout é empilhado */
   }
 
   .online-learning-people-grid {
@@ -108,7 +109,7 @@
 
 @media (max-width: 480px) {
   .online-learning-section {
-    padding: 50px 10px;
+    padding: 171px 10px;
   }
 
   .online-learning-info-title {

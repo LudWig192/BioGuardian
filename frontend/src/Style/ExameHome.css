@@ -1,100 +1,101 @@
 .care-delivery-container {
-    background-image: url('../Imagens/fundo.png'); /* Caminho da sua imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir todo o container */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    padding: 50px 0; /* Espaçamento superior e inferior */
-    text-align: center; /* Centraliza o texto */
-    position: relative; /* Necessário para o overlay funcionar */
+    background-image: url('../Imagens/fundo.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding: 50px 0; 
+    text-align: center; 
+    position: relative; 
+    margin-top: -130px;
 }
 
 .care-delivery-container::before {
-    content: ''; /* Cria um pseudo-elemento */
-    position: absolute; /* Posiciona o overlay sobre a imagem */
+    content: '';
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(104, 84, 240, 0.7); /* Cor de sobreposição #6854f0 */
-    opacity: 0.7; /* Opacidade da cor */
-    z-index: 1; /* Overlay sobre a imagem */
+    background-color: rgba(104, 84, 240, 0.7);
+    opacity: 0.7; 
+    z-index: 1;
 }
 
 .care-delivery-container * {
-    position: relative; /* Faz o conteúdo ficar acima do overlay */
+    position: relative; 
     z-index: 2; 
 }
 
 .banner-exame-home {
-    margin-bottom: 30px; /* Margem inferior para o banner */
+    margin-bottom: 30px; 
 }
 
 .subtitle-exame {
-    font-size: 22px; /* Tamanho da fonte do subtítulo */
-    color: white; /* Cor do texto */
-    font-family: 'Poppins', sans-serif; /* Fonte utilizada */
-    font-weight: 300; /* Peso da fonte */
+    font-size: 22px; 
+    color: white;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 300; 
 }
 
 .main-title-exame {
-    font-size: 26px; /* Tamanho da fonte do título principal */
-    color: white; /* Cor do texto */
-    font-family: 'Poppins', sans-serif; /* Fonte utilizada */
-    font-weight: 700; /* Peso da fonte */
+    font-size: 26px; 
+    color: white;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700; 
 }
 
 .cards-container-ExameHome {
-    display: flex; /* Usa flexbox para alinhar os cards */
-    justify-content: center; /* Centraliza os cards horizontalmente */
-    gap: 30px; /* Espaçamento entre os cards */
-    padding: 20px; /* Espaçamento interno */
-    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se necessário */
-    margin: 0 auto; /* Remove margem esquerda e direita, centralizando o contêiner */
-    max-width: 1200px; /* Limita a largura máxima dos cards */
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+    padding: 20px; 
+    flex-wrap: wrap; 
+    margin: 0 auto;
+    max-width: 1200px; 
 }
 
 .card-exame-home {
-    background-color: #ffffff; /* Cor de fundo do card */
-    width: 340px; /* Largura do card */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra do card */
-    overflow: hidden; /* Oculta qualquer conteúdo que exceda o card */
+    background-color: #ffffff; 
+    width: 340px; 
+    border-radius: 10px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
     position: relative; 
     text-align: center; 
-    transition: transform 0.3s ease; /* Animação na transformação */
+    transition: transform 0.3s ease; 
 }
 
 .card-exame-home:hover {
-    transform: scale(1.05); /* Efeito hover no card */
+    transform: scale(1.05);
 }
 
 .card-img-exame {
-    width: 100%; /* Largura total da imagem */
-    height: 220px; /* Altura da imagem do card */
-    object-fit: cover; /* Ajusta a imagem corretamente no card */
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover; 
 }
 
 .card-text-overlay-exame {
     position: relative; 
-    background-color: #ffffff; /* Cor de fundo da sobreposição do texto */
-    padding: 20px; /* Espaçamento interno */
+    background-color: #ffffff; 
+    padding: 20px;
     text-align: center; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra da sobreposição do texto */
-    margin-top: -10px; /* Ajuste do posicionamento */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: -10px; 
 }
 
 .card-text-overlay-exame h6 {
-    font-size: 18px; /* Tamanho da fonte do título do card */
+    font-size: 18px;
     font-family: 'Poppins', sans-serif; 
-    font-weight: 500; /* Peso da fonte */
-    color: #6854f0; /* Cor do título */
-    margin: 10px 0; /* Margens verticais uniformes */
+    font-weight: 500; 
+    color: #6854f0; 
+    margin: 10px 0; 
     font-weight: bold;
 }
 
 .card-description-exame {
-    font-size: 14px; /* Tamanho do texto de descrição dos exames */
-    color: black; /* Cor do texto */
-    margin: 0; /* Remove margem acima da descrição */
-    line-height: 1.5; /* Aumenta o espaçamento entre linhas */
+    font-size: 14px;
+    color: black; 
+    margin: 0; 
+    line-height: 1.5;
 }

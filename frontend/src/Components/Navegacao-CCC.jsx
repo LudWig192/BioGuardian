@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Avatar, Menu, MenuItem, IconButton } from '@mui/material';
+import { Menu, MenuItem, IconButton } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import MenuIcon from '@mui/icons-material/Menu';
 import LoginIcon from '@mui/icons-material/Login';
@@ -49,13 +49,12 @@ const Navbar = () => {
                     <li><Link to="/Unidades" className="nav-link">Unidades</Link></li>
                     <li><Link to="/Agendamento" className="nav-link">Agendamentos</Link></li>
                     <li><Link to="/Contato" className="nav-link">Contato</Link></li>
-
                 </ul>
             </div>
 
             <div className="navbar-right">
                 <IconButton onClick={handleAvatarClick}>
-                    <Avatar alt="User Avatar" src="/path-to-avatar-image.jpg" />
+                    <span className="avatar-letter">A</span>
                     <ArrowDropDownIcon />
                 </IconButton>
 

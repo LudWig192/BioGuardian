@@ -21,8 +21,8 @@ function HomeCliente() {
      <Servicos />
      <Pulseira />
      <Modelo />
-     <Unidade />
      <Medico />
+     <Unidade />
      <Footer />
     </div>
   );

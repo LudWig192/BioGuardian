@@ -1,12 +1,11 @@
-/* Estilo geral da página */
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: white;
     margin: 0;
 }
 
-/* Cabeçalho do aplicativo */
+
 .app-header-funcionarios {
     padding: 50px;
     background-color: #ffffff;
@@ -18,14 +17,13 @@ body {
     align-items: center;
 }
 
-/* Mensagem de erro */
 .error-message-funcionarios {
     color: #dc3545;
     margin: 10px 0;
     font-weight: bold;
 }
 
-/* Indicador de carregamento */
+
 .loading-indicator-funcionarios {
     text-align: center;
     padding: 20px;
@@ -33,73 +31,62 @@ body {
     color: #333;
 }
 
-/* Barra de ferramentas (botões) */
 .toolbar-funcionarios {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
 }
 
-/* Estilo base para todos os botões */
+
 .button-custom {
     padding: 12px 18px;
     border: none;
     border-radius: 6px;
-    /* Bordas mais suaves */
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    /* Texto mais destacado */
     transition: all 0.3s ease-in-out;
-    /* Transição mais suave */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-right: 8px;
-    /* Pequeno espaçamento entre os botões */
 }
 
-/* Removendo o espaçamento à direita do último botão */
+
 .toolbar-funcionarios .button-custom:last-child {
     margin-right: 0;
 }
 
-/* Botão de filtro */
+
 .button-custom.filter-btn-funcionarios {
     background-color: #54a3f0;
-    /* Azul mais vibrante */
     color: white;
 }
 
-/* Botão principal (adicionar) */
+
 .button-custom.primary.add-doctor-btn-funcionarios {
     background-color: #54a3f0;
-    /* Verde mais forte */
     color: white;
 }
 
-/* Botão de edição */
+
 .button-custom.edit-btn-funcionarios {
     background-color: #54a3f0;
-    /* Amarelo mais suave */
     color: #ffffff;
 }
 
-/* Botão de exclusão */
+
 .button-custom.delete-btn-funcionarios {
     background-color: #54a3f0;
-    /* Vermelho vibrante */
     color: white;
 }
 
-/* Efeito de hover nos botões */
+
 .button-custom:hover {
     opacity: 0.85;
     transform: translateY(-4px);
-    /* Eleva o botão ao passar o mouse */
 }
 
-/* Estilo da tabela de funcionários */
 .funcionario-table-funcionarios {
     width: 100%;
     border-collapse: collapse;
@@ -107,7 +94,6 @@ body {
     background-color: #fff;
 }
 
-/* Estilo das células da tabela */
 .funcionario-table-funcionarios th,
 .funcionario-table-funcionarios td {
     padding: 12px 18px;
@@ -115,14 +101,14 @@ body {
     text-align: left;
 }
 
-/* Estilo das colunas da tabela */
+
 .funcionario-table-funcionarios th {
     background-color: #ffffff;
     font-weight: bold;
     color: #333;
 }
 
-/* Estilo para os status dos funcionários */
+
 .status-badge-funcionarios {
     padding: 5px 10px;
     border-radius: 12px;
@@ -130,19 +116,19 @@ body {
     font-weight: bold;
 }
 
-/* Status ativo */
+
 .status-badge-funcionarios.active-funcionarios {
     color: #28a745 !important;
-    /* Verde */
+
 }
 
-/* Status inativo */
+
 .status-badge-funcionarios.inactive-funcionarios {
     color: #dc3545;
-    /* Vermelho */
+
 }
 
-/* Responsividade (dispositivos móveis) */
+
 @media (max-width: 768px) {
     .funcionario-table-funcionarios {
         overflow-x: auto;
