@@ -1,4 +1,4 @@
-.painel-medicos {
+.painel-medicos-destaque {
     padding: 40px;
     font-family: 'Arial', sans-serif;
     color: #000000;
@@ -9,7 +9,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.painel-medicos h2 {
+.painel-medicos-destaque h2 {
     font-size: 28px;
     margin-bottom: 25px;
     color: #54d4f0;
@@ -17,7 +17,7 @@
     font-weight: bold;
 }
 
-.linha-medico {
+.linha-medico-destaque {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,21 +26,21 @@
     transition: background-color 0.3s;
 }
 
-.linha-medico:hover {
+.linha-medico-destaque:hover {
     background-color: #e9f5ff;
 }
 
-.linha-medico:last-child {
+.linha-medico-destaque:last-child {
     border-bottom: none;
 }
 
-.informacao-medico {
+.informacao-medico-destaque {
     display: flex;
     align-items: center;
     flex: 2;
 }
 
-.icone-medico {
+.icone-medico-destaque {
     width: 80px;
     height: 80px;
     margin-right: 15px;
@@ -49,42 +49,42 @@
     border: 2px solid #54a3f0;
 }
 
-.icone-medico img {
+.icone-medico-destaque img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.dados-medico {
+.dados-medico-destaque {
     display: flex;
     flex-direction: column;
 }
 
-.nome-medico {
+.nome-medico-destaque {
     font-weight: bold;
     font-size: 20px;
     color: #333;
 }
 
-.especialidade {
+.especialidade-destaque {
     color: #555;
     font-size: 16px;
     margin-top: 2px;
 }
 
-.salario {
+.salario-destaque {
     font-size: 18px;
     font-weight: bold;
     color: #28a745;
     margin-top: 4px;
 }
 
-.data {
+.data-destaque {
     font-size: 14px;
     color: #666;
 }
 
-.status {
+.status-destaque {
     padding: 10px 15px;
     border-radius: 5px;
     font-size: 14px;
@@ -95,24 +95,24 @@
     font-weight: bold;
 }
 
-.status.aprovado {
+.status-destaque.aprovado {
     background-color: #d4edda;
     color: #155724;
 }
 
-.status.reprovado {
+.status-destaque.reprovado {
     background-color: #f8d7da;
     color: #721c24;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .linha-medico {
+    .linha-medico-destaque {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .status {
+    .status-destaque {
         margin-top: 10px;
         width: 100%;
         text-align: left;

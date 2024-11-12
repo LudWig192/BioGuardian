@@ -39,7 +39,7 @@
     padding: 10px 15px;
     border-radius: 8px;
     border: 1px solid #ddd;
-    background-color:  red;
+    background-color: red;
     color: white;
     cursor: pointer;
     font-size: 14px;
@@ -67,12 +67,13 @@
 
 .modal-funcionarios-form input,
 select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #6d6d6d46;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #000000;
     box-sizing: border-box;
 }
 

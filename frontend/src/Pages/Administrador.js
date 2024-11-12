@@ -5,11 +5,14 @@ import Graficos from '../Components/GraficoAdmPage';
 import Funcionarios from '../Components/FuncionariosAdm';
 import Caixa from '../Components/CaixaEntradaAdm';
 import Estastiticas from '../Components/EstatiticasCardsAdm';
+import NavegacaoAdm from '../Components/Navegacao-adm';
+import FooterAdm from "../Components/Footer-adm";
+
 
 const Administrador = () => {
     return (
         <div className="administrador-page">
-            <h1>Administrador</h1>
+            <NavegacaoAdm />
             <DashboardCards />
             <Graficos />
             <Funcionarios />
@@ -17,6 +20,7 @@ const Administrador = () => {
                 <Caixa />
                 <Estastiticas />
             </div>
+            <FooterAdm />
         </div>
     );
 };

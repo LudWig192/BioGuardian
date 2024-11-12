@@ -1,84 +1,80 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
-import LocalMallIcon from '@mui/icons-material/LocalMall';
+import { Avatar, Menu, MenuItem, IconButton } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import MenuIcon from '@mui/icons-material/Menu';
+import LoginIcon from '@mui/icons-material/Login';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import "../Style/Navbar.css";
 
 const Navbar = () => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
 
-    const toggleDropdown = () => {
-        setDropdownOpen(prevState => !prevState);
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const handleLogout = () => {
-        localStorage.removeItem("authToken");
-        window.location.href = "/";
+    const handleAvatarClick = (event) => {
+        setAnchorEl(event.currentTarget);
     };
 
-    <li onClick={handleLogout} className="dropdown-item">Logout</li>
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'responsive' : ''}`}>
             <div className="navbar-left">
-                <div className="navbar-logo">
-                    <Link to="">
-                        <img src={require("../Imagens/logo-removebg-preview-removebg-preview.png")} alt="Logo" className="logo" />
-                    </Link>
-                </div>
-                <ul className="navbar-links">
-                    <li>
-                        <Link to="/PerfilAdm" className="nav-link">
-                            <HomeIcon className="icon" /> <span>Home</span>
-                        </Link>
-                    </li>
+                <Link to="/PerfilAdm">
+                    <img src={require("../Imagens/logo-removebg-preview-removebg-preview.png")} alt="Logo" className="logo" />
+                </Link>
+            </div>
 
-
-                    <li>
-                        <Link to="/Funcionarios" className="nav-link">
-                            <InfoIcon className="icon" /> <span>Funcionarios</span>
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link to="/Clientes" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Clientes</span>
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link to="/Salario" className="nav-link">
-                            <ContactMailIcon className="icon" /> <span>Salario do medico</span>
-                        </Link>
-                    </li>
-
-                    <li>
-                        <Link to="/Registros" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Registros</span>
-                        </Link>
-                    </li>
+            <div className="navbar-center">
+                <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
+                    <li><Link to="/PerfilAdm" className="nav-link">Home</Link></li>
+                    <li><Link to="/Salario" className="nav-link">Salario</Link></li>
+                    <li><Link to="/Funcionarios" className="nav-link">Funcionarios</Link></li>
+                    <li><Link to="/Clientes" className="nav-link">Clientes</Link></li>
+                    <li><Link to="/Registros" className="nav-link">Registro</Link></li>
+                    <li><Link to="/Administrador" className="nav-link">Administrador</Link></li>
                 </ul>
             </div>
+
             <div className="navbar-right">
-                <div className="user-info">
-                    <span className="user-name">Admin</span>
-                </div>
-                <div className="user-avatar" onClick={toggleDropdown}>
-                    <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")}
-                        alt="User Avatar"
-                        className="avatar"
-                    />
-                    {dropdownOpen && (
-                        <div className="dropdown-menu">
-                            <ul>
-                                <li onClick={handleLogout} className="dropdown-item">Sair</li>
-                            </ul>
-                        </div>
-                    )}
-                </div>
+              <IconButton onClick={handleAvatarClick}>
+                    <span className="avatar-letter">E</span>
+                    <ArrowDropDownIcon />
+                </IconButton>
+
+                <Menu
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={handleClose} component={Link} to="/PerfilAdm">
+                        <AccountCircleIcon className="dropdown-icon" /> Ver Perfil
+                    </MenuItem>
+                    <MenuItem onClick={handleClose} component={Link} to="/Login">
+                        <LoginIcon className="dropdown-icon" /> Sair
+                    </MenuItem>
+                </Menu>
+            </div>
+
+            <div className="menu-icon" onClick={toggleMobileMenu}>
+                <MenuIcon />
             </div>
         </nav>
     );

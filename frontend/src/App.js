@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Router>
         <Rotas />
-        <Footer />
+
       </Router>
     </>
   );

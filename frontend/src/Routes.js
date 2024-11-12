@@ -6,7 +6,7 @@ import Home from "./Pages/Home.js";
 import Cadastro from "./Pages/Cadastro.js";
 import LoginForm from "./Pages/Login.js";
 import Beneficio from "./Pages/Beneficio.js";
-import Servicos from './Pages/Serviço.js'
+import Servicos from './Pages/Servico.js'
 
 // Paginas de Cliente com cadastro
 import HomeCliente from "./Pages/HomeCliente.js";
@@ -27,13 +27,19 @@ import Registros from './Pages/RegistroExames.js';
 import Clientes from "./Pages/ListaClientes.js";
 import PerfilAdm from './Pages/PerfilAdm.js';
 
-// Navegações
+// Navegações|Navbars
 import NavegacaoCCC from './Components/Navegacao-CCC.jsx';
 import NavegacaoCSC from './Components/Navegacao.jsx';
 import NavegacaoMedico from './Components/Navegacao-medico.jsx';
 import NavegacaoAdm from './Components/Navegacao-adm.jsx';
 
-//?????????
+// Rodapes
+import RodapeCCC from './Components/Footer-CCC.jsx'
+import RodapeCSC from './Components/Footer.jsx'
+import RodapeMedico from './Components/Footer-Medico.jsx'
+import RodapeAdm from './Components/Footer-adm.jsx'
+
+// ??????
 import Interrogacao from './Pages/Secreto.js'
 
 const Rotas = () => {
@@ -72,6 +78,12 @@ const Rotas = () => {
                                 <Route path="/NaveCCC" element={<NavegacaoCCC />} />
                                 <Route path="/NaveMedico" element={<NavegacaoMedico />} />
                                 <Route path="/NaveAdm" element={<NavegacaoAdm />} />
+
+                                 {/* Rodapes */}
+                                 <Route path="/RodaCSC" element={<RodapeCSC />} />
+                                <Route path="/RodaCCC" element={<RodapeCCC />} />
+                                <Route path="/RodaMedico" element={<RodapeMedico />} />
+                                <Route path="/RodaAdm" element={<RodapeAdm />} />
 
                                 {/* ????????????? */}
                                 <Route path="/interrogacao" element={<Interrogacao  />} />

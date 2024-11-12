@@ -75,9 +75,10 @@
     font-size: 1em;
     color: black;
     line-height: 1.4em;
+    text-align:justify ;
 }
 
-/* Responsividade */
+
 @media (max-width: 1024px) {
     .BeneficioIcons-services {
         grid-template-columns: repeat(2, 1fr); 

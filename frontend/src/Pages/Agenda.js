@@ -3,6 +3,9 @@ import ResponsiveTable from '../Components/Agenda.jsx';
 import ButtonGroup from '../Components/Botoes.jsx';
 import SwitchWithIconsAndAvatar from '../Components/Avatar.jsx';
 import NavbarMedico from '../Components/Navegacao-medico';
+import FooterMedico from "../Components/Footer-Medico"
+import '../Style/Agenda.css'
+
 
 const Agenda = () => {
     const [data, setData] = useState([]);
@@ -92,7 +95,7 @@ const Agenda = () => {
 
     const handleDateRangeChange = (newRange) => {
         const filtered = data.filter(item => {
-            return new Date(item.agendamento) >= new Date(newRange.start) && new Date(item.agendamento) <= new Date(newRange.end);
+            return new Date(item.agenda) >= new Date(newRange.start) && new Date(item.agenda) <= new Date(newRange.end);
         });
         setFilteredData(filtered);
     };
@@ -109,27 +112,30 @@ const Agenda = () => {
 
 
     return (
-        <div className="App">
-            <>
-                <NavbarMedico />
-                <SwitchWithIconsAndAvatar
-                    notificationCount={notificationCount}
-                    latestPatient={latestPatient}
-                />
-                <h1 className='animated-heading'>Agenda Médica</h1>
-                <ButtonGroup
-                    onDateRangeChange={handleDateRangeChange}
-                    onStatusFilterChange={handleStatusFilterChange}
-                    onPlanFilterChange={handlePlanFilterChange}
-                    data={data}
-                />
-                <ResponsiveTable
-                    data={filteredData}
-                    onEdit={handleEdit}
-                    onDelete={handleDelete}
-                    onAdd={handleAdd}
-                />
-            </>
+        <div className='Agenda-tudo'>
+            <div className="App">
+                <>
+                    <NavbarMedico />
+                    <SwitchWithIconsAndAvatar
+                        notificationCount={notificationCount}
+                        latestPatient={latestPatient}
+                    />
+                    <h1 className='animated-heading'>Agenda Médica</h1>
+                    <ButtonGroup
+                        onDateRangeChange={handleDateRangeChange}
+                        onStatusFilterChange={handleStatusFilterChange}
+                        onPlanFilterChange={handlePlanFilterChange}
+                        data={data}
+                    />
+                    <ResponsiveTable
+                        data={filteredData}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                        onAdd={handleAdd}
+                    />
+                </>
+                <FooterMedico />
+            </div>
         </div>
     );
 };

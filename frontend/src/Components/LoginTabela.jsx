@@ -21,7 +21,6 @@ const TabelaLogin = () => {
     const handleExcluirUsuario = async (idLogin) => {
         try {
             await axios.delete(`http://localhost:3001/Login/${idLogin}`);
-            
             const { data } = await axios.get("http://localhost:3001/Login");
             setCadastros(data);
             console.log("Usuário excluído com sucesso!");
@@ -32,29 +31,33 @@ const TabelaLogin = () => {
 
     return (
         <div className="tabela-login-container">
+            <div className="tabela-login-header">
+                <h2 className="tabela-login-title">Lista de Logins</h2>
+            </div>
             <table className="tabela-login">
                 <thead className="tabela-login-thead">
-                    <tr>
+                    <tr className="tabela-login-header-row">
                         <th className="tabela-login-th">ID</th>
                         <th className="tabela-login-th">Email</th>
                         <th className="tabela-login-th">Senha</th>
                         <th className="tabela-login-th">Ações</th>
                     </tr>
                 </thead>
-                <tbody className="tabela-login-tbody">
+                <tbody className="tabela-login-body">
                     {cadastros.map((cadastro) => (
-                        <tr key={cadastro.idLogin} className="tabela-login-tr">
+                        <tr key={cadastro.idLogin} className="tabela-login-row">
                             <td className="tabela-login-td">{cadastro.idLogin}</td>
                             <td className="tabela-login-td">{cadastro.email}</td>
                             <td className="tabela-login-td">{cadastro.senha}</td>
                             <td className="tabela-login-td">
-                                <button
-                                    className="tabela-login-button"
-                                    variant="danger"
-                                    onClick={() => handleExcluirUsuario(cadastro.idLogin)}
-                                >
-                                    Excluir
-                                </button>
+                                <div className="tabela-login-actions">
+                                    <button
+                                        className="tabela-login-button"
+                                        onClick={() => handleExcluirUsuario(cadastro.idLogin)}
+                                    >
+                                        Excluir
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     ))}

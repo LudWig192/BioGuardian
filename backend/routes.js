@@ -254,12 +254,12 @@ router.delete('/contato/:idContato', (req, res) => {
 
 //////////////////////////////////////Funcionarios///////////////////////////////
 
-// Rota para listar todos os médicos
-router.get('/medicos', (req, res) => {
-  const query = 'SELECT * FROM medicos';
+// Rota para listar todos os funcionarios
+router.get('/funcionarios', (req, res) => {
+  const query = 'SELECT * FROM funcionarios';
   connection.query(query, (err, results) => {
     if (err) {
-      console.error('Erro ao consultar médicos:', err);
+      console.error('Erro ao consultar funcionarios:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
@@ -267,53 +267,53 @@ router.get('/medicos', (req, res) => {
   });
 });
 
-// Rota para adicionar um médico
-router.post('/medicos', (req, res) => {
-  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao } = req.body;
-  const query = 'INSERT INTO medicos (nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao) VALUES (?, ?, ?, ?, ?, ?)';
+// Rota para adicionar um funcionario
+router.post('/funcionarios', (req, res) => {
+  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho } = req.body;
+  const query = 'INSERT INTO funcionarios (nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho) VALUES (?, ?, ?, ?, ?, ?)';
 
-  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao], (err) => {
+  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho], (err) => {
     if (err) {
-      console.error('Erro ao adicionar médico:', err);
+      console.error('Erro ao adicionar um funcionario:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.status(201).send('Médico adicionado com sucesso');
+    res.status(201).send('Funcionário adicionado com sucesso');
   });
 });
 
-// Rota para editar um médico
-router.put('/medicos/:idMedico', (req, res) => {
-  const { idMedico } = req.params;
-  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao } = req.body;
-  const query = 'UPDATE medicos SET nome = ?, especialidade = ?, numeroRegistro = ?, horarioTrabalho = ?, status = ?, plantao = ? WHERE idMedico = ?'; // Alterado para idMedico
+// Rota para editar um funcionario
+router.put('/funcionarios/:idFuncionario', (req, res) => {
+  const { idFuncionario } = req.params;
+  const { nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho } = req.body;
+  const query = 'UPDATE funcionarios SET nome = ?, especialidade = ?, numeroRegistro = ?, horarioTrabalho = ?, status = ?, em_trabalho = ? WHERE idFuncionario = ?';
 
-  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, plantao, idMedico], (err) => {
+  connection.query(query, [nome, especialidade, numeroRegistro, horarioTrabalho, status, em_trabalho, idFuncionario], (err) => {
     if (err) {
-      console.error('Erro ao editar médico:', err);
+      console.error('Erro ao editar um funcionario:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.send('Médico editado com sucesso');
+    res.send('Funcionário editado com sucesso');
   });
 });
 
-// Rota para excluir um médico
-router.delete('/medicos/:idMedico', (req, res) => {
-  const { idMedico } = req.params;
-  const query = 'DELETE FROM medicos WHERE idMedico = ?';
+// Rota para excluir um funcionario
+router.delete('/funcionarios/:idFuncionario', (req, res) => {
+  const { idFuncionario } = req.params;
+  const query = 'DELETE FROM funcionarios WHERE idFuncionario = ?';
 
-  connection.query(query, [idMedico], (err) => {
+  connection.query(query, [idFuncionario], (err) => {
     if (err) {
-      console.error('Erro ao excluir médico:', err);
+      console.error('Erro ao excluir funcionario:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.send('Médico excluído com sucesso');
+    res.send('Funcionário excluído com sucesso');
   });
 });
-
 /////////////////////////////////////Agenda//////////////////////////////
+
 // Rota para listar todos as agenda
 router.get('/agenda', (req, res) => {
   const query = 'SELECT * FROM agenda';
@@ -326,12 +326,12 @@ router.get('/agenda', (req, res) => {
     res.json(results);
   });
 });
- 
+
 // Rota para adicionar uma agenda
 router.post('/agenda', (req, res) => {
   const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
   const query = 'INSERT INTO agenda (agendamento, paciente, status, procedimentos, tipoPlano) VALUES (?, ?, ?, ?, ?)';
- 
+
   connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano], (err) => {
     if (err) {
       console.error('Erro ao adicionar uma agenda:', err);
@@ -341,28 +341,29 @@ router.post('/agenda', (req, res) => {
     res.status(201).send('Agenda adicionado com sucesso');
   });
 });
- 
+
 // Rota para editar uma agenda
-router.put('/agendamentos/:idAgenda', (req, res) => {
+router.put('/agenda/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
   const { agendamento, paciente, status, procedimentos, tipoPlano } = req.body;
-  const query = 'UPDATE agendamentos SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
- 
+
+  const query = 'UPDATE agenda SET agendamento = ?, paciente = ?, status = ?, procedimentos = ?, tipoPlano = ? WHERE idAgenda = ?';
+
   connection.query(query, [agendamento, paciente, status, procedimentos, tipoPlano, idAgenda], (err) => {
     if (err) {
       console.error('Erro ao editar esse agendamento:', err);
       res.status(500).send('Erro no servidor');
       return;
     }
-    res.send(' Agendamento editado com sucesso');
+    res.send('Agenda editada com sucesso');
   });
 });
- 
+
 // Rota para excluir uma agenda
-router.delete('/Agenda/:idAgenda', (req, res) => {
+router.delete('/agenda/:idAgenda', (req, res) => {
   const { idAgenda } = req.params;
   const query = 'DELETE FROM agenda WHERE idAgenda = ?';
- 
+
   connection.query(query, [idAgenda], (err) => {
     if (err) {
       console.error('Erro ao excluir a agenda:', err);
@@ -373,45 +374,63 @@ router.delete('/Agenda/:idAgenda', (req, res) => {
   });
 });
 
-////////////////////////// Documentos/////////////////////
+//////////////////////////////////////////Documentos/////////////////////////////////
+
 const documentosPath = path.join(__dirname, 'documentos');
 
-// Configuração do Multer para armazenar arquivos
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, documentosPath);  // Salva os arquivos na pasta 'documentos'
+    cb(null, documentosPath);
   },
   filename: (req, file, cb) => {
-    const fileName = file.originalname;  // Usar o nome original do arquivo
-    cb(null, fileName);  // Salva com o nome original do arquivo
+    const timestamp = Date.now();
+    cb(null, timestamp + '-' + file.originalname);
   }
 });
 
-// Inicializa o Multer com a configuração de storage
 const upload = multer({ storage });
 
-// Rota para upload de documentos
 router.post('/upload', upload.single('file'), (req, res) => {
-  const { file } = req;  // Pega o arquivo enviado
-  const originalFileName = file.originalname;  // Nome original do arquivo
-  const uploadTime = new Date();  // Hora atual do upload
+  const { file } = req;
+  const originalFileName = file.originalname;
+  const savedFileName = file.filename;
 
-  // Insere o nome do arquivo e o timestamp no banco de dados
-  const query = 'INSERT INTO documentos (nome, upload_time) VALUES (?, ?)';
-  connection.query(query, [originalFileName, uploadTime], (err, results) => {
+  const tempo = new Date().toISOString().split('T')[0];
+
+  const query = 'INSERT INTO documentos (nome, tempo) VALUES (?, ?)';
+  connection.query(query, [originalFileName, tempo], (err, results) => {
     if (err) {
-      console.error('Erro ao inserir no banco de dados:', err);
+      console.error('Erro ao salvar no banco:', err);
       return res.status(500).json({ message: 'Erro ao salvar o documento.' });
     }
 
-    // Retorna sucesso ao cliente
-    res.status(200).json({ message: 'Arquivo enviado com sucesso!', file: originalFileName });
+    res.status(200).json({
+      message: 'Arquivo enviado com sucesso!',
+      file: {
+        path: `http://localhost:3001/documentos/${savedFileName}`,
+        name: originalFileName
+      }
+    });
   });
 });
 
+router.get('/documentos', (req, res) => {
+  const query = 'SELECT idDocumento, nome, tempo FROM documentos ORDER BY tempo DESC';
 
+  connection.query(query, (err, results) => {
+    if (err) {
+      console.error('Erro ao buscar documentos:', err);
+      return res.status(500).json({ message: 'Erro ao buscar documentos.' });
+    }
 
+    results.forEach(doc => {
+      const tempo = new Date(doc.tempo);
+      doc.tempo = `${tempo.getDate().toString().padStart(2, '0')}/${(tempo.getMonth() + 1).toString().padStart(2, '0')}/${tempo.getFullYear()}`;
+    });
 
+    res.status(200).json({ documents: results });
+  });
+});
 
 module.exports = router;
 

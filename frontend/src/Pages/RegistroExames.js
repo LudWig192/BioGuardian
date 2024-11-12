@@ -6,6 +6,8 @@ import Calendar from "../Components/CalendarioRegistro";
 import UserProfile from "../Components/PerfilUsuarioRegistro";
 import "../Style/RegistrosExamesPage.css";
 import NavegacaoAdm from '../Components/Navegacao-adm'
+import FooterAdm from "../Components/Footer-adm";
+
 
 const DashboardPage = () => {
     const [selectedDate, setSelectedDate] = useState("1/11/2024");
@@ -36,6 +38,7 @@ const DashboardPage = () => {
                     <Calendar onSelectDay={handleSelectDay} />
                 </div>
             </div>
+            <FooterAdm />
         </>
     );
 };

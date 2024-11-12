@@ -18,8 +18,13 @@ const Footer1 = () => {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-column">
-                    <h3>Sobre Nós</h3>
+                    <h3>Contato</h3>
                     <div className="footer-text">Comprometidos com a saúde e bem-estar, oferecemos cuidados médicos de excelência.</div>
+                    <div className="emergency-contact">
+                        <div className="contact-item emergency">Emergência: (11) 99999-0000</div>
+                        <div className="contact-item service">Serviço ao Cliente: (11) 88888-0000</div>
+                        <div className="contact-item doctor">Médico Disponível: (11) 77777-0000</div>
+                    </div>
                 </div>
                 <div className="footer-column">
                     <h3>Nossos Serviços</h3>
@@ -28,10 +33,13 @@ const Footer1 = () => {
                 <div className="footer-column">
                     <h3>Informações Úteis</h3>
                     <div className="footer-info">
-                        <div className="footer-text">Agendamento de Consultas</div>
-                        <div className="footer-text">Exames e Resultados</div>
-                        <div className="footer-text">Contato de Emergência</div>
-                        <div className="footer-text">Localização da Unidade</div>
+                    <div className="footer-text">Salario</div>
+                        <div className="footer-text">Funcionarios</div>
+                        <div className="footer-text">Registro</div>
+                        <div className="footer-text">Clientes</div>
+                        <div className="footer-text">Administrador</div>
+
+
                     </div>
                 </div>
                 <div className="footer-column email1">

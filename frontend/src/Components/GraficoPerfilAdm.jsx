@@ -73,9 +73,9 @@ const PostDensityChart = () => {
     };
 
     return (
-        <div className="post-density-chart">
+        <div className="post-density-chart-densidade">
             <h3>Densidade de Atendimentos (Últimos 7 Dias)</h3>
-            <div className="chart-container">
+            <div className="chart-container-densidade">
                 <Line data={data} options={options} />
             </div>
         </div>

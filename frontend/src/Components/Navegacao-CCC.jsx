@@ -1,82 +1,82 @@
-// IMPORT BIBLIOTECAS AQ
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
-import LocalMallIcon from '@mui/icons-material/LocalMall';
+import { Menu, MenuItem, IconButton } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import MenuIcon from '@mui/icons-material/Menu';
+import LoginIcon from '@mui/icons-material/Login';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import "../Style/Navbar.css";
 
-const NavbarCCC = () => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+const Navbar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
 
-    const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const handleLogout = () => {
-        localStorage.removeItem("authToken");
-        window.location.href = "/";
+    const handleAvatarClick = (event) => {
+        setAnchorEl(event.currentTarget);
     };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'responsive' : ''}`}>
             <div className="navbar-left">
-                <div className="navbar-logo">
-                    <Link to="/">
-                        <img src={require("../Imagens/logo-removebg-preview-removebg-preview.png")} alt="Logo" className="logo" />
-                    </Link>
-                </div>
-                <ul className="navbar-links">
-                    <li>
-                        <Link to="/HomeCliente" className="nav-link">
-                            <HomeIcon className="icon" /> <span>Home</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Agendamento" className="nav-link">
-                            <InfoIcon className="icon" /> <span>Agendamento</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Exames" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Exames</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Resultados" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Resultado</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Contato" className="nav-link">
-                            <ContactMailIcon className="icon" /> <span>Contato</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Unidades" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Unidades</span>
-                        </Link>
-                    </li>
+                <Link to="/HomeCliente">
+                    <img src={require("../Imagens/logo-removebg-preview-removebg-preview.png")} alt="Logo" className="logo" />
+                </Link>
+            </div>
+
+            <div className="navbar-center">
+                <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
+                    <li><Link to="/HomeCliente" className="nav-link">Home</Link></li>
+                    <li><Link to="/Exames" className="nav-link">Exames</Link></li>
+                    <li><Link to="/Unidades" className="nav-link">Unidades</Link></li>
+                    <li><Link to="/Agendamento" className="nav-link">Agendamentos</Link></li>
+                    <li><Link to="/Contato" className="nav-link">Contato</Link></li>
                 </ul>
             </div>
 
             <div className="navbar-right">
-                <div className="user-avatar" onClick={toggleDropdown}>
-                    <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")}
-                        alt="User Avatar"
-                        className="avatar"
-                    />
-                    {dropdownOpen && (
-                        <div className="dropdown-menu">
-                            <li onClick={handleLogout} className="dropdown-item">Sair</li>
-                        </div>
-                    )}
-                </div>
+                <IconButton onClick={handleAvatarClick}>
+                    <span className="avatar-letter">A</span>
+                    <ArrowDropDownIcon />
+                </IconButton>
+
+                <Menu
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem onClick={handleClose} component={Link} to="/perfil">
+                        <AccountCircleIcon className="dropdown-icon" /> Ver Perfil
+                    </MenuItem>
+                    <MenuItem onClick={handleClose} component={Link} to="/login">
+                        <LoginIcon className="dropdown-icon" /> Sair
+                    </MenuItem>
+                </Menu>
+            </div>
+
+            <div className="menu-icon" onClick={toggleMobileMenu}>
+                <MenuIcon />
             </div>
         </nav>
     );
 };
 
-export default NavbarCCC;
+export default Navbar;

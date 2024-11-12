@@ -10,7 +10,6 @@ import showAlertWithCountdown from '../Components/Alert';
 // ESTILIZAÇÃO
 import '../Style/Anatomia.css';
 
-
 const problemasPorParte = {
   head: [
     { cor: 'red', descricao: 'Dor de cabeça Grave' },

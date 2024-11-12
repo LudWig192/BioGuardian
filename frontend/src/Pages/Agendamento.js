@@ -5,6 +5,8 @@ import Avaliacoes from "../Components/AvaliacaoCliente";
 import Calendar from "../Components/CalendarioAgendamento";
 import '../Style/AgendamentoPage.css';
 import NavbarCCC from '../Components/Navegacao-CCC'
+import FooterCCC from "../Components/Footer-CCC"
+
 
 function App() {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -29,6 +31,7 @@ function App() {
                         </div>
                     </div>
                 </header>
+                <FooterCCC />
             </div>
         </>
     );

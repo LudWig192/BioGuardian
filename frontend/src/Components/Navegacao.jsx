@@ -1,62 +1,87 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import LocalMallIcon from '@mui/icons-material/LocalMall';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import LoginIcon from '@mui/icons-material/Login';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import MenuIcon from '@mui/icons-material/Menu';
+
 import "../Style/Navbar.css";
 
 const Navbar = () => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleDropdown = () => {
-        setDropdownOpen(prevState => !prevState);
+        setIsDropdownOpen(!isDropdownOpen);
+        console.log('Dropdown aberto:', !isDropdownOpen); 
     };
 
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest('.dropdown-menu') && !event.target.closest('.enter-button')) {
+                setIsDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'responsive' : ''}`}>
             <div className="navbar-left">
-                <div className="navbar-logo">
-                    <Link to="">
-                        <img src={require("../Imagens/logo-removebg-preview-removebg-preview.png")} alt="Logo" className="logo" />
-                    </Link>
-                </div>
-                <ul className="navbar-links">
-                    <li>
-                        <Link to="/" className="nav-link">
-                            <HomeIcon className="icon" /> <span>Home</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Beneficio" className="nav-link">
-                            <InfoIcon className="icon" /> <span>Benefício</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Servico" className="nav-link">
-                            <LocalMallIcon className="icon" /> <span>Serviços</span>
-                        </Link>
-                    </li>
+                <Link to="/">
+                    <img src={require("../Imagens/logo-removebg-preview-removebg-preview.png")} alt="Logo" className="logo" />
+                </Link>
+            </div>
+
+            <div className="navbar-center">
+                <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
+                    <li><Link to="/Home" className="nav-link">Home</Link></li>
+                    <li><Link to="/Beneficio" className="nav-link">Benefício</Link></li>
+                    <li><Link to="/Servico" className="nav-link">Serviço</Link></li>
                 </ul>
             </div>
+
             <div className="navbar-right">
-                <div className="user-info">
-                    <span className="user-name">Usuário</span>
+                <div className="navbar-button" onClick={toggleDropdown}>
+                    <button className="enter-button">
+                        Entrar <ArrowDropDownIcon />
+                    </button>
                 </div>
-                <div className="user-avatar" onClick={toggleDropdown}>
-                    <img
-                        src={require("../Imagens/Calvo-removebg-preview.png")}
-                        alt="User Avatar"
-                        className="avatar"
-                    />
-                    {dropdownOpen && (
-                        <div className="dropdown-menu">
-                            <ul>
-                                <li><Link to="/Cadastro">Cadastro</Link></li>
-                                <li><Link to="/Login">Login</Link></li>
-                            </ul>
-                        </div>
-                    )}
-                </div>
+                {isDropdownOpen && (
+                    <div className={`dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
+                        <Link to="/Login" className="dropdown-item">
+                            <LoginIcon className="dropdown-icon" /> Login
+                        </Link>
+                        <Link to="/cadastro" className="dropdown-item">
+                            <PersonAddIcon className="dropdown-icon" /> Cadastrar
+                        </Link>
+                    </div>
+                )}
+            </div>
+
+            <div className="menu-icon" onClick={toggleMobileMenu}>
+                <MenuIcon />
             </div>
         </nav>
     );

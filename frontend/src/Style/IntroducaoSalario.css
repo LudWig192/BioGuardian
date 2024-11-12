@@ -1,4 +1,4 @@
-.introduction-container {
+.introduction-container-visao_geral {
     margin: 20px 0;
     padding: 20px;
     background-color: #ffffff;
@@ -6,7 +6,7 @@
     font-family: 'Arial', sans-serif;
 }
 
-.introduction-title {
+.introduction-title-visao_geral {
     color: #54d4f0;
     margin-bottom: 15px;
     font-size: 2em;
@@ -14,26 +14,27 @@
     text-align: center;
 }
 
-.introduction-text,
-.introduction-note {
+.introduction-text-visao_geral,
+.introduction-note-visao_geral {
     color: #4a4a4a;
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 1.1em;
+    text-align: justify;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .introduction-container {
+    .introduction-container-visao_geral {
         padding: 15px;
     }
 
-    .introduction-title {
+    .introduction-title-visao_geral {
         font-size: 1.6em;
     }
 
-    .introduction-text,
-    .introduction-note {
+    .introduction-text-visao_geral,
+    .introduction-note-visao_geral {
         font-size: 0.95em;
     }
 }

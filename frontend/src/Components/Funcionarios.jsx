@@ -1,88 +1,104 @@
 import React, { useState, useEffect } from 'react';
 import '../Style/Funcionarios.css';
-import { FaBell, FaFilter, FaPlus } from 'react-icons/fa';
+import { FaFilter, FaPlus } from 'react-icons/fa';
 import ModalFuncionarios from '../Components/ModalFuncionarios.jsx';
 import Administrador from "../Imagens/Administrador.png";
 
 const FuncionariosPage = () => {
-  const [medicos, setMedicos] = useState([]);
+  const [funcionarios, setFuncionarios] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState('');
   const [currentIndex, setCurrentIndex] = useState(null);
-  const [dadosMedico, setDadosMedico] = useState({
+  const [dadosFuncionario, setDadosFuncionario] = useState({
     nome: '',
     numeroRegistro: '',
     horarioTrabalho: '',
     status: '',
     especialidade: '',
-    plantao: '',
+    em_trabalho: '',
   });
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    buscarMedicos();
-    const intervalId = setInterval(buscarMedicos, 5000);
+    buscarFuncionarios();
+    const intervalId = setInterval(buscarFuncionarios, 5000);
     return () => clearInterval(intervalId);
   }, []);
 
-  const buscarMedicos = async () => {
+  const buscarFuncionarios = async () => {
+    setLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/medicos');
-      if (!response.ok) throw new Error('Falha ao buscar médicos');
+      const response = await fetch('http://localhost:3001/funcionarios');
+      if (!response.ok) throw new Error('Falha ao buscar funcionários');
       const data = await response.json();
-      setMedicos(data);
+      setFuncionarios(data);
     } catch (error) {
       console.error(error);
-      alert('Erro ao buscar médicos. Tente novamente.');
+      setErrorMessage('Erro ao buscar funcionários. Tente novamente.');
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleAdicionarMedico = async (e) => {
+  const handleAdicionarFuncionario = async (e) => {
     e.preventDefault();
-    const novoMedico = { ...dadosMedico, avatar: Administrador };
+    const novoFuncionario = { ...dadosFuncionario, avatar: 'Administrador' };
 
-    await fetch('http://localhost:3001/medicos', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(novoMedico),
-    });
-
-    buscarMedicos();
-    setIsModalOpen(false);
-    resetarDadosMedico();
-  };
-
-  const handleEditarMedico = async (e) => {
-    e.preventDefault();
-    const medicoAtualizado = { ...dadosMedico };
-
-    await fetch(`http://localhost:3001/medicos/${medicos[currentIndex].idMedico}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(medicoAtualizado),
-    });
-
-    buscarMedicos();
-    setIsModalOpen(false);
-    resetarDadosMedico();
-  };
-
-  const handleExcluirMedico = async (index) => {
-    if (index !== null) {
-      await fetch(`http://localhost:3001/medicos/${medicos[index].idMedico}`, {
-        method: 'DELETE',
+    try {
+      await fetch('http://localhost:3001/funcionarios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(novoFuncionario),
       });
-      buscarMedicos();
+      buscarFuncionarios();
+      fecharModal();
+    } catch (error) {
+      console.error(error);
+      setErrorMessage('Erro ao adicionar um funcionário. Tente novamente.');
     }
   };
 
-  const resetarDadosMedico = () => {
-    setDadosMedico({
+  const handleEditarFuncionario = async (e) => {
+    e.preventDefault();
+    const funcionarioAtualizado = { ...dadosFuncionario };
+
+    try {
+      await fetch(`http://localhost:3001/funcionarios/${funcionarios[currentIndex].idFuncionario}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(funcionarioAtualizado),
+      });
+      buscarFuncionarios();
+      fecharModal();
+    } catch (error) {
+      console.error(error);
+      setErrorMessage('Erro ao editar um funcionário. Tente novamente.');
+    }
+  };
+
+  const handleExcluirFuncionario = async (index) => {
+    if (index !== null && window.confirm("Tem certeza que deseja excluir este funcionário?")) {
+      try {
+        await fetch(`http://localhost:3001/funcionarios/${funcionarios[index].idFuncionario}`, {
+          method: 'DELETE',
+        });
+        buscarFuncionarios();
+      } catch (error) {
+        console.error(error);
+        setErrorMessage('Erro ao excluir um funcionário. Tente novamente.');
+      }
+    }
+  };
+
+  const resetarDadosFuncionario = () => {
+    setDadosFuncionario({
       nome: '',
       numeroRegistro: '',
       horarioTrabalho: '',
       status: '',
       especialidade: '',
-      plantao: '',
+      em_trabalho: '',
     });
     setCurrentIndex(null);
   };
@@ -91,89 +107,132 @@ const FuncionariosPage = () => {
     setModalType(tipo);
     if (tipo === 'editar' && index !== null) {
       setCurrentIndex(index);
-      setDadosMedico(medicos[index]);
+      setDadosFuncionario(funcionarios[index]);
     } else {
-      resetarDadosMedico();
+      resetarDadosFuncionario();
     }
     setIsModalOpen(true);
   };
 
+  const fecharModal = () => {
+    setIsModalOpen(false);
+    resetarDadosFuncionario();
+  };
+
   return (
-    <div className="app-header funcionario">
-      <div className="header-container funcionario">
-        <div className="search-bar-container funcionario">
-          <input type="text" className="search-bar funcionario" placeholder="Buscar médicos..." />
-        </div>
-        <div className="user-info funcionario">
-          <span className="user-name funcionario">Admin</span>
-          <span className="user-email funcionario">Adm@medley.com</span>
-        </div>
-      </div>
-      <main className="funcionario">
-        <div className="toolbar funcionario">
-          <div className="button-group-funcionario funcionario">
-            <button className="button-custom filter-btn funcionario">
+    <div className="app-header-funcionarios">
+      <div className="header-container-funcionarios"></div>
+      {errorMessage && <div className="error-message-funcionarios">{errorMessage}</div>}
+      {loading && <div className="loading-indicator-funcionarios">Carregando...</div>}
+      <main>
+        <div className="toolbar-funcionarios">
+          <div className="button-group-funcionarios">
+            <button className="button-custom filter-btn-funcionarios" aria-label="Filtrar funcionários">
               <FaFilter /> Filtrar
             </button>
-            <button className="button-custom primary add-doctor-btn funcionario" onClick={() => handleModalShow('adicionar')}>
-              <FaPlus /> Adicionar um novo Médico
+            <button
+              className="button-custom primary add-doctor-btn-funcionarios"
+              onClick={() => handleModalShow('adicionar')}
+              aria-label="Adicionar um novo funcionário"
+            >
+              <FaPlus /> Adicionar um novo Funcionário
             </button>
           </div>
         </div>
-
-        <div style={{ overflowX: 'auto' }}>
-          <table className="product-table funcionario">
-            <thead>
-              <tr className="funcionario">
-                <th className="funcionario">Nome</th>
-                <th className="funcionario">Especialidade</th>
-                <th className="funcionario">Número do Registro</th>
-                <th className="funcionario">Horário de Trabalho</th>
-                <th className="funcionario">Status</th>
-                <th className="funcionario">Plantão</th>
-                <th className="funcionario">Ações</th>
+        <table className="funcionario-table-funcionarios">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Especialidade</th>
+              <th>Número do Registro</th>
+              <th>Horário de Trabalho</th>
+              <th>Status</th>
+              <th>Em trabalho</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {funcionarios.map((funcionario, index) => (
+              <tr key={funcionario.idFuncionario}>
+                <td data-label="Nome">{funcionario.nome}</td>
+                <td data-label="Especialidade">{funcionario.especialidade}</td>
+                <td data-label="Número do Registro">{funcionario.numeroRegistro}</td>
+                <td data-label="Horário de Trabalho">{funcionario.horarioTrabalho}</td>
+                <td data-label="Status">
+                  <span className={`status-badge-funcionarios ${funcionario.status === 'ativo' ? 'active-funcionarios' : 'inactive-funcionarios'}`}>
+                    {funcionario.status}
+                  </span>
+                </td>
+                <td data-label="Em Trabalho">
+                  <span>{funcionario.em_trabalho === 'sim' ? 'Sim' : 'Não'}</span>
+                </td>
+                <td data-label="Ações">
+                  <button className="button-custom edit-btn-funcionarios" onClick={() => handleModalShow('editar', index)} aria-label="Editar funcionário">
+                    Editar
+                  </button>
+                  <button className="button-custom delete-btn-funcionarios" onClick={() => handleExcluirFuncionario(index)} aria-label="Excluir funcionário">
+                    Excluir
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {medicos.map((medico, index) => (
-                <tr key={medico.idMedico} className="funcionario">
-                  <td className="funcionario">{medico.nome}</td>
-                  <td className="funcionario">{medico.especialidade}</td>
-                  <td className="funcionario">{medico.numeroRegistro}</td>
-                  <td className="funcionario">{medico.horarioTrabalho}</td>
-                  <td className="funcionario">
-                    <span className={`status-badge ${medico.status === 'ativo' ? 'active' : 'inactive'}`}>
-                      {medico.status}
-                    </span>
-                  </td>
-                  <td className="funcionario">{medico.plantao}</td>
-                  <td className="funcionario">
-                    <button className="button-custom" onClick={() => handleModalShow('editar', index)}>
-                      Editar
-                    </button>
-                    <button className="button-custom red" onClick={() => handleExcluirMedico(index)}>
-                      Excluir
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </main>
-      {
-    isModalOpen && (
-      <ModalFuncionarios
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onAddDoctor={modalType === 'adicionar' ? handleAdicionarMedico : handleEditarMedico}
-        dadosMedico={dadosMedico}
-        setDadosMedico={setDadosMedico}
-        onExcluir={() => handleExcluirMedico(currentIndex)}
-      />
-    )
-  }
-    </div >
+      {isModalOpen && (
+        <ModalFuncionarios
+          isOpen={isModalOpen}
+          onClose={fecharModal}
+          onAddFuncionario={modalType === 'adicionar' ? handleAdicionarFuncionario : handleEditarFuncionario}
+          dadosFuncionario={dadosFuncionario}
+          setDadosFuncionario={setDadosFuncionario}
+          onExcluir={() => handleExcluirFuncionario(currentIndex)}
+        >
+          <form onSubmit={modalType === 'adicionar' ? handleAdicionarFuncionario : handleEditarFuncionario}>
+            <div>
+              <label>Número do Registro:</label>
+              <input
+                type="text"
+                value={dadosFuncionario.numeroRegistro}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (/^\d*$/.test(value) || value === '') {
+                    setDadosFuncionario({ ...dadosFuncionario, numeroRegistro: value });
+                  }
+                }}
+                required
+                placeholder="Número do Registro"
+              />
+            </div>
+            <div>
+              <label>Especialidade:</label>
+              <input
+                type="text"
+                value={dadosFuncionario.especialidade}
+                onChange={(e) => setDadosFuncionario({ ...dadosFuncionario, especialidade: e.target.value })}
+                required
+                placeholder="Especialidade"
+              />
+            </div>
+            <div>
+              <label>Em Trabalho:</label>
+              <select
+                value={dadosFuncionario.em_trabalho}
+                onChange={(e) => setDadosFuncionario({ ...dadosFuncionario, em_trabalho: e.target.value })}
+                required
+              >
+                <option value="">Selecione o status</option>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+              </select>
+            </div>
+            <button type="submit" className="button-custom primary">
+              {modalType === 'adicionar' ? 'Adicionar' : 'Salvar'}
+            </button>
+          </form>
+        </ModalFuncionarios>
+      )}
+    </div>
   );
 };
 

@@ -5,7 +5,9 @@ import Tabela from '../Components/TabelaSalario';
 import Suporte from '../Components/SuporteSalario'
 import Testemunhos from '../Components/Testemunho';
 import Comparativo from '../Components/Comparativo';
-import NavegacaoAdm from '../Components/Navegacao-adm'
+import NavegacaoAdm from '../Components/Navegacao-adm';
+import FooterAdm from "../Components/Footer-adm";
+
 
 const PaginaSalario = () => {
     return (
@@ -22,6 +24,7 @@ const PaginaSalario = () => {
                     <Suporte />
                     <Testemunhos />
                     <Comparativo />
+                    <FooterAdm />
                 </main>
             </div>
         </>

@@ -5,7 +5,9 @@ import PostDensityChart from '../Components/GraficoPerfilAdm';
 import GeolocationChart from '../Components/Geocalizacao';
 import BestPosts from '../Components/PostagensAdm';
 import '../Style/PerfilAdmPage.css';
-import NavegacaoAdm from '../Components/Navegacao-adm'
+import NavegacaoAdm from '../Components/Navegacao-adm';
+import FooterAdm from "../Components/Footer-adm";
+
 
 const PerfilAdmHospitalar = () => {
     return (
@@ -22,6 +24,7 @@ const PerfilAdmHospitalar = () => {
                         <GeolocationChart />
                     </div>
                     <BestPosts />
+                    <FooterAdm />
                 </div>
             </div>
         </>

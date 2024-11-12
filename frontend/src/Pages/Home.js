@@ -9,6 +9,7 @@ import Modelo from "../Components/Modelo3DHome";
 import Medico from "../Components/MedicoHome";
 import '../Style/HomePage.css';
 import NavbarCSC from '../Components/Navegacao'
+import Footer from "../Components/Footer";
 
 function HomeCliente() {
   return (
@@ -20,8 +21,9 @@ function HomeCliente() {
      <Servicos />
      <Pulseira />
      <Modelo />
-     <Unidade />
      <Medico />
+     <Unidade />
+     <Footer />
     </div>
   );
 }

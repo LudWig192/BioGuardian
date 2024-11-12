@@ -20,7 +20,7 @@ const TabelaContato = () => {
 
     const handleExcluirUsuario = async (idContato) => {
         try {
-            await axios.delete(`http://localhost:3001/Login/${idContato}`);
+            await axios.delete(`http://localhost:3001/contato/${idContato}`);
             
             const { data } = await axios.get("http://localhost:3001/contato");
             setCadastros(data);
@@ -45,7 +45,7 @@ const TabelaContato = () => {
                 <tbody className="tabela-contato-tbody">
                     {cadastros.map((cadastro) => (
                         <tr key={cadastro.idLogin} className="tabela-contato-tr">
-                            <td className="tabela-contato-td">{cadastro.iContato}</td>
+                            <td className="tabela-contato-td">{cadastro.idContato}</td>
                             <td className="tabela-contato-td">{cadastro.nome}</td>
                             <td className="tabela-contato-td">{cadastro.email_ou_telefone}</td>
                             <td className="tabela-contato-td">{cadastro.mensagem}</td>

@@ -1,4 +1,4 @@
-.post-density-chart {
+.post-density-chart-densidade {
     background-color: #ffffff;
     padding: 25px;
     border-radius: 12px;
@@ -7,20 +7,20 @@
     margin: 20px 0;
 }
 
-.post-density-chart h3 {
+.post-density-chart-densidade h3 {
     font-size: 1.5em;
     color: #2c3e50;
     margin-bottom: 15px;
     text-align: center;
 }
 
-.chart-container {
+.chart-container-densidade {
     position: relative;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .post-density-chart {
+    .post-density-chart-densidade {
         width: 100%;
     }
 }
