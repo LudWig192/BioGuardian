@@ -22,7 +22,6 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-
       <div className="cards-bannercliente-container"> 
         <div className="row-bannercliente"> 
           <div className="col-md-3-bannercliente"> 

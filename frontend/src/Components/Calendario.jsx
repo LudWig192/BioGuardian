@@ -146,7 +146,6 @@ const Cabecalho = () => {
                     <p>Não há consultas agendadas para este dia.</p>
                 )}
             </div>
-
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={resetForm}

@@ -1,14 +1,39 @@
-/* Tabelaproblemas.css */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 100px;
+  margin-left: 50px;
+}
+
+.body-and-table {
+  display: flex;
+  flex-direction: column; /* Coloca o corpo e a tabela em coluna */
+  align-items: center;
+  gap: 40px; /* Aumenta o espaço entre o corpo e a tabela */
+}
+
+.svg-container {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+.sc-aXZVg.kuzLNx.human-body {
+  position: relative;
+  margin-top: 50px;
+}
 
 .tabela-container {
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  margin-left: 150px; /* desloca a tabela 150px para a direita */
+  margin-top: 60px; /* Adiciona mais espaço entre o corpo e a tabela */
   transition: transform 0.3s ease;
 }
 
@@ -18,8 +43,7 @@
 
 .tabela-container h2 {
   color: #2c3e50;
-  font-size: 1.8em;
-  font-family: 'Arial', sans-serif;
+  font-size: 20px;
   text-align: center;
   margin-bottom: 24px;
   border-bottom: 2px solid #2c26ef;
@@ -30,8 +54,6 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .tabela-problemas th,
@@ -39,7 +61,6 @@
   padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  font-family: 'Verdana', sans-serif;
 }
 
 .tabela-problemas th {
@@ -51,89 +72,24 @@
 .tabela-problemas td {
   font-size: 1em;
   color: #444;
-  transition: background-color 0.3s ease;
-}
-
-.tabela-problemas tbody tr {
-  transition: background-color 0.3s;
-}
-
-.tabela-problemas tbody tr:hover {
-  background-color: #e3f2fd;
-}
-
-.heartbeat-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-/* Efeito de animação para o componente Coracao */
-.heartbeat-container svg {
-  animation: heartbeat 1s infinite;
-  color: #e74c3c;
-  width: 30px;
-  height: 30px;
-}
-
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-}
-
-/* Estilização da mensagem de nenhum problema encontrado */
-.tabela-problemas td[colspan="1"] {
-  text-align: center;
-  color: #888;
-  font-style: italic;
-  padding: 20px;
-  background-color: #fafafa;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
+  .app-container {
+    padding-top: 40px;
+    margin-left: 0;
+  }
+
   .tabela-container {
-    margin-left: 0; /* remove deslocamento para telas menores */
-    padding: 15px;
-  }
-  
-  .tabela-container h2 {
-    font-size: 1.5em;
-  }
-
-  .tabela-problemas th,
-  .tabela-problemas td {
-    padding: 10px 12px;
-    font-size: 0.9em;
-  }
-
-  .heartbeat-container svg {
-    width: 25px;
-    height: 25px;
+    width: 90%;
+    padding: 20px;
+    margin-top: 60px; /* Mais espaço para a tabela no mobile */
   }
 }
 
 @media (max-width: 480px) {
   .tabela-container {
-    padding: 10px;
-  }
-
-  .tabela-container h2 {
-    font-size: 1.2em;
-  }
-
-  .tabela-problemas th,
-  .tabela-problemas td {
-    padding: 8px 10px;
-    font-size: 0.8em;
-  }
-
-  .heartbeat-container svg {
-    width: 20px;
-    height: 20px;
+    margin-top: 50px; /* Ajusta o espaço para dispositivos menores */
   }
 }

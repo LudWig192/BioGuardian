@@ -1,69 +1,63 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contêiner principal */
 .app-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Garante que os elementos fiquem empilhados verticalmente */
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  height: auto;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  padding-top: 100px;
-  padding-left: 200px;
+  padding-top: 50px; /* Distância superior para o conteúdo */
 }
 
-.body-and-table {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.svg-container {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 2;
-}
-
+/* Estilos do corpo */
 .sc-aXZVg.kuzLNx.human-body {
-  margin-left: 351px;
-  position: relative;
-  z-index: 2;
-  margin-top: 50px;
+  margin-top: 120px; /* Distância maior para empurrar o corpo um pouco para baixo */
+  margin-bottom: 20px; /* Distância abaixo do corpo */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .body-and-table {
-    flex-direction: column;
-    gap: 10px;
-  }
+/* Estilos da tabela */
+.table-container {
+  margin-top: 20px; /* Distância entre o corpo e a tabela */
+  width: 90%; /* Largura da tabela */
+}
 
-  .svg-container {
-    margin-bottom: 10px;
+/* Estilos adicionais para a tabela */
+.table-container table {
+  width: 100%; /* A tabela ocupará toda a largura disponível */
+  border-collapse: collapse; /* Colapsa as bordas da tabela */
+}
+
+.table-container th, .table-container td {
+  padding: 10px; /* Adiciona espaçamento nas células */
+  border: 1px solid #ccc; /* Borda suave nas células */
+  text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+.table-container th {
+  background-color: #f2f2f2; /* Cor de fundo para o cabeçalho */
+}
+
+/* Media Query para telas menores (max-width: 768px) */
+@media (max-width: 768px) {
+  .app-container {
+    padding-top: 400px; /* Distância superior maior para não sobrepor a navegação */
   }
 
   .sc-aXZVg.kuzLNx.human-body {
-    margin-left: 0;
+    margin-top: 120px; /* Distância do corpo maior em telas menores */
   }
 
   .table-container {
-    margin-top: 0;
+    margin-top: 20px; /* Distância entre o corpo e a tabela */
+    width: 95%; /* Ajuste de largura para telas pequenas */
   }
-
-  .app-container {
-    padding-left: 0;
-  }
-  .Consultas {
-    padding-left: 0;
-    padding-left: 515px;
-    margin-top: -370px;
-    width: 100%;
-}
-}
-
-.swal2-container {
-  z-index: 9999 !important;
 }

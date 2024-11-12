@@ -45,7 +45,7 @@ const problemasPorParte = {
   neck: [
     { cor: 'red', descricao: 'Dor no pescoço Grave' },
     { cor: 'yellow', descricao: 'Dor no pescoço Leve' },
-    { cor: 'green', descricao: 'Dor no pescoço Moderado' }
+    { cor: 'Green', descricao: 'Dor no pescoço Moderado' }
   ],
   rightFoot: [
     { cor: 'red', descricao: 'Lesão no pé direito Grave' },
@@ -151,7 +151,7 @@ export default function App() {
   return (
     <div className="app-container">
       <BodyComponent onClick={onClick} />
-      <TabelaProblemas problemas={problemas} parteCorpo={parteCorpo} />
+      <TabelaProblemas problemas={problemas} parteCorpo={parteCorpo} className="Tabela-ANATOMIA" />
     </div>
   );
 }
