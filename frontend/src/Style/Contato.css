@@ -11,15 +11,15 @@
   background-repeat: no-repeat;
   border-radius: 8px;
   min-height: 100vh;
-  flex-wrap: wrap; /* Adiciona flex-wrap para quebrar as colunas em telas menores */
+  flex-wrap: wrap;
 }
 
 .contato-contact-info {
   flex: 0 0 35%;
   color: #fff;
-  padding: 2px 5px; 
+  padding: 2px 5px;
   border-radius: 8px;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .contato-contact-info .contato-title {
@@ -63,7 +63,7 @@
 
 .contato-contact-form {
   flex: 0 0 55%;
-  max-width: 500px; 
+  max-width: 500px;
   width: 100%;
   background: rgba(255, 255, 255, 0.8);
   padding: 30px;
@@ -100,9 +100,9 @@
 .contato-contact-form button.contato-submit-button {
   width: 100%;
   padding: 12px;
-  font-size: 1em;
+  font-size: 0.85em; /* Tamanho de fonte reduzido */
   color: #fff;
-  background-color: #007bff;
+  background-color: #54a3f0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -110,24 +110,23 @@
 }
 
 .contato-contact-form button.contato-submit-button:hover {
-  background-color: #0056b3;
+  background-color: #54a3f0;
 }
 
-/* Media queries para tornar o layout responsivo */
 @media (max-width: 768px) {
   .contato-contact-info {
-    flex: 0 0 100%; /* Aumenta a largura para 100% em telas menores */
+    flex: 0 0 100%;
     margin-bottom: 20px;
   }
 
   .contato-contact-form {
-    flex: 0 0 100%; /* Aumenta a largura para 100% em telas menores */
+    flex: 0 0 100%;
     margin-top: 20px;
   }
 
   .contato-contact-container {
     padding: 20px;
-    flex-direction: column; /* Coloca os itens em coluna ao invés de linha */
+    flex-direction: column;
   }
 }
 
@@ -145,6 +144,6 @@
   }
 
   .contato-contact-form button.contato-submit-button {
-    font-size: 0.9em; /* Ajuste do tamanho do botão */
+    font-size: 0.8em; /* Ajuste do tamanho do botão */
   }
 }
