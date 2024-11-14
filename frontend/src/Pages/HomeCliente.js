@@ -17,14 +17,14 @@ const HomeCliente = () => {
     <>
       <NavbarCCC />
       <Banner />
-      <Dicas />     
-       <Cirugia />
-       <Exame />
-       <ExameResultado />
-      <Marcar /> 
-     <Icons />
-     <Tabela />
-     <FooterCCC />
+      <Dicas />
+      <Cirugia />
+      <Exame />
+      <ExameResultado />
+      <Marcar />
+      <Icons />
+      <Tabela />
+      <FooterCCC />
     </>
   );
 };

@@ -14,7 +14,7 @@
     font-size: 28px;
     margin-bottom: 30px;
     text-align: center;
-    color: #5472f0;
+    color: #6854f0;
     font-weight: 700;
 }
 
@@ -40,7 +40,7 @@ th {
 
 td {
     background-color: #ffffff;
-    color: #34495e;
+    color: #000000;
 }
 
 td:hover {
@@ -54,7 +54,7 @@ ul {
 }
 
 .beneficio-item {
-    color: #34495e;
+    color: #000000;
     margin: 5px 0;
     position: relative;
     padding-left: 1.5em;
