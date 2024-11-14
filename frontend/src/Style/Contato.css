@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   border-radius: 8px;
   min-height: 100vh;
+  flex-wrap: wrap; /* Adiciona flex-wrap para quebrar as colunas em telas menores */
 }
 
 .contato-contact-info {
@@ -110,4 +111,40 @@
 
 .contato-contact-form button.contato-submit-button:hover {
   background-color: #0056b3;
+}
+
+/* Media queries para tornar o layout responsivo */
+@media (max-width: 768px) {
+  .contato-contact-info {
+    flex: 0 0 100%; /* Aumenta a largura para 100% em telas menores */
+    margin-bottom: 20px;
+  }
+
+  .contato-contact-form {
+    flex: 0 0 100%; /* Aumenta a largura para 100% em telas menores */
+    margin-top: 20px;
+  }
+
+  .contato-contact-container {
+    padding: 20px;
+    flex-direction: column; /* Coloca os itens em coluna ao invés de linha */
+  }
+}
+
+@media (max-width: 480px) {
+  .contato-contact-info .contato-title {
+    font-size: 1em; /* Reduz o tamanho da fonte para telas menores */
+  }
+
+  .contato-contact-info .contato-subtitle {
+    font-size: 1.5em; /* Reduz o tamanho da fonte */
+  }
+
+  .contato-contact-info .contato-description {
+    font-size: 0.85em; /* Ajuste do tamanho da fonte */
+  }
+
+  .contato-contact-form button.contato-submit-button {
+    font-size: 0.9em; /* Ajuste do tamanho do botão */
+  }
 }
