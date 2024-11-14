@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';  // Importando o axios
 import '../Style/Contato.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import fundo from '../Imagens/fundo.png'; // Importando a imagem
@@ -6,10 +7,8 @@ import fundo from '../Imagens/fundo.png'; // Importando a imagem
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     nome: '',
-    numero: '',
     email: '',
-    assunto: '',
-    comentarios: '',
+    mensagem: '',
   });
 
   const handleChange = (e) => {
@@ -23,26 +22,24 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch('URL_DO_SEU_BACKEND', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    // Validação simples (garante que os campos obrigatórios estão preenchidos)
+    if (!formData.nome || !formData.email || !formData.mensagem) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
 
-      if (response.ok) {
+    try {
+      // Envio dos dados usando axios
+      const response = await axios.post('http://localhost:3001/contato', formData);
+
+      if (response.status === 200) {
         alert('Mensagem enviada com sucesso!');
+        // Limpar o formulário após envio bem-sucedido
         setFormData({
           nome: '',
-          numero: '',
           email: '',
-          assunto: '',
-          comentarios: '',
+          mensagem: '',
         });
-      } else {
-        alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
       }
     } catch (error) {
       console.error('Erro ao enviar dados:', error);
@@ -93,7 +90,7 @@ const ContactForm = () => {
       <div className="contato-contact-form">
         <form onSubmit={handleSubmit}>
           <div className="contato-form-group">
-            <label>Nome Completo *</label>
+            <label>Nome Completo </label>
             <input
               type="text"
               placeholder="Digite seu nome"
@@ -104,53 +101,28 @@ const ContactForm = () => {
             />
           </div>
           <div className="contato-form-group">
-            <label>Número</label>
+            <label>Email ou telefone</label>
             <input
-              type="number"
-              placeholder="Número"
-              name="numero"
-              value={formData.numero}
-              onChange={handleChange}
-              pattern="[0-9]*"
-              title="Digite apenas números"
-              required
-            />
-          </div>
-          <div className="contato-form-group">
-            <label>Email *</label>
-            <input
-              type="email"
-              placeholder="Seu email"
+              type="text"
+              placeholder="Email ou telefone"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-              title="Por favor, insira um e-mail válido (exemplo@dominio.com)"
             />
-          </div>
-          <div className="contato-form-group">
-            <label>Assunto *</label>
-            <input
-              type="text"
-              placeholder="Assunto"
-              name="assunto"
-              value={formData.assunto}
-              onChange={handleChange}
-              required
-            />
+
           </div>
           <div className="contato-form-group full-width">
-            <label>Comentários *</label>
+            <label>Mensagem</label>
             <textarea
-              placeholder="Comentários"
-              name="comentarios"
-              value={formData.comentarios}
+              placeholder="Mensagem"
+              name="mensagem"
+              value={formData.mensagem}
               onChange={handleChange}
               required
             ></textarea>
           </div>
-          <button type="submit" className="contato-submit-button">Enviar Mensagem</button>
+          <button type="submit" className="contato-submit-button">Enviar Solicitação</button>
         </form>
       </div>
     </div>

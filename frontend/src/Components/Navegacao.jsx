@@ -56,7 +56,7 @@ const Navbar = () => {
 
             <div className="navbar-center">
                 <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
-                    <li><Link to="/Home" className="nav-link">Home</Link></li>
+                    <li><Link to="/" className="nav-link">Home</Link></li>
                     <li><Link to="/Beneficio" className="nav-link">Benefício</Link></li>
                     <li><Link to="/Servico" className="nav-link">Serviço</Link></li>
                 </ul>

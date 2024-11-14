@@ -3,7 +3,7 @@ from sql import banco
 #from insert_bd import insert,update_state,check_exi
 
 
-ser = serial.Serial('COM4', 115200)
+ser = serial.Serial('COM7', 115200)
 var_com = ''
 var_teste = ''
 while True:

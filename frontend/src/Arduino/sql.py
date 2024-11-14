@@ -2,7 +2,7 @@ import mysql.connector
 
 def banco(dado,device):
     cnx = mysql.connector.connect(user='arduino', password='Senai123',
-                                  host='10.84.10.57',
+                                  localhost='10.84.22.2',
                                   database='arduino')
 
     cursor = cnx.cursor()

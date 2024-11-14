@@ -91,6 +91,13 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f9f9f9;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.contato-form-group textarea {
+  resize: none;
+  height: 300px;
 }
 
 .contato-form-group.full-width {
@@ -100,7 +107,7 @@
 .contato-contact-form button.contato-submit-button {
   width: 100%;
   padding: 12px;
-  font-size: 0.85em; /* Tamanho de fonte reduzido */
+  font-size: 0.85em;
   color: #fff;
   background-color: #54a3f0;
   border: none;
@@ -132,18 +139,22 @@
 
 @media (max-width: 480px) {
   .contato-contact-info .contato-title {
-    font-size: 1em; /* Reduz o tamanho da fonte para telas menores */
+    font-size: 1em;
+    /* Reduz o tamanho da fonte para telas menores */
   }
 
   .contato-contact-info .contato-subtitle {
-    font-size: 1.5em; /* Reduz o tamanho da fonte */
+    font-size: 1.5em;
+    /* Reduz o tamanho da fonte */
   }
 
   .contato-contact-info .contato-description {
-    font-size: 0.85em; /* Ajuste do tamanho da fonte */
+    font-size: 0.85em;
+    /* Ajuste do tamanho da fonte */
   }
 
   .contato-contact-form button.contato-submit-button {
-    font-size: 0.8em; /* Ajuste do tamanho do botão */
+    font-size: 0.8em;
+    /* Ajuste do tamanho do botão */
   }
 }
