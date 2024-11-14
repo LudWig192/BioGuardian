@@ -27,6 +27,7 @@
     width: 100%;
     border-collapse: collapse;
     table-layout: auto;
+    margin-top: 10px;
 }
 
 .custom-table th,
@@ -126,5 +127,29 @@
 
     .custom-table td::before {
         margin-bottom: 5px;
+    }
+}
+
+.table-Agenda {
+    margin-top: 15px;
+}
+
+/* Define o estilo básico do h1 */
+.animated-heading_agenda_medico {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    opacity: 0;
+    margin-top: 40px !important;
+    /* Inicialmente invisível */
+    animation: fadeIn 1s forwards;
+    /* Animação */
+}
+
+/* Animação de fade-in (aparecendo suavemente) */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }

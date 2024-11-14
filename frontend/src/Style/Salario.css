@@ -20,11 +20,10 @@
 .grafico-title-analise {
     font-size: 28px;
     font-weight: bold;
-    color: #54d4f0;
+    color: #6854f0;
     text-align: center;
     flex-grow: 1;
     margin: 0;
-    /* Removido a animação */
 }
 
 .toggle-icon-analise {
@@ -35,7 +34,7 @@
 }
 
 .download-button-analise {
-    background-color: #5472f0;
+    background-color: #54a3f0;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -47,13 +46,13 @@
 }
 
 .download-button-analise:hover {
-    background-color: #5472f0;
+    background-color: #54a3f0;
     transform: scale(1.05);
 }
 
 .period-analise {
     font-size: 16px;
-    color: #6c757d;
+    color: #000000;
     margin: 20px 0;
     text-align: center;
 }
@@ -68,7 +67,7 @@
 
 .analise-salarios-analise h3 {
     font-size: 24px;
-    color: #54d4f0;
+    color: #6854f0;
     margin-bottom: 15px;
     text-align: center;
 }

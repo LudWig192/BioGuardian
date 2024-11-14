@@ -12,7 +12,7 @@
 .painel-medicos-destaque h2 {
     font-size: 28px;
     margin-bottom: 25px;
-    color: #54d4f0;
+    color: #6854f0;
     text-align: center;
     font-weight: bold;
 }
@@ -63,11 +63,11 @@
 .nome-medico-destaque {
     font-weight: bold;
     font-size: 20px;
-    color: #333;
+    color: #000000;
 }
 
 .especialidade-destaque {
-    color: #555;
+    color: #000000;
     font-size: 16px;
     margin-top: 2px;
 }
@@ -81,7 +81,7 @@
 
 .data-destaque {
     font-size: 14px;
-    color: #666;
+    color: #000000;
 }
 
 .status-destaque {
