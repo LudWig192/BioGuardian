@@ -1,90 +1,88 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import '../Style/Contato.css';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import fundo from '../Imagens/fundo.png'; // Importando a imagem
 
-const ContatoForm = () => {
-  const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    mensagem: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.nome || !formData.email || !formData.mensagem) {
-      alert('Por favor, preencha todos os campos.');
-      return;
-    }
-
-    try {
-      await axios.post('http://localhost:3001/contato', formData);
-      alert('Solicitação de contato enviada com sucesso!');
-      setFormData({
-        nome: '',
-        email: '',
-        mensagem: ''
-      });
-    } catch (error) {
-      console.error('Erro na solicitação de contato:', error);
-      alert('Erro ao enviar a solicitação de contato. Verifique o console para mais detalhes.');
-    }
-  };
-
+const ContactForm = () => {
   return (
-    <div className='contato-tudo'>
-      <div className="contato-form-container">
-        <div className="contato-form">
-          <span className="contato-heading">Entre em contato</span>
-          <form onSubmit={handleSubmit}>
-            <input
-              name="nome"
-              placeholder="Nome"
-              type="text"
-              className="contato-input"
-              value={formData.nome}
-              onChange={handleChange}
-            />
-            <input
-              name="email"
-              placeholder="Email ou telefone"
-              type="text"
-              className="contato-input"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            <textarea
-              name="mensagem"
-              placeholder="Escreva aqui e fale o que você precisa"
-              rows="10"
-              cols="30"
-              className="contato-textarea"
-              value={formData.mensagem}
-              onChange={handleChange}
-            />
-            <div className="contato-button-container">
-              <button type="submit" className="contato-send-button">Enviar</button>
-              <div className="contato-reset-button-container">
-                <button
-                  type="button"
-                  className="contato-reset-button"
-                  onClick={() => setFormData({ nome: '', email: '', mensagem: '' })}>
-                  Limpar
-                </button>
-              </div>
-            </div>
-          </form>
+    <div
+      className="contato-contact-container"
+      style={{
+        backgroundImage: `url(${fundo})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="contato-contact-info">
+        <div className="contato-title">
+          <span>Entre em Contato</span>
         </div>
+        <div className="contato-subtitle">
+          <span>Fale Conosco</span>
+        </div>
+        <div className="contato-description">
+          <span>
+            O BioGuardian é um serviço de monitoramento de saúde que usa inteligência artificial para analisar o histórico médico e detectar anomalias. Em emergências, médicos de plantão são enviados para atendimento em sua casa.
+          </span>
+        </div>
+        <div className="contato-info-detail">
+          <span>Qualquer dúvida, estamos à disposição.</span>
+        </div>
+
+        <div className="contato-contact-detail">
+          <FaPhoneAlt className="contato-icon" />
+          <span>+55 11 98765-4321</span>
+        </div>
+        <div className="contato-contact-detail">
+          <FaEnvelope className="contato-icon" />
+          <span>contato@bioguardian.com.br</span>
+        </div>
+        <div className="contato-contact-detail">
+          <FaMapMarkerAlt className="contato-icon" />
+          <span>Avenida Paulista, 1234, São Paulo, SP</span>
+        </div>
+      </div>
+
+      <div className="contato-contact-form">
+        <form>
+          <div className="contato-form-group">
+            <label>Nome Completo *</label>
+            <input type="text" placeholder="Digite seu nome" required />
+          </div>
+          <div className="contato-form-group">
+            <label>Número</label>
+            <input 
+              type="number" 
+              placeholder="Número" 
+              pattern="[0-9]*"  // Apenas números
+              title="Digite apenas números" 
+              required
+            />
+          </div>
+          <div className="contato-form-group">
+            <label>Email *</label>
+            <input 
+              type="email" 
+              placeholder="Seu email" 
+              required 
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" // Regex para garantir o @ no e-mail
+              title="Por favor, insira um e-mail válido (exemplo@dominio.com)" // Mensagem de erro personalizada
+            />
+          </div>
+          <div className="contato-form-group">
+            <label>Assunto *</label>
+            <input type="text" placeholder="Assunto" required />
+          </div>
+          <div className="contato-form-group full-width">
+            <label>Comentários *</label>
+            <textarea placeholder="Comentários" required></textarea>
+          </div>
+          <button type="submit" className="contato-submit-button">Enviar Mensagem</button>
+        </form>
       </div>
     </div>
   );
 };
 
-export default ContatoForm;
+export default ContactForm;
