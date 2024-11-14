@@ -49,7 +49,6 @@ const Navbar = () => {
                     <li><Link to="/Funcionarios" className="nav-link">Funcionarios</Link></li>
                     <li><Link to="/Clientes" className="nav-link">Clientes</Link></li>
                     <li><Link to="/Registros" className="nav-link">Registro</Link></li>
-                    <li><Link to="/Administrador" className="nav-link">Administrador</Link></li>
                 </ul>
             </div>
 

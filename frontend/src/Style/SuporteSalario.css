@@ -7,7 +7,7 @@
 }
 
 .title {
-    color: #6854f0;
+    color: #54d4f0;
     margin-bottom: 20px;
     font-size: 2em;
     font-weight: 700;
@@ -16,14 +16,14 @@
 .description,
 .importance-description,
 .call-to-action {
-    color: #000000;
+    color: #333333;
     line-height: 1.6;
     margin: 10px 0;
 }
 
 .resources-title,
 .importance-title {
-    color: #6854f0;
+    color: #54d4f0;
     margin-top: 25px;
     font-size: 1.6em;
     font-weight: 600;
@@ -32,12 +32,12 @@
 .resources-list {
     list-style-type: disc;
     padding-left: 20px;
-    color: #000000;
+    color: #333333;
 }
 
 .resource-item {
     margin-bottom: 8px;
     padding: 5px;
-    border-left: 4px solid #5472f0;
+    border-left: 4px solid #54a3f0;
     background-color: #f1f8ff;
 }

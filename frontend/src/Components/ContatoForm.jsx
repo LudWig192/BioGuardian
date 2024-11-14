@@ -1,9 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Style/Contato.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import fundo from '../Imagens/fundo.png'; // Importando a imagem
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    nome: '',
+    numero: '',
+    email: '',
+    assunto: '',
+    comentarios: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('URL_DO_SEU_BACKEND', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Mensagem enviada com sucesso!');
+        setFormData({
+          nome: '',
+          numero: '',
+          email: '',
+          assunto: '',
+          comentarios: '',
+        });
+      } else {
+        alert('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar dados:', error);
+      alert('Erro de conexão. Tente novamente.');
+    }
+  };
+
   return (
     <div
       className="contato-contact-container"
@@ -45,38 +91,64 @@ const ContactForm = () => {
       </div>
 
       <div className="contato-contact-form">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="contato-form-group">
             <label>Nome Completo *</label>
-            <input type="text" placeholder="Digite seu nome" required />
+            <input
+              type="text"
+              placeholder="Digite seu nome"
+              name="nome"
+              value={formData.nome}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="contato-form-group">
             <label>Número</label>
-            <input 
-              type="number" 
-              placeholder="Número" 
-              pattern="[0-9]*"  // Apenas números
-              title="Digite apenas números" 
+            <input
+              type="number"
+              placeholder="Número"
+              name="numero"
+              value={formData.numero}
+              onChange={handleChange}
+              pattern="[0-9]*"
+              title="Digite apenas números"
               required
             />
           </div>
           <div className="contato-form-group">
             <label>Email *</label>
-            <input 
-              type="email" 
-              placeholder="Seu email" 
-              required 
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" // Regex para garantir o @ no e-mail
-              title="Por favor, insira um e-mail válido (exemplo@dominio.com)" // Mensagem de erro personalizada
+            <input
+              type="email"
+              placeholder="Seu email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              title="Por favor, insira um e-mail válido (exemplo@dominio.com)"
             />
           </div>
           <div className="contato-form-group">
             <label>Assunto *</label>
-            <input type="text" placeholder="Assunto" required />
+            <input
+              type="text"
+              placeholder="Assunto"
+              name="assunto"
+              value={formData.assunto}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="contato-form-group full-width">
             <label>Comentários *</label>
-            <textarea placeholder="Comentários" required></textarea>
+            <textarea
+              placeholder="Comentários"
+              name="comentarios"
+              value={formData.comentarios}
+              onChange={handleChange}
+              required
+            ></textarea>
           </div>
           <button type="submit" className="contato-submit-button">Enviar Mensagem</button>
         </form>

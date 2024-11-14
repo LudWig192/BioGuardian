@@ -21,49 +21,6 @@ const InfoSection = () => {
           </div>
         </div>
       </div>
-      
-      
-      {/*Cards */}
-      <div className="cards-bannercliente-container"> 
-        <div className="row-bannercliente"> 
-          <div className="col-md-3-bannercliente"> 
-            <div className="info-card-bannercliente"> 
-              <i className="bi bi-clock-history info-icon"></i>
-              <div className="titulo-card-BannerCliente">Monitoramento 24/7</div>
-              <div className="descricao-card-BannerCliente">
-                Acompanhe a saúde da sua família com alertas personalizados, identificando anomalias rapidamente para agir antes que problemas.
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3 col-12">
-            <div className="info-card-bannercliente">
-              <FaUser className="bannerCliente-icon person-icon" />
-              <div className="titulo-card-BannerCliente">Profissionais Dedicados</div>
-              <div className="descricao-card-BannerCliente">
-                Tenha acesso direto a profissionais qualificados para suporte em consultas e orientação médica contínua.
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3 col-12">
-            <div className="info-card-bannercliente">
-              <FaHeartbeat className="bannerCliente-icon heart-icon" />
-              <div className="titulo-card-BannerCliente">Pronto Atendimento</div>
-              <div className="descricao-card-BannerCliente">
-                Para emergências, médicos de plantão são acionados diretamente para o seu local, garantindo o suporte que você precisa.
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3 col-12">
-            <div className="info-card-bannercliente">
-              <FaHospital className="bannerCliente-icon hospital-icon" />
-              <div className="titulo-card-BannerCliente">Tecnologia Avançada</div>
-              <div className="descricao-card-BannerCliente">
-                Monitoramento e suporte com as melhores ferramentas e tecnologias, garantindo segurança e atendimento de ponta.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

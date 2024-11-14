@@ -13,6 +13,7 @@ import TestReports from '../Components/TestReports';
 import Prescriptions from '../Components/Prescrisao';
 import TabelaCorpo from '../Components/TabelaCorpo';
 import FooterMedico from '../Components/Footer-Medico';
+
 //IMPORT DA ESTILIZAÇÃO
 import '../Style/HomeMedico.css';
 

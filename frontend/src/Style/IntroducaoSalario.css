@@ -7,7 +7,7 @@
 }
 
 .introduction-title-visao_geral {
-    color: #6854f0;
+    color: #54d4f0;
     margin-bottom: 15px;
     font-size: 2em;
     font-weight: bold;
@@ -16,13 +16,14 @@
 
 .introduction-text-visao_geral,
 .introduction-note-visao_geral {
-    color: #000000;
+    color: #4a4a4a;
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 1.1em;
     text-align: justify;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     .introduction-container-visao_geral {
         padding: 15px;

@@ -2,26 +2,34 @@
 import React from 'react';
 
 //COMPONENTES
-import UserProfile from '../Components/UserProfile2';
-import Vitals from '../Components/Vitals';
+import Paciente from "../Components/Paciente";
+import Vitals from '../Components/Vital';
 import TestReports from '../Components/TestReports';
-import Prescriptions from '../Components/Prescriptions';
+import Prescriptions from '../Components/Prescrisao';
+import Navbar from '../Components/Navegacao-CCC';
 
 //ESTILIZAÇÃO
-import '../Pages/Style/App.css';
+import '../Style/PerfilCliente.css';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function PerfilCliente() {
   return (
-    <div className="container">
-      <div className="left-panel">
-        <UserProfile />
-      </div>
-      <div className="right-panel">
-        <Vitals />
-        <TestReports />
-        <Prescriptions />
-      </div>
-    </div>
+    <>
+      <Navbar />
+      <Container>
+        <Row>
+          <div className="left-panel">
+            <Paciente />
+          </div>
+        </Row>
+        <Row className="right-panel">
+          <Vitals />
+          <TestReports />
+          <Prescriptions />
+        </Row>
+      </Container>
+    
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-//Lista de Usuarios
+//BIBLIOTECAS
 import React from "react";
 import Banner from "../Components/BannerCliente";
 import Dicas from "../Components/DicasCliente"
@@ -17,14 +17,14 @@ const HomeCliente = () => {
     <>
       <NavbarCCC />
       <Banner />
-      <Dicas />
-      <Cirugia />
-      <Exame />
-      <ExameResultado />
-      <Marcar />
-      <Icons />
-      <Tabela />
-      <FooterCCC />
+      <Dicas />     
+       <Cirugia />
+       <Exame />
+       <ExameResultado />
+      <Marcar /> 
+     <Icons />
+     <Tabela />
+     <FooterCCC />
     </>
   );
 };

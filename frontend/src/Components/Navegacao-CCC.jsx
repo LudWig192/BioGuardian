@@ -33,7 +33,7 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
+ 
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'responsive' : ''}`}>
             <div className="navbar-left">
@@ -63,7 +63,7 @@ const Navbar = () => {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <MenuItem onClick={handleClose} component={Link} to="/perfil">
+                    <MenuItem onClick={handleClose} component={Link} to="/Perfil">
                         <AccountCircleIcon className="dropdown-icon" /> Ver Perfil
                     </MenuItem>
                     <MenuItem onClick={handleClose} component={Link} to="/login">

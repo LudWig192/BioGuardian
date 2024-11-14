@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ResponsiveTable from '../Components/Agenda.jsx';
 import ButtonGroup from '../Components/Botoes.jsx';
-// import SwitchWithIconsAndAvatar from '../Components/Avatar.jsx';
+import SwitchWithIconsAndAvatar from '../Components/Avatar.jsx';
 import NavbarMedico from '../Components/Navegacao-medico';
 import FooterMedico from "../Components/Footer-Medico"
 import '../Style/Agenda.css'
@@ -112,16 +112,15 @@ const Agenda = () => {
 
 
     return (
-        <>
-            <div className='Agenda-tudo'>
-                <div className="App">
-
+        <div className='Agenda-tudo'>
+            <div className="App">
+                <>
                     <NavbarMedico />
-                    {/* <SwitchWithIconsAndAvatar
+                    <SwitchWithIconsAndAvatar
                         notificationCount={notificationCount}
                         latestPatient={latestPatient}
-                    /> */}
-                    <h1 className='animated-heading_agenda_medico'>Agenda Médica</h1>
+                    />
+                    <h1 className='animated-heading'>Agenda Médica</h1>
                     <ButtonGroup
                         onDateRangeChange={handleDateRangeChange}
                         onStatusFilterChange={handleStatusFilterChange}
@@ -134,13 +133,10 @@ const Agenda = () => {
                         onDelete={handleDelete}
                         onAdd={handleAdd}
                     />
-
-
-                </div>
+                </>
+                <FooterMedico />
             </div>
-            <FooterMedico />
-        </>
-
+        </div>
     );
 };
 

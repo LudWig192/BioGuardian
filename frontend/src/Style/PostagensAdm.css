@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    gap: 20px;
 }
 
 .best-post {
@@ -30,32 +29,5 @@
     font-size: 20px;
     font-weight: bold;
     color: #6854f0;
-}
-
-@media (max-width: 1024px) {
-    .best-posts {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .best-post {
-        width: 48%;
-    }
-}
-
-@media (max-width: 768px) {
-    .best-post {
-        width: 48%;
-    }
-}
-
-@media (max-width: 480px) {
-    .best-post {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .best-posts {
-        justify-content: center;
-    }
+    /* Cor verde para destacar */
 }

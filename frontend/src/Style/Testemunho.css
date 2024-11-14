@@ -11,7 +11,7 @@
     font-size: 28px;
     margin-bottom: 30px;
     text-align: center;
-    color: #6854f0;
+    color: #54d4f0;
     font-weight: bold;
 }
 
@@ -48,17 +48,17 @@
 .testemunho-card h3 {
     margin: 10px 0 5px 0;
     font-size: 22px;
-    color: #5472f0;
+    color: #34495e;
 }
 
 .testemunho-card p {
     margin: 5px 0;
-    color: #000000;
+    color: #7f8c8d;
 }
 
 .depoimento {
     font-style: italic;
-    color: #000000;
+    color: #555;
     margin-top: 10px;
 }
 

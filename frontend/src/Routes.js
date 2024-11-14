@@ -1,3 +1,4 @@
+// BIBLIOTECA
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -39,6 +40,9 @@ import RodapeCSC from './Components/Footer.jsx'
 import RodapeMedico from './Components/Footer-Medico.jsx'
 import RodapeAdm from './Components/Footer-adm.jsx'
 
+// Perfil
+import PerfilCliente from './Pages/PerfilCliente.js'
+
 // ??????
 import Interrogacao from './Pages/Secreto.js'
 
@@ -61,6 +65,7 @@ const Rotas = () => {
                                 <Route path="/Unidades" element={<Unidades />} />
                                 <Route path="/Agendamento" element={<Agendamento />} />
                                 <Route path="/Resultados" element={<Resultados />} />
+                                <Route path="/Perfil" element={<PerfilCliente />} />
 
                                 {/* Rotas do medico */}
                                 <Route path="/HomeMedico" element={<HomeMedico />} />
