@@ -24,9 +24,10 @@ const PerfilAdmHospitalar = () => {
                         <GeolocationChart />
                     </div>
                     <BestPosts />
-                    <FooterAdm />
+
                 </div>
             </div>
+            <FooterAdm />
         </>
     );
 };

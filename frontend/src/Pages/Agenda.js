@@ -112,9 +112,10 @@ const Agenda = () => {
 
 
     return (
-        <div className='Agenda-tudo'>
-            <div className="App">
-                <>
+        <>
+            <div className='Agenda-tudo'>
+                <div className="App">
+
                     <NavbarMedico />
                     <SwitchWithIconsAndAvatar
                         notificationCount={notificationCount}
@@ -133,10 +134,14 @@ const Agenda = () => {
                         onDelete={handleDelete}
                         onAdd={handleAdd}
                     />
-                </>
+
+
+                </div>
                 <FooterMedico />
             </div>
-        </div>
+
+        </>
+
     );
 };
 

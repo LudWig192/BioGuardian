@@ -432,6 +432,43 @@ router.get('/documentos', (req, res) => {
   });
 });
 
+
+///////////////////////////////Agendamento//////////////////////////////////
+
+// Rota para listar todos os agendamentos
+router.get('/agendamento', (req, res) => {
+  connection.query('SELECT * FROM agendamento', (err, results) => {
+    if (err) {
+      console.error('Erro ao buscar os registros:', err);
+      return res.status(500).json({ error: 'Erro ao buscar os registros' });
+    }
+    res.json(results);
+  });
+});
+
+// Rota para criar um novo agendamento
+router.post('/agendamento', (req, res) => {
+  const { nome, aniversario, horario, data } = req.body;
+
+  
+  if (!nome || !aniversario || !horario || !data) {
+    return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
+  }
+
+  const query = 'INSERT INTO agendamento (nome, aniversario, horario, data) VALUES (?, ?, ?, ?)';
+  connection.query(query, [nome, aniversario, horario, data], (err, result) => {
+    if (err) {
+      console.error('Erro ao inserir no banco de dados:', err);
+      return res.status(500).json({ error: 'Erro ao salvar o agendamento.' });
+    }
+
+    res.status(201).json({
+      message: 'Agendamento realizado com sucesso!',
+      idAgendamento: result.insertId,
+    });
+  });
+});
+
+
+
 module.exports = router;
-
-
