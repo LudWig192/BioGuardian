@@ -450,7 +450,7 @@ router.get('/agendamento', (req, res) => {
 router.post('/agendamento', (req, res) => {
   const { nome, aniversario, horario, data } = req.body;
 
-  
+
   if (!nome || !aniversario || !horario || !data) {
     return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
   }

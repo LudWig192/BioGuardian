@@ -44,16 +44,8 @@ const Medicos = ({ selectedDate }) => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const currentYear = new Date().getFullYear();
-        const birthYear = new Date(formData.birthDate).getFullYear();
-        const age = currentYear - birthYear;
-
-        if (age < 18) {
-            setErrorMessage('Você deve ter pelo menos 18 anos.');
-            return;
-        }
 
         if (!selectedDate) {
             setErrorMessage('Selecione uma data para a consulta.');
@@ -65,18 +57,36 @@ const Medicos = ({ selectedDate }) => {
         appointmentDate.setHours(appointmentTime[0]);
         appointmentDate.setMinutes(appointmentTime[1]);
 
-        if (appointmentDate < new Date()) {
-            setErrorMessage('O horário da consulta deve ser dentro dos horarios médicos: 08h às 17h.');
-            return;
+        const formattedDate = appointmentDate.toISOString().split('T')[0];
+        const formattedTime = appointmentDate.toISOString().split('T')[1].substring(0, 5);
+
+        console.log("Formatted Date:", formattedDate);
+
+        try {
+            const response = await fetch('http://localhost:3001/agendamento', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nome: formData.fullName,
+                    aniversario: formData.birthDate,
+                    horario: formattedTime,
+                    data: formattedDate,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setSuccessMessage('Consulta agendada com sucesso!');
+            } else {
+                setErrorMessage(data.error || 'Erro ao agendar a consulta.');
+            }
+        } catch (error) {
+            setErrorMessage('Erro ao agendar a consulta. Tente novamente mais tarde.');
         }
 
-        const hour = appointmentDate.getHours();
-        if (hour < 8 || hour > 17) {
-            setErrorMessage('Não é possível agendar nesse horário. O horário deve estar entre 08:00 e 17:00.');
-            return;
-        }
-
-        setSuccessMessage('Consulta agendada com sucesso!');
         setFormData({
             fullName: '',
             birthDate: '',
@@ -84,7 +94,6 @@ const Medicos = ({ selectedDate }) => {
         });
         setErrorMessage('');
     };
-
     return (
         <div className='medicos-tudo'>
             <div className="doctors-list-container">
@@ -120,7 +129,7 @@ const Medicos = ({ selectedDate }) => {
                             <h3>Agendar Consulta com {selectedDoctor.name}</h3>
                             <p><strong>Especialidade:</strong> {selectedDoctor.specialty}</p>
                             <p>{selectedDoctor.bio}</p>
-                            {selectedDate && <p><strong>Data para uma consulta:</strong> {selectedDate.toLocaleDateString()}</p>}
+                            {selectedDate && <p><strong>Data selecionada:</strong> {selectedDate.toLocaleDateString()}</p>}
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     <label>Nome Completo:</label>
@@ -146,7 +155,6 @@ const Medicos = ({ selectedDate }) => {
                 )}
             </div>
         </div>
-
     );
 };
 
