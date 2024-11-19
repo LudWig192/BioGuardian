@@ -16,7 +16,6 @@
     padding: 20px;
     border-radius: 8px;
     width: 90%;
-    max-width: 600px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #000000;
@@ -25,6 +24,7 @@
     padding: 20px;
     max-height: 80vh;
     overflow-y: auto;
+
 }
 
 .modal-content h2 {
