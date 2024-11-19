@@ -63,6 +63,7 @@ const Medicos = ({ selectedDate }) => {
         console.log("Formatted Date:", formattedDate);
 
         try {
+            // Primeiro, insere o agendamento na tabela agendamento
             const response = await fetch('http://localhost:3001/agendamento', {
                 method: 'POST',
                 headers: {
@@ -80,6 +81,26 @@ const Medicos = ({ selectedDate }) => {
 
             if (response.ok) {
                 setSuccessMessage('Consulta agendada com sucesso!');
+
+                // Agora insere na tabela agenda com status 'Pendente' e procedimento como specialty
+                const agendamentoId = data.idAgendamento; // ID do agendamento inserido
+
+                const agendaResponse = await fetch('http://localhost:3001/agenda', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        agendamento: formattedDate, // data do agendamento
+                        paciente: formData.fullName,
+                        status: 'Pendente', // Status fixo 'Pendente'
+                        procedimentos: selectedDoctor.specialty, // Procedimento como specialty
+                        tipoPlano: 'Padrão', // Você pode definir o tipo de plano aqui ou em outra parte do sistema
+                    }),
+                });
+
+                const agendaData = await agendaResponse.json();
+                if (!agendaResponse.ok) {
+                    setErrorMessage(agendaData.error || 'Erro ao agendar a consulta.');
+                }
             } else {
                 setErrorMessage(data.error || 'Erro ao agendar a consulta.');
             }
@@ -94,6 +115,7 @@ const Medicos = ({ selectedDate }) => {
         });
         setErrorMessage('');
     };
+
     return (
         <div className='medicos-tudo'>
             <div className="doctors-list-container">
