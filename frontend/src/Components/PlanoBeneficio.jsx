@@ -1,11 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStethoscope, faHeartbeat, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import '../Style/PlanoBeneficio.css';
 
 const PricingPlans = () => {
   return (
-    <div className="PlanoCliente-PricingPlans"> 
+    <div className="PlanoCliente-PricingPlans">
       <div className="PlanoBeneficio-title">Planos de Saúde BioGuardian</div>
       <div className="PlanoBeneficio-cards">
         <div className="PricingCard-PlanoBeneficio">
@@ -36,7 +37,9 @@ const PricingPlans = () => {
               Consultas online ilimitadas
             </div>
           </div>
-          <button className="Card-button-PlanoBeneficio">Assine Agora</button>
+          <Link to="/Cadastro">
+            <button className="Card-button-PlanoBeneficio">Assine Agora</button>
+          </Link>
         </div>
         <div className="PricingCard-PlanoBeneficio">
           <div className="Card-header-PlanoBeneficio">
@@ -70,7 +73,9 @@ const PricingPlans = () => {
               Atendimento domiciliar em emergências
             </div>
           </div>
-          <button className="Card-button-PlanoBeneficio">Assine Agora</button>
+          <Link to="/Cadastro">
+            <button className="Card-button-PlanoBeneficio">Assine Agora</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -75,7 +75,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-13 22:59:03
+-- Dump completed on 2024-11-19  1:24:48
 CREATE DATABASE  IF NOT EXISTS `bioguardian` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `bioguardian`;
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
@@ -110,7 +110,7 @@ CREATE TABLE `agenda` (
   `procedimentos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tipoPlano` enum('Padrão','Premium','Básico') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`idAgenda`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +119,7 @@ CREATE TABLE `agenda` (
 
 LOCK TABLES `agenda` WRITE;
 /*!40000 ALTER TABLE `agenda` DISABLE KEYS */;
-INSERT INTO `agenda` VALUES (96,'2027-07-17','pedro','Cancelado','Consulta','Premium'),(97,'2026-06-26','Rodrigo','Pendente','Consulta','Padrão'),(98,'2025-05-15','Vinicius','Confirmado','Consulta','Premium'),(99,'2024-04-04','Gleison','Cancelado','Consulta','Básico');
+INSERT INTO `agenda` VALUES (96,'2027-07-17','pedro','Cancelado','Consulta','Premium'),(97,'2026-06-26','Rodrigo','Pendente','Consulta','Padrão'),(98,'2025-05-15','Vinicius','Confirmado','Consulta','Premium'),(99,'2024-04-04','Gleison','Cancelado','Consulta','Básico'),(100,'2024-11-20','Carlos','Pendente','Cardiologia','Padrão'),(101,'2024-11-20','Joao','Pendente','Dermatologia','Padrão');
 /*!40000 ALTER TABLE `agenda` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,12 +132,12 @@ DROP TABLE IF EXISTS `agendamento`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `agendamento` (
   `idAgendamento` int NOT NULL AUTO_INCREMENT,
-  `nome` text COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `aniversario` date NOT NULL,
   `horario` time NOT NULL,
   `data` date NOT NULL,
   PRIMARY KEY (`idAgendamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +146,7 @@ CREATE TABLE `agendamento` (
 
 LOCK TABLES `agendamento` WRITE;
 /*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
-INSERT INTO `agendamento` VALUES (1,'Carlos','1999-02-10','18:02:00','2024-11-15');
+INSERT INTO `agendamento` VALUES (1,'Carlos','1999-02-10','18:02:00','2024-11-15'),(2,'Carlos','2000-02-20','21:08:00','2024-11-17'),(3,'Carlos','2000-02-10','18:02:00','2024-11-20'),(4,'Joao','0200-02-15','11:50:00','2024-11-20');
 /*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +165,7 @@ CREATE TABLE `cadastros` (
   `role` enum('admin','medico','comum') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`idCadastro`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `cadastros` (
 
 LOCK TABLES `cadastros` WRITE;
 /*!40000 ALTER TABLE `cadastros` DISABLE KEYS */;
-INSERT INTO `cadastros` VALUES (1,'Admin','Adm@bioguardian.com','admin123','admin'),(2,'Medico','Medico@bioguardian.com','Medico123','medico'),(3,'Claudio','Claudio@gmail.com','Claudio123','comum'),(4,'Carlos','Carlos@gmai.com','Carlos123','comum'),(5,'Joao','Joao@gmail.com','123456','comum'),(6,'test','test@gmail.com','test123','comum'),(7,'julia','cleitinha@gmail.com','123456','comum');
+INSERT INTO `cadastros` VALUES (1,'Admin','Adm@bioguardian.com','admin123','admin'),(2,'Medico','Medico@bioguardian.com','Medico123','medico'),(3,'Claudio','Claudio@gmail.com','Claudio123','comum'),(4,'Carlos','Carlos@gmai.com','Carlos123','comum'),(5,'Joao','Joao@gmail.com','123456','comum'),(6,'test','test@gmail.com','test123','comum'),(7,'julia','cleitinha@gmail.com','123456','comum'),(8,'Nicolas','Nicolas@gmail.com','Nicolas123','comum');
 /*!40000 ALTER TABLE `cadastros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,8 +188,8 @@ DROP TABLE IF EXISTS `contato`;
 CREATE TABLE `contato` (
   `idContato` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email_ou_telefone` varchar(250) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `mensagem` varchar(1000) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email_ou_telefone` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `mensagem` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`idContato`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -213,10 +213,10 @@ DROP TABLE IF EXISTS `documentos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `documentos` (
   `idDocumento` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(300) COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tempo` date DEFAULT NULL,
   PRIMARY KEY (`idDocumento`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,6 +225,7 @@ CREATE TABLE `documentos` (
 
 LOCK TABLES `documentos` WRITE;
 /*!40000 ALTER TABLE `documentos` DISABLE KEYS */;
+INSERT INTO `documentos` VALUES (24,'Minecraft.txt','2024-11-17');
 /*!40000 ALTER TABLE `documentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,7 +243,7 @@ CREATE TABLE `funcionarios` (
   `numeroRegistro` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `horarioTrabalho` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `em_trabalho` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `em_trabalho` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`idFuncionario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -291,4 +292,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-13 22:59:03
+-- Dump completed on 2024-11-19  1:24:49
