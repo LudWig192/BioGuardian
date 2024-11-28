@@ -16,17 +16,17 @@ const DateHeader = ({ onSelectDay }) => {
 
     const handleDayClick = (day) => {
         setSelectedDay(day);
-        onSelectDay(`${day}/11/2024`);
+        onSelectDay(`${day}/11/2024`);  // Corrigido para interpolação correta
     };
 
     return (
-        <div className="date-header">
+        <div className="date-header registros_exames">
             <h3>Novembro 2024</h3>
-            <div className="day-buttons">
+            <div className="day-buttons registros_exames">
                 {days.map(({ day, label }) => (
                     <button
                         key={day}
-                        className={day === selectedDay ? "selected-day" : "day"}
+                        className={day === selectedDay ? "selected-day registros_exames" : "day registros_exames"}
                         onClick={() => handleDayClick(day)}
                     >
                         <div>{day}</div>

@@ -1,73 +1,73 @@
-.calendario-tudo{
+.calendario-tudo_registro_examesss {
     display: flex;
     flex-direction: column;
     font-family: 'Arial', sans-serif;
 }
 
-.custom-calendar-wrapper {
-    max-width: 100%; 
-    width: 90%; 
+.custom-calendar-wrapper_registro_examesss {
+    max-width: 100%;
+    width: 90%;
     margin: 20px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid #e0e0e0; 
+    border: 1px solid #e0e0e0;
 }
 
-.custom-calendar-header {
+.custom-calendar-header_registro_examesss {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     margin-bottom: 15px;
 }
 
-.custom-calendar-title {
-    font-size: 1.8em; 
+.custom-calendar-title_registro_examesss {
+    font-size: 1.8em;
     margin: 0 15px;
     font-weight: bold;
-    color: #0056b3; 
+    color: #0056b3;
 }
 
-.nav-button {
+.nav-button_registro_examesss {
     cursor: pointer;
-    padding: 8px 12px; 
+    padding: 8px 12px;
     border: none;
     border-radius: 6px;
-    background-color: #54a3f0; 
+    background-color: #54a3f0;
     color: white;
     font-size: 1em;
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.nav-button:hover {
+.nav-button_registro_examesss:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
 
-.custom-calendar-grid {
+.custom-calendar-grid_registro_examesss {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
 }
 
-.custom-day {
+.custom-day_registro_examesss {
     text-align: center;
     padding: 14px;
     border-radius: 10px;
-    background-color: #ecf0f1; 
+    background-color: #ecf0f1;
     cursor: pointer;
-    font-size: 1.1em; 
+    font-size: 1.1em;
     min-height: 60px;
     transition: background-color 0.3s, transform 0.2s;
     border: 1px solid #bdc3c7;
 }
 
-.custom-day:hover {
-    background-color: #d1d1d1; 
+.custom-day_registro_examesss:hover {
+    background-color: #d1d1d1;
     transform: scale(1.05);
 }
 
-.weekday-header {
+.weekday-header_registro_examesss {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     font-weight: bold;
@@ -75,32 +75,32 @@
     margin-bottom: 10px;
 }
 
-.weekday {
+.weekday_registro_examesss {
     text-align: center;
-    padding: 8px; 
+    padding: 8px;
     background-color: #3498db;
     color: white;
     border-radius: 5px;
-    font-size: 1em; 
+    font-size: 1em;
 }
 
 /* responsividade */
 @media (max-width: 768px) {
-    .custom-calendar-wrapper {
+    .custom-calendar-wrapper_registro_examesss {
         width: 95%;
         padding: 10px;
     }
 
-    .custom-calendar-grid {
-        grid-template-columns: repeat(7, 1fr)
+    .custom-calendar-grid_registro_examesss {
+        grid-template-columns: repeat(7, 1fr);
     }
 
-    .custom-day {
+    .custom-day_registro_examesss {
         font-size: 1em;
         padding: 10px;
     }
 
-    .nav-button {
+    .nav-button_registro_examesss {
         font-size: 1em;
         padding: 8px 10px;
     }

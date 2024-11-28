@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 .comparativo-beneficios {
+    width: 100%;
     padding: 40px;
     border-radius: 10px;
     margin: 20px 0;
@@ -14,7 +15,7 @@
     font-size: 28px;
     margin-bottom: 30px;
     text-align: center;
-    color: #5472f0;
+    color: #6854f0;
     font-weight: 700;
 }
 
@@ -29,6 +30,7 @@ td {
     padding: 15px;
     text-align: left;
     border: 1px solid #e2e2e2;
+    word-wrap: break-word;
 }
 
 th {
@@ -36,11 +38,12 @@ th {
     color: #5472f0;
     font-weight: 600;
     text-align: center;
+    font-size: 18px;
 }
 
 td {
     background-color: #ffffff;
-    color: #34495e;
+    color: #000000;
 }
 
 td:hover {
@@ -54,7 +57,7 @@ ul {
 }
 
 .beneficio-item {
-    color: #34495e;
+    color: #000000;
     margin: 5px 0;
     position: relative;
     padding-left: 1.5em;
@@ -69,44 +72,121 @@ ul {
     font-size: 18px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .beneficios-table {
-        display: block;
+        width: 100%;
         overflow-x: auto;
     }
 
     th,
     td {
-        display: block;
-        border: none;
-        padding: 10px;
-        position: relative;
+        padding: 12px;
+        font-size: 16px;
     }
 
     th {
-        background-color: transparent;
+        font-size: 16px;
     }
 
-    td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        font-weight: bold;
-        color: #34495e;
+    td {
+        font-size: 16px;
+    }
+
+    .hospital-column {
+        width: 30%;
+    }
+
+    .salario-column {
+        width: 25%;
+    }
+
+    .beneficios-column {
+        width: 45%;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .comparativo-beneficios {
         padding: 20px;
     }
 
-    .comparativo-beneficios h2 {
-        font-size: 24px;
+    .beneficios-table {
+        width: 100%;
+        overflow-x: auto;
     }
 
     th,
     td {
         padding: 10px;
+        font-size: 14px;
+    }
+
+    .hospital-column,
+    .salario-column,
+    .beneficios-column {
+        width: auto;
+        display: block;
+        text-align: left;
+    }
+
+    .hospital-column {
+        margin-bottom: 10px;
+    }
+
+    .salario-column {
+        margin-bottom: 10px;
+    }
+
+    .beneficios-column {
+        margin-bottom: 10px;
+    }
+
+    .beneficio-item {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .comparativo-beneficios {
+        padding: 15px;
+    }
+
+    .comparativo-beneficios h2 {
+        font-size: 22px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 12px;
+    }
+
+    .hospital-column,
+    .salario-column,
+    .beneficios-column {
+        width: auto;
+        display: block;
+        text-align: left;
+    }
+
+    .hospital-column,
+    .salario-column {
+        margin-bottom: 10px;
+    }
+
+    .beneficios-column {
+        margin-bottom: 10px;
+    }
+
+    .beneficio-item {
+        font-size: 12px;
     }
 }

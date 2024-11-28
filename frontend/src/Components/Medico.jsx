@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Style/Medicos.css';
 
 const Medicos = ({ selectedDate }) => {
@@ -63,7 +63,6 @@ const Medicos = ({ selectedDate }) => {
         console.log("Formatted Date:", formattedDate);
 
         try {
-            // Primeiro, insere o agendamento na tabela agendamento
             const response = await fetch('http://localhost:3001/agendamento', {
                 method: 'POST',
                 headers: {
@@ -81,26 +80,6 @@ const Medicos = ({ selectedDate }) => {
 
             if (response.ok) {
                 setSuccessMessage('Consulta agendada com sucesso!');
-
-                // Agora insere na tabela agenda com status 'Pendente' e procedimento como specialty
-                const agendamentoId = data.idAgendamento; // ID do agendamento inserido
-
-                const agendaResponse = await fetch('http://localhost:3001/agenda', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        agendamento: formattedDate, // data do agendamento
-                        paciente: formData.fullName,
-                        status: 'Pendente', // Status fixo 'Pendente'
-                        procedimentos: selectedDoctor.specialty, // Procedimento como specialty
-                        tipoPlano: 'Padrão', // Você pode definir o tipo de plano aqui ou em outra parte do sistema
-                    }),
-                });
-
-                const agendaData = await agendaResponse.json();
-                if (!agendaResponse.ok) {
-                    setErrorMessage(agendaData.error || 'Erro ao agendar a consulta.');
-                }
             } else {
                 setErrorMessage(data.error || 'Erro ao agendar a consulta.');
             }
@@ -116,12 +95,27 @@ const Medicos = ({ selectedDate }) => {
         setErrorMessage('');
     };
 
+    // Bloqueia/desbloqueia o scroll quando o modal abrir/fechar
+    useEffect(() => {
+        if (modalOpen) {
+            // Bloqueia o scroll da página
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Restaura o scroll da página
+            document.body.style.overflow = 'auto';
+        }
+        // Cleanup ao desmontar o componente
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [modalOpen]);  // Dispara sempre que o modalOpen mudar
+
     return (
-        <div className='medicos-tudo'>
-            <div className="doctors-list-container">
+        <div className='medicos-tudoagendamentoooss'>
+            <div className="doctors-list-containeragendamentoooss">
                 <h2>Médicos</h2>
-                <div className="doctors-scroll">
-                    <table className="doctors-table">
+                <div className="doctors-scrollagendamentoooss">
+                    <table className="doctors-tableagendamentoooss">
                         <thead>
                             <tr>
                                 <th>Foto</th>
@@ -134,11 +128,11 @@ const Medicos = ({ selectedDate }) => {
                             {doctorsData.map((doctor, index) => (
                                 <tr key={index} onClick={() => handleOpenModal(doctor)}>
                                     <td>
-                                        <img src={doctor.photo} alt={doctor.name} className="doctor-photo" />
+                                        <img src={doctor.photo} alt={doctor.name} className="doctor-photoagendamentoooss" />
                                     </td>
                                     <td>{doctor.name}</td>
                                     <td>{doctor.specialty}</td>
-                                    <td className="doctor-score">{doctor.score}</td>
+                                    <td className="doctor-scoreagendamentoooss">{doctor.score}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -146,8 +140,8 @@ const Medicos = ({ selectedDate }) => {
                 </div>
 
                 {modalOpen && (
-                    <div className="modal-overlay">
-                        <div className="modal-content">
+                    <div className="modal-overlayagendamentoooss">
+                        <div className="modal-contentagendamentoooss">
                             <h3>Agendar Consulta com {selectedDoctor.name}</h3>
                             <p><strong>Especialidade:</strong> {selectedDoctor.specialty}</p>
                             <p>{selectedDoctor.bio}</p>
@@ -165,13 +159,13 @@ const Medicos = ({ selectedDate }) => {
                                     <label>Horário da Consulta:</label>
                                     <input type="time" name="appointmentTime" value={formData.appointmentTime} onChange={handleChange} required />
                                 </div>
-                                <div className="modal-buttons">
+                                <div className="modal-buttonsagendamentoooss">
                                     <button type="submit">Agendar Consulta</button>
                                     <button type="button" onClick={handleCloseModal}>Fechar</button>
                                 </div>
                             </form>
-                            {successMessage && <p className="success-message">{successMessage}</p>}
-                            {errorMessage && <p className="error-message">{errorMessage}</p>}
+                            {successMessage && <p className="success-messageagendamentoooss">{successMessage}</p>}
+                            {errorMessage && <p className="error-messageagendamentoooss">{errorMessage}</p>}
                         </div>
                     </div>
                 )}

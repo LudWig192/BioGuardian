@@ -6,12 +6,12 @@
   flex-wrap: wrap; /* Permite que os elementos fiquem em colunas no mobile */
 }
 
-.left-panel {
+/* .left-panel {
   flex: 1;
-}
+} */
 
 .right-panel {
-  flex: 2;
+  /* flex: 2; */
   display: flex;
   flex-direction: column;
   gap: 20px;

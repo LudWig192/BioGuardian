@@ -4,7 +4,7 @@
 
 .BannerServiço__imagem {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   color: white;
@@ -14,34 +14,11 @@
 
 .BannerServiço__imagem-background {
   width: 100%;
-  height: auto;
-  position: absolute;
+  height: 100%;
+  object-fit: cover; 
   top: 0;
   left: 0;
   z-index: 0;
-}
-
-.BannerServiço__imagem-content {
-  position: relative;
-  z-index: 1;
-  padding: 50px;
-  max-width: 50%;
-  text-align: left;
-  text-align: justify ;
-}
-
-.BannerServiço__title {
-  font-size: 48px;
-  margin-bottom: 10px; 
-  text-align: left; 
-}
-
-.BannerServiço__description {
-  font-size: 20px;
-  margin-top: 10px; 
-  margin-bottom: 20px; 
-  text-align: justify; 
-  line-height: 1.5;
 }
 
 .BannerServiço__info-section {
@@ -51,6 +28,7 @@
   position: relative;
   width: 80%;
   margin: 40px auto 0;
+  z-index: 1;
 }
 
 .BannerServiço__info-card {
@@ -61,6 +39,11 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.BannerServiço__info-card:hover {
+  transform: translateY(-5px);
 }
 
 .BannerServiço__card-icon {
@@ -68,41 +51,50 @@
   margin-bottom: 28px;
   color: #54a3f0;
 }
+
 .BannerServiço__card-title {
-  font-size: 1.25rem; 
-  height: 50px; 
+  font-size: 1.25rem;
+  height: 50px;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
-  margin-bottom: 10px; 
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
   color: #54a3f0;
   font-weight: bold;
 }
-
 
 .BannerServiço__hours, 
 .BannerServiço__emergency-contact {
   font-size: 0.9rem;
   margin: 0;
-
 }
 
-/* responsividade */
+
+
 @media (max-width: 1024px) {
-  .BannerServiço__imagem-content {
-    max-width: 70%;
-    margin-left: 10%; 
-    text-align: left; 
+  .BannerServiço__imagem {
+    height: 60vh; 
   }
 
-  .BannerServiço__title {
-    font-size: 2.5rem;
-    text-align: left;
+  .BannerServiço__info-section {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
   }
 
-  .BannerServiço__description {
-    font-size: 1.1rem;
-    text-align: justify; 
+  .BannerServiço__info-card {
+    width: 90%;
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  .BannerServiço__card-title {
+    font-size: 1.5rem;
+  }
+
+  .BannerServiço__hours {
+    font-size: 1rem;
   }
 }
 
@@ -113,18 +105,11 @@
     justify-content: center;
   }
 
-  .BannerServiço__imagem-content {
-    max-width: 90%; 
-    padding: 20px;
-    margin: 0 auto;
-    text-align: left; 
-  }
-
   .BannerServiço__info-section {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 20px; 
+    margin-top: 20px;
   }
 
   .BannerServiço__info-card {
@@ -133,36 +118,39 @@
     padding: 15px;
   }
 
-  .BannerServiço__title {
-    font-size: 2rem;
-    text-align: left; 
+  .BannerServiço__card-title {
+    font-size: 1.25rem;
+    text-align: center;
   }
 
-  .BannerServiço__description {
+  .BannerServiço__hours {
     font-size: 1rem;
-    line-height: 1.4;
-    text-align: justify; 
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .BannerServiço__imagem-content {
-    padding: 10px;
+  .BannerServiço__imagem-background {
+    width: 100%;
+    height: 100%;
   }
 
-  .BannerServiço__title {
-    font-size: 1.8rem;
-    text-align: left; 
-  }
-
-  .BannerServiço__description {
-    font-size: 0.9rem;
-    line-height: 1.3;
-    text-align: justify;
+  .BannerServiço__info-section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
   }
 
   .BannerServiço__info-card {
     width: 95%;
     margin: 10px 0;
+  }
+
+  .BannerServiço__card-title {
+    font-size: 1rem;
+  }
+
+  .BannerServiço__hours {
+    font-size: 0.9rem;
   }
 }

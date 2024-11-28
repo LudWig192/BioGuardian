@@ -1,4 +1,3 @@
-// src/Components/CalendarioRegistro.js
 import React, { useState } from 'react';
 import '../Style/CalendarioRegistros.css';
 
@@ -22,22 +21,22 @@ const CustomCalendar = ({ onSelectDay }) => {
 
     const handleDayClick = (day) => {
         setSelectedDay(day);
-        const selectedDate = `${day}/11/2024`; // Ajusta o formato da data
-        onSelectDay(selectedDate); // Atualiza a data no Dashboard
+        const selectedDate = `${day}/11/2024`;  // Corrigido aqui para interpolar a string corretamente
+        onSelectDay(selectedDate); 
     };
 
     return (
-        <div className='calendario-tudo'>
-            <div className="custom-calendar-wrapper">
-                <div className="custom-calendar-header">
-                    <button className="nav-button" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1))}>{'<'}</button>
-                    <div className="custom-calendar-title">{currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}</div>
-                    <button className="nav-button" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1))}>{'>'}</button>
+        <div className='calendario-tudo_registro_examesss'>
+            <div className="custom-calendar-wrapper_registro_examesss">
+                <div className="custom-calendar-header_registro_examesss">
+                    <button className="nav-button_registro_examesss" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1))}>{'<'}</button>
+                    <div className="custom-calendar-title_registro_examesss">{currentDate.toLocaleString('default', { month: 'long' })} {currentDate.getFullYear()}</div>
+                    <button className="nav-button_registro_examesss" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1))}>{'>'}</button>
                 </div>
-                <div className="custom-calendar-grid">
+                <div className="custom-calendar-grid_registro_examesss">
                     {getDaysArray().map(day => (
                         <div
-                            className={`custom-day ${selectedDay === day ? 'custom-selected-day' : ''}`}
+                            className={`custom-day_registro_examesss ${selectedDay === day ? 'custom-selected-day_registro_examesss' : ''}`}  // Corrigido aqui para interpolar a string de classe corretamente
                             key={day}
                             onClick={() => handleDayClick(day)}
                         >

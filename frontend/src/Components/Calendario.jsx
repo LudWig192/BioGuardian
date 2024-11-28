@@ -4,8 +4,7 @@ import Modal from "react-modal";
  
 // IMPORT ESTILIZAÇÃO
 import "../Style/CabecalhoMEDICO.css";
- 
-// Função para gerar os dias da semana a partir de uma data de início
+
 const generateDaysOfWeek = (startDate) => {
     const daysInWeek = 7;
     return Array.from({ length: daysInWeek }, (_, i) => {

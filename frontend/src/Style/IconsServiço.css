@@ -1,5 +1,5 @@
 .section-servicoicons {
-  padding: 300px 0;
+  padding: 160px 0;
   background-color: #f9f9f9;
   text-align: center;
 }
@@ -51,23 +51,31 @@
   justify-content: center;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
+  .section-servicoicons {
+    padding: 0px 0;  
+  }
+
   .col-md-4-servicoicons {
     max-width: 50%;
     flex: 0 0 50%;
+    padding: 10px;  
   }
 
   .titulo-servicoicons {
     font-size: 22px;
+    margin-bottom: 20px;  
   }
 
   .font-servicoicons {
     font-size: 18px;
+    margin-bottom: 6px;  
   }
 
   .descricao-servicoicons {
     font-size: 14px;
+    margin-bottom: 8px; 
   }
 
   .icon-xlg-servicoicons {
@@ -76,21 +84,29 @@
 }
 
 @media (max-width: 576px) {
+  .section-servicoicons {
+     /* padding: 100px 0;    */
+  }
+
   .col-md-4-servicoicons {
     max-width: 100%;
     flex: 0 0 100%;
+    padding: 5px; 
   }
 
   .titulo-servicoicons {
     font-size: 20px;
+    margin-bottom: 15px;  
   }
 
   .font-servicoicons {
     font-size: 16px;
+    margin-bottom: 5px;  
   }
 
   .descricao-servicoicons {
     font-size: 14px;
+    margin-bottom: 5px;
   }
 
   .icon-xlg-servicoicons {

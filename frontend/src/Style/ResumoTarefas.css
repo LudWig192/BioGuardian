@@ -1,11 +1,11 @@
-.task-summary-container {
+.task-summary-container_registro_exames_paciente {
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 20px;
 }
 
-.task-summary-title {
+.task-summary-title_registro_exames_paciente {
     font-size: 1.5em;
     margin-bottom: 15px;
     color: #2c3e50;
@@ -13,12 +13,12 @@
     text-align: center;
 }
 
-.task-status-box {
+.task-status-box_registro_exames_paciente {
     display: flex;
     justify-content: space-between;
 }
 
-.task-status-item {
+.task-status-item_registro_exames_paciente {
     flex: 1;
     margin: 10px;
     padding: 15px;
@@ -29,31 +29,31 @@
     min-width: 120px;
 }
 
-.task-status-item:hover {
+.task-status-item_registro_exames_paciente:hover {
     transform: scale(1.05);
 }
 
-.task-status-pending {
+.task-status-pending_registro_exames_paciente {
     background-color: #f0f4f8;
     color: #7f8c8d;
 }
 
-.task-status-completed {
+.task-status-completed_registro_exames_paciente {
     background-color: #d5e8d4;
     color: #3e8e41;
 }
 
-.task-status-cancelled {
+.task-status-cancelled_registro_exames_paciente {
     background-color: #f9d6d5;
     color: #c0392b;
 }
 
 @media (max-width: 768px) {
-    .task-status-box {
+    .task-status-box_registro_exames_paciente {
         flex-wrap: wrap; 
     }
 
-    .task-status-item {
+    .task-status-item_registro_exames_paciente {
         margin: 10px 0; 
         width: calc(33.33% - 20px); 
     }

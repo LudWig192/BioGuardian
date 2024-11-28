@@ -21,18 +21,6 @@ const examesPorDia = {
         { id: 11, title: "Eletrocardiograma", time: "10:30", doctor: "Dr. João Silva", status: "Cancelado", img: "https://via.placeholder.com/50" },
         { id: 12, title: "Teste de Esforço", time: "11:30", doctor: "Dr. Ana Santos", status: "Aguardando Resultados", img: "https://via.placeholder.com/50" },
     ],
-    "4/11/2024": [
-        { id: 13, title: "Raio-X", time: "08:00", doctor: "Dr. Carlos Oliveira", status: "Resultado Disponível", img: "https://via.placeholder.com/50" },
-        { id: 14, title: "Tomografia", time: "09:30", doctor: "Dra. Ana Costa", status: "Cancelado", img: "https://via.placeholder.com/50" },
-        { id: 15, title: "Ultrassonografia", time: "10:30", doctor: "Dr. Pedro Almeida", status: "Aguardando Resultados", img: "https://via.placeholder.com/50" },
-        { id: 16, title: "Eletrocardiograma", time: "11:00", doctor: "Dr. Thiago Mendes", status: "Resultado Disponível", img: "https://via.placeholder.com/50" },
-    ],
-    "5/11/2024": [
-        { id: 17, title: "Exame de Sangue", time: "08:30", doctor: "Dr. João Silva", status: "Resultado Disponível", img: "https://via.placeholder.com/50" },
-        { id: 18, title: "Teste de Esforço", time: "09:00", doctor: "Dr. Maria Oliveira", status: "Cancelado", img: "https://via.placeholder.com/50" },
-        { id: 19, title: "Ressonância Magnética", time: "10:00", doctor: "Dr. Ana Santos", status: "Aguardando Resultados", img: "https://via.placeholder.com/50" },
-        { id: 20, title: "Raio-X", time: "11:30", doctor: "Dr. Carlos Oliveira", status: "Resultado Disponível", img: "https://via.placeholder.com/50" },
-    ],
 };
 
 const ListaDeTarefa = ({ selectedDate, onExamesFiltrados }) => {
@@ -48,43 +36,62 @@ const ListaDeTarefa = ({ selectedDate, onExamesFiltrados }) => {
     }, [filter, selectedDate, examesDoDia, onExamesFiltrados]);
 
     return (
-        <div className="exam-list">
-            <h2 className="exam-list-title">Registro de Exames para {selectedDate}</h2>
+        <div className="exam-list-registros_examess">
+            <h2 className="exam-list-title-registros_examess">
+                Registro de Exames para {selectedDate}
+            </h2>
 
             <input
                 type="text"
                 placeholder="Filtrar exames..."
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="filter-input"
+                className="filter-input-registros_examess"
             />
 
             {examesDoDia.length === 0 ? (
-                <p>Nenhum exame encontrado.</p>
+                <p className="no-exams-message">Nenhum exame encontrado.</p>
             ) : (
                 <>
-                    {examesDoDia.filter(exame => exame.status === "Cancelado").map(exame => (
-                        <div className="exam-item-container" key={exame.id}>
-                            <img className="exam-item-icon" src={exame.img} alt={exame.title} />
-                            <div className="exam-details">
-                                <h4 className="exam-title">{exame.title}</h4>
-                                <p className="exam-info">{`${selectedDate} - ${exame.time} | ${exame.doctor}`}</p>
+                    {examesDoDia.map(exame => (
+                        <div
+                            className={`exam-item-container-registros_examess ${
+                                exame.status === "Cancelado"
+                                    ? "status-cancelado-registros_examess"
+                                    : ""
+                            }`}
+                            key={exame.id}
+                        >
+                            <img
+                                className="exam-item-icon-registros_examess"
+                                src={exame.img}
+                                alt={exame.title}
+                            />
+                            <div className="exam-details-registros_examess">
+                                <h4 className="exam-title-registros_examess">
+                                    {exame.title}
+                                </h4>
+                                <p className="exam-info-registros_examess">
+                                    {selectedDate} - {exame.time} | {exame.doctor}
+                                </p>
                             </div>
-                            <span className="exam-status status-cancelado">{exame.status}</span>
-                        </div>
-                    ))}
-
-                    {examesDoDia.filter(exame => exame.status !== "Cancelado").map(exame => (
-                        <div className="exam-item-container" key={exame.id}>
-                            <img className="exam-item-icon" src={exame.img} alt={exame.title} />
-                            <div className="exam-details">
-                                <h4 className="exam-title">{exame.title}</h4>
-                                <p className="exam-info">{`${selectedDate} - ${exame.time} | ${exame.doctor}`}</p>
-                            </div>
-                            {exame.status.includes("Disponível") ? (
-                                <Link to="/Resultados" className="nav-link resultado-exame-link">{exame.status}</Link>
+                            {exame.status === "Resultado Disponível" ? (
+                                <Link
+                                    to="/Resultados"
+                                    className="nav-link resultado-exame-link-registros_examess"
+                                >
+                                    {exame.status}
+                                </Link>
                             ) : (
-                                <span className={`exam-status status-aguardando`}>{exame.status}</span>
+                                <span
+                                    className={`exam-status-registros_examess ${
+                                        exame.status === "Aguardando Resultados"
+                                            ? "status-aguardando-registros_examess"
+                                            : ""
+                                    }`}
+                                >
+                                    {exame.status}
+                                </span>
                             )}
                         </div>
                     ))}

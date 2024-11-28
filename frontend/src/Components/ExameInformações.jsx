@@ -1,11 +1,10 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlask, faVial, faXRay, faHeartbeat, faChartPie, faBrain } from '@fortawesome/free-solid-svg-icons';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import '../Style/ExameInformações.css';
-import Banner from "../Imagens/BannerExame.webp";
+import Banner from "../Imagens/BannerExame.png";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -14,23 +13,24 @@ function MyVerticallyCenteredModal(props) {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className="modalExames"
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          <FontAwesomeIcon icon={props.icon} className="modal-icon-examesIn" /> 
+      <Modal.Header closeButton className="modalExames-header">
+        <Modal.Title id="contained-modal-title-vcenter" className="modalExames-title">
+          <FontAwesomeIcon icon={props.icon} className="modalExames-icon" />
           {props.examName}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="modal-body-examesIn"> 
-        <h4>Informações do Exame</h4>
+      <Modal.Body className="modalExames-body">
+        <h4 className="modalExames-subtitle">Informações do Exame</h4>
         <p><strong>Como o exame será realizado:</strong> {props.examInstructions}</p>
         <p><strong>Data do exame:</strong> {props.examDate} às {props.examTime}</p>
         <p><strong>Data de entrega:</strong> {props.deliveryDate} às {props.deliveryTime}</p>
         <p><strong>Recomendações:</strong> {props.recommendations}</p>
         <p><strong>Nome do laboratório:</strong> {props.laboratoryName}</p>
       </Modal.Body>
-      <Modal.Footer>
-        <Button className="modal-button-examesIn" onClick={props.onHide}> 
+      <Modal.Footer className="modalExames-footer">
+        <Button className="modalExames-button" onClick={props.onHide}>
           Fechar
         </Button>
       </Modal.Footer>
@@ -38,10 +38,9 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-// Componente Principal
-function App() {
-  const [modalShow, setModalShow] = React.useState(false);
-  const [selectedExam, setSelectedExam] = React.useState({});
+const App = () => {
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedExam, setSelectedExam] = useState({});
 
   const exams = [
     {
@@ -53,7 +52,7 @@ function App() {
       deliveryDate: "05/10/2024",
       deliveryTime: "15:00",
       recommendations: "Evite alimentos gordurosos 24 horas antes do exame.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
     {
       name: "Exame de Urina",
@@ -64,7 +63,7 @@ function App() {
       deliveryDate: "06/10/2024",
       deliveryTime: "14:00",
       recommendations: "Coletar a primeira urina da manhã.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
     {
       name: "Raio-X",
@@ -75,7 +74,7 @@ function App() {
       deliveryDate: "07/10/2024",
       deliveryTime: "16:00",
       recommendations: "Levar documentos e resultados anteriores.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
     {
       name: "Ultrassom",
@@ -86,7 +85,7 @@ function App() {
       deliveryDate: "08/10/2024",
       deliveryTime: "13:00",
       recommendations: "Evitar alimentos antes do exame.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
     {
       name: "Exame de Colesterol",
@@ -97,85 +96,119 @@ function App() {
       deliveryDate: "09/10/2024",
       deliveryTime: "17:00",
       recommendations: "Evitar gordura antes do exame.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
     {
-      name: "Exame de Glicose",
-      icon: faVial,
-      instructions: "Em jejum por 8 horas.",
+      name: "Exame Neurológico",
+      icon: faBrain,
+      instructions: "Durma bem na noite anterior.",
       date: "06/10/2024",
-      time: "08:00",
+      time: "14:00",
       deliveryDate: "10/10/2024",
       deliveryTime: "12:00",
-      recommendations: "Evitar açúcar 24 horas antes do exame.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      recommendations: "Evitar cafeína antes do exame.",
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
     {
-      name: "Tomografia",
-      icon: faBrain,
-      instructions: "Levar laudos anteriores.",
-      date: "07/10/2024",
-      time: "10:00",
-      deliveryDate: "11/10/2024",
-      deliveryTime: "15:00",
-      recommendations: "Não usar roupas metálicas.",
-      laboratoryName: "Laboratório São Paulo Saúde"
-    },
-    {
-      name: "Eletrocardiograma",
+      name: "Teste de Esforço",
       icon: faHeartbeat,
-      instructions: "Descansar 15 minutos antes do exame.",
-      date: "08/10/2024",
-      time: "09:30",
-      deliveryDate: "12/10/2024",
-      deliveryTime: "16:00",
-      recommendations: "Evitar bebidas alcoólicas 24 horas antes do exame.",
-      laboratoryName: "Laboratório São Paulo Saúde"
-    },
-    {
-      name: "Exame de TSH",
-      icon: faVial,
-      instructions: "Pode ser feito a qualquer hora do dia.",
-      date: "09/10/2024",
-      time: "10:00",
-      deliveryDate: "13/10/2024",
-      deliveryTime: "15:30",
-      recommendations: "Informe se estiver grávida ou amamentando.",
-      laboratoryName: "Laboratório São Paulo Saúde"
-    },
-    {
-      name: "Exame de PSA",
-      icon: faVial,
-      instructions: "Evitar atividade sexual 48 horas antes.",
-      date: "10/10/2024",
+      instructions: "Leve roupas confortáveis e tênis.",
+      date: "07/10/2024",
       time: "08:00",
-      deliveryDate: "14/10/2024",
-      deliveryTime: "12:00",
-      recommendations: "Não fazer exercícios físicos intensos.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      deliveryDate: "11/10/2024",
+      deliveryTime: "10:00",
+      recommendations: "Evite cafeína e bebidas alcoólicas.",
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
     {
-      name: "Hemograma Completo",
-      icon: faFlask,
-      instructions: "Em jejum de 8 horas.",
-      date: "11/10/2024",
-      time: "09:00",
-      deliveryDate: "15/10/2024",
+      name: "Tomografia Computadorizada",
+      icon: faXRay,
+      instructions: "Evite alimentos pesados antes do exame.",
+      date: "08/10/2024",
+      time: "13:30",
+      deliveryDate: "12/10/2024",
       deliveryTime: "14:00",
-      recommendations: "Evitar álcool 24 horas antes do exame.",
-      laboratoryName: "Laboratório São Paulo Saúde"
+      recommendations: "Chegue com 30 minutos de antecedência.",
+      laboratoryName: "Laboratório São Paulo Saúde",
     },
-    {
-      name: "Exame de Fezes",
-      icon: faVial,
-      instructions: "Coletar a amostra da primeira evacuação.",
-      date: "12/10/2024",
-      time: "11:00",
-      deliveryDate: "16/10/2024",
-      deliveryTime: "16:00",
-      recommendations: "Evitar alimentos que alteram a cor das fezes.",
-      laboratoryName: "Laboratório São Paulo Saúde"
-    }
+     {
+        name: "Teste de Função Pulmonar",
+        icon: faBrain,
+        instructions: "Evite fumar 6 horas antes do exame.",
+        date: "09/10/2024",
+        time: "09:30",
+        deliveryDate: "13/10/2024",
+        deliveryTime: "11:00",
+        recommendations: "Levar documentos médicos anteriores.",
+        laboratoryName: "Laboratório São Paulo Saúde",
+      },
+      {
+        name: "Exame de Glicemia",
+        icon: faChartPie,
+        instructions: "Em jejum de 8 horas.",
+        date: "10/10/2024",
+        time: "07:30",
+        deliveryDate: "14/10/2024",
+        deliveryTime: "15:30",
+        recommendations: "Evitar açúcares e doces na véspera.",
+        laboratoryName: "Laboratório São Paulo Saúde",
+      },
+      {
+        name: "Ressonância Magnética",
+        icon: faXRay,
+        instructions: "Não usar objetos metálicos.",
+        date: "11/10/2024",
+        time: "12:00",
+        deliveryDate: "15/10/2024",
+        deliveryTime: "14:00",
+        recommendations: "Usar roupas leves e confortáveis.",
+        laboratoryName: "Laboratório São Paulo Saúde",
+      },
+      {
+        name: "Exame de Vitamina D",
+        icon: faFlask,
+        instructions: "Jejum de 4 horas.",
+        date: "12/10/2024",
+        time: "10:00",
+        deliveryDate: "16/10/2024",
+        deliveryTime: "16:00",
+        recommendations: "Evitar suplementos vitamínicos por 24 horas.",
+        laboratoryName: "Laboratório São Paulo Saúde",
+      },
+      {
+        name: "Mamografia",
+        icon: faHeartbeat,
+        instructions: "Evitar desodorantes ou cremes no dia.",
+        date: "13/10/2024",
+        time: "15:00",
+        deliveryDate: "17/10/2024",
+        deliveryTime: "13:00",
+        recommendations: "Levar exames anteriores, se houver.",
+        laboratoryName: "Laboratório São Paulo Saúde",
+      },
+      {
+        name: "Exame Cardiológico",
+        icon: faHeartbeat,
+        instructions: "Use roupas leves.",
+        date: "14/10/2024",
+        time: "11:00",
+        deliveryDate: "18/10/2024",
+        deliveryTime: "10:00",
+        recommendations: "Não consumir cafeína antes do exame.",
+        laboratoryName: "Laboratório São Paulo Saúde",
+      },
+      {
+        name: "Densitometria Óssea",
+        icon: faXRay,
+        instructions: "Evite usar calçados metálicos.",
+        date: "15/10/2024",
+        time: "09:00",
+        deliveryDate: "19/10/2024",
+        deliveryTime: "12:00",
+        recommendations: "Informe medicamentos em uso.",
+        laboratoryName: "Laboratório São Paulo Saúde",
+      },
+    
   ];
 
   const handleCardClick = (exam) => {
@@ -184,28 +217,25 @@ function App() {
   };
 
   return (
-    <div className="exame-informacoes-container examesInformation"> {/* Adicionando a className aqui */}
-      {/* Seção da Imagem */}
-      <div className="image-section-examesIn"> 
-        <div className="image-container-examesIn"> 
+    <div className="exame-informacoes-container examesInformation">
+      <div className="image-section-examesIn">
+        <div className="image-container-examesIn">
           <img
-            src={Banner} // Substitua pelo caminho da sua imagem
+            src={Banner}
             alt="Saúde"
             className="healthcare-image"
           />
-          <div className="image-overlay"></div>
-          <div className="header">
-            <h1 className="header-title">Informações dos Exames</h1>
-            <p className="header-subtitle">Saiba mais sobre os exames</p>
-          </div>
         </div>
       </div>
 
-      {/* Grid de Exames */}
-      <div className="menu-grid-examesIn"> 
+      <div className="menu-grid-examesIn">
         {exams.map((exam) => (
-          <div key={exam.name} className="menu-item-examesIn" onClick={() => handleCardClick(exam)}> 
-            <FontAwesomeIcon icon={exam.icon} className="menu-icon-examesIn" /> 
+          <div
+            key={exam.name}
+            className="menu-item-examesIn"
+            onClick={() => handleCardClick(exam)}
+          >
+            <FontAwesomeIcon icon={exam.icon} className="menu-icon-examesIn" />
             {exam.name}
           </div>
         ))}
@@ -214,7 +244,7 @@ function App() {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        icon={selectedExam.icon || faHeartbeat} // Ícone do exame selecionado
+        icon={selectedExam.icon || faHeartbeat}
         examName={selectedExam.name || ""}
         examInstructions={selectedExam.instructions || ""}
         examDate={selectedExam.date || ""}
@@ -226,6 +256,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;

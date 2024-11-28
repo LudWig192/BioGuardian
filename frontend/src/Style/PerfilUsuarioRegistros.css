@@ -1,4 +1,4 @@
-.custom-user-profile {
+.custom-user-profile_registro_examesss {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -7,7 +7,7 @@
     margin-bottom: 20px;
 }
 
-.custom-avatar {
+.custom-avatar_registro_examesss {
     border-radius: 50%;
     margin-right: 15px;
     width: 80px;
@@ -16,20 +16,20 @@
     background-color: #f0f0f0;
 }
 
-.custom-user-info {
+.custom-user-info_registro_examesss {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.custom-user-name {
+.custom-user-name_registro_examesss {
     font-size: 1.4em;
     color: #333;
     margin: 0;
     font-weight: 600;
 }
 
-.custom-user-email {
+.custom-user-email_registro_examesss {
     font-size: 0.9em;
     color: #666;
     margin-top: 4px;

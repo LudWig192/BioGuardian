@@ -8,9 +8,8 @@
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    margin-top: -10px; 
-        background-image: url('../Imagens/fundo.png');
-
+    margin-top: -70px; 
+    background-image: url('../Imagens/fundo.png');
 }
 
 .miniBanner-overlay {
@@ -26,6 +25,7 @@
 .miniBanner-image-achievements {
     position: relative; 
     z-index: 2; 
+    margin: 0 auto; 
 }
 
 .miniBanner-image-achievements img {
@@ -79,13 +79,18 @@
     color: #ffffff; 
 }
 
-/* Responsividade */
+
 @media (max-width: 1024px) {
     .miniBanner-achievements-container {
         padding: 60px;
         margin-top: 150px;
         flex-direction: column;
         align-items: center;
+        justify-content: center; 
+    }
+
+    .miniBanner-image-achievements {
+        margin: 0 auto;
     }
 
     .miniBanner-achievements-title {
@@ -93,7 +98,8 @@
     }
 
     .miniBanner-image-achievements img {
-        max-width: 80%;
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -109,6 +115,7 @@
 
     .miniBanner-image-achievements {
         margin-bottom: 20px; 
+        margin: 0 auto;
     }
 
     .miniBanner-achievements-title {
