@@ -54,6 +54,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Deixa o modal mais para baixo */
+    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    z-index: 999; /* Garante que fique acima dos elementos da página */
 }
 
 .modal-contentagendamentoooss {

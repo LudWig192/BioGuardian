@@ -80,11 +80,12 @@ const Calendar = ({ onDateSelect }) => {
             days.push(
                 <div
                     key={day}
-                    className={`agendamento-day-calendar_agendamento ${isSelected ? 'selected' : ''} ${isCurrentDay ? 'today' : ''}`}
+                    className={`agendamento-day-calendar_agendamento ${isSelected ? 'selected-Agendamento' : ''} ${isCurrentDay ? 'today' : ''}`}
                     onClick={() => handleDayClick(day)}
                 >
                     {day}
                 </div>
+
             );
         }
 

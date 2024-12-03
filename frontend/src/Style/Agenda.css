@@ -67,6 +67,12 @@
 }
 
 @media (max-width: 768px) {
+
+    .add-button {
+        margin-left: 90px;
+
+    }
+
     .custom-table {
         display: block;
         width: 100%;
@@ -116,6 +122,7 @@
     .actions {
         text-align: right;
     }
+
 }
 
 @media (max-width: 480px) {

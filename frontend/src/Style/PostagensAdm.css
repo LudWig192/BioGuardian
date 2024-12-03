@@ -2,13 +2,14 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    gap: 20px; 
 }
 
 .best-post {
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
-    width: 32%;
+    width: 32%; 
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -29,5 +30,17 @@
     font-size: 20px;
     font-weight: bold;
     color: #6854f0;
-    /* Cor verde para destacar */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .best-posts {
+        display: block;
+        margin-top: 10px; 
+    }
+
+    .best-post {
+        width: 100%;
+        margin-bottom: 20px; 
+    }
 }
