@@ -30,96 +30,118 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2>
-          {type === 'edit' ? 'Editar consulta' :
-            type === 'delete' ? 'Excluir consulta?' :
-              'Adicionar Novo Item'}
-        </h2>
-
-        {type === 'delete' ? (
-          <div>
-            <p>Tem certeza que deseja excluir o paciente {data.paciente}?</p>
-            <div className="modal-buttons">
-              <button onClick={handleDelete}>Excluir</button>
-              <button type="button" onClick={onClose}>Cancelar</button>
-            </div>
+    <div className="modalExames-overlay" onClick={onClose}>
+      <div className="modalExames-dialog" onClick={(e) => e.stopPropagation()}>
+        <div className="modalExames-content">
+          <div className="modalExames-header">
+            <h2 className="modalExames-title">
+              {type === 'edit' ? 'Editar consulta' :
+                type === 'delete' ? 'Excluir consulta?' :
+                  'Adicionar Novo Item'}
+            </h2>
           </div>
-        ) : (
-          <form onSubmit={handleFormSubmit} className='Modal-Exames-form'>
-            {type === 'edit' || type === 'add' ? (
-              <>
-                <label>
-                  Agendamento:
-                  <input
-                    type="date"
-                    name="agendamento"
-                    value={data.agendamento || ''}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </label>
-                <label>
-                  Paciente:
-                  <input
-                    type="text"
-                    name="paciente"
-                    value={data.paciente || ''}
-                    onChange={handleInputChange}
-                    placeholder="Insira o nome do paciente"
-                    required
-                  />
-                </label>
-                <label>
-                  Status:
-                  <select
-                    name="status"
-                    value={data.status || ''}
-                    onChange={handleInputChange}
-                    required
+          <div className="modalExames-body">
+            {type === 'delete' ? (
+              <div>
+                <p>Tem certeza que deseja excluir o paciente {data.paciente}?</p>
+                <div className="modalExames-footer">
+                  <button className="modalExames-btn" onClick={handleDelete}>Excluir</button>
+                  <button
+                    type="button"
+                    className="modalExames-btn"
+                    onClick={onClose}
                   >
-                    <option value="" disabled>Selecione o status</option>
-                    <option value="confirmado">Confirmado</option>
-                    <option value="pendente">Pendente</option>
-                    <option value="cancelado">Cancelado</option>
-                  </select>
-                </label>
-                <label>
-                  Procedimentos:
-                  <input
-                    type="text"
-                    name="procedimentos"
-                    value={data.procedimentos || ''}
-                    onChange={handleInputChange}
-                    placeholder="Insira os procedimentos"
-                    required
-                  />
-                </label>
-                <label>
-                  Tipo de Plano:
-                  <select
-                    name="tipoPlano"
-                    value={data.tipoPlano || ''}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="" disabled>Selecione o tipo de plano</option>
-                    <option value="padrão">Padrão</option>
-                    <option value="premium">Premium</option>
-                    <option value="básico">Básico</option>
-                  </select>
-                </label>
-                <div className="modal-buttons">
-                  <button type="submit">
-                    {type === 'edit' ? 'Salvar' : 'Adicionar'}
+                    Cancelar
                   </button>
-                  <button type="button" className="modal-exames-btn"onClick={onClose}>Fechar</button>
                 </div>
-              </>
-            ) : null}
-          </form>
-        )}
+              </div>
+            ) : (
+              <form onSubmit={handleFormSubmit} className="modalExames-form">
+                {type === 'edit' || type === 'add' ? (
+                  <>
+                    <label className="modalExames-label">
+                      Agendamento:
+                      <input
+                        type="date"
+                        name="agendamento"
+                        value={data.agendamento || ''}
+                        onChange={handleInputChange}
+                        required
+                        className="modalExames-input"
+                      />
+                    </label>
+                    <label className="modalExames-label">
+                      Paciente:
+                      <input
+                        type="text"
+                        name="paciente"
+                        value={data.paciente || ''}
+                        onChange={handleInputChange}
+                        placeholder="Insira o nome do paciente"
+                        required
+                        className="modalExames-input"
+                      />
+                    </label>
+                    <label className="modalExames-label">
+                      Status:
+                      <select
+                        name="status"
+                        value={data.status || ''}
+                        onChange={handleInputChange}
+                        required
+                        className="modalExames-select"
+                      >
+                        <option value="" disabled>Selecione o status</option>
+                        <option value="confirmado">Confirmado</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="cancelado">Cancelado</option>
+                      </select>
+                    </label>
+                    <label className="modalExames-label">
+                      Procedimentos:
+                      <input
+                        type="text"
+                        name="procedimentos"
+                        value={data.procedimentos || ''}
+                        onChange={handleInputChange}
+                        placeholder="Insira os procedimentos"
+                        required
+                        className="modalExames-input"
+                      />
+                    </label>
+                    <label className="modalExames-label">
+                      Tipo de Plano:
+                      <select
+                        name="tipoPlano"
+                        value={data.tipoPlano || ''}
+                        onChange={handleInputChange}
+                        required
+                        className="modalExames-select"
+                      >
+                        <option value="" disabled>Selecione o tipo de plano</option>
+                        <option value="padrão">Padrão</option>
+                        <option value="premium">Premium</option>
+                        <option value="básico">Básico</option>
+                      </select>
+                    </label>
+                    <div className="modalExames-footer">
+                      <button type="submit" className="modalExames-btn">
+                        {type === 'edit' ? 'Salvar' : 'Adicionar'}
+                      </button>
+                      <button
+                        type="button"
+                        className="modalExames-btn"
+                        onClick={onClose}
+                      >
+                        Fechar
+                      </button>
+                    </div>
+                  </>
+                ) : null}
+              </form>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

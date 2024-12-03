@@ -1,113 +1,110 @@
-
 .modalExames-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1050;
-  }
-  
- 
-  .modalExames .modal-dialog {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    min-height: 100vh; 
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
 
-  .modalExames .modal-content {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 600px;
-  }
-  
+.modalExames-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  min-height: 100vh;
+}
 
-  .modalExames .modal-header {
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+.modalExames-content {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
 
-  .modalExames .modal-title {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: #6854f0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
+.modalExames-header {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .modalExames .modal-title .modalExames-icon {
-    font-size: 2rem;
-    color: #6854f0; 
+.modalExames-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #6854f0;
+}
+
+.modalExames-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: black;
+}
+
+.modalExames-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.modalExames-input,
+.modalExames-select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.modalExames-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 265px;
+  margin-top: 20px;
+}
+
+.modalExames-btn {
+  background-color: #54a3f0;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modalExames-btn:hover {
+  background-color: #336fbd;
+}
+
+@media (max-width: 768px) {
+  .modalExames-dialog {
+    max-width: 90%;
   }
-  
-  .modalExames .modal-body {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: black;
+  .modalExames-footer{
+    gap: 165px;
   }
-  
-  .modalExames .modal-body h4 {
+
+  .modalExames-title {
     font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: black;
   }
-  
-  .modalExames .modal-body strong {
-    color: #000;
+
+  .modalExames-content {
+    padding: 15px;
+    width: 400px;
+   
   }
-  
-  .modalExames .modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
+
+  .modalExames-body {
+    font-size: 0.9rem;
   }
-  
-  .modalExames-footer .btn {
-    background-color: #54a3f0;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .modalExames-footer .btn:hover {
-    background-color: #54a3f0;
-  }
-  
-  @media (max-width: 768px) {
-    .modalExames .modal-dialog {
-      max-width: 90%;
-    }
-  
-    .modalExames .modal-title {
-      font-size: 1.5rem;
-    }
-  
-    .modalExames .modal-content {
-      padding: 15px;
-    }
-  
-    .modalExames .modal-body {
-      font-size: 0.9rem;
-    }
-  }
-  
+}

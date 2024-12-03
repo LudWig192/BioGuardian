@@ -104,6 +104,7 @@
 @media (max-width: 768px) {
   .PlanoBeneficio-title {
     font-size: 41px;
+    text-align: center;
   }
 
   .PlanoBeneficio-cards {

@@ -60,14 +60,11 @@ const Medicos = ({ selectedDate }) => {
         const formattedDate = appointmentDate.toISOString().split('T')[0];
         const formattedTime = appointmentDate.toISOString().split('T')[1].substring(0, 5);
 
-        console.log("Formatted Date:", formattedDate);
-
         try {
-            const response = await fetch('http://localhost:3001/agendamento', {
+            // Insere o agendamento na tabela 'agendamento'
+            const agendamentoResponse = await fetch('http://localhost:3001/agendamento', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     nome: formData.fullName,
                     aniversario: formData.birthDate,
@@ -76,17 +73,42 @@ const Medicos = ({ selectedDate }) => {
                 }),
             });
 
-            const data = await response.json();
+            const agendamentoData = await agendamentoResponse.json();
 
-            if (response.ok) {
-                setSuccessMessage('Consulta agendada com sucesso!');
+            if (agendamentoResponse.ok) {
+                // Pega o ID do agendamento retornado
+                const agendamentoId = agendamentoData.idAgendamento;
+
+                // Insere o agendamento na tabela 'agenda'
+                const agendaResponse = await fetch('http://localhost:3001/agenda', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        agendamento: formattedDate, // Data do agendamento
+                        paciente: formData.fullName,
+                        status: 'Pendente', // Status fixo como 'Pendente'
+                        procedimentos: selectedDoctor.specialty, // Especialidade do médico
+                        tipoPlano: 'Padrão', // Tipo de plano (se necessário, pode ser dinâmico)
+                    }),
+                });
+
+                const agendaData = await agendaResponse.json();
+
+                if (agendaResponse.ok) {
+                    setSuccessMessage('Consulta agendada com sucesso!');
+                    // Exibe o alert
+                    alert('Agendamento enviado com sucesso!');
+                } else {
+                    setErrorMessage(agendaData.error || 'Erro ao salvar na agenda.');
+                }
             } else {
-                setErrorMessage(data.error || 'Erro ao agendar a consulta.');
+                setErrorMessage(agendamentoData.error || 'Erro ao agendar a consulta.');
             }
         } catch (error) {
             setErrorMessage('Erro ao agendar a consulta. Tente novamente mais tarde.');
         }
 
+        // Limpa o formulário após envio
         setFormData({
             fullName: '',
             birthDate: '',
@@ -94,6 +116,8 @@ const Medicos = ({ selectedDate }) => {
         });
         setErrorMessage('');
     };
+
+
 
     // Bloqueia/desbloqueia o scroll quando o modal abrir/fechar
     useEffect(() => {
