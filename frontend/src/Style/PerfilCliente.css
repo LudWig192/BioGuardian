@@ -1,7 +1,6 @@
 .container {
   padding: 20px;
   gap: 20px;
-  background-color: #f7f9fc;
   margin-top: 80px;
   flex-wrap: wrap; /* Permite que os elementos fiquem em colunas no mobile */
 }

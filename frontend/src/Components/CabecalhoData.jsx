@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Style/CabecalhoMEDICO.css";
+import "../Style/cabacalhoExames.css";
 
 const days = [
     { day: "1", label: "Dom" },
@@ -16,17 +16,21 @@ const DateHeader = ({ onSelectDay }) => {
 
     const handleDayClick = (day) => {
         setSelectedDay(day);
-        onSelectDay(`${day}/11/2024`);  // Corrigido para interpolação correta
+        onSelectDay(`${day}/11/2024`); // Ajuste de interpolação correto
     };
 
     return (
-        <div className="date-header registros_exames">
+        <div className="date-header-CDExames">
             <h3>Novembro 2024</h3>
-            <div className="day-buttons registros_exames">
+            <div className="day-buttons-CDExames">
                 {days.map(({ day, label }) => (
                     <button
                         key={day}
-                        className={day === selectedDay ? "selected-day registros_exames" : "day registros_exames"}
+                        className={
+                            day === selectedDay
+                                ? "selected-day day-buttons-CDExames"
+                                : "day day-buttons-CDExames"
+                        }
                         onClick={() => handleDayClick(day)}
                     >
                         <div>{day}</div>

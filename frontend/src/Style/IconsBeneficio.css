@@ -82,6 +82,10 @@
     .BeneficioIcons-services {
         grid-template-columns: repeat(2, 1fr); 
     }
+
+    .BeneficioIcons-container{
+        padding: 160px 20px;
+    }
 }
 
 @media (max-width: 600px) {

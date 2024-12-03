@@ -109,6 +109,9 @@
   .unidadebeneficio-title {
     font-size: 28px;
   }
+  .unidadebeneficio-container{
+    margin-top: 150px;
+  }
 }
 
 @media (max-width: 480px) {

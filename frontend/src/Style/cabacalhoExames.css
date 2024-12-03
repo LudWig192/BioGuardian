@@ -1,25 +1,24 @@
-.date-header {
+.date-header-CDExames {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
     position: relative;
-    margin: 110px 0 0 -20px;
 }
 
-.date-header h3 {
+.date-header-CDExames h3 {
     margin-bottom: 20px;
     color: #6a82fb;
 }
 
-.week-navigation {
+.week-navigation-CDExames {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
 }
 
-.week-navigation button {
+.week-navigation-CDExames button {
     background-color: #6a82fb;
     color: white;
     border: none;
@@ -31,23 +30,23 @@
     transition: background-color 0.3s ease;
 }
 
-.week-navigation button:hover {
+.week-navigation-CDExames button:hover {
     background-color: #5145cd;
 }
 
-.week-navigation button:focus {
+.week-navigation-CDExames button:focus {
     outline: none;
     box-shadow: 0 0 8px rgba(106, 130, 251, 0.5);
 }
 
-.day-buttons {
+.day-buttons-CDExames {
     display: flex;
     gap: 5px;
     flex-wrap: nowrap;
     justify-content: center;
 }
 
-.day-buttons button {
+.day-buttons-CDExames button {
     background-color: #e9eff7;
     color: #333;
     border: 1px solid #ddd;
@@ -62,26 +61,26 @@
     flex: 1;
 }
 
-.day-buttons button:hover {
+.day-buttons-CDExames button:hover {
     background-color: #dce4f7;
 }
 
-.day-buttons button.selected-day {
+.day-buttons-CDExames button.selected-day {
     background-color: #6a82fb;
     color: white;
     border-color: #6a82fb;
     font-weight: bold;
 }
 
-.appointment-options {
+.appointment-options-CDExames {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     margin-top: 10px;
 }
 
-.edit-button,
-.delete-button {
+.edit-button-CDExames,
+.delete-button-CDExames {
     padding: 5px 10px;
     border: none;
     border-radius: 2px;
@@ -93,27 +92,25 @@
     border-radius: 5px;
 }
 
-.edit-button {
+.edit-button-CDExames {
     background-color: #28a745;
-    /* cor para o botão de edição */
     color: white;
 }
 
-.edit-button:hover {
+.edit-button-CDExames:hover {
     background-color: #218838;
 }
 
-.delete-button {
+.delete-button-CDExames {
     background-color: #dc3545;
-    /* cor para o botão de exclusão */
     color: white;
 }
 
-.delete-button:hover {
+.delete-button-CDExames:hover {
     background-color: #c82333;
 }
 
-.appointment-container {
+.appointment-container-CDExames {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -122,7 +119,7 @@
     width: 100%;
 }
 
-.appointment-datetime {
+.appointment-datetime-CDExames {
     font-size: 16px;
     color: #6a82fb;
     font-weight: 700;
@@ -131,7 +128,7 @@
     text-align: left;
 }
 
-.appointment-card {
+.appointment-card-CDExames {
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -144,7 +141,7 @@
     justify-content: space-between;
 }
 
-.appointment-card h4 {
+.appointment-card-CDExames h4 {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
@@ -152,13 +149,13 @@
     color: #333;
 }
 
-.appointment-card p {
+.appointment-card-CDExames p {
     font-size: 14px;
     color: #555;
     margin: 5px 0;
 }
 
-.appointments {
+.appointments-CDExames {
     padding: 20px;
     background-color: #f0f4f8;
     border-radius: 20px;
@@ -166,20 +163,19 @@
     margin-right: 40px;
 }
 
-.appointments h2 {
+.appointments-CDExames h2 {
     font-size: 22px;
     color: #333;
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-.appointments p {
+.appointments-CDExames p {
     font-size: 16px;
     color: #666;
 }
 
-
-.custom-modal {
+.custom-modal-CDExames {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -192,20 +188,20 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.custom-modal h2 {
+.custom-modal-CDExames h2 {
     font-size: 20px;
     margin-bottom: 15px;
     color: #333;
     font-weight: bold;
 }
 
-.custom-modal form {
+.custom-modal-CDExames form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.custom-modal label {
+.custom-modal-CDExames label {
     font-size: 14px;
     color: #555;
     display: flex;
@@ -213,9 +209,9 @@
     gap: 5px;
 }
 
-.custom-modal input[type="text"],
-.custom-modal select,
-.custom-modal textarea {
+.custom-modal-CDExames input[type="text"],
+.custom-modal-CDExames select,
+.custom-modal-CDExames textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -226,15 +222,15 @@
     transition: border-color 0.3s ease;
 }
 
-.custom-modal input[type="text"]:focus,
-.custom-modal select:focus,
-.custom-modal textarea:focus {
+.custom-modal-CDExames input[type="text"]:focus,
+.custom-modal-CDExames select:focus,
+.custom-modal-CDExames textarea:focus {
     border-color: #6a82fb;
     outline: none;
 }
 
-.custom-modal button[type="submit"],
-.custom-modal button[type="button"] {
+.custom-modal-CDExames button[type="submit"],
+.custom-modal-CDExames button[type="button"] {
     background-color: #6a82fb;
     color: white;
     border: none;
@@ -246,20 +242,20 @@
     margin-top: 10px;
 }
 
-.custom-modal button[type="submit"]:hover {
+.custom-modal-CDExames button[type="submit"]:hover {
     background-color: #5145cd;
 }
 
-.custom-modal button[type="button"] {
+.custom-modal-CDExames button[type="button"] {
     background-color: #bbb;
     color: #333;
 }
 
-.custom-modal button[type="button"]:hover {
+.custom-modal-CDExames button[type="button"]:hover {
     background-color: #999;
 }
 
-.custom-overlay {
+.custom-overlay-CDExames {
     background-color: rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
@@ -272,96 +268,78 @@
     z-index: 9999;
 }
 
-.mobile {
+.mobile-CDExames {
     display: none;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
-    .desk {
+    .desk-CDExames {
         display: none;
     }
 
-    .mobile {
+    .mobile-CDExames {
         display: block;
     }
 
-    .date-header {
-        padding-top: 200px;
-    }
-
-    .day-buttons button {
+    .day-buttons-CDExames button {
         min-width: 40px;
         max-width: none;
     }
 
-    .day-buttons {
+    .day-buttons-CDExames {
         gap: 0px;
         margin: 5px 0;
     }
 
-    .day-buttons button {
+    .day-buttons-CDExames button {
         padding: 0;
         margin: 0 0px;
         font-size: 12px;
     }
 
-    .appointments {
+    .appointments-CDExames {
         padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 70px;
     }
 
-    .appointment-card {
+    .appointment-card-CDExames {
         width: 100%;
     }
 
-    .week-navigation {
+    .week-navigation-CDExames {
         display: unset;
         position: relative;
+        width: 390px;
         overflow-y: auto;
         max-width: 390px;
         z-index: 9999;
     }
 
-    .week-navigation button {
-        margin: 0 auto;
-    }
-
-    .btnProximo {
+    .btnProximo-CDExames {
         margin-left: 16px;
         margin-top: 110px;
     }
 
-    .btnAnterior {
+    .btnAnterior-CDExames {
         z-index: 9999;
         margin-top: 110px;
         margin-left: 590px;
     }
 
-    .custom-modal {
+    .custom-modal-CDExames {
         width: 60%;
         padding: 15px;
-
     }
 
-    .custom-modal h2 {
+    .custom-modal-CDExames h2 {
         font-size: 18px;
     }
 
-    .custom-modal form {
+    .custom-modal-CDExames form {
         gap: 10px;
     }
 
-    .custom-modal button[type="submit"],
-    .custom-modal button[type="button"] {
+    .custom-modal-CDExames button[type="submit"],
+    .custom-modal-CDExames button[type="button"] {
         font-size: 14px;
     }
-
-
 }
