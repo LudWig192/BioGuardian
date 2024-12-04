@@ -11,7 +11,7 @@ const TabelaCadastro = () => {
         const { data } = await axios.get("http://localhost:3001/cadastros");
         setCadastros(data);
       } catch (error) {
-        console.error("Erro ao buscar usuários:", error); 
+        console.error("Erro ao buscar usuários:", error);
       }
     };
 
@@ -44,14 +44,13 @@ const TabelaCadastro = () => {
         <tbody className="tabela-cadastro-tbody">
           {cadastros.map((cadastro) => (
             <tr key={cadastro.idCadastro} className="tabela-tr">
-              <td className="tabela-cadastro-td">{cadastro.idCadastro}</td>
-              <td className="tabela-cadastro-td">{cadastro.nome}</td>
-              <td className="tabela-cadastro-td">{cadastro.email}</td>
-              <td className="tabela-cadastro-td">{cadastro.senha}</td>
-              <td className="tabela-cadastro-td">
+              <td className="tabela-cadastro-td" data-label="ID">{cadastro.idCadastro}</td>
+              <td className="tabela-cadastro-td" data-label="Nome">{cadastro.nome}</td>
+              <td className="tabela-cadastro-td" data-label="Email">{cadastro.email}</td>
+              <td className="tabela-cadastro-td" data-label="Senha">{cadastro.senha}</td>
+              <td className="tabela-cadastro-td" data-label="Ações">
                 <button
                   className="tabela-button"
-                  variant="danger"
                   onClick={() => handleExcluirUsuario(cadastro.idCadastro)}
                 >
                   Excluir

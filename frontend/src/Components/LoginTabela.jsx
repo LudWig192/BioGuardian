@@ -11,7 +11,7 @@ const TabelaLogin = () => {
                 const { data } = await axios.get("http://localhost:3001/Login");
                 setCadastros(data);
             } catch (error) {
-                console.error("Erro ao buscar usuários:", error); 
+                console.error("Erro ao buscar usuários:", error);
             }
         };
 
@@ -46,10 +46,10 @@ const TabelaLogin = () => {
                 <tbody className="tabela-login-body">
                     {cadastros.map((cadastro) => (
                         <tr key={cadastro.idLogin} className="tabela-login-row">
-                            <td className="tabela-login-td">{cadastro.idLogin}</td>
-                            <td className="tabela-login-td">{cadastro.email}</td>
-                            <td className="tabela-login-td">{cadastro.senha}</td>
-                            <td className="tabela-login-td">
+                            <td className="tabela-login-td" data-label="ID">{cadastro.idLogin}</td>
+                            <td className="tabela-login-td" data-label="Email">{cadastro.email}</td>
+                            <td className="tabela-login-td" data-label="Senha">{cadastro.senha}</td>
+                            <td className="tabela-login-td" data-label="Ações">
                                 <div className="tabela-login-actions">
                                     <button
                                         className="tabela-login-button"

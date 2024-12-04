@@ -67,12 +67,6 @@
 }
 
 @media (max-width: 768px) {
-
-    .add-button {
-        margin-left: 90px;
-
-    }
-
     .custom-table {
         display: block;
         width: 100%;
@@ -94,44 +88,41 @@
     }
 
     .custom-table td {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: block;
         padding: 10px;
         box-sizing: border-box;
         position: relative;
-        border-bottom: none;
         word-break: break-word;
         white-space: normal;
+        border-bottom: none;
         min-height: 50px;
     }
 
     .custom-table td::before {
         content: attr(data-label);
         font-weight: bold;
-        flex: 1;
-        margin-right: 10px;
-        text-align: left;
-    }
-
-    .custom-table td span {
-        flex: 2;
-        text-align: right;
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
     }
 
     .actions {
         text-align: right;
     }
 
+    .add-button{
+        margin-left: 85px;
+    }
 }
 
 @media (max-width: 480px) {
     .custom-table td {
-        flex-direction: row;
-        align-items: center;
+        padding: 8px;
+        text-align: center;
     }
 
     .custom-table td::before {
-        margin-bottom: 5px;
+        font-size: 0.9rem;
+        text-align: center;
     }
 }

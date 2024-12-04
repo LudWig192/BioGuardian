@@ -11,7 +11,7 @@ const TabelaContato = () => {
                 const { data } = await axios.get("http://localhost:3001/contato");
                 setCadastros(data);
             } catch (error) {
-                console.error("Erro ao buscar usuários:", error); 
+                console.error("Erro ao buscar usuários:", error);
             }
         };
 
@@ -21,7 +21,7 @@ const TabelaContato = () => {
     const handleExcluirUsuario = async (idContato) => {
         try {
             await axios.delete(`http://localhost:3001/contato/${idContato}`);
-            
+
             const { data } = await axios.get("http://localhost:3001/contato");
             setCadastros(data);
             console.log("Usuário excluído com sucesso!");
@@ -44,12 +44,12 @@ const TabelaContato = () => {
                 </thead>
                 <tbody className="tabela-contato-tbody">
                     {cadastros.map((cadastro) => (
-                        <tr key={cadastro.idLogin} className="tabela-contato-tr">
-                            <td className="tabela-contato-td">{cadastro.idContato}</td>
-                            <td className="tabela-contato-td">{cadastro.nome}</td>
-                            <td className="tabela-contato-td">{cadastro.email_ou_telefone}</td>
-                            <td className="tabela-contato-td">{cadastro.mensagem}</td>
-                            <td className="tabela-contato-td">
+                        <tr key={cadastro.idContato} className="tabela-contato-tr">
+                            <td className="tabela-contato-td" data-label="ID">{cadastro.idContato}</td>
+                            <td className="tabela-contato-td" data-label="Nome">{cadastro.nome}</td>
+                            <td className="tabela-contato-td" data-label="Email ou Telefone">{cadastro.email_ou_telefone}</td>
+                            <td className="tabela-contato-td" data-label="Mensagem">{cadastro.mensagem}</td>
+                            <td className="tabela-contato-td" data-label="Ações">
                                 <button
                                     className="tabela-contato-button"
                                     variant="danger"

@@ -166,4 +166,8 @@ body {
         padding-bottom: 5px;
         color: #333;
     }
+
+    .status-badge-funcionarios {
+        padding: 0px
+    }
 }

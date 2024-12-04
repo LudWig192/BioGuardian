@@ -68,12 +68,12 @@ const ResponsiveTable = ({ data, onEdit, onDelete, onAdd }) => {
                 <tbody>
                     {data.map((item) => (
                         <tr key={item.idAgenda}>
-                            <td>{item.agendamento}</td>
-                            <td>{item.paciente}</td>
-                            <td>{item.status}</td>
-                            <td>{item.procedimentos}</td>
-                            <td>{item.tipoPlano}</td>
-                            <td className="actions">
+                            <td data-label="Agendamento">{item.agendamento}</td>
+                            <td data-label="Paciente">{item.paciente}</td>
+                            <td data-label="Status">{item.status}</td>
+                            <td data-label="Procedimentos">{item.procedimentos}</td>
+                            <td data-label="Tipo de Plano">{item.tipoPlano}</td>
+                            <td data-label="Ações" className="actions">
                                 <FaEdit
                                     className="icon edit-icon"
                                     onClick={() => handleOpenModal('edit', item)}
