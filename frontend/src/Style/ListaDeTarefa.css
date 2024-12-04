@@ -103,6 +103,10 @@
         align-items: flex-start;
     }
 
+    .exam-list-registros_examess {
+        margin: auto;
+    }
+
     .exam-status-registros_examess {
         text-align: left;
         min-width: auto;

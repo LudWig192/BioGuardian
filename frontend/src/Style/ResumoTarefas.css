@@ -51,9 +51,11 @@
 @media (max-width: 768px) {
     .task-status-box_registro_exames_paciente {
         flex-wrap: wrap; 
+        gap: 20px;
     }
 
     .task-status-item_registro_exames_paciente {
+        
         margin: 10px 0; 
         width: calc(33.33% - 20px); 
     }

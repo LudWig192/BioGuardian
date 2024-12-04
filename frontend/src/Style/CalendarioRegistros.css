@@ -6,7 +6,6 @@
 
 .custom-calendar-wrapper_registro_examesss {
     max-width: 100%;
-    width: 90%;
     margin: 20px auto;
     background-color: #ffffff;
     padding: 20px;
@@ -87,7 +86,6 @@
 /* responsividade */
 @media (max-width: 768px) {
     .custom-calendar-wrapper_registro_examesss {
-        width: 95%;
         padding: 10px;
     }
 
