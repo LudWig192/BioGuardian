@@ -74,33 +74,33 @@
 @media (max-width: 1024px) {
   .services-grid-suport {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Reduzindo o espaçamento entre as colunas */
+    gap: 15px;
   }
 
   .services-title-suport {
     font-size: 2.5rem;
-    margin-bottom: 8px; /* Diminuindo o espaçamento inferior */
+    margin-bottom: 8px; 
   }
 
   .services-description-support {
     font-size: 1rem;
-    margin-bottom: 30px; /* Diminuindo o espaçamento inferior */
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 768px) {
   .services-grid-suport {
     grid-template-columns: 1fr;
-    gap: 10px; /* Reduzindo ainda mais o espaço entre as colunas */
+    gap: 10px;
   }
 
   .services-title-suport {
     font-size: 2rem;
-    margin-bottom: 5px; /* Diminuindo o espaçamento inferior */
+    margin-bottom: 5px;
   }
 
   .services-description-support {
     font-size: 0.9rem;
-    margin-bottom: 20px; /* Diminuindo o espaçamento inferior */
+    margin-bottom: 20px;
   }
 }

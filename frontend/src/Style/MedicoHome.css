@@ -1,4 +1,3 @@
-/* Contêiner principal para mover o conteúdo para cima */
 .doctorHome-container {
   display: flex;
   flex-direction: column;
@@ -8,13 +7,12 @@
 
 }
 
-/* Estilização do conteúdo do componente */
 .doctorHome-medico-home {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 0 !important; /* Remova o deslocamento negativo específico deste elemento */
+  margin-top: 0 !important;
 }
 
 .doctorHome-title {

@@ -53,9 +53,9 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Deixa o modal mais para baixo */
-    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-    z-index: 999; /* Garante que fique acima dos elementos da página */
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 .modal-contentagendamentoooss {
@@ -63,12 +63,12 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 500px; /* Aumentado a largura do modal */
+    width: 500px;
     max-width: 90%;
     height: auto;
-    min-height: 150px; /* Diminuí a altura mínima do modal */
+    min-height: 150px;
     position: relative;
-    top: 15%; /* Ajuste para descer o modal mais */
+    top: 15%;
 }
 
 .modal-contentagendamentoooss h3 {

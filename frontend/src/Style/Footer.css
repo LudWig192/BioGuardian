@@ -22,13 +22,13 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    flex-wrap: wrap; /* Permite que as colunas quebrem para uma nova linha se necessário */
+    flex-wrap: wrap;
 }
 
 .footer-column {
     flex: 1;
     padding: 10px;
-    min-width: 200px; /* Define uma largura mínima para as colunas */
+    min-width: 200px;
 }
 
 .footer h3 {
@@ -57,7 +57,6 @@
     font-size: 24px;
 }
 
-/* Cores específicas para cada ícone */
 .footer-icons a.facebook { color: #3b5998; }
 .footer-icons a.whatsapp { color: #25D366; }
 .footer-icons a.instagram { color: #e4405f; }
@@ -114,6 +113,6 @@
     }
 
     .footer-icons {
-        justify-content: center; /* Centraliza os ícones em telas menores */
+        justify-content: center;
     }
 }

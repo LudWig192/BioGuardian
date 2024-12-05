@@ -6,10 +6,10 @@ import '../Style/AvaliacaoCliente.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
-// import Thiago from '../Imagens/Thiago.png';
-// import Bruna from '../Imagens/Bruna.jpeg';
-// import Tatiana from '../Imagens/Tatiana.jpeg';
-// import Caio from '../Imagens/Caioooooo.jpg';
+ import Thiago from '../Imagens/Thiago.jpeg';
+ import Bruna from '../Imagens/Bruna.jpeg';
+ import Tatiana from '../Imagens/Tatiana.jpeg';
+ import Caio from '../Imagens/Caio.jpeg';
 
 const reviews = [
     {
@@ -18,7 +18,7 @@ const reviews = [
         doctorName: 'Dr. João Silva',
         rating: 5,
         comment: 'Excelente atendimento! O Dr. João foi muito atencioso e esclareceu todas as minhas dúvidas.',
-        // photo: Thiago,
+         photo: Thiago,
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ const reviews = [
         doctorName: 'Dra. Maria Oliveira',
         rating: 5,
         comment: 'A Dra. Maria é uma profissional incrível. O cuidado e a atenção dela me fizeram sentir muito à vontade.',
-        // photo: Bruna,
+         photo: Bruna,
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ const reviews = [
         doctorName: 'Dr. Carlos Ferreira',
         rating: 5,
         comment: 'Médico extremamente competente e dedicado. Recomendo a todos que precisarem de atendimento!',
-        // photo: Caio,
+         photo: Caio,
     },
     {
         id: 4,
@@ -42,7 +42,7 @@ const reviews = [
         doctorName: 'Dra. Ana Clara',
         rating: 5,
         comment: 'A Dra. Ana foi maravilhosa! Me deixou tranquila durante todo o processo e demonstrou muito conhecimento.',
-        // photo: Tatiana,
+         photo: Tatiana,
     },
 ];
 

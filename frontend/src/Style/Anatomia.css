@@ -1,63 +1,58 @@
-/* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Contêiner principal */
 .app-container {
   display: flex;
-  flex-direction: column; /* Garante que os elementos fiquem empilhados verticalmente */
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   height: auto;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  padding-top: 50px; /* Distância superior para o conteúdo */
+  padding-top: 50px;
 }
 
-/* Estilos do corpo */
 .sc-aXZVg.kuzLNx.human-body {
-  margin-top: 120px; /* Distância maior para empurrar o corpo um pouco para baixo */
-  margin-bottom: 20px; /* Distância abaixo do corpo */
+  margin-top: 120px;
+  margin-bottom: 20px;
 }
 
-/* Estilos da tabela */
 .table-container {
-  margin-top: 20px; /* Distância entre o corpo e a tabela */
-  width: 90%; /* Largura da tabela */
+  margin-top: 20px;
+  width: 90%;
 }
 
-/* Estilos adicionais para a tabela */
 .table-container table {
-  width: 100%; /* A tabela ocupará toda a largura disponível */
-  border-collapse: collapse; /* Colapsa as bordas da tabela */
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .table-container th, .table-container td {
-  padding: 10px; /* Adiciona espaçamento nas células */
-  border: 1px solid #ccc; /* Borda suave nas células */
-  text-align: left; /* Alinhamento do texto à esquerda */
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  text-align: left;
 }
 
 .table-container th {
-  background-color: #f2f2f2; /* Cor de fundo para o cabeçalho */
+  background-color: #f2f2f2; 
 }
 
-/* Media Query para telas menores (max-width: 768px) */
+/* Responsividade */
 @media (max-width: 768px) {
   .app-container {
-    padding-top: 400px; /* Distância superior maior para não sobrepor a navegação */
+    padding-top: 400px;
   }
 
   .sc-aXZVg.kuzLNx.human-body {
-    margin-top: 120px; /* Distância do corpo maior em telas menores */
+    margin-top: 120px;
   }
 
   .table-container {
-    margin-top: 20px; /* Distância entre o corpo e a tabela */
-    width: 95%; /* Ajuste de largura para telas pequenas */
+    margin-top: 20px; 
+    width: 95%;
   }
 }

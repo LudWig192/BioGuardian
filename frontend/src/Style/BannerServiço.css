@@ -15,7 +15,7 @@
 .BannerServiço__imagem-background {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   top: 0;
   left: 0;
   z-index: 0;
@@ -63,7 +63,7 @@
   font-weight: bold;
 }
 
-.BannerServiço__hours, 
+.BannerServiço__hours,
 .BannerServiço__emergency-contact {
   font-size: 0.9rem;
   margin: 0;
@@ -73,7 +73,7 @@
 
 @media (max-width: 1024px) {
   .BannerServiço__imagem {
-    height: 60vh; 
+    height: 60vh;
   }
 
   .BannerServiço__info-section {

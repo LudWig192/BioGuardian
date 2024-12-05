@@ -1,4 +1,3 @@
-/* Estilo para o componente navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -17,14 +16,13 @@
   padding-top: 10px;
 }
 
-/* Barra de rolagem fixa ao lado da navbar */
 .scrollbar {
   position: fixed;
-  top: 0; /* Posiciona a barra de rolagem no topo da página */
-  right: 0; /* Fixa a barra à direita da tela */
-  height: 100vh; /* Altura da tela inteira */
-  width: 10px; /* Largura da barra de rolagem */
-  background-color: #ccc; /* Cor de fundo da barra */
+  top: 0;
+  right: 0; 
+  height: 100vh;
+  width: 10px;
+  background-color: #ccc;
 }
 
 .scrollbar::before {
@@ -32,13 +30,12 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 40px; /* Tamanho da parte visível da barra de rolagem */
-  background-color: #54a3f0; /* Cor da barra de rolagem */
+  height: 40px;
+  background-color: #54a3f0;
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
-/* Estilo para o componente navbar-left */
 .navbar-left .logo {
   width: 100px;
   height: auto;
@@ -46,7 +43,6 @@
   display: block;
 }
 
-/* Estilo para os links da navbar */
 .navbar-center .navbar-links {
   display: flex;
   list-style: none;
@@ -67,7 +63,6 @@
   background-color: #54a3f0;
 }
 
-/* Estilo para a navbar-right */
 .navbar-right {
   position: relative;
   display: flex;
@@ -129,6 +124,7 @@
   cursor: pointer;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .navbar-center .navbar-links {
     display: none;
@@ -159,7 +155,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #54a3f0; /* cor de fundo */
+  background-color: #54a3f0;
   color: white;
   font-size: 20px;
   font-weight: bold;

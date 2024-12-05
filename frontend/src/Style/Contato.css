@@ -140,21 +140,17 @@
 @media (max-width: 480px) {
   .contato-contact-info .contato-title {
     font-size: 1em;
-    /* Reduz o tamanho da fonte para telas menores */
   }
 
   .contato-contact-info .contato-subtitle {
     font-size: 1.5em;
-    /* Reduz o tamanho da fonte */
   }
 
   .contato-contact-info .contato-description {
     font-size: 0.85em;
-    /* Ajuste do tamanho da fonte */
   }
 
   .contato-contact-form button.contato-submit-button {
     font-size: 0.8em;
-    /* Ajuste do tamanho do botão */
   }
 }

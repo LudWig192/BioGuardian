@@ -1,4 +1,3 @@
-/* Container Geral */
 .tabela-login-container {
     width: 90%;
     max-width: 800px;
@@ -24,7 +23,6 @@
     }
 }
 
-/* Cabeçalho */
 .tabela-login-header {
     text-align: center;
     margin-bottom: 15px;
@@ -36,7 +34,6 @@
     font-weight: bold;
 }
 
-/* Tabela */
 .tabela-login {
     width: 100%;
     border-collapse: collapse;
@@ -46,7 +43,6 @@
     overflow: hidden;
 }
 
-/* Cabeçalho da Tabela */
 .tabela-login-thead {
     background-color: #4a90e2;
 }
@@ -60,37 +56,29 @@
     border-bottom: 2px solid #0579f5;
 }
 
-/* Corpo da Tabela */
 .tabela-login-body {
     font-size: 0.95rem;
     color: #333;
 }
 
-/* Linhas e Cores Alternadas */
 .tabela-login-row:nth-child(odd) {
     background-color: #f0f8ff;
-    /* Cor para linhas ímpares */
 }
 
 .tabela-login-row:nth-child(even) {
     background-color: #e1f0ff;
-    /* Cor para linhas pares */
 }
 
-/* Hover nas Linhas */
 .tabela-login-row:hover {
     background-color: #b3daff;
-    /* Cor de hover */
     transition: background-color 0.3s ease;
 }
 
-/* Células */
 .tabela-login-td {
     padding: 14px 15px;
     border-bottom: 1px solid #cce7ff;
 }
 
-/* Ações */
 .tabela-login-actions {
     display: flex;
     justify-content: center;
@@ -129,17 +117,14 @@
 
     .tabela-login-thead {
         display: none;
-        /* Esconde o cabeçalho da tabela */
     }
 
     .tabela-login-row {
         display: flex;
         flex-direction: column;
-        /* Linhas se tornam blocos verticais */
         margin-bottom: 10px;
         background-color: #ffffff;
         border: 1px solid #d1d5db;
-        /* Borda leve ao redor das linhas */
         border-radius: 5px;
         padding: 10px;
     }
@@ -155,16 +140,14 @@
 
     .tabela-login-td::before {
         content: attr(data-label);
-        /* Mostra o rótulo da célula */
         font-weight: bold;
         color: #374151;
-        /* Cinza escuro para rótulos */
         margin-right: 10px;
         text-align: left;
     }
 
     .tabela-login-actions {
         text-align: center;
-        /* Centraliza botões de ação */
+
     }
 }

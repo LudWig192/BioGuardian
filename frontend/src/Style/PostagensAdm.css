@@ -32,7 +32,7 @@
     color: #6854f0;
 }
 
-/* Responsividade para telas pequenas */
+/* Responsividade */
 @media (max-width: 768px) {
     .best-posts {
         display: block;

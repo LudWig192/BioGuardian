@@ -10,9 +10,9 @@
 
 .body-and-table {
   display: flex;
-  flex-direction: column; /* Coloca o corpo e a tabela em coluna */
+  flex-direction: column;
   align-items: center;
-  gap: 40px; /* Aumenta o espaço entre o corpo e a tabela */
+  gap: 40px;
 }
 
 .svg-container {
@@ -33,7 +33,7 @@
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  margin-top: 60px; /* Adiciona mais espaço entre o corpo e a tabela */
+  margin-top: 60px;
   transition: transform 0.3s ease;
 }
 
@@ -84,12 +84,12 @@
   .tabela-container {
     width: 90%;
     padding: 20px;
-    margin-top: 60px; /* Mais espaço para a tabela no mobile */
+    margin-top: 60px;
   }
 }
 
 @media (max-width: 480px) {
   .tabela-container {
-    margin-top: 50px; /* Ajusta o espaço para dispositivos menores */
+    margin-top: 50px;
   }
 }

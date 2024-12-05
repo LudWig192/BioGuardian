@@ -24,14 +24,12 @@
     justify-content: space-between;
     padding: 20px;
     flex-wrap: wrap;
-    /* Permite que as colunas quebrem para uma nova linha se necessário */
 }
 
 .footer-column-medico {
     flex: 1;
     padding: 10px;
     min-width: 200px;
-    /* Define uma largura mínima para as colunas */
 }
 
 .footer-medico h3 {
@@ -129,6 +127,5 @@
 
     .footer-icons-medico {
         justify-content: center;
-        /* Centraliza os ícones em telas menores */
     }
 }

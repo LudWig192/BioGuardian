@@ -326,7 +326,6 @@
         position: relative;
         overflow-y: auto;
         max-width: 390px;
-        z-index: 9999;
     }
 
     .week-navigation button {

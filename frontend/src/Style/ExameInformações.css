@@ -94,6 +94,7 @@
     width: 80%;
     max-height: 80vh;
     overflow-y: auto;
+    margin: 0 auto;
 }
 
 .modal-button-examesIn {
@@ -167,7 +168,12 @@
     margin: 10px 0;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
+
+    .modal-content{
+        width: 100%;
+    }
     .image-container-examesIn {
         height: 50vh;  
     }

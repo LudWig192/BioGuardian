@@ -84,9 +84,6 @@
 }
 
 @media (max-width: 576px) {
-  .section-servicoicons {
-     /* padding: 100px 0;    */
-  }
 
   .col-md-4-servicoicons {
     max-width: 100%;

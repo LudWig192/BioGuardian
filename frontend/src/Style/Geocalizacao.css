@@ -2,11 +2,11 @@
     background-color: #ffffff;
     padding: 25px;
     border-radius: 12px;
-    width: 48%; /* Inicialmente ocupa 48% da largura */
+    width: 48%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 20px 0;
-    transition: width 0.3s ease-in-out; /* Transição suave ao alterar a largura */
+    transition: width 0.3s ease-in-out;
 }
 
 .satisfaction-title-satisfacao {
@@ -81,7 +81,7 @@
 /* Responsividade */
 @media (max-width: 768px) {
     .satisfaction-rate-satisfacao {
-        width: 100%; /* Garantir que ocupe 100% da largura em telas pequenas */
-        margin: 10px 0; /* Ajustar a margem para não ficar apertado */
+        width: 100%;
+        margin: 10px 0;
     }
 }
