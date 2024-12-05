@@ -1,4 +1,4 @@
-body {
+.Funcionarios-tudo{
     font-family: 'Arial', sans-serif;
     background-color: white;
     margin: 0;
@@ -169,5 +169,12 @@ body {
 
     .status-badge-funcionarios {
         padding: 0px
+    }
+
+    .funcionario-table-funcionarios th[data-label="Fun"] {
+        display: block;
+        text-align: center; /* Centraliza o texto */
+        padding: 10px 0;
+        font-weight: bold;
     }
 }

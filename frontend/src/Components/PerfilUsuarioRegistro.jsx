@@ -1,6 +1,6 @@
 import React from "react";
 import "../Style/PerfilUsuarioRegistros.css";
-import Adm from "../Imagens/lucky-removebg-preview.png";
+import Adm from "../Imagens/Who_is_this_guy.jpeg";
 
 const UserProfile = () => {
     return (
@@ -11,8 +11,8 @@ const UserProfile = () => {
                 className="custom-avatar_registro_examesss"
             />
             <div className="custom-user-info_registro_examesss">
-                <h4 className="custom-user-name_registro_examesss">Lucky Riveluvia</h4>
-                <p className="custom-user-email_registro_examesss">lucky@gmail.com</p>
+                <h4 className="custom-user-name_registro_examesss">Admin</h4>
+                <p className="custom-user-email_registro_examesss">Adm@bioguardian.com</p>
             </div>
         </div>
     );

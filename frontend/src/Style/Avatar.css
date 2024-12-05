@@ -126,7 +126,6 @@
 @media (max-width: 768px) {
     .avatar-container {
         flex-direction: column;
-        align-items: flex-end;
     }
 
     .avatar-icons {

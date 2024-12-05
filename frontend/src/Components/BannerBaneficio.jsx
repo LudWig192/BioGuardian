@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Style/BannerBaneficio.css'; 
-import Familia from "../Imagens/BannerBeneficio1.png"; // Imagem importada diretamente no React
+import Familia from "../Imagens/BannerBeneficio1.png";
 
 const HealthCareBanner = () => {
   return (

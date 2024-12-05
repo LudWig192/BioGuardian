@@ -61,7 +61,6 @@ const Medicos = ({ selectedDate }) => {
         const formattedTime = appointmentDate.toISOString().split('T')[1].substring(0, 5);
 
         try {
-            // Insere o agendamento na tabela 'agendamento'
             const agendamentoResponse = await fetch('http://localhost:3001/agendamento', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -76,19 +75,17 @@ const Medicos = ({ selectedDate }) => {
             const agendamentoData = await agendamentoResponse.json();
 
             if (agendamentoResponse.ok) {
-                // Pega o ID do agendamento retornado
                 const agendamentoId = agendamentoData.idAgendamento;
 
-                // Insere o agendamento na tabela 'agenda'
                 const agendaResponse = await fetch('http://localhost:3001/agenda', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        agendamento: formattedDate, // Data do agendamento
+                        agendamento: formattedDate,
                         paciente: formData.fullName,
-                        status: 'Pendente', // Status fixo como 'Pendente'
-                        procedimentos: selectedDoctor.specialty, // Especialidade do médico
-                        tipoPlano: 'Padrão', // Tipo de plano (se necessário, pode ser dinâmico)
+                        status: 'Pendente', 
+                        procedimentos: selectedDoctor.specialty,
+                        tipoPlano: 'Padrão',
                     }),
                 });
 
@@ -96,7 +93,6 @@ const Medicos = ({ selectedDate }) => {
 
                 if (agendaResponse.ok) {
                     setSuccessMessage('Consulta agendada com sucesso!');
-                    // Exibe o alert
                     alert('Agendamento enviado com sucesso!');
                 } else {
                     setErrorMessage(agendaData.error || 'Erro ao salvar na agenda.');
@@ -108,7 +104,6 @@ const Medicos = ({ selectedDate }) => {
             setErrorMessage('Erro ao agendar a consulta. Tente novamente mais tarde.');
         }
 
-        // Limpa o formulário após envio
         setFormData({
             fullName: '',
             birthDate: '',
@@ -117,22 +112,17 @@ const Medicos = ({ selectedDate }) => {
         setErrorMessage('');
     };
 
-
-
-    // Bloqueia/desbloqueia o scroll quando o modal abrir/fechar
     useEffect(() => {
         if (modalOpen) {
-            // Bloqueia o scroll da página
             document.body.style.overflow = 'hidden';
         } else {
-            // Restaura o scroll da página
+
             document.body.style.overflow = 'auto';
         }
-        // Cleanup ao desmontar o componente
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, [modalOpen]);  // Dispara sempre que o modalOpen mudar
+    }, [modalOpen]); 
 
     return (
         <div className='medicos-tudoagendamentoooss'>

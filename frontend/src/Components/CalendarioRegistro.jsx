@@ -21,7 +21,7 @@ const CustomCalendar = ({ onSelectDay }) => {
 
     const handleDayClick = (day) => {
         setSelectedDay(day);
-        const selectedDate = `${day}/11/2024`;  // Corrigido aqui para interpolar a string corretamente
+        const selectedDate = `${day}/11/2024`;  
         onSelectDay(selectedDate); 
     };
 

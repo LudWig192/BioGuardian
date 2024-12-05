@@ -8,7 +8,6 @@ function Prescriptions() {
   const [prescriptions, setPrescriptions] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Carregar documentos (prescrições) ao iniciar
   useEffect(() => {
     const fetchPrescriptions = async () => {
       try {
@@ -38,15 +37,13 @@ function Prescriptions() {
           headers: { 'Content-Type': 'multipart/form-data' },
         });
 
-        // Cria a nova prescrição
         const newPrescription = {
-          name: response.data.file.name,  // Nome original do arquivo
+          name: response.data.file.name, 
           date: new Date().toLocaleDateString(),
           duration: 'N/A',
-          fileUrl: response.data.file.path,  // Caminho do arquivo
+          fileUrl: response.data.file.path, 
         };
 
-        // Atualiza a lista de prescrições
         setPrescriptions([...prescriptions, newPrescription]);
         setSelectedFile(null);
       } catch (error) {

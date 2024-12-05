@@ -63,7 +63,6 @@ const EyeCareServices = () => {
         </div>
       </div>
       
-      {/* Imagem da cirurgia */}
       <div className="cirurgiabeneficio-eye-care-image" style={{ position: 'relative', zIndex: 3 }}>
         <img src={Cirurgia} alt="Eye Care Services" />
       </div>

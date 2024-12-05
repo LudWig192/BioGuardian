@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';  // Importando o axios
+import axios from 'axios'; 
 import '../Style/Contato.css';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import fundo from '../Imagens/fundo.png'; // Importando a imagem
+import fundo from '../Imagens/fundo.png';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,19 +22,16 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validação simples (garante que os campos obrigatórios estão preenchidos)
     if (!formData.nome || !formData.email || !formData.mensagem) {
       alert('Por favor, preencha todos os campos obrigatórios.');
       return;
     }
 
     try {
-      // Envio dos dados usando axios
       const response = await axios.post('http://localhost:3001/contato', formData);
 
       if (response.status === 200) {
         alert('Mensagem enviada com sucesso!');
-        // Limpar o formulário após envio bem-sucedido
         setFormData({
           nome: '',
           email: '',

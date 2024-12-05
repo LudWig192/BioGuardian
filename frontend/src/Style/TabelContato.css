@@ -143,4 +143,21 @@
     .tabela-contato-button {
         text-align: center;
     }
+
+    .tabela-contato-td[data-label="Mensagem"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .tabela-contato-td[data-label="Mensagem"]::before {
+        content: "Mensagem";
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #374151;
+    }
 }

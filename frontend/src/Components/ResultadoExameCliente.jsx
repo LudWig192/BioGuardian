@@ -28,7 +28,7 @@ const NewsCards = () => {
             date: "10 Dezembro 2024",
             title: "Exame Pediátrico",
             description: "Os exames pediátricos monitoram o desenvolvimento e a saúde das crianças, avaliando crescimento e função imunológica. Exames regulares ajudam a detectar doenças precocemente e garantir a saúde infantil.",
-            image: ExamePediatrico, // Imagem do exame pediátrico
+            image: ExamePediatrico,
             person: { name: "Carlos Santos", photo: pessoa3 },
         },
     ];

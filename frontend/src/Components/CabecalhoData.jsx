@@ -16,7 +16,7 @@ const DateHeader = ({ onSelectDay }) => {
 
     const handleDayClick = (day) => {
         setSelectedDay(day);
-        onSelectDay(`${day}/11/2024`); // Ajuste de interpolação correto
+        onSelectDay(`${day}/11/2024`);
     };
 
     return (

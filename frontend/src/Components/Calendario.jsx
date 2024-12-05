@@ -133,7 +133,6 @@ const Cabecalho = () => {
                                 <p>{appointment.doctor}</p>
                                 <p>{appointment.description}</p>
  
-                                {/* Botões de edição e exclusão dentro do appointment-card */}
                                 <div className="appointment-options">
                                     <button className="edit-button" onClick={() => handleEdit(index)}>Editar</button>
                                     <button className="delete-button" onClick={() => handleDelete(index)}>Excluir</button>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../Style/Avatar.css';
-import Medico from '../Imagens/Calvo-removebg-preview.png';
 import { FaBell } from "react-icons/fa";
 import { TbMessageCircleFilled } from "react-icons/tb";
 import { TfiAgenda } from "react-icons/tfi";
@@ -58,9 +57,6 @@ const SwitchWithIconsAndAvatar = ({ notificationCount, latestPatient }) => {
                             </div>
                         )}
                     </div>
-                </div>
-                <div className="avatar-avatar">
-                    <img src={Medico} alt="Avatar" />
                 </div>
                 {showQRCode && (
                     <div className="avatar-qr-code">

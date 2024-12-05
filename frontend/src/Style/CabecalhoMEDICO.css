@@ -344,7 +344,6 @@
     }
 
     .custom-modal {
-        width: 60%;
         padding: 15px;
 
     }
@@ -362,5 +361,15 @@
         font-size: 14px;
     }
 
+    .appointment-options{
+        display: block;
+    }
 
+    .appointment-card {
+        height: 0%;
+    }
+
+   .appointment-datetime{
+    text-align: center;
+   }
 }
