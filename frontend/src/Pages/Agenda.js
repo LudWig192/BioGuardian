@@ -34,7 +34,7 @@ const Agenda = () => {
 
     useEffect(() => {
         fetchData();
-        const intervalId = setInterval(fetchData, 5000);
+        const intervalId = setInterval(fetchData, 3000);
         return () => clearInterval(intervalId);
     }, []);
 

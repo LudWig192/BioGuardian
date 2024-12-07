@@ -85,7 +85,7 @@ const Medicos = ({ selectedDate }) => {
                         paciente: formData.fullName,
                         status: 'Pendente', 
                         procedimentos: selectedDoctor.specialty,
-                        tipoPlano: 'Padrão',
+                        tipoPlano: 'Individual',
                     }),
                 });
 

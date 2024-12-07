@@ -92,9 +92,9 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
                         className="modalExames-select"
                       >
                         <option value="" disabled>Selecione o status</option>
-                        <option value="confirmado">Confirmado</option>
-                        <option value="pendente">Pendente</option>
-                        <option value="cancelado">Cancelado</option>
+                        <option value="Confirmado">Confirmado</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Cancelado">Cancelado</option>
                       </select>
                     </label>
                     <label className="modalExames-label">
@@ -119,9 +119,8 @@ const Modal = ({ type, data, onClose, onChange, onSubmit }) => {
                         className="modalExames-select"
                       >
                         <option value="" disabled>Selecione o tipo de plano</option>
-                        <option value="padrão">Padrão</option>
-                        <option value="premium">Premium</option>
-                        <option value="básico">Básico</option>
+                        <option value="Individual">Individual</option>
+                        <option value="Familiar">Familiar</option>
                       </select>
                     </label>
                     <div className="modalExames-footer">

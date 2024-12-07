@@ -29,11 +29,11 @@ const ButtonGroup = ({ onDateRangeChange, onStatusFilterChange, onPlanFilterChan
     const handlePlanChange = () => {
         let newPlanFilter;
         if (planFilter === '') {
-            newPlanFilter = 'Básico';
-        } else if (planFilter === 'Básico') {
-            newPlanFilter = 'Premium';
-        } else if (planFilter === 'Premium') {
-            newPlanFilter = 'Padrão';
+            newPlanFilter = 'Individual';
+        } else if (planFilter === 'Individual') {
+            newPlanFilter = 'Familiar';
+        } else if (planFilter === 'Familiar') {
+            newPlanFilter = 'Individual';
         } else {
             newPlanFilter = '';
         }

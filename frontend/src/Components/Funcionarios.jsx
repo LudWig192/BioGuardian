@@ -21,7 +21,7 @@ const FuncionariosPage = () => {
 
   useEffect(() => {
     buscarFuncionarios();
-    const intervalId = setInterval(buscarFuncionarios, 5000);
+    const intervalId = setInterval(buscarFuncionarios, 3000);
     return () => clearInterval(intervalId);
   }, []);
 
@@ -149,7 +149,6 @@ const FuncionariosPage = () => {
                 <th>Status</th>
                 <th>Em trabalho</th>
                 <th>Ações</th>
-                <th data-label="Fun">Funcionarios</th>
 
               </tr>
             </thead>
